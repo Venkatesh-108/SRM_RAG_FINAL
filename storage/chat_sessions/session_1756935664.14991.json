@@ -37,9 +37,284 @@
       "metadata": {
         "error": "RAG service not available"
       }
+    },
+    {
+      "id": "msg_1756936225.785274",
+      "role": "user",
+      "content": "hi",
+      "timestamp": "2025-09-04 03:20:25.785274",
+      "sources": [],
+      "metadata": {}
+    },
+    {
+      "id": "msg_1756936236.784274",
+      "role": "assistant",
+      "content": "Error: Could not generate an answer from the LLM.",
+      "timestamp": "2025-09-04 03:20:36.784274",
+      "sources": [
+        {
+          "filename": "SRM Upgrade Guide.pdf",
+          "page_number": 26,
+          "chunk_id": "",
+          "relevance_score": 0.0,
+          "content_preview": "To"
+        },
+        {
+          "filename": "SRM Upgrade Guide.pdf",
+          "page_number": 18,
+          "chunk_id": "",
+          "relevance_score": 0.0,
+          "content_preview": "Option"
+        },
+        {
+          "filename": "SRM Upgrade Guide.pdf",
+          "page_number": 31,
+          "chunk_id": "",
+          "relevance_score": 0.0,
+          "content_preview": "Description"
+        },
+        {
+          "filename": "SRM Upgrade Guide.pdf",
+          "page_number": 28,
+          "chunk_id": "",
+          "relevance_score": 0.0,
+          "content_preview": "Description"
+        },
+        {
+          "filename": "SRM Upgrade Guide.pdf",
+          "page_number": 18,
+          "chunk_id": "",
+          "relevance_score": 0.0,
+          "content_preview": "Description"
+        }
+      ],
+      "metadata": {
+        "confidence_score": 0.34,
+        "context_chunks_count": 5
+      }
+    },
+    {
+      "id": "msg_1756936261.072272",
+      "role": "user",
+      "content": "What is SRM?",
+      "timestamp": "2025-09-04 03:21:01.072272",
+      "sources": [],
+      "metadata": {}
+    },
+    {
+      "id": "msg_1756936271.484277",
+      "role": "assistant",
+      "content": "Error: Could not generate an answer from the LLM.",
+      "timestamp": "2025-09-04 03:21:11.484277",
+      "sources": [
+        {
+          "filename": "SRM Upgrade Guide.pdf",
+          "page_number": 34,
+          "chunk_id": "",
+          "relevance_score": 0.0,
+          "content_preview": "Update Capabilities\nFor devices discovered through the Cisco MDS collector in Discovery Center, SRM ..."
+        },
+        {
+          "filename": "test_doc.md",
+          "page_number": null,
+          "chunk_id": "",
+          "relevance_score": 0.0,
+          "content_preview": "Test Document\nThis is a test document for the SRM RAG application."
+        },
+        {
+          "filename": "SRM Upgrade Guide.pdf",
+          "page_number": 34,
+          "chunk_id": "",
+          "relevance_score": 0.0,
+          "content_preview": "t Delete.\n- 3. Click Execute Action, and then click OK.\n- 4. Click Dashboard in the left pane.\n- 5. ..."
+        },
+        {
+          "filename": "SRM Upgrade Guide.pdf",
+          "page_number": 17,
+          "chunk_id": "",
+          "relevance_score": 0.0,
+          "content_preview": "Upgrade to SRM 5.1.1.0 using the new update platform\nAs the Online Update Server is deprecated, the ..."
+        },
+        {
+          "filename": "SRM Upgrade Guide.pdf",
+          "page_number": 8,
+          "chunk_id": "",
+          "relevance_score": 0.0,
+          "content_preview": "Required Tools and Credentials\nDescribes the tools and credentials required for SRM upgrade.\n\nList o..."
+        }
+      ],
+      "metadata": {
+        "confidence_score": 0.41,
+        "context_chunks_count": 5
+      }
+    },
+    {
+      "id": "msg_1756936282.54665",
+      "role": "user",
+      "content": "hi",
+      "timestamp": "2025-09-04 03:21:22.546650",
+      "sources": [],
+      "metadata": {}
+    },
+    {
+      "id": "msg_1756936292.0129",
+      "role": "assistant",
+      "content": "Since the provided context is incomplete and lacks relevant information, it's not possible to accurately answer the question. The context only includes a table of contents with a title \"To\" and a few lines of text that appear to be a random combination of words (\"Option\", \"Description\", etc.). Without more information about what is being asked or what kind of answer is expected, I cannot provide a refined answer.\n\nCould you please provide more context or clarify the question?",
+      "timestamp": "2025-09-04 03:21:32.012900",
+      "sources": [
+        {
+          "filename": "SRM Upgrade Guide.pdf",
+          "page_number": 26,
+          "chunk_id": "",
+          "relevance_score": 0.0,
+          "content_preview": "To"
+        },
+        {
+          "filename": "SRM Upgrade Guide.pdf",
+          "page_number": 18,
+          "chunk_id": "",
+          "relevance_score": 0.0,
+          "content_preview": "Option"
+        },
+        {
+          "filename": "SRM Upgrade Guide.pdf",
+          "page_number": 31,
+          "chunk_id": "",
+          "relevance_score": 0.0,
+          "content_preview": "Description"
+        },
+        {
+          "filename": "SRM Upgrade Guide.pdf",
+          "page_number": 28,
+          "chunk_id": "",
+          "relevance_score": 0.0,
+          "content_preview": "Description"
+        },
+        {
+          "filename": "SRM Upgrade Guide.pdf",
+          "page_number": 18,
+          "chunk_id": "",
+          "relevance_score": 0.0,
+          "content_preview": "Description"
+        }
+      ],
+      "metadata": {
+        "confidence_score": 0.43,
+        "context_chunks_count": 5
+      }
+    },
+    {
+      "id": "msg_1756936305.194989",
+      "role": "user",
+      "content": "hi",
+      "timestamp": "2025-09-04 03:21:45.194989",
+      "sources": [],
+      "metadata": {}
+    },
+    {
+      "id": "msg_1756936310.91639",
+      "role": "assistant",
+      "content": "Based on the provided context, I must clarify that there is no explicit information or instructions to answer a question. The text only contains an incomplete table with options and descriptions, but does not provide any questions or clear guidance for responding.\n\nTherefore, I must conclude that the context is insufficient to provide an accurate response.",
+      "timestamp": "2025-09-04 03:21:50.916390",
+      "sources": [
+        {
+          "filename": "SRM Upgrade Guide.pdf",
+          "page_number": 26,
+          "chunk_id": "",
+          "relevance_score": 0.0,
+          "content_preview": "To"
+        },
+        {
+          "filename": "SRM Upgrade Guide.pdf",
+          "page_number": 18,
+          "chunk_id": "",
+          "relevance_score": 0.0,
+          "content_preview": "Option"
+        },
+        {
+          "filename": "SRM Upgrade Guide.pdf",
+          "page_number": 31,
+          "chunk_id": "",
+          "relevance_score": 0.0,
+          "content_preview": "Description"
+        },
+        {
+          "filename": "SRM Upgrade Guide.pdf",
+          "page_number": 28,
+          "chunk_id": "",
+          "relevance_score": 0.0,
+          "content_preview": "Description"
+        },
+        {
+          "filename": "SRM Upgrade Guide.pdf",
+          "page_number": 18,
+          "chunk_id": "",
+          "relevance_score": 0.0,
+          "content_preview": "Description"
+        }
+      ],
+      "metadata": {
+        "confidence_score": 0.42,
+        "context_chunks_count": 5
+      }
+    },
+    {
+      "id": "msg_1756936338.725671",
+      "role": "user",
+      "content": "test",
+      "timestamp": "2025-09-04 03:22:18.725671",
+      "sources": [],
+      "metadata": {}
+    },
+    {
+      "id": "msg_1756936344.713015",
+      "role": "assistant",
+      "content": "Based on the provided context, I am unable to answer the question as it does not contain sufficient information. The context only includes sample content and a test document for the Dell SRM RAG application, but lacks specific instructions or procedures related to testing or answering questions about the system. There is no clear indication of what \"test\" refers to in this context.",
+      "timestamp": "2025-09-04 03:22:24.713015",
+      "sources": [
+        {
+          "filename": "test_doc.md",
+          "page_number": null,
+          "chunk_id": "",
+          "relevance_score": 0.0,
+          "content_preview": "Test Document\nThis is a test document for the SRM RAG application.\n\nSample Content\n- Item 1: Basic i..."
+        },
+        {
+          "filename": "test_doc.md",
+          "page_number": null,
+          "chunk_id": "",
+          "relevance_score": 0.0,
+          "content_preview": "Test Document\nThis is a test document for the SRM RAG application."
+        },
+        {
+          "filename": "SRM Upgrade Guide.pdf",
+          "page_number": 20,
+          "chunk_id": "",
+          "relevance_score": 0.0,
+          "content_preview": "Test Server Connectivity\nicon to verify that connection to Dell server is successful."
+        },
+        {
+          "filename": "test_doc.md",
+          "page_number": null,
+          "chunk_id": "",
+          "relevance_score": 0.0,
+          "content_preview": "Sample Content\n- Item 1: Basic information\n- Item 2: More details\n- Item 3: Additional context\nThis ..."
+        },
+        {
+          "filename": "test_doc.md",
+          "page_number": null,
+          "chunk_id": "",
+          "relevance_score": 0.0,
+          "content_preview": " of the text corresponding to the feedback.\nTo get answers to your queries related to Dell SRM throu..."
+        }
+      ],
+      "metadata": {
+        "confidence_score": 0.63,
+        "context_chunks_count": 5
+      }
     }
   ],
   "created_at": "2025-09-04 03:11:04.149910",
-  "updated_at": "2025-09-04 03:11:51.687908",
+  "updated_at": "2025-09-04 03:22:24.713015",
   "metadata": {}
 }

@@ -44,8 +44,8 @@ config = load_config()
 app = FastAPI(title="SRM RAG API", description="RAG system for Dell SRM guides")
 console = Console()
 
-# Initialize chat service
-chat_service = ChatService()
+# Initialize chat service with RAG integration
+chat_service = ChatService(rag_service="integrated")
 
 # Pydantic models
 class QueryRequest(BaseModel):

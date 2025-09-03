@@ -49,7 +49,7 @@ class ChatService:
         session.add_message(user_msg)
         
         # Generate AI response using RAG
-        if self.rag_service:
+        if self.rag_service and self.rag_service != "not_available":
             try:
                 # Get answer from RAG system
                 answer, confidence_score, context_chunks = await self._get_rag_response(user_message)
@@ -126,23 +126,48 @@ class ChatService:
     
     async def _get_rag_response(self, query: str) -> Tuple[str, float, List[Dict[str, Any]]]:
         """Get response from RAG system"""
-        if not self.rag_service:
-            raise ValueError("RAG service not available")
-        
-        # This will be implemented when we integrate with the existing RAG system
-        # For now, return a placeholder
-        return "This is a placeholder response from the RAG system.", 0.8, []
+        try:
+            # Import the RAG functions from the main app
+            from app import load_indices_and_chunks, search_and_rerank, generate_answer_with_ollama
+            
+            # Load indices
+            chunks, bm25, faiss_index, embedding_model = load_indices_and_chunks()
+            if chunks is None:
+                raise ValueError("Index not found. Please ensure documents are indexed.")
+            
+            # Search and rerank
+            retrieved_chunks = search_and_rerank(query, chunks, bm25, faiss_index, embedding_model)
+            
+            # Generate answer
+            answer, confidence_score, validation_result = generate_answer_with_ollama(query, retrieved_chunks)
+            
+            return answer, confidence_score, retrieved_chunks
+            
+        except Exception as e:
+            logger.error(f"Error in RAG response generation: {e}")
+            # Return a helpful error message
+            return f"I encountered an error while processing your request: {str(e)}", 0.0, []
     
     def _extract_sources_from_chunks(self, chunks: List[Dict[str, Any]]) -> List[Source]:
         """Extract source information from RAG context chunks"""
         sources = []
         
         for chunk in chunks:
+            # Handle both old and new chunk formats
+            metadata = chunk.get('metadata', {})
+            if isinstance(metadata, dict):
+                filename = metadata.get('filename', 'Unknown')
+                page_number = metadata.get('page_number')
+            else:
+                # Handle case where metadata might be a string or other format
+                filename = str(metadata) if metadata else 'Unknown'
+                page_number = None
+            
             source = Source(
-                filename=chunk.get('metadata', {}).get('filename', 'Unknown'),
-                page_number=chunk.get('metadata', {}).get('page_number'),
-                chunk_id=chunk.get('id'),
-                relevance_score=chunk.get('score', 0.0),
+                filename=filename,
+                page_number=page_number,
+                chunk_id=str(chunk.get('id', '')),
+                relevance_score=float(chunk.get('score', 0.0)),
                 content_preview=chunk.get('text', '')[:100] + "..." if len(chunk.get('text', '')) > 100 else chunk.get('text', '')
             )
             sources.append(source)
