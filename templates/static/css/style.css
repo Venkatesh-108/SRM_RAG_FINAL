@@ -773,7 +773,7 @@ body {
     content: '';
     position: absolute;
     left: -6px;
-    bottom: 12px;
+    top: 12px;
     width: 0;
     height: 0;
     border-right: 6px solid white;
@@ -868,7 +868,7 @@ body {
     background: white;
     color: #2d3748;
     border: 1px solid #e2e8f0;
-    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
     margin-right: auto;
     max-width: fit-content;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
