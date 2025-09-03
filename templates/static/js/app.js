@@ -295,13 +295,20 @@ class SRMAIApp {
     }
 
     showWelcomeMessage() {
+        // First, check if a welcome container already exists to prevent duplicates.
+        if (document.getElementById('welcomeContainer')) {
+            // If it exists, ensure it's visible and the chat area is hidden.
+            document.getElementById('welcomeContainer').style.display = 'block';
+            const chatArea = document.getElementById('chatArea');
+            if (chatArea) {
+                chatArea.style.display = 'none';
+            }
+            return; // Exit the function to prevent creating another one.
+        }
+
         const contentArea = document.getElementById('contentArea');
         const chatArea = document.getElementById('chatArea');
         
-        // Check if a welcome message already exists before adding a new one
-        const existingWelcome = document.getElementById('welcomeContainer');
-        if (existingWelcome) return;
-
         if (contentArea) {
             const welcomeContainer = document.createElement('div');
             welcomeContainer.className = 'welcome-container';

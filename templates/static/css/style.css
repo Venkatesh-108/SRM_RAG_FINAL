@@ -505,7 +505,20 @@ body {
     text-align: center;
     max-width: 600px;
     margin: auto;
+    animation: fadeInWelcome 0.6s ease-out forwards;
 }
+
+@keyframes fadeInWelcome {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 .welcome-message {
     background-color: var(--card-bg);
     padding: 40px;
@@ -515,36 +528,22 @@ body {
     box-shadow: var(--shadow-soft);
     position: relative;
     overflow: hidden;
-    animation: fadeInSlideUp 0.8s ease-out forwards;
-}
-
-@keyframes fadeInSlideUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 .welcome-message::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 16px;
-    padding: 2px;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 16px; /* Match parent's border-radius */
+    padding: 2px; /* This will be the border width */
     background: linear-gradient(45deg, #6c5ce7, #a29bfe, #74b9ff, #6c5ce7);
     background-size: 300% 300%;
-    animation: borderFlow 3s ease-in-out infinite;
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: exclude;
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    animation: borderFlow 4s ease-in-out infinite;
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
+            mask-composite: exclude;
 }
 
 @keyframes borderFlow {
