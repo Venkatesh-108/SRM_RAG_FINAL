@@ -58,7 +58,7 @@ class SRMAIApp {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    title: 'New Chat',
+                    title: null, // Let the backend handle the title
                     initial_message: null
                 })
             });
@@ -67,6 +67,7 @@ class SRMAIApp {
                 const data = await response.json();
                 this.currentSessionId = data.session.session_id;
                 this.removeWelcomeMessage();
+                this.clearChatArea(); // Clear previous messages
                 this.showChatArea();
                 this.loadChatHistory();
                 console.log('New chat session created:', this.currentSessionId);
@@ -195,6 +196,7 @@ class SRMAIApp {
         sessions.forEach(session => {
             const chatItem = document.createElement('div');
             chatItem.className = 'chat-item';
+            chatItem.dataset.sessionId = session.session_id; // Use data attribute
             chatItem.onclick = () => this.loadChatSession(session.session_id);
             
             const icon = document.createElement('i');
@@ -207,6 +209,19 @@ class SRMAIApp {
             chatItem.appendChild(title);
             chatList.appendChild(chatItem);
         });
+
+        this.updateActiveChatItem();
+    }
+
+    updateActiveChatItem() {
+        const chatItems = document.querySelectorAll('.chat-item');
+        chatItems.forEach(item => {
+            if (item.dataset.sessionId === this.currentSessionId) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        });
     }
 
     async loadChatSession(sessionId) {
@@ -216,6 +231,7 @@ class SRMAIApp {
                 const session = await response.json();
                 this.currentSessionId = sessionId;
                 this.loadChatSessionToUI(session);
+                this.updateActiveChatItem(); // Highlight the new active chat
             }
         } catch (error) {
             console.error('Error loading chat session:', error);
@@ -224,6 +240,7 @@ class SRMAIApp {
 
     loadChatSessionToUI(session) {
         this.removeWelcomeMessage();
+        this.clearChatArea(); // Clear previous messages first
         this.showChatArea();
         
         const chatArea = document.getElementById('chatArea');

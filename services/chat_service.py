@@ -21,8 +21,10 @@ class ChatService:
         return self.storage.get_session(session_id)
     
     def get_all_sessions(self) -> List[ChatSession]:
-        """Get all chat sessions"""
-        return self.storage.get_all_sessions()
+        """Get all chat sessions, sorted by recent activity."""
+        all_sessions = self.storage.get_all_sessions()
+        # Sort by updated_at descending
+        return sorted(all_sessions, key=lambda x: x.updated_at, reverse=True)
     
     def delete_session(self, session_id: str) -> bool:
         """Delete a chat session"""

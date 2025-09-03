@@ -296,13 +296,15 @@ body {
     transition: opacity 0.3s ease;
 }
 
+.chat-item.active,
 .chat-item:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--text-primary-dark);
+    background: linear-gradient(135deg, rgba(108, 92, 231, 0.9) 0%, rgba(162, 155, 254, 0.9) 100%);
+    color: white;
     transform: translateX(6px);
-    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
 }
 
+.chat-item.active::before,
 .chat-item:hover::before {
     opacity: 1;
 }

@@ -1,0 +1,64 @@
+{
+  "session_id": "session_1756937246.698138",
+  "title": "Check vApp Options for Dell SRM VMs",
+  "messages": [
+    {
+      "id": "msg_1756937382.021653",
+      "role": "user",
+      "content": "Check vApp Options for Dell SRM VMs",
+      "timestamp": "2025-09-04 03:39:42.021653",
+      "sources": [],
+      "metadata": {}
+    },
+    {
+      "id": "msg_1756937389.793603",
+      "role": "assistant",
+      "content": "To check vApp options for Dell SRM VMs, follow these steps:\n\n1. Select the VM.\n2. Click Configure tab on vSphere client.\n3. Select vApp options.\n\nVerify that the \"vApp options are enabled\" message is displayed.\n\nNote: If your Dell SRM VMs installations are geographically distributed in different locations, you must meet the network latency limits as described in Section 13 of the Pre-Requisites for Dell SRM 5.1.x.x Upgrade at Dell Support Site.",
+      "timestamp": "2025-09-04 03:39:49.793603",
+      "sources": [
+        {
+          "filename": "SRM Upgrade Guide.pdf",
+          "page_number": 9,
+          "chunk_id": "",
+          "relevance_score": 0.0,
+          "content_preview": "Check vApp Options for Dell SRM VMs\n\nSteps\n- 1. Select the VM, click Configure tab on vSphere client..."
+        },
+        {
+          "filename": "SRM Upgrade Guide.pdf",
+          "page_number": 9,
+          "chunk_id": "",
+          "relevance_score": 0.0,
+          "content_preview": "Check vApp Options for Dell SRM VMs"
+        },
+        {
+          "filename": "SRM Upgrade Guide.pdf",
+          "page_number": 9,
+          "chunk_id": "",
+          "relevance_score": 0.0,
+          "content_preview": "Steps\n- 1. Select the VM, click Configure tab on vSphere client and select vApp options.\n- 2. Verify..."
+        },
+        {
+          "filename": "SRM Upgrade Guide.pdf",
+          "page_number": 9,
+          "chunk_id": "",
+          "relevance_score": 0.0,
+          "content_preview": " the vApp servers for the Operating System upgrade. If the upgrade is already completed, then runnin..."
+        },
+        {
+          "filename": "SRM Upgrade Guide.pdf",
+          "page_number": 14,
+          "chunk_id": "",
+          "relevance_score": 0.0,
+          "content_preview": "d then to SRM 5.1.x.x, you must remove / boot/initrd-3.0X file in all the vApp VMs from the boot dir..."
+        }
+      ],
+      "metadata": {
+        "confidence_score": 0.63,
+        "context_chunks_count": 5
+      }
+    }
+  ],
+  "created_at": "2025-09-04 03:37:26.698138",
+  "updated_at": "2025-09-04 03:39:49.793603",
+  "metadata": {}
+}
