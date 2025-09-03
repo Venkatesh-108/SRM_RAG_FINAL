@@ -1,0 +1,45 @@
+{
+  "session_id": "session_1756935664.14991",
+  "title": "New Chat",
+  "messages": [
+    {
+      "id": "msg_1756935669.175907",
+      "role": "user",
+      "content": "hello",
+      "timestamp": "2025-09-04 03:11:09.175907",
+      "sources": [],
+      "metadata": {}
+    },
+    {
+      "id": "msg_1756935669.175907",
+      "role": "assistant",
+      "content": "I'm sorry, but the RAG system is not available at the moment. Please try again later.",
+      "timestamp": "2025-09-04 03:11:09.175907",
+      "sources": [],
+      "metadata": {
+        "error": "RAG service not available"
+      }
+    },
+    {
+      "id": "msg_1756935711.687908",
+      "role": "user",
+      "content": "hi",
+      "timestamp": "2025-09-04 03:11:51.687908",
+      "sources": [],
+      "metadata": {}
+    },
+    {
+      "id": "msg_1756935711.687908",
+      "role": "assistant",
+      "content": "I'm sorry, but the RAG system is not available at the moment. Please try again later.",
+      "timestamp": "2025-09-04 03:11:51.687908",
+      "sources": [],
+      "metadata": {
+        "error": "RAG service not available"
+      }
+    }
+  ],
+  "created_at": "2025-09-04 03:11:04.149910",
+  "updated_at": "2025-09-04 03:11:51.687908",
+  "metadata": {}
+}

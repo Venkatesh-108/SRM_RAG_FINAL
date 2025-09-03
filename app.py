@@ -13,11 +13,20 @@ import ollama
 import yaml
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
 import uvicorn
 from pydantic import BaseModel
 import re
 from collections import Counter
 import json
+
+# Import new chat models and services
+from models.chat import (
+    ChatSession, ChatMessage, CreateSessionRequest, 
+    SendMessageRequest, ChatResponse, SessionListResponse
+)
+from services.chat_service import ChatService
 
 # Configuration
 CONFIG_PATH = Path("config.yaml")
@@ -34,6 +43,9 @@ config = load_config()
 # FastAPI app
 app = FastAPI(title="SRM RAG API", description="RAG system for Dell SRM guides")
 console = Console()
+
+# Initialize chat service
+chat_service = ChatService()
 
 # Pydantic models
 class QueryRequest(BaseModel):
@@ -704,13 +716,81 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title="SRM RAG API", description="RAG system for Dell SRM guides", lifespan=lifespan)
 
-from fastapi.staticfiles import StaticFiles
-from fastapi.templating import Jinja2Templates
-from pathlib import Path
-
 # Mount static files and templates
 templates = Jinja2Templates(directory="templates")
 app.mount("/static", StaticFiles(directory="templates/static"), name="static")
+
+@app.post("/chat/create_session", response_model=ChatResponse)
+async def create_session(request: CreateSessionRequest):
+    """Create a new chat session."""
+    try:
+        session = chat_service.create_session(
+            title=request.title,
+            initial_message=request.initial_message
+        )
+        return ChatResponse(
+            message=ChatMessage(role="assistant", content="Session created successfully. How can I help you today?"),
+            session=session,
+            sources=[],
+            confidence_score=1.0,
+            processing_time=0.0
+        )
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/chat/send_message", response_model=ChatResponse)
+async def send_message(request: SendMessageRequest):
+    """Send a message in an existing chat session."""
+    try:
+        response = await chat_service.send_message(request.session_id, request.content)
+        return response
+    except ValueError as e:
+        raise HTTPException(status_code=404, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/chat/sessions", response_model=SessionListResponse)
+async def get_sessions():
+    """List all chat sessions."""
+    try:
+        sessions = chat_service.get_all_sessions()
+        return SessionListResponse(sessions=sessions, total_count=len(sessions))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/chat/session/{session_id}")
+async def get_session(session_id: str):
+    """Get a specific chat session."""
+    try:
+        session = chat_service.get_session(session_id)
+        if not session:
+            raise HTTPException(status_code=404, detail="Session not found")
+        return session
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.delete("/chat/session/{session_id}")
+async def delete_session(session_id: str):
+    """Delete a chat session."""
+    try:
+        success = chat_service.delete_session(session_id)
+        if not success:
+            raise HTTPException(status_code=404, detail="Session not found")
+        return {"message": f"Session {session_id} deleted successfully"}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.delete("/chat/sessions/clear")
+async def clear_all_sessions():
+    """Clear all chat sessions."""
+    try:
+        success = chat_service.clear_all_sessions()
+        if success:
+            return {"message": "All chat sessions cleared successfully"}
+        else:
+            raise HTTPException(status_code=500, detail="Failed to clear sessions")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 @app.get("/", response_class=HTMLResponse)
 async def root(request: Request):
