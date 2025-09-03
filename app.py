@@ -11,7 +11,7 @@ from rank_bm25 import BM25Okapi
 from sentence_transformers import SentenceTransformer, CrossEncoder
 import ollama
 import yaml
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import HTMLResponse
 import uvicorn
 from pydantic import BaseModel
@@ -704,63 +704,18 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title="SRM RAG API", description="RAG system for Dell SRM guides", lifespan=lifespan)
 
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
+from pathlib import Path
+
+# Mount static files and templates
+templates = Jinja2Templates(directory="templates")
+app.mount("/static", StaticFiles(directory="templates/static"), name="static")
+
 @app.get("/", response_class=HTMLResponse)
-async def root():
-    """Simple HTML interface for testing"""
-    return """
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>SRM RAG System</title>
-        <style>
-            body { font-family: Arial, sans-serif; margin: 40px; }
-            .container { max-width: 800px; margin: 0 auto; }
-            input[type="text"] { width: 70%; padding: 10px; margin: 10px 0; }
-            button { padding: 10px 20px; background: #007bff; color: white; border: none; cursor: pointer; }
-            button:hover { background: #0056b3; }
-            .result { margin-top: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <h1>SRM RAG System</h1>
-            <p>Ask questions about Dell SRM guides:</p>
-            <input type="text" id="query" placeholder="Enter your question here..." />
-            <button onclick="askQuestion()">Ask Question</button>
-            <div id="result" class="result" style="display:none;"></div>
-        </div>
-        <script>
-            async function askQuestion() {
-                const query = document.getElementById('query').value;
-                if (!query) return;
-                
-                const resultDiv = document.getElementById('result');
-                resultDiv.style.display = 'block';
-                resultDiv.innerHTML = 'Processing...';
-                
-                try {
-                    const response = await fetch('/ask', {
-                        method: 'POST',
-                        headers: {'Content-Type': 'application/json'},
-                        body: JSON.stringify({query: query})
-                    });
-                    const data = await response.json();
-                    
-                    let html = '<h3>Answer:</h3><p>' + data.answer + '</p>';
-                    if (data.sources && data.sources.length > 0) {
-                        html += '<h4>Sources:</h4><ul>';
-                        data.sources.forEach(source => html += '<li>' + source + '</li>');
-                        html += '</ul>';
-                    }
-                    resultDiv.innerHTML = html;
-                } catch (error) {
-                    resultDiv.innerHTML = 'Error: ' + error.message;
-                }
-            }
-        </script>
-    </body>
-    </html>
-    """
+async def root(request: Request):
+    """Modern HTML interface for SRM AI Doc Assist"""
+    return templates.TemplateResponse("index.html", {"request": request})
 
 @app.post("/ask", response_model=QueryResponse)
 async def ask_endpoint(request: QueryRequest):

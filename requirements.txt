@@ -12,3 +12,4 @@ psutil==5.9.8
 pdfminer.six==20221105
 fastapi==0.104.1
 uvicorn[standard]==0.24.0
+jinja2==3.1.2
