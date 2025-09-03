@@ -128,27 +128,53 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 12px;
-    padding: 0 8px;
+    margin-bottom: 16px;
+    gap: 12px;
 }
 .section-header h3 {
-    font-size: 12px;
-    font-weight: 500;
+    font-size: 11px;
+    font-weight: 600;
     color: var(--text-secondary-dark);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.8px;
+    margin: 0;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
-.clear-chats-btn, .doc-count {
-    font-size: 12px;
-    color: var(--text-secondary-dark);
+.clear-chats-btn {
     background: none;
     border: none;
+    color: var(--text-secondary-dark);
     cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clear-chats-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary-dark);
+}
+
+.clear-chats-btn i {
+    font-size: 12px;
 }
 .doc-count {
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 2px 8px;
-    border-radius: 12px;
+    background: var(--accent-primary);
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 10px;
+    min-width: 18px;
+    text-align: center;
+    flex-shrink: 0;
 }
 
 .chat-list, .doc-list {
@@ -157,18 +183,24 @@ body {
     gap: 4px;
 }
 .chat-item, .doc-item {
-    padding: 10px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 14px;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: 4px;
+    font-size: 13px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--text-secondary-dark);
+}
+.chat-item span {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .chat-item:hover, .doc-item:hover {
     background-color: rgba(255, 255, 255, 0.05);
