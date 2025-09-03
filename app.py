@@ -93,71 +93,43 @@ def load_documents() -> List[Element]:
 
 def chunk_elements(elements: List[Element]) -> List[Dict[str, Any]]:
     """
-    Chunks elements based on their type, grouping related items.
-    - Combines Title with following NarrativeText.
-    - Groups consecutive ListItem elements as procedures.
-    - Treats Tables as distinct chunks with special metadata.
+    Chunks elements by grouping them into logical sections based on titles.
+    A section chunk contains a title, subsequent text, and any related procedures.
     """
     chunks = []
-    i = 0
-    while i < len(elements):
-        el = elements[i]
+    current_chunk = {"text": "", "metadata": {}}
+    section_title = "Introduction" # Default for content before the first title
+
+    for el in elements:
+        metadata = el.metadata.to_dict()
         
         if isinstance(el, Title):
-            # Combine title with the following paragraph
-            chunk_text = el.text
-            metadata = el.metadata.to_dict()
-            metadata["type"] = "title_and_text"
-            
-            if i + 1 < len(elements) and isinstance(elements[i+1], NarrativeText):
-                chunk_text += "\n" + elements[i+1].text
-                i += 1 # Move past the narrative text
-            
-            chunks.append({"text": chunk_text, "metadata": metadata})
+            # When a new title is found, save the previous chunk if it has content
+            if current_chunk["text"].strip():
+                current_chunk["metadata"]["section_title"] = section_title
+                chunks.append(current_chunk)
+
+            # Start a new chunk
+            section_title = el.text.strip()
+            current_chunk = {"text": el.text, "metadata": metadata}
 
         elif isinstance(el, ListItem):
-            # Group consecutive list items as a procedure
-            procedure_steps = [el.text]
-            metadata = el.metadata.to_dict()
-            metadata["type"] = "procedure"
-
-            while i + 1 < len(elements) and isinstance(elements[i+1], ListItem):
-                i += 1
-                procedure_steps.append(elements[i].text)
-            
-            chunk_text = "\n".join(procedure_steps)
-            metadata["step_count"] = len(procedure_steps)
-            chunks.append({"text": chunk_text, "metadata": metadata})
-
-        elif isinstance(el, Table):
-            # Handle tables
-            metadata = el.metadata.to_dict()
-            metadata["type"] = "table"
-            
-            # Flattened text representation
-            chunk_text = el.text
-            
-            # Optional: Add structured data if available
-            if hasattr(el.metadata, "text_as_html"):
-                metadata["html"] = el.metadata.text_as_html
-
-            chunks.append({"text": chunk_text, "metadata": metadata})
-            
-        elif isinstance(el, NarrativeText):
-            # Handle standalone paragraphs
-            metadata = el.metadata.to_dict()
-            metadata["type"] = "text"
-            chunks.append({"text": el.text, "metadata": metadata})
+            # Add list items to the current chunk, ensuring they are formatted correctly
+            # This handles the procedure steps being part of the section
+            current_chunk["text"] += f"\n- {el.text}"
+            if "procedure" not in current_chunk["metadata"].get("type", ""):
+                 current_chunk["metadata"]["type"] = "procedure"
 
         else:
-            # Generic fallback for other element types
-            metadata = el.metadata.to_dict()
-            metadata["type"] = type(el).__name__
-            chunks.append({"text": el.text, "metadata": metadata})
+            # Append other text elements to the current chunk
+            current_chunk["text"] += f"\n{el.text}"
 
-        i += 1
+    # Add the last processed chunk if it exists
+    if current_chunk["text"].strip():
+        current_chunk["metadata"]["section_title"] = section_title
+        chunks.append(current_chunk)
         
-    logger.info(f"Chunked {len(elements)} elements into {len(chunks)} chunks.")
+    logger.info(f"Chunked {len(elements)} elements into {len(chunks)} logical section chunks.")
     return chunks
 
 def create_and_save_index(chunks: List[Dict[str, Any]]):
@@ -245,14 +217,25 @@ def generate_answer_with_ollama(query: str, context_chunks: List[Dict[str, Any]]
     
     prompt = f"""
     Based on the following context from the Dell SRM guides, answer the question.
-    Provide the answer and cite the source document and page number from the metadata if available.
-
+    
+    CRITICAL INSTRUCTIONS:
+    1. If the context contains procedure steps, PRESERVE THEM EXACTLY as written in the guide
+    2. Do NOT shorten, paraphrase, or rewrite procedure steps
+    3. Include ALL steps in the correct order
+    4. Maintain the exact numbering (1., 2., 3., etc.)
+    5. Cite the specific section title and page number when available
+    
     Context:
     ---
     {context_text}
     ---
 
     Question: {query}
+    
+    Answer Format:
+    - If it's a procedure: List ALL steps exactly as in the guide
+    - Include section title and page number in citations
+    - Do not invent or modify steps
     
     Answer:
     """
@@ -351,12 +334,21 @@ async def ask_endpoint(request: QueryRequest):
         # Generate answer
         answer = generate_answer_with_ollama(request.query, retrieved_chunks)
         
-        # Extract sources
+        # Extract sources with better metadata
         sources = []
         for chunk in retrieved_chunks:
             source = chunk['metadata'].get('filename', 'Unknown')
             page = chunk['metadata'].get('page_number', 'N/A')
-            sources.append(f"{source} (Page {page})")
+            section_title = chunk['metadata'].get('section_title', '')
+            step_count = chunk['metadata'].get('step_count', '')
+            
+            if section_title:
+                if step_count and step_count > 1:
+                    sources.append(f"{source} (Page {page}) → Section: {section_title} → {step_count} steps")
+                else:
+                    sources.append(f"{source} (Page {page}) → Section: {section_title}")
+            else:
+                sources.append(f"{source} (Page {page})")
         
         return QueryResponse(
             answer=answer,
