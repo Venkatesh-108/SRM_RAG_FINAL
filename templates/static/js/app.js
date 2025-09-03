@@ -298,6 +298,10 @@ class SRMAIApp {
         const contentArea = document.getElementById('contentArea');
         const chatArea = document.getElementById('chatArea');
         
+        // Check if a welcome message already exists before adding a new one
+        const existingWelcome = document.getElementById('welcomeContainer');
+        if (existingWelcome) return;
+
         if (contentArea) {
             const welcomeContainer = document.createElement('div');
             welcomeContainer.className = 'welcome-container';
