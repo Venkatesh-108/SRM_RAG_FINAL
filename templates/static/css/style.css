@@ -333,6 +333,8 @@ body {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
+    color: var(--text-primary-dark);
+    text-decoration: none;
 }
 
 .doc-item::before {
@@ -372,6 +374,13 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.error-message {
+    font-size: 12px;
+    color: #ffcccc;
+    padding: 8px 12px;
+    font-style: italic;
 }
 
 .sidebar-footer {

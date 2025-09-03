@@ -12,7 +12,7 @@ from sentence_transformers import SentenceTransformer, CrossEncoder
 import ollama
 import yaml
 from fastapi import FastAPI, HTTPException, Request
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 import uvicorn
@@ -719,6 +719,29 @@ app = FastAPI(title="SRM RAG API", description="RAG system for Dell SRM guides",
 # Mount static files and templates
 templates = Jinja2Templates(directory="templates")
 app.mount("/static", StaticFiles(directory="templates/static"), name="static")
+
+@app.get("/documents")
+async def list_documents():
+    """Lists the documents available in the docs directory."""
+    docs_path = Path(config["docs_path"])
+    if not docs_path.is_dir():
+        logger.warning(f"Docs directory not found at: {docs_path}")
+        return []
+    
+    supported_formats = [".pdf", ".md"]
+    doc_files = [f.name for f in docs_path.glob("**/*") if f.is_file() and f.suffix in supported_formats]
+    return doc_files
+
+@app.get("/documents/{filename}")
+async def get_document(filename: str):
+    """Serves a specific document file from the docs directory."""
+    docs_path = Path(config["docs_path"])
+    file_path = docs_path / filename
+
+    if not file_path.is_file():
+        raise HTTPException(status_code=404, detail="File not found")
+        
+    return FileResponse(file_path)
 
 @app.post("/chat/create_session", response_model=ChatResponse)
 async def create_session(request: CreateSessionRequest):

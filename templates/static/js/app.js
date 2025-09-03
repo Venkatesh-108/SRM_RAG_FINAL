@@ -353,20 +353,41 @@ class SRMAIApp {
     }
 
     async loadDocuments() {
-        // This is a placeholder. In a real app, you'd fetch this from an endpoint.
-        const docs = ["SRM Installation and Configuration...", "SRM Upgrade Guide.pdf"];
         const docList = document.getElementById('docList');
         const docCount = document.getElementById('docCount');
 
-        if (docList && docCount) {
+        if (!docList || !docCount) return;
+
+        try {
+            const response = await fetch('/documents');
+            if (!response.ok) {
+                throw new Error('Failed to fetch documents');
+            }
+            const docs = await response.json();
+
             docList.innerHTML = '';
             docs.forEach(docName => {
-                const docItem = document.createElement('div');
+                const docItem = document.createElement('a');
                 docItem.className = 'doc-item';
-                docItem.innerHTML = `<i class="fas fa-file-pdf"></i><span>${docName}</span>`;
+                docItem.href = `/documents/${docName}`;
+                docItem.target = '_blank'; // Open in new tab
+                docItem.title = `Open ${docName}`;
+
+                let iconClass = 'fas fa-file-alt'; // Default icon
+                if (docName.endsWith('.pdf')) {
+                    iconClass = 'fas fa-file-pdf';
+                } else if (docName.endsWith('.md')) {
+                    iconClass = 'fas fa-file-markdown';
+                }
+
+                docItem.innerHTML = `<i class="${iconClass}"></i><span>${docName}</span>`;
                 docList.appendChild(docItem);
             });
             docCount.textContent = docs.length;
+        } catch (error) {
+            console.error('Error loading documents:', error);
+            docList.innerHTML = '<div class="error-message">Could not load documents.</div>';
+            docCount.textContent = '0';
         }
     }
 
