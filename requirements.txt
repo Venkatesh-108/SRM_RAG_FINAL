@@ -1,0 +1,12 @@
+typer[rich]==0.12.3
+pypdf==4.2.0
+rank-bm25==0.2.2
+faiss-cpu==1.8.0
+sentence-transformers==3.0.1
+ollama==0.3.0
+pyyaml==6.0.1
+numpy==1.26.4
+unstructured[md,pdf]==0.14.9
+loguru==0.7.2
+psutil==5.9.8
+pdfminer.six==20221105
