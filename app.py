@@ -10,12 +10,86 @@ import faiss
 from rank_bm25 import BM25Okapi
 from sentence_transformers import SentenceTransformer, CrossEncoder
 import ollama
+import yaml
+from fastapi import FastAPI, HTTPException
+from fastapi.responses import HTMLResponse
+import uvicorn
+from pydantic import BaseModel
 
-from data_loader import load_documents
-from config import config
+# Configuration
+CONFIG_PATH = Path("config.yaml")
 
-app = typer.Typer()
+def load_config():
+    if not CONFIG_PATH.is_file():
+        raise FileNotFoundError(f"Configuration file not found at: {CONFIG_PATH}")
+    with open(CONFIG_PATH, "r") as f:
+        config = yaml.safe_load(f)
+    return config
+
+config = load_config()
+
+# FastAPI app
+app = FastAPI(title="SRM RAG API", description="RAG system for Dell SRM guides")
 console = Console()
+
+# Pydantic models
+class QueryRequest(BaseModel):
+    query: str
+
+class QueryResponse(BaseModel):
+    answer: str
+    context: List[Dict[str, Any]]
+    sources: List[str]
+
+def check_and_auto_index():
+    """
+    Check if indices exist, if not, automatically index the documents.
+    """
+    index_path = Path(config["index_path"])
+    if not index_path.is_dir() or not (index_path / "chunks.pkl").exists():
+        console.print("No indices found. Auto-indexing documents...", style="bold yellow")
+        try:
+            # Load documents
+            elements = load_documents()
+            if not elements:
+                console.print("No documents found to index.", style="bold red")
+                return False
+                
+            # Chunk elements
+            chunks = chunk_elements(elements)
+            
+            # Create and save indices
+            create_and_save_index(chunks)
+            
+            console.print(f"Auto-indexing completed: {len(chunks)} chunks indexed.", style="bold green")
+            return True
+        except Exception as e:
+            console.print(f"Auto-indexing failed: {e}", style="bold red")
+            return False
+    else:
+        console.print("Indices found. Ready to serve queries.", style="bold green")
+        return True
+
+def load_documents() -> List[Element]:
+    docs_path = Path(config["docs_path"])
+    if not docs_path.is_dir():
+        logger.warning(f"Docs directory not found at: {docs_path}")
+        return []
+
+    supported_formats = [".pdf", ".md"]
+    doc_files = [f for f in docs_path.glob("**/*") if f.is_file() and f.suffix in supported_formats]
+
+    elements = []
+    for doc_file in doc_files:
+        logger.info(f"Processing file: {doc_file}")
+        try:
+            from unstructured.partition.auto import partition
+            file_elements = partition(filename=str(doc_file))
+            elements.extend(file_elements)
+        except Exception as e:
+            logger.error(f"Failed to process {doc_file}: {e}")
+    
+    return elements
 
 def chunk_elements(elements: List[Element]) -> List[Dict[str, Any]]:
     """
@@ -64,7 +138,6 @@ def chunk_elements(elements: List[Element]) -> List[Dict[str, Any]]:
             chunk_text = el.text
             
             # Optional: Add structured data if available
-            # For now, el.metadata.text_as_html is a good source for structure
             if hasattr(el.metadata, "text_as_html"):
                 metadata["html"] = el.metadata.text_as_html
 
@@ -194,8 +267,128 @@ def generate_answer_with_ollama(query: str, context_chunks: List[Dict[str, Any]]
         logger.error(f"Error communicating with Ollama: {e}")
         return "Error: Could not generate an answer from the LLM."
 
+# FastAPI endpoints
+from contextlib import asynccontextmanager
 
-@app.command()
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Check and auto-index on startup"""
+    check_and_auto_index()
+    yield
+
+app = FastAPI(title="SRM RAG API", description="RAG system for Dell SRM guides", lifespan=lifespan)
+
+@app.get("/", response_class=HTMLResponse)
+async def root():
+    """Simple HTML interface for testing"""
+    return """
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>SRM RAG System</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 40px; }
+            .container { max-width: 800px; margin: 0 auto; }
+            input[type="text"] { width: 70%; padding: 10px; margin: 10px 0; }
+            button { padding: 10px 20px; background: #007bff; color: white; border: none; cursor: pointer; }
+            button:hover { background: #0056b3; }
+            .result { margin-top: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>SRM RAG System</h1>
+            <p>Ask questions about Dell SRM guides:</p>
+            <input type="text" id="query" placeholder="Enter your question here..." />
+            <button onclick="askQuestion()">Ask Question</button>
+            <div id="result" class="result" style="display:none;"></div>
+        </div>
+        <script>
+            async function askQuestion() {
+                const query = document.getElementById('query').value;
+                if (!query) return;
+                
+                const resultDiv = document.getElementById('result');
+                resultDiv.style.display = 'block';
+                resultDiv.innerHTML = 'Processing...';
+                
+                try {
+                    const response = await fetch('/ask', {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json'},
+                        body: JSON.stringify({query: query})
+                    });
+                    const data = await response.json();
+                    
+                    let html = '<h3>Answer:</h3><p>' + data.answer + '</p>';
+                    if (data.sources && data.sources.length > 0) {
+                        html += '<h4>Sources:</h4><ul>';
+                        data.sources.forEach(source => html += '<li>' + source + '</li>');
+                        html += '</ul>';
+                    }
+                    resultDiv.innerHTML = html;
+                } catch (error) {
+                    resultDiv.innerHTML = 'Error: ' + error.message;
+                }
+            }
+        </script>
+    </body>
+    </html>
+    """
+
+@app.post("/ask", response_model=QueryResponse)
+async def ask_endpoint(request: QueryRequest):
+    """API endpoint for asking questions"""
+    try:
+        # Load indices
+        chunks, bm25, faiss_index, embedding_model = load_indices_and_chunks()
+        if chunks is None:
+            raise HTTPException(status_code=500, detail="Index not found. Please ensure documents are indexed.")
+        
+        # Search and rerank
+        retrieved_chunks = search_and_rerank(request.query, chunks, bm25, faiss_index, embedding_model)
+        
+        # Generate answer
+        answer = generate_answer_with_ollama(request.query, retrieved_chunks)
+        
+        # Extract sources
+        sources = []
+        for chunk in retrieved_chunks:
+            source = chunk['metadata'].get('filename', 'Unknown')
+            page = chunk['metadata'].get('page_number', 'N/A')
+            sources.append(f"{source} (Page {page})")
+        
+        return QueryResponse(
+            answer=answer,
+            context=[{"text": chunk['text'][:200] + "...", "metadata": chunk['metadata']} for chunk in retrieved_chunks],
+            sources=sources
+        )
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/reindex")
+async def reindex_endpoint():
+    """Force reindexing of documents"""
+    try:
+        # Load documents
+        elements = load_documents()
+        if not elements:
+            raise HTTPException(status_code=400, detail="No documents found to index.")
+            
+        # Chunk elements
+        chunks = chunk_elements(elements)
+        
+        # Create and save indices
+        create_and_save_index(chunks)
+        
+        return {"message": f"Successfully reindexed {len(chunks)} chunks."}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+# CLI commands (keeping for backward compatibility)
+cli_app = typer.Typer()
+
+@cli_app.command()
 def index():
     """
     Index the source documents.
@@ -216,7 +409,7 @@ def index():
     
     console.print(f"Successfully indexed {len(chunks)} chunks.", style="bold green")
 
-@app.command()
+@cli_app.command()
 def ask(query: str):
     """
     Ask a question to the indexed documents.
@@ -247,4 +440,28 @@ def ask(query: str):
     console.print(answer)
 
 if __name__ == "__main__":
-    app()
+    import sys
+    
+    if len(sys.argv) > 1 and sys.argv[1] in ["--host", "--port", "--help"]:
+        # Web server mode
+        import argparse
+        parser = argparse.ArgumentParser(description="SRM RAG Web Server")
+        parser.add_argument("--host", default="127.0.0.1", help="Host to bind to")
+        parser.add_argument("--port", type=int, default=8000, help="Port to bind to")
+        parser.add_argument("--reload", action="store_true", help="Enable auto-reload")
+        
+        args = parser.parse_args()
+        
+        console.print(f"Starting SRM RAG web server on {args.host}:{args.port}", style="bold green")
+        console.print("Auto-indexing will be performed on startup if needed.", style="bold yellow")
+        
+        uvicorn.run(
+            "app:app",
+            host=args.host,
+            port=args.port,
+            reload=args.reload,
+            log_level="info"
+        )
+    else:
+        # CLI mode
+        cli_app()

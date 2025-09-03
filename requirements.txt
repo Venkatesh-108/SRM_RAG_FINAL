@@ -10,3 +10,5 @@ unstructured[md,pdf]==0.14.9
 loguru==0.7.2
 psutil==5.9.8
 pdfminer.six==20221105
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
