@@ -14,6 +14,27 @@ chunk_size: 1024
 chunk_overlap: 128
 
 # Retrieval settings
-top_k_bm25: 5
-top_k_faiss: 5
-top_k_reranked: 3
+top_k_bm25: 8
+top_k_faiss: 8
+top_k_reranked: 5
+
+# Advanced RAG settings
+enable_multi_query_generation: true
+enable_context_overlap: true
+enable_answer_validation: true
+enable_diversity_selection: true
+
+# Quality thresholds
+min_confidence_threshold: 0.6
+min_validation_threshold: 0.5
+
+# Context management
+max_context_length_simple: 6000
+max_context_length_medium: 8000
+max_context_length_complex: 12000
+
+# Reranking weights
+cross_encoder_weight: 0.5
+term_overlap_weight: 0.2
+type_relevance_weight: 0.2
+metadata_quality_weight: 0.1
