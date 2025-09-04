@@ -99,7 +99,7 @@ class SRMAIApp {
         // Show loading state
         this.setLoadingState(true);
         // Show "Thinking..." message
-        this.addMessageToChat('assistant', '<div class="thinking-indicator"><span>.</span><span>.</span><span>.</span></div>', [], true);
+        this.addMessageToChat('assistant', 'Thinking...', [], true);
 
         try {
             const response = await fetch('/chat/send_message', {
@@ -148,7 +148,7 @@ class SRMAIApp {
         contentDiv.className = 'message-content';
         
         if (isThinking) {
-            contentDiv.innerHTML = `<div class="thinking-indicator"><span>.</span><span>.</span><span>.</span></div>`;
+            contentDiv.innerHTML = `<p>${this.escapeHtml(content)}</p>`;
         } else {
             contentDiv.innerHTML = `<p>${this.escapeHtml(content)}</p>`;
         }
