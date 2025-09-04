@@ -348,7 +348,13 @@ def search_and_rerank(query: str, chunks, bm25, faiss_index, embedding_model):
         logger.info("Reranking is disabled by config. Returning top results from initial search.")
         # Return top results without reranking if disabled
         top_k_final_indices = combined_indices[:config.get("top_k_reranked", 5)]
-        retrieved_chunks = [chunks[i] for i in top_k_final_indices]
+        
+        # Apply basic diversity selection even without reranking
+        if config.get("enable_diversity_selection", False):
+            retrieved_chunks = select_diverse_chunks(chunks, top_k_final_indices, query)
+        else:
+            retrieved_chunks = [chunks[i] for i in top_k_final_indices]
+        
         return retrieved_chunks
 
     cross_encoder = CrossEncoder(config["reranker_model"])
