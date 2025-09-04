@@ -157,9 +157,15 @@ class SRMAIApp {
             const sourcesDiv = document.createElement('div');
             sourcesDiv.className = 'message-sources';
             sourcesDiv.innerHTML = '<strong>Sources:</strong><br>' + 
-                sources.map(source => 
-                    `<span class="source-item">${source.filename} (Page ${source.page_number || 'N/A'})</span>`
-                ).join('<br>');
+                sources.map(source => {
+                    const pageNumber = source.page_number || 'N/A';
+                    const fileName = this.escapeHtml(source.filename);
+                    if (pageNumber !== 'N/A') {
+                        return `<a href="/documents/${encodeURIComponent(fileName)}#page=${pageNumber}" target="_blank" class="source-item">${fileName} (Page ${pageNumber})</a>`;
+                    } else {
+                        return `<a href="/documents/${encodeURIComponent(fileName)}" target="_blank" class="source-item">${fileName}</a>`;
+                    }
+                }).join('<br>');
             contentDiv.appendChild(sourcesDiv);
         }
         
@@ -438,9 +444,15 @@ class SRMAIApp {
                     const sourcesDiv = document.createElement('div');
                     sourcesDiv.className = 'message-sources';
                     sourcesDiv.innerHTML = '<strong>Sources:</strong><br>' + 
-                        sources.map(source => 
-                            `<span class="source-item">${source.filename} (Page ${source.page_number || 'N/A'})</span>`
-                        ).join('<br>');
+                        sources.map(source => {
+                            const pageNumber = source.page_number || 'N/A';
+                            const fileName = this.escapeHtml(source.filename);
+                            if (pageNumber !== 'N/A') {
+                                return `<a href="/documents/${encodeURIComponent(fileName)}#page=${pageNumber}" target="_blank" class="source-item">${fileName} (Page ${pageNumber})</a>`;
+                            } else {
+                                return `<a href="/documents/${encodeURIComponent(fileName)}" target="_blank" class="source-item">${fileName}</a>`;
+                            }
+                        }).join('<br>');
                     contentDiv.appendChild(sourcesDiv);
                 }
 
