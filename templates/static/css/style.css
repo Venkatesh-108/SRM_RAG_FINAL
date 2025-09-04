@@ -141,7 +141,7 @@ body {
 
 .new-chat-btn {
     width: 100%;
-    padding: 16px;
+    padding: 12px 16px;
     background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 50%, #6c5ce7 100%);
     background-size: 200% 200%;
     color: white;
@@ -162,7 +162,7 @@ body {
     overflow: hidden;
     transition: all 0.3s ease;
     animation: gradientMove 3s ease-in-out infinite;
-    height: 54px; /* Set a fixed height to prevent resizing */
+    height: 44px; /* Reduced height for more compact appearance */
 }
 
 @keyframes gradientMove {
