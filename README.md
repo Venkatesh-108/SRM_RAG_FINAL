@@ -82,7 +82,7 @@ The system uses `config.yaml` for configuration. Key settings include:
 Start the web server with auto-reload for development:
 
 ```bash
-python app.py --host 127.0.0.1 --port 8000 --reload
+python app.py --host 127.0.0.1 --port 5000 --reload
 ```
 
 This will:
