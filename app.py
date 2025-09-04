@@ -36,7 +36,16 @@ def load_config():
         raise FileNotFoundError(f"Configuration file not found at: {CONFIG_PATH}")
     with open(CONFIG_PATH, "r") as f:
         config = yaml.safe_load(f)
-    return config
+    
+    # Load settings for the current mode
+    current_mode = config.get("current_mode", "medium")
+    mode_settings = config.get("modes", {}).get(current_mode, {})
+    
+    # Merge mode settings with general settings
+    final_config = {**config, **mode_settings}
+    logger.info(f"Loaded configuration for mode: '{current_mode}'")
+    
+    return final_config
 
 config = load_config()
 
@@ -248,6 +257,11 @@ def generate_multiple_queries(query: str) -> List[str]:
     Generate multiple search queries using query expansion and rephrasing.
     This is a key technique for improving retrieval coverage.
     """
+    # Conditionally run based on config
+    if not config.get("enable_multi_query_generation", False):
+        logger.info("Multi-query generation is disabled by config. Using original query only.")
+        return [query]
+        
     queries = [query]  # Original query
     
     # Query expansion based on common SRM terms
@@ -304,20 +318,13 @@ def search_and_rerank(query: str, chunks, bm25, faiss_index, embedding_model):
     is_fact_query = any(word in query_lower for word in ['what is', 'which', 'where', 'when'])
     is_troubleshooting_query = any(word in query_lower for word in ['error', 'failed', 'troubleshoot', 'fix'])
     
-    # Adjust search parameters based on query type
-    if is_procedure_query:
-        top_k_bm25 = min(config["top_k_bm25"] + 3, 12)
-        top_k_faiss = min(config["top_k_faiss"] + 3, 12)
-    elif is_troubleshooting_query:
-        top_k_bm25 = config["top_k_bm25"] + 2
-        top_k_faiss = config["top_k_faiss"] + 2
-    else:
-        top_k_bm25 = max(config["top_k_bm25"] - 1, 3)
-        top_k_faiss = max(config["top_k_faiss"] - 1, 3)
-    
-    all_candidates = set()
+    # Adjust search parameters based on query type and mode
+    top_k_bm25 = config.get("top_k_bm25", 8)
+    top_k_faiss = config.get("top_k_faiss", 8)
     
     # Search with multiple queries
+    all_candidates = set()
+    
     for search_query in multiple_queries:
         # BM25 search
         tokenized_query = search_query.split(" ")
@@ -336,7 +343,14 @@ def search_and_rerank(query: str, chunks, bm25, faiss_index, embedding_model):
     # Convert to list
     combined_indices = list(all_candidates)
     
-    # --- Enhanced Reranking ---
+    # --- Reranking (Conditional) ---
+    if not config.get("enable_reranking", False):
+        logger.info("Reranking is disabled by config. Returning top results from initial search.")
+        # Return top results without reranking if disabled
+        top_k_final_indices = combined_indices[:config.get("top_k_reranked", 5)]
+        retrieved_chunks = [chunks[i] for i in top_k_final_indices]
+        return retrieved_chunks
+
     cross_encoder = CrossEncoder(config["reranker_model"])
     
     # Create pairs for reranking
@@ -456,14 +470,18 @@ def generate_answer_with_ollama(query: str, context_chunks: List[Dict[str, Any]]
     """
     Enhanced answer generation with multi-stage approach and validation.
     """
-    # Dynamic context length based on query complexity
+    # Dynamic context length based on query complexity and mode
     query_complexity = analyze_query_complexity(query)
-    if query_complexity == "simple":
-        max_context_length = config.get("max_context_length_simple", 6000)
-    elif query_complexity == "medium":
-        max_context_length = config.get("max_context_length_medium", 8000)
-    else:  # complex
-        max_context_length = config.get("max_context_length_complex", 12000)
+    
+    if config.get("current_mode") == "low":
+        max_context_length = config.get("max_context_length", 4000)
+    else:
+        if query_complexity == "simple":
+            max_context_length = config.get("max_context_length_simple", 6000)
+        elif query_complexity == "medium":
+            max_context_length = config.get("max_context_length_medium", 8000)
+        else:  # complex
+            max_context_length = config.get("max_context_length_complex", 12000)
     
     context_text = ""
     total_length = 0
@@ -481,10 +499,15 @@ def generate_answer_with_ollama(query: str, context_chunks: List[Dict[str, Any]]
     # Stage 1: Generate initial answer
     initial_prompt = create_enhanced_prompt(query, context_text, "initial")
     initial_answer = generate_ollama_response(initial_prompt)
-    
-    # Stage 2: Refine and validate answer
-    refinement_prompt = create_enhanced_prompt(query, context_text, "refinement", initial_answer)
-    refined_answer = generate_ollama_response(refinement_prompt)
+
+    # Stage 2: Refine and validate answer (Conditional)
+    if not config.get("enable_multi_stage_generation", False):
+        logger.info("Multi-stage generation is disabled. Using initial answer.")
+        # When disabled, use the initial answer and proceed to validation
+        refined_answer = initial_answer
+    else:
+        refinement_prompt = create_enhanced_prompt(query, context_text, "refinement", initial_answer)
+        refined_answer = generate_ollama_response(refinement_prompt)
     
     # Ensure answer is not truncated and is complete
     if len(refined_answer) < 100 or "..." in refined_answer:
