@@ -276,9 +276,64 @@
         "confidence_score": 0.66,
         "context_chunks_count": 5
       }
+    },
+    {
+      "id": "msg_1756960181.632579",
+      "role": "user",
+      "content": "Configure ISO Image for Each SRM VMs",
+      "timestamp": "2025-09-04 09:59:41.633576",
+      "sources": [],
+      "metadata": {}
+    },
+    {
+      "id": "msg_1756960190.261974",
+      "role": "assistant",
+      "content": "To configure ISO Image for Each SRM VMs:\n\n1. Open vCenter Client and connect to the vCenter Server that manages the VMware environment.\n2. Select the Datastore to which the ISO image must be uploaded.\n3. Go to the data store in which the ISO image is stored and then select the ISO image (Step 6 in \"Configure ISO Image for Each SRM VMs\" [14]).\n4. Expand the CD/DVD Drive 2 option to display the CD/DVD Media location, then click Browse (Step 5 in \"Configure ISO Image for Each SRM VMs\" [5]).\n5. After selecting the ISO image, click OK to close the Browse window.\n\nNote: If the ISO Image is not attached to the VM, follow the steps mentioned in \"Configure ISO Image for Each SRM VMs\" (Steps 1-11) in Section 14 of the Upgrade Operating System for vApp to SLES 15 SP4 document.",
+      "timestamp": "2025-09-04 09:59:50.261974",
+      "sources": [
+        {
+          "filename": "SRM Upgrade Guide.pdf",
+          "page_number": 14,
+          "chunk_id": "",
+          "relevance_score": 0.0,
+          "content_preview": "Configure ISO Image for Each SRM VMs\nPerform the following reconfiguration for SRM VMs (vApp based)\n..."
+        },
+        {
+          "filename": "SRM Upgrade Guide.pdf",
+          "page_number": 14,
+          "chunk_id": "",
+          "relevance_score": 0.0,
+          "content_preview": "Configure ISO Image for Each SRM VMs\nPerform the following reconfiguration for SRM VMs (vApp based)"
+        },
+        {
+          "filename": "SRM Upgrade Guide.pdf",
+          "page_number": 14,
+          "chunk_id": "",
+          "relevance_score": 0.0,
+          "content_preview": " Open vCenter Client and connect to the vCenter Server that manages the VMware environment.\n- 4. Sel..."
+        },
+        {
+          "filename": "SRM Upgrade Guide.pdf",
+          "page_number": 14,
+          "chunk_id": "",
+          "relevance_score": 0.0,
+          "content_preview": "load ISO Image from Dell Online Support Website ● Configure ISO Image for Each SRM VMs ● Upgrade Ope..."
+        },
+        {
+          "filename": "SRM Upgrade Guide.pdf",
+          "page_number": 44,
+          "chunk_id": "",
+          "relevance_score": 0.0,
+          "content_preview": "Steps\n- 1. Log in to the Frontend Appliance and navigate to /opt/ADG/osupdate/logs directory. 2. Che..."
+        }
+      ],
+      "metadata": {
+        "confidence_score": 0.63,
+        "context_chunks_count": 5
+      }
     }
   ],
   "created_at": "2025-09-04 09:48:34.328217",
-  "updated_at": "2025-09-04 09:58:46.899086",
+  "updated_at": "2025-09-04 09:59:50.261974",
   "metadata": {}
 }

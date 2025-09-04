@@ -423,11 +423,13 @@ class SRMAIApp {
     }
 
     streamResponse(text, sources) {
-        const thinkingMessage = document.querySelector('.thinking-indicator').closest('.chat-message');
+        // Find the last assistant message (which should be the "Thinking..." message)
+        const assistantMessages = document.querySelectorAll('.chat-message.assistant-message');
+        const thinkingMessage = assistantMessages[assistantMessages.length - 1];
         if (!thinkingMessage) return;
 
         const contentDiv = thinkingMessage.querySelector('.message-content');
-        contentDiv.innerHTML = '<p></p>'; // Clear the thinking indicator
+        contentDiv.innerHTML = '<p></p>'; // Clear the thinking message
         const p = contentDiv.querySelector('p');
         
         let i = 0;
@@ -484,7 +486,7 @@ class SRMAIApp {
                     thinkingMessage.remove();
                 
                     this.setLoadingState(true);
-                    this.addMessageToChat('assistant', '<div class="thinking-indicator"><span>.</span><span>.</span><span>.</span></div>', [], true);
+                    this.addMessageToChat('assistant', 'Thinking...', [], true);
 
                     try {
                         const response = await fetch('/chat/send_message', {
