@@ -115,6 +115,3 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-# Index data
-/index/
-/docs/
