@@ -1019,3 +1019,75 @@ body {
     }
 }
 
+/* Thinking Indicator */
+.thinking-indicator span {
+    animation: thinking-blink 1.4s infinite both;
+    display: inline-block;
+    width: 2px;
+    height: 2px;
+    background-color: #6c5ce7;
+    border-radius: 50%;
+    margin: 0 1px;
+}
+
+.thinking-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.thinking-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes thinking-blink {
+    0% {
+        opacity: 0.2;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.2;
+    }
+}
+
+/* Action Buttons */
+.assistant-message {
+    position: relative;
+}
+
+.message-actions {
+    position: absolute;
+    bottom: -10px;
+    left: 60px; /* Align with the start of the message bubble */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out, bottom 0.2s ease-in-out;
+}
+
+.assistant-message:hover .message-actions {
+    opacity: 1;
+    bottom: -25px; /* Move it down below the bubble on hover */
+}
+
+.action-btn {
+    background: var(--background-secondary-dark);
+    border: 1px solid var(--border-color-dark);
+    color: var(--text-secondary-dark);
+    border-radius: 6px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.action-btn:hover {
+    background: var(--background-tertiary-dark);
+    color: var(--text-primary-dark);
+}
+

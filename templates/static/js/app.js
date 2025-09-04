@@ -98,6 +98,8 @@ class SRMAIApp {
 
         // Show loading state
         this.setLoadingState(true);
+        // Show "Thinking..." message
+        this.addMessageToChat('assistant', '<div class="thinking-indicator"><span>.</span><span>.</span><span>.</span></div>', [], true);
 
         try {
             const response = await fetch('/chat/send_message', {
@@ -114,24 +116,24 @@ class SRMAIApp {
             if (response.ok) {
                 const data = await response.json();
                 
-                // Add AI response to UI
-                this.addMessageToChat('assistant', data.message.content, data.sources);
-                
-                // Update chat history
-                this.loadChatHistory();
+                // Add AI response to UI with streaming effect
+                this.streamResponse(data.message.content, data.sources);
+
             } else {
                 const errorData = await response.json();
-                this.addMessageToChat('assistant', `Error: ${errorData.detail}`, []);
+                this.streamResponse(`Error: ${errorData.detail}`, []);
             }
         } catch (error) {
             console.error('Error sending message:', error);
-            this.addMessageToChat('assistant', 'Sorry, I encountered an error. Please try again.', []);
+            this.streamResponse('Sorry, I encountered an error. Please try again.', []);
         } finally {
             this.setLoadingState(false);
+            // Update chat history after response is complete
+            this.loadChatHistory();
         }
     }
 
-    addMessageToChat(role, content, sources = []) {
+    addMessageToChat(role, content, sources = [], isThinking = false) {
         const chatArea = document.getElementById('chatArea');
         if (!chatArea) return;
 
@@ -144,7 +146,12 @@ class SRMAIApp {
         
         const contentDiv = document.createElement('div');
         contentDiv.className = 'message-content';
-        contentDiv.innerHTML = `<p>${this.escapeHtml(content)}</p>`;
+        
+        if (isThinking) {
+            contentDiv.innerHTML = `<div class="thinking-indicator"><span>.</span><span>.</span><span>.</span></div>`;
+        } else {
+            contentDiv.innerHTML = `<p>${this.escapeHtml(content)}</p>`;
+        }
         
         if (sources && sources.length > 0) {
             const sourcesDiv = document.createElement('div');
@@ -407,6 +414,94 @@ class SRMAIApp {
         if (sidebar) {
             sidebar.classList.toggle('open');
         }
+    }
+
+    streamResponse(text, sources) {
+        const thinkingMessage = document.querySelector('.thinking-indicator').closest('.chat-message');
+        if (!thinkingMessage) return;
+
+        const contentDiv = thinkingMessage.querySelector('.message-content');
+        contentDiv.innerHTML = '<p></p>'; // Clear the thinking indicator
+        const p = contentDiv.querySelector('p');
+        
+        let i = 0;
+        const speed = 20; // milliseconds per character
+
+        function typeWriter() {
+            if (i < text.length) {
+                p.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            } else {
+                // After typing is done, add sources
+                if (sources && sources.length > 0) {
+                    const sourcesDiv = document.createElement('div');
+                    sourcesDiv.className = 'message-sources';
+                    sourcesDiv.innerHTML = '<strong>Sources:</strong><br>' + 
+                        sources.map(source => 
+                            `<span class="source-item">${source.filename} (Page ${source.page_number || 'N/A'})</span>`
+                        ).join('<br>');
+                    contentDiv.appendChild(sourcesDiv);
+                }
+
+                // Add action buttons after typing is done
+                const actionsDiv = document.createElement('div');
+                actionsDiv.className = 'message-actions';
+                actionsDiv.innerHTML = `
+                    <button class="action-btn copy-btn" title="Copy"><i class="fas fa-copy"></i></button>
+                    <button class="action-btn redo-btn" title="Regenerate response"><i class="fas fa-redo"></i></button>
+                `;
+                thinkingMessage.appendChild(actionsDiv);
+
+                // Add event listeners for new buttons
+                actionsDiv.querySelector('.copy-btn').addEventListener('click', () => {
+                    navigator.clipboard.writeText(text).then(() => {
+                        const copyBtn = actionsDiv.querySelector('.copy-btn');
+                        copyBtn.innerHTML = '<i class="fas fa-check"></i>';
+                        setTimeout(() => {
+                            copyBtn.innerHTML = '<i class="fas fa-copy"></i>';
+                        }, 2000);
+                    });
+                });
+
+                actionsDiv.querySelector('.redo-btn').addEventListener('click', async () => {
+                    const allUserMessages = Array.from(document.querySelectorAll('.chat-message.user-message .message-content p'));
+                    if (allUserMessages.length === 0) return;
+                    const lastQuery = allUserMessages[allUserMessages.length - 1].textContent;
+                
+                    thinkingMessage.remove();
+                
+                    this.setLoadingState(true);
+                    this.addMessageToChat('assistant', '<div class="thinking-indicator"><span>.</span><span>.</span><span>.</span></div>', [], true);
+
+                    try {
+                        const response = await fetch('/chat/send_message', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                session_id: this.currentSessionId,
+                                content: lastQuery,
+                            }),
+                        });
+
+                        if (response.ok) {
+                            const data = await response.json();
+                            this.streamResponse(data.message.content, data.sources);
+                        } else {
+                            const errorData = await response.json();
+                            this.streamResponse(`Error: ${errorData.detail}`, []);
+                        }
+                    } catch (error) {
+                        console.error('Error sending message:', error);
+                        this.streamResponse('Sorry, I encountered an error. Please try again.', []);
+                    } finally {
+                        this.setLoadingState(false);
+                        this.loadChatHistory();
+                    }
+                });
+            }
+        }
+        typeWriter();
     }
 }
 
