@@ -54,7 +54,7 @@ class QueryRequest(BaseModel):
 class QueryResponse(BaseModel):
     answer: str
     context: List[Dict[str, Any]]
-    sources: List[str]
+    sources: List[Dict[str, Any]]  # Changed from List[str] to List[Dict[str, Any]]
     confidence_score: float
     answer_validation: Dict[str, Any]
 
@@ -548,6 +548,14 @@ def create_enhanced_prompt(query: str, context: str, stage: str, previous_answer
         9. IMPORTANT: If a step mentions a command but doesn't show the full command, state "Command details not provided in context"
         10. Ensure the answer is complete and not cut off
         
+        FORMATTING REQUIREMENTS:
+        - Use **bold** for section headers and important terms
+        - Use numbered lists (1. 2. 3.) for procedure steps
+        - Use bullet points (-) for lists of items
+        - Use `code formatting` for commands, file paths, and technical terms
+        - Use _italics_ for emphasis on key points
+        - Structure the response with clear sections and proper spacing
+        
         Context:
         ---
         {context}
@@ -567,6 +575,14 @@ def create_enhanced_prompt(query: str, context: str, stage: str, previous_answer
         4. Improve citations to reference specific sections and pages from the context
         5. Make the answer more concise and focused
         6. If the context is insufficient, clearly state this
+        
+        FORMATTING REQUIREMENTS:
+        - Use **bold** for section headers and important terms
+        - Use numbered lists (1. 2. 3.) for procedure steps
+        - Use bullet points (-) for lists of items
+        - Use `code formatting` for commands, file paths, and technical terms
+        - Use _italics_ for emphasis on key points
+        - Structure the response with clear sections and proper spacing
         
         Original Answer:
         {previous_answer}
@@ -838,13 +854,21 @@ async def ask_endpoint(request: QueryRequest):
         # Extract sources with better metadata and relevance scoring
         sources = []
         for chunk in retrieved_chunks:
-            source = chunk['metadata'].get('filename', 'Unknown')
-            page = chunk['metadata'].get('page_number', 'N/A')
-            section_title = chunk['metadata'].get('section_title', '')
-            step_count = chunk['metadata'].get('step_count', '')
-            relevance_score = chunk['metadata'].get('relevance_score', 0)
+            source_info = {
+                'filename': chunk['metadata'].get('filename', 'Unknown'),
+                'page_number': chunk['metadata'].get('page_number', 'N/A'),
+                'section_title': chunk['metadata'].get('section_title', ''),
+                'step_count': chunk['metadata'].get('step_count', ''),
+                'relevance_score': chunk['metadata'].get('relevance_score', 0)
+            }
             
-            # Create enhanced source citation
+            # Create enhanced source citation text
+            source = source_info['filename']
+            page = source_info['page_number']
+            section_title = source_info['section_title']
+            step_count = source_info['step_count']
+            relevance_score = source_info['relevance_score']
+            
             if section_title:
                 if step_count and step_count > 1:
                     source_text = f"{source} (Page {page}) → Section: {section_title} → {step_count} steps"
@@ -857,7 +881,15 @@ async def ask_endpoint(request: QueryRequest):
             if relevance_score > 0:
                 source_text += f" [Relevance: {relevance_score}]"
             
-            sources.append(source_text)
+            # Store both structured data and formatted text
+            sources.append({
+                'text': source_text,
+                'filename': source_info['filename'],
+                'page_number': source_info['page_number'],
+                'section_title': source_info['section_title'],
+                'step_count': source_info['step_count'],
+                'relevance_score': source_info['relevance_score']
+            })
         
         return QueryResponse(
             answer=answer,

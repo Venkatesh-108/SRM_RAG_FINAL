@@ -168,8 +168,8 @@ class ChatService:
             source = Source(
                 filename=filename,
                 page_number=page_number,
-                chunk_id=str(chunk.get('id', '')),
-                relevance_score=float(chunk.get('score', 0.0)),
+                chunk_id=str(chunk.get('metadata', {}).get('chunk_id', '')),
+                relevance_score=float(chunk.get('metadata', {}).get('relevance_score', 0.0)),
                 content_preview=chunk.get('text', '')[:100] + "..." if len(chunk.get('text', '')) > 100 else chunk.get('text', '')
             )
             sources.append(source)

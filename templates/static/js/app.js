@@ -150,7 +150,12 @@ class SRMAIApp {
         if (isThinking) {
             contentDiv.innerHTML = `<p>${this.escapeHtml(content)}</p>`;
         } else {
-            contentDiv.innerHTML = `<p>${this.escapeHtml(content)}</p>`;
+            // Use formatted rendering for AI responses, plain text for user messages
+            if (role === 'assistant') {
+                contentDiv.innerHTML = this.renderFormattedText(content);
+            } else {
+                contentDiv.innerHTML = `<p>${this.escapeHtml(content)}</p>`;
+            }
         }
         
         if (sources && sources.length > 0) {
@@ -158,12 +163,17 @@ class SRMAIApp {
             sourcesDiv.className = 'message-sources';
             sourcesDiv.innerHTML = '<strong>Sources:</strong><br>' + 
                 sources.map(source => {
-                    const pageNumber = source.page_number || 'N/A';
-                    const fileName = this.escapeHtml(source.filename);
-                    if (pageNumber !== 'N/A') {
-                        return `<a href="/documents/${encodeURIComponent(fileName)}#page=${pageNumber}" target="_blank" class="source-item">${fileName} (Page ${pageNumber})</a>`;
+                    // Handle both old string format and new object format
+                    if (typeof source === 'string') {
+                        return `<span class="source-item">${this.escapeHtml(source)}</span>`;
                     } else {
-                        return `<a href="/documents/${encodeURIComponent(fileName)}" target="_blank" class="source-item">${fileName}</a>`;
+                        const pageNumber = source.page_number || 'N/A';
+                        const fileName = this.escapeHtml(source.filename || source.text || 'Unknown');
+                        if (pageNumber !== 'N/A') {
+                            return `<a href="/documents/${encodeURIComponent(fileName)}#page=${pageNumber}" target="_blank" class="source-item">${fileName} (Page ${pageNumber})</a>`;
+                        } else {
+                            return `<a href="/documents/${encodeURIComponent(fileName)}" target="_blank" class="source-item">${fileName}</a>`;
+                        }
                     }
                 }).join('<br>');
             contentDiv.appendChild(sourcesDiv);
@@ -173,14 +183,109 @@ class SRMAIApp {
         messageDiv.appendChild(contentDiv);
         chatArea.appendChild(messageDiv);
         
+        // Add action buttons for assistant messages (but not thinking messages)
+        if (role === 'assistant' && !isThinking) {
+            this.addActionButtons(messageDiv, content);
+        }
+        
         // Scroll to bottom
         chatArea.scrollTop = chatArea.scrollHeight;
+    }
+
+    addActionButtons(messageDiv, content) {
+        // Add action buttons
+        const actionsDiv = document.createElement('div');
+        actionsDiv.className = 'message-actions';
+        actionsDiv.innerHTML = `
+            <button class="action-btn copy-btn" title="Copy"><i class="fas fa-copy"></i></button>
+            <button class="action-btn redo-btn" title="Regenerate response"><i class="fas fa-redo"></i></button>
+        `;
+        messageDiv.appendChild(actionsDiv);
+
+        const self = this; // Store reference to 'this'
+
+        // Add event listeners for new buttons
+        actionsDiv.querySelector('.copy-btn').addEventListener('click', () => {
+            navigator.clipboard.writeText(content).then(() => {
+                const copyBtn = actionsDiv.querySelector('.copy-btn');
+                copyBtn.innerHTML = '<i class="fas fa-check"></i>';
+                setTimeout(() => {
+                    copyBtn.innerHTML = '<i class="fas fa-copy"></i>';
+                }, 2000);
+            });
+        });
+
+        actionsDiv.querySelector('.redo-btn').addEventListener('click', async () => {
+            const allUserMessages = Array.from(document.querySelectorAll('.chat-message.user-message .message-content p'));
+            if (allUserMessages.length === 0) return;
+            const lastQuery = allUserMessages[allUserMessages.length - 1].textContent;
+        
+            messageDiv.remove();
+        
+            self.setLoadingState(true);
+            self.addMessageToChat('assistant', 'Thinking...', [], true);
+
+            try {
+                const response = await fetch('/chat/send_message', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        session_id: self.currentSessionId,
+                        content: lastQuery,
+                    }),
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    self.streamResponse(data.message.content, data.sources);
+                } else {
+                    const errorData = await response.json();
+                    self.streamResponse(`Error: ${errorData.detail}`, []);
+                }
+            } catch (error) {
+                console.error('Error sending message:', error);
+                self.streamResponse('Sorry, I encountered an error. Please try again.', []);
+            } finally {
+                self.setLoadingState(false);
+                self.loadChatHistory();
+            }
+        });
     }
 
     escapeHtml(text) {
         const div = document.createElement('div');
         div.textContent = text;
         return div.innerHTML;
+    }
+
+    renderFormattedText(text) {
+        // Convert common formatting patterns to HTML
+        let formattedText = text;
+        
+        // Handle numbered lists (1. 2. 3. etc.)
+        formattedText = formattedText.replace(/^(\d+\.)\s+/gm, '<strong>$1</strong> ');
+        
+        // Handle bullet points (- or •)
+        formattedText = formattedText.replace(/^[-•]\s+/gm, '• ');
+        
+        // Handle section headers (lines ending with :)
+        formattedText = formattedText.replace(/^([^:]+):$/gm, '<strong>$1:</strong>');
+        
+        // Handle emphasis (text between ** or __)
+        formattedText = formattedText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        formattedText = formattedText.replace(/__(.*?)__/g, '<em>$1</em>');
+        
+        // Handle code snippets (text between `)
+        formattedText = formattedText.replace(/`([^`]+)`/g, '<code>$1</code>');
+        
+        // Handle line breaks for better readability - keep content in single paragraph
+        formattedText = formattedText.replace(/\n\n/g, '<br><br>');
+        formattedText = formattedText.replace(/\n/g, '<br>');
+        
+        // Wrap in single paragraph tag to keep everything together
+        formattedText = `<p>${formattedText}</p>`;
+        
+        return formattedText;
     }
 
     async loadChatHistory() {
@@ -429,90 +534,45 @@ class SRMAIApp {
         if (!thinkingMessage) return;
 
         const contentDiv = thinkingMessage.querySelector('.message-content');
-        contentDiv.innerHTML = '<p></p>'; // Clear the thinking message
-        const p = contentDiv.querySelector('p');
+        contentDiv.innerHTML = ''; // Clear the thinking message
         
         let i = 0;
         const speed = 20; // milliseconds per character
+        let currentText = '';
+        const self = this; // Store reference to 'this'
 
         function typeWriter() {
             if (i < text.length) {
-                p.innerHTML += text.charAt(i);
+                currentText += text.charAt(i);
+                // Apply formatting to the current text
+                contentDiv.innerHTML = self.renderFormattedText(currentText);
                 i++;
                 setTimeout(typeWriter, speed);
             } else {
-                // After typing is done, add sources
+                                // After typing is done, add sources
                 if (sources && sources.length > 0) {
                     const sourcesDiv = document.createElement('div');
                     sourcesDiv.className = 'message-sources';
                     sourcesDiv.innerHTML = '<strong>Sources:</strong><br>' + 
                         sources.map(source => {
-                            const pageNumber = source.page_number || 'N/A';
-                            const fileName = this.escapeHtml(source.filename);
-                            if (pageNumber !== 'N/A') {
-                                return `<a href="/documents/${encodeURIComponent(fileName)}#page=${pageNumber}" target="_blank" class="source-item">${fileName} (Page ${pageNumber})</a>`;
+                            // Handle both old string format and new object format
+                            if (typeof source === 'string') {
+                                return `<span class="source-item">${self.escapeHtml(source)}</span>`;
                             } else {
-                                return `<a href="/documents/${encodeURIComponent(fileName)}" target="_blank" class="source-item">${fileName}</a>`;
+                                const pageNumber = source.page_number || 'N/A';
+                                const fileName = self.escapeHtml(source.filename || source.text || 'Unknown');
+                                if (pageNumber !== 'N/A') {
+                                    return `<a href="/documents/${encodeURIComponent(fileName)}#page=${pageNumber}" target="_blank" class="source-item">${fileName} (Page ${pageNumber})</a>`;
+                                } else {
+                                    return `<a href="/documents/${encodeURIComponent(fileName)}" target="_blank" class="source-item">${fileName}</a>`;
+                                }
                             }
                         }).join('<br>');
                     contentDiv.appendChild(sourcesDiv);
                 }
 
                 // Add action buttons after typing is done
-                const actionsDiv = document.createElement('div');
-                actionsDiv.className = 'message-actions';
-                actionsDiv.innerHTML = `
-                    <button class="action-btn copy-btn" title="Copy"><i class="fas fa-copy"></i></button>
-                    <button class="action-btn redo-btn" title="Regenerate response"><i class="fas fa-redo"></i></button>
-                `;
-                thinkingMessage.appendChild(actionsDiv);
-
-                // Add event listeners for new buttons
-                actionsDiv.querySelector('.copy-btn').addEventListener('click', () => {
-                    navigator.clipboard.writeText(text).then(() => {
-                        const copyBtn = actionsDiv.querySelector('.copy-btn');
-                        copyBtn.innerHTML = '<i class="fas fa-check"></i>';
-                        setTimeout(() => {
-                            copyBtn.innerHTML = '<i class="fas fa-copy"></i>';
-                        }, 2000);
-                    });
-                });
-
-                actionsDiv.querySelector('.redo-btn').addEventListener('click', async () => {
-                    const allUserMessages = Array.from(document.querySelectorAll('.chat-message.user-message .message-content p'));
-                    if (allUserMessages.length === 0) return;
-                    const lastQuery = allUserMessages[allUserMessages.length - 1].textContent;
-                
-                    thinkingMessage.remove();
-                
-                    this.setLoadingState(true);
-                    this.addMessageToChat('assistant', 'Thinking...', [], true);
-
-                    try {
-                        const response = await fetch('/chat/send_message', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({
-                                session_id: this.currentSessionId,
-                                content: lastQuery,
-                            }),
-                        });
-
-                        if (response.ok) {
-                            const data = await response.json();
-                            this.streamResponse(data.message.content, data.sources);
-                        } else {
-                            const errorData = await response.json();
-                            this.streamResponse(`Error: ${errorData.detail}`, []);
-                        }
-                    } catch (error) {
-                        console.error('Error sending message:', error);
-                        this.streamResponse('Sorry, I encountered an error. Please try again.', []);
-                    } finally {
-                        this.setLoadingState(false);
-                        this.loadChatHistory();
-                    }
-                });
+                self.addActionButtons(thinkingMessage, text);
             }
         }
         typeWriter();
