@@ -4,13 +4,15 @@ from loguru import logger
 
 from models.chat import ChatSession, ChatMessage, MessageRole, Source, ChatResponse
 from storage.chat_storage import ChatStorage
+from services.rag_service import RAGService
+from services.ollama_service import generate_answer_with_ollama
 
 class ChatService:
     """Service for managing chat functionality with RAG integration"""
     
-    def __init__(self, rag_service=None):
+    def __init__(self, rag_service: RAGService):
         self.storage = ChatStorage()
-        self.rag_service = rag_service  # Will be injected from main app
+        self.rag_service = rag_service
     
     def create_session(self, title: Optional[str] = None, initial_message: Optional[str] = None) -> ChatSession:
         """Create a new chat session"""
@@ -23,7 +25,6 @@ class ChatService:
     def get_all_sessions(self) -> List[ChatSession]:
         """Get all chat sessions, sorted by recent activity."""
         all_sessions = self.storage.get_all_sessions()
-        # Sort by updated_at descending
         return sorted(all_sessions, key=lambda x: x.updated_at, reverse=True)
     
     def delete_session(self, session_id: str) -> bool:
@@ -38,28 +39,24 @@ class ChatService:
         """Send a message and get AI response"""
         start_time = time.time()
         
-        # Get or create session
         session = self.storage.get_session(session_id)
         if not session:
             raise ValueError(f"Session {session_id} not found")
         
-        # Add user message
         user_msg = ChatMessage(
             role=MessageRole.USER,
             content=user_message
         )
         session.add_message(user_msg)
         
-        # Generate AI response using RAG
-        if self.rag_service and self.rag_service != "not_available":
+        if self.rag_service:
             try:
-                # Get answer from RAG system
-                answer, confidence_score, context_chunks = await self._get_rag_response(user_message)
+                # Check if direct results mode is enabled
+                use_direct = self.rag_service.config.get("use_direct_results", False)
+                answer, confidence_score, context_chunks = await self._get_rag_response(user_message, use_direct_results=use_direct)
                 
-                # Extract sources from context chunks
                 sources = self._extract_sources_from_chunks(context_chunks)
                 
-                # Create AI message
                 ai_message = ChatMessage(
                     role=MessageRole.ASSISTANT,
                     content=answer,
@@ -70,10 +67,7 @@ class ChatService:
                     }
                 )
                 
-                # Add AI message to session
                 session.add_message(ai_message)
-                
-                # Save session
                 self.storage.save_session(session)
                 
                 processing_time = time.time() - start_time
@@ -88,7 +82,6 @@ class ChatService:
                 
             except Exception as e:
                 logger.error(f"Failed to generate RAG response: {e}")
-                # Fallback response
                 fallback_message = ChatMessage(
                     role=MessageRole.ASSISTANT,
                     content="I apologize, but I encountered an error while processing your request. Please try again.",
@@ -107,7 +100,6 @@ class ChatService:
                     processing_time=processing_time
                 )
         else:
-            # No RAG service available
             fallback_message = ChatMessage(
                 role=MessageRole.ASSISTANT,
                 content="I'm sorry, but the RAG system is not available at the moment. Please try again later.",
@@ -126,28 +118,24 @@ class ChatService:
                 processing_time=processing_time
             )
     
-    async def _get_rag_response(self, query: str) -> Tuple[str, float, List[Dict[str, Any]]]:
+    async def _get_rag_response(self, query: str, use_direct_results: bool = False) -> Tuple[str, float, List[Dict[str, Any]]]:
         """Get response from RAG system"""
         try:
-            # Import the RAG functions from the main app
-            from app import load_indices_and_chunks, search_and_rerank, generate_answer_with_ollama
+            retrieved_chunks = self.rag_service.search(query)
             
-            # Load indices
-            chunks, bm25, faiss_index, embedding_model = load_indices_and_chunks()
-            if chunks is None:
-                raise ValueError("Index not found. Please ensure documents are indexed.")
+            if use_direct_results:
+                # Return direct results without LLM processing
+                direct_response = self._format_direct_results(query, retrieved_chunks)
+                return direct_response, 1.0, retrieved_chunks
             
-            # Search and rerank
-            retrieved_chunks = search_and_rerank(query, chunks, bm25, faiss_index, embedding_model)
-            
-            # Generate answer
-            answer, confidence_score, validation_result = generate_answer_with_ollama(query, retrieved_chunks)
+            # Pass configuration to ollama service for dynamic context length
+            config = self.rag_service.config if hasattr(self.rag_service, 'config') else None
+            answer, confidence_score, validation_result = generate_answer_with_ollama(query, retrieved_chunks, config)
             
             return answer, confidence_score, retrieved_chunks
             
         except Exception as e:
             logger.error(f"Error in RAG response generation: {e}")
-            # Return a helpful error message
             return f"I encountered an error while processing your request: {str(e)}", 0.0, []
     
     def _extract_sources_from_chunks(self, chunks: List[Dict[str, Any]]) -> List[Source]:
@@ -155,26 +143,42 @@ class ChatService:
         sources = []
         
         for chunk in chunks:
-            # Handle both old and new chunk formats
             metadata = chunk.get('metadata', {})
-            if isinstance(metadata, dict):
-                filename = metadata.get('filename', 'Unknown')
-                page_number = metadata.get('page_number')
-            else:
-                # Handle case where metadata might be a string or other format
-                filename = str(metadata) if metadata else 'Unknown'
-                page_number = None
+            filename = metadata.get('filename', 'Unknown')
+            page_number = metadata.get('page_number')
+            section_title = metadata.get('section_title', 'Unknown Section')
+            relevance_score = metadata.get('relevance_score', 0.0)
             
             source = Source(
                 filename=filename,
                 page_number=page_number,
-                chunk_id=str(chunk.get('metadata', {}).get('chunk_id', '')),
-                relevance_score=float(chunk.get('metadata', {}).get('relevance_score', 0.0)),
-                content_preview=chunk.get('text', '')[:100] + "..." if len(chunk.get('text', '')) > 100 else chunk.get('text', '')
+                chunk_id=str(metadata.get('chunk_id', section_title)),
+                relevance_score=float(relevance_score),
+                content_preview=chunk.get('text', '')[:150] + "..." if len(chunk.get('text', '')) > 150 else chunk.get('text', '')
             )
             sources.append(source)
         
         return sources
+    
+    def _format_direct_results(self, query: str, chunks: List[Dict[str, Any]]) -> str:
+        """Format direct search results without LLM processing"""
+        if not chunks:
+            return f"No relevant information found for: '{query}'"
+        
+        response = f"**Direct Search Results for: '{query}'**\n\n"
+        
+        for i, chunk in enumerate(chunks, 1):
+            metadata = chunk['metadata']
+            response += f"**Result {i}:**\n"
+            response += f"- **Title:** {metadata['section_title']}\n"
+            response += f"- **Document:** {metadata['filename']}\n"
+            response += f"- **Page:** {metadata['page_number']}\n"
+            response += f"- **Relevance Score:** {metadata['relevance_score']:.3f}\n"
+            response += f"- **Search Type:** {metadata.get('search_type', 'N/A')}\n"
+            response += f"- **Content:**\n{chunk['text']}\n\n"
+            response += "---\n\n"
+        
+        return response
     
     def search_sessions(self, query: str) -> List[ChatSession]:
         """Search sessions by content"""
@@ -187,6 +191,5 @@ class ChatService:
     def get_recent_sessions(self, limit: int = 10) -> List[ChatSession]:
         """Get recent chat sessions"""
         all_sessions = self.storage.get_all_sessions()
-        # Sort by updated_at descending and return limited results
         sorted_sessions = sorted(all_sessions, key=lambda x: x.updated_at, reverse=True)
         return sorted_sessions[:limit]

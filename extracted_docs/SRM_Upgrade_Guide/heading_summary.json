@@ -1,0 +1,4466 @@
+[
+  {
+    "title": "Document Content",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 1,
+    "page": 1,
+    "confidence": 0.3
+  },
+  {
+    "title": "Dell SRM 5.1.1.0 Upgrade Guide",
+    "font_size": 24.0,
+    "is_bold": true,
+    "heading_level": 3,
+    "page": 1,
+    "confidence": 0.9
+  },
+  {
+    "title": "5.1.1.0",
+    "font_size": 24.0,
+    "is_bold": true,
+    "heading_level": 3,
+    "page": 1,
+    "confidence": 0.9
+  },
+  {
+    "title": "Dell SRM 5.1.1.0 Upgrade",
+    "font_size": 24.0,
+    "is_bold": true,
+    "heading_level": 3,
+    "page": 1,
+    "confidence": 0.9
+  },
+  {
+    "title": "This guide is applicable for upgrades from release 4.10.0.0 onwards only.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "For upgrades of any version previous to 4.10.0.0, see SRM 4.9.0.0 Upgrade Guide at Dell Support Site.",
+    "font_size": 22.0,
+    "is_bold": false,
+    "heading_level": 4,
+    "page": 1,
+    "confidence": 0.9
+  },
+  {
+    "title": "- From Release 4.10.0.0",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "- From Release 5.0.0.0",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "- From Release 5.0.1.0",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "- From Release 5.0.2.0",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "- From Release 5.1.0.0",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "- For SLES-based binary SRM deployments, contact the Administrator for the OS upgrade.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "- For versions prior to SRM 5.x.x.x upgrading the Operating System from SLES 12 SP5 to SLES 15 SP4 is mandatory.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "- SUSE Linux Enterprise 15 guest operating system option is not available in Hardware version 13 (ESXi 6.5) and earlier.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "For more information, see Upgrade Operating System for vApp to SLES 15 SP4.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "Pre-Requisites for Dell SRM 5.1.1.0 Upgrade",
+    "font_size": 24.0,
+    "is_bold": true,
+    "heading_level": 3,
+    "page": 1,
+    "confidence": 0.9
+  },
+  {
+    "title": "To successfully upgrade to Dell SRM 5.1.1.0, ensure to gather the required pre-requisites that are mentioned in this chapter.",
+    "font_size": 24.0,
+    "is_bold": true,
+    "heading_level": 3,
+    "page": 1,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Required Tools and Credentials",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "- MySQL",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Pre-Upgrade Health Check Utility Script",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Verify environment status",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 9,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Backup the Environment",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 10,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Backup Firewall",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 10,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Set Java Certificates",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 11,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Backup Alert Definitions",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 12,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Delete Backup Schedules and Scheduled Reports from DPA Server",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 12,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Boot Space Clean Up",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 13,
+    "confidence": 0.9
+  },
+  {
+    "title": "Required Tools and Credentials",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "Describes the tools and credentials required for SRM upgrade.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Access to vCenter to take snapshots and validate vApp properties.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "MySQL",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "This section describes the requirements for the latest version of MySQL.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "MySQL's latest version requires the following ncurses and VC++ versions:",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "- ncurses-libs-6.2-10.20210508.el9.x86\\_64",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "- ncurses-compat-libs-6.2-10.20210508.el9.x86\\_64",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "For Windows:",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "Microsoft Visual C++ 2019 redistributable package is required for the latest version of MySQL.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "Pre-Upgrade Health Check Utility Script",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Dell SRM Distributed Pre-Upgrade-Health-Check Utility",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Dell SRM and Storage M&amp;R AIO Pre Upgrade Health Check Utility",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "Verify environment status",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 9,
+    "confidence": 0.9
+  },
+  {
+    "title": "Before starting the upgrade process, verify and document the environment status. It helps you to evaluate the success of the upgrade.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "Check Custom vApp Configuration",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 9,
+    "confidence": 0.9
+  },
+  {
+    "title": "Do not install any external packages or software, either by using manual SSH or any other means on SRM vApp servers.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "If any custom/additional packages or software is already installed on SRM vApp servers, then do not attempt the System upgrade.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "The support executives must examine the compatibility of the custom configuration before proceeding to the Operating System upgrade.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "Check /etc/sudoers File on Each vApp VM",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 9,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Run tail /etc/sudoers .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. The last lines must be:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. #includedir /etc/sudoers.d   # added by MnR platform",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "Check vApp Options for Dell SRM VMs",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 9,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Select the VM, click Configure tab on vSphere client and select vApp options .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Verify that vApp options are enabled message is displayed.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "Check Server Reachability",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 9,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Log in to the Dell SRM UI and go to the Administration &gt; CONFIG .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Click Settings &gt; Configure Servers .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Check that the connection is established for all the servers of the SRM setup.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "Verify Reports",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 9,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Look for broken links and resolve any issues or document them for later follow-up.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Validate that topology is working. Resolve any issues.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. Review the existing backends and database.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "6. Review and document any customization.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "Backup the Environment",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 10,
+    "confidence": 0.9
+  },
+  {
+    "title": "Before starting the upgrade, use Discovery Center to export all the SolutionPack devices.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Dell SRM: Backing Up with VMware vSphere Data Protection Advanced 5.8",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Dell SRM: vApp Backup and Restore Using Dell EMC NetWorker.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Dell SRM: Backing up with Dell EMC Avamar 7.1.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Dell SRM: vApp Backup and Restore Using IBM Tivoli Storage Manager.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Dell SRM: vApp Backup and Restore Using Symantec NetBackup.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Dell SRM: vApp Backup and Restore using Commvault Simpana Virtual Server Protection.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "The above pointers are available in the Dell SRM 4.10.0.0 Advanced Configuration Guide at Dell Support Site.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "Backup Firewall",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 10,
+    "confidence": 0.9
+  },
+  {
+    "title": "- After OS Upgrade to SLES 15 SP4, SuSEfirewall2 is replaced by Firewalld.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Save or export any custom firewall settings. Reapply the firewall settings post Operating System Upgrade.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Take a backup on all the vApp VMs.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "Set Java Certificates",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 11,
+    "confidence": 0.9
+  },
+  {
+    "title": "Saving the Java certificates file",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 11,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Copy the cacerts file to a safe place. (Do not use the Java installation directory as the new installation deletes and replaces it .)",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "Import Java Certificates",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 11,
+    "confidence": 0.9
+  },
+  {
+    "title": "Backup Alert Definitions",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 12,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Go to Admin &gt; Config &gt; Alerts &gt; Manage Alert Definitions .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. To export alerting-contexts.xml, in SRM 4.3.x and later versions, go to Alerting Frontend UI .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. Under Local Manager , click Alert Definitions .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "6. In the left pane, click Export button. A ZIP file which contains both alerting.xml and alerting-contexts.xml is downloaded.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "Delete Backup Schedules and Scheduled Reports from DPA Server",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 12,
+    "confidence": 0.9
+  },
+  {
+    "title": "Remove backup schedules and scheduled reports from the Data Protection Advisor server before the upgrade.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 36,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. If Avamar is discovered:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "- W4N-Avamar All Jobs Report",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "- W4N-Avamar Client Configuration Report",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "- W4N-Avamar Restore Details Configuration Report",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "- W4N-Avamar Server Configuration Report",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Avamar-1HourInterval",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. If NetBackup is discovered:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "- W4N-NetBackup All Jobs Report",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "- W4N-NetBackup Client Configuration Report",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "- W4N-NetBackup Disk Volume Configuration Report",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "- W4N-NetBackup Disk Volume Status Report",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "- W4N-NetBackup Restore Details",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "- W4N-NetBackup Server Configuration Report",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "- W4N-NetBackup Storage Unit Configuration Report",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "- NBU-1HourInterval",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "Boot Space Clean Up",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 13,
+    "confidence": 0.9
+  },
+  {
+    "title": "Upgrade Operating System for vApp to SLES 15 SP4",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "For versions prior to SRM 5.x.x.x, upgrading the Operating System from SLES 12 SP5 to SLES 15 SP4 is mandatory.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Upgrade Operating System Using an ISO Image",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "- MySQL Database Check",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "Upgrade Operating System Using an ISO Image",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "Perform the below summary of steps for a successful Operating System upgrade to SLES 15 SP4 using ISO image.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Download ISO Image from Dell Online Support Website",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Configure ISO Image for Each SRM VMs",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Upgrade Operating System Using ISO Image on SRM Setup",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 15,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Operating System Upgrade on FrontEnd VM Using ISO Image",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 16,
+    "confidence": 0.9
+  },
+  {
+    "title": "Download ISO Image from Dell Online Support Website",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Data Store to be used for ISO should be accessible by all SRM VMs (vApp based).",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Download the ISO image ( SLES15sp4\\_OS-5110-ISOimage.zip ) from the Dell Online Support Website.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Extract SLES15sp4\\_OS-5110-ISOimage.zip to get the ISO image.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Open vCenter Client and connect to the vCenter Server that manages the VMware environment.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. Select the Datastore to which the ISO image must be uploaded.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. See the VMWare Link for further guidance.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "Configure ISO Image for Each SRM VMs",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "Perform the following reconfiguration for SRM VMs (vApp based)",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Log in to the vCenter Client and select the VMs.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Power off the VM.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Right-click the VMs and click Edit Settings .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. In the Virtual Hardware tab, click on ADD NEW DEVICE , point the CD/DVD Drive 2 setting to DataStore ISO File.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. Expand the CD/DVD Drive 2 option to display the CD/DVD Media location, then click Browse .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "6. Go to the data store in which the ISO image is stored and then select the ISO image.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "7. Click OK to close the Browse window.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "8. Select Connect At Power On option for CD/DVD Drive 2 .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "10. Check the Recent Tasks pane of the vCenter Client to confirm that the VMs are reconfigured successfully.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "11. Power on the VM.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "Upgrade Operating System Using ISO Image on SRM Setup",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 15,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Download the ISO Image and upload it to a Datastore. For more information, see Download ISO Image from Dell Online Support Website.",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Access to vCenter to take snapshots and validate vApp properties",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Confirm that the snapshot of SRM VMs has been taken before starting Operating System upgrade to SLES 15 SP4.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Log in to the Frontend appliance.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Go to the directory where SLES15sp4\\_OS\\_Upgrade-Scripts-5110.zip is copied on the VM.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. Run the following command to extract the file: unzip SLES15sp4\\_OS\\_Upgrade-Scripts-5110.zip",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "Go through the README file for the Operating System upgrade script to know more details about the script.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "6. Run the following command to create a list of vApp Remote Servers:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. SLESOSupgrade.sh -u remoteServer",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "7. Once the script is started, a CSV list of vApp based VMs will be created in /opt/ADG/osupdate/SRMVMList.csv .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "8. Rerun the following command to start Operating System upgrade on the remote servers: SLESOSupgrade.sh -u remoteServer",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 48,
+    "confidence": 0.9
+  },
+  {
+    "title": "10. Once the upgrade is initiated on all the VM (except the FE), use the following command to monitor the progress of upgrades on the VMs:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "SLESOSupgrade.sh -s status",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "If the Corresponding OS version is \"-\", still servers OS upgrade is not completed.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "The Operating System upgrade is configured to go ahead automatically and does not require any user intervention.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "12. Once the Operating System upgrade to SUSE 15 SP4 is done, a login prompt is displayed on the console.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "Operating System Upgrade on FrontEnd VM Using ISO Image",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 16,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. To check the status of all the VMs, use the following command on the Frontend VM:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. The Operating System version for all the vApp VMs should be displayed as 15.4.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "SLESOSupgrade.sh -s status",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. After all the VMs are upgraded, the Frontend VM must be upgraded using the following command: SLESOSupgrade.sh -u currentServer",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "The Operating System upgrade is configured to go ahead automatically and does not require any user intervention.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "MySQL Database Check",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "After OS Upgrade to SLES 15 SP4, run below command to repair any database failures on Primary Backend and Additional Backends.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "/opt/APG/bin/mysql-database-check.sh",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "On Additional Backends, provide 'apg1', apg2', 'apg3' and 'apg4' details:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "/opt/APG/bin/mysql-database-check.sh",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": ".",
+    "font_size": 24.0,
+    "is_bold": true,
+    "heading_level": 3,
+    "page": 1,
+    "confidence": 0.9
+  },
+  {
+    "title": "Upgrade to Dell SRM 5.1.1.0",
+    "font_size": 24.0,
+    "is_bold": true,
+    "heading_level": 3,
+    "page": 1,
+    "confidence": 0.9
+  },
+  {
+    "title": "You can upgrade to Dell SRM 5.1.1.0 by using the new update platform or system upgrade wizard.",
+    "font_size": 24.0,
+    "is_bold": true,
+    "heading_level": 3,
+    "page": 1,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Upgrade the embedded ESE version to the latest on Linux",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Upgrade the embedded ESE version to the latest on Windows",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Upgrade the embedded ESE version to the latest on vApp",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Access Scheduled Tasks: Go to SRM Admin &gt; Config &gt; Settings &gt; Scheduled Tasks",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Locate the Task:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Enable the Task: Enable the cup-online-update-check.task task.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. Run the Task:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. Verify Task Completion: Upon task completion, check the task status to ensure that it has run successfully.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "6. Check for Updates:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Confirm that the Update UI displays the latest available SRM version for upgrade.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "7. Proceed with the Upgrade:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "Click Go to Maintenance Mode in the Update UI to initiate the SRM upgrade process.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "This feature is available starting from SRM 5.0.2.0.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Only vApp",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Only Windows Binaries",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Only Linux Binaries",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 19,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. From the SRM Admin UI, click CONFIG &gt; Update system &gt; System Update .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. For the Linux and/or Windows deployments, click Browse and select the update file.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. Click Upload Content .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "8. Click Yes, Proceed Upgrade after confirming that all the servers with SLES12 SP5 (both vApp and binary based) are upgraded to SLES15 SP4.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "9. If all the servers are not upgraded to SLES15 SP4, then click the Exit button to stop the update manager.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "12. Click Exit .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "13. Click OK .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "14. Verify that all the services are running on each host by checking SYSTEM ADMIN &gt; Servers &amp; Modules &gt; Services .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "Upgrade the embedded ESE version to the latest on Linux",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. If ESE is not installed on the previous SRM release, do the following to install ESE:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. If ESE is installed on the previous SRM release, upgrade ESE:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "sh ese\\_upgrade.sh",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. To confirm if ESE is listening on port 9443 , type the following command:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "Upgrade the embedded ESE version to the latest on Windows",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. If ESE is not installed on the previous SRM release, do the following to install ESE :",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. If ESE is already installed on the previous SRM release, upgrade ESE:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. To confirm if ESE is listening on port 9443 , type the following command:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "Upgrade the embedded ESE version to the latest on vApp",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. If ESE is not installed on the previous SRM release, do the following to install ESE:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. If ESE is installed on previous SRM release, upgrade ESE:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. To confirm if ESE is listening on port 9443 , type the following command:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "sh ese_upgrade.sh",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "6. After successful connection, to confirm the version of ESE installed, use the following command:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "curl -k -H $'x-dell-auth-key: Afor!@#akhdqwihqiu34344\\_y9yfqiwiwuefi56w3AABweuf' https:// localhost:9443/ese/status",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "After you upgrade to the latest version of Dell SRM, you must upgrade the installed SolutionPacks and other Components.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "Post upgrade, it is recommended to clean up the snapshot related inactive metrics after 24 hours.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Upgrade all SolutionPacks and other components",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "Upgrade all SolutionPacks and other components",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "Synchronize the packages and upgrade Solution Packs.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Synchronize the packages across the servers:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. On the SRM Administration UI, click on CONFIG &gt; Solution Packs &gt; Installed Solution Packs .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. Click the Update All Components button in the upper right corner of the page.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. NOTE: If the Update All Components button is disabled, the system has all the latest SolutionPacks, and you can skip the remaining steps.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "6. After you have configured every component on the list, click Next .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "11. Restart the Tomcat service:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "- c. Run the following command: ./manage-modules.sh service restart tomcat for UNIX or managemodules.cmd service restart tomcat for Windows",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "- For any new module of the respective Solution pack, follow the Solution Pack Installation process.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 27,
+    "confidence": 0.9
+  },
+  {
+    "title": "6",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "After you upgrade to the latest version of Dell SRM, you must complete the required additional tasks.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "- LUN performance metrics collection is disabled by default for Dell VMAX/PowerMax SP",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Check the Status of Remote Host Services",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 26,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Verifying and configuring the user process limits for vApp and Linux binary platforms",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Security Hardening on SRM vApps",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Reset the password for the Compliance Backend module",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 27,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Create softlink for mysql-client dependent library",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Find and Fix Broken Links in Reports",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 28,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Deprecated or Deleted Alert Definitions",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 30,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Install Preconfigured Alerts for all SolutionPacks",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 30,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Restore Timeout Values",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 31,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Edit New Actions Scripts",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 31,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Review SolutionPack Block Configuration for Frontend Access",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 31,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Install the Compliance Rules Module",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 27,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Cisco MDS/Nexus Switch Discovery",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 32,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Brocade Switch Discovery",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 34,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Create an Events Database for the SolutionPack for Data Protection Advisor",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 36,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Update the SNMP Collections",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 37,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Virus Scanning Software in Windows Deployments",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Review Report Customization",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 38,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Validate the Environment",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 38,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Verify vApp Linux Operating System is Upgraded",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 19,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Reconfiguring Dell PowerVault Frontend Web Service",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Reconfiguring Pure Storage Frontend Web Service",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Reconfiguring Kubernetes",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Deleting the ISO Image from Data Store Location",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Limitations and Known Issues",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 40,
+    "confidence": 0.9
+  },
+  {
+    "title": "LUN performance metrics collection is disabled by default for Dell VMAX/PowerMax SP",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "In SRM 4.9.0.0 release, LUN performance feature is supported in Dell VMAX/PowerMax SolutionPack for PowerMaxOS 10.0 array.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "LUN performance metrics collection is disabled by default.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Open the collecting.xml file and search for the line with text Unisphere-LUN-PERF and edit as below:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Restart collector manager services for the emc-vmax-hypermax Solution Pack (Dell VMAX/PowerMax).",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "Check the Status of Remote Host Services",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 26,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Check that all services have started on each of the hosts:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "- a. From SRM Admin UI, go to SYSTEM ADMIN &gt; Servers &amp; Modules &gt; Servers .",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 27,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Click the name of the service.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "Verifying and configuring the user process limits for vApp and Linux binary platforms",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "Verify and configure the user process limits for the apg user account on all VMs to a maximum of 512000.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Edit the security file:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Update the following lines for apg user to change limits from 65534 to 512000.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "apg hard nofile 512000 apg soft nofile 512000",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "apg hard nproc 512000 apg soft nproc 512000",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Save the file.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. To verify the changes, type the following command:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. To restart the services, type the following commands from the /opt/APG/bin directory of the installation:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "su apg -c 'ulimit -n -u' open files (-n) 512000 max user processes (-u) 512000'",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "/opt/APG/bin/manage-modules.sh service stop auto",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 27,
+    "confidence": 0.9
+  },
+  {
+    "title": "/opt/APG/bin/manage-modules.sh service start auto",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 27,
+    "confidence": 0.9
+  },
+  {
+    "title": "/opt/APG/bin/manage-modules.sh service status all",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 27,
+    "confidence": 0.9
+  },
+  {
+    "title": "Security Hardening on SRM vApps",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "There are standard STIG hardening rules that are supported by default on SRM vApp.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "Reset the password for the Compliance Backend module",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 27,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Log in to the Primary Backend.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Run the following command:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "- a. Linux: &lt;APG\\_HOME&gt;/bin/launch-update-backend-passwords.sh -c &lt;path to Host configuaration file&gt;",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 19,
+    "confidence": 0.9
+  },
+  {
+    "title": "Create softlink for mysql-client dependent library",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "/opt/APG/bin/../Databases/MySQL/Default/bin/ mysql: error while loading shared libraries: libtinfo.so.6: cannot open",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "sudo ln -s /lib64/libncurses.so.x.x /lib64/libtinfo.so.x",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "sudo ln -s /lib64/libncurses.so.6 /lib64/libtinfo.so.6",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "Find and Fix Broken Links in Reports",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 28,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. On APG page, click Profile &gt; User Settings .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Click Custom Reports tab.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. In the Broken Links Detection section, click Open Tool .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 1. Broken links description",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 1. Broken links description (continued)",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. Analyze the suggestion in each row.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. To accept a suggestion, click the box in the first column.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "6. Click Apply Fixes .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "7. When a suggestion is not correct or when there is no suggestion at all, manually fix the link as follows:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "8. Rerun the Link Detection Tool.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 48,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. From Administration, go to SYSTEM ADMIN &gt; Server &amp; Modules &gt; Modules .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. In Logical Overview table, search for Tomcat .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. To change the logging level:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "1catalina.com.watch4net.apg.logging.jul.handler.RotateFileHandler.level = FINE",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. To view the log entries:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "Deprecated or Deleted Alert Definitions",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 30,
+    "confidence": 0.9
+  },
+  {
+    "title": "Install Preconfigured Alerts for all SolutionPacks",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 30,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. From SRM Administration UI, go to CONFIG &gt; SolutionPacks .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Go to the Browse and Install SolutionPacks and select one for which the SolutionPack block must be installed.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Click Install .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. Enter an instance name for the component that is being installed.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. Assign a server for the related components. In a typical four server deployment, the recommended server is selected automatically.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "6. Click Next .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "7. Click Install .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "8. When the installation is complete, click OK .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 48,
+    "confidence": 0.9
+  },
+  {
+    "title": "Restore Timeout Values",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 31,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. On Linux, run the following command on each server to find the files with values that changed:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. NOTE: You can configure the idle time out value using the property. The default value for idle time out is 15 minutes.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "find / -name old(year of upgrade) -print",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "Edit New Actions Scripts",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 31,
+    "confidence": 0.9
+  },
+  {
+    "title": "In the conf file replace 127.0.0.1 with the primary backend IP address or FQDN:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 2. Conf file path in Linux and Windows",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "Review SolutionPack Block Configuration for Frontend Access",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 31,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. From SRM Administration UI, go to CONFIG &gt; Settings &gt; Central Configuration Repository .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Type frontend in the Search field.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Click the row that corresponds to the SolutionPack block that you must reconfigure.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. Click the checkbox for the component that you must reconfigure.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. Verify that the value in the Tomcat port field is 58443 (for https) or 58080 (for http), depending on the configuration.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "6. Select either HTTP or HTTPS in the Tomcat Communication Protocol drop-down list, depending on the configuration.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "7. Click Update .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "Install the Compliance Rules Module",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 27,
+    "confidence": 0.9
+  },
+  {
+    "title": "See the following procedure if the Compliance Rule module is not installed.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 27,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. From Administration, go to CONFIG &gt; SolutionPacks &gt; Browse &amp; Install SolutionPacks .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Click Configuration Compliance .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Click Install .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. Ensure that the Compliance Rules module is autopopulated with the appliance where the compliance backend is installed.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. Click Next .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "6. From the Web-Service Gateway drop-down list, select Gateway on &lt;Primary Backend Host&gt; .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "7. Click Install .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "8. Click OK .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 48,
+    "confidence": 0.9
+  },
+  {
+    "title": "Cisco MDS/Nexus Switch Discovery",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 32,
+    "confidence": 0.9
+  },
+  {
+    "title": "Export Cisco MDS/Nexus Switches",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 32,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. From the SRM Administration UI, go to DISCOVERY &gt; SNMP Discovery Device &gt; Snmp-Discovery &gt; Devices .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Select all of the Cisco MDS/Nexus switches from the device list.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. From the Actions drop-down list, select Export seed file , and click Execute Action .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "Install the SNMP Data Collector",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 33,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. From the SRM Admin UI, go to DISCOVERY&gt;SolutionsPacks&gt; Browse &amp; Install SolutionPacks .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Select the SolutionPack for Cisco MDS/Nexus in the Browse and Install SolutionPacks window.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Click Install .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. From the SNMP Data Collection drop-down list, select the server where you want to install the component.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. Click Next .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "6. Click Install .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "Import Switch Details into Discovery Center",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 35,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. From the SRM Administration UI, go to CONFIG &gt; Settings &gt; Manage Discovery Backends .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Click the Primary Backend, and then click Register .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Select the server that lists Cisco MDS/Nexus as a discoverable device type, and click Register .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. From the SRM Admin UI, go to DISCOVERY&gt; Discovery Center&gt; Manage Discovery and click on Cisco MDS/Nexus",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. Click the Discoverable Groups tab.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "6. Click Add new discovery group , provide a friendly name, and click OK .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "7. Click the discovery group that you just created.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "8. In the Credentials section, click Register .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 48,
+    "confidence": 0.9
+  },
+  {
+    "title": "10. In the Switch Details section, click Import .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "12. Click Save .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "13. Click the Collected Cisco MDS/Nexus tab, and click Discover .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "15. Select all of the devices, and click Import to Collected Cisco MDS/Nexus... .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "16. Click the Collected Cisco MDS/Nexus tab, click Save , and then click OK .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "Delete Switches from SNMP Device Discovery",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 35,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. From the Actions drop-down list, select Delete .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Click Execute Action , and then click OK .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. Click Dashboard in the left pane.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. Under Device Distribution , click Distribute all... .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "6. Click Send the generated configurations... .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "Update Capabilities",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 34,
+    "confidence": 0.9
+  },
+  {
+    "title": "To start polling the new capability after upgrading to Dell SRM 5.1.1.0, complete the following procedure:",
+    "font_size": 24.0,
+    "is_bold": true,
+    "heading_level": 3,
+    "page": 1,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Click Test and Rediscover .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. After the Test and Rediscover function completes, click OK .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. Repeat these steps for the switches that are discovered in the Discovery Center.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. To trigger polling, click Save .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "Brocade Switch Discovery",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 34,
+    "confidence": 0.9
+  },
+  {
+    "title": "Export Brocade Switches",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 34,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. From the SRM Admin UI, go to DISCOVERY &gt; SNMP Device Discovery &gt; Snmp- Discovery &gt; Devices .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Select Brocade switches.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. From the Actions drop-down list, select Export seed file , and click Execute Action .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "Import Switch Details into Discovery Center",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 35,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. From the SRM Admin UI, go to CONFIG &gt; Settings &gt; Manage Discovery Backends .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Click the Primary Backend, and then click Register .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Select the server that lists Brocade FC Switch as a discoverable device type, and click Register .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. From the SRM Admin UI, go to DISCOVERY&gt; Discovery Center&gt;Manage Discovery and click on Brocade .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. Click the Discovery Inventory Types tab.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "6. Click Add new discovery group , provide a friendly name, and click OK .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "7. Click the discovery group that you just created.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "8. In the SNMP Credentials section, click Import .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 48,
+    "confidence": 0.9
+  },
+  {
+    "title": "10. In the Switch Details section, click Import .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "11. Browse to the seed file ( agents.csv ), select it, and click OK .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "12. Click Save .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "13. Click the Collected Brocade FC Switch tab, and click Discover .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "15. Click Import to Collected Brocade FC Switch... .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "16. Click the Collected Brocade FC Switch tab, click Save , and then click OK .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "Delete Switches from SNMP Device Discovery",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 35,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. From the Actions drop-down list, select Delete .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Click Execute Action , and then click OK .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. Click Dashboard in the left-most pane.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. Under Device Distribution , click Distribute all... .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "6. Click Send the generated configurations... .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "DPA Scheduled Reports not Available after Upgrade",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 36,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. If Avamar is discovered:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Avamar W4N Custom Backup All Jobs",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Avamar W4N Custom Backup Restore Details",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "- AvamarLasthouroffsetby15mins",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Avamar15Minsago",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Avamar1Hourand15Minsago",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. If NetBackup is discovered:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "- NetBackup W4N Custom Backup All Jobs",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "- NetBackup W4N Custom Backup Restore Details",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "- NetBackupLasthouroffsetby15mins",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "- NetBackup15Minsago",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "- NetBackup1Hourand15Minsago",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Restart the DPA Collector in Dell SRM.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "Create an Events Database for the SolutionPack for Data Protection Advisor",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 36,
+    "confidence": 0.9
+  },
+  {
+    "title": "An events database must be manually created before the SolutionPack for Dell Data Protection Advisor can be installed.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 36,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Putty in to the Primary Backend server using the command line.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Go to the following location:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. /opt/APG/bin/",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Run the following command:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. ./mysql-client.sh",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. Type the Username: apg , database: events .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "Type the default password is watch4net",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. Change to show tables; and look for generic\\_backup table",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "6. Create the generic\\_backup table in the events database:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "7. See the following steps only if you are upgrading from ViPR SRM 4.0 to ViPR SRM 4.1.1:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "- a. From Dell SRM, go to Administration &gt; SolutionPacks &gt; Storage &gt; Dell Data Protection Advisor .",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 36,
+    "confidence": 0.9
+  },
+  {
+    "title": "Update the SNMP Collections",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 37,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Click Collectors in the left-most pane.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. On the Collectors page, click the checkbox for each collector.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. Click the Delete icon.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. Click New Collector .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "6. Retain the values for Network interface and Collector Port unless you have changed the port configuration.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "8. On the collectors, click Send configurations to the 1 selected collector(s) .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "12. If any of the collectors are not synchronized, click the Distribute all approved devices… button.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "13. Click Send the generated configurations on all available collectors .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "Virus Scanning Software in Windows Deployments",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "Review Report Customization",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 38,
+    "confidence": 0.9
+  },
+  {
+    "title": "After an upgrade, you must decide whether to use a saved reportpack or the new one.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "Validate the Environment",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 38,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Look for broken links. Resolve issues or document them for later follow-up.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Verify that all tasks are successfully completed (except automatic updates and Dell Technologies Connectivity).",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. Validate that topology is working. Resolve any issues.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. Verify or edit polling periods.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "Verify vApp Linux Operating System is Upgraded",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 19,
+    "confidence": 0.9
+  },
+  {
+    "title": "After the upgrade, verify that the vApp Linux Operating System has been upgraded.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 19,
+    "confidence": 0.9
+  },
+  {
+    "title": "includedir /etc/sudoers.d   # added by MnR platform",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "This must be checked on each of the SRM Linux Servers.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 19,
+    "confidence": 0.9
+  },
+  {
+    "title": "/opt/APG/bin/launch-vapp-update.sh",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "Run this command on each of the Linux server where the Linux Operating System was not upgraded.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 19,
+    "confidence": 0.9
+  },
+  {
+    "title": "Reconfiguring Dell PowerVault Frontend Web Service",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "After the upgrade, reconfigure the Dell PowerVault Frontend Web Service.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. In SRM Admin UI, go to CONFIG &gt; Installed Solution Packs .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Click Dell PowerVault .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Click the Reconfigure given answers icon for block 'collect'.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. In the Frontend Web service field, you can either use the existing service or add a new service.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. Click Reconfigure .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "Reconfiguring Pure Storage Frontend Web Service",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "After the upgrade, reconfigure the Pure Storage Frontend Web Service.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. In SRM Admin UI, go to CONFIG &gt; Installed Solution Packs .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Click Pure Storage .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Click the Reconfigure given answers icon for block 'collect'.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. In the Frontend Web service field, you can either use the existing service or add a new service.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. Click Reconfigure .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "Reconfiguring Kubernetes",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "Deleting the ISO Image from Data Store Location",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Log in to the vCenter Client and select the VM.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Shut down the VM.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Right click on the VM and click Edit Settings .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. In the Virtual Hardware tab, Delete the CD/DVD Drive 2 .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. Click OK on the Edit Settings pane to close the window and reconfigure the VMs settings.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "6. Check the Recent Task pane of the vCenter client and confirm that VMs are reconfigured successfully.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "7. Power on the VM.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "Limitations and Known Issues",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 40,
+    "confidence": 0.9
+  },
+  {
+    "title": "The following are the limitations and known issues.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 40,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. firewall-cmd --permanent --zone=trusted --add-source=&lt;ip-of-ftp&gt;",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. firewall-cmd --reload",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Enhanced Upgrade Log",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "- SRM APG UI Loading Issue",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Troubleshooting Procedure for SLES 15 SP4 OS Upgrade",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "Enhanced Upgrade Log",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "If there is an upgrade failure, the following can be done to troubleshoot:",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "- The enhanced SRM upgrade UI provides details of the log messages to be reviewed.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "SRM APG UI Loading Issue",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "In vApp, after OS Upgrade to SLES 15 SP4, SuSEfirewall2 is replaced by Firewalld. To enable the ports, follow the below steps.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Log in to the SRM appliance using root credentials.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Run the below command:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Scripts add all the required ports to the firewall.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. Now the SRM APG UI page is loaded, the login prompt is shown.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "Troubleshooting Procedure for SLES 15 SP4 OS Upgrade",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Resume the Upgrade on SRM Setup.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "- OS Upgrade Initiation Failed.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Failed to Establish Connection.",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 45,
+    "confidence": 0.9
+  },
+  {
+    "title": "- VMutils Manager Packages.",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 45,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Failed to start D-Bus System Message",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 45,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Passive STIG Rules",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 47,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Unmapping CD/DVD Drive",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 47,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Wrong Password during OS Upgrade Script",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "Resume the Upgrade on SRM Setup",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "Before launching SRM upgrade from the UI using the Launch Upgrade button, the system prompts for the following confirmation.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "Follow the below procedure to troubleshoot the SRM setup, to resume the SRM upgrade process.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Ensure that all the servers with SLES12 SP5 Operating System must be upgraded to SLES15 SP4 Operating System.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. If the overall Upgrade did not finish on the UI, log in to the Frontend VM with root credentials.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. Find out the Update manager process, and kill the same.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "On Linux machines, find the process number and then use the kill command.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 19,
+    "confidence": 0.9
+  },
+  {
+    "title": "On windows FE, kill the process with the image name as java.exe .",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. Restart all services on the Frontend including Tomcat.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Linux command: cd /opt/APG/bin",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 19,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Windows command: cd Program Files/APG/bin",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "6. To restart the services, use the following commands.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Linux command: manage-modules.sh service restart all",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 19,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Windows command: manage-modules.cmd service restart all",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "7. Log in to the Primary Backend, Additional Backend using root/administrator credentials. Perform the above steps to restart all services.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "8. Log in to the SRM UI and then restart all services across the collector servers. Restart the services.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 48,
+    "confidence": 0.9
+  },
+  {
+    "title": "OS Upgrade Initiation Failed",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "When one or multiple Remote Servers OS Upgrade Initiation Failed, the following error is shown.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "Follow the below procedure to troubleshoot the Remote Servers OS Upgrade Initiation.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Log in to the Frontend Appliance and navigate to /opt/ADG/osupdate/logs directory.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Check the osUpgradeInitiation.log for below error for all the servers.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. ISO Image is not attached to the VM, then follow the steps that are mentioned in Configure ISO Image for Each SRM VMs",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. After ISO Image attachment, rerun the below command.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. The script will initiate the Operating System upgrade on the Failed Servers.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "SLESOSupgrade.sh -u remoteServer",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "When one or multiple Remote Servers OS Upgrade Initiation Failed, the following error is shown.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "Follow the below procedure to retrigger the OS upgrade on the Failed Servers and complete the OS upgrade process.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Log in to the Frontend Appliance and navigate to /opt/ADG/osupdate/ directory",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Edit the SRMVMList.csv file to include only the OS Upgrade Initiation Failed Servers and Save the file.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. The script will initiate the Operating System upgrade on the Failed Servers.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "SLESOSupgrade.sh -u remoteServer",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "SLESOSupgrade.sh -s status",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "Failed to Establish Connection",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 45,
+    "confidence": 0.9
+  },
+  {
+    "title": "Follow the below procedure to troubleshoot the failed to establish connection.",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 45,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Log in to the Frontend Appliance and navigate to the OSUpgrade directory where the OS Upgrade scripts are copied.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "SLESOSupgrade.sh -u sshKeyCopy",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Once the script is triggered, provide the password for the VM's. Connection establishment must be successful.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. To check Connection establishment status, run below command.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. All the server's status should be passed as below, if status is failed for any of the servers, you must rerun the above steps.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. Rerun the below command to trigger the OS Upgrade on the remote servers.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "SLESOSupgrade.sh -u remoteServer",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "6. The script will initiate the Operating System upgrade on the remote Servers .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "SLESOSupgrade.sh -s status",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "VMutils Manager Packages",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 45,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Log in to the appliance using root credentials.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Run vmutils-manager.sh and reinstall the tcpdump and net-snmp packages.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "Failed to start D-Bus System Message",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 45,
+    "confidence": 0.9
+  },
+  {
+    "title": "During OS Upgrade from SLES 12 SP5 to SLES 15 SP4, if you get into the issue as below:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Revert the snapshot of the VM.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. To resolve the d-bus system issue, apply the steps that are mentioned in the KB on the VM where it is observed.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Rerun the OS Upgrade procedure.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "Unsupported V3 key",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "During OS Upgrade from SLES 12 SP5 to SLES 15 SP4, if you get below warning message:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Revert the snapshot of the VM.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. To resolve the unsupported V3 key warning, apply the steps that are mentioned in the KB on the VM where it is observed.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Rerun the OS Upgrade procedure.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "warning: Unsupported version of key: V3",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "For more information, refer SUSE Support KBA 000019712 .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "Passive STIG Rules",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 47,
+    "confidence": 0.9
+  },
+  {
+    "title": "Unmapping CD/DVD Drive",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 47,
+    "confidence": 0.9
+  },
+  {
+    "title": "During upgrade to SLES 15 SP4, the following error is displayed if SLES 12 SP4 ISO is still connected to appliance CD/DVD Drive.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Revert all the VM's to the previous snapshot.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Power-off the VM.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Right click on the VM and click Edit Settings .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. In the Virtual Hardware tab, point the CD/DVD Drive setting where SLES 12 SP4 ISO is mapped, to Client Drive .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. Click OK on the Edit Settings pane to close the window and reconfigure the VMs settings.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "6. Check the Recent Task pane of the vCenter client and confirm that VMs are reconfigured successfully.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "7. Power on the VM.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "8. Retry the steps in Upgrade Operating System for vApp to SLES 15 SP4.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "Wrong Password during OS Upgrade Script",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  }
+]

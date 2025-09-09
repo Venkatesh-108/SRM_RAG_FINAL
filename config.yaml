@@ -2,12 +2,13 @@
 
 # --- Mode Selection ---
 # Select the active mode: "low", "medium", or "high"
-current_mode: "low"
+current_mode: "medium"
 
 # --- General Settings ---
 docs_path: "docs"
 index_path: "index"
 ollama_model: "llama3.2:3b" # Or "phi3:latest", "llama3.2:3b"
+use_direct_results: false  # Set to true to return raw search results without LLM processing
 
 # --- RAG Mode Configurations ---
 modes:
@@ -38,9 +39,9 @@ modes:
     reranker_model: "cross-encoder/ms-marco-MiniLM-L-6-v2"
     
     # Retrieval settings
-    top_k_bm25: 8
-    top_k_faiss: 8
-    top_k_reranked: 5
+    top_k_bm25: 10
+    top_k_faiss: 10
+    top_k_reranked: 7
     
     # Advanced features
     enable_multi_query_generation: true
@@ -48,9 +49,9 @@ modes:
     enable_multi_stage_generation: true
     
     # Context management
-    max_context_length_simple: 6000
-    max_context_length_medium: 8000
-    max_context_length_complex: 12000
+    max_context_length_simple: 8000
+    max_context_length_medium: 10000
+    max_context_length_complex: 14000
 
   # High mode: Best quality, slowest response.
   # Uses more candidates for retrieval and reranking for maximum thoroughness.

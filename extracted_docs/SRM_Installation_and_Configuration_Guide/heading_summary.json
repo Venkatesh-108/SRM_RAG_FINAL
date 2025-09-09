@@ -1,0 +1,4658 @@
+[
+  {
+    "title": "Document Content",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 1,
+    "page": 1,
+    "confidence": 0.3
+  },
+  {
+    "title": "Dell SRM 5.1.1.0 Installation and Configuration Guide",
+    "font_size": 24.0,
+    "is_bold": true,
+    "heading_level": 3,
+    "page": 1,
+    "confidence": 0.9
+  },
+  {
+    "title": "5.1.1.0",
+    "font_size": 24.0,
+    "is_bold": true,
+    "heading_level": 3,
+    "page": 1,
+    "confidence": 0.9
+  },
+  {
+    "title": "<!-- image -->",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "<!-- image -->",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "A NOTE indicates important information that helps you make better use of your product.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "WARNING: A WARNING indicates a potential for property damage, personal injury, or death.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Dell SRM virtual appliance installation overview",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Installation checklist",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Dell SRM vApp deployment process flow",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 9,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Customizing vApp Configuration",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 10,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Installing the 4VM vApp",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Install additional Dell SRM vApp VMs overview",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 12,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Deploy Scaleout VMs in Existing vApp",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 12,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Deploying Collector vApp VMs in different datacenters",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 13,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Post deployment, pre-startup tasks",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Adjusting the VMs",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 15,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Adding disk space",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 15,
+    "confidence": 0.9
+  },
+  {
+    "title": "- DataStores",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 15,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Modifying the start order of the vApps",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 15,
+    "confidence": 0.9
+  },
+  {
+    "title": "Dell SRM virtual appliance installation overview",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "The vApp is based on SuSE Enterprise SLES 15 SP4.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "The product includes the latest version of MySQL Community Server (GPL).",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 44,
+    "confidence": 0.9
+  },
+  {
+    "title": "Do not add any binary VMs into the vApp container (including any Dell SRM binary VMs).",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "The procedures enable you to install two types of software:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- NOTE: The password policy suggests using passwords with more than 14 characters in length.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "- NOTE: For vApp based and SLES-based binary SRM deployments, SRM 5.1.0.0 is supported only on SLES 15 SP4.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "- NOTE: SUSE Linux Enterprise 15 guest operating system option is not available in Hardware version 13 (ESXi 6.5) and earlier.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "Remote Transfer using FTP to work, Run the following commands in the path /etc/firewalld/zones :",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. firewall-cmd --permanent --zone=trusted --add-source=&lt;ip-of-ftp&gt;",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. firewall-cmd --reload",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "Once the command is run, a success message is displayed and a trusted.xml file is generated.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Dell SRM Support Matrix",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Dell SRM Release Notes",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "4VM vApp OVF",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "1VM vApp OVF",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Brocade FC Switch",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Dell PowerScale",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Dell EMC VMAX",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Dell VMAX/PowerMax",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- VMware vSphere and vSAN",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Block Chargeback",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- System Health",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Configuration Compliance",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "The Collector host that is deployed with the 1VM is configured with 48 GB of memory and 8 CPUs.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "Dell SRM vApps fully support the VM vMotion and Storage vMotion DRS functions within the ESX clusters of vCenter.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "Installation checklist",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 8,
+    "confidence": 0.9
+  },
+  {
+    "title": "Below checklist items are required for successful Dell SRM installation.",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 1. Dell SRM Installation checklist",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 1. Dell SRM Installation checklist (continued)",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "Dell SRM vApp deployment process flow",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 9,
+    "confidence": 0.9
+  },
+  {
+    "title": "The following figure depicts the vApp deployment workflow.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "Figure 1. Dell SRM vApp deployment process flow",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "<!-- image -->",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "Customizing vApp Configuration",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 10,
+    "confidence": 0.9
+  },
+  {
+    "title": "This section provides information about custom vApp configuration.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "Installing the 4VM vApp",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Gather the following information:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- vCenter location where you plan to deploy the appliance.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Static IP address for each VM: This IP address must be registered in DNS with forward and reverse lookup before you begin the deployment.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Gateway",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Netmask",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- DNS servers",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 44,
+    "confidence": 0.9
+  },
+  {
+    "title": "NOTE: While deploying, SRM 4VM vApp do not use underscore(\\_) in the SRM host names.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Browse to the Support by Product (Dell Support) page for Dell SRM .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Click Downloads .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Download the Dell SRM &lt;version number&gt; vApp Deployment Zip file.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "Each download has a checksum number. Copy the checksum number and validate the integrity of the file using an MD5 checksum utility.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. Open vCenter Client and connect to the vCenter Server that manages the VMware environment.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "Do not run vCenter Client on a VPN connection.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "For the fastest deployment time, the host running vCenter Client should be local to the ESXi servers.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 44,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. Select where in the vCenter ESXi cluster/server you want to deploy the VMs for Dell SRM.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "6. Select File &gt; Deploy OVF Template .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "7. In the Source step, locate the 4VM\\_vApp.ovf and system.vmdk file.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": ".",
+    "font_size": 24.0,
+    "is_bold": true,
+    "heading_level": 3,
+    "page": 1,
+    "confidence": 0.9
+  },
+  {
+    "title": "10. In the End User License Agreement step, review the license agreement. Click Accept , and then click Next .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "11. In the Name and Location step:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "- a. Specify a new name or accept the default name for the appliance.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "12. Select the Resource Pool or the folder where the deployment places the Dell SRM VMs, and click Next in the Resource Pool step.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "14. In the Disk Format step, select the storage space provisioning method, and then click Next .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "<!-- image -->",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "network deployment.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "16. In the IP Address Allocation step, choose the IP allocation policy and IP protocol to use, and then click Next .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "17. In the Properties step, provide the values for each of the VMs, and then click Next .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "19. After the 4VM deployment finishes, in the Deployment Completed Successfully dialog box, click Close .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "20. Before you power on the vApp, make the following changes to the VM configurations:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "- To expand the file system, add additional VMDK disks.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Adjust the vCPU and VM Memory as specified in the Dell SRM design.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "21. Use the 1VM OVF to add any Additional Backend VMs and Collector VMs as described in the following section:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "Install additional Dell SRM vApp VMs overview",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 12,
+    "confidence": 0.9
+  },
+  {
+    "title": "The vApp is based on SuSE Enterprise SLES 15 SP4.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "The product includes the latest version of MySQL Community Server (GPL).",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 44,
+    "confidence": 0.9
+  },
+  {
+    "title": "Do not add any binary VMs into the vApp container (including any Dell SRM binary VMs).",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "The procedures enable you to install two types of software:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Dell SRM Support Matrix",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Dell SRM Release Notes",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "1VM vApp OVF",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "Dell SRM vApps fully support the VM vMotion and Storage vMotion DRS functions of vCenter.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "Deploy Scaleout VMs in Existing vApp",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 12,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Log in to the vCenter managing the vApp you want to scale out.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Right-click the vApp and select Shut Down . Wait for all VMs in the vApp to shut down completely.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Browse to the Support by Product page for Dell SRM (Dell Support Page) page.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Click Downloads .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Download the Dell SRM &lt;version number&gt; vApp Deployment Zip file.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. Open the vSphere Client and connect to the vCenter Server that manages the VMware environment.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. Select the resource pool where you want to deploy the VMs for Dell SRM.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "6. Select File &gt; Deploy OVF Template .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "7. In the Source step, locate the 1VM OVF file.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "10. In the End User License Agreement step, review the license agreement, click Accept , and then click Next .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "12. Select the host or cluster where you want to run the deployed template and click Next .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "13. Select the destination storage for the virtual machine files and click Next .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "14. In the Disk Format step, select the storage space provisioning method and click Next .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "<!-- image -->",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "16. In the IP Address Allocation step, choose the IP allocation policy, the IP protocol to use, and click Next .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "17. In the Properties step, provide the values for each of the VMs, and click Next .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "18. In the Ready to Complete step, review the list of properties for the appliance and click Finish .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "A status bar opens in the vSphere Client showing the deployment progress.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "19. Click Close in the Deployment Completed Successfully dialog box.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Wait for all VMs to complete deployment.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Modify the start order of the vApp entities as described in Modifying the start order of the vApps.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 15,
+    "confidence": 0.9
+  },
+  {
+    "title": "Deploying Collector vApp VMs in different datacenters",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 13,
+    "confidence": 0.9
+  },
+  {
+    "title": "Use this procedure to deploy remote Collectors in different datacenters.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 13,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Browse to the Support by Product (Support by Product) page for Dell SRM.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Click Downloads .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. Open the vCenter Client and connect to the vCenter Server that manages the VMware environment.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. Select File &gt; Deploy OVF Template .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "6. In the Source step, locate the 1VM OVF file.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "7. Click Next .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 43,
+    "confidence": 0.9
+  },
+  {
+    "title": "10. In the Name and Location step:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "- a. Specify a new name or accept the default name for the appliance.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "11. In the Deployment Configuration step, select the Collector Appliance from the drop-down list.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "12. In the Host/Cluster step, select the ESX server or ESX Cluster, and click Next .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "13. In the Resource Pool step, select the Resource Pool or the folder where the deployment places the Dell SRM VMs, and click Next .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "14. In the Storage step, select the DataStore for the virtual machine files, and then click Next .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "15. In the Disk Format step, select the storage space provisioning method, and then click Next .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "16. In the Network Mapping step, select a destination network for the VM, and then click Next .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "17. In the IP Address Allocation step, choose the Fixed IP allocation policy and the IP protocol to use, and then click Next .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "18. In the Properties step, provide the values for each field, and then click Next .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "20. After the deployment finishes, in the Deployment Completed Successfully dialog box, click Close .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "21. Repeat these steps for each Collector that is required to install in a remote datacenter.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "22. Before you power on the vApp, make the following changes to the VM configurations:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "- a. To expand the file system, add additional VMDK disks.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- b. Adjust the vCPU and VM Memory as specified in the Dell SRM design.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "Post deployment, pre-startup tasks",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "To complete the configuration changes:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Adjust the Collector VM memory.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Adjust the Collector VM CPUs.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. To conform to naming policies, change the vApp VM name in vCenter.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. Increase the VM storage per VM.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. Move the vApp VM storage to its assigned datastore.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "6. Modify the vApp container startup order.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "Adjusting the VMs",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 15,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Change the vApp VMs name to default VM to meet VM naming standards.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Edit the VM settings and select the Options tab to make the updates.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "Adding disk space",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 15,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. From the vCenter Console, select the individual VM where you want to add new disk storage.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Select Edit Settings on the virtual machine and click Add .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Select Hard Disk and click Next .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. Select Create a new virtual disk and click Next .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. Specify the disk size, the provisioning type, the location of the disk and click Next .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "6. Specify the virtual device node (the default value should be OK ) and click Next .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "7. Review the options and click Finish .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 43,
+    "confidence": 0.9
+  },
+  {
+    "title": "NOTE: Using this script extends maximum 1000 GB disk space in one execution.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "DataStores",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 15,
+    "confidence": 0.9
+  },
+  {
+    "title": "For reference, the target storage sizes are as follows:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Frontend - 320 GB",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Additional Backends - 1 TB and larger",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Collector - 300 GB or larger",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "With the VM in a powered off state, use the Storage vMotion feature to move the VM to a new DataStore.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "Modifying the start order of the vApps",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 15,
+    "confidence": 0.9
+  },
+  {
+    "title": "Modify the start order of the vApps in a Dell SRM installation whenever you add a vApp VM to the vApp container.",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Right-click the vApp and select Edit Settings .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Browse to the Start Order tab.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Move the new VMs into the proper group that is based on the following:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Group 1: All Additional Backends",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Group 2: Primary Backend",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Group 3: All Collectors",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Group 4: Frontend",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. In the Shutdown Action section, select Guest Shutdown from the Operation list.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. Change the elapsed time to 600 s.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "6. Click OK .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Starting the vApp",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Dell SRM Passwords",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Verifying that the services are running",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 37,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Logging in to the user interface",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 38,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Verifying MySQL Database Grants",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 34,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Verifying and configuring the user process limits for a vApp installation",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "Starting the vApp",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "The vApp container settings control the Dell SRM startup order.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "Edit the start-up as described in Post deployment, pre-startup tasks.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Dell SRM will be ready for login after the additional background processing completes.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Log in to the URL https:// &lt;Frontend-hostname&gt; :58443/APG .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "Dell SRM Passwords",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "Passwords control access to Dell SRM and the internal communications.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "Verifying that the services are running",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 37,
+    "confidence": 0.9
+  },
+  {
+    "title": "Verify that the services are running on each host by obtaining the status.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Type the command for the operating system from the bin directory of the installation:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Verify that each service has a status of running in the output.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "Troubleshooting service start-up problems on UNIX",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 37,
+    "confidence": 0.9
+  },
+  {
+    "title": "Check the log files when services do not start.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "Ensure that you have logged in with root to check the log files.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- The default path is /opt/APG/ .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "Logging in to the user interface",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 38,
+    "confidence": 0.9
+  },
+  {
+    "title": "Log in to the user interface to use and edit reports, manage users, and customize the interface to meet the needs.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Open a browser and type the following URL: https:// &lt;Frontend-hostname&gt; :58443/APG",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Type the login credentials. The default username is admin . The default password is changeme",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Click Sign In .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": ".",
+    "font_size": 24.0,
+    "is_bold": true,
+    "heading_level": 3,
+    "page": 1,
+    "confidence": 0.9
+  },
+  {
+    "title": "<!-- image -->",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "Verifying MySQL Database Grants",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 34,
+    "confidence": 0.9
+  },
+  {
+    "title": "For mysql-client.sh to work on RHEL8.x, RHEL9.x and SLES 15 SP4, libncurses.so.x is required.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "sudo ln -s /lib64/libncurses.so.6 /lib64/libtinfo.so.6",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Run the following script:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. When prompted, select root as the username, mysql for the database, and watch4net as the password.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Run the following query:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "/opt/APG/bin/mysql-client.sh",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "mysql> SELECT user, host, db, select_priv, insert_priv, grant_priv FROM mysql.db;",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "<!-- image -->",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "Verifying and configuring the user process limits for a vApp installation",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "Verify and configure the limits for the apg user account on all VMs to a maximum of 512000.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "Ensure that you have a login with root privileges.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Edit the security file: vi /etc/security/limits.conf.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Update the following lines for APG user to change limits from 65534 to 512000.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "- apg hard nofile 512000",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "- apg soft nofile 512000",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "- apg hard nproc 512000",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "- apg soft nproc 512000",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Save the file.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. To verify the changes, type the following command: su apg -c 'ulimit -n -u' open files (-n) 512000.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "max user processes (-u) 512000.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. To restart the services, type the following commands from the /opt/APG/bin directory of the installation:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "/opt/APG/bin/manage-modules.sh service stop auto",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "/opt/APG/bin/manage-modules.sh service start auto",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "/opt/APG/bin/manage-modules.sh service status all",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "<!-- image -->",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Adding remote Collectors to the existing Dell SRM deployment.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Reconfiguring the LBC, Generic-SNMP, and Generic-RSC",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "Adding remote Collectors to the existing Dell SRM deployment.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "NOTE: For Windows, use .cmd instead of .sh , and / instead of \\ for directories.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Install the Dell SRM software as described in Installing on Linux or Installing on Windows Server.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Configure the binary collectors:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "- a. Browse to the following directory:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "Linux: cd /opt/APG/bin",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "Windows: cd Program Files/APG/bin",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- c. Verify that all the services are running:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "manage-modules.sh service status all",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. On the Frontend, run the following command:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. Verify the Remote Collector configuration through the Dell SRM UI.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "Reconfiguring the LBC, Generic-SNMP, and GenericRSC",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "If a collector is powered on outside of the vApp, you must reconfigure the Load Balancer Connector, generic-snmp, and generic-rsc.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Arbiter Configuration- send data to the Primary Backend over port 2020.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Alerting on data collection- send data to the Primary Backend over port 2010.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Frontend web service- send data to the Frontend over port 58443.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Data Configuration: send data to the localhost over port 2020.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Frontend web service: send data to the Frontend over port 58443.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. In the SNMP Collector Name field, type the FQDN of the collector host.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. Repeat the steps for each instance of generic-snmp and generic-rsc.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "Verifying and Configuring the user process limits for a vApp installation",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "<!-- image -->",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Installation options for a standard installation",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Dell SRM binary deployment process flow",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 24,
+    "confidence": 0.9
+  },
+  {
+    "title": "- General Dell SRM requirements",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 24,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Linux requirements",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 24,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Installing on Linux",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Installing on Windows Server",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 26,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Configuring binary Dell SRM SRM-Conf-Tools",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 27,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Verifying MySQL Database Grants",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 34,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Updating firewall ports in Red Hat and SLES servers",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 35,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Editing new actions scripts",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 36,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Verifying that the services are running",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 37,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Logging in to the user interface",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 38,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Connecting to Administration",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 38,
+    "confidence": 0.9
+  },
+  {
+    "title": "Installation options for a standard installation",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "Learn how to install the platform using a binary installation package.",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "The platform infrastructure consists of four types of hosts:",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 33,
+    "confidence": 0.9
+  },
+  {
+    "title": "- All-In-One (recommended for POCs and testing only)",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "NOTE: For vApp based and SLES-based binary SRM deployments, SRM 5.1.0.0 is supported only on SLES 15 SP4.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 3. Installation Options",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "Dell SRM binary deployment process flow",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 24,
+    "confidence": 0.9
+  },
+  {
+    "title": "The following figure depicts the SRM binary-based deployment workflow.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "Figure 2. Dell SRM binary deployment process flow",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "<!-- image -->",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "General Dell SRM requirements",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 24,
+    "confidence": 0.9
+  },
+  {
+    "title": "For details about configuring CA SSL certificates, see the SRM Documentation.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- 64-bit operating system (Linux or Windows)",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Frontend - 16 GB RAM, 4 CPUs, and 320 GB disk storage",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Backends - 24 GB RAM, 4 CPUs, and disk storage determined by the sizing",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Collectors - 16 GB to 64 GB RAM, 4 to 8 CPUs, and 130+ GB disk storage",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Forward and Reverse IP and DNS lookups must work on each server.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 44,
+    "confidence": 0.9
+  },
+  {
+    "title": "Linux requirements",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 24,
+    "confidence": 0.9
+  },
+  {
+    "title": "- /tmp folder larger than 2.5 GB",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "- SWAP files should be at least equal to the RAM size.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- On RedHat-like Linux, the SELinux should be disabled or reconfigured.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- On some Linux distributions:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 48,
+    "confidence": 0.9
+  },
+  {
+    "title": "- MySQL server requires libaio1, libaio-dev, or libaio to start.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "- The installation process requires extract.",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "- On the system, restart the apg services may not start.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "Installing on Linux",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Ensure that you have a login with root privileges. This product must only be installed using root and root privileges.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Ensure that the ports that are listed in the Ports Usage Matrix are enabled and a host or network firewall does not block them.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- NOTE: For vApp based and SLES-based binary SRM deployments, SRM 5.1.0.0 is supported only on SLES 15 SP4.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "For mysql-client.sh to work on RHEL8.x, RHEL9.x and SLES 15 SP4,",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "sudo ln -s /lib64/libncurses.so.6 /lib64/libtinfo.so.6",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Log in to the server as root.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Browse to the /sw folder.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Change the permissions of the installer. For example: chmod +x &lt;file\\_name&gt;.sh",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. Run the installer from the directory. For example: ./&lt;file\\_name&gt;.sh",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. Read and accept the End User License Agreement.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "6. Accept the default installation directory of /opt/APG or type another location.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "Configuring the user process limits for a Linux installation",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Ensure that you have a login with root privileges.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Edit the security file: vi /etc/security/limits.conf .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Insert the following lines for the apg user below the line with #&lt;domain&gt; . In this example, the user is apg .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "apg   hard  nofile  512000 apg   soft  nofile  512000",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "libncurses.so.x is required.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 48,
+    "confidence": 0.9
+  },
+  {
+    "title": "apg   hard  nproc   512000 apg   soft  nproc   512000",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Save the file.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. To verify the changes, type the following command:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. In the /opt/APG/bin/apg.properties file, edit the hostname to an FQDN hostname:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "6. To restart the services, type the following commands from the /opt/APG/bin directory of the installation:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "su apg -c 'ulimit -n -u' open files                                  (-n)    512000 max user processes         (-u) 512000",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "=================== # Common Properties #=================== hostname=lglba148.lss.emc.com",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "Configuring virus-scanning software",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 27,
+    "confidence": 0.9
+  },
+  {
+    "title": "Installing on Windows Server",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 26,
+    "confidence": 0.9
+  },
+  {
+    "title": "You can install the product on supported Windows Server hosts.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 33,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Ensure that the \\tmp folder is larger than 2.5 GB.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Ensure that you have a login with system administrator privileges.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Ensure that the ports that are listed in the Ports Usage Matrix are enabled and the firewall does not block them.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Browse to the C:\\sw folder.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Double-click the .exe file.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Click Next on the Welcome screen.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. Read and accept the End User License Agreement. Click I Agree .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. Select the Destination Folder, and then click Next .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "6. Click Install .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "7. When the installation is complete, click Next .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 43,
+    "confidence": 0.9
+  },
+  {
+    "title": "10. STOP: Repeat the Dell SRM installation and configuration process for all the servers in this deployment before proceeding.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "12. Restart the services, and troubleshoot any service that does not show a status of running .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "manage-modules.cmd service restart all manage-modules.cmd service status all",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "Configuring virus-scanning software",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 27,
+    "confidence": 0.9
+  },
+  {
+    "title": "Configuring binary Dell SRM SRM-Conf-Tools",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 27,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Initially configure a Frontend, Primary Backend, and Additional Backend servers.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "that VM/Server and reinstall the product. Refer to Uninstallation",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "Creating the Dell SRM-Conf-Tools answers file",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "- The answers file is case sensitive and must be all lowercase.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Create the file using notepad++ or the Linux VI editor.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Name the file srm-hosts .",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 33,
+    "confidence": 0.9
+  },
+  {
+    "title": "The format of the answers file is: server\\_type=hostname:os",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 44,
+    "confidence": 0.9
+  },
+  {
+    "title": "- server\\_type -The four basic types of Dell SRM servers",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 44,
+    "confidence": 0.9
+  },
+  {
+    "title": "- OS -linux-x64 or windows-x64",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Ensure that you have created an answers file as described in Creating the Dell SRM-Conf-Tools answers file.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "- CPU: 4",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Memory: 24 GB (refer to the Dell SRM design document)",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Disk Space: 132 GB (the final storage size per server is adjusted later)",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. The base Dell SRM software and OS updates should be completed as described in Installing on Linux.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Browse to /opt/APG/bin .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Run the Primary Backend configuration script:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. Restart the services and verify that they are running. Troubleshoot any service that does not show a status of 'running.'",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. Check the DB grants as described in Verifying MySQL Database Grants. (Collectors do not need DB grants.)",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "./launch-primarybackend-configuration.sh -c /sw/srm-hosts",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 33,
+    "confidence": 0.9
+  },
+  {
+    "title": "./manage-modules.sh service stop all ./manage-modules.sh service start all ./manage-modules.sh service status all",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Ensure that you have created an answers file as described in Creating the Dell SRM-Conf-Tools answers file.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "- 64-bit Operating System",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "- CPU: 4",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Memory: 24 GB",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Disk Space: 132 GB (the final storage size per server is adjusted later)",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. The base Dell SRM software and OS updates should be completed as described in Installing on Linux.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Browse to /opt/APG/bin .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Run the Additional Backend configuration script:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. Restart the services and verify that they are running. Troubleshoot any service that does not show a status of 'running.'",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. Check the DB grants as described in Verifying MySQL Database Grants. (Collectors do not need DB grants.)",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "./launch-additionalbackend-configuration.sh -c /sw/srm-hosts",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 33,
+    "confidence": 0.9
+  },
+  {
+    "title": "./manage-modules.sh service stop all ./manage-modules.sh service start all ./manage-modules.sh service status all",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Ensure that you have created an answers file as described in Creating the Dell SRM-Conf-Tools answers file.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "- 64 bit operating system (Linux or Windows)",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "- CPU- 4 to 8",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Memory: 16 GB to 64 GB (refer to the Dell SRM design document)",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Disk Space: 132 GB (the final storage size per server is adjusted later).",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Browse to /opt/APG/bin .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Run the Collector configuration script:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. Restart the services and verify that they are running. Troubleshoot any service that does not show a status of 'running.'",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "./manage-modules.sh service stop all ./manage-modules.sh service start all ./manage-modules.sh service status all",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "/opt/APG/bin/manage-modules.sh remove generic-snmp",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Ensure that you have created an answers file as described in Creating the Dell SRM-Conf-Tools answers file",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "- 64-bit Operating System",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "- CPU: 4",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Memory: 16 GB",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Disk Space: 132 GB (the final storage size per server is adjusted later)",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. The base Dell SRM software and OS updates should be as described in Installing on Linux",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Browse to /opt/APG/bin .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Run the Frontend configuration script:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. Restart the services and verify that they are running. Troubleshoot any service that does not show a status of 'running.'",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. Verify that the Dell SRM management resources have been created:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "./manage-modules.sh service stop all ./manage-modules.sh service start all ./manage-modules.sh service status all",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "/opt/APG/bin/manage-resources.sh list",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- 64-bit operating system",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "- CPU: 4",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Memory: 24 GB",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Disk space: 132 GB (the final storage size per server is adjusted later)",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Browse to /opt/APG/bin .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Modify the Dell SRM-Conf-Tools answer file ( srm-hosts ) as described in Creating the Dell SRM-Conf-Tools answers file.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Add the new Additional Backend to the original srm-hosts file in the /sw directory.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "In the example, additionalbackend\\_2 is the new Additional Backend.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "<!-- image -->",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. Browse to /opt/APG/bin .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "6. To configure the new Additional Backend host, run the following script:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "launch-additionalbackend-configuration.sh -c /sw/srm-hosts",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 33,
+    "confidence": 0.9
+  },
+  {
+    "title": "7. Restart the services and verify that they are running. Troubleshoot any service that does not show a status of 'running.'",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 43,
+    "confidence": 0.9
+  },
+  {
+    "title": "./manage-modules.sh service stop all ./manage-modules.sh service start all ./manage-modules.sh service status all",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "./launch-additionalbackend-scale-additionalbackend.sh -c /sw/srm-hosts",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 33,
+    "confidence": 0.9
+  },
+  {
+    "title": "./launch-primarybackend-scale-additionalbackend.sh -c /sw/srm-hosts",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 33,
+    "confidence": 0.9
+  },
+  {
+    "title": "10. Run the following script on the Master Frontend host:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "11. List the Management Resources to verify that the Additional Backends hosts were added:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "./manage-resources.sh list",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "12. Restart all the services on the Additional Backend servers, Primary Backend server, and Frontend Server.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "13. Log in to Dell SRM and confirm that the new Additional Backend is in the UI.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "- 64-bit operating system",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "- CPU: 4 to 8",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Memory: 16 GB to 64 GB (refer to the Dell SRM design document)",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Disk space: 120 GB (the final storage size per server is adjusted later)",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "NOTE: For Windows, convert .sh to .cmd for the commands and / to \\ for directories.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. The base Dell SRM software and OS updates should be completed as described in Installing on Linux or Installing on Windows Server",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Browse to /opt/APG/bin .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Modify the Dell SRM-Conf-Tools answer file ( srm-hosts ) as described in Creating the Dell SRM-Conf-Tools answers file",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. Add the new collector to the srm-hosts file.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "In the example, collector\\_2 is the new Collector.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "<!-- image -->",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. Copy the modified answer file ( srm-hosts ) to the Dell SRM Frontend (This new file is not needed on the existing Dell SRM servers.)",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "6. Browse to /opt/APG/bin .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "7. To configure the new Collector host, run the following script:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 43,
+    "confidence": 0.9
+  },
+  {
+    "title": "./manage-modules.sh service stop all ./manage-modules.sh service start all ./manage-modules.sh service status all",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "Verifying MySQL Database Grants",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 34,
+    "confidence": 0.9
+  },
+  {
+    "title": "NOTE: For mysql-client.sh to work on RHEL8.x, RHEL9.x and SLES 15 SP4, libncurses.so.x is required.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "sudo ln -s /lib64/libncurses.so.6 /lib64/libtinfo.so.6",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Run the following script:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "/opt/APG/bin/mysql-client.sh",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. When prompted, select root as the username, mysql for the database, and watch4net as the password.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Run the following query:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "mysql&gt; SELECT user, host, db, select\\_priv, insert\\_priv, grant\\_priv FROM mysql.db;",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "<!-- image -->",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "Updating firewall ports in Red Hat and SLES servers",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 35,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Using a Linux editor, create an xml file and save it as apg.xml in the /etc/firewalld/services directory.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Add the following text to the xml file:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Copy the apg.xml file to the /etc/firewalld/services directory.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. To add the ports to the existing firewall run the following command:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. Check the status of firewalld:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "firewall-cmd --permanent --add-service=apg",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "systemctl status firewalld",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "Editing new actions scripts",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 36,
+    "confidence": 0.9
+  },
+  {
+    "title": "In the 'conf' file, replace 127.0.0.1 with the primary backend IP address or FQDN:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "Verifying that the services are running",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 37,
+    "confidence": 0.9
+  },
+  {
+    "title": "Verify that the services are running on each host by obtaining the status.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Type the command for the operating system from the bin directory of the installation:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Verify that each service has a status of running in the output.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "Troubleshooting service start-up problems on UNIX",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 37,
+    "confidence": 0.9
+  },
+  {
+    "title": "Check the log files when services do not start.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "Ensure that you have logged in with root to check the log files.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- The default path is /opt/APG/ .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "Troubleshooting service start-up problems on Windows",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 37,
+    "confidence": 0.9
+  },
+  {
+    "title": "Check the log files when services do not start.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "Ensure that you have logged in with system administrator credentials to check the log files.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Look for log files in these C:\\Program Files\\APG directory paths.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "Logging in to the user interface",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 38,
+    "confidence": 0.9
+  },
+  {
+    "title": "Log in to the user interface to use and edit reports, manage users, and customize the interface to meet the needs.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Open a browser and type the following URL: https:// &lt;Frontend-hostname&gt; :58443/APG",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Type the login credentials. The default username is admin . The default password is changeme .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Click Sign In .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "NOTE: You are automatically logged off after 4 hours.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "<!-- image -->",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "Connecting to Administration",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 38,
+    "confidence": 0.9
+  },
+  {
+    "title": "Administration is one of the multiple web applications available in Dell M&amp;R platform.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Open a browser.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Type https:// &lt;Frontend-host-IP&gt; :58443/admin",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "https://myHost.emc.com:58443/administration",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Log in. Default username is admin .Default password is changeme .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. Click Sign In .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "You are automatically logged off after 4 hours.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "<!-- image -->",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "This chapter includes the following topic:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Using the Discovery Wizard",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "Using the Discovery Wizard",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "These steps use the VMAX 3/VMAX All Flash SolutionPack as an example.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Log in to the user interface at https://&lt;Frontend-hostname&gt;:58443/APG .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "The default username is admin . The default password is changeme .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Access the Discovery Wizard from the admin page: Administration &gt; DISCOVERY &gt; Discovery Wizard .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. On the License page, do one of the following and click Continue .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. NOTE: To support the XML based license features with SRM, the configuration property must be updated.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "- For more details on configuring the XML license property, see Dell SRM Administrator Guide.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- You can add a permanent license by drag-and-dropping the file onto the license box.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. On the Storage Collection page, do the following and click Continue .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "- a. Type the FQDN or IP address of the Unisphere for VMAX host.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- b. Type the login credential and port number.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. On the Confirm Storage page lists the detected arrays.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "- a. Select the arrays from which you want to collect data.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "The meter at the bottom indicates how many more volumes you can collect before you exceed the limit.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- b. Click Start Collection &amp; Continue when you have finished adding arrays.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. NOTE: The Confirm Storage page only applies to VMAX systems.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "SAN using SMIS-S for zoning and SNMP for everything else. It provides performance metrics, and the topology shows friendly names.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "10. Remove any pre-installed SolutionPacks and collectors that you do not plan to use:",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "- b. Type the login credentials. The default username is admin . The default password is changeme .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- e. Click the Trashcan icon for each component.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "11. See the Dell SRM SolutionPack Guide for details about installing SolutionPacks that were not pre-installed.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Creating the Dell SRM-Conf-Tools answers file",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "If you are using vCenter Snapshots, power off the VM and take a snapshot before running the scale-tools script.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "Creating the Dell SRM-Conf-Tools answers file",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "- The answers file is case sensitive and must be all lowercase.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Create the file using notepad++ or the Linux VI editor.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Name the file srm-hosts .",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 33,
+    "confidence": 0.9
+  },
+  {
+    "title": "The format of the answers file is: server\\_type=hostname:os",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 44,
+    "confidence": 0.9
+  },
+  {
+    "title": "- server\\_type -The four basic types of Dell SRM servers",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 44,
+    "confidence": 0.9
+  },
+  {
+    "title": "- OS -linux-x64 or windows-x64",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "<!-- image -->",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "6",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Overview",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 43,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Stopping Dell M&amp;R platform services on a UNIX server",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 44,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Uninstalling the product from a UNIX server",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 44,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Stopping Dell M&amp;R platform services on a Windows server",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 44,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Uninstalling the product from a Windows server",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 44,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Remove a Server and Delete vApp",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 44,
+    "confidence": 0.9
+  },
+  {
+    "title": "Overview",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "Stop the Dell M&amp;R platform services before uninstalling Dell M&amp;R platform.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "Stopping Dell M&amp;R platform services on a UNIX server",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 44,
+    "confidence": 0.9
+  },
+  {
+    "title": "Ensure that you have logged in with root or APG privileges.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- NOTE: The list of services varies depending on which type of installation was performed, vApp, collector, backend, and frontend.",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "./manage-modules.sh service stop all",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "Uninstalling the product from a UNIX server",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 44,
+    "confidence": 0.9
+  },
+  {
+    "title": "Use this procedure to uninstall the product from the Unix server.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 44,
+    "confidence": 0.9
+  },
+  {
+    "title": "Ensure that you have a login with root privileges.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "Uninstallation",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Type rm -rf /opt/APG to remove the installation directory.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Restart the server.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "Stopping Dell M&amp;R platform services on a Windows server",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 44,
+    "confidence": 0.9
+  },
+  {
+    "title": "Use this procedure to stop Dell M&amp;R platform services from the Windows desktop.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "To manage services, ensure that you have logged in with system administrator credentials.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "<!-- image -->",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- NOTE: The list of services varies depending on which type of installation was performed, vApp, collector, backend, and frontend.",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "./manage-modules.cmd service stop all",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "Uninstalling the product from a Windows server",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 44,
+    "confidence": 0.9
+  },
+  {
+    "title": "Use this procedure to uninstall the product from the Windows server.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 44,
+    "confidence": 0.9
+  },
+  {
+    "title": "Ensure that you have logged in with system administrator credentials.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Use the Windows Control Panel to uninstall the product.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "- a. Click Start &gt; Control Panel &gt; Programs .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- b. Click Uninstall a program .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- c. Select the Watch4net Solutions APG and click Uninstall .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Restart the server.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Log in with administrator credentials for Dell M&amp;R platform and select Administration .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Select the SolutionPack that you want to uninstall in the Installed SolutionPacks screen.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. In the Properties area, click Trashcan icon for each instance of the SolutionPackBlock and click Remove .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "Remove a Server and Delete vApp",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 44,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. SRM Admin page &gt; Configure Servers &gt; Delete the unwanted server (scaled-out collector) &gt; SAVE .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. NOTE: There is no confirmation notification for the deletion and the server removes at the instant the bin icon is clicked.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Login to the Collector console using root, run # manage-modules.sh service remove all",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Power off the VM.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. Delete from the disk.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Unattended installation",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Unattended installation arguments for Linux",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Unattended installation arguments for Windows",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "Unattended installation",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "Unattended installation arguments for Linux",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Runs the setup script in unattended mode. No questions are asked, and the default settings are used.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- --accept-eula",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Accepts the EULA. By providing this switch, you are confirming that you have read and accepted the EULA.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- --install-dir = &lt;path to installation&gt;",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Overrides the default installation location. The default is typically /opt/APG .",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "- --user = username",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Overrides the default user for installation of the servers. The default is typically apg.",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Overrides the default script directory. The default is /etc/init.d .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Overrides the default runlevels directory (containing rc[0-6].d/ ).",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "- The default is /etc .",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- --install-type = installation\\_type",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "To override the default installation and set the installation type to collector:",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "To run a fully unattended installation and install as a collector in an alternate directory:",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "Unattended installation arguments for Windows",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Runs the setup script in unattended mode. No questions are asked, and the default settings are used. It must be the first argument.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "- ACCEPTEULA = Yes",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "<!-- image -->",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "A",
+    "font_size": 22.0,
+    "is_bold": false,
+    "heading_level": 4,
+    "page": 1,
+    "confidence": 0.9
+  },
+  {
+    "title": "Unattended Installation",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "- INSTALL-TYPE = installation\\_type",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "To run a fully unattended installation and install as a collector in an alternate directory:",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "C:\\Users\\user1&gt; windows\\_setup.exe /S /D=C:\\SRM /ACCEPTEULA=Yes /INSTALL-TYPE=collector",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 7,
+    "confidence": 0.9
+  },
+  {
+    "title": "Documentation Feedback",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "To get answers to your queries related to Dell SRM through email, chat, or call, go to Dell Technologies Technical Support page.",
+    "font_size": 28.0,
+    "is_bold": true,
+    "heading_level": 1,
+    "page": 46,
+    "confidence": 0.9
+  }
+]

@@ -48,6 +48,52 @@ class SRMAIApp {
         if (clearChatsBtn) {
             clearChatsBtn.addEventListener('click', () => this.clearAllChats());
         }
+
+        const uploadBtn = document.getElementById('uploadBtn');
+        const pdfUploadInput = document.getElementById('pdfUploadInput');
+
+        if (uploadBtn) {
+            uploadBtn.addEventListener('click', () => pdfUploadInput.click());
+        }
+
+        if (pdfUploadInput) {
+            pdfUploadInput.addEventListener('change', (event) => this.uploadFile(event.target.files[0]));
+        }
+    }
+
+    async uploadFile(file) {
+        if (!file) return;
+
+        const formData = new FormData();
+        formData.append('file', file);
+
+        const uploadBtn = document.getElementById('uploadBtn');
+        uploadBtn.disabled = true;
+        uploadBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Uploading...';
+
+        try {
+            const response = await fetch('/upload_pdf/', {
+                method: 'POST',
+                body: formData,
+            });
+
+            if (response.ok) {
+                const result = await response.json();
+                console.log(result.message);
+                this.loadDocuments(); // Refresh the document list
+                alert('File uploaded and indexed successfully!');
+            } else {
+                const error = await response.json();
+                console.error('Upload failed:', error.detail);
+                alert(`Upload failed: ${error.detail}`);
+            }
+        } catch (error) {
+            console.error('An error occurred during upload:', error);
+            alert('An error occurred during upload. Please try again.');
+        } finally {
+            uploadBtn.disabled = false;
+            uploadBtn.innerHTML = '<i class="fas fa-upload"></i> Upload PDF';
+        }
     }
 
     async startNewChat() {

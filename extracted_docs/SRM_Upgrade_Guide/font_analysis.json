@@ -1,0 +1,1511 @@
+{
+  "body_size": 9.0,
+  "body_font": "DellReplica-Light",
+  "heading_sizes": [
+    28.0,
+    26.0,
+    24.0,
+    22.0,
+    20.0,
+    16.0,
+    14.0,
+    11.5
+  ],
+  "heading_map": {
+    "Dell SRM 5.1.1.0": {
+      "is_heading": true,
+      "level": 3,
+      "size": 24.0,
+      "is_bold": true,
+      "page": 1,
+      "confidence": 0.9
+    },
+    "Upgrade Guide": {
+      "is_heading": true,
+      "level": 4,
+      "size": 22.0,
+      "is_bold": false,
+      "page": 1,
+      "confidence": 0.9
+    },
+    "5.1.1.0": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 1,
+      "confidence": 0.7
+    },
+    "June 2025": {
+      "is_heading": true,
+      "level": 9,
+      "size": 7.0,
+      "is_bold": true,
+      "page": 1,
+      "confidence": 0.7
+    },
+    "Rev. A00": {
+      "is_heading": true,
+      "level": 9,
+      "size": 7.0,
+      "is_bold": true,
+      "page": 1,
+      "confidence": 0.7
+    },
+    "Notes, cautions, and warnings": {
+      "is_heading": true,
+      "level": 8,
+      "size": 11.5,
+      "is_bold": false,
+      "page": 2,
+      "confidence": 0.9
+    },
+    "CAUTION: A CAUTION indicates either potential damage to hardware or loss of data and tells you how to avoid": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 2,
+      "confidence": 0.7
+    },
+    "the problem.": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 2,
+      "confidence": 0.7
+    },
+    "Contents": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 5,
+      "confidence": 0.7
+    },
+    "3": {
+      "is_heading": true,
+      "level": 1,
+      "size": 28.0,
+      "is_bold": true,
+      "page": 14,
+      "confidence": 0.9
+    },
+    "4": {
+      "is_heading": true,
+      "level": 1,
+      "size": 28.0,
+      "is_bold": true,
+      "page": 17,
+      "confidence": 0.9
+    },
+    "5": {
+      "is_heading": true,
+      "level": 1,
+      "size": 28.0,
+      "is_bold": true,
+      "page": 22,
+      "confidence": 0.9
+    },
+    "Tables": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 6,
+      "confidence": 0.7
+    },
+    "6": {
+      "is_heading": true,
+      "level": 1,
+      "size": 28.0,
+      "is_bold": true,
+      "page": 25,
+      "confidence": 0.9
+    },
+    "Dell SRM 5.1.1.0 Upgrade": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 7,
+      "confidence": 0.7
+    },
+    "Upgrade Paths": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 7,
+      "confidence": 0.7
+    },
+    "NOTE:": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 18,
+      "confidence": 0.7
+    },
+    "1": {
+      "is_heading": true,
+      "level": 1,
+      "size": 28.0,
+      "is_bold": true,
+      "page": 7,
+      "confidence": 0.9
+    },
+    "7": {
+      "is_heading": true,
+      "level": 1,
+      "size": 28.0,
+      "is_bold": true,
+      "page": 41,
+      "confidence": 0.9
+    },
+    "Pre-Requisites for Dell SRM 5.1.1.0 Upgrade": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 13,
+      "confidence": 0.7
+    },
+    "Topics:": {
+      "is_heading": true,
+      "level": 9,
+      "size": 10.5,
+      "is_bold": true,
+      "page": 41,
+      "confidence": 0.7
+    },
+    "Required Tools and Credentials": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 8,
+      "confidence": 0.9
+    },
+    "MySQL": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 8,
+      "confidence": 0.9
+    },
+    "Pre-Upgrade Health Check Utility Script": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 8,
+      "confidence": 0.9
+    },
+    "2": {
+      "is_heading": true,
+      "level": 1,
+      "size": 28.0,
+      "is_bold": true,
+      "page": 8,
+      "confidence": 0.9
+    },
+    "8": {
+      "is_heading": true,
+      "level": 1,
+      "size": 28.0,
+      "is_bold": true,
+      "page": 48,
+      "confidence": 0.9
+    },
+    "Verify environment status": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 9,
+      "confidence": 0.9
+    },
+    "Check Custom vApp Configuration": {
+      "is_heading": true,
+      "level": 6,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 9,
+      "confidence": 0.9
+    },
+    "Check /etc/sudoers File on Each vApp VM": {
+      "is_heading": true,
+      "level": 6,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 9,
+      "confidence": 0.9
+    },
+    "Steps": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 47,
+      "confidence": 0.7
+    },
+    "Check vApp Options for Dell SRM VMs": {
+      "is_heading": true,
+      "level": 6,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 9,
+      "confidence": 0.9
+    },
+    "Check Server Reachability": {
+      "is_heading": true,
+      "level": 6,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 9,
+      "confidence": 0.9
+    },
+    "Verify Reports": {
+      "is_heading": true,
+      "level": 6,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 9,
+      "confidence": 0.9
+    },
+    "About this task": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 42,
+      "confidence": 0.7
+    },
+    "9": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 9,
+      "confidence": 0.7
+    },
+    "Report Library > System Health > Summary > Logical Summary > Backends > Components > Backends": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 10,
+      "confidence": 0.7
+    },
+    "Report Library > System Health > Summary > Logical Summary > Backends > Components > Databases": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 10,
+      "confidence": 0.7
+    },
+    "instances": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 10,
+      "confidence": 0.7
+    },
+    "Backup the Environment": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 10,
+      "confidence": 0.9
+    },
+    "Backup Firewall": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 10,
+      "confidence": 0.9
+    },
+    "10": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 10,
+      "confidence": 0.7
+    },
+    "Set Java Certificates": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 11,
+      "confidence": 0.9
+    },
+    "Saving the Java certificates file": {
+      "is_heading": true,
+      "level": 6,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 11,
+      "confidence": 0.9
+    },
+    "Import Java Certificates": {
+      "is_heading": true,
+      "level": 6,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 11,
+      "confidence": 0.9
+    },
+    "11": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 11,
+      "confidence": 0.7
+    },
+    "Backup Alert Definitions": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 12,
+      "confidence": 0.9
+    },
+    "Delete Backup Schedules and Scheduled Reports from": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 12,
+      "confidence": 0.9
+    },
+    "DPA Server": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 12,
+      "confidence": 0.9
+    },
+    "12": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 12,
+      "confidence": 0.7
+    },
+    "Boot Space Clean Up": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 13,
+      "confidence": 0.9
+    },
+    "13": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 13,
+      "confidence": 0.7
+    },
+    "Upgrade Operating System for vApp to SLES": {
+      "is_heading": true,
+      "level": 3,
+      "size": 24.0,
+      "is_bold": true,
+      "page": 14,
+      "confidence": 0.9
+    },
+    "15 SP4": {
+      "is_heading": true,
+      "level": 3,
+      "size": 24.0,
+      "is_bold": true,
+      "page": 14,
+      "confidence": 0.9
+    },
+    "Upgrade Operating System Using an ISO Image": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 14,
+      "confidence": 0.9
+    },
+    "Download ISO Image from Dell Online Support Website": {
+      "is_heading": true,
+      "level": 6,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 14,
+      "confidence": 0.9
+    },
+    "Prerequisites": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 36,
+      "confidence": 0.7
+    },
+    "Configure ISO Image for Each SRM VMs": {
+      "is_heading": true,
+      "level": 6,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 14,
+      "confidence": 0.9
+    },
+    "14": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 14,
+      "confidence": 0.7
+    },
+    "Upgrade Operating System for vApp to SLES 15 SP4": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 16,
+      "confidence": 0.7
+    },
+    "Upgrade Operating System Using ISO Image on SRM Setup": {
+      "is_heading": true,
+      "level": 6,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 15,
+      "confidence": 0.9
+    },
+    "15": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 15,
+      "confidence": 0.7
+    },
+    "Operating System Upgrade on FrontEnd VM Using ISO Image": {
+      "is_heading": true,
+      "level": 6,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 16,
+      "confidence": 0.9
+    },
+    "MySQL Database Check": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 16,
+      "confidence": 0.9
+    },
+    "Example": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 16,
+      "confidence": 0.7
+    },
+    "16": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 16,
+      "confidence": 0.7
+    },
+    "Upgrade to Dell SRM 5.1.1.0": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 21,
+      "confidence": 0.7
+    },
+    "Upgrade to SRM 5.1.1.0 using the new update": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 17,
+      "confidence": 0.9
+    },
+    "platform": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 17,
+      "confidence": 0.9
+    },
+    "17": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 17,
+      "confidence": 0.7
+    },
+    "Upgrade to SRM 5.1.1.0 Using System Upgrade": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 18,
+      "confidence": 0.9
+    },
+    "Wizard": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 18,
+      "confidence": 0.9
+    },
+    "18": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 18,
+      "confidence": 0.7
+    },
+    "Upgrade the embedded ESE version to the latest on": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 20,
+      "confidence": 0.9
+    },
+    "Linux": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 19,
+      "confidence": 0.9
+    },
+    "If ESE is not installed on the previous SRM release, do the following to install ESE:": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 20,
+      "confidence": 0.7
+    },
+    "19": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 19,
+      "confidence": 0.7
+    },
+    "Test Server Connectivity": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 20,
+      "confidence": 0.7
+    },
+    "Connectivity": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 20,
+      "confidence": 0.7
+    },
+    "Windows": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 20,
+      "confidence": 0.9
+    },
+    "vApp": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 20,
+      "confidence": 0.9
+    },
+    "20": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 20,
+      "confidence": 0.7
+    },
+    "21": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 21,
+      "confidence": 0.7
+    },
+    "Upgrade the SolutionPacks": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 24,
+      "confidence": 0.7
+    },
+    "Upgrade all SolutionPacks and other components": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 22,
+      "confidence": 0.9
+    },
+    "22": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 22,
+      "confidence": 0.7
+    },
+    "23": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 23,
+      "confidence": 0.7
+    },
+    "24": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 24,
+      "confidence": 0.7
+    },
+    "Post-Upgrade Tasks": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 40,
+      "confidence": 0.7
+    },
+    "LUN performance metrics collection is disabled by": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 25,
+      "confidence": 0.9
+    },
+    "default for Dell VMAX/PowerMax SP": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 25,
+      "confidence": 0.9
+    },
+    "25": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 25,
+      "confidence": 0.7
+    },
+    "Check the Status of Remote Host Services": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 26,
+      "confidence": 0.9
+    },
+    "Verifying and configuring the user process limits for": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 26,
+      "confidence": 0.9
+    },
+    "vApp and Linux binary platforms": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 26,
+      "confidence": 0.9
+    },
+    "26": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 26,
+      "confidence": 0.7
+    },
+    "Security Hardening on SRM vApps": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 27,
+      "confidence": 0.9
+    },
+    "Reset the password for the Compliance Backend": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 27,
+      "confidence": 0.9
+    },
+    "module": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 27,
+      "confidence": 0.9
+    },
+    "file>": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 27,
+      "confidence": 0.7
+    },
+    "given in Pre-upgrade level>": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 27,
+      "confidence": 0.7
+    },
+    "Results": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 35,
+      "confidence": 0.7
+    },
+    "Create softlink for mysql-client dependent library": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 27,
+      "confidence": 0.9
+    },
+    "27": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 27,
+      "confidence": 0.7
+    },
+    "Find and Fix Broken Links in Reports": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 28,
+      "confidence": 0.9
+    },
+    "Reasons for broken": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 28,
+      "confidence": 0.7
+    },
+    "links": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 28,
+      "confidence": 0.7
+    },
+    "Fixing broken links": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 28,
+      "confidence": 0.7
+    },
+    "Table 1. Broken links description": {
+      "is_heading": true,
+      "level": 9,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 28,
+      "confidence": 0.7
+    },
+    "Column": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 29,
+      "confidence": 0.7
+    },
+    "Description": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 31,
+      "confidence": 0.7
+    },
+    "28": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 28,
+      "confidence": 0.7
+    },
+    "Table 1. Broken links description (continued)": {
+      "is_heading": true,
+      "level": 9,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 29,
+      "confidence": 0.7
+    },
+    "View Fixed Links in Tomcat Logs": {
+      "is_heading": true,
+      "level": 6,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 29,
+      "confidence": 0.9
+    },
+    "29": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 29,
+      "confidence": 0.7
+    },
+    "Deprecated or Deleted Alert Definitions": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 30,
+      "confidence": 0.9
+    },
+    "Install Preconfigured Alerts for all SolutionPacks": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 30,
+      "confidence": 0.9
+    },
+    "Next steps": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 30,
+      "confidence": 0.7
+    },
+    "30": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 30,
+      "confidence": 0.7
+    },
+    "Restore Timeout Values": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 31,
+      "confidence": 0.9
+    },
+    "Edit New Actions Scripts": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 31,
+      "confidence": 0.9
+    },
+    "Table 2. Conf file path in Linux and Windows": {
+      "is_heading": true,
+      "level": 9,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 31,
+      "confidence": 0.7
+    },
+    "Option": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 31,
+      "confidence": 0.7
+    },
+    "Review SolutionPack Block Configuration for": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 31,
+      "confidence": 0.9
+    },
+    "Frontend Access": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 31,
+      "confidence": 0.9
+    },
+    "31": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 31,
+      "confidence": 0.7
+    },
+    "Install the Compliance Rules Module": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 32,
+      "confidence": 0.9
+    },
+    "Cisco MDS/Nexus Switch Discovery": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 32,
+      "confidence": 0.9
+    },
+    "Export Cisco MDS/Nexus Switches": {
+      "is_heading": true,
+      "level": 6,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 32,
+      "confidence": 0.9
+    },
+    "32": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 32,
+      "confidence": 0.7
+    },
+    "Install the SNMP Data Collector": {
+      "is_heading": true,
+      "level": 6,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 33,
+      "confidence": 0.9
+    },
+    "Import Switch Details into Discovery Center": {
+      "is_heading": true,
+      "level": 6,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 35,
+      "confidence": 0.9
+    },
+    "33": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 33,
+      "confidence": 0.7
+    },
+    "Delete Switches from SNMP Device Discovery": {
+      "is_heading": true,
+      "level": 6,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 35,
+      "confidence": 0.9
+    },
+    "Update Capabilities": {
+      "is_heading": true,
+      "level": 6,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 34,
+      "confidence": 0.9
+    },
+    "Brocade Switch Discovery": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 34,
+      "confidence": 0.9
+    },
+    "Export Brocade Switches": {
+      "is_heading": true,
+      "level": 6,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 34,
+      "confidence": 0.9
+    },
+    "34": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 34,
+      "confidence": 0.7
+    },
+    "35": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 35,
+      "confidence": 0.7
+    },
+    "DPA Scheduled Reports not Available after Upgrade": {
+      "is_heading": true,
+      "level": 6,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 36,
+      "confidence": 0.9
+    },
+    "Create an Events Database for the SolutionPack for": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 36,
+      "confidence": 0.9
+    },
+    "Data Protection Advisor": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 36,
+      "confidence": 0.9
+    },
+    "./mysql-client.sh": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 36,
+      "confidence": 0.7
+    },
+    "36": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 36,
+      "confidence": 0.7
+    },
+    "9. From Dell SRM Physical Overview , select PBE >Modules > Event- Processing Event-Processing-Manager :: emc-": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 37,
+      "confidence": 0.7
+    },
+    "Update the SNMP Collections": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 37,
+      "confidence": 0.9
+    },
+    "37": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 37,
+      "confidence": 0.7
+    },
+    "Virus Scanning Software in Windows Deployments": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 38,
+      "confidence": 0.9
+    },
+    "Review Report Customization": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 38,
+      "confidence": 0.9
+    },
+    "Validate the Environment": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 38,
+      "confidence": 0.9
+    },
+    "Verify vApp Linux Operating System is Upgraded": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 38,
+      "confidence": 0.9
+    },
+    "38": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 38,
+      "confidence": 0.7
+    },
+    "Reconfiguring Dell PowerVault Frontend Web Service": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 39,
+      "confidence": 0.9
+    },
+    "Reconfiguring Pure Storage Frontend Web Service": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 39,
+      "confidence": 0.9
+    },
+    "Reconfiguring Kubernetes": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 39,
+      "confidence": 0.9
+    },
+    "Deleting the ISO Image from Data Store Location": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 39,
+      "confidence": 0.9
+    },
+    "39": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 39,
+      "confidence": 0.7
+    },
+    "Limitations and Known Issues": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 40,
+      "confidence": 0.9
+    },
+    "40": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 40,
+      "confidence": 0.7
+    },
+    "Troubleshooting": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 47,
+      "confidence": 0.7
+    },
+    "Enhanced Upgrade Log": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 41,
+      "confidence": 0.9
+    },
+    "SRM APG UI Loading Issue": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 41,
+      "confidence": 0.9
+    },
+    "Troubleshooting Procedure for SLES 15 SP4 OS": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 41,
+      "confidence": 0.9
+    },
+    "Upgrade": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 41,
+      "confidence": 0.9
+    },
+    "Topics": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 41,
+      "confidence": 0.7
+    },
+    "41": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 41,
+      "confidence": 0.7
+    },
+    "Resume the Upgrade on SRM Setup": {
+      "is_heading": true,
+      "level": 6,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 42,
+      "confidence": 0.9
+    },
+    "42": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 42,
+      "confidence": 0.7
+    },
+    "43": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 43,
+      "confidence": 0.7
+    },
+    "OS Upgrade Initiation Failed": {
+      "is_heading": true,
+      "level": 6,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 44,
+      "confidence": 0.9
+    },
+    "ISO is not attached": {
+      "is_heading": true,
+      "level": 7,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 44,
+      "confidence": 0.9
+    },
+    "ISO is attached": {
+      "is_heading": true,
+      "level": 7,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 44,
+      "confidence": 0.9
+    },
+    "44": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 44,
+      "confidence": 0.7
+    },
+    "Failed to Establish Connection": {
+      "is_heading": true,
+      "level": 6,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 45,
+      "confidence": 0.9
+    },
+    "VMutils Manager Packages": {
+      "is_heading": true,
+      "level": 6,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 45,
+      "confidence": 0.9
+    },
+    "Failed to start D-Bus System Message": {
+      "is_heading": true,
+      "level": 6,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 45,
+      "confidence": 0.9
+    },
+    "45": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 45,
+      "confidence": 0.7
+    },
+    "Unsupported V3 key": {
+      "is_heading": true,
+      "level": 6,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 46,
+      "confidence": 0.9
+    },
+    "46": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 46,
+      "confidence": 0.7
+    },
+    "Passive STIG Rules": {
+      "is_heading": true,
+      "level": 6,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 47,
+      "confidence": 0.9
+    },
+    "Unmapping CD/DVD Drive": {
+      "is_heading": true,
+      "level": 6,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 47,
+      "confidence": 0.9
+    },
+    "Wrong Password during OS Upgrade Script": {
+      "is_heading": true,
+      "level": 6,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 47,
+      "confidence": 0.9
+    },
+    "47": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 47,
+      "confidence": 0.7
+    },
+    "Documentation Feedback": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 48,
+      "confidence": 0.7
+    },
+    "48": {
+      "is_heading": true,
+      "level": 9,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 48,
+      "confidence": 0.7
+    }
+  },
+  "font_distribution": {
+    "DellReplica-Light": 1228,
+    "DellReplica-Bold": 378,
+    "ArialMT": 200,
+    "CourierNewPSMT": 110,
+    "CourierNewPS-BoldMT": 6
+  },
+  "size_distribution": {
+    "9.0": 1706,
+    "10.0": 93,
+    "20.0": 59,
+    "16.0": 30,
+    "24.0": 10,
+    "28.0": 8,
+    "10.5": 6,
+    "7.0": 2,
+    "8.0": 2,
+    "26.0": 2,
+    "14.0": 2,
+    "22.0": 1,
+    "11.5": 1
+  },
+  "total_text_elements": 1922
+}
