@@ -182,33 +182,84 @@ class PDFExtractor:
         if not text:
             return False
         t = text.strip()
-        if re.match(r"^\d+(\.\d+)*\s+", t):
+        # Stricter check for procedure steps (e.g., "1. Action...")
+        if re.match(r"^\d+\.\s+[A-Z]", t):
             # If it contains verbs commonly used in steps, treat as non-heading
             verbs = [
                 'click', 'select', 'open', 'browse', 'enter', 'type', 'press',
-                'review', 'accept', 'next', 'previous', 'install', 'download'
+                'review', 'accept', 'next', 'previous', 'install', 'download',
+                'run', 'restart', 'verify'
             ]
             tl = t.lower()
-            if any(v in tl for v in verbs):
+            if any(v in tl for v in verbs) and len(t.split()) > 3:
                 return True
+        return False
+
+    def _is_procedural_subheading(self, text: str) -> bool:
+        """Detect procedural sub-headings that should remain part of the main content."""
+        if not text:
+            return False
+        
+        text_lower = text.strip().lower()
+        
+        # Remove markdown formatting for checking
+        clean_text = text_lower.replace('#', '').strip()
+        
+        # Common procedural sub-headings that should not split content
+        procedural_subheadings = [
+            'steps', 'procedure', 'instructions', 'process', 'method',
+            'prerequisites', 'requirements', 'before you begin',
+            'next steps', 'what to do next', 'continue with',
+            'follow these steps', 'to do this', 'implementation',
+            'example', 'examples', 'note', 'notes', 'important',
+            'warning', 'caution', 'tip', 'tips', 'result', 'results',
+            'outcome', 'expected result', 'verification', 'verify',
+            'troubleshooting', 'if this fails', 'alternative'
+        ]
+        
+        # Check if the clean text matches any procedural sub-heading
+        for subheading in procedural_subheadings:
+            if clean_text == subheading or clean_text.startswith(subheading + ' '):
+                return True
+        
+        # Also check for very short headings that are likely sub-sections
+        if len(clean_text.split()) <= 2 and len(clean_text) <= 15:
+            return True
+            
         return False
 
     def _is_heading_text(self, text: str, size: float, is_bold: bool, body_size: float) -> bool:
         """Final gate to decide whether a line should be treated as a heading.
         Filters out TOC-like lines and numbered procedure steps even if bold/large.
         """
+        # More aggressive filtering for TOC lines
         if self._looks_like_toc_line(text):
             return False
         if self._looks_like_procedure_step(text):
             return False
-        # Require sufficiently larger font or bold compared to body text
+            
+        # Filter out common sub-headings that should be part of the main content
+        # These are typically procedural sub-sections that shouldn't split content
+        if self._is_procedural_subheading(text):
+            return False
+            
         is_large = size >= body_size * self.heading_size_threshold
-        if not (is_large or is_bold):
-            return False
-        # Avoid sentences that clearly look like instructions (ending with a period)
-        if text.strip().endswith('.') and len(text.split()) > 6:
-            return False
-        return True
+        
+        # Heading if large enough OR if it's bold and doesn't look like a sentence fragment.
+        if is_large:
+            return True
+
+        if is_bold:
+            # Less strict check for bold text.
+            # Avoid classifying paragraphs that start with a bold word as headings.
+            if len(text.split()) > 10 and text.strip().endswith('.'):
+                 return False
+            # Avoid notes or references
+            if any(word in text.lower() for word in ['note:', 'see also', 'refer to']):
+                return False
+            return True
+            
+        return False
 
     def _enhance_content_with_font_analysis(self, markdown_content: str, json_content: Dict, 
                                           font_analysis: Dict) -> Dict[str, Any]:
@@ -217,7 +268,7 @@ class PDFExtractor:
         heading_map = font_analysis['heading_map']
         
         # Parse markdown into sections while preserving complete content
-        sections = self._parse_markdown_sections(markdown_content, heading_map)
+        sections = self._parse_markdown_sections(markdown_content, heading_map, font_analysis)
         
         # Build hierarchical structure
         chapters = self._build_hierarchical_structure(sections)
@@ -229,7 +280,7 @@ class PDFExtractor:
             'extraction_method': 'hybrid_enhanced'
         }
     
-    def _parse_markdown_sections(self, markdown: str, heading_map: Dict) -> List[Dict[str, Any]]:
+    def _parse_markdown_sections(self, markdown: str, heading_map: Dict, font_analysis: Dict) -> List[Dict[str, Any]]:
         """Parse markdown into sections with font-based heading classification"""
         
         lines = markdown.split('\n')
@@ -238,8 +289,8 @@ class PDFExtractor:
         content_buffer = []
         
         for line in lines:
-            line = line.strip()
-            if not line:
+            line_strip = line.strip()
+            if not line_strip:
                 content_buffer.append("")
                 continue
             
@@ -248,30 +299,32 @@ class PDFExtractor:
             heading_info = None
             
             # Look for exact match in heading map
-            clean_line = self._clean_text_for_matching(line)
+            clean_line = self._clean_text_for_matching(line_strip)
             for heading_text, info in heading_map.items():
                 clean_heading = self._clean_text_for_matching(heading_text)
-                if clean_line == clean_heading or clean_line in clean_heading or clean_heading in clean_line:
-                    # Re-run guards to avoid TOC and numbered steps
-                    if not self._looks_like_toc_line(line) and not self._looks_like_procedure_step(line):
+                # Use a more robust matching logic
+                if (clean_line == clean_heading or 
+                    (clean_line in clean_heading and len(clean_line) > 10) or 
+                    (clean_heading in clean_line and len(clean_heading) > 10)):
+                    if self._is_heading_text(line_strip, info['size'], info['is_bold'], font_analysis['body_size']):
                         is_heading = True
                         heading_info = info
                         break
             
             # Also check markdown heading patterns (with stricter guards)
             if (not is_heading 
-                and (line.startswith('#') or self._is_likely_heading(line))
-                and not self._looks_like_toc_line(line)
-                and not self._looks_like_procedure_step(line)):
+                and (line_strip.startswith('#'))
+                and not self._looks_like_toc_line(line_strip)
+                and not self._looks_like_procedure_step(line_strip)
+                and not self._is_procedural_subheading(line_strip)):
                 is_heading = True
-                heading_info = {
+                # Try to find font info for markdown headings
+                md_heading_info = heading_map.get(clean_line, {
                     'is_heading': True,
-                    'level': len(line.split('#')[0]) + 1 if line.startswith('#') else 999,
-                    'size': 0,
-                    'is_bold': False,
-                    'page': 1,
-                    'confidence': 0.5
-                }
+                    'level': line_strip.count('#'),
+                    'size': 0, 'is_bold': False, 'page': 1, 'confidence': 0.6
+                })
+                heading_info = md_heading_info
             
             if is_heading and heading_info:
                 # Save previous section
@@ -282,14 +335,14 @@ class PDFExtractor:
                 
                 # Start new section
                 current_section = {
-                    'title': self._clean_heading_text(line),
+                    'title': self._clean_heading_text(line_strip),
                     'heading_level': heading_info['level'],
                     'font_size': heading_info.get('size', 0),
                     'is_bold': heading_info.get('is_bold', False),
                     'page': heading_info.get('page', 1),
                     'confidence': heading_info.get('confidence', 0.5),
                     'is_heading': True,
-                    'raw_line': line
+                    'raw_line': line_strip
                 }
                 content_buffer = []  # Exclude heading from content
                 
@@ -357,6 +410,7 @@ class PDFExtractor:
         for section in sections:
             level = section['heading_level']
             
+            # Group by H1/H2 as chapters, everything else as sections
             if level <= 2:  # Chapter level
                 if current_chapter:
                     chapters.append(current_chapter)
@@ -375,57 +429,40 @@ class PDFExtractor:
                     'content_length': section['content_length']
                 }
             
-            elif level <= 6:  # Section level
+            else:  # Section level or content
                 if not current_chapter:
-                    # Create implicit chapter
+                    # Create implicit chapter for content that appears before the first main chapter
                     current_chapter = {
                         'id': f"chapter_{len(chapters)+1:02d}",
-                        'title': 'Document Content',
+                        'title': 'Document Introduction',
                         'complete_content': '',
-                        'font_size': 0,
-                        'is_bold': False,
-                        'page': 1,
-                        'heading_level': 1,
-                        'confidence': 0.3,
-                        'type': 'chapter',
-                        'sections': [],
-                        'content_length': 0
+                        'font_size': 0, 'is_bold': False, 'page': 1, 'heading_level': 1,
+                        'confidence': 0.3, 'type': 'chapter', 'sections': [], 'content_length': 0
                     }
                 
-                section_data = {
-                    'id': f"section_{len(current_chapter['sections'])+1:03d}",
-                    'title': section['title'],
-                    'complete_content': section['complete_content'],
-                    'font_size': section['font_size'],
-                    'is_bold': section['is_bold'],
-                    'page': section['page'],
-                    'heading_level': section['heading_level'],
-                    'confidence': section['confidence'],
-                    'type': 'section',
-                    'content_length': section['content_length']
-                }
-                
-                current_chapter['sections'].append(section_data)
-            
-            else:  # Content without clear heading
-                if not current_chapter:
-                    current_chapter = {
-                        'id': f"chapter_{len(chapters)+1:02d}",
-                        'title': 'Document Content',
+                # If it's a heading, create a new section
+                if section['is_heading']:
+                    section_data = {
+                        'id': f"section_{len(current_chapter['sections'])+1:03d}",
+                        'title': section['title'],
                         'complete_content': section['complete_content'],
-                        'font_size': 0,
-                        'is_bold': False,
-                        'page': 1,
-                        'heading_level': 1,
-                        'confidence': 0.3,
-                        'type': 'chapter',
-                        'sections': [],
+                        'font_size': section['font_size'],
+                        'is_bold': section['is_bold'],
+                        'page': section['page'],
+                        'heading_level': section['heading_level'],
+                        'confidence': section['confidence'],
+                        'type': 'section',
                         'content_length': section['content_length']
                     }
+                    current_chapter['sections'].append(section_data)
                 else:
-                    # Append to current chapter
-                    current_chapter['complete_content'] += '\n\n' + section['complete_content']
-                    current_chapter['content_length'] += section['content_length']
+                    # If it's content without a heading, append it to the last section or the chapter itself
+                    if current_chapter['sections']:
+                        current_chapter['sections'][-1]['complete_content'] += '\n\n' + section['title'] + '\n' + section['complete_content']
+                        current_chapter['sections'][-1]['content_length'] += len(section['complete_content']) + len(section['title']) + 3
+                    else:
+                        current_chapter['complete_content'] += '\n\n' + section['title'] + '\n' + section['complete_content']
+                        current_chapter['content_length'] += len(section['complete_content']) + len(section['title']) + 3
         
         # Add final chapter
         if current_chapter:

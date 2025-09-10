@@ -27,30 +27,6 @@
       "page": 1,
       "confidence": 0.9
     },
-    "5.1.1.0": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 1,
-      "confidence": 0.7
-    },
-    "June 2025": {
-      "is_heading": true,
-      "level": 8,
-      "size": 7.0,
-      "is_bold": true,
-      "page": 1,
-      "confidence": 0.7
-    },
-    "Rev. A00": {
-      "is_heading": true,
-      "level": 8,
-      "size": 7.0,
-      "is_bold": true,
-      "page": 1,
-      "confidence": 0.7
-    },
     "Notes, cautions, and warnings": {
       "is_heading": true,
       "level": 7,
@@ -67,84 +43,12 @@
       "page": 2,
       "confidence": 0.7
     },
-    "the problem.": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 2,
-      "confidence": 0.7
-    },
-    "Contents": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 4,
-      "confidence": 0.7
-    },
-    "3": {
-      "is_heading": true,
-      "level": 1,
-      "size": 28.0,
-      "is_bold": true,
-      "page": 21,
-      "confidence": 0.9
-    },
-    "4": {
-      "is_heading": true,
-      "level": 1,
-      "size": 28.0,
-      "is_bold": true,
-      "page": 23,
-      "confidence": 0.9
-    },
-    "Figures": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 5,
-      "confidence": 0.7
-    },
-    "5": {
-      "is_heading": true,
-      "level": 1,
-      "size": 28.0,
-      "is_bold": true,
-      "page": 39,
-      "confidence": 0.9
-    },
-    "Tables": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 6,
-      "confidence": 0.7
-    },
-    "6": {
-      "is_heading": true,
-      "level": 1,
-      "size": 28.0,
-      "is_bold": true,
-      "page": 41,
-      "confidence": 0.9
-    },
     "Installing the Virtual Appliance": {
       "is_heading": true,
       "level": 8,
       "size": 9.0,
       "is_bold": true,
       "page": 16,
-      "confidence": 0.7
-    },
-    "Topics:": {
-      "is_heading": true,
-      "level": 8,
-      "size": 10.5,
-      "is_bold": true,
-      "page": 46,
       "confidence": 0.7
     },
     "Dell SRM virtual appliance installation overview": {
@@ -154,38 +58,6 @@
       "is_bold": true,
       "page": 7,
       "confidence": 0.9
-    },
-    "Core software": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 7,
-      "confidence": 0.7
-    },
-    "1": {
-      "is_heading": true,
-      "level": 1,
-      "size": 28.0,
-      "is_bold": true,
-      "page": 7,
-      "confidence": 0.9
-    },
-    "7": {
-      "is_heading": true,
-      "level": 1,
-      "size": 28.0,
-      "is_bold": true,
-      "page": 43,
-      "confidence": 0.9
-    },
-    "SolutionPack": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 8,
-      "confidence": 0.7
     },
     "4VM vApp OVF": {
       "is_heading": true,
@@ -219,30 +91,6 @@
       "page": 8,
       "confidence": 0.7
     },
-    "Step": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 9,
-      "confidence": 0.7
-    },
-    "Description": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 9,
-      "confidence": 0.7
-    },
-    "8": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 8,
-      "confidence": 0.7
-    },
     "Table 1. Dell SRM Installation checklist (continued)": {
       "is_heading": true,
       "level": 8,
@@ -258,14 +106,6 @@
       "is_bold": true,
       "page": 9,
       "confidence": 0.9
-    },
-    "9": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 9,
-      "confidence": 0.7
     },
     "Figure 1. Dell SRM vApp deployment process flow": {
       "is_heading": true,
@@ -291,38 +131,6 @@
       "page": 10,
       "confidence": 0.9
     },
-    "Prerequisites": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 44,
-      "confidence": 0.7
-    },
-    "10": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 10,
-      "confidence": 0.7
-    },
-    "Steps": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 44,
-      "confidence": 0.7
-    },
-    "11": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 11,
-      "confidence": 0.7
-    },
     "Install additional Dell SRM vApp VMs overview": {
       "is_heading": true,
       "level": 5,
@@ -330,14 +138,6 @@
       "is_bold": true,
       "page": 12,
       "confidence": 0.9
-    },
-    "SolutionPacks": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 12,
-      "confidence": 0.7
     },
     "Deploy Scaleout VMs in Existing vApp": {
       "is_heading": true,
@@ -347,22 +147,6 @@
       "page": 12,
       "confidence": 0.9
     },
-    "12": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 12,
-      "confidence": 0.7
-    },
-    "Results": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 34,
-      "confidence": 0.7
-    },
     "Deploying Collector vApp VMs in different": {
       "is_heading": true,
       "level": 5,
@@ -370,22 +154,6 @@
       "is_bold": true,
       "page": 13,
       "confidence": 0.9
-    },
-    "datacenters": {
-      "is_heading": true,
-      "level": 5,
-      "size": 20.0,
-      "is_bold": true,
-      "page": 13,
-      "confidence": 0.9
-    },
-    "13": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 13,
-      "confidence": 0.7
     },
     "Post deployment, pre-startup tasks": {
       "is_heading": true,
@@ -401,14 +169,6 @@
       "size": 9.0,
       "is_bold": true,
       "page": 41,
-      "confidence": 0.7
-    },
-    "14": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 14,
       "confidence": 0.7
     },
     "Adjusting the VMs": {
@@ -427,14 +187,6 @@
       "page": 15,
       "confidence": 0.9
     },
-    "DataStores": {
-      "is_heading": true,
-      "level": 5,
-      "size": 20.0,
-      "is_bold": true,
-      "page": 15,
-      "confidence": 0.9
-    },
     "Modifying the start order of the vApps": {
       "is_heading": true,
       "level": 5,
@@ -442,22 +194,6 @@
       "is_bold": true,
       "page": 15,
       "confidence": 0.9
-    },
-    "15": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 15,
-      "confidence": 0.7
-    },
-    "16": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 16,
-      "confidence": 0.7
     },
     "Working with Dell SRM": {
       "is_heading": true,
@@ -491,36 +227,12 @@
       "page": 17,
       "confidence": 0.7
     },
-    "Environment": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 18,
-      "confidence": 0.7
-    },
     "Default username and password": {
       "is_heading": true,
       "level": 8,
       "size": 9.0,
       "is_bold": true,
       "page": 18,
-      "confidence": 0.7
-    },
-    "2": {
-      "is_heading": true,
-      "level": 1,
-      "size": 28.0,
-      "is_bold": true,
-      "page": 17,
-      "confidence": 0.9
-    },
-    "17": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 17,
       "confidence": 0.7
     },
     "Table 2. Default usernames and passwords  (continued)": {
@@ -547,14 +259,6 @@
       "page": 37,
       "confidence": 0.9
     },
-    "Troubleshooting service start-up problems on UNIX": {
-      "is_heading": true,
-      "level": 6,
-      "size": 16.0,
-      "is_bold": true,
-      "page": 37,
-      "confidence": 0.9
-    },
     "Logging in to the user interface": {
       "is_heading": true,
       "level": 5,
@@ -563,14 +267,6 @@
       "page": 38,
       "confidence": 0.9
     },
-    "18": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 18,
-      "confidence": 0.7
-    },
     "Verifying MySQL Database Grants": {
       "is_heading": true,
       "level": 5,
@@ -578,22 +274,6 @@
       "is_bold": true,
       "page": 34,
       "confidence": 0.9
-    },
-    "Example": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 35,
-      "confidence": 0.7
-    },
-    "19": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 19,
-      "confidence": 0.7
     },
     "Verifying and configuring the user process limits for a": {
       "is_heading": true,
@@ -611,14 +291,6 @@
       "page": 20,
       "confidence": 0.9
     },
-    "20": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 20,
-      "confidence": 0.7
-    },
     "Configuring Remote Collectors": {
       "is_heading": true,
       "level": 8,
@@ -635,31 +307,7 @@
       "page": 21,
       "confidence": 0.9
     },
-    "deployment.": {
-      "is_heading": true,
-      "level": 5,
-      "size": 20.0,
-      "is_bold": true,
-      "page": 21,
-      "confidence": 0.9
-    },
-    "21": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 21,
-      "confidence": 0.7
-    },
     "Reconfiguring the LBC, Generic-SNMP, and Generic-": {
-      "is_heading": true,
-      "level": 5,
-      "size": 20.0,
-      "is_bold": true,
-      "page": 22,
-      "confidence": 0.9
-    },
-    "RSC": {
       "is_heading": true,
       "level": 5,
       "size": 20.0,
@@ -674,22 +322,6 @@
       "is_bold": true,
       "page": 22,
       "confidence": 0.9
-    },
-    "installation": {
-      "is_heading": true,
-      "level": 6,
-      "size": 16.0,
-      "is_bold": true,
-      "page": 22,
-      "confidence": 0.9
-    },
-    "22": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 22,
-      "confidence": 0.7
     },
     "Installing Using the Binary Installer": {
       "is_heading": true,
@@ -723,39 +355,7 @@
       "page": 23,
       "confidence": 0.7
     },
-    "Frontend": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 23,
-      "confidence": 0.7
-    },
-    "Primary Backend": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 23,
-      "confidence": 0.7
-    },
     "Additional Backend": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 23,
-      "confidence": 0.7
-    },
-    "Collector": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 23,
-      "confidence": 0.7
-    },
-    "23": {
       "is_heading": true,
       "level": 8,
       "size": 9.0,
@@ -795,14 +395,6 @@
       "page": 24,
       "confidence": 0.9
     },
-    "24": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 24,
-      "confidence": 0.7
-    },
     "Installing on Linux": {
       "is_heading": true,
       "level": 5,
@@ -818,14 +410,6 @@
       "is_bold": true,
       "page": 25,
       "confidence": 0.9
-    },
-    "25": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 25,
-      "confidence": 0.7
     },
     "Configuring virus-scanning software": {
       "is_heading": true,
@@ -843,14 +427,6 @@
       "page": 26,
       "confidence": 0.9
     },
-    "26": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 26,
-      "confidence": 0.7
-    },
     "Configuring binary Dell SRM SRM-Conf-Tools": {
       "is_heading": true,
       "level": 5,
@@ -867,14 +443,6 @@
       "page": 41,
       "confidence": 0.9
     },
-    "27": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 27,
-      "confidence": 0.7
-    },
     "Installing and configuring the Primary Backend host": {
       "is_heading": true,
       "level": 5,
@@ -883,28 +451,12 @@
       "page": 28,
       "confidence": 0.9
     },
-    "28": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 28,
-      "confidence": 0.7
-    },
     "Installing and configuring the Additional Backend": {
       "is_heading": true,
       "level": 5,
       "size": 20.0,
       "is_bold": true,
       "page": 29,
-      "confidence": 0.9
-    },
-    "hosts": {
-      "is_heading": true,
-      "level": 5,
-      "size": 20.0,
-      "is_bold": true,
-      "page": 33,
       "confidence": 0.9
     },
     "Installing and configuring the Collector host": {
@@ -915,14 +467,6 @@
       "page": 29,
       "confidence": 0.9
     },
-    "29": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 29,
-      "confidence": 0.7
-    },
     "Installing and configuring the Frontend host": {
       "is_heading": true,
       "level": 5,
@@ -930,14 +474,6 @@
       "is_bold": true,
       "page": 30,
       "confidence": 0.9
-    },
-    "30": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 30,
-      "confidence": 0.7
     },
     "Scaling-out a Dell SRM environment with Additional": {
       "is_heading": true,
@@ -947,30 +483,6 @@
       "page": 31,
       "confidence": 0.9
     },
-    "Backend hosts": {
-      "is_heading": true,
-      "level": 5,
-      "size": 20.0,
-      "is_bold": true,
-      "page": 31,
-      "confidence": 0.9
-    },
-    "31": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 31,
-      "confidence": 0.7
-    },
-    "32": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 32,
-      "confidence": 0.7
-    },
     "Scaling-out a Dell SRM environment with Collector": {
       "is_heading": true,
       "level": 5,
@@ -978,22 +490,6 @@
       "is_bold": true,
       "page": 33,
       "confidence": 0.9
-    },
-    "33": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 33,
-      "confidence": 0.7
-    },
-    "34": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 34,
-      "confidence": 0.7
     },
     "Updating firewall ports in Red Hat and SLES servers": {
       "is_heading": true,
@@ -1003,14 +499,6 @@
       "page": 35,
       "confidence": 0.9
     },
-    "35": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 35,
-      "confidence": 0.7
-    },
     "Editing new actions scripts": {
       "is_heading": true,
       "level": 5,
@@ -1019,30 +507,6 @@
       "page": 36,
       "confidence": 0.9
     },
-    "36": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 36,
-      "confidence": 0.7
-    },
-    "Troubleshooting service start-up problems on Windows": {
-      "is_heading": true,
-      "level": 6,
-      "size": 16.0,
-      "is_bold": true,
-      "page": 37,
-      "confidence": 0.9
-    },
-    "37": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 37,
-      "confidence": 0.7
-    },
     "Connecting to Administration": {
       "is_heading": true,
       "level": 5,
@@ -1050,22 +514,6 @@
       "is_bold": true,
       "page": 38,
       "confidence": 0.9
-    },
-    "2. Type https:// <Frontend-host-IP> :58443/admin": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 38,
-      "confidence": 0.7
-    },
-    "38": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 38,
-      "confidence": 0.7
     },
     "Using the Dell SRM Setup Wizard": {
       "is_heading": true,
@@ -1083,22 +531,6 @@
       "page": 39,
       "confidence": 0.9
     },
-    "39": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 39,
-      "confidence": 0.7
-    },
-    "40": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 40,
-      "confidence": 0.7
-    },
     "Dell SRM Configuration Tools": {
       "is_heading": true,
       "level": 8,
@@ -1115,52 +547,12 @@
       "page": 41,
       "confidence": 0.9
     },
-    "41": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 41,
-      "confidence": 0.7
-    },
-    "42": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 42,
-      "confidence": 0.7
-    },
-    "Uninstallation": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 45,
-      "confidence": 0.7
-    },
-    "Overview": {
-      "is_heading": true,
-      "level": 5,
-      "size": 20.0,
-      "is_bold": true,
-      "page": 43,
-      "confidence": 0.9
-    },
     "Stopping Dell M&R platform services on a UNIX": {
       "is_heading": true,
       "level": 5,
       "size": 20.0,
       "is_bold": true,
       "page": 43,
-      "confidence": 0.9
-    },
-    "server": {
-      "is_heading": true,
-      "level": 5,
-      "size": 20.0,
-      "is_bold": true,
-      "page": 44,
       "confidence": 0.9
     },
     "Uninstalling the product from a UNIX server": {
@@ -1170,14 +562,6 @@
       "is_bold": true,
       "page": 43,
       "confidence": 0.9
-    },
-    "43": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 43,
-      "confidence": 0.7
     },
     "Stopping Dell M&R platform services on a Windows": {
       "is_heading": true,
@@ -1210,30 +594,6 @@
       "is_bold": true,
       "page": 44,
       "confidence": 0.9
-    },
-    "44": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 44,
-      "confidence": 0.7
-    },
-    "Steps:": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 45,
-      "confidence": 0.7
-    },
-    "45": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 45,
-      "confidence": 0.7
     },
     "Unattended Installation": {
       "is_heading": true,
@@ -1283,47 +643,7 @@
       "page": 46,
       "confidence": 0.9
     },
-    "A": {
-      "is_heading": true,
-      "level": 1,
-      "size": 28.0,
-      "is_bold": true,
-      "page": 46,
-      "confidence": 0.9
-    },
-    "46": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 46,
-      "confidence": 0.7
-    },
-    "47": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 47,
-      "confidence": 0.7
-    },
     "Documentation Feedback": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 48,
-      "confidence": 0.7
-    },
-    "B": {
-      "is_heading": true,
-      "level": 1,
-      "size": 28.0,
-      "is_bold": true,
-      "page": 48,
-      "confidence": 0.9
-    },
-    "48": {
       "is_heading": true,
       "level": 8,
       "size": 9.0,

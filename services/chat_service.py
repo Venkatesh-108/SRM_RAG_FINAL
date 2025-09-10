@@ -1,6 +1,8 @@
 import time
 from typing import List, Dict, Any, Optional, Tuple
 from loguru import logger
+from pathlib import Path
+import re
 
 from models.chat import ChatSession, ChatMessage, MessageRole, Source, ChatResponse
 from storage.chat_storage import ChatStorage
@@ -118,6 +120,55 @@ class ChatService:
                 processing_time=processing_time
             )
     
+    def _normalize(self, text: str) -> str:
+        if not text:
+            return ""
+        t = text.strip().lower()
+        t = re.sub(r"\s+", " ", t)
+        t = re.sub(r"[`:*_]+", "", t)
+        t = t.replace("—", "-")
+        return t
+    
+    def _extract_section_from_markdown(self, markdown_content: str, section_title: str) -> Optional[str]:
+        """Dynamically extracts content for a section from full markdown."""
+        lines = markdown_content.split('\n')
+        
+        target_heading_level = -1
+        start_index = -1
+        
+        normalized_title_to_find = self._normalize(section_title)
+        
+        for i, line in enumerate(lines):
+            line_strip = line.strip()
+            match = re.match(r'^(#+)\s+(.*)', line_strip)
+            if match:
+                level = len(match.group(1))
+                heading_text = match.group(2).strip()
+                
+                if self._normalize(heading_text) == normalized_title_to_find:
+                    target_heading_level = level
+                    start_index = i
+                    break
+
+        if start_index == -1:
+            logger.warning(f"Could not find section '{section_title}' in markdown content for dynamic extraction.")
+            return None
+
+        content_lines = [lines[start_index]]
+        for i in range(start_index + 1, len(lines)):
+            line = lines[i]
+            line_strip = line.strip()
+            
+            match = re.match(r'^(#+)\s+', line_strip)
+            if match:
+                current_level = len(match.group(1))
+                if current_level <= target_heading_level:
+                    break
+            
+            content_lines.append(line)
+
+        return '\n'.join(content_lines).strip()
+
     async def _get_rag_response(self, query: str, use_direct_results: bool = False) -> Tuple[str, float, List[Dict[str, Any]]]:
         """Get response from RAG system"""
         try:
@@ -128,10 +179,16 @@ class ChatService:
                 direct_response = self._format_direct_results(query, retrieved_chunks)
                 return direct_response, 1.0, retrieved_chunks
             
-            # Pass configuration to ollama service for dynamic context length
-            config = self.rag_service.config if hasattr(self.rag_service, 'config') else None
-            answer, confidence_score, validation_result = generate_answer_with_ollama(query, retrieved_chunks, config)
+            # Check if we got complete content from our fixed search (exact title match)
+            if retrieved_chunks and len(retrieved_chunks) == 1:
+                chunk = retrieved_chunks[0]
+                if chunk.get('metadata', {}).get('search_type') == 'exact_title_match':
+                    # We have complete content, generate answer directly
+                    answer, confidence_score, validation_result = generate_answer_with_ollama(query, retrieved_chunks)
+                    return answer, confidence_score, retrieved_chunks
             
+            # Standard RAG response generation
+            answer, confidence_score, validation_result = generate_answer_with_ollama(query, retrieved_chunks)
             return answer, confidence_score, retrieved_chunks
             
         except Exception as e:
@@ -142,9 +199,23 @@ class ChatService:
         """Extract source information from RAG context chunks"""
         sources = []
         
+        # Map internal document IDs to actual filenames
+        doc_id_to_filename = {
+            'SRM_Installation_and_Configuration_Guide': 'SRM Installation and Configuration Guide.pdf',
+            'SRM_Upgrade_Guide': 'SRM Upgrade Guide.pdf'
+        }
+        
         for chunk in chunks:
             metadata = chunk.get('metadata', {})
-            filename = metadata.get('filename', 'Unknown')
+            doc_id = metadata.get('filename', 'Unknown')
+            
+            # Convert internal document ID to actual filename
+            if doc_id in doc_id_to_filename:
+                filename = doc_id_to_filename[doc_id]
+            else:
+                # Fallback: ensure file has extension for links
+                filename = doc_id if '.' in doc_id else f"{doc_id}.pdf"
+            
             page_number = metadata.get('page_number')
             section_title = metadata.get('section_title', 'Unknown Section')
             relevance_score = metadata.get('relevance_score', 0.0)

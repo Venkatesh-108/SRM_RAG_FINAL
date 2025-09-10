@@ -477,7 +477,7 @@ async def ask_endpoint(request: QueryRequest):
     try:
         retrieved_chunks = rag_service.search(request.query)
         
-        answer, confidence_score, validation_result = generate_answer_with_ollama(request.query, retrieved_chunks, config)
+        answer, confidence_score, validation_result = generate_answer_with_ollama(request.query, retrieved_chunks)
         
         sources = []
         for chunk in retrieved_chunks:
@@ -496,7 +496,7 @@ async def ask_endpoint(request: QueryRequest):
         
         return QueryResponse(
             answer=answer,
-            context=[{"text": chunk['text'][:200] + "...", "metadata": chunk['metadata']} for chunk in retrieved_chunks],
+            context=[{"text": chunk['text'][:1000] + ("..." if len(chunk['text']) > 1000 else ""), "metadata": chunk['metadata']} for chunk in retrieved_chunks],
             sources=sources,
             confidence_score=confidence_score,
             answer_validation=validation_result
@@ -537,7 +537,7 @@ def ask(query: str):
         console.print(f"   Content: {chunk['text'][:200]}...")
     
     console.print("\n--- Generating Answer ---", style="bold blue")
-    answer, confidence_score, validation_result = generate_answer_with_ollama(query, retrieved_chunks, config)
+    answer, confidence_score, validation_result = generate_answer_with_ollama(query, retrieved_chunks)
     
     console.print("\n--- Answer ---", style="bold green")
     console.print(answer)

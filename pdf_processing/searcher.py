@@ -242,14 +242,191 @@ class PDFSearcher:
                 if i < len(chunks):
                     return chunks[i]
 
-        # 2) Substring/containment match (handles TOC artifacts)
+        # 2) Enhanced substring/containment match for heading-to-content mapping
+        best_match_content = None
+        best_match_score = 0
+        
         for i, metadata in enumerate(metadata_list):
             meta_title = self._normalize_title(metadata.get('title', ''))
-            if target and (target in meta_title or meta_title in target) and len(target) > 8:
-                if i < len(chunks):
-                    return chunks[i]
+            chunk_content = chunks[i] if i < len(chunks) else ""
+            
+            # Check if target title appears in the chunk content or vice versa
+            if target and len(target) > 8:
+                # Score the match quality
+                match_score = 0
+                
+                # Direct title containment
+                if target in meta_title or meta_title in target:
+                    match_score += 0.8
+                
+                # Check if the title appears in the content itself
+                if target in chunk_content.lower():
+                    match_score += 0.6
+                
+                # Check for key words matching
+                target_words = set(target.split())
+                meta_words = set(meta_title.split())
+                content_words = set(chunk_content.lower().split())
+                
+                word_overlap = len(target_words.intersection(meta_words))
+                content_overlap = len(target_words.intersection(content_words))
+                
+                if word_overlap > 0:
+                    match_score += (word_overlap / len(target_words)) * 0.5
+                
+                if content_overlap > 0:
+                    match_score += (content_overlap / len(target_words)) * 0.4
+                
+                # Prefer chunks with substantial content
+                if len(chunk_content) > 100:
+                    match_score += 0.2
+                
+                if match_score > best_match_score and match_score > 0.5:
+                    best_match_score = match_score
+                    best_match_content = chunk_content
+
+        if best_match_content:
+            return best_match_content
 
         return None
+    
+    def _find_content_by_semantic_search(self, doc_id: str, title: str) -> Optional[str]:
+        """Use semantic search to find content related to a title when direct mapping fails"""
+        try:
+            if doc_id not in self.indexes:
+                return None
+            
+            index_data = self.indexes[doc_id]
+            faiss_index = index_data['faiss_index']
+            
+            # Generate embedding for the title
+            title_embedding = self.model.encode([title])
+            faiss.normalize_L2(title_embedding)
+            
+            # Search for semantically similar content
+            scores, indices = faiss_index.search(
+                title_embedding.astype('float32'), 
+                min(5, faiss_index.ntotal)
+            )
+            
+            # Return the best matching content that's substantial
+            for score, idx in zip(scores[0], indices[0]):
+                if idx != -1 and score > 0.3:  # Reasonable similarity threshold
+                    content = index_data['chunks'][idx]
+                    if len(content) > 100:  # Ensure substantial content
+                        return content
+            
+            return None
+            
+        except Exception as e:
+            logger.error(f"Semantic fallback search failed: {e}")
+            return None
+    
+    def _find_complete_content_from_source(self, doc_id: str, title: str) -> Optional[str]:
+        """Find complete content by looking directly at source markdown files for exact title matches"""
+        try:
+            # Check if we have enhanced data for this document
+            if doc_id not in self.enhanced_data:
+                return None
+            
+            # Look for markdown files in the extracted docs directory
+            doc_dir = self.extracted_docs_dir / doc_id
+            markdown_files = ['docling_content.md', 'complete_content.md']
+            
+            target_title = title.lower().strip()
+            
+            for markdown_file in markdown_files:
+                markdown_path = doc_dir / markdown_file
+                if not markdown_path.exists():
+                    continue
+                
+                try:
+                    with open(markdown_path, 'r', encoding='utf-8') as f:
+                        content = f.read()
+                    
+                    # Split into lines and find the section
+                    lines = content.split('\n')
+                    section_content = []
+                    in_target_section = False
+                    section_level = 0
+                    
+                    for line in lines:
+                        # Check if this is our target heading
+                        if line.strip() and ('##' in line or '#' in line):
+                            clean_line = line.strip().lower()
+                            clean_line = clean_line.replace('#', '').strip()
+                            
+                            # Normalize both strings for better matching
+                            normalized_line = self._normalize_title(clean_line)
+                            normalized_target = self._normalize_title(target_title)
+                            
+                            if normalized_line == normalized_target:
+                                # Found our section
+                                in_target_section = True
+                                section_level = line.count('#')
+                                section_content = [line]
+                                continue
+                            elif in_target_section:
+                                # Check if this is a new section at same or higher level
+                                current_level = line.count('#')
+                                # Don't break on procedural sub-headings, continue including them
+                                is_procedural_sub = self._is_procedural_subheading(line.strip())
+                                if current_level <= section_level and not is_procedural_sub:
+                                    # End of our section
+                                    break
+                        
+                        if in_target_section:
+                            section_content.append(line)
+                    
+                    if section_content:
+                        complete_content = '\n'.join(section_content)
+                        # Only return if we have substantial content (more than just the heading)
+                        if len(complete_content) > len(title) + 50:
+                            logger.info(f"Found complete content from source for '{title}': {len(complete_content)} chars")
+                            return complete_content
+                
+                except Exception as e:
+                    logger.error(f"Error reading {markdown_path}: {e}")
+                    continue
+            
+            return None
+            
+        except Exception as e:
+            logger.error(f"Error finding complete content from source: {e}")
+            return None
+    
+    def _is_procedural_subheading(self, text: str) -> bool:
+        """Detect procedural sub-headings that should remain part of the main content."""
+        if not text:
+            return False
+        
+        text_lower = text.strip().lower()
+        
+        # Remove markdown formatting for checking
+        clean_text = text_lower.replace('#', '').strip()
+        
+        # Common procedural sub-headings that should not split content
+        procedural_subheadings = [
+            'steps', 'procedure', 'instructions', 'process', 'method',
+            'prerequisites', 'requirements', 'before you begin',
+            'next steps', 'what to do next', 'continue with',
+            'follow these steps', 'to do this', 'implementation',
+            'example', 'examples', 'note', 'notes', 'important',
+            'warning', 'caution', 'tip', 'tips', 'result', 'results',
+            'outcome', 'expected result', 'verification', 'verify',
+            'troubleshooting', 'if this fails', 'alternative'
+        ]
+        
+        # Check if the clean text matches any procedural sub-heading
+        for subheading in procedural_subheadings:
+            if clean_text == subheading or clean_text.startswith(subheading + ' '):
+                return True
+        
+        # Also check for very short headings that are likely sub-sections
+        if len(clean_text.split()) <= 2 and len(clean_text) <= 15:
+            return True
+            
+        return False
 
     def _normalize_title(self, text: str) -> str:
         """Normalize titles to improve matching between heading lists and chunk metadata."""
@@ -324,8 +501,19 @@ class PDFSearcher:
             heading_title = match['heading']['title']
             content = self._find_chunk_content_by_title(doc_id, heading_title)
             
+            # For exact matches, try to get complete content from source files first
+            if match_type == 'exact_heading_match' and (not content or len(content) < 200):
+                complete_content = self._find_complete_content_from_source(doc_id, heading_title)
+                if complete_content:
+                    content = complete_content
+            
+            # Enhanced fallback - try to find content using semantic search if direct mapping fails
+            if not content or len(content) < 50:
+                content = self._find_content_by_semantic_search(doc_id, heading_title)
+            
+            # Final fallback with heading title
             if not content:
-                content = f"HEADING: {heading_title}" # Fallback
+                content = f"# {heading_title}\n\n(Content not found - This is a heading reference)"
             
             result = {
                 'document_id': doc_id,
@@ -348,6 +536,21 @@ class PDFSearcher:
             for match in heading_index[query_lower]:
                 if match['match_type'] == 'exact_title':
                     results.append(create_heading_result(match, 'exact_heading_match', 1.0))
+        
+        # Enhanced exact matching - try variations of the query
+        query_variations = [
+            query_lower,
+            query_lower.replace(' for all ', ' for all '),  # Handle spacing variations
+            query_lower.replace(' - ', ' '),  # Handle dash variations
+            query_lower.strip('# '),  # Remove markdown headers
+        ]
+        
+        for variation in query_variations:
+            variation = variation.strip()
+            if variation and variation != query_lower and variation in heading_index:
+                for match in heading_index[variation]:
+                    if match['match_type'] == 'exact_title':
+                        results.append(create_heading_result(match, 'exact_heading_match_variation', 0.95))
         
         # Partial title matches
         for title, matches in heading_index.items():
