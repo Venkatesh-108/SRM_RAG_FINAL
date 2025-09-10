@@ -4,6 +4,7 @@ class SRMAIApp {
     constructor() {
         this.isLoading = false;
         this.currentSessionId = null;
+        this.currentAutocompleteIndex = -1;
         this.init();
     }
 
@@ -20,12 +21,22 @@ class SRMAIApp {
             chatInput.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter' && !e.shiftKey) {
                     e.preventDefault();
+                    if (this.handleAutocompleteNavigation(e)) {
+                        return;
+                    }
                     this.sendMessage();
+                } else if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+                    if (this.handleAutocompleteNavigation(e)) {
+                        e.preventDefault();
+                    }
+                } else if (e.key === 'Escape') {
+                    this.hideAutocomplete();
                 }
             });
             chatInput.addEventListener('input', () => {
                 this.updateSendButton();
                 this.updateCharCounter();
+                this.handleAutocomplete();
             });
         }
 
@@ -59,6 +70,13 @@ class SRMAIApp {
         if (pdfUploadInput) {
             pdfUploadInput.addEventListener('change', (event) => this.uploadFile(event.target.files[0]));
         }
+
+        // Hide autocomplete when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.input-wrapper')) {
+                this.hideAutocomplete();
+            }
+        });
     }
 
     async uploadFile(file) {
@@ -622,6 +640,124 @@ class SRMAIApp {
             }
         }
         typeWriter();
+    }
+
+    // Autocomplete functionality
+    async handleAutocomplete() {
+        const chatInput = document.getElementById('chatInput');
+        const query = chatInput.value.trim();
+
+        // Hide autocomplete if query is too short
+        if (query.length < 2) {
+            this.hideAutocomplete();
+            return;
+        }
+
+        try {
+            console.log('Fetching autocomplete for:', query);
+            const response = await fetch(`/autocomplete?query=${encodeURIComponent(query)}`);
+            const data = await response.json();
+            console.log('Autocomplete data:', data);
+            this.showAutocomplete(data.suggestions, query);
+        } catch (error) {
+            console.error('Autocomplete error:', error);
+            this.hideAutocomplete();
+        }
+    }
+
+    showAutocomplete(suggestions, query) {
+        const dropdown = document.getElementById('autocompleteDropdown');
+        console.log('Dropdown element:', dropdown);
+        
+        if (!suggestions || suggestions.length === 0) {
+            console.log('No suggestions to show');
+            this.hideAutocomplete();
+            return;
+        }
+
+        console.log('Showing', suggestions.length, 'suggestions');
+        dropdown.innerHTML = '';
+        this.currentAutocompleteIndex = -1;
+
+        suggestions.forEach((suggestion, index) => {
+            const item = document.createElement('div');
+            item.className = 'autocomplete-item';
+            item.dataset.index = index;
+            
+            // Highlight matching text
+            const highlightedText = this.highlightMatch(suggestion, query);
+            item.innerHTML = highlightedText;
+            
+            item.addEventListener('click', () => {
+                this.selectAutocompleteItem(suggestion);
+            });
+            
+            dropdown.appendChild(item);
+        });
+
+        dropdown.classList.add('show');
+        console.log('Dropdown classes:', dropdown.className);
+        console.log('Dropdown computed style:', window.getComputedStyle(dropdown).display);
+        console.log('Dropdown visible:', dropdown.offsetHeight > 0);
+    }
+
+    hideAutocomplete() {
+        const dropdown = document.getElementById('autocompleteDropdown');
+        dropdown.classList.remove('show');
+        this.currentAutocompleteIndex = -1;
+    }
+
+    highlightMatch(text, query) {
+        const regex = new RegExp(`(${this.escapeRegex(query)})`, 'gi');
+        return text.replace(regex, '<span class="highlight">$1</span>');
+    }
+
+    escapeRegex(string) {
+        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    selectAutocompleteItem(suggestion) {
+        const chatInput = document.getElementById('chatInput');
+        chatInput.value = suggestion;
+        this.hideAutocomplete();
+        chatInput.focus();
+        this.updateSendButton();
+        this.updateCharCounter();
+    }
+
+    handleAutocompleteNavigation(e) {
+        const dropdown = document.getElementById('autocompleteDropdown');
+        if (!dropdown.classList.contains('show')) {
+            return false;
+        }
+
+        const items = dropdown.querySelectorAll('.autocomplete-item');
+        if (items.length === 0) {
+            return false;
+        }
+
+        if (e.key === 'ArrowDown') {
+            this.currentAutocompleteIndex = Math.min(this.currentAutocompleteIndex + 1, items.length - 1);
+            this.updateAutocompleteSelection(items);
+            return true;
+        } else if (e.key === 'ArrowUp') {
+            this.currentAutocompleteIndex = Math.max(this.currentAutocompleteIndex - 1, -1);
+            this.updateAutocompleteSelection(items);
+            return true;
+        } else if (e.key === 'Enter' && this.currentAutocompleteIndex >= 0) {
+            const selectedItem = items[this.currentAutocompleteIndex];
+            const suggestion = selectedItem.textContent;
+            this.selectAutocompleteItem(suggestion);
+            return true;
+        }
+
+        return false;
+    }
+
+    updateAutocompleteSelection(items) {
+        items.forEach((item, index) => {
+            item.classList.toggle('active', index === this.currentAutocompleteIndex);
+        });
     }
 }
 

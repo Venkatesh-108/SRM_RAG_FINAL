@@ -504,6 +504,15 @@ async def ask_endpoint(request: QueryRequest):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+@app.get("/autocomplete")
+async def autocomplete_endpoint(query: str = ""):
+    """Get autocomplete suggestions for section titles"""
+    try:
+        suggestions = rag_service.get_title_suggestions(query)
+        return {"suggestions": suggestions}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
 @app.post("/reindex")
 async def reindex_endpoint():
     """Force reindexing of documents"""

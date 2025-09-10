@@ -119,7 +119,11 @@
                         id="chatInput" 
                         placeholder="Ask me anything about your documents..."
                         rows="1"
+                        autocomplete="off"
                     ></textarea>
+                    <div class="autocomplete-dropdown" id="autocompleteDropdown">
+                        <!-- Suggestions will be populated here -->
+                    </div>
                     <div class="input-footer">
                         <span class="char-counter" id="charCounter">0/1000</span>
                         <button class="send-btn" id="sendBtn" title="Send" disabled>

@@ -150,6 +150,58 @@ class RAGService:
                     logger.error(f"Error reading markdown file: {e}")
         
         return None
+    
+    def get_title_suggestions(self, query: str, limit: int = 10) -> List[str]:
+        """Get autocomplete suggestions for section titles based on query"""
+        if not self.pdf_searcher:
+            return []
+        
+        # Get all available titles from all documents
+        all_titles = []
+        
+        try:
+            for doc_id in self.pdf_searcher.list_documents():
+                if doc_id in self.pdf_searcher.enhanced_data:
+                    enhanced_data = self.pdf_searcher.enhanced_data[doc_id]
+                    heading_index = enhanced_data.get('heading_index', {})
+                    
+                    # Extract titles from the heading index
+                    for title in heading_index.keys():
+                        if title not in all_titles:
+                            all_titles.append(title)
+        except Exception as e:
+            logger.error(f"Error getting title suggestions: {e}")
+            return []
+        
+        # If no query, return most common/important titles
+        if not query.strip():
+            # Sort by length (shorter titles first) and return top ones
+            sorted_titles = sorted(all_titles, key=len)[:limit]
+            return sorted_titles
+        
+        # Filter titles that contain the query (case insensitive)
+        query_lower = query.lower().strip()
+        matching_titles = []
+        
+        for title in all_titles:
+            title_lower = title.lower()
+            if query_lower in title_lower:
+                # Calculate relevance score (exact match > starts with > contains)
+                if title_lower == query_lower:
+                    score = 100
+                elif title_lower.startswith(query_lower):
+                    score = 80
+                else:
+                    score = 50
+                
+                matching_titles.append((title, score))
+        
+        # Sort by relevance score and title length
+        matching_titles.sort(key=lambda x: (-x[1], len(x[0])))
+        
+        # Return top suggestions
+        suggestions = [title for title, score in matching_titles[:limit]]
+        return suggestions
 
     def get_available_documents(self):
         if not self.pdf_searcher:
