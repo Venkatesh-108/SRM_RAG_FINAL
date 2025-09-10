@@ -348,6 +348,14 @@ class SRMAIApp {
         // Handle multi-line code blocks (```code```)
         formattedText = formattedText.replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>');
         
+        // Handle markdown headings (# ## ### #### ##### ######)
+        formattedText = formattedText.replace(/^######\s+(.+)$/gm, '<h6>$1</h6>');
+        formattedText = formattedText.replace(/^#####\s+(.+)$/gm, '<h5>$1</h5>');
+        formattedText = formattedText.replace(/^####\s+(.+)$/gm, '<h4>$1</h4>');
+        formattedText = formattedText.replace(/^###\s+(.+)$/gm, '<h3>$1</h3>');
+        formattedText = formattedText.replace(/^##\s+(.+)$/gm, '<h2>$1</h2>');
+        formattedText = formattedText.replace(/^#\s+(.+)$/gm, '<h1>$1</h1>');
+        
         // Handle section headers with equals signs (====)
         formattedText = formattedText.replace(/^(.+)\n=+$/gm, '<h3>$1</h3>');
         
@@ -373,6 +381,9 @@ class SRMAIApp {
         // Handle line breaks for better readability
         formattedText = formattedText.replace(/\n\n+/g, '<br><br>');
         formattedText = formattedText.replace(/\n/g, '<br>');
+        
+        // Remove extra br tags after headings
+        formattedText = formattedText.replace(/(<\/h[1-6]>)(<br>)+/g, '$1');
         
         // Wrap in div instead of paragraph to allow block elements
         formattedText = `<div>${formattedText}</div>`;

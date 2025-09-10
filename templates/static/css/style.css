@@ -1073,20 +1073,58 @@ body {
     color: inherit;
 }
 
+.message-content h1 {
+    font-size: 1.4em;
+    font-weight: 700;
+    margin: 12px 0 0px 0;
+    color: #2c3e50;
+    border-bottom: 3px solid #6c5ce7;
+    padding-bottom: 2px;
+    margin-bottom: 4px;
+}
+
+.message-content h2 {
+    font-size: 1.3em;
+    font-weight: 600;
+    margin: 10px 0 0px 0;
+    color: #2c3e50;
+    border-bottom: 2px solid #a29bfe;
+    padding-bottom: 2px;
+    margin-bottom: 2px;
+}
+
 .message-content h3 {
     font-size: 1.2em;
     font-weight: 600;
-    margin: 16px 0 8px 0;
+    margin: 8px 0 0px 0;
     color: #2c3e50;
     border-bottom: 2px solid #ecf0f1;
-    padding-bottom: 4px;
+    padding-bottom: 2px;
+    margin-bottom: 2px;
 }
 
 .message-content h4 {
     font-size: 1.1em;
     font-weight: 600;
-    margin: 14px 0 6px 0;
+    margin: 8px 0 0px 0;
     color: #34495e;
+    margin-bottom: 2px;
+}
+
+.message-content h5 {
+    font-size: 1.05em;
+    font-weight: 600;
+    margin: 6px 0 0px 0;
+    color: #34495e;
+    margin-bottom: 1px;
+}
+
+.message-content h6 {
+    font-size: 1em;
+    font-weight: 600;
+    margin: 6px 0 0px 0;
+    color: #34495e;
+    margin-bottom: 1px;
 }
 
 .message-content p {
