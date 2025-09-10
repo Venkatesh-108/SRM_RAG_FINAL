@@ -290,17 +290,41 @@ class RAGService:
                     for heading in headings:
                         title = heading.get('title', '').strip()
                         if title and len(title) > 3:  # Filter out very short titles
-                            # Normalize for deduplication (lowercase, remove extra spaces)
-                            normalized = re.sub(r'\s+', ' ', title.lower().strip())
+                            # Enhanced normalization for better deduplication
+                            # Remove leading/trailing punctuation and normalize spaces
+                            normalized = title.lower().strip()
+                            # Remove leading dashes, bullets, and numbers
+                            normalized = re.sub(r'^[-•\d\.\)\s]+', '', normalized)
+                            # Remove trailing punctuation
+                            normalized = re.sub(r'[^\w\s]+$', '', normalized)
+                            # Normalize multiple spaces to single space
+                            normalized = re.sub(r'\s+', ' ', normalized).strip()
+                            
+                            # Skip if normalization resulted in too short text
+                            if len(normalized) < 3:
+                                continue
                             
                             # Keep the first occurrence (or the one with better formatting)
                             if normalized not in title_map:
                                 title_map[normalized] = title
                             else:
-                                # If we have a better formatted version, use it
+                                # Prefer the version without leading punctuation/dashes
                                 existing = title_map[normalized]
-                                if len(title) < len(existing) or title.islower() == False:
+                                
+                                # Always prefer the version without leading dash/bullet
+                                title_has_leading_punct = title.lstrip().startswith(('-', '•', '●'))
+                                existing_has_leading_punct = existing.lstrip().startswith(('-', '•', '●'))
+                                
+                                if existing_has_leading_punct and not title_has_leading_punct:
+                                    # Replace with cleaner version
                                     title_map[normalized] = title
+                                elif not existing_has_leading_punct and title_has_leading_punct:
+                                    # Keep existing cleaner version
+                                    pass
+                                else:
+                                    # Both have same type of formatting, keep shorter one
+                                    if len(title) < len(existing):
+                                        title_map[normalized] = title
         except Exception as e:
             logger.error(f"Error getting title suggestions: {e}")
             return []
@@ -309,10 +333,10 @@ class RAGService:
         all_titles = list(title_map.values())
         
         # Debug logging to help identify duplicates
-        if query.strip() and "deploy" in query.lower():
-            logger.info(f"Found {len(all_titles)} unique titles")
-            deploy_titles = [t for t in all_titles if "deploy" in t.lower()]
-            logger.info(f"Deploy-related titles: {deploy_titles}")
+        if query.strip() and ("password" in query.lower() or "dell" in query.lower()):
+            logger.info(f"Found {len(all_titles)} unique titles for query '{query}'")
+            matching_debug = [t for t in all_titles if query.lower() in t.lower()]
+            logger.info(f"Matching titles: {matching_debug[:10]}")  # Show first 10
         
         # If no query, return most common/important titles
         if not query.strip():
