@@ -385,6 +385,14 @@ class SRMAIApp {
         // Remove extra br tags after headings
         formattedText = formattedText.replace(/(<\/h[1-6]>)(<br>)+/g, '$1');
         
+        // Remove extra br tags before and after code blocks
+        formattedText = formattedText.replace(/(<br>)+(<pre><code>)/g, '$2');
+        formattedText = formattedText.replace(/(<\/code><\/pre>)(<br>)+/g, '$1');
+        
+        // Remove extra br tags before and after inline code
+        formattedText = formattedText.replace(/(<br>)+(<code>)/g, '<br>$2');
+        formattedText = formattedText.replace(/(<\/code>)(<br>)+/g, '$1<br>');
+        
         // Wrap in div instead of paragraph to allow block elements
         formattedText = `<div>${formattedText}</div>`;
         
