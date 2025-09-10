@@ -2,7 +2,7 @@
 
 # --- Mode Selection ---
 # Select the active mode: "low", "medium", or "high"
-current_mode: "medium"
+current_mode: "low"
 
 # --- General Settings ---
 docs_path: "docs"
