@@ -1331,6 +1331,27 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Stream Stopped Indicator */
+.stream-stopped-indicator {
+    margin-top: 8px;
+    padding: 6px 10px;
+    background: rgba(108, 92, 231, 0.08);
+    border-radius: 8px;
+    border-left: 3px solid #6c5ce7;
+    font-size: 12px;
+}
+
+/* Send Button Stop State */
+.send-btn.stop-mode {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    box-shadow: 0 4px 16px rgba(231, 76, 60, 0.3);
+}
+
+.send-btn.stop-mode:hover {
+    background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
+    box-shadow: 0 8px 24px rgba(231, 76, 60, 0.4);
+}
+
 /* Autocomplete Dropdown Styles */
 .input-wrapper {
     position: relative;

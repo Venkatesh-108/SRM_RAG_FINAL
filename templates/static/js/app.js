@@ -5,6 +5,9 @@ class SRMAIApp {
         this.isLoading = false;
         this.currentSessionId = null;
         this.currentAutocompleteIndex = -1;
+        this.isStreaming = false;
+        this.streamingTimeoutId = null;
+        this.currentAbortController = null;
         this.init();
     }
 
@@ -42,7 +45,13 @@ class SRMAIApp {
 
         const sendBtn = document.getElementById('sendBtn');
         if (sendBtn) {
-            sendBtn.addEventListener('click', () => this.sendMessage());
+            sendBtn.addEventListener('click', () => {
+                if (this.isStreaming) {
+                    this.stopStreaming();
+                } else {
+                    this.sendMessage();
+                }
+            });
         }
 
         const newChatBtn = document.querySelector('.new-chat-btn');
@@ -165,6 +174,9 @@ class SRMAIApp {
         // Show "Thinking..." message
         this.addMessageToChat('assistant', 'Thinking...', [], true);
 
+        // Create abort controller for this request
+        this.currentAbortController = new AbortController();
+
         try {
             const response = await fetch('/chat/send_message', {
                 method: 'POST',
@@ -174,7 +186,8 @@ class SRMAIApp {
                 body: JSON.stringify({
                     session_id: this.currentSessionId,
                     content: message
-                })
+                }),
+                signal: this.currentAbortController.signal
             });
 
             if (response.ok) {
@@ -188,10 +201,16 @@ class SRMAIApp {
                 this.streamResponse(`Error: ${errorData.detail}`, []);
             }
         } catch (error) {
-            console.error('Error sending message:', error);
-            this.streamResponse('Sorry, I encountered an error. Please try again.', []);
+            if (error.name === 'AbortError') {
+                console.log('Request was aborted');
+                this.handleStreamStop();
+            } else {
+                console.error('Error sending message:', error);
+                this.streamResponse('Sorry, I encountered an error. Please try again.', []);
+            }
         } finally {
             this.setLoadingState(false);
+            this.currentAbortController = null;
             // Update chat history after response is complete
             this.loadChatHistory();
         }
@@ -578,10 +597,55 @@ class SRMAIApp {
         }
     }
 
+    stopStreaming() {
+        this.isStreaming = false;
+        if (this.streamingTimeoutId) {
+            clearTimeout(this.streamingTimeoutId);
+            this.streamingTimeoutId = null;
+        }
+        if (this.currentAbortController) {
+            this.currentAbortController.abort();
+        }
+        this.updateSendButtonForStreaming();
+    }
+
+    handleStreamStop() {
+        // Find the last assistant message and add a "stopped" indicator
+        const assistantMessages = document.querySelectorAll('.chat-message.assistant-message');
+        const lastMessage = assistantMessages[assistantMessages.length - 1];
+        if (lastMessage) {
+            const contentDiv = lastMessage.querySelector('.message-content');
+            if (contentDiv) {
+                const stoppedIndicator = document.createElement('div');
+                stoppedIndicator.className = 'stream-stopped-indicator';
+                stoppedIndicator.innerHTML = '<em style="color: #6c5ce7; font-size: 12px;">Response stopped by user</em>';
+                contentDiv.appendChild(stoppedIndicator);
+            }
+        }
+    }
+
+    updateSendButtonForStreaming() {
+        const sendBtn = document.getElementById('sendBtn');
+        if (sendBtn) {
+            if (this.isStreaming) {
+                sendBtn.innerHTML = '<i class="fas fa-stop"></i>';
+                sendBtn.title = 'Stop';
+                sendBtn.disabled = false;
+                sendBtn.classList.add('stop-mode');
+            } else {
+                sendBtn.innerHTML = '<i class="fas fa-paper-plane"></i>';
+                sendBtn.title = 'Send';
+                sendBtn.disabled = false;
+                sendBtn.classList.remove('stop-mode');
+                this.updateSendButton(); // Check if input is empty to disable if needed
+            }
+        }
+    }
+
     setLoadingState(loading) {
         this.isLoading = loading;
         const sendBtn = document.getElementById('sendBtn');
-        if (sendBtn) {
+        if (sendBtn && !this.isStreaming) {
             sendBtn.disabled = loading;
             sendBtn.innerHTML = loading ? '<i class="fas fa-spinner fa-spin"></i>' : '<i class="fas fa-paper-plane"></i>';
         }
@@ -663,17 +727,25 @@ class SRMAIApp {
         const speed = 20; // milliseconds per character
         let currentText = '';
         const self = this; // Store reference to 'this'
+        
+        // Set streaming state
+        this.isStreaming = true;
+        this.updateSendButtonForStreaming();
 
         function typeWriter() {
-            if (i < text.length) {
+            if (i < text.length && self.isStreaming) {
                 currentText += text.charAt(i);
                 // Apply formatting to the current text
                 contentDiv.innerHTML = self.renderFormattedText(currentText);
                 i++;
-                setTimeout(typeWriter, speed);
+                self.streamingTimeoutId = setTimeout(typeWriter, speed);
             } else {
-                                // After typing is done, add sources
-                if (sources && sources.length > 0) {
+                // Streaming completed or stopped
+                self.isStreaming = false;
+                self.updateSendButtonForStreaming();
+                
+                // After typing is done, add sources (only if completed, not stopped)
+                if (i >= text.length && sources && sources.length > 0) {
                     const sourcesDiv = document.createElement('div');
                     sourcesDiv.className = 'message-sources';
                     sourcesDiv.innerHTML = '<strong>Sources:</strong><br>' + 
@@ -694,8 +766,10 @@ class SRMAIApp {
                     contentDiv.appendChild(sourcesDiv);
                 }
 
-                // Add action buttons after typing is done
-                self.addActionButtons(thinkingMessage, text);
+                // Add action buttons after typing is done (only if completed)
+                if (i >= text.length) {
+                    self.addActionButtons(thinkingMessage, text);
+                }
             }
         }
         typeWriter();
