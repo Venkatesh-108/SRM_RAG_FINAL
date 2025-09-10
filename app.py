@@ -123,6 +123,29 @@ def generate_answer_with_ollama(query: str, context_chunks: List[Dict[str, Any]]
     # Stage 3: Validate answer consistency
     validation_result = validate_answer_consistency(query, refined_answer, context_chunks)
     
+    # Stage 4: Post-processing filter for high hallucination risk
+    if validation_result.get("hallucination_risk", 0) > 0.5 or validation_result.get("specificity_warning", 0) > 0.7:
+        logger.warning("High hallucination risk detected, applying conservative response")
+        
+        # Generate a more conservative answer
+        conservative_prompt = f"""
+        Based ONLY on the exact text provided below, give a brief answer to the question.
+        If the context does not contain specific procedural steps, do NOT create them.
+        
+        Context:
+        {context_text}
+        
+        Question: {query}
+        
+        Answer with ONLY what is explicitly stated in the context. If procedures are mentioned but not detailed, say "The document mentions this procedure but specific steps are not provided in the available context."
+        
+        Answer:
+        """
+        
+        refined_answer = generate_ollama_response(conservative_prompt)
+        # Re-validate the conservative answer
+        validation_result = validate_answer_consistency(query, refined_answer, context_chunks)
+    
     # Calculate confidence score
     confidence_score = calculate_confidence_score(refined_answer, validation_result, context_chunks)
     
@@ -153,17 +176,19 @@ def create_enhanced_prompt(query: str, context: str, stage: str, previous_answer
         return f"""
         Based on the following context from the Dell SRM guides, provide a focused and accurate answer.
         
-        CRITICAL INSTRUCTIONS:
-        1. ONLY use information that is explicitly stated in the provided context
-        2. If the context contains procedure steps, PRESERVE THEM EXACTLY as written
-        3. Do NOT invent, assume, or add information not present in the context
-        4. Include ALL steps in the correct order with exact numbering when available
-        5. Cite specific section titles and page numbers when available
-        6. If context is incomplete, clearly state "The context does not contain sufficient information to answer this question completely"
-        7. Keep answers concise and focused on what the context actually contains
-        8. Do NOT reference external resources or make general statements
-        9. IMPORTANT: If a step mentions a command but doesn't show the full command, state "Command details not provided in context"
-        10. Ensure the answer is complete and not cut off
+        CRITICAL INSTRUCTIONS - STRICT SOURCE ADHERENCE:
+        1. ONLY use information that is EXPLICITLY stated in the provided context
+        2. If the context contains procedure steps, PRESERVE THEM EXACTLY as written - do NOT expand or elaborate
+        3. Do NOT invent, assume, generate, or add ANY information not present in the context
+        4. If context says "Follow the procedure in this section" but doesn't show the procedure, say "The actual procedure steps are not shown in the provided context"
+        5. Do NOT create detailed step-by-step instructions unless they appear verbatim in the context
+        6. QUOTE directly from the source when providing specific instructions
+        7. If context is incomplete, clearly state "The context does not contain sufficient information to answer this question completely"
+        8. Keep answers concise and focused ONLY on what the context actually contains
+        9. Do NOT reference external resources, make general statements, or use common knowledge
+        10. IMPORTANT: If a step mentions a command but doesn't show the full command, state "Command details not provided in context"
+        11. NEVER generate UI navigation steps (like "Navigate to Reports tab") unless explicitly stated in context
+        12. When unsure, err on the side of saying "not specified in the provided context"
         
         FORMATTING REQUIREMENTS:
         - Use **bold** for section headers and important terms
@@ -187,11 +212,13 @@ def create_enhanced_prompt(query: str, context: str, stage: str, previous_answer
         return f"""
         Refine the following answer to be more accurate and focused. CRITICAL RULES:
         1. ONLY include information that is explicitly stated in the context
-        2. Remove any invented or assumed information
-        3. Ensure all procedure steps are exactly as written in the context
-        4. Improve citations to reference specific sections and pages from the context
-        5. Make the answer more concise and focused
+        2. Remove any invented, assumed, or generated information not in the source
+        3. Ensure all procedure steps are exactly as written in the context - do NOT elaborate
+        4. Remove any detailed UI steps that are not explicitly stated in the context
+        5. If the original answer contains information not in the context, remove it
         6. If the context is insufficient, clearly state this
+        7. Quote directly from source material when providing instructions
+        8. Replace any generic steps with "Specific steps not provided in the context"
         
         FORMATTING REQUIREMENTS:
         - Use **bold** for section headers and important terms
@@ -229,62 +256,68 @@ def generate_ollama_response(prompt: str) -> str:
         return "Error: Could not generate an answer from the LLM."
 
 def validate_answer_consistency(query: str, answer: str, context_chunks: List[Dict[str, Any]]) -> Dict[str, Any]:
-    """Validate answer consistency with context and generate validation metrics."""
+    """Validate answer consistency with context and detect hallucinations."""
     validation_metrics = {
         "context_alignment": 0.0,
-        "fact_consistency": 0.0,
-        "procedure_completeness": 0.0,
-        "source_citation_quality": 0.0,
+        "hallucination_risk": 0.0,
+        "source_adherence": 0.0,
+        "specificity_warning": 0.0,
         "overall_validation_score": 0.0
     }
     
-    # Context alignment check - more lenient for focused answers
+    # Combine all context text
     context_text = " ".join([chunk['text'] for chunk in context_chunks]).lower()
     answer_lower = answer.lower()
     
-    # Check if answer terms are present in context
+    # Context alignment check - strict for source adherence
     answer_terms = set(re.findall(r'\b\w+\b', answer_lower))
     context_terms = set(re.findall(r'\b\w+\b', context_text))
     common_terms = answer_terms.intersection(context_terms)
     
     if answer_terms:
-        # More lenient scoring - focus on key terms rather than all terms
-        key_terms = [term for term in answer_terms if len(term) > 3]  # Focus on longer, more meaningful terms
-        if key_terms:
-            key_common_terms = [term for term in key_terms if term in context_terms]
-            validation_metrics["context_alignment"] = len(key_common_terms) / len(key_terms)
-        else:
-            validation_metrics["context_alignment"] = len(common_terms) / len(answer_terms)
+        validation_metrics["context_alignment"] = len(common_terms) / len(answer_terms)
     
-    # Fact consistency check
-    fact_indicators = ['error', 'failed', 'success', 'complete', 'minimum', 'required']
-    fact_consistency = 0
-    for indicator in fact_indicators:
-        if indicator in answer_lower and indicator in context_text:
-            fact_consistency += 1
+    # Hallucination risk detection - check for overly specific UI instructions
+    hallucination_indicators = [
+        'navigate to', 'click on', 'select from dropdown', 'enter a name',
+        'choose the correct', 'review and adjust', 'make sure to verify',
+        'go back to', 'update the', 'save changes and apply'
+    ]
     
-    validation_metrics["fact_consistency"] = min(fact_consistency / len(fact_indicators), 1.0)
+    hallucination_count = sum(1 for indicator in hallucination_indicators 
+                            if indicator in answer_lower and indicator not in context_text)
     
-    # Procedure completeness check
-    if any(word in query.lower() for word in ['how', 'step', 'procedure']):
-        step_count = len(re.findall(r'\d+\.', answer))
-        validation_metrics["procedure_completeness"] = min(step_count / 5, 1.0)  # Normalize to 0-1
+    validation_metrics["hallucination_risk"] = min(hallucination_count / 3, 1.0)  # Penalty for hallucinations
     
-    # Source citation quality - more lenient
-    citation_patterns = [r'page \d+', r'section [^,]+', r'chapter [^,]+']
-    citations_found = sum(1 for pattern in citation_patterns if re.search(pattern, answer_lower))
-    validation_metrics["source_citation_quality"] = min(citations_found / 2, 1.0)  # Reduced threshold
+    # Source adherence - check if answer stays close to source language
+    # Look for phrases that suggest direct quotation vs generated content
+    direct_quote_indicators = ['follow the procedure', 'recommends', 'according to', 'as stated']
+    generated_indicators = ['step-by-step', 'here are the steps', 'procedure:', 'follow these steps']
     
-    # Calculate overall validation score with adjusted weights
+    direct_quotes = sum(1 for indicator in direct_quote_indicators if indicator in answer_lower)
+    generated_content = sum(1 for indicator in generated_indicators if indicator in answer_lower)
+    
+    if direct_quotes + generated_content > 0:
+        validation_metrics["source_adherence"] = direct_quotes / (direct_quotes + generated_content)
+    else:
+        validation_metrics["source_adherence"] = 0.5  # Neutral if no indicators
+    
+    # Specificity warning - flag overly detailed answers
+    specific_details = len(re.findall(r'\d+\.', answer))  # Numbered steps
+    ui_elements = len(re.findall(r'(button|tab|menu|dropdown|field)', answer_lower))
+    
+    validation_metrics["specificity_warning"] = min((specific_details + ui_elements) / 10, 1.0)
+    
+    # Calculate overall validation score - penalize hallucinations heavily
     weights = {
-        "context_alignment": 0.25,  # Reduced weight
-        "fact_consistency": 0.3,    # Increased weight
-        "procedure_completeness": 0.3,  # Increased weight
-        "source_citation_quality": 0.15  # Reduced weight
+        "context_alignment": 0.4,
+        "hallucination_risk": -0.3,  # Negative weight - penalty
+        "source_adherence": 0.3,
+        "specificity_warning": -0.2  # Negative weight - penalty for over-specificity
     }
     
     overall_score = sum(validation_metrics[key] * weights[key] for key in weights.keys())
-    validation_metrics["overall_validation_score"] = round(overall_score, 2)
+    validation_metrics["overall_validation_score"] = max(round(overall_score, 2), 0.0)  # Don't go below 0
     
     return validation_metrics
 
@@ -340,13 +373,32 @@ def calculate_confidence_score(answer: str, validation_result: Dict[str, Any], c
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Check and auto-index on startup"""
-    console.print("Checking for existing indexes...", style="bold yellow")
-    if not rag_service.pdf_searcher:
-        console.print("No indexes found. Auto-indexing documents...", style="bold yellow")
-        rag_service.index_documents()
-    else:
-        console.print("Indexes found. Ready to serve queries.", style="bold green")
+    """Check for new PDFs and auto-index on startup"""
+    console.print("Checking for new or modified PDFs...", style="bold yellow")
+    
+    # Always check for new or modified PDFs, even if indexes exist
+    try:
+        new_or_modified = rag_service.detect_new_or_modified_pdfs()
+        
+        if new_or_modified:
+            console.print(f"Found {len(new_or_modified)} new/modified PDFs: {new_or_modified}", style="bold yellow")
+            console.print("Auto-indexing new documents...", style="bold yellow")
+            results = rag_service.index_documents()
+            console.print(f"Indexing completed: {results}", style="bold green")
+        else:
+            console.print("No new or modified PDFs found. All documents are up to date.", style="bold green")
+            
+        # Ensure searcher is loaded
+        if not rag_service.pdf_searcher:
+            console.print("No indexes found. Performing full indexing...", style="bold yellow")
+            rag_service.index_documents(force_reindex=True)
+            
+        console.print("Ready to serve queries.", style="bold green")
+        
+    except Exception as e:
+        console.print(f"Error during startup indexing check: {e}", style="bold red")
+        logger.error(f"Startup indexing error: {e}")
+    
     yield
 
 app = FastAPI(title="SRM RAG API", description="RAG system for Dell SRM guides", lifespan=lifespan)
@@ -482,13 +534,17 @@ async def ask_endpoint(request: QueryRequest):
         sources = []
         for chunk in retrieved_chunks:
             source_info = chunk['metadata']
-            source_text = f"{source_info.get('filename', 'Unknown')} (Page {source_info.get('page_number', 'N/A')})"
+            # Convert document ID to actual PDF filename
+            document_id = source_info.get('filename', 'Unknown')
+            actual_pdf_filename = rag_service.get_pdf_filename_from_document_id(document_id)
+            
+            source_text = f"{actual_pdf_filename} (Page {source_info.get('page_number', 'N/A')})"
             if source_info.get('section_title'):
                 source_text += f" → Section: {source_info.get('section_title')}"
             
             sources.append({
                 'text': source_text,
-                'filename': source_info.get('filename'),
+                'filename': actual_pdf_filename,
                 'page_number': source_info.get('page_number'),
                 'section_title': source_info.get('section_title'),
                 'relevance_score': source_info.get('relevance_score')
@@ -514,11 +570,27 @@ async def autocomplete_endpoint(query: str = ""):
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.post("/reindex")
-async def reindex_endpoint():
-    """Force reindexing of documents"""
+async def reindex_endpoint(force: bool = False):
+    """Reindex documents (incremental by default, force=true for full reindex)"""
     try:
-        results = rag_service.index_documents()
-        return {"message": f"Successfully reindexed. Results: {results}"}
+        if force:
+            results = rag_service.index_documents(force_reindex=True)
+            return {"message": f"Force reindex completed. Results: {results}"}
+        else:
+            new_or_modified = rag_service.detect_new_or_modified_pdfs()
+            if new_or_modified:
+                results = rag_service.index_documents()
+                return {
+                    "message": f"Incremental reindex completed. Processed {len(new_or_modified)} files.",
+                    "processed_files": new_or_modified,
+                    "results": results
+                }
+            else:
+                return {
+                    "message": "No new or modified PDFs detected. All documents are up to date.",
+                    "processed_files": [],
+                    "results": {"status": "up_to_date", "processed_files": 0}
+                }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 

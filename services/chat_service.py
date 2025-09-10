@@ -199,22 +199,12 @@ class ChatService:
         """Extract source information from RAG context chunks"""
         sources = []
         
-        # Map internal document IDs to actual filenames
-        doc_id_to_filename = {
-            'SRM_Installation_and_Configuration_Guide': 'SRM Installation and Configuration Guide.pdf',
-            'SRM_Upgrade_Guide': 'SRM Upgrade Guide.pdf'
-        }
-        
         for chunk in chunks:
             metadata = chunk.get('metadata', {})
             doc_id = metadata.get('filename', 'Unknown')
             
-            # Convert internal document ID to actual filename
-            if doc_id in doc_id_to_filename:
-                filename = doc_id_to_filename[doc_id]
-            else:
-                # Fallback: ensure file has extension for links
-                filename = doc_id if '.' in doc_id else f"{doc_id}.pdf"
+            # Convert internal document ID to actual filename using RAGService
+            filename = self.rag_service.get_pdf_filename_from_document_id(doc_id)
             
             page_number = metadata.get('page_number')
             section_title = metadata.get('section_title', 'Unknown Section')
