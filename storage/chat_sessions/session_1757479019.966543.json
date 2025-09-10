@@ -1,0 +1,64 @@
+{
+  "session_id": "session_1757479019.966543",
+  "title": "Deploy Scaleout VMs in Existing vApp",
+  "messages": [
+    {
+      "id": "msg_1757479256.684257",
+      "role": "user",
+      "content": "Deploy Scaleout VMs in Existing vApp",
+      "timestamp": "2025-09-10 10:10:56.684257",
+      "sources": [],
+      "metadata": {}
+    },
+    {
+      "id": "msg_1757479265.085606",
+      "role": "assistant",
+      "content": "Deploying Scaleout VMs in Existing vApp\n=============================================\n\n**Prerequisites**\n\n* Log in to the vCenter managing the vApp you want to scale out.\n* Right-click the vApp and select Shut Down. Wait for all VMs in the vApp to shut down completely.\n\n**Steps**\n\n1. Browse to the Support by Product page for Dell SRM (Dell Support Page) page.\n2. Click Downloads.\n3. Download the Dell SRM <version number> vApp Deployment Zip file.\n\nThe host being connected to the vCenter should be local to the ESX servers for the quickest deployment. Locate the 1VM OVF deployment file on the host running the vCenter client or place the files on the DataStore.\n\n4. Open the vSphere Client and connect to the vCenter Server that manages the VMware environment.\n5. Select the resource pool where you want to deploy the VMs for Dell SRM.\n6. Select File > Deploy OVF Template.\n7. In the Source step, locate the 1VM OVF file.\n8. Click Next.\n\nTo save time, deploy the appliance in the same local area network (LAN) that the VMware ESX/ESXi servers share. Deployment takes approximately 5 minutes to 15 minutes. Deployment across a WAN can take 2 hours or more.\n\n9. In the OVF Template Details step, review the details of the loaded .ovf file and click Next.\n10. In the End User License Agreement step, review the license agreement, click Accept, and then click Next.\n11. In the Name and Location step, accept the default name (Dell SRM) or type a Name for the appliance. Specify an Inventory Location for the appliance in the VMware environment. Click Next.\n12. Select the host or cluster where you want to run the deployed template and click Next.\n13. Select the destination storage for the virtual machine files and click Next.\n\n| Option                   | Description                                                                                 |\n|--------------------------|---------------------------------------------------------------------------------------------|\n| Thin-provisioned format  | On-demand expansions of available storage, which is used for newer data store file systems. |\n| Thick-provisioned format | Appliance storage that is allocated immediately and reserved as a block.                    |\n\n<!-- image -->\n\nNOTE: Dell Technologies recommends the thin-provisioned format option when the vApp is deployed in a high-performance environment.\n\n14. In the Network Mapping step, select a destination network that has an IP Pool that is associated with it for each of the VMs and click Next.\n15. In the IP Address Allocation step, choose the IP allocation policy, the IP protocol to use, and click Next.\n16. In the Properties step, provide the values for each of the VMs, and click Next.\n17. In the Ready to Complete step, review the list of properties for the appliance and click Finish.\n\nA status bar opens in the vSphere Client showing the deployment progress.\n\n18. Click Close in the Deployment Completed Successfully dialog box.\n\n**Results**\n\n1. Wait for all VMs to complete deployment.",
+      "timestamp": "2025-09-10 10:11:05.085606",
+      "sources": [
+        {
+          "filename": "SRM Installation and Configuration Guide.pdf",
+          "page_number": 12,
+          "chunk_id": "Deploy Scaleout VMs in Existing vApp",
+          "relevance_score": 5.07,
+          "content_preview": "## Deploy Scaleout VMs in Existing vApp\n*Chapter: Document Introduction*\n*Page: 12*\n\n\nDell SRM supports adding additional backends and collectors eith..."
+        },
+        {
+          "filename": "SRM Installation and Configuration Guide.pdf",
+          "page_number": 12,
+          "chunk_id": "- Deploy Scaleout VMs in Existing vApp",
+          "relevance_score": 2.704,
+          "content_preview": "## - Deploy Scaleout VMs in Existing vApp\n*Chapter: Document Introduction*\n*Page: 12*\n\n"
+        },
+        {
+          "filename": "SRM Installation and Configuration Guide.pdf",
+          "page_number": 12,
+          "chunk_id": "- Deploy Scaleout VMs in Existing vApp",
+          "relevance_score": 2.3173225021362307,
+          "content_preview": "## - Deploy Scaleout VMs in Existing vApp\n*Chapter: Document Introduction*\n*Page: 12*\n\n"
+        },
+        {
+          "filename": "SRM Installation and Configuration Guide.pdf",
+          "page_number": 12,
+          "chunk_id": "Deploy Scaleout VMs in Existing vApp",
+          "relevance_score": 1.787895996272564,
+          "content_preview": "## Deploy Scaleout VMs in Existing vApp\n*Chapter: Document Introduction*\n*Page: 12*\n\n\nDell SRM supports adding additional backends and collectors eith..."
+        },
+        {
+          "filename": "SRM Installation and Configuration Guide.pdf",
+          "page_number": 10,
+          "chunk_id": "Installing the 4VM vApp",
+          "relevance_score": 1.4976,
+          "content_preview": "## Installing the 4VM vApp\n*Chapter: Document Introduction*\n*Page: 10*\n\n\nYou can deploy the Dell SRM 4VM appliance from an OVF template using a vCente..."
+        }
+      ],
+      "metadata": {
+        "confidence_score": 0.978181818181818,
+        "context_chunks_count": 5
+      }
+    }
+  ],
+  "created_at": "2025-09-10 10:06:59.966543",
+  "updated_at": "2025-09-10 10:11:05.085606",
+  "metadata": {}
+}

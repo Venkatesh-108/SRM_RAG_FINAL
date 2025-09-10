@@ -1,22 +1,33 @@
-typer[rich]>=0.12.3
-pypdf==4.2.0
-rank-bm25==0.2.2
-faiss-cpu>=1.8.0
-sentence-transformers>=3.0.1
-ollama==0.3.0
-pyyaml==6.0.1
-numpy>=1.26.4
-unstructured[md,pdf]>=0.14.9
-loguru>=0.7.2
-psutil==5.9.8
-pdfminer.six>=20221105
-fastapi==0.104.1
-uvicorn[standard]==0.24.0
-jinja2==3.1.2
+# Core web framework
+fastapi>=0.104.1
+uvicorn[standard]>=0.24.0
+jinja2>=3.1.2
+pydantic>=2.0.0
+python-multipart>=0.0.20
 
-# Added from pdf_extraction_toolkit
+# CLI and utilities
+typer[rich]>=0.12.3
+rich>=13.0.0
+loguru>=0.7.2
+pyyaml>=6.0.1
+python-dotenv>=1.0.0
+psutil>=5.9.8
+
+# PDF processing
+pypdf>=4.2.0
 PyMuPDF>=1.21.0
+pdfminer.six>=20221105
 docling>=0.1.0
 lxml>=4.9.0
-python-dotenv>=1.0.0
-rich>=13.0.0
+
+# Machine Learning and Vector Search
+numpy>=1.26.4
+faiss-cpu>=1.8.0
+sentence-transformers>=3.0.1
+rank-bm25>=0.2.2
+
+# Document processing
+unstructured[md,pdf]>=0.14.9
+
+# AI/LLM integration
+ollama>=0.3.0

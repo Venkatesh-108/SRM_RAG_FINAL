@@ -2,6 +2,7 @@ from pathlib import Path
 from typing import List, Dict, Any
 import json
 import os
+import re
 from datetime import datetime
 from pdf_processing import PDFProcessor, PDFSearcher
 from loguru import logger
@@ -276,22 +277,42 @@ class RAGService:
         if not self.pdf_searcher:
             return []
         
-        # Get all available titles from all documents
-        all_titles = []
+        # Get all available titles from all documents with case-insensitive deduplication
+        title_map = {}  # normalized_title -> original_title
         
         try:
             for doc_id in self.pdf_searcher.list_documents():
                 if doc_id in self.pdf_searcher.enhanced_data:
                     enhanced_data = self.pdf_searcher.enhanced_data[doc_id]
-                    heading_index = enhanced_data.get('heading_index', {})
+                    headings = enhanced_data.get('headings', [])
                     
-                    # Extract titles from the heading index
-                    for title in heading_index.keys():
-                        if title not in all_titles:
-                            all_titles.append(title)
+                    # Extract actual heading titles (not individual words from heading_index)
+                    for heading in headings:
+                        title = heading.get('title', '').strip()
+                        if title and len(title) > 3:  # Filter out very short titles
+                            # Normalize for deduplication (lowercase, remove extra spaces)
+                            normalized = re.sub(r'\s+', ' ', title.lower().strip())
+                            
+                            # Keep the first occurrence (or the one with better formatting)
+                            if normalized not in title_map:
+                                title_map[normalized] = title
+                            else:
+                                # If we have a better formatted version, use it
+                                existing = title_map[normalized]
+                                if len(title) < len(existing) or title.islower() == False:
+                                    title_map[normalized] = title
         except Exception as e:
             logger.error(f"Error getting title suggestions: {e}")
             return []
+        
+        # Get unique titles
+        all_titles = list(title_map.values())
+        
+        # Debug logging to help identify duplicates
+        if query.strip() and "deploy" in query.lower():
+            logger.info(f"Found {len(all_titles)} unique titles")
+            deploy_titles = [t for t in all_titles if "deploy" in t.lower()]
+            logger.info(f"Deploy-related titles: {deploy_titles}")
         
         # If no query, return most common/important titles
         if not query.strip():
