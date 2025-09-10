@@ -326,28 +326,37 @@ class SRMAIApp {
         // Convert common formatting patterns to HTML
         let formattedText = text;
         
-        // Handle numbered lists (1. 2. 3. etc.)
-        formattedText = formattedText.replace(/^(\d+\.)\s+/gm, '<strong>$1</strong> ');
+        // Handle multi-line code blocks (```code```)
+        formattedText = formattedText.replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>');
         
-        // Handle bullet points (- or •)
-        formattedText = formattedText.replace(/^[-•]\s+/gm, '• ');
+        // Handle section headers with equals signs (====)
+        formattedText = formattedText.replace(/^(.+)\n=+$/gm, '<h3>$1</h3>');
+        
+        // Handle section headers with dashes (----)
+        formattedText = formattedText.replace(/^(.+)\n-+$/gm, '<h4>$1</h4>');
         
         // Handle section headers (lines ending with :)
-        formattedText = formattedText.replace(/^([^:]+):$/gm, '<strong>$1:</strong>');
+        formattedText = formattedText.replace(/^([^:\n]+):$/gm, '<strong>$1:</strong>');
+        
+        // Handle numbered lists (1. 2. 3. etc.)
+        formattedText = formattedText.replace(/^(\d+\.)\s+(.+)$/gm, '<strong>$1</strong> $2');
+        
+        // Handle bullet points (- or •)
+        formattedText = formattedText.replace(/^[-•]\s+(.+)$/gm, '• $1');
         
         // Handle emphasis (text between ** or __)
         formattedText = formattedText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
         formattedText = formattedText.replace(/__(.*?)__/g, '<em>$1</em>');
         
-        // Handle code snippets (text between `)
-        formattedText = formattedText.replace(/`([^`]+)`/g, '<code>$1</code>');
+        // Handle inline code snippets (text between `)
+        formattedText = formattedText.replace(/`([^`\n]+)`/g, '<code>$1</code>');
         
-        // Handle line breaks for better readability - keep content in single paragraph
-        formattedText = formattedText.replace(/\n\n/g, '<br><br>');
+        // Handle line breaks for better readability
+        formattedText = formattedText.replace(/\n\n+/g, '<br><br>');
         formattedText = formattedText.replace(/\n/g, '<br>');
         
-        // Wrap in single paragraph tag to keep everything together
-        formattedText = `<p>${formattedText}</p>`;
+        // Wrap in div instead of paragraph to allow block elements
+        formattedText = `<div>${formattedText}</div>`;
         
         return formattedText;
     }
