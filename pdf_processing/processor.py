@@ -283,13 +283,15 @@ class PDFProcessor:
         index_path = self.index_dir / f"{document_id}.faiss"
         faiss.write_index(vector_data['index'], str(index_path))
         
-        # Save metadata
+        # Save metadata (enhanced with chunk texts for BM25)
         metadata_path = self.index_dir / f"{document_id}_metadata.json"
         with open(metadata_path, 'w', encoding='utf-8') as f:
             json.dump({
                 'metadata': vector_data['metadata'],
-                'chunks': vector_data['chunks'],
-                'embedding_model': vector_data['embedding_model']
+                'chunks': vector_data['chunks'],  # Full chunk texts for BM25
+                'embedding_model': vector_data['embedding_model'],
+                'processing_timestamp': datetime.now().isoformat(),
+                'chunk_count': len(vector_data['chunks'])
             }, f, indent=2, ensure_ascii=False)
         
         logger.info(f"Vector indexes saved to {self.index_dir}")
