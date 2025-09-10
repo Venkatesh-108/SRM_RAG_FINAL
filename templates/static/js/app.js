@@ -724,7 +724,7 @@ class SRMAIApp {
         contentDiv.innerHTML = ''; // Clear the thinking message
         
         let i = 0;
-        const speed = 20; // milliseconds per character
+        const speed = 5; // milliseconds per character (faster typing)
         let currentText = '';
         const self = this; // Store reference to 'this'
         

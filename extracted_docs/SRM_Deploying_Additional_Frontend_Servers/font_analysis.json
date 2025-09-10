@@ -34,14 +34,6 @@
       "page": 2,
       "confidence": 0.7
     },
-    "Architecture overview": {
-      "is_heading": true,
-      "level": 7,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 6,
-      "confidence": 0.7
-    },
     "Additional frontend server deployment": {
       "is_heading": true,
       "level": 5,
@@ -74,30 +66,6 @@
       "page": 7,
       "confidence": 0.9
     },
-    "Configuring compliance": {
-      "is_heading": true,
-      "level": 5,
-      "size": 20.0,
-      "is_bold": true,
-      "page": 8,
-      "confidence": 0.9
-    },
-    "LDAP authentication": {
-      "is_heading": true,
-      "level": 5,
-      "size": 20.0,
-      "is_bold": true,
-      "page": 8,
-      "confidence": 0.9
-    },
-    "Import-Properties task": {
-      "is_heading": true,
-      "level": 5,
-      "size": 20.0,
-      "is_bold": true,
-      "page": 8,
-      "confidence": 0.9
-    },
     "Activate the new configuration settings": {
       "is_heading": true,
       "level": 5,
@@ -105,14 +73,6 @@
       "is_bold": true,
       "page": 9,
       "confidence": 0.9
-    },
-    "About this task": {
-      "is_heading": true,
-      "level": 7,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 13,
-      "confidence": 0.7
     },
     "Configuring the shared reports and tasks": {
       "is_heading": true,
@@ -154,14 +114,6 @@
       "page": 13,
       "confidence": 0.9
     },
-    "Documentation Feedback": {
-      "is_heading": true,
-      "level": 7,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 14,
-      "confidence": 0.7
-    },
     "F5 load balancer configuration": {
       "is_heading": true,
       "level": 7,
@@ -178,14 +130,6 @@
       "page": 15,
       "confidence": 0.7
     },
-    "Configuration Name": {
-      "is_heading": true,
-      "level": 7,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 15,
-      "confidence": 0.7
-    },
     "HAProxy load balancer configuration": {
       "is_heading": true,
       "level": 7,
@@ -195,22 +139,6 @@
       "confidence": 0.7
     },
     "SolutionPacks report installation": {
-      "is_heading": true,
-      "level": 5,
-      "size": 20.0,
-      "is_bold": true,
-      "page": 18,
-      "confidence": 0.9
-    },
-    "SolutionPacks upload": {
-      "is_heading": true,
-      "level": 5,
-      "size": 20.0,
-      "is_bold": true,
-      "page": 18,
-      "confidence": 0.9
-    },
-    "SolutionPacks formula": {
       "is_heading": true,
       "level": 5,
       "size": 20.0,

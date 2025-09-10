@@ -223,7 +223,7 @@ class PDFExtractor:
                 return True
         
         # Also check for very short headings that are likely sub-sections
-        if len(clean_text.split()) <= 2 and len(clean_text) <= 15:
+        if len(clean_text.split()) <= 3 and len(clean_text) <= 25:
             return True
             
         return False

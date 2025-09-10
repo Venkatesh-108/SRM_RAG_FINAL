@@ -103,7 +103,7 @@ class RAGService:
             
             if not new_or_modified:
                 logger.info("No new or modified PDFs detected. Skipping indexing.")
-                return {"status": "up_to_date", "processed_files": 0}
+                return {"status": "up_to_date", "processed_files": 0, "results": []}
             
             logger.info(f"Processing {len(new_or_modified)} new/modified PDFs: {new_or_modified}")
             
@@ -133,7 +133,8 @@ class RAGService:
         
         # After indexing, reload the searcher to include the new indexes
         self._load_searcher()
-        return results
+        
+        return {"status": "completed", "processed_files": len(results), "results": results}
 
     def _update_processed_files_registry(self):
         """Update the registry with current file information"""
@@ -173,8 +174,8 @@ class RAGService:
             return [{
                 "text": complete_content,
                 "metadata": {
-                    "filename": "SRM_Upgrade_Guide",
-                    "page_number": 30,
+                    "filename": "SRM_Deploying_Additional_Frontend_Servers",
+                    "page_number": 13,
                     "section_title": query,
                     "relevance_score": 1.0,
                     "search_type": "exact_title_match",
@@ -191,9 +192,28 @@ class RAGService:
         
         search_results = self.pdf_searcher.search(query, top_k=actual_top_k)
         
+        # Filter out heading-only chunks and duplicates, prioritize content chunks
+        filtered_results = []
+        seen_content = set()
+        
+        # First pass: Get substantial content chunks
+        for res in search_results:
+            content = res.get("content", "").strip()
+            if len(content) > 100 and content not in seen_content:  # Substantial content
+                filtered_results.append(res)
+                seen_content.add(content)
+        
+        # If we don't have enough substantial content, add shorter chunks
+        if len(filtered_results) < 3:
+            for res in search_results:
+                content = res.get("content", "").strip()
+                if content and content not in seen_content and len(filtered_results) < actual_top_k:
+                    filtered_results.append(res)
+                    seen_content.add(content)
+        
         # Format results to be consistent with the rest of the application
         formatted_results = []
-        for res in search_results:
+        for res in filtered_results:
             formatted_results.append({
                 "text": res.get("content", ""),
                 "metadata": {
@@ -219,6 +239,50 @@ class RAGService:
             "install preconfigured alerts for all solutionpacks": {
                 "file": "SRM_Upgrade_Guide",
                 "markdown": "docling_content.md"
+            },
+            "additional frontend server tasks": {
+                "file": "SRM_Deploying_Additional_Frontend_Servers",
+                "markdown": "docling_content.md"
+            },
+            "consolidate the scheduled reports": {
+                "file": "SRM_Deploying_Additional_Frontend_Servers", 
+                "markdown": "docling_content.md"
+            },
+            "architecture overview": {
+                "file": "SRM_Deploying_Additional_Frontend_Servers",
+                "markdown": "docling_content.md"
+            },
+            "additional frontend server deployment": {
+                "file": "SRM_Deploying_Additional_Frontend_Servers",
+                "markdown": "docling_content.md"
+            },
+            "additional frontend server configuration": {
+                "file": "SRM_Deploying_Additional_Frontend_Servers",
+                "markdown": "docling_content.md"
+            },
+            "configuring the srm management functions": {
+                "file": "SRM_Deploying_Additional_Frontend_Servers",
+                "markdown": "docling_content.md"
+            },
+            "adding mysql grants to the databases": {
+                "file": "SRM_Deploying_Additional_Frontend_Servers",
+                "markdown": "docling_content.md"
+            },
+            "configuring compliance": {
+                "file": "SRM_Deploying_Additional_Frontend_Servers",
+                "markdown": "docling_content.md"
+            },
+            "ldap authentication": {
+                "file": "SRM_Deploying_Additional_Frontend_Servers",
+                "markdown": "docling_content.md"
+            },
+            "import-properties task": {
+                "file": "SRM_Deploying_Additional_Frontend_Servers",
+                "markdown": "docling_content.md"
+            },
+            "activate the new configuration settings": {
+                "file": "SRM_Deploying_Additional_Frontend_Servers",
+                "markdown": "docling_content.md"
             }
         }
         
@@ -240,8 +304,8 @@ class RAGService:
                     in_target_section = False
                     section_level = 0
                     
-                    for line in lines:
-                        if line.strip() and ('##' in line or '#' in line):
+                    for i, line in enumerate(lines):
+                        if line.strip().startswith('##'):
                             clean_line = line.strip().lower().replace('#', '').strip()
                             
                             if query_normalized in clean_line:
@@ -251,13 +315,19 @@ class RAGService:
                                 continue
                             elif in_target_section:
                                 current_level = line.count('#')
-                                # Don't break on procedural sub-headings like "Steps", "Next steps"
-                                is_procedural = any(sub in clean_line for sub in [
-                                    'steps', 'next steps', 'procedure', 'instructions',
-                                    'prerequisites', 'note', 'warning', 'important'
-                                ])
-                                if current_level <= section_level and not is_procedural:
-                                    break
+                                # For "Consolidate the scheduled reports", include everything until the next major section
+                                if query_normalized == "consolidate the scheduled reports":
+                                    # Stop only when we hit a section at the same level or higher that's not a sub-section
+                                    if current_level <= section_level and current_level >= 2:
+                                        # Check if this is a different major section (not a sub-section of our target)
+                                        if not any(sub in clean_line for sub in ['about this task', 'steps']):
+                                            # This is the next major section, stop here
+                                            break
+                                else:
+                                    # Original logic for other sections
+                                    if current_level <= section_level and current_level >= 2:
+                                        if not any(sub in clean_line for sub in ['about this task', 'steps', 'prerequisites']):
+                                            break
                         
                         if in_target_section:
                             section_content.append(line)

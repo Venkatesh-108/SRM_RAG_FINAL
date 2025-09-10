@@ -9,6 +9,7 @@ docs_path: "docs"
 index_path: "index"
 ollama_model: "llama3.2:3b" # Or "phi3:latest", "llama3.2:3b"
 use_direct_results: false  # Set to true to return raw search results without LLM processing
+strict_mode: true  # Set to true to enable hallucination detection and validation
 
 # --- RAG Mode Configurations ---
 modes:

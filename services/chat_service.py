@@ -184,11 +184,11 @@ class ChatService:
                 chunk = retrieved_chunks[0]
                 if chunk.get('metadata', {}).get('search_type') == 'exact_title_match':
                     # We have complete content, generate answer directly
-                    answer, confidence_score, validation_result = generate_answer_with_ollama(query, retrieved_chunks)
+                    answer, confidence_score, validation_result = generate_answer_with_ollama(query, retrieved_chunks, self.rag_service.config)
                     return answer, confidence_score, retrieved_chunks
             
             # Standard RAG response generation
-            answer, confidence_score, validation_result = generate_answer_with_ollama(query, retrieved_chunks)
+            answer, confidence_score, validation_result = generate_answer_with_ollama(query, retrieved_chunks, self.rag_service.config)
             return answer, confidence_score, retrieved_chunks
             
         except Exception as e:

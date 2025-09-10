@@ -32,14 +32,6 @@
     "confidence": 0.9
   },
   {
-    "title": "Architecture overview",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 7,
-    "page": 6,
-    "confidence": 0.7
-  },
-  {
     "title": "- Additional frontend server deployment",
     "font_size": 20.0,
     "is_bold": true,
@@ -88,30 +80,6 @@
     "confidence": 0.9
   },
   {
-    "title": "- Configuring compliance",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 8,
-    "confidence": 0.9
-  },
-  {
-    "title": "- LDAP authentication",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 8,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Import-Properties task",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 8,
-    "confidence": 0.9
-  },
-  {
     "title": "- Activate the new configuration settings",
     "font_size": 20.0,
     "is_bold": true,
@@ -128,44 +96,12 @@
     "confidence": 0.9
   },
   {
-    "title": "Configuring compliance",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 8,
-    "confidence": 0.9
-  },
-  {
-    "title": "LDAP authentication",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 8,
-    "confidence": 0.9
-  },
-  {
-    "title": "Import-Properties task",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 8,
-    "confidence": 0.9
-  },
-  {
     "title": "Activate the new configuration settings",
     "font_size": 20.0,
     "is_bold": true,
     "heading_level": 5,
     "page": 9,
     "confidence": 0.9
-  },
-  {
-    "title": "About this task",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 7,
-    "page": 13,
-    "confidence": 0.7
   },
   {
     "title": "Configuring the shared reports and tasks",
@@ -216,14 +152,6 @@
     "confidence": 0.9
   },
   {
-    "title": "About this task",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 7,
-    "page": 13,
-    "confidence": 0.7
-  },
-  {
     "title": "Configuring an NFS share for the user reports",
     "font_size": 20.0,
     "is_bold": true,
@@ -232,28 +160,12 @@
     "confidence": 0.9
   },
   {
-    "title": "About this task",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 7,
-    "page": 13,
-    "confidence": 0.7
-  },
-  {
     "title": "Consolidate the scheduled reports",
     "font_size": 20.0,
     "is_bold": true,
     "heading_level": 5,
     "page": 12,
     "confidence": 0.9
-  },
-  {
-    "title": "About this task",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 7,
-    "page": 13,
-    "confidence": 0.7
   },
   {
     "title": "Additional frontend server tasks",
@@ -270,22 +182,6 @@
     "heading_level": 5,
     "page": 13,
     "confidence": 0.9
-  },
-  {
-    "title": "About this task",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 7,
-    "page": 13,
-    "confidence": 0.7
-  },
-  {
-    "title": "Documentation Feedback",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 7,
-    "page": 14,
-    "confidence": 0.7
   },
   {
     "title": "F5 load balancer configuration",
@@ -328,22 +224,6 @@
     "confidence": 0.9
   },
   {
-    "title": "- SolutionPacks upload",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 18,
-    "confidence": 0.9
-  },
-  {
-    "title": "- SolutionPacks formula",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 18,
-    "confidence": 0.9
-  },
-  {
     "title": "- SolutionPacks property-mapping",
     "font_size": 20.0,
     "is_bold": true,
@@ -353,22 +233,6 @@
   },
   {
     "title": "SolutionPacks report installation",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 18,
-    "confidence": 0.9
-  },
-  {
-    "title": "SolutionPacks upload",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 18,
-    "confidence": 0.9
-  },
-  {
-    "title": "SolutionPacks formula",
     "font_size": 20.0,
     "is_bold": true,
     "heading_level": 5,

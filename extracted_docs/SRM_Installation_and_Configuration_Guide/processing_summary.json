@@ -1,11 +1,11 @@
 {
   "document_id": "SRM_Installation_and_Configuration_Guide",
-  "processing_date": "2025-09-10T07:03:24.516169",
+  "processing_date": "2025-09-10T15:23:14.629113",
   "extraction_method": "hybrid_docling_font",
   "total_content_length": 106542,
   "total_chapters": 4,
-  "total_sections": 161,
-  "total_chunks": 165,
+  "total_sections": 114,
+  "total_chunks": 118,
   "font_analysis_summary": {
     "body_size": 9.0,
     "heading_sizes": [
@@ -17,6 +17,6 @@
       16.0,
       11.5
     ],
-    "headings_detected": 80
+    "headings_detected": 62
   }
 }

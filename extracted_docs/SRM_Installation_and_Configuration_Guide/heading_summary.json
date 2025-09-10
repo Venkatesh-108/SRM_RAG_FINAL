@@ -9,9 +9,9 @@
   },
   {
     "title": "Dell SRM 5.1.1.0 Installation and Configuration Guide",
-    "font_size": 24.0,
-    "is_bold": true,
-    "heading_level": 3,
+    "font_size": 22.0,
+    "is_bold": false,
+    "heading_level": 4,
     "page": 1,
     "confidence": 0.9
   },
@@ -29,14 +29,6 @@
     "is_bold": true,
     "heading_level": 5,
     "page": 7,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Installation checklist",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 8,
     "confidence": 0.9
   },
   {
@@ -96,22 +88,6 @@
     "confidence": 0.9
   },
   {
-    "title": "- Adjusting the VMs",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 15,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Adding disk space",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 15,
-    "confidence": 0.9
-  },
-  {
     "title": "- Modifying the start order of the vApps",
     "font_size": 20.0,
     "is_bold": true,
@@ -136,44 +112,20 @@
     "confidence": 0.7
   },
   {
-    "title": "4VM vApp OVF",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 8,
-    "confidence": 0.7
-  },
-  {
-    "title": "1VM vApp OVF",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 12,
-    "confidence": 0.7
-  },
-  {
-    "title": "Installation checklist",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 8,
-    "confidence": 0.9
-  },
-  {
     "title": "Table 1. Dell SRM Installation checklist",
-    "font_size": 20.0,
+    "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 8,
     "page": 8,
-    "confidence": 0.9
+    "confidence": 0.7
   },
   {
     "title": "Table 1. Dell SRM Installation checklist (continued)",
-    "font_size": 20.0,
+    "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 8,
     "page": 8,
-    "confidence": 0.9
+    "confidence": 0.7
   },
   {
     "title": "Dell SRM vApp deployment process flow",
@@ -208,28 +160,12 @@
     "confidence": 0.9
   },
   {
-    "title": "21. Use the 1VM OVF to add any Additional Backend VMs and Collector VMs as described in the following section:",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 23,
-    "confidence": 0.7
-  },
-  {
     "title": "Install additional Dell SRM vApp VMs overview",
     "font_size": 20.0,
     "is_bold": true,
     "heading_level": 5,
     "page": 12,
     "confidence": 0.9
-  },
-  {
-    "title": "1VM vApp OVF",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 12,
-    "confidence": 0.7
   },
   {
     "title": "Deploy Scaleout VMs in Existing vApp",
@@ -264,67 +200,11 @@
     "confidence": 0.9
   },
   {
-    "title": "About this task",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 41,
-    "confidence": 0.7
-  },
-  {
-    "title": "Adjusting the VMs",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 15,
-    "confidence": 0.9
-  },
-  {
-    "title": "Adding disk space",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 15,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Additional Backends - 1 TB and larger",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 23,
-    "confidence": 0.7
-  },
-  {
     "title": "Modifying the start order of the vApps",
     "font_size": 20.0,
     "is_bold": true,
     "heading_level": 5,
     "page": 15,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Group 1: All Additional Backends",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 23,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Starting the vApp",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 17,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Dell SRM Passwords",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 17,
     "confidence": 0.9
   },
   {
@@ -360,35 +240,11 @@
     "confidence": 0.9
   },
   {
-    "title": "Starting the vApp",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 17,
-    "confidence": 0.9
-  },
-  {
     "title": "Edit the start-up as described in Post deployment, pre-startup tasks.",
     "font_size": 20.0,
     "is_bold": true,
     "heading_level": 5,
     "page": 14,
-    "confidence": 0.9
-  },
-  {
-    "title": "About this task",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 41,
-    "confidence": 0.7
-  },
-  {
-    "title": "Dell SRM Passwords",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 17,
     "confidence": 0.9
   },
   {
@@ -440,22 +296,6 @@
     "confidence": 0.9
   },
   {
-    "title": "About this task",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 41,
-    "confidence": 0.7
-  },
-  {
-    "title": "The following table is an example of the configuration that you should see on an Additional Backend host:",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 23,
-    "confidence": 0.7
-  },
-  {
     "title": "Verifying and configuring the user process limits for a vApp installation",
     "font_size": 20.0,
     "is_bold": true,
@@ -496,14 +336,6 @@
     "confidence": 0.9
   },
   {
-    "title": "About this task",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 41,
-    "confidence": 0.7
-  },
-  {
     "title": "Reconfiguring the LBC, Generic-SNMP, and GenericRSC",
     "font_size": 0,
     "is_bold": false,
@@ -518,14 +350,6 @@
     "heading_level": 5,
     "page": 20,
     "confidence": 0.9
-  },
-  {
-    "title": "About this task",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 41,
-    "confidence": 0.7
   },
   {
     "title": "Installing Using the Binary Installer",
@@ -560,22 +384,6 @@
     "confidence": 0.9
   },
   {
-    "title": "- Linux requirements",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 24,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Installing on Linux",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 25,
-    "confidence": 0.9
-  },
-  {
     "title": "- Installing on Windows Server",
     "font_size": 20.0,
     "is_bold": true,
@@ -601,11 +409,11 @@
   },
   {
     "title": "- Installing and configuring the Additional Backend hosts",
-    "font_size": 9.0,
+    "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 8,
-    "page": 23,
-    "confidence": 0.7
+    "heading_level": 5,
+    "page": 29,
+    "confidence": 0.9
   },
   {
     "title": "- Installing and configuring the Collector host",
@@ -625,11 +433,11 @@
   },
   {
     "title": "- Scaling-out a Dell SRM environment with Additional Backend hosts",
-    "font_size": 9.0,
+    "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 8,
-    "page": 23,
-    "confidence": 0.7
+    "heading_level": 5,
+    "page": 31,
+    "confidence": 0.9
   },
   {
     "title": "- Scaling-out a Dell SRM environment with Collector hosts",
@@ -696,14 +504,6 @@
     "confidence": 0.9
   },
   {
-    "title": "- Minimal host (Additional Backend)",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 23,
-    "confidence": 0.7
-  },
-  {
     "title": "Table 3. Installation Options",
     "font_size": 10.0,
     "is_bold": true,
@@ -736,30 +536,6 @@
     "confidence": 0.9
   },
   {
-    "title": "Linux requirements",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 24,
-    "confidence": 0.9
-  },
-  {
-    "title": "Installing on Linux",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 25,
-    "confidence": 0.9
-  },
-  {
-    "title": "About this task",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 41,
-    "confidence": 0.7
-  },
-  {
     "title": "Configuring the user process limits for a Linux installation",
     "font_size": 16.0,
     "is_bold": true,
@@ -784,28 +560,12 @@
     "confidence": 0.9
   },
   {
-    "title": "About this task",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 41,
-    "confidence": 0.7
-  },
-  {
     "title": "Installing on Windows Server",
     "font_size": 20.0,
     "is_bold": true,
     "heading_level": 5,
     "page": 26,
     "confidence": 0.9
-  },
-  {
-    "title": "About this task",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 41,
-    "confidence": 0.7
   },
   {
     "title": "Configuring virus-scanning software",
@@ -816,14 +576,6 @@
     "confidence": 0.9
   },
   {
-    "title": "About this task",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 41,
-    "confidence": 0.7
-  },
-  {
     "title": "Configuring binary Dell SRM SRM-Conf-Tools",
     "font_size": 20.0,
     "is_bold": true,
@@ -832,28 +584,12 @@
     "confidence": 0.9
   },
   {
-    "title": "About this task",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 41,
-    "confidence": 0.7
-  },
-  {
     "title": "Creating the Dell SRM-Conf-Tools answers file",
     "font_size": 20.0,
     "is_bold": true,
     "heading_level": 5,
     "page": 41,
     "confidence": 0.9
-  },
-  {
-    "title": "About this task",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 41,
-    "confidence": 0.7
   },
   {
     "title": "Installing and configuring the Primary Backend host",
@@ -873,11 +609,11 @@
   },
   {
     "title": "Installing and configuring the Additional Backend hosts",
-    "font_size": 9.0,
+    "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 8,
-    "page": 23,
-    "confidence": 0.7
+    "heading_level": 5,
+    "page": 29,
+    "confidence": 0.9
   },
   {
     "title": "- Ensure that you have created an answers file as described in Creating the Dell SRM-Conf-Tools answers file.",
@@ -921,18 +657,10 @@
   },
   {
     "title": "Scaling-out a Dell SRM environment with Additional Backend hosts",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 23,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Complete the steps that are described in Installing on Linux.",
     "font_size": 20.0,
     "is_bold": true,
     "heading_level": 5,
-    "page": 25,
+    "page": 31,
     "confidence": 0.9
   },
   {
@@ -942,14 +670,6 @@
     "heading_level": 5,
     "page": 41,
     "confidence": 0.9
-  },
-  {
-    "title": "In the example, additionalbackend\\_2 is the new Additional Backend.",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 23,
-    "confidence": 0.7
   },
   {
     "title": "Scaling-out a Dell SRM environment with Collector hosts",
@@ -964,16 +684,8 @@
     "font_size": 20.0,
     "is_bold": true,
     "heading_level": 5,
-    "page": 25,
+    "page": 26,
     "confidence": 0.9
-  },
-  {
-    "title": "About this task",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 41,
-    "confidence": 0.7
   },
   {
     "title": "3. Modify the Dell SRM-Conf-Tools answer file ( srm-hosts ) as described in Creating the Dell SRM-Conf-Tools answers file",
@@ -990,22 +702,6 @@
     "heading_level": 5,
     "page": 34,
     "confidence": 0.9
-  },
-  {
-    "title": "About this task",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 41,
-    "confidence": 0.7
-  },
-  {
-    "title": "The following table is an example of the configuration that you should see on an Additional Backend host:",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 23,
-    "confidence": 0.7
   },
   {
     "title": "Updating firewall ports in Red Hat and SLES servers",
@@ -1048,14 +744,6 @@
     "confidence": 0.9
   },
   {
-    "title": "About this task",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 41,
-    "confidence": 0.7
-  },
-  {
     "title": "Using the Dell SRM Setup Wizard",
     "font_size": 9.0,
     "is_bold": true,
@@ -1078,14 +766,6 @@
     "heading_level": 5,
     "page": 39,
     "confidence": 0.9
-  },
-  {
-    "title": "About this task",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 41,
-    "confidence": 0.7
   },
   {
     "title": "- Dell SRM configuration tools",
@@ -1112,36 +792,12 @@
     "confidence": 0.7
   },
   {
-    "title": "- Initial configuration of a Frontend, Primary Backend, and Additional Backend servers",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 23,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Adding new Additional Backend servers to an existing Dell SRM environment",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 23,
-    "confidence": 0.7
-  },
-  {
     "title": "Creating the Dell SRM-Conf-Tools answers file",
     "font_size": 20.0,
     "is_bold": true,
     "heading_level": 5,
     "page": 41,
     "confidence": 0.9
-  },
-  {
-    "title": "About this task",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 41,
-    "confidence": 0.7
   },
   {
     "title": "Dell SRM Configuration Tools",
@@ -1232,44 +888,28 @@
     "confidence": 0.9
   },
   {
-    "title": "- Unattended installation",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 47,
-    "confidence": 0.7
-  },
-  {
     "title": "- Unattended installation arguments for Linux",
-    "font_size": 9.0,
+    "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 8,
-    "page": 47,
-    "confidence": 0.7
+    "heading_level": 5,
+    "page": 46,
+    "confidence": 0.9
   },
   {
     "title": "- Unattended installation arguments for Windows",
-    "font_size": 9.0,
+    "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 8,
-    "page": 47,
-    "confidence": 0.7
-  },
-  {
-    "title": "Unattended installation",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 47,
-    "confidence": 0.7
+    "heading_level": 5,
+    "page": 46,
+    "confidence": 0.9
   },
   {
     "title": "Unattended installation arguments for Linux",
-    "font_size": 9.0,
+    "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 8,
-    "page": 47,
-    "confidence": 0.7
+    "heading_level": 5,
+    "page": 46,
+    "confidence": 0.9
   },
   {
     "title": "To override the default installation and set the installation type to collector:",
@@ -1289,19 +929,11 @@
   },
   {
     "title": "Unattended installation arguments for Windows",
-    "font_size": 9.0,
+    "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 8,
-    "page": 47,
-    "confidence": 0.7
-  },
-  {
-    "title": "Unattended Installation",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 47,
-    "confidence": 0.7
+    "heading_level": 5,
+    "page": 46,
+    "confidence": 0.9
   },
   {
     "title": "To run a fully unattended installation and install as a collector in an alternate directory:",
@@ -1309,14 +941,6 @@
     "is_bold": true,
     "heading_level": 8,
     "page": 47,
-    "confidence": 0.7
-  },
-  {
-    "title": "Documentation Feedback",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 48,
     "confidence": 0.7
   }
 ]

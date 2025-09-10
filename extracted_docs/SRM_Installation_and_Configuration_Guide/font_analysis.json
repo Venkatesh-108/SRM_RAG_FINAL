@@ -11,14 +11,6 @@
     11.5
   ],
   "heading_map": {
-    "Dell SRM 5.1.1.0": {
-      "is_heading": true,
-      "level": 3,
-      "size": 24.0,
-      "is_bold": true,
-      "page": 1,
-      "confidence": 0.9
-    },
     "Installation and Configuration Guide": {
       "is_heading": true,
       "level": 4,
@@ -57,30 +49,6 @@
       "size": 20.0,
       "is_bold": true,
       "page": 7,
-      "confidence": 0.9
-    },
-    "4VM vApp OVF": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 8,
-      "confidence": 0.7
-    },
-    "1VM vApp OVF": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 12,
-      "confidence": 0.7
-    },
-    "Installation checklist": {
-      "is_heading": true,
-      "level": 5,
-      "size": 20.0,
-      "is_bold": true,
-      "page": 8,
       "confidence": 0.9
     },
     "Table 1. Dell SRM Installation checklist": {
@@ -163,30 +131,6 @@
       "page": 14,
       "confidence": 0.9
     },
-    "About this task": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 41,
-      "confidence": 0.7
-    },
-    "Adjusting the VMs": {
-      "is_heading": true,
-      "level": 5,
-      "size": 20.0,
-      "is_bold": true,
-      "page": 15,
-      "confidence": 0.9
-    },
-    "Adding disk space": {
-      "is_heading": true,
-      "level": 5,
-      "size": 20.0,
-      "is_bold": true,
-      "page": 15,
-      "confidence": 0.9
-    },
     "Modifying the start order of the vApps": {
       "is_heading": true,
       "level": 5,
@@ -202,22 +146,6 @@
       "is_bold": true,
       "page": 20,
       "confidence": 0.7
-    },
-    "Starting the vApp": {
-      "is_heading": true,
-      "level": 5,
-      "size": 20.0,
-      "is_bold": true,
-      "page": 17,
-      "confidence": 0.9
-    },
-    "Dell SRM Passwords": {
-      "is_heading": true,
-      "level": 5,
-      "size": 20.0,
-      "is_bold": true,
-      "page": 17,
-      "confidence": 0.9
     },
     "Table 2. Default usernames and passwords": {
       "is_heading": true,
@@ -239,14 +167,6 @@
       "is_heading": true,
       "level": 8,
       "size": 10.0,
-      "is_bold": true,
-      "page": 18,
-      "confidence": 0.7
-    },
-    "root / Changeme1!": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
       "is_bold": true,
       "page": 18,
       "confidence": 0.7
@@ -276,14 +196,6 @@
       "confidence": 0.9
     },
     "Verifying and configuring the user process limits for a": {
-      "is_heading": true,
-      "level": 5,
-      "size": 20.0,
-      "is_bold": true,
-      "page": 20,
-      "confidence": 0.9
-    },
-    "vApp installation": {
       "is_heading": true,
       "level": 5,
       "size": 20.0,
@@ -347,22 +259,6 @@
       "page": 23,
       "confidence": 0.7
     },
-    "Installation Options": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 23,
-      "confidence": 0.7
-    },
-    "Additional Backend": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 23,
-      "confidence": 0.7
-    },
     "Dell SRM binary deployment process flow": {
       "is_heading": true,
       "level": 5,
@@ -385,22 +281,6 @@
       "size": 20.0,
       "is_bold": true,
       "page": 24,
-      "confidence": 0.9
-    },
-    "Linux requirements": {
-      "is_heading": true,
-      "level": 5,
-      "size": 20.0,
-      "is_bold": true,
-      "page": 24,
-      "confidence": 0.9
-    },
-    "Installing on Linux": {
-      "is_heading": true,
-      "level": 5,
-      "size": 20.0,
-      "is_bold": true,
-      "page": 25,
       "confidence": 0.9
     },
     "Configuring the user process limits for a Linux installation": {
@@ -595,22 +475,6 @@
       "page": 44,
       "confidence": 0.9
     },
-    "Unattended Installation": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 47,
-      "confidence": 0.7
-    },
-    "Unattended installation": {
-      "is_heading": true,
-      "level": 5,
-      "size": 20.0,
-      "is_bold": true,
-      "page": 46,
-      "confidence": 0.9
-    },
     "Unattended installation arguments for Linux": {
       "is_heading": true,
       "level": 5,
@@ -642,14 +506,6 @@
       "is_bold": true,
       "page": 46,
       "confidence": 0.9
-    },
-    "Documentation Feedback": {
-      "is_heading": true,
-      "level": 8,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 48,
-      "confidence": 0.7
     }
   },
   "font_distribution": {
