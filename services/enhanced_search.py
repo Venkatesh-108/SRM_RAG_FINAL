@@ -586,6 +586,104 @@ class EnhancedSearchEngine:
         
         return None
     
+    def _improve_content_formatting(self, content: str) -> str:
+        """Improve content formatting, especially for command outputs and tables"""
+        
+        import re
+        
+        # Find and format code blocks that contain command output
+        code_block_pattern = r'```\n(.*?)\n```'
+        
+        def format_code_block(match):
+            code_content = match.group(1)
+            return "```\n" + self._format_command_block(code_content) + "\n```"
+        
+        # Replace code blocks with formatted versions
+        formatted_content = re.sub(code_block_pattern, format_code_block, content, flags=re.DOTALL)
+        
+        return formatted_content
+    
+    def _format_command_block(self, code_content: str) -> str:
+        """Format content within code blocks"""
+        
+        import re
+        
+        # If this looks like manage-modules.sh output, format it
+        if 'manage-modules.sh' in code_content:
+            return self._format_manage_modules_output(code_content)
+        
+        # For other command outputs, apply basic formatting
+        return self._apply_basic_command_formatting(code_content)
+    
+    def _format_manage_modules_output(self, content: str) -> str:
+        """Format manage-modules.sh command output"""
+        
+        import re
+        lines = []
+        
+        # Split content into logical sections
+        sections = content.split('lppa028:~ #')
+        
+        for i, section in enumerate(sections):
+            section = section.strip()
+            if not section:
+                continue
+            
+            if i == 0:
+                # First section might not have the prompt
+                lines.append(f"lppa028:~ # {section}")
+            else:
+                # This section starts after a prompt
+                if 'manage-modules.sh list installed' in section:
+                    lines.append("lppa028:~ # manage-modules.sh list installed")
+                    lines.append("")
+                    lines.append("Installed Modules:")
+                    lines.append("")
+                    lines.append("Identifier                        Instance                     Category")
+                    lines.append("--------------------              ------------                 ---------------")
+                    
+                    # Extract and format module entries
+                    module_pattern = r'\*([a-zA-Z0-9-]+)\s+([a-zA-Z0-9.-]+)\s*:\s*([a-zA-Z-]+)'
+                    modules = re.findall(module_pattern, section)
+                    
+                    for identifier, instance, category in modules:
+                        line = f"*{identifier:<32} {instance:<24} : {category}"
+                        lines.append(line)
+                    
+                    lines.append("")
+                    
+                elif 'manage-modules.sh service status all' in section:
+                    lines.append("lppa028:~ # manage-modules.sh service status all")
+                    lines.append("")
+                    
+                    # Extract and format status entries
+                    status_pattern = r'\*Checking \'([^\']+)\'\.\.\.\s*\[\s*([^\]]+)\s*\]'
+                    statuses = re.findall(status_pattern, section)
+                    
+                    for service, status in statuses:
+                        lines.append(f"*Checking '{service}'... [{status.strip()}]")
+                    
+                    lines.append("")
+                
+                # Add the prompt at the end
+                lines.append("lppa028:~ #")
+        
+        return "\n".join(lines)
+    
+    def _apply_basic_command_formatting(self, content: str) -> str:
+        """Apply basic formatting to command output"""
+        
+        # Just clean up extra whitespace and ensure proper line breaks
+        import re
+        
+        # Replace multiple spaces with single spaces
+        content = re.sub(r' +', ' ', content)
+        
+        # Ensure proper line breaks around prompts
+        content = re.sub(r'([^#]+#)\s*([^#\n]+)', r'\1 \2\n', content)
+        
+        return content.strip()
+    
     def _format_exact_match_results(self, exact_matches: List[Dict], query: str) -> List[Dict[str, Any]]:
         """Format exact match results for complete responses"""
         
@@ -595,8 +693,11 @@ class EnhancedSearchEngine:
             # For exact matches, provide complete content
             logger.info(f"Formatting result for '{match['title']}' from chunk {match.get('chunk_index', 'unknown')}, content length: {len(match['content'])}")
             
+            # Post-process content to improve formatting
+            formatted_content = self._improve_content_formatting(match['content'])
+            
             result = {
-                'text': match['content'],
+                'text': formatted_content,
                 'metadata': {
                     'title': match['title'],
                     'document': match['document'],
