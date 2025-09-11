@@ -449,25 +449,54 @@ class EnhancedSearchEngine:
         if doc_name not in self.document_chunks:
             return original_match['content']
         
+        # For content that already appears complete (has actionable information), don't combine
+        original_content = original_match['content']
+        original_title = original_match.get('title', '').lower()
+        
+        # Check if content already seems complete
+        if any(phrase in original_content.lower() for phrase in [
+            'for more information', 'see the', 'dell support site', 'stig hardening rules',
+            'security hardening guide', 'firewall settings'
+        ]):
+            logger.info(f"Content for '{original_match['title']}' appears complete - not combining with other chunks")
+            return original_content
+        
+        # Specifically avoid combining for Security Hardening
+        if 'security hardening' in original_title:
+            logger.info(f"Security Hardening content - not combining chunks")
+            return original_content
+        
         doc_data = self.document_chunks[doc_name]
         original_page = original_match['metadata'].get('page', 1)
-        combined_content = original_match['content']
+        combined_content = original_content
         
-        # Look for chunks on the same page
+        # Look for chunks on the same page that are truly related procedural content
         for i, chunk_content in enumerate(doc_data['chunks']):
             if i == chunk_idx:  # Skip the original chunk
                 continue
             
             metadata = doc_data['metadata'][i] if i < len(doc_data['metadata']) else {}
             chunk_page = metadata.get('page', 1)
+            chunk_title = metadata.get('title', '').lower()
             
-            # Combine chunks from the same page that seem related
+            # Only combine chunks from the same page that have procedural content
             if chunk_page == original_page and len(chunk_content) > 100:
                 chunk_lower = chunk_content.lower()
                 
-                # Check if chunk contains related content
-                if any(phrase in chunk_lower for phrase in ['steps', 'about this task', 'prerequisites', 'must be disabled']):
-                    combined_content += f"\n\n{chunk_content}"
+                # Skip generic overview/introduction sections
+                if any(generic in chunk_title for generic in [
+                    'document overview', 'document introduction', 'contents'
+                ]):
+                    continue
+                
+                # Only combine if it's truly related procedural content
+                if any(phrase in chunk_lower for phrase in [
+                    'steps', 'about this task', 'prerequisites', 'must be disabled',
+                    'procedure', 'configuration steps'
+                ]):
+                    # Additional check: make sure it's not just a bullet point list
+                    if len(chunk_content) > 500:  # Substantial procedural content
+                        combined_content += f"\n\n{chunk_content}"
         
         return combined_content
     
