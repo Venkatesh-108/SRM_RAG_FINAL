@@ -5,7 +5,7 @@ import os
 import re
 from datetime import datetime
 from pdf_processing import PDFProcessor, PDFSearcher
-from services.hybrid_search import HybridSearchEngine
+from services.enhanced_search import EnhancedSearchEngine
 from loguru import logger
 
 class RAGService:
@@ -21,7 +21,7 @@ class RAGService:
             index_dir=str(self.index_dir)
         )
         self.pdf_searcher = None
-        self.hybrid_search_engine = None
+        self.enhanced_search_engine = None
         self._load_searcher()
 
     def _load_searcher(self):
@@ -34,13 +34,13 @@ class RAGService:
                 )
                 logger.info("PDFSearcher loaded successfully.")
                 
-                # Load new hybrid search engine
-                self.hybrid_search_engine = HybridSearchEngine(
+                # Load enhanced search engine
+                self.enhanced_search_engine = EnhancedSearchEngine(
                     config=self.config,
                     index_dir=str(self.index_dir),
                     extracted_docs_dir=str(self.output_dir)
                 )
-                logger.info("Hybrid search engine loaded successfully.")
+                logger.info("Enhanced search engine loaded successfully.")
                 
             except Exception as e:
                 logger.warning(f"Could not load search engines, indexes might be missing: {e}")
@@ -173,39 +173,36 @@ class RAGService:
         return document_id
 
     def search(self, query: str, top_k: int = 5) -> List[Dict[str, Any]]:
-        # Try hybrid search first if available
-        if self.hybrid_search_engine:
-            logger.info(f"Using hybrid search for query: '{query}'")
+        # Try enhanced search first if available
+        if self.enhanced_search_engine:
+            logger.info(f"Using enhanced search with exact title matching for query: '{query}'")
             try:
-                search_results = self.hybrid_search_engine.hybrid_search(query, top_k=top_k)
+                search_results = self.enhanced_search_engine.search_with_exact_title_matching(query, top_k=top_k)
                 
                 # Format results for compatibility with existing code
                 formatted_results = []
                 for res in search_results:
                     formatted_results.append({
-                        "text": res.get("content", ""),
+                        "text": res.get("text", ""),
                         "metadata": {
-                            "filename": res.get("document_id", "Unknown"),
-                            "page_number": res.get("page", 1),
-                            "section_title": res.get("title", "Unknown Section"),
-                            "relevance_score": res.get("final_score", 0.0),
-                            "search_type": "hybrid",
-                            "match_type": res.get("match_type", "hybrid_search"),
-                            "is_heading_result": res.get("is_heading_result", False),
-                            "font_size": res.get("font_size", 0),
-                            "is_bold": res.get("is_bold", False),
-                            "bm25_score": res.get("bm25_score", 0.0),
-                            "faiss_score": res.get("faiss_score", 0.0),
-                            "rerank_score": res.get("rerank_score", 0.0),
-                            "search_types": res.get("search_types", [])
+                            "filename": res.get("document", "Unknown"),
+                            "page_number": res.get("metadata", {}).get("page", 1),
+                            "section_title": res.get("metadata", {}).get("title", "Unknown Section"),
+                            "relevance_score": res.get("score", 0.0),
+                            "search_type": res.get("metadata", {}).get("match_type", "enhanced_search"),
+                            "match_type": res.get("metadata", {}).get("match_type", "enhanced_search"),
+                            "is_complete_section": res.get("metadata", {}).get("is_complete_section", False),
+                            "confidence": res.get("metadata", {}).get("confidence", 0.0),
+                            "chunk_type": res.get("metadata", {}).get("chunk_type", "unknown"),
+                            "query_matched": res.get("metadata", {}).get("query_matched", "")
                         }
                     })
                 
-                logger.info(f"Hybrid search returned {len(formatted_results)} results")
+                logger.info(f"Enhanced search returned {len(formatted_results)} results")
                 return formatted_results
                 
             except Exception as e:
-                logger.error(f"Hybrid search failed, falling back to legacy search: {e}")
+                logger.error(f"Enhanced search failed, falling back to legacy search: {e}")
         
         # Fallback to legacy search
         if not self.pdf_searcher:

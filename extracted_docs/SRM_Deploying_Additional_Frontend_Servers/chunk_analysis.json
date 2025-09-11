@@ -1,0 +1,52 @@
+{
+  "total_chunks": 32,
+  "chunk_types": {
+    "document_overview": 1,
+    "chapter_major": 1,
+    "section_standard": 30
+  },
+  "size_distribution": {
+    "small": 26,
+    "medium": 6,
+    "large": 0
+  },
+  "page_distribution": {
+    "single_page": 31,
+    "multi_page": 1
+  },
+  "procedure_chunks": 9,
+  "exact_title_matches": [
+    "document overview",
+    "document introduction",
+    "guidelines for deploying additional frontend servers",
+    "notes, cautions, and warnings",
+    "introduction to guidelines for deploying additional frontend servers.",
+    "- additional frontend server deployment",
+    "- additional frontend server configuration",
+    "additional frontend server deployment",
+    "additional frontend server configuration",
+    "configuring the srm management functions",
+    "- adding mysql grants to the databases",
+    "- activate the new configuration settings",
+    "adding mysql grants to the databases",
+    "activate the new configuration settings",
+    "configuring the shared reports and tasks",
+    "- consolidate the scheduled reports",
+    "- configuring an nfs share for the user reports",
+    "- consolidate the scheduled reports",
+    "- additional frontend server tasks",
+    "consolidate the scheduled reports",
+    "configuring an nfs share for the user reports",
+    "consolidate the scheduled reports",
+    "additional frontend server tasks",
+    "this section describes the additional frontend server tasks that must be disabled.",
+    "f5 load balancer configuration",
+    "parameters that you need to tweak for an f5 load balancer configuration are:",
+    "table 1. f5 load balancer configuration",
+    "haproxy load balancer configuration",
+    "- solutionpacks report installation",
+    "- solutionpacks property-mapping",
+    "solutionpacks report installation",
+    "solutionpacks property-mapping"
+  ]
+}

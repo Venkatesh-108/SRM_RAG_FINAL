@@ -179,13 +179,31 @@ class ChatService:
                 direct_response = self._format_direct_results(query, retrieved_chunks)
                 return direct_response, 1.0, retrieved_chunks
             
-            # Check if we got complete content from our fixed search (exact title match)
-            if retrieved_chunks and len(retrieved_chunks) == 1:
-                chunk = retrieved_chunks[0]
-                if chunk.get('metadata', {}).get('search_type') == 'exact_title_match':
-                    # We have complete content, generate answer directly
-                    answer, confidence_score, validation_result = generate_answer_with_ollama(query, retrieved_chunks, self.rag_service.config)
-                    return answer, confidence_score, retrieved_chunks
+            # Check if we got complete content from exact title match
+            if retrieved_chunks:
+                exact_matches = [chunk for chunk in retrieved_chunks if chunk.get('metadata', {}).get('match_type') == 'exact_title_match']
+                if exact_matches:
+                    # For exact title matches, return the section content directly without LLM processing
+                    logger.info(f"Found {len(exact_matches)} exact title match(es) for query: '{query}' - returning section content directly")
+                    
+                    if len(exact_matches) == 1:
+                        # Single match - return content directly
+                        content = exact_matches[0].get('text', '')
+                        # Clean up content to remove unrelated sections
+                        content = self._clean_section_content(content)
+                    else:
+                        # Multiple matches - combine with separators
+                        combined_content = ""
+                        for i, chunk in enumerate(exact_matches):
+                            if i > 0:
+                                combined_content += "\n\n---\n\n"  # Separator between sections
+                            chunk_content = chunk.get('text', '')
+                            # Clean each chunk
+                            chunk_content = self._clean_section_content(chunk_content)
+                            combined_content += chunk_content
+                        content = combined_content
+                    
+                    return content.strip(), 1.0, exact_matches
             
             # Standard RAG response generation
             answer, confidence_score, validation_result = generate_answer_with_ollama(query, retrieved_chunks, self.rag_service.config)
@@ -194,6 +212,27 @@ class ChatService:
         except Exception as e:
             logger.error(f"Error in RAG response generation: {e}")
             return f"I encountered an error while processing your request: {str(e)}", 0.0, []
+    
+    def _clean_section_content(self, content: str) -> str:
+        """Clean section content by removing unrelated sections like Documentation Feedback"""
+        if not content:
+            return content
+        
+        lines = content.split('\n')
+        cleaned_lines = []
+        
+        for line in lines:
+            # Stop at common document boundaries that are not part of the main section
+            if line.strip().startswith('## Documentation Feedback'):
+                break
+            if line.strip().startswith('## Appendix'):
+                break
+            if line.strip().startswith('# Chapter') and 'Chapter' not in line[:20]:  # Don't break on chapter references in metadata
+                break
+            
+            cleaned_lines.append(line)
+        
+        return '\n'.join(cleaned_lines).strip()
     
     def _extract_sources_from_chunks(self, chunks: List[Dict[str, Any]]) -> List[Source]:
         """Extract source information from RAG context chunks"""
