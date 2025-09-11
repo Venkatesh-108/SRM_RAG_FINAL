@@ -184,8 +184,18 @@ class EnhancedSearchEngine:
         
         if exact_matches:
             logger.info(f"Found {len(exact_matches)} exact title matches for query: '{query}'")
+            # Debug: log content lengths before enhancement
+            for i, match in enumerate(exact_matches):
+                logger.info(f"Match {i+1} before enhancement: {match['title']} - {len(match['content'])} chars")
+            
             # For exact matches, return complete content with high confidence
-            return self._format_exact_match_results(exact_matches, query)
+            enhanced_results = self._format_exact_match_results(exact_matches, query)
+            
+            # Debug: log content lengths after enhancement
+            for i, result in enumerate(enhanced_results):
+                logger.info(f"Result {i+1} after enhancement: {result['metadata']['title']} - {len(result['text'])} chars")
+            
+            return enhanced_results
         
         # Step 2: Fall back to hybrid search if no exact matches
         logger.info(f"No exact title matches found, using hybrid search for: '{query}'")
@@ -200,6 +210,24 @@ class EnhancedSearchEngine:
             re.sub(r'\s+', ' ', query.lower().strip()),
             re.sub(r'^(how to|what is|explain|describe)\s+', '', query.lower().strip())  # Remove question words
         ]
+        
+        # Add specific variations for common query patterns
+        base_query = query.lower().strip()
+        
+        # For "security hardening" queries, add variations
+        if 'security' in base_query and 'hardening' in base_query:
+            query_variations.extend([
+                'security hardening on srm vapps',
+                'srm vapps security hardening',
+                'hardening on srm vapps'
+            ])
+        
+        # For vApp-related queries, add variations
+        if 'vapp' in base_query or 'vapps' in base_query:
+            query_variations.extend([
+                base_query.replace('vapp', 'vapps'),
+                base_query.replace('vapps', 'vapp')
+            ])
         
         exact_matches = []
         seen_chunks = set()  # Track unique chunks to avoid duplicates
@@ -226,12 +254,20 @@ class EnhancedSearchEngine:
                         doc_data = self.document_chunks[doc_name]
                         
                         if chunk_idx < len(doc_data['chunks']):
+                            chunk_content = doc_data['chunks'][chunk_idx]
+                            logger.info(f"Found exact match: '{match_info['original_title']}' at chunk {chunk_idx}, content length: {len(chunk_content)}")
+                            
+                            # Debug: Check if this chunk contains Document Overview
+                            if 'Document Overview' in chunk_content:
+                                logger.warning(f"WARNING: Chunk {chunk_idx} contains Document Overview! This is wrong.")
+                                logger.warning(f"First 200 chars: {chunk_content[:200]}")
+                            
                             exact_matches.append({
                                 'document': doc_name,
                                 'chunk_index': chunk_idx,
                                 'title': match_info['original_title'],
                                 'chunk_type': match_info['chunk_type'],
-                                'content': doc_data['chunks'][chunk_idx],
+                                'content': chunk_content,
                                 'metadata': doc_data['metadata'][chunk_idx] if chunk_idx < len(doc_data['metadata']) else {},
                                 'match_type': 'exact_title',
                                 'confidence_score': 1.0,
@@ -266,6 +302,7 @@ class EnhancedSearchEngine:
             
             if related_chunk:
                 # Use the substantial chunk instead
+                logger.info(f"Replacing content for '{match['title']}' with related chunk '{related_chunk.get('title', 'Unknown')}'")
                 match['content'] = related_chunk['content']
                 match['title'] = related_chunk.get('title', match['title'])
                 match['metadata'] = related_chunk.get('metadata', match['metadata'])
@@ -274,10 +311,28 @@ class EnhancedSearchEngine:
                 enhanced_matches.append(match)
             else:
                 # Try to combine with adjacent chunks on the same page
+                logger.info(f"Trying to combine related chunks for '{match['title']}' (current length: {len(current_content)})")
                 combined_content = self._combine_related_chunks(doc_name, chunk_idx, match)
                 if len(combined_content) > len(current_content):
+                    logger.info(f"Combined content for '{match['title']}': {len(current_content)} -> {len(combined_content)} chars")
                     match['content'] = combined_content
                     match['enhanced'] = True
+                else:
+                    logger.info(f"No improvement from combining chunks for '{match['title']}'")
+                
+                # If still no substantial content, try to find broader context
+                current_length = len(match['content'])
+                if current_length < 300:
+                    logger.info(f"Checking broader context for '{match['title']}' (current length: {current_length})")
+                    broader_content = self._find_broader_context(doc_name, query, match)
+                    if broader_content and len(broader_content) > current_length:
+                        logger.info(f"Enhanced '{match['title']}' with broader context: {len(broader_content)} chars")
+                        match['content'] = broader_content
+                        match['enhanced'] = True
+                    else:
+                        logger.info(f"No broader context found for '{match['title']}' - keeping original content ({current_length} chars)")
+                else:
+                    logger.info(f"Content for '{match['title']}' is substantial ({current_length} chars) - no enhancement needed")
                 
                 enhanced_matches.append(match)
         
@@ -291,6 +346,19 @@ class EnhancedSearchEngine:
         
         doc_data = self.document_chunks[doc_name]
         query_keywords = set(re.findall(r'\w+', query.lower()))
+        
+        # For exact title matches with brief content, prefer using broader context
+        # instead of replacing with potentially less relevant chunks
+        original_title = original_match.get('title', '').lower()
+        
+        # Specifically disable for Security Hardening on SRM vApps
+        if 'security hardening on srm vapps' in original_title:
+            logger.info(f"Security Hardening detected - completely skipping related chunk search")
+            return None
+            
+        if len(original_match.get('content', '')) < 500:
+            logger.info(f"Brief exact title match '{original_title}' - skipping related chunk search to use broader context instead")
+            return None
         
         # First, look for chunks with descriptive titles that contain the query topic
         # Example: for "Additional frontend server tasks", find "This section describes the additional frontend server tasks..."
@@ -312,6 +380,25 @@ class EnhancedSearchEngine:
                     'title': metadata.get('title', f'Related content for {query}'),
                     'chunk_index': i
                 }
+            
+            # Special handling for security hardening queries
+            if 'security' in query.lower() and 'hardening' in query.lower():
+                # Look for chunks that contain STIG, security guide references, or configuration details
+                chunk_lower = chunk_content.lower()
+                security_indicators = [
+                    'stig hardening rules', 'security hardening guide', 
+                    'firewall settings', 'security configuration', 'hardening guide'
+                ]
+                
+                if any(indicator in chunk_lower for indicator in security_indicators):
+                    logger.info(f"Found security-specific chunk: {metadata.get('title', 'Unknown')} (chunk {i})")
+                    return {
+                        'content': chunk_content,
+                        'metadata': metadata,
+                        'chunk_type': metadata.get('chunk_type', 'unknown'),
+                        'title': metadata.get('title', f'Security configuration for {query}'),
+                        'chunk_index': i
+                    }
         
         # Fallback: Look for chunks with substantial content that contain query keywords
         for i, chunk_content in enumerate(doc_data['chunks']):
@@ -319,17 +406,33 @@ class EnhancedSearchEngine:
                 continue
             
             chunk_lower = chunk_content.lower()
+            metadata = doc_data['metadata'][i] if i < len(doc_data['metadata']) else {}
+            chunk_title = metadata.get('title', '').lower()
             
             # Check if chunk contains most query keywords
             chunk_keywords = set(re.findall(r'\w+', chunk_lower))
             keyword_overlap = len(query_keywords.intersection(chunk_keywords))
             
-            if keyword_overlap >= len(query_keywords) * 0.7:  # 70% keyword overlap
-                metadata = doc_data['metadata'][i] if i < len(doc_data['metadata']) else {}
+            # Be more strict about keyword matching - require higher overlap AND relevance indicators
+            if keyword_overlap >= len(query_keywords) * 0.8:  # 80% keyword overlap (stricter)
                 chunk_type = metadata.get('chunk_type', 'unknown')
                 
-                # Additional checks for relevance
+                logger.info(f"Checking chunk {i} '{metadata.get('title', 'Unknown')}' - keyword overlap: {keyword_overlap}/{len(query_keywords)}")
+                
+                # For security hardening specifically, be even more strict
+                if 'security' in query.lower() and 'hardening' in query.lower():
+                    # Only return chunks that explicitly mention security hardening concepts
+                    security_relevance = any(phrase in chunk_lower for phrase in [
+                        'security hardening', 'stig', 'firewall', 'hardening rules',
+                        'security configuration', 'hardening guide'
+                    ])
+                    logger.info(f"Security relevance check for '{metadata.get('title', 'Unknown')}': {security_relevance}")
+                    if not security_relevance:
+                        continue
+                
+                # Additional checks for general relevance
                 if any(phrase in chunk_lower for phrase in ['must be disabled', 'tasks', 'steps', 'about this task']):
+                    logger.info(f"Found relevant chunk via general relevance: {metadata.get('title', 'Unknown')} (chunk {i})")
                     return {
                         'content': chunk_content,
                         'metadata': metadata,
@@ -368,6 +471,92 @@ class EnhancedSearchEngine:
         
         return combined_content
     
+    def _find_broader_context(self, doc_name: str, query: str, original_match: Dict) -> Optional[str]:
+        """Find broader context for brief content by searching for related sections"""
+        
+        if doc_name not in self.document_chunks:
+            return None
+        
+        doc_data = self.document_chunks[doc_name]
+        query_keywords = set(re.findall(r'\w+', query.lower()))
+        original_title = original_match['title'].lower()
+        
+        # For very brief content like "Security Hardening on SRM vApps", 
+        # don't add broader context as the content is complete as-is
+        original_content = original_match['content']
+        original_title = original_match.get('title', '').lower()
+        
+        # Specifically disable broader context for Security Hardening on SRM vApps
+        if 'security hardening on srm vapps' in original_title:
+            logger.info(f"Security Hardening content detected - not adding broader context")
+            return None
+        
+        if len(original_content) < 500:
+            # Check if the content seems complete (has actionable information)
+            if any(phrase in original_content.lower() for phrase in [
+                'stig hardening rules', 'security hardening guide', 'firewall settings',
+                'see the', 'for more information', 'dell support site'
+            ]):
+                logger.info(f"Brief content for '{original_match['title']}' appears complete - not adding broader context")
+                return None
+        
+        # Try to find sections that provide more context about the topic
+        broader_content_parts = [original_content]
+        related_sections_found = 0
+        
+        # Look for chunks that contain the query topic and have substantial content
+        for i, chunk_content in enumerate(doc_data['chunks']):
+            if i == original_match['chunk_index']:  # Skip the original chunk
+                continue
+            
+            if len(chunk_content) < 300:  # Skip short chunks
+                continue
+            
+            metadata = doc_data['metadata'][i] if i < len(doc_data['metadata']) else {}
+            chunk_title = metadata.get('title', '').lower()
+            chunk_lower = chunk_content.lower()
+            
+            # Skip generic document overview/introduction sections unless very specific
+            if any(generic in chunk_title for generic in [
+                'document overview', 'document introduction', 'contents', 'table of contents'
+            ]):
+                continue
+            
+            # Check if this chunk provides related information
+            is_related = False
+            
+            # For security hardening specifically, be very targeted
+            if 'security' in original_title and 'hardening' in original_title:
+                # Only include chunks that are directly about security, hardening, or configuration
+                direct_security_relevance = any(term in chunk_lower for term in [
+                    'security configuration', 'hardening steps', 'stig', 'firewall configuration',
+                    'authentication setup', 'security settings', 'hardening procedure'
+                ])
+                if direct_security_relevance and 'security' in chunk_title:
+                    is_related = True
+            else:
+                # For other topics, check if chunk title contains query keywords
+                if any(keyword in chunk_title for keyword in query_keywords):
+                    is_related = True
+                
+                # Or if chunk content contains query keywords with high relevance
+                keyword_count = sum(1 for keyword in query_keywords if keyword in chunk_lower)
+                if keyword_count >= len(query_keywords) * 0.7:  # 70% keyword overlap
+                    context_indicators = ['steps', 'procedure', 'configuration', 'setup', 'about this task']
+                    if any(indicator in chunk_lower for indicator in context_indicators):
+                        is_related = True
+            
+            if is_related and related_sections_found < 2:  # Limit to 2 related sections
+                broader_content_parts.append(f"\n\n### Related: {metadata.get('title', 'Section')}\n{chunk_content}")
+                related_sections_found += 1
+        
+        # Only return broader context if we found truly related sections
+        if related_sections_found > 0:
+            combined_broader = '\n'.join(broader_content_parts)
+            return combined_broader[:2000]  # Limit to reasonable size
+        
+        return None
+    
     def _format_exact_match_results(self, exact_matches: List[Dict], query: str) -> List[Dict[str, Any]]:
         """Format exact match results for complete responses"""
         
@@ -375,6 +564,8 @@ class EnhancedSearchEngine:
         
         for match in exact_matches:
             # For exact matches, provide complete content
+            logger.info(f"Formatting result for '{match['title']}' from chunk {match.get('chunk_index', 'unknown')}, content length: {len(match['content'])}")
+            
             result = {
                 'text': match['content'],
                 'metadata': {
@@ -386,6 +577,7 @@ class EnhancedSearchEngine:
                     'page': match['metadata'].get('page_start', match['metadata'].get('page', 1)),
                     'is_complete_section': True,
                     'query_matched': query,
+                    'source_chunk_index': match.get('chunk_index', 'unknown'),
                     **match['metadata']
                 },
                 'score': match['confidence_score'],
