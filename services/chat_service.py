@@ -214,12 +214,13 @@ class ChatService:
             return f"I encountered an error while processing your request: {str(e)}", 0.0, []
     
     def _clean_section_content(self, content: str) -> str:
-        """Clean section content by removing unrelated sections like Documentation Feedback"""
+        """Clean section content by removing unrelated sections and metadata, and improve formatting"""
         if not content:
             return content
         
         lines = content.split('\n')
         cleaned_lines = []
+        is_first_header = True
         
         for line in lines:
             # Stop at common document boundaries that are not part of the main section
@@ -230,7 +231,24 @@ class ChatService:
             if line.strip().startswith('# Chapter') and 'Chapter' not in line[:20]:  # Don't break on chapter references in metadata
                 break
             
-            cleaned_lines.append(line)
+            # Skip chapter and page metadata lines
+            line_strip = line.strip()
+            if (line_strip.startswith('*Chapter:') and line_strip.endswith('*')) or \
+               (line_strip.startswith('*Page:') and line_strip.endswith('*')):
+                continue
+            
+            # Improve header formatting
+            if line_strip.startswith('##'):
+                if is_first_header:
+                    # Main title: Remove ## and make it larger (use # for larger font)
+                    title_text = line_strip.replace('##', '').strip()
+                    cleaned_lines.append(f"# {title_text}")
+                    is_first_header = False
+                else:
+                    # Sub-titles: Keep as ## but could be styled smaller
+                    cleaned_lines.append(line)
+            else:
+                cleaned_lines.append(line)
         
         return '\n'.join(cleaned_lines).strip()
     
