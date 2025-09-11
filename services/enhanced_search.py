@@ -601,6 +601,9 @@ class EnhancedSearchEngine:
         # Replace code blocks with formatted versions
         formatted_content = re.sub(code_block_pattern, format_code_block, content, flags=re.DOTALL)
         
+        # Format markdown tables for better display
+        formatted_content = self._format_markdown_tables(formatted_content)
+        
         return formatted_content
     
     def _format_command_block(self, code_content: str) -> str:
@@ -684,6 +687,212 @@ class EnhancedSearchEngine:
         
         return content.strip()
     
+    def _format_markdown_tables(self, content: str) -> str:
+        """Format markdown tables for better display"""
+        
+        import re
+        
+        # Find markdown tables (lines starting and ending with |)
+        lines = content.split('\n')
+        formatted_lines = []
+        i = 0
+        
+        while i < len(lines):
+            line = lines[i].strip()
+            
+            # Check if this line starts a markdown table
+            if line.startswith('|') and line.endswith('|') and line.count('|') >= 3:
+                table_lines = []
+                table_start = i
+                
+                # Collect all consecutive table lines
+                while i < len(lines) and lines[i].strip().startswith('|') and lines[i].strip().endswith('|'):
+                    table_lines.append(lines[i].strip())
+                    i += 1
+                
+                # Format the table
+                if len(table_lines) >= 2:  # At least header and separator
+                    formatted_table = self._format_table_rows(table_lines)
+                    formatted_lines.extend(formatted_table)
+                else:
+                    # Not a proper table, add as-is
+                    formatted_lines.extend(table_lines)
+            else:
+                formatted_lines.append(lines[i])
+                i += 1
+        
+        return '\n'.join(formatted_lines)
+    
+    def _format_table_rows(self, table_lines: List[str]) -> List[str]:
+        """Format table rows for better readability"""
+        
+        if len(table_lines) < 2:
+            return table_lines
+        
+        # Parse the table
+        rows = []
+        for line in table_lines:
+            # Split by | and clean up
+            cells = [cell.strip() for cell in line.split('|')[1:-1]]  # Remove empty first/last
+            rows.append(cells)
+        
+        # Identify header and data rows
+        header = rows[0] if rows else []
+        
+        # Check if there's a separator row (contains mostly dashes)
+        separator_idx = -1
+        for i, row in enumerate(rows[1:], 1):
+            if all(cell.replace('-', '').replace('|', '').strip() == '' for cell in row):
+                separator_idx = i
+                break
+        
+        if separator_idx > 0:
+            data_rows = rows[separator_idx + 1:]
+        else:
+            # No separator found, treat all rows after header as data
+            data_rows = rows[1:]
+        
+        if not header:
+            return table_lines
+        
+        # Calculate column widths with better spacing
+        col_widths = []
+        all_rows = [header] + data_rows
+        
+        for col_idx in range(len(header)):
+            max_width = 0
+            for row in all_rows:
+                if col_idx < len(row):
+                    max_width = max(max_width, len(row[col_idx]))
+            
+            # Set minimum widths based on column type
+            if col_idx == 0:  # First column (Configuration Name)
+                min_width = 25
+            else:  # Value columns
+                min_width = 40
+            
+            col_widths.append(max(max_width, min_width))
+        
+        # Format the table
+        formatted_table = []
+        
+        # Header
+        header_row = "| " + " | ".join(header[i].ljust(col_widths[i]) for i in range(len(header))) + " |"
+        formatted_table.append(header_row)
+        
+        # Separator
+        separator = "|" + "|".join("-" * (width + 2) for width in col_widths) + "|"
+        formatted_table.append(separator)
+        
+        # Data rows
+        for row in data_rows:
+            if row:  # Skip empty rows
+                # Handle text wrapping for very long cells
+                formatted_cells = []
+                for i in range(len(header)):
+                    cell_content = row[i] if i < len(row) else ""
+                    
+                    # If cell is very long, add some intelligent breaking
+                    if len(cell_content) > col_widths[i] and col_widths[i] > 50:
+                        # Try to break at word boundaries
+                        words = cell_content.split()
+                        if len(words) > 1:
+                            # For very long cells, just truncate nicely
+                            if len(cell_content) > 80:
+                                cell_content = cell_content[:77] + "..."
+                    
+                    formatted_cells.append(cell_content.ljust(col_widths[i]))
+                
+                formatted_row = "| " + " | ".join(formatted_cells) + " |"
+                formatted_table.append(formatted_row)
+        
+        return formatted_table
+    
+    def _convert_tables_to_plain_text(self, content: str) -> str:
+        """Convert markdown tables to plain text format for better UI compatibility"""
+        
+        import re
+        lines = content.split('\n')
+        converted_lines = []
+        i = 0
+        
+        while i < len(lines):
+            line = lines[i].strip()
+            
+            # Check if this line starts a markdown table
+            if line.startswith('|') and line.endswith('|') and line.count('|') >= 3:
+                table_lines = []
+                
+                # Collect all consecutive table lines
+                while i < len(lines) and lines[i].strip().startswith('|') and lines[i].strip().endswith('|'):
+                    table_lines.append(lines[i].strip())
+                    i += 1
+                
+                # Convert table to plain text format
+                if len(table_lines) >= 2:
+                    plain_table = self._table_to_plain_text(table_lines)
+                    converted_lines.extend(plain_table)
+                else:
+                    converted_lines.extend(table_lines)
+                
+                # Don't increment i here since the while loop already did
+                continue
+            else:
+                converted_lines.append(lines[i])
+                i += 1
+        
+        # Clean up excessive empty lines around tables
+        result = '\n'.join(converted_lines)
+        
+        # Remove multiple consecutive empty lines before and after tables
+        import re
+        result = re.sub(r'\n\n+(<table[^>]*>)', r'\n\1', result)
+        result = re.sub(r'(</table>)\n\n+', r'\1\n', result)
+        
+        # Also remove empty lines right before table (more aggressive cleanup)
+        result = re.sub(r'\n(<table[^>]*>)', r'\1', result)
+        
+        return result
+    
+    def _table_to_plain_text(self, table_lines: List[str]) -> List[str]:
+        """Convert a markdown table to HTML table format"""
+        
+        # Parse the table
+        rows = []
+        for line in table_lines:
+            cells = [cell.strip() for cell in line.split('|')[1:-1]]
+            # Skip separator rows (contain only dashes and spaces)
+            if not all(cell.replace('-', '').replace(' ', '') == '' for cell in cells):
+                rows.append(cells)
+        
+        if len(rows) < 2:
+            return table_lines
+        
+        header = rows[0]
+        data_rows = rows[1:]
+        
+        # Create HTML table as a single compact line to avoid BR tag issues
+        table_html = '<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%; margin: 5px 0;">'
+        
+        # Header
+        table_html += '<thead><tr style="background-color: #f5f5f5; font-weight: bold;">'
+        for cell in header:
+            table_html += f'<th style="border: 1px solid #ddd; padding: 8px; text-align: left;">{cell}</th>'
+        table_html += '</tr></thead>'
+        
+        # Body
+        table_html += '<tbody>'
+        for row in data_rows:
+            table_html += '<tr>'
+            for cell in row:
+                table_html += f'<td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">{cell}</td>'
+            table_html += '</tr>'
+        table_html += '</tbody>'
+        
+        table_html += '</table>'
+        
+        return [table_html]
+    
     def _format_exact_match_results(self, exact_matches: List[Dict], query: str) -> List[Dict[str, Any]]:
         """Format exact match results for complete responses"""
         
@@ -695,6 +904,9 @@ class EnhancedSearchEngine:
             
             # Post-process content to improve formatting
             formatted_content = self._improve_content_formatting(match['content'])
+            
+            # For tables that might not render well as markdown, convert to plain text format
+            formatted_content = self._convert_tables_to_plain_text(formatted_content)
             
             result = {
                 'text': formatted_content,
