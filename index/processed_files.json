@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-09-10T15:24:43.143510",
+  "last_updated": "2025-09-11T18:51:45.476862",
   "files": {
     "SRM Deploying Additional Frontend Servers.pdf": {
       "path": "docs\\SRM Deploying Additional Frontend Servers.pdf",
@@ -12,6 +12,12 @@
       "size": 746439,
       "modified_time": 1756710631.759745,
       "modified_date": "2025-09-01T12:40:31.759745"
+    },
+    "SRM Solution Pack Guide.pdf": {
+      "path": "docs\\SRM Solution Pack Guide.pdf",
+      "size": 3264842,
+      "modified_time": 1756710631.7878149,
+      "modified_date": "2025-09-01T12:40:31.787815"
     },
     "SRM Upgrade Guide.pdf": {
       "path": "docs\\SRM Upgrade Guide.pdf",

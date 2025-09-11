@@ -1,0 +1,24 @@
+{
+  "document_id": "SRM_Solution_Pack_Guide",
+  "processing_date": "2025-09-11T18:51:45.463861",
+  "extraction_method": "hybrid_docling_font",
+  "total_content_length": 770188,
+  "total_chapters": 6,
+  "total_sections": 591,
+  "total_chunks": 597,
+  "font_analysis_summary": {
+    "body_size": 9.0,
+    "heading_sizes": [
+      28.0,
+      26.0,
+      24.0,
+      22.0,
+      20.0,
+      16.0,
+      14.0,
+      12.0,
+      11.5
+    ],
+    "headings_detected": 349
+  }
+}
