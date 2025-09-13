@@ -134,9 +134,11 @@ body {
 
 .sidebar-content {
     flex: 1; /* Allow to grow and shrink */
-    overflow-y: auto; /* Enable scrolling */
+    overflow-y: hidden; /* Disable overall scrolling to let sections handle their own */
     margin-right: -16px;
     padding-right: 16px;
+    display: flex;
+    flex-direction: column;
 }
 
 .new-chat-btn {
@@ -208,6 +210,20 @@ body {
 .sidebar-section {
     margin-bottom: 20px;
 }
+
+/* New Chat section - keep original size */
+.sidebar-section:first-child {
+    flex-shrink: 0;
+}
+
+/* Recent Chats and Documents sections - equal height */
+.sidebar-section:nth-child(2),
+.sidebar-section:nth-child(3) {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0; /* Allow sections to shrink */
+}
 .section-header {
     display: flex;
     justify-content: space-between;
@@ -262,15 +278,17 @@ body {
 }
 
 .chat-list {
-    max-height: 320px; /* 10 items * (28px height + 4px gap) */
+    flex: 1; /* Take all available height in the section */
     overflow-y: auto;
     padding-right: 8px;
+    min-height: 0; /* Allow to shrink */
 }
 
 .doc-list {
-    max-height: 160px; /* 5 items * (28px height + 4px gap) */
+    flex: 1; /* Take all available height in the section */
     overflow-y: auto;
     padding-right: 8px;
+    min-height: 0; /* Allow to shrink */
 }
 
 .chat-list, .doc-list {
