@@ -341,13 +341,48 @@ class SRMAIApp {
         return div.innerHTML;
     }
 
+    applySyntaxHighlighting(code, language = '') {
+        // Since we want all text to be black anyway, just escape HTML and return
+        let highlighted = this.escapeHtml(code);
+
+        // Split very long lines at appropriate points before highlighting
+        highlighted = this.handleLongLines(highlighted);
+
+        // No syntax highlighting - just return the properly escaped text
+        return highlighted;
+    }
+
+    handleLongLines(text) {
+        // Split lines that are longer than 80 characters at logical break points
+        return text.split('\n').map(line => {
+            if (line.length <= 80) return line;
+
+            // For command lines, try to break at logical points
+            if (line.includes('./') || line.includes(' -c ') || line.includes(' --')) {
+                // Break at parameter boundaries
+                return line.replace(/(\s+--?\w+)/g, '\n    $1');
+            }
+
+            // For very long paths, allow natural breaking
+            return line;
+        }).join('\n');
+    }
+
     renderFormattedText(text) {
         // Convert common formatting patterns to HTML
         let formattedText = text;
-        
-        // Handle multi-line code blocks (```code```)
-        formattedText = formattedText.replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>');
-        
+
+        // Simplified code blocks - just escape HTML properly
+        formattedText = formattedText.replace(/```[\s\S]*?```/g, (match) => {
+            // Extract the code content (remove the ``` markers)
+            const code = match.replace(/^```(\w+)?\n?/, '').replace(/```$/, '');
+
+            // Properly escape HTML entities and tags
+            const escapedCode = this.escapeHtml(code);
+
+            return `<pre><code>${escapedCode}</code></pre>`;
+        });
+
         // Handle markdown headings (# ## ### #### ##### ######)
         formattedText = formattedText.replace(/^######\s+(.+)$/gm, '<h6>$1</h6>');
         formattedText = formattedText.replace(/^#####\s+(.+)$/gm, '<h5>$1</h5>');
