@@ -222,14 +222,14 @@ class SRMAIApp {
 
         const messageDiv = document.createElement('div');
         messageDiv.className = `chat-message ${role}-message`;
-        
+
         const avatar = document.createElement('div');
         avatar.className = 'message-avatar';
         avatar.innerHTML = role === 'user' ? '<i class="fas fa-user"></i>' : '<i class="fas fa-robot"></i>';
-        
+
         const contentDiv = document.createElement('div');
         contentDiv.className = 'message-content';
-        
+
         if (isThinking) {
             contentDiv.innerHTML = `<p>${this.escapeHtml(content)}</p>`;
         } else {
@@ -240,11 +240,11 @@ class SRMAIApp {
                 contentDiv.innerHTML = `<p>${this.escapeHtml(content)}</p>`;
             }
         }
-        
+
         if (sources && sources.length > 0) {
             const sourcesDiv = document.createElement('div');
             sourcesDiv.className = 'message-sources';
-            sourcesDiv.innerHTML = '<strong>Sources:</strong><br>' + 
+            sourcesDiv.innerHTML = '<strong>Sources:</strong><br>' +
                 sources.map(source => {
                     // Handle both old string format and new object format
                     if (typeof source === 'string') {
@@ -261,18 +261,18 @@ class SRMAIApp {
                 }).join('<br>');
             contentDiv.appendChild(sourcesDiv);
         }
-        
+
         messageDiv.appendChild(avatar);
         messageDiv.appendChild(contentDiv);
         chatArea.appendChild(messageDiv);
-        
+
         // Add action buttons for assistant messages (but not thinking messages)
         if (role === 'assistant' && !isThinking) {
             this.addActionButtons(messageDiv, content);
         }
-        
-        // Scroll to bottom
-        chatArea.scrollTop = chatArea.scrollHeight;
+
+        // Enhanced auto-scroll with smooth behavior
+        this.scrollToBottom();
     }
 
     addActionButtons(messageDiv, content) {
@@ -489,13 +489,18 @@ class SRMAIApp {
         this.removeWelcomeMessage();
         this.clearChatArea(); // Clear previous messages first
         this.showChatArea();
-        
+
         const chatArea = document.getElementById('chatArea');
         if (!chatArea) return;
 
         session.messages.forEach(msg => {
             this.addMessageToChat(msg.role, msg.content, msg.sources);
         });
+
+        // Scroll to bottom after loading all messages with a small delay
+        setTimeout(() => {
+            this.scrollToBottom();
+        }, 100);
     }
 
     async clearAllChats() {
@@ -733,6 +738,30 @@ class SRMAIApp {
         }
     }
 
+    scrollToBottom(smooth = true) {
+        const chatArea = document.getElementById('chatArea');
+        if (!chatArea) return;
+
+        if (smooth) {
+            chatArea.scrollTo({
+                top: chatArea.scrollHeight,
+                behavior: 'smooth'
+            });
+        } else {
+            chatArea.scrollTop = chatArea.scrollHeight;
+        }
+    }
+
+    shouldAutoScroll() {
+        const chatArea = document.getElementById('chatArea');
+        if (!chatArea) return true;
+
+        // Auto-scroll if user is near the bottom (within 100px of bottom)
+        const scrollPosition = chatArea.scrollTop + chatArea.clientHeight;
+        const scrollHeight = chatArea.scrollHeight;
+        return scrollHeight - scrollPosition <= 100;
+    }
+
     streamResponse(text, sources) {
         // Find the last assistant message (which should be the "Thinking..." message)
         const assistantMessages = document.querySelectorAll('.chat-message.assistant-message');
@@ -757,17 +786,23 @@ class SRMAIApp {
                 // Apply formatting to the current text
                 contentDiv.innerHTML = self.renderFormattedText(currentText);
                 i++;
+
+                // Auto-scroll during streaming if user is near bottom
+                if (self.shouldAutoScroll()) {
+                    self.scrollToBottom(false); // Use instant scroll for smooth typing
+                }
+
                 self.streamingTimeoutId = setTimeout(typeWriter, speed);
             } else {
                 // Streaming completed or stopped
                 self.isStreaming = false;
                 self.updateSendButtonForStreaming();
-                
+
                 // After typing is done, add sources (only if completed, not stopped)
                 if (i >= text.length && sources && sources.length > 0) {
                     const sourcesDiv = document.createElement('div');
                     sourcesDiv.className = 'message-sources';
-                    sourcesDiv.innerHTML = '<strong>Sources:</strong><br>' + 
+                    sourcesDiv.innerHTML = '<strong>Sources:</strong><br>' +
                         sources.map(source => {
                             // Handle both old string format and new object format
                             if (typeof source === 'string') {
@@ -783,11 +818,21 @@ class SRMAIApp {
                             }
                         }).join('<br>');
                     contentDiv.appendChild(sourcesDiv);
+
+                    // Smooth scroll after adding sources
+                    if (self.shouldAutoScroll()) {
+                        self.scrollToBottom();
+                    }
                 }
 
                 // Add action buttons after typing is done (only if completed)
                 if (i >= text.length) {
                     self.addActionButtons(thinkingMessage, text);
+
+                    // Final smooth scroll after everything is complete
+                    if (self.shouldAutoScroll()) {
+                        self.scrollToBottom();
+                    }
                 }
             }
         }

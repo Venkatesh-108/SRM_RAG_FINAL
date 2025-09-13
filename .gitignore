@@ -114,4 +114,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
-
+storage/
+index/
+extracted_docs/
+docs/
