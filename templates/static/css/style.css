@@ -1164,7 +1164,7 @@ body {
     overflow-wrap: break-word;
 }
 
-/* Table styling for better readability */
+/* Table styling for better readability with reduced font size */
 .message-content table {
     border-collapse: collapse;
     width: 100%;
@@ -1174,23 +1174,26 @@ body {
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border: 1px solid #e2e8f0;
+    font-size: 0.85em; /* Reduced base font size for entire table */
 }
 
 .message-content th {
     background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
     color: white;
-    padding: 12px 16px;
+    padding: 10px 14px; /* Slightly reduced padding */
     text-align: left;
     font-weight: 600;
-    font-size: 0.9em;
+    font-size: 0.8em; /* Reduced header font size */
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.4px; /* Slightly reduced letter spacing */
 }
 
 .message-content td {
-    padding: 12px 16px;
+    padding: 10px 14px; /* Slightly reduced padding to match header */
     border-bottom: 1px solid #e2e8f0;
     color: #2d3748;
+    font-size: 0.85em; /* Explicit font size for table cells */
+    line-height: 1.4; /* Better line height for readability */
 }
 
 .message-content tr:last-child td {

@@ -30,16 +30,31 @@ class EnhancedSearchEngine:
         self.config = config
         self.index_dir = Path(index_dir)
         self.extracted_docs_dir = Path(extracted_docs_dir)
-        
-        # Load models based on config
-        self.embedding_model = SentenceTransformer(config.get("embedding_model", "all-MiniLM-L6-v2"))
-        
+
+        # Load models based on config with CPU optimizations
+        embedding_model_name = config.get("embedding_model", "all-MiniLM-L6-v2")
+        logger.info(f"Loading embedding model for CPU: {embedding_model_name}")
+
+        # Optimize for CPU-only systems
+        self.embedding_model = SentenceTransformer(embedding_model_name)
+        self.embedding_model._target_device = 'cpu'  # Force CPU usage
+
+        # Set smaller batch size for low-spec systems
+        batch_size = config.get("batch_size", 32)
+        if hasattr(self.embedding_model, 'encode'):
+            # Store original encode method and create optimized version
+            self._original_encode = self.embedding_model.encode
+            self.embedding_model.encode = lambda *args, **kwargs: self._cpu_optimized_encode(*args, **kwargs, batch_size=batch_size)
+
         # Load reranker only if reranking is enabled
         self.reranker = None
         if config.get("enable_reranking", False):
-            reranker_model = config.get("reranker_model", "cross-encoder/ms-marco-MiniLM-L-6-v2")
-            logger.info(f"Loading reranker model: {reranker_model}")
+            reranker_model = config.get("reranker_model", "cross-encoder/ms-marco-MiniLM-L-2-v2")
+            logger.info(f"Loading lightweight reranker model: {reranker_model}")
             self.reranker = CrossEncoder(reranker_model)
+            # Force CPU usage for reranker
+            if hasattr(self.reranker.model, 'to'):
+                self.reranker.model.to('cpu')
         
         # Load enhanced document data
         self.documents = self._discover_enhanced_documents()
@@ -50,6 +65,18 @@ class EnhancedSearchEngine:
         
         # Initialize enhanced indexes
         self._load_enhanced_indexes()
+
+    def _cpu_optimized_encode(self, sentences, batch_size=16, **kwargs):
+        """CPU-optimized encoding with smaller batches for low-spec systems"""
+        import torch
+
+        # Ensure we're using CPU
+        kwargs['device'] = 'cpu'
+        kwargs['batch_size'] = batch_size
+
+        # Disable gradient computation for inference
+        with torch.no_grad():
+            return self._original_encode(sentences, **kwargs)
     
     def _discover_enhanced_documents(self) -> List[str]:
         """Discover documents with enhanced chunks"""
@@ -208,17 +235,22 @@ class EnhancedSearchEngine:
     
     def _find_exact_title_matches(self, query: str, document_filter: Optional[str] = None) -> List[Dict]:
         """Find exact title matches and enhance with complete section content"""
-        
+
+        # Start with basic variations
         query_variations = [
             query.lower().strip(),
             re.sub(r'[^\w\s]', '', query.lower().strip()),
-            re.sub(r'\s+', ' ', query.lower().strip()),
-            re.sub(r'^(how to|what is|explain|describe)\s+', '', query.lower().strip())  # Remove question words
+            re.sub(r'\s+', ' ', query.lower().strip())
         ]
-        
-        # Add specific variations for common query patterns
+
+        # Enhanced question-to-statement transformation
         base_query = query.lower().strip()
-        
+
+        # Transform questions to procedural titles
+        question_transforms = self._generate_question_transforms(base_query)
+        query_variations.extend(question_transforms)
+
+        # Add specific variations for common query patterns
         # For "security hardening" queries, add variations
         if 'security' in base_query and 'hardening' in base_query:
             query_variations.extend([
@@ -226,7 +258,7 @@ class EnhancedSearchEngine:
                 'srm vapps security hardening',
                 'hardening on srm vapps'
             ])
-        
+
         # For vApp-related queries, add variations
         if 'vapp' in base_query or 'vapps' in base_query:
             query_variations.extend([
@@ -283,7 +315,131 @@ class EnhancedSearchEngine:
         enhanced_matches = self._enhance_matches_with_complete_content(exact_matches, query)
         
         return enhanced_matches
-    
+
+    def _generate_question_transforms(self, query: str) -> List[str]:
+        """Transform questions into procedural title formats to match documentation"""
+        transforms = []
+        query_clean = query.strip()
+
+        # Remove common question words and transform to procedural form
+        basic_clean = re.sub(r'^(how to|how do i|what is|explain|describe)\s+', '', query_clean, flags=re.IGNORECASE)
+        if basic_clean != query_clean:
+            transforms.append(basic_clean)
+
+        # Transform specific question patterns to procedural titles
+        # Pattern: "how to [verb] [object]" -> "[verb]ing [object]"
+        how_to_match = re.match(r'^how\s+to\s+(\w+)\s+(.+)', query_clean, re.IGNORECASE)
+        if how_to_match:
+            verb, obj = how_to_match.groups()
+            verb_lower = verb.lower()
+
+            # Common verb transformations for procedural titles
+            verb_transforms = {
+                'restart': ['restarting', 'restart'],
+                'start': ['starting', 'start'],
+                'stop': ['stopping', 'stop'],
+                'configure': ['configuring', 'configure'],
+                'install': ['installing', 'install'],
+                'setup': ['setting up', 'setup'],
+                'enable': ['enabling', 'enable'],
+                'disable': ['disabling', 'disable'],
+                'create': ['creating', 'create'],
+                'delete': ['deleting', 'delete'],
+                'update': ['updating', 'update'],
+                'upgrade': ['upgrading', 'upgrade'],
+                'deploy': ['deploying', 'deploy'],
+                'manage': ['managing', 'manage'],
+                'troubleshoot': ['troubleshooting', 'troubleshoot']
+            }
+
+            if verb_lower in verb_transforms:
+                for verb_form in verb_transforms[verb_lower]:
+                    transforms.append(f"{verb_form} {obj}")
+                    transforms.append(f"{verb_form} the {obj}")
+
+        # Pattern: "how do i [verb] [object]" -> same transformation as above
+        how_do_match = re.match(r'^how\s+do\s+i\s+(\w+)\s+(.+)', query_clean, re.IGNORECASE)
+        if how_do_match:
+            verb, obj = how_do_match.groups()
+            verb_lower = verb.lower()
+
+            # Reuse the same verb_transforms dictionary
+            verb_transforms = {
+                'restart': ['restarting', 'restart'],
+                'start': ['starting', 'start'],
+                'stop': ['stopping', 'stop'],
+                'configure': ['configuring', 'configure'],
+                'install': ['installing', 'install'],
+                'setup': ['setting up', 'setup'],
+                'enable': ['enabling', 'enable'],
+                'disable': ['disabling', 'disable'],
+                'create': ['creating', 'create'],
+                'delete': ['deleting', 'delete'],
+                'update': ['updating', 'update'],
+                'upgrade': ['upgrading', 'upgrade'],
+                'deploy': ['deploying', 'deploy'],
+                'manage': ['managing', 'manage'],
+                'troubleshoot': ['troubleshooting', 'troubleshoot']
+            }
+
+            if verb_lower in verb_transforms:
+                for verb_form in verb_transforms[verb_lower]:
+                    transforms.append(f"{verb_form} {obj}")
+                    transforms.append(f"{verb_form} the {obj}")
+
+        # Specific transformations for common technical terms
+        # SMI-S provider variations
+        if 'smi-s' in query_clean.lower() or 'smis' in query_clean.lower():
+            if 'restart' in query_clean.lower():
+                transforms.extend([
+                    'restarting the smi-s provider',
+                    'restart the smi-s provider',
+                    'restarting smi-s provider',
+                    'restart smi-s provider',
+                    'restarting the smis provider',
+                    'restart the smis provider'
+                ])
+
+        # Solution Pack variations
+        if 'solution' in query_clean.lower() and 'pack' in query_clean.lower():
+            if 'install' in query_clean.lower():
+                transforms.extend([
+                    'installing solutionpacks',
+                    'install solutionpacks',
+                    'installing the solutionpack',
+                    'install the solutionpack',
+                    'solutionpack installation'
+                ])
+
+        # Frontend server variations
+        if 'frontend' in query_clean.lower() and 'server' in query_clean.lower():
+            if 'deploy' in query_clean.lower() or 'add' in query_clean.lower():
+                transforms.extend([
+                    'deploying additional frontend servers',
+                    'additional frontend server deployment',
+                    'adding frontend servers',
+                    'frontend server configuration'
+                ])
+
+        # Database variations
+        if 'database' in query_clean.lower() and ('mysql' in query_clean.lower() or 'grant' in query_clean.lower()):
+            transforms.extend([
+                'adding mysql grants to the databases',
+                'mysql grants to databases',
+                'database grants configuration'
+            ])
+
+        # Remove duplicates and return
+        unique_transforms = []
+        seen = set()
+        for transform in transforms:
+            if transform.lower() not in seen and len(transform.strip()) > 3:
+                seen.add(transform.lower())
+                unique_transforms.append(transform.lower())
+
+        logger.info(f"Generated {len(unique_transforms)} question transforms for '{query}': {unique_transforms[:5]}...")
+        return unique_transforms
+
     def _enhance_matches_with_complete_content(self, exact_matches: List[Dict], query: str) -> List[Dict]:
         """Enhance exact matches by finding and combining related chunks for complete content"""
         
@@ -977,33 +1133,39 @@ class EnhancedSearchEngine:
     
     def _hybrid_search(self, query: str, document_filter: Optional[str] = None, top_k: int = 10) -> List[Dict[str, Any]]:
         """Fallback hybrid search when no exact title matches found"""
-        
+
         all_results = []
-        
-        # Generate query variations if enabled
+
+        # Generate query variations if enabled (disabled in low mode for performance)
         query_variations = [query]
         if self.config.get("enable_multi_query_generation", False):
             query_variations.extend(self._generate_query_variations(query))
-        
+
+        # Process documents sequentially for low-spec systems (avoid memory spikes)
+        max_concurrent = self.config.get("max_concurrent_searches", 1)
+
         for doc_name in self.documents:
             if document_filter and doc_name != document_filter:
                 continue
-            
+
             if doc_name not in self.document_chunks:
                 continue
-            
+
             doc_results = []
-            
-            # BM25 search
+
+            # Use reduced top_k for low-spec systems
+            search_top_k = min(self.config.get("top_k_bm25", 6), self.config.get("top_k_faiss", 6))
+
+            # BM25 search - more lightweight, prioritize this
             for q_var in query_variations:
-                bm25_results = self._bm25_search(doc_name, q_var, top_k * 2)
+                bm25_results = self._bm25_search(doc_name, q_var, search_top_k)
                 doc_results.extend(bm25_results)
-            
-            # FAISS search
+
+            # FAISS search - more resource intensive
             for q_var in query_variations:
-                faiss_results = self._faiss_search(doc_name, q_var, top_k * 2)
+                faiss_results = self._faiss_search(doc_name, q_var, search_top_k)
                 doc_results.extend(faiss_results)
-            
+
             # Combine and deduplicate
             combined_results = self._combine_search_results(doc_results, doc_name)
             all_results.extend(combined_results)
@@ -1146,32 +1308,111 @@ class EnhancedSearchEngine:
         return results
     
     def _apply_diversity_selection(self, results: List[Dict]) -> List[Dict]:
-        """Apply diversity selection to avoid redundant results"""
+        """Apply diversity selection to avoid redundant results and ensure document diversity"""
         if not results:
             return results
-        
+
+        # First apply document diversity if enabled
+        if self.config.get("enable_document_diversity", False):
+            results = self._apply_document_diversity(results)
+
         diverse_results = []
         used_titles = set()
-        
+
         for result in results:
             title = result['metadata'].get('title', '')
-            
+
             # Skip if we already have this title
             if title in used_titles:
                 continue
-            
+
             diverse_results.append(result)
             used_titles.add(title)
-            
+
             # Stop if we have enough diverse results
             if len(diverse_results) >= len(results) * 0.8:  # Keep 80% for diversity
                 break
-        
+
         # Add remaining results if we need more
         for result in results:
             if result not in diverse_results:
                 diverse_results.append(result)
-        
+
+        return diverse_results
+
+    def _apply_document_diversity(self, results: List[Dict]) -> List[Dict]:
+        """Ensure results come from multiple documents when possible"""
+        if len(results) <= 2:
+            return results
+
+        logger.info(f"Applying document diversity to {len(results)} results")
+
+        # Group results by document
+        by_document = defaultdict(list)
+        for result in results:
+            doc_name = result.get('document', result.get('metadata', {}).get('document', 'unknown'))
+            by_document[doc_name].append(result)
+
+        # Log current distribution
+        for doc_name, doc_results in by_document.items():
+            logger.info(f"Document '{doc_name}': {len(doc_results)} results")
+
+        if len(by_document) == 1:
+            logger.info("All results from single document - keeping as is")
+            return results
+
+        # Take top results from each document to ensure diversity
+        diverse_results = []
+        max_per_doc = max(2, len(results) // len(by_document))  # At least 2 per doc
+
+        # Sort documents by their best result score
+        sorted_docs = sorted(by_document.items(),
+                           key=lambda x: max(r.get('score', r.get('final_score', 0)) for r in x[1]),
+                           reverse=True)
+
+        # Take results from each document in round-robin fashion
+        remaining_slots = len(results)
+        for doc_name, doc_results in sorted_docs:
+            if remaining_slots <= 0:
+                break
+
+            # Sort results within document by score
+            doc_results.sort(key=lambda x: x.get('score', x.get('final_score', 0)), reverse=True)
+
+            # Take up to max_per_doc from this document
+            to_take = min(max_per_doc, len(doc_results), remaining_slots)
+            diverse_results.extend(doc_results[:to_take])
+            remaining_slots -= to_take
+
+        # If we still have slots and any unused results, fill them
+        if remaining_slots > 0:
+            used_indices = set()
+            for result in diverse_results:
+                for doc_results in by_document.values():
+                    if result in doc_results:
+                        used_indices.add(id(result))
+
+            for doc_results in by_document.values():
+                for result in doc_results:
+                    if remaining_slots <= 0:
+                        break
+                    if id(result) not in used_indices:
+                        diverse_results.append(result)
+                        remaining_slots -= 1
+
+        # Sort final results by score
+        diverse_results.sort(key=lambda x: x.get('score', x.get('final_score', 0)), reverse=True)
+
+        # Log final distribution
+        final_by_doc = defaultdict(int)
+        for result in diverse_results:
+            doc_name = result.get('document', result.get('metadata', {}).get('document', 'unknown'))
+            final_by_doc[doc_name] += 1
+
+        logger.info(f"Document diversity applied - final distribution:")
+        for doc_name, count in final_by_doc.items():
+            logger.info(f"  {doc_name}: {count} results")
+
         return diverse_results
 
     def _enhance_search_precision(self, query: str, results: List[Dict]) -> List[Dict]:
