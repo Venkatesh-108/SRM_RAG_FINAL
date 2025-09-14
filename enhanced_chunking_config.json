@@ -1,0 +1,20 @@
+
+{
+  "procedural_chunking": {
+    "max_chunk_size": 2000,
+    "section_boundaries": [
+      "## ",
+      "### ",
+      "Steps",
+      "About this task",
+      "Prerequisites"
+    ],
+    "preserve_procedures": true,
+    "separate_distinct_procedures": true
+  },
+  "content_quality": {
+    "one_procedure_per_chunk": true,
+    "include_context": true,
+    "preserve_numbering": true
+  }
+}

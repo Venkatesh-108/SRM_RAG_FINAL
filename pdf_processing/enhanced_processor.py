@@ -9,7 +9,7 @@ import json
 import logging
 from datetime import datetime
 from pathlib import Path
-from typing import Dict, List, Any, Optional
+from typing import Dict, List, Any, Optional, Tuple
 import re
 
 # Import required libraries
@@ -23,26 +23,35 @@ except ImportError as e:
     raise
 
 from .extractor import PDFExtractor
+from .index_extractor import IndexExtractor
+from .chunk_validator import ChunkValidator
 
 logger = logging.getLogger(__name__)
 
 class EnhancedPDFProcessor:
-    """Enhanced processor with page-aware multi-level chunking"""
-    
+    """Enhanced processor with hybrid font-index chunking"""
+
     def __init__(self, output_dir: str = "extracted_docs", index_dir: str = "indexes",
-                 model_name: str = 'all-MiniLM-L6-v2', max_chunk_size: int = 8000):
+                 model_name: str = 'all-MiniLM-L6-v2', max_chunk_size: int = 8000,
+                 enable_hybrid_chunking: bool = True):
         self.output_dir = Path(output_dir)
         self.index_dir = Path(index_dir)
         self.model_name = model_name
         self.max_chunk_size = max_chunk_size
-        
+        self.enable_hybrid_chunking = enable_hybrid_chunking
+
         # Create directories
         self.output_dir.mkdir(exist_ok=True)
         self.index_dir.mkdir(exist_ok=True)
-        
+
         # Initialize components
         self.extractor = PDFExtractor()
         self.model = SentenceTransformer(model_name)
+
+        # Initialize hybrid chunking components
+        if self.enable_hybrid_chunking:
+            self.index_extractor = IndexExtractor()
+            self.chunk_validator = ChunkValidator()
         
         # Font hierarchy mapping (based on analysis)
         self.font_hierarchy = {
@@ -55,43 +64,53 @@ class EnhancedPDFProcessor:
         }
     
     def process_document(self, pdf_path: str, document_id: str) -> Dict[str, Any]:
-        """Process a single PDF document with enhanced chunking"""
-        logger.info(f"Processing document with enhanced chunking: {pdf_path} -> {document_id}")
-        
+        """Process a single PDF document with hybrid font-index chunking"""
+        logger.info(f"Processing document with hybrid chunking: {pdf_path} -> {document_id}")
+
         # Create document directory
         doc_dir = self.output_dir / document_id
         doc_dir.mkdir(exist_ok=True)
-        
+
         # Extract with hybrid method
         extracted_data = self.extractor.extract_document(pdf_path)
-        
+
         # Store full markdown content for section extraction
         self._full_markdown_content = extracted_data.get('full_text', '')
-        
+
         logger.info(f"Extracted content length: {extracted_data['content_length']} characters")
         logger.info(f"Found {len(extracted_data['enhanced_structure']['chapters'])} chapters")
-        
-        # Create enhanced chunks with page awareness
-        chunks = self._create_enhanced_chunks(extracted_data['enhanced_structure'], extracted_data['font_analysis'])
-        
+
+        # Create base font-based chunks
+        font_chunks = self._create_enhanced_chunks(extracted_data['enhanced_structure'], extracted_data['font_analysis'])
+
+        # Apply hybrid chunking if enabled
+        if self.enable_hybrid_chunking:
+            final_chunks, hybrid_metadata = self._apply_hybrid_chunking(
+                font_chunks, extracted_data, self._full_markdown_content
+            )
+        else:
+            final_chunks = font_chunks
+            hybrid_metadata = {'hybrid_chunking_enabled': False}
+
         # Create vector index
-        vector_data = self._create_vector_index(chunks)
-        
-        # Save all data
-        self._save_enhanced_data(doc_dir, document_id, extracted_data, chunks)
-        
+        vector_data = self._create_vector_index(final_chunks)
+
+        # Save all data including hybrid results
+        self._save_enhanced_data(doc_dir, document_id, extracted_data, final_chunks, hybrid_metadata)
+
         # Save vector indexes
         self._save_vector_indexes(document_id, vector_data)
-        
+
         return {
             'document_id': document_id,
             'total_chapters': len(extracted_data['enhanced_structure']['chapters']),
             'total_sections': extracted_data['enhanced_structure']['total_sections'],
-            'total_chunks': len(chunks),
-            'chunk_types': self._analyze_chunk_types(chunks),
+            'total_chunks': len(final_chunks),
+            'chunk_types': self._analyze_chunk_types(final_chunks),
             'content_length': extracted_data['content_length'],
             'vector_dimension': vector_data['embedding_model'],
-            'extraction_method': 'enhanced_page_aware',
+            'extraction_method': 'hybrid_font_index' if self.enable_hybrid_chunking else 'enhanced_page_aware',
+            'hybrid_metadata': hybrid_metadata,
             'processing_time': datetime.now().isoformat()
         }
     
@@ -529,8 +548,74 @@ class EnhancedPDFProcessor:
             'embedding_model': self.model_name,
             'dimension': dimension
         }
-    
-    def _save_enhanced_data(self, doc_dir: Path, document_id: str, extracted_data: Dict, chunks: List[Dict]):
+
+    def _apply_hybrid_chunking(self, font_chunks: List[Dict], extracted_data: Dict,
+                              full_content: str) -> Tuple[List[Dict], Dict[str, Any]]:
+        """Apply hybrid chunking by validating font chunks against index structure"""
+        logger.info("Applying hybrid font-index chunking")
+
+        try:
+            # Extract index structure
+            index_structure = self.index_extractor.extract_index_structure(
+                full_content, extracted_data
+            )
+
+            # Validate font chunks against index
+            validation_result = self.chunk_validator.validate_chunks(
+                font_chunks, index_structure, extracted_data.get('font_analysis', {})
+            )
+
+            # Start with validated font chunks
+            final_chunks = validation_result.validated_chunks
+
+            # Create chunks for missing sections if they have recoverable content
+            if validation_result.missing_sections:
+                logger.info(f"Creating chunks for {len(validation_result.missing_sections)} missing sections")
+                recovered_chunks = self.chunk_validator.create_missing_section_chunks(
+                    validation_result.missing_sections, full_content
+                )
+                final_chunks.extend(recovered_chunks)
+
+            # Prepare hybrid metadata
+            hybrid_metadata = {
+                'hybrid_chunking_enabled': True,
+                'index_extraction': index_structure,
+                'validation_results': {
+                    'validation_score': validation_result.validation_score,
+                    'missing_sections_count': len(validation_result.missing_sections),
+                    'orphaned_chunks_count': len(validation_result.orphaned_chunks),
+                    'recovered_chunks_count': len(recovered_chunks) if validation_result.missing_sections else 0,
+                    'enriched_metadata': validation_result.enriched_metadata
+                },
+                'final_chunk_count': len(final_chunks),
+                'original_chunk_count': len(font_chunks)
+            }
+
+            logger.info(f"Hybrid chunking complete. Score: {validation_result.validation_score:.2f}")
+            logger.info(f"Final chunks: {len(final_chunks)} (was {len(font_chunks)})")
+
+            return final_chunks, hybrid_metadata
+
+        except Exception as e:
+            logger.error(f"Hybrid chunking failed: {e}")
+            return self._fallback_to_font_chunking(font_chunks)
+
+    def _fallback_to_font_chunking(self, font_chunks: List[Dict]) -> Tuple[List[Dict], Dict[str, Any]]:
+        """Fallback to original font-based chunking when hybrid fails"""
+        logger.warning("Falling back to font-based chunking only")
+
+        fallback_metadata = {
+            'hybrid_chunking_enabled': True,
+            'hybrid_chunking_failed': True,
+            'fallback_reason': 'hybrid_processing_error',
+            'final_chunk_count': len(font_chunks),
+            'original_chunk_count': len(font_chunks)
+        }
+
+        return font_chunks, fallback_metadata
+
+    def _save_enhanced_data(self, doc_dir: Path, document_id: str, extracted_data: Dict,
+                           chunks: List[Dict], hybrid_metadata: Optional[Dict] = None):
         """Save enhanced extracted data and chunks"""
         
         # Save complete markdown content
@@ -540,6 +625,11 @@ class EnhancedPDFProcessor:
         # Save enhanced chunks with full metadata
         with open(doc_dir / "enhanced_chunks_v2.json", 'w', encoding='utf-8') as f:
             json.dump(chunks, f, indent=2, ensure_ascii=False)
+
+        # Save hybrid chunks separately if using hybrid mode
+        if hybrid_metadata and hybrid_metadata.get('hybrid_chunking_enabled'):
+            with open(doc_dir / "enhanced_chunks_v3_hybrid.json", 'w', encoding='utf-8') as f:
+                json.dump(chunks, f, indent=2, ensure_ascii=False)
         
         # Save font analysis
         with open(doc_dir / "font_analysis.json", 'w', encoding='utf-8') as f:
@@ -573,15 +663,26 @@ class EnhancedPDFProcessor:
         summary = {
             'document_id': document_id,
             'processing_date': datetime.now().isoformat(),
-            'extraction_method': 'enhanced_page_aware',
+            'extraction_method': 'hybrid_font_index' if hybrid_metadata and hybrid_metadata.get('hybrid_chunking_enabled') else 'enhanced_page_aware',
             'total_content_length': extracted_data['content_length'],
             'total_chunks': len(chunks),
             'chunk_analysis': chunk_analysis,
-            'font_hierarchy_used': self.font_hierarchy
+            'font_hierarchy_used': self.font_hierarchy,
+            'hybrid_metadata': hybrid_metadata
         }
-        
+
         with open(doc_dir / "processing_summary_v2.json", 'w', encoding='utf-8') as f:
             json.dump(summary, f, indent=2, ensure_ascii=False)
+
+        # Save hybrid-specific summary if applicable
+        if hybrid_metadata and hybrid_metadata.get('hybrid_chunking_enabled'):
+            hybrid_summary = {
+                **summary,
+                'processing_version': 'v3_hybrid',
+                'hybrid_details': hybrid_metadata
+            }
+            with open(doc_dir / "processing_summary_v3_hybrid.json", 'w', encoding='utf-8') as f:
+                json.dump(hybrid_summary, f, indent=2, ensure_ascii=False)
         
         logger.info(f"Enhanced data saved to {doc_dir}")
     
