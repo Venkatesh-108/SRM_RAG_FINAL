@@ -1,6 +1,6 @@
 {
   "document_id": "SRM_Deploying_Additional_Frontend_Servers",
-  "processing_date": "2025-09-11T09:52:38.930287",
+  "processing_date": "2025-09-14T19:07:16.027284",
   "extraction_method": "enhanced_page_aware",
   "total_content_length": 34949,
   "total_chunks": 32,
@@ -20,7 +20,7 @@
       "single_page": 31,
       "multi_page": 1
     },
-    "procedure_chunks": 9,
+    "procedure_chunks": 8,
     "exact_title_matches": [
       "document overview",
       "document introduction",

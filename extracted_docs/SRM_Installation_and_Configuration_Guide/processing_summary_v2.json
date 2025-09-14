@@ -1,6 +1,6 @@
 {
   "document_id": "SRM_Installation_and_Configuration_Guide",
-  "processing_date": "2025-09-11T09:54:12.628165",
+  "processing_date": "2025-09-14T19:08:26.585443",
   "extraction_method": "enhanced_page_aware",
   "total_content_length": 106542,
   "total_chunks": 119,
@@ -20,7 +20,7 @@
       "single_page": 118,
       "multi_page": 1
     },
-    "procedure_chunks": 41,
+    "procedure_chunks": 40,
     "exact_title_matches": [
       "document overview",
       "document introduction",

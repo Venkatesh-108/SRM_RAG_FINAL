@@ -214,7 +214,90 @@ class EnhancedPDFProcessor:
         section_content = '\n'.join(section_lines).strip()
         
         return section_content
-    
+
+    def _clean_section_content(self, content: str, section_title: str) -> str:
+        """Clean section content to remove redundant title headers and fix list formatting"""
+        if not content:
+            return content
+
+        import re
+        lines = content.split('\n')
+        cleaned_lines = []
+        i = 0
+
+        while i < len(lines):
+            line = lines[i]
+            line_strip = line.strip()
+
+            # Skip lines that are exact duplicates of the section title
+            if line_strip.startswith('#') and section_title.lower() in line_strip.lower():
+                # Check if this is an exact title match
+                heading_match = re.match(r'^#+\s*(.+)', line_strip)
+                if heading_match and heading_match.group(1).strip().lower() == section_title.lower():
+                    i += 1
+                    continue  # Skip this redundant title
+
+            # Fix procedure list formatting
+            if re.match(r'^\d+\.\s', line_strip):
+                # This is a numbered list item
+                cleaned_lines.append(line)
+
+                # Look ahead for NOTE and file paths that belong to this step
+                j = i + 1
+                additional_content = []
+
+                # Look for NOTE that should be part of this step
+                if j < len(lines):
+                    next_line = lines[j].strip()
+                    next_num_match = re.match(r'^(\d+)\.\s+(NOTE:.*)', next_line)
+                    if next_num_match and int(next_num_match.group(1)) == int(line_strip.split('.')[0]) + 1:
+                        # This is a NOTE that was incorrectly numbered as the next step
+                        note_content = next_num_match.group(2)
+                        additional_content.append('')  # Empty line for spacing
+                        additional_content.append(f'   **{note_content}**')  # Indent and format NOTE
+                        j += 1
+
+                # Look for file paths that should be bullet points
+                file_path_lines = []
+                while j < len(lines):
+                    next_line = lines[j].strip()
+
+                    # Check if this looks like a file path entry that was incorrectly numbered
+                    if (re.match(r'^\d+\.\s+…/', next_line) or
+                        (re.match(r'^\d+\.\s+', next_line) and 'conf/' in next_line) or
+                        (re.match(r'^\d+\.\s+', next_line) and next_line.endswith('.xml'))):
+
+                        # Convert numbered file path to bullet point
+                        file_content = re.sub(r'^\d+\.\s+', '', next_line)
+                        file_path_lines.append(f'   - {file_content}')  # Indent as sub-item
+                        j += 1
+                    else:
+                        break
+
+                # Add additional content and file paths
+                if additional_content:
+                    cleaned_lines.extend(additional_content)
+                if file_path_lines:
+                    if not additional_content:  # Add spacing if no NOTE was added
+                        cleaned_lines.append('')
+                    cleaned_lines.extend(file_path_lines)
+
+                i = j
+            else:
+                cleaned_lines.append(line)
+                i += 1
+
+        # Join lines back and clean up any excessive whitespace
+        cleaned_content = '\n'.join(cleaned_lines)
+
+        # Remove multiple consecutive empty lines
+        cleaned_content = re.sub(r'\n\n\n+', '\n\n', cleaned_content)
+
+        # Fix NOTE formatting - ensure NOTE: is properly formatted
+        cleaned_content = re.sub(r'^(\d+\.)\s+(NOTE:)', r'\1 **\2**', cleaned_content, flags=re.MULTILINE)
+
+        return cleaned_content.strip()
+
     def _create_enhanced_chapter_chunk(self, chapter: Dict) -> Dict:
         """Create enhanced chapter chunk with complete metadata"""
         content = f"# {chapter['title']}\n\n{chapter.get('complete_content', '')}"
@@ -254,16 +337,19 @@ class EnhancedPDFProcessor:
     
     def _create_enhanced_section_chunk(self, section: Dict, parent_chapter: Dict, font_analysis: Dict) -> Dict:
         """Create enhanced section chunk with page awareness"""
-        content = f"## {section['title']}\n"
-        content += f"*Chapter: {parent_chapter['title']}*\n"
+        # Start with metadata only - don't duplicate the section title
+        content = f"*Chapter: {parent_chapter['title']}*\n"
         content += f"*Page: {section.get('page', 'N/A')}*\n\n"
-        
+
         # Get complete section content - fallback to extracting from full markdown if needed
         section_content = section.get('complete_content', '')
         if not section_content or len(section_content.strip()) < 100:
             # Try to extract complete section from full markdown
             section_content = self._extract_complete_section_from_markdown(section['title'], parent_chapter)
-        
+
+        # Clean up section content to remove any redundant title headers
+        section_content = self._clean_section_content(section_content, section['title'])
+
         content += section_content
         
         # Determine chunk classification
