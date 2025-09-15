@@ -1054,6 +1054,6 @@
     "## Wrong Password during OS Upgrade Script\n*Chapter: 8. Retry the steps in Upgrade Operating System for vApp to SLES 15 SP4.*\n*Page: 47*\n\n\nDuring OS Upgrade, the root password for the remote servers is asked. By default, six attempts are used for root user module as this is the security hardening that is implemented in SRM 5.1.1.0 for the root user.\n\n## Documentation Feedback\n\nDell Technologies strives to provide accurate and comprehensive documentation and welcomes your suggestions and comments. You can provide feedback in the following ways:\n\n- Online feedback form Rate this content feedback form is present in each topic of the product documentation web pages. Rate the documentation or provide your suggestions using this feedback form.\n- Email-Send your feedback to SRM Doc Feedback. Include the document title, release number, chapter title, and section title of the text corresponding to the feedback.\n\nTo get answers to your queries related to Dell SRM through email, chat, or call, go to Dell Technologies Technical Support page."
   ],
   "embedding_model": "all-MiniLM-L6-v2",
-  "processing_timestamp": "2025-09-15T14:18:00.311310",
+  "processing_timestamp": "2025-09-15T16:06:05.214497",
   "chunk_count": 75
 }

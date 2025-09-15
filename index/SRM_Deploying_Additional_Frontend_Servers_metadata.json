@@ -284,6 +284,6 @@
     "## SolutionPacks property-mapping\n*Chapter: HAProxy load balancer configuration*\n*Page: 18*\n\n\nIf the SolutionPack uses events, then the report has an XML file for property mapping that is saved on the pointed to Frontend Server only.\n\n<!-- image -->\n\nC\n\n<!-- image -->\n\n## FAQ"
   ],
   "embedding_model": "all-MiniLM-L6-v2",
-  "processing_timestamp": "2025-09-15T14:09:06.956576",
+  "processing_timestamp": "2025-09-15T15:57:10.303114",
   "chunk_count": 20
 }

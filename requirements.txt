@@ -15,7 +15,7 @@ psutil>=5.9.8
 
 # PDF processing
 pypdf>=4.2.0
-pdfplumber>=0.10.4
+pdfplumber>=0.11.7
 pdfminer.six>=20221105
 docling>=0.1.0
 lxml>=4.9.0
