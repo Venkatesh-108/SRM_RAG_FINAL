@@ -84,7 +84,7 @@ class DocumentTypeConfigs:
                     r'^#+\s+(?:Update|Upgrade)\s+\w+',  # Specific to upgrade docs
                 ],
                 weak_boundary_patterns=[
-                    r'^#+\s+(?:Export|Import|Delete|Configure)',
+                    r'^#+\s+(?:Export|Import|Delete|Configure|Reconfiguring)',
                     r'^#+\s+\w+\s+(?:Discovery|Switch)',
                 ],
             ),
@@ -151,7 +151,7 @@ class DocumentTypeConfigs:
                 weak_boundary_patterns=[
                     # Common SRM operations
                     r'^#+\s+(?:Install|Add|Remove|Delete|Update|Upgrade)',
-                    r'^#+\s+(?:Configure|Setup|Enable|Disable)',
+                    r'^#+\s+(?:Configure|Reconfiguring|Setup|Enable|Disable)',
                     r'^#+\s+(?:Export|Import|Backup|Restore)',
                     r'^#+\s+(?:Create|Modify|Edit)\s+.*(?:Report|Task|Schedule)',
 
