@@ -25,6 +25,7 @@ except ImportError as e:
 from .extractor import PDFExtractor
 from .index_extractor import IndexExtractor
 from .chunk_validator import ChunkValidator
+from .chunking_config import DocumentTypeConfigs, validate_chunking_quality
 
 logger = logging.getLogger(__name__)
 
@@ -33,12 +34,13 @@ class EnhancedPDFProcessor:
 
     def __init__(self, output_dir: str = "extracted_docs", index_dir: str = "indexes",
                  model_name: str = 'all-MiniLM-L6-v2', max_chunk_size: int = 8000,
-                 enable_hybrid_chunking: bool = True):
+                 enable_hybrid_chunking: bool = True, document_type: str = "auto"):
         self.output_dir = Path(output_dir)
         self.index_dir = Path(index_dir)
         self.model_name = model_name
         self.max_chunk_size = max_chunk_size
         self.enable_hybrid_chunking = enable_hybrid_chunking
+        self.document_type = document_type
 
         # Create directories
         self.output_dir.mkdir(exist_ok=True)
@@ -52,6 +54,9 @@ class EnhancedPDFProcessor:
         if self.enable_hybrid_chunking:
             self.index_extractor = IndexExtractor()
             self.chunk_validator = ChunkValidator()
+
+        # Chunking configuration will be set per document
+        self.chunking_config = None
         
         # Font hierarchy mapping (based on analysis)
         self.font_hierarchy = {
@@ -64,8 +69,16 @@ class EnhancedPDFProcessor:
         }
     
     def process_document(self, pdf_path: str, document_id: str) -> Dict[str, Any]:
-        """Process a single PDF document with hybrid font-index chunking"""
+        """Process a single PDF document with adaptive chunking based on document type"""
         logger.info(f"Processing document with hybrid chunking: {pdf_path} -> {document_id}")
+
+        # Detect document type and set configuration
+        detected_type = self.document_type
+        if detected_type == "auto":
+            detected_type = DocumentTypeConfigs.detect_document_type(pdf_path)
+
+        self.chunking_config = DocumentTypeConfigs.get_config(detected_type)
+        logger.info(f"Using chunking configuration for document type: {detected_type}")
 
         # Create document directory
         doc_dir = self.output_dir / document_id
@@ -92,17 +105,22 @@ class EnhancedPDFProcessor:
             final_chunks = font_chunks
             hybrid_metadata = {'hybrid_chunking_enabled': False}
 
+        # Validate chunking quality
+        quality_report = validate_chunking_quality(final_chunks, self.chunking_config)
+        logger.info(f"Chunking quality: {quality_report['status']} ({quality_report['over_inclusion_ratio']:.1%} over-inclusion)")
+
         # Create vector index
         vector_data = self._create_vector_index(final_chunks)
 
-        # Save all data including hybrid results
-        self._save_enhanced_data(doc_dir, document_id, extracted_data, final_chunks, hybrid_metadata)
+        # Save all data including hybrid results and quality report
+        self._save_enhanced_data(doc_dir, document_id, extracted_data, final_chunks, hybrid_metadata, quality_report)
 
         # Save vector indexes
         self._save_vector_indexes(document_id, vector_data)
 
         return {
             'document_id': document_id,
+            'document_type': detected_type,
             'total_chapters': len(extracted_data['enhanced_structure']['chapters']),
             'total_sections': extracted_data['enhanced_structure']['total_sections'],
             'total_chunks': len(final_chunks),
@@ -111,6 +129,7 @@ class EnhancedPDFProcessor:
             'vector_dimension': vector_data['embedding_model'],
             'extraction_method': 'hybrid_font_index' if self.enable_hybrid_chunking else 'enhanced_page_aware',
             'hybrid_metadata': hybrid_metadata,
+            'quality_report': quality_report,
             'processing_time': datetime.now().isoformat()
         }
     
@@ -214,19 +233,19 @@ class EnhancedPDFProcessor:
         return chunks
     
     def _extract_complete_section_from_markdown(self, section_title: str, parent_chapter: Dict) -> str:
-        """Extract complete section content from full markdown text"""
+        """Extract complete section content from full markdown text with improved boundary detection"""
         if not hasattr(self, '_full_markdown_content'):
             return ""
-        
+
         # Get the full markdown content
         full_content = getattr(self, '_full_markdown_content', '')
         if not full_content:
             return ""
-        
+
         lines = full_content.split('\n')
         section_start = -1
         section_end = len(lines)
-        
+
         # Find the start of our section
         for i, line in enumerate(lines):
             line_strip = line.strip()
@@ -238,47 +257,94 @@ class EnhancedPDFProcessor:
                 if heading_match and heading_match.group(1).strip().lower() == section_title.lower():
                     section_start = i
                     break
-        
+
         if section_start == -1:
             return ""
-        
-        # Find the end of the section (next heading of same or higher level)
-        start_level = len(re.match(r'^#+', lines[section_start]).group(0))
-        
-        # Define common boundary keywords that indicate a new, distinct section
-        boundary_keywords = [
-            'overview', 'introduction', 'installing', 'configuring', 
-            'prerequisites', 'requirements', 'troubleshooting', 'appendix'
-        ]
 
-        for i in range(section_start + 1, len(lines)):
-            line_strip = lines[i].strip()
-            if line_strip.startswith('#'):
-                current_level = len(re.match(r'^#+', line_strip).group(0))
-                
-                # Check for boundary keywords in the new heading
-                heading_text = re.sub(r'^#+\s*', '', line_strip).lower()
-                is_boundary = any(keyword in heading_text for keyword in boundary_keywords)
+        # Find the end of the section with improved boundary detection
+        section_end = self._find_section_end_boundary(lines, section_start, section_title)
 
-                if current_level <= start_level or is_boundary:
-                    section_end = i
-                    break
-            
-            # Also stop at common document boundaries
-            if any(boundary in line_strip.lower() for boundary in [
-                'documentation feedback',
-                'appendix',
-                'chapter',
-                'references'
-            ]) and line_strip.startswith('#'):
-                section_end = i
-                break
-        
         # Extract and clean the section content
         section_lines = lines[section_start + 1:section_end]  # Skip the heading itself
         section_content = '\n'.join(section_lines).strip()
-        
+
         return section_content
+
+    def _find_section_end_boundary(self, lines: List[str], section_start: int, section_title: str) -> int:
+        """Find the precise end boundary of a section using multiple heuristics"""
+        import re
+
+        start_level = len(re.match(r'^#+', lines[section_start]).group(0))
+        section_end = len(lines)
+
+        # Use configurable section boundary patterns
+        boundary_patterns = {
+            'strong_boundaries': self.chunking_config.strong_boundary_patterns if self.chunking_config else [
+                r'^#+\s+(?:Chapter|Appendix)\s+\d+',
+                r'^#+\s+(?:Prerequisites|Before you begin|Next steps|What to do next)',
+                r'^#+\s+(?:Results|Outcome|Summary)',
+                r'^#+\s+(?:About this task|Steps|Procedure)',
+            ],
+            'weak_boundaries': self.chunking_config.weak_boundary_patterns if self.chunking_config else [
+                r'^#+\s+(?:Update|Configure|Install|Setup|Create|Delete|Add|Remove)',
+                r'^#+\s+\w+\s+(?:Discovery|Configuration|Installation)',
+            ],
+            'transition_markers': self.chunking_config.transition_markers if self.chunking_config else [
+                'About this task', 'Before you begin', 'Prerequisites',
+                'What to do next', 'Next steps', 'Results', 'Troubleshooting'
+            ]
+        }
+
+        content_lines_found = 0
+        last_content_line = section_start
+
+        for i in range(section_start + 1, len(lines)):
+            line = lines[i]
+            line_strip = line.strip()
+
+            # Track content to avoid stopping too early
+            if line_strip and not line_strip.startswith('#'):
+                content_lines_found += 1
+                last_content_line = i
+
+            if line_strip.startswith('#'):
+                current_level = len(re.match(r'^#+', line_strip).group(0))
+                heading_text = re.sub(r'^#+\s*', '', line_strip)
+
+                # Check for strong boundaries (always stop)
+                for pattern in boundary_patterns['strong_boundaries']:
+                    if re.match(pattern, line_strip, re.IGNORECASE):
+                        return i
+
+                # Check for same or higher level headings
+                if current_level <= start_level:
+                    # Additional check: don't stop too early if we haven't found much content
+                    if content_lines_found >= 3 or i > section_start + 10:
+                        return i
+
+                # Check for weak boundaries at same level
+                if current_level == start_level:
+                    for pattern in boundary_patterns['weak_boundaries']:
+                        if re.match(pattern, line_strip, re.IGNORECASE):
+                            return i
+
+            # Check for transition markers in content
+            for marker in boundary_patterns['transition_markers']:
+                if line_strip == marker or line_strip.startswith(f'## {marker}'):
+                    # Only stop if we have reasonable content before this
+                    if content_lines_found >= 5:
+                        return i
+
+            # Stop at procedure steps if they seem to be a new section
+            if re.match(r'^Steps\s*$', line_strip) and content_lines_found >= 5:
+                return i
+
+            # Avoid extremely long sections (safety net)
+            max_lines = self.chunking_config.max_section_lines if self.chunking_config else 100
+            if i > section_start + max_lines:
+                return last_content_line + 1
+
+        return section_end
 
     def _clean_section_content(self, content: str, section_title: str) -> str:
         """Clean section content to remove redundant title headers and fix list formatting"""
@@ -301,6 +367,13 @@ class EnhancedPDFProcessor:
                 if heading_match and heading_match.group(1).strip().lower() == section_title.lower():
                     i += 1
                     continue  # Skip this redundant title
+
+            # Fix table overflow issues in TOC-like content
+            if '|' in line and self._is_table_overflow_line(line):
+                fixed_lines = self._fix_table_overflow(line)
+                cleaned_lines.extend(fixed_lines)
+                i += 1
+                continue
 
             # Fix procedure list formatting
             if re.match(r'^\d+\.\s', line_strip):
@@ -362,6 +435,61 @@ class EnhancedPDFProcessor:
         cleaned_content = re.sub(r'^(\d+\.)\s+(NOTE:)', r'\1 **\2**', cleaned_content, flags=re.MULTILINE)
 
         return cleaned_content.strip()
+
+    def _is_table_overflow_line(self, line: str) -> bool:
+        """Check if a line contains table overflow where multiple entries are concatenated"""
+        import re
+        # Look for patterns where page numbers are followed by titles without proper line breaks
+        # Example: "...15 Modifying the start order..."
+        patterns = [
+            r'\.{3,}\d+\s+[A-Z][a-z]+',  # Dots followed by page number and title
+            r'\d+\s+[A-Z][a-z]+.*\d+\s*\|',  # Page number, title, then another page number at end
+        ]
+
+        for pattern in patterns:
+            if re.search(pattern, line):
+                return True
+        return False
+
+    def _fix_table_overflow(self, line: str) -> List[str]:
+        """Fix table overflow by splitting concatenated entries into separate lines"""
+        import re
+
+        # Pattern to find where entries are concatenated
+        # Look for: "...pagenum Text" where Text starts with capital letter
+        split_pattern = r'(\.{3,}\d+)\s+([A-Z][^|]*?)(?=\s*\d+\s*\||\s*$)'
+
+        # Find all matches
+        matches = list(re.finditer(split_pattern, line))
+
+        if not matches:
+            return [line]  # No overflow detected, return original
+
+        # Split the line into proper table rows
+        fixed_lines = []
+
+        # Handle the beginning of the line (before first match)
+        start_content = line[:matches[0].start()].strip()
+        if start_content and start_content != '|':
+            # Extract the main entry before overflow
+            main_entry_match = re.search(r'^([^|]*?)(\.{3,}\d+)', start_content)
+            if main_entry_match:
+                entry_name = main_entry_match.group(1).strip()
+                page_info = main_entry_match.group(2)
+                fixed_lines.append(f"| {entry_name} {page_info} |")
+
+        # Process each overflow entry
+        for match in matches:
+            page_dots = match.group(1)  # e.g., "...15"
+            entry_title = match.group(2).strip()  # e.g., "Modifying the start order of the vApps"
+
+            # Clean up the title to remove any trailing page numbers or pipes
+            entry_title = re.sub(r'\s*\d+\s*\|?\s*$', '', entry_title)
+
+            if entry_title:
+                fixed_lines.append(f"| {entry_title} {page_dots} |")
+
+        return fixed_lines
 
     def _create_enhanced_chapter_chunk(self, chapter: Dict) -> Dict:
         """Create enhanced chapter chunk with complete metadata"""
@@ -661,7 +789,8 @@ class EnhancedPDFProcessor:
         return font_chunks, fallback_metadata
 
     def _save_enhanced_data(self, doc_dir: Path, document_id: str, extracted_data: Dict,
-                           chunks: List[Dict], hybrid_metadata: Optional[Dict] = None):
+                           chunks: List[Dict], hybrid_metadata: Optional[Dict] = None,
+                           quality_report: Optional[Dict] = None):
         """Save enhanced extracted data and chunks"""
         
         # Save complete markdown content
@@ -714,7 +843,8 @@ class EnhancedPDFProcessor:
             'total_chunks': len(chunks),
             'chunk_analysis': chunk_analysis,
             'font_hierarchy_used': self.font_hierarchy,
-            'hybrid_metadata': hybrid_metadata
+            'hybrid_metadata': hybrid_metadata,
+            'quality_report': quality_report
         }
 
         with open(doc_dir / "processing_summary_v2.json", 'w', encoding='utf-8') as f:

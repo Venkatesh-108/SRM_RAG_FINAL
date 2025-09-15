@@ -1,8 +1,7 @@
 {
   "body_size": 9.0,
-  "body_font": "DellReplica-Light",
+  "body_font": "CXTVPI+CourierNewPSMT",
   "heading_sizes": [
-    28.0,
     26.0,
     24.0,
     22.0,
@@ -12,7 +11,7 @@
   "heading_map": {
     "Guidelines for Deploying Additional Frontend Servers": {
       "is_heading": true,
-      "level": 4,
+      "level": 3,
       "size": 22.0,
       "is_bold": false,
       "page": 1,
@@ -20,7 +19,7 @@
     },
     "Notes, cautions, and warnings": {
       "is_heading": true,
-      "level": 6,
+      "level": 5,
       "size": 11.5,
       "is_bold": false,
       "page": 2,
@@ -28,7 +27,7 @@
     },
     "CAUTION: A CAUTION indicates either potential damage to hardware or loss of data and tells you how to avoid": {
       "is_heading": true,
-      "level": 7,
+      "level": 6,
       "size": 9.0,
       "is_bold": true,
       "page": 2,
@@ -36,7 +35,7 @@
     },
     "Additional frontend server deployment": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 5,
@@ -44,7 +43,7 @@
     },
     "Additional frontend server configuration": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 6,
@@ -52,39 +51,63 @@
     },
     "Configuring the SRM management functions": {
       "is_heading": true,
-      "level": 7,
-      "size": 9.0,
+      "level": 2,
+      "size": 24.0,
       "is_bold": true,
-      "page": 9,
-      "confidence": 0.7
+      "page": 7,
+      "confidence": 0.9
     },
     "Adding MySQL grants to the databases": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 7,
       "confidence": 0.9
     },
+    "Configuring the SRM management functions7": {
+      "is_heading": true,
+      "level": 6,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 7,
+      "confidence": 0.7
+    },
+    "8Configuring the SRM management functions": {
+      "is_heading": true,
+      "level": 6,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 8,
+      "confidence": 0.7
+    },
     "Activate the new configuration settings": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 9,
       "confidence": 0.9
     },
+    "Configuring the SRM management functions9": {
+      "is_heading": true,
+      "level": 6,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 9,
+      "confidence": 0.7
+    },
     "Configuring the shared reports and tasks": {
       "is_heading": true,
-      "level": 7,
-      "size": 9.0,
+      "level": 2,
+      "size": 24.0,
       "is_bold": true,
-      "page": 13,
-      "confidence": 0.7
+      "page": 10,
+      "confidence": 0.9
     },
     "Consolidate the scheduled reports": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 12,
@@ -92,55 +115,111 @@
     },
     "Configuring an NFS share for the user reports": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 10,
       "confidence": 0.9
     },
+    "10Configuring the shared reports and tasks": {
+      "is_heading": true,
+      "level": 6,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 10,
+      "confidence": 0.7
+    },
     "<nas Ip-Address>:/SRM-FE-apg-reports-nfs /opt/APG/nfs-shared/apg-reports nfs defaults": {
       "is_heading": true,
-      "level": 7,
+      "level": 6,
       "size": 9.0,
       "is_bold": true,
       "page": 11,
       "confidence": 0.7
     },
+    "Configuring the shared reports and tasks11": {
+      "is_heading": true,
+      "level": 6,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 11,
+      "confidence": 0.7
+    },
+    "12Configuring the shared reports and tasks": {
+      "is_heading": true,
+      "level": 6,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 12,
+      "confidence": 0.7
+    },
     "Additional frontend server tasks": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 13,
       "confidence": 0.9
     },
+    "Configuring the shared reports and tasks13": {
+      "is_heading": true,
+      "level": 6,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 13,
+      "confidence": 0.7
+    },
     "F5 load balancer configuration": {
       "is_heading": true,
-      "level": 7,
-      "size": 9.0,
+      "level": 2,
+      "size": 24.0,
+      "is_bold": true,
+      "page": 15,
+      "confidence": 0.9
+    },
+    "Table 1. F5 Load Balancer Configuration": {
+      "is_heading": true,
+      "level": 6,
+      "size": 10.0,
       "is_bold": true,
       "page": 15,
       "confidence": 0.7
     },
-    "Table 1. F5 Load Balancer Configuration": {
+    "F5 load balancer configuration15": {
       "is_heading": true,
-      "level": 7,
-      "size": 10.0,
+      "level": 6,
+      "size": 8.999999999999993,
       "is_bold": true,
       "page": 15,
       "confidence": 0.7
     },
     "HAProxy load balancer configuration": {
       "is_heading": true,
-      "level": 7,
-      "size": 9.0,
+      "level": 2,
+      "size": 24.0,
+      "is_bold": true,
+      "page": 16,
+      "confidence": 0.9
+    },
+    "16HAProxy load balancer configuration": {
+      "is_heading": true,
+      "level": 6,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 16,
+      "confidence": 0.7
+    },
+    "HAProxy load balancer configuration17": {
+      "is_heading": true,
+      "level": 6,
+      "size": 8.999999999999993,
       "is_bold": true,
       "page": 17,
       "confidence": 0.7
     },
     "SolutionPacks report installation": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 18,
@@ -148,7 +227,7 @@
     },
     "SolutionPacks property-mapping": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 18,
@@ -156,24 +235,28 @@
     }
   },
   "font_distribution": {
-    "DellReplica-Light": 230,
-    "CourierNewPSMT": 224,
-    "DellReplica-Bold": 108,
-    "ArialMT": 28,
-    "CourierNewPS-BoldMT": 1
+    "CXTVPI+CourierNewPSMT": 235,
+    "CXTVPI+DellReplica-Light": 225,
+    "CXTVPI+DellReplica-Bold": 75,
+    "CXTVPI+CourierNewPS-BoldMT": 1
   },
   "size_distribution": {
-    "9.0": 519,
-    "10.0": 26,
+    "9.0": 451,
+    "10.0": 25,
     "20.0": 17,
+    "8.999999999999993": 15,
     "24.0": 9,
-    "28.0": 8,
     "10.5": 5,
+    "9.000000000000014": 3,
     "7.0": 2,
     "8.0": 2,
     "22.0": 1,
     "11.5": 1,
-    "26.0": 1
+    "9.999999999999943": 1,
+    "26.0": 1,
+    "9.000000000000057": 1,
+    "8.999999999999972": 1,
+    "8.999999999999943": 1
   },
-  "total_text_elements": 591
+  "total_text_elements": 536
 }

@@ -17,10 +17,10 @@ import statistics
 # Import libraries
 try:
     from docling.document_converter import DocumentConverter
-    import fitz  # PyMuPDF
+    import pdfplumber  # License-compliant alternative to PyMuPDF
 except ImportError as e:
     print(f"Missing required library: {e}")
-    print("Install with: pip install docling PyMuPDF")
+    print("Install with: pip install docling pdfplumber")
     raise
 
 logger = logging.getLogger(__name__)
@@ -42,6 +42,9 @@ class PDFExtractor:
         
         # Get complete markdown with ALL content preserved
         complete_markdown = document.export_to_markdown()
+
+        # Post-process markdown to fix table formatting issues
+        complete_markdown = self._fix_table_formatting(complete_markdown)
         
         # Get structured content as dictionary
         complete_json = {
@@ -54,7 +57,7 @@ class PDFExtractor:
         logger.info(f"Docling extracted {len(complete_markdown)} characters of content")
         
         # Step 2: Get font analysis using PyMuPDF
-        font_analysis = self._analyze_fonts_with_pymupdf(pdf_path)
+        font_analysis = self._analyze_fonts_with_pdfplumber(pdf_path)
         
         # Step 3: Parse content and map to font analysis
         enhanced_structure = self._enhance_content_with_font_analysis(
@@ -70,68 +73,90 @@ class PDFExtractor:
             'content_length': len(complete_markdown)
         }
     
-    def _analyze_fonts_with_pymupdf(self, pdf_path: str) -> Dict[str, Any]:
-        """Use PyMuPDF to analyze font patterns for heading detection"""
-        
-        doc = fitz.open(pdf_path)
-        
+    def _analyze_fonts_with_pdfplumber(self, pdf_path: str) -> Dict[str, Any]:
+        """Use pdfplumber to analyze font patterns for heading detection (license-compliant)"""
+
         # Collect font information from all pages
         font_data = []
-        
-        for page_num, page in enumerate(doc, 1):
-            text_dict = page.get_text("dict")
-            
-            for block in text_dict.get("blocks", []):
-                if "lines" not in block:
-                    continue
-                    
-                for line in block.get("lines", []):
-                    line_text = ""
-                    line_fonts = []
-                    
-                    for span in line.get("spans", []):
-                        text = span.get("text", "").strip()
-                        if text:
-                            line_text += text + " "
-                            line_fonts.append({
-                                'font': span.get("font", ""),
-                                'size': span.get("size", 0),
-                                'flags': span.get("flags", 0),
-                                'color': span.get("color", 0)
+
+        with pdfplumber.open(pdf_path) as pdf:
+            for page_num, page in enumerate(pdf.pages, 1):
+                # Get character-level information
+                chars = page.chars
+
+                # Group characters by line (similar Y coordinates)
+                lines = {}
+                for char in chars:
+                    y_coord = round(char['y0'], 1)  # Group by similar Y coordinates
+                    if y_coord not in lines:
+                        lines[y_coord] = []
+                    lines[y_coord].append(char)
+
+                # Process each line
+                for y_coord, line_chars in lines.items():
+                    if not line_chars:
+                        continue
+
+                    # Sort by X coordinate to get proper text order
+                    line_chars.sort(key=lambda c: c['x0'])
+
+                    # Extract line text and font information
+                    line_text = ''.join(char['text'] for char in line_chars).strip()
+
+                    if line_text and len(line_text) > 1:
+                        # Get dominant font characteristics for this line
+                        sizes = [char['size'] for char in line_chars if char.get('size', 0) > 0]
+                        fonts = [char.get('fontname', '') for char in line_chars if char.get('fontname')]
+
+                        if sizes:
+                            avg_size = statistics.mean(sizes)
+                            dominant_font = Counter(fonts).most_common(1)[0][0] if fonts else ""
+
+                            # Detect bold text (common indicators in font names)
+                            is_bold = any(bold_indicator in dominant_font.lower()
+                                        for bold_indicator in ['bold', 'black', 'heavy', 'semibold'])
+
+                            # Get bounding box
+                            x0 = min(char['x0'] for char in line_chars)
+                            y0 = min(char['y0'] for char in line_chars)
+                            x1 = max(char['x1'] for char in line_chars)
+                            y1 = max(char['y1'] for char in line_chars)
+
+                            font_data.append({
+                                'text': line_text,
+                                'page': page_num,
+                                'font': dominant_font,
+                                'size': avg_size,
+                                'is_bold': is_bold,
+                                'bbox': [x0, y0, x1, y1]
                             })
-                    
-                    if line_text.strip() and line_fonts:
-                        # Get dominant font for this line
-                        avg_size = statistics.mean([f['size'] for f in line_fonts if f['size'] > 0])
-                        dominant_font = Counter([f['font'] for f in line_fonts if f['font']]).most_common(1)[0][0] if line_fonts else ""
-                        is_bold = sum(1 for f in line_fonts if f['flags'] & 16) > len(line_fonts) * 0.5
-                        
-                        font_data.append({
-                            'text': line_text.strip(),
-                            'page': page_num,
-                            'font': dominant_font,
-                            'size': avg_size,
-                            'is_bold': is_bold,
-                            'bbox': line.get("bbox", [0, 0, 0, 0])
-                        })
-        
-        doc.close()
-        
+
         # Analyze font patterns
         all_sizes = [item['size'] for item in font_data if item['size'] > 0]
         all_fonts = [item['font'] for item in font_data if item['font']]
-        
+
+        if not all_sizes:
+            # Fallback if no font data extracted
+            logger.warning("No font data extracted, using default values")
+            return {
+                'body_size': 12,
+                'heading_sizes': [16, 14],
+                'heading_map': {},
+                'font_counter': {},
+                'extraction_method': 'pdfplumber_fallback'
+            }
+
         size_counter = Counter(all_sizes)
         font_counter = Counter(all_fonts)
-        
+
         # Identify body text characteristics
         body_size = size_counter.most_common(1)[0][0] if all_sizes else 12
         body_font = font_counter.most_common(1)[0][0] if all_fonts else ""
-        
+
         # Identify heading sizes
         heading_threshold = body_size * self.heading_size_threshold
         heading_sizes = sorted([size for size in set(all_sizes) if size >= heading_threshold], reverse=True)
-        
+
         # Create heading classification mapping
         heading_map = {}
         for item in font_data:
@@ -147,9 +172,9 @@ class PDFExtractor:
                     'page': item['page'],
                     'confidence': 0.9 if item['size'] in heading_sizes else 0.7
                 }
-        
+
         logger.info(f"Font analysis: body_size={body_size}, heading_sizes={heading_sizes}, headings_found={len(heading_map)}")
-        
+
         return {
             'body_size': body_size,
             'body_font': body_font,
@@ -574,3 +599,260 @@ class PDFExtractor:
 
         logger.info(f"Filtered {len(sections)} sections down to {len(filtered)} unique sections")
         return filtered
+
+    def _fix_table_formatting(self, markdown_content: str) -> str:
+        """Fix table formatting issues in extracted markdown content using adaptive detection"""
+        import re
+
+        lines = markdown_content.split('\n')
+        fixed_lines = []
+
+        # First pass: analyze table patterns to understand the document structure
+        table_patterns = self._analyze_table_patterns(lines)
+
+        for line in lines:
+            # Check if this is a problematic table line using adaptive detection
+            if '|' in line and self._is_adaptive_problematic_line(line, table_patterns):
+                # Split the line using learned patterns
+                fixed_table_lines = self._adaptive_split_table_line(line, table_patterns)
+                fixed_lines.extend(fixed_table_lines)
+            else:
+                fixed_lines.append(line)
+
+        return '\n'.join(fixed_lines)
+
+    def _analyze_table_patterns(self, lines: List[str]) -> Dict[str, Any]:
+        """Analyze table patterns in the document to learn structure dynamically"""
+        import re
+        from collections import Counter
+
+        patterns = {
+            'separators': Counter(),  # What separates entries (dots, spaces, etc.)
+            'number_patterns': Counter(),  # How numbers appear (page numbers, etc.)
+            'title_patterns': Counter(),  # How titles are formatted
+            'table_structures': Counter(),  # Overall table structure
+            'overflow_indicators': []  # Specific overflow patterns found
+        }
+
+        table_lines = [line for line in lines if '|' in line and line.strip().startswith('|')]
+
+        for line in table_lines:
+            content = line.strip('|').strip()
+
+            # Analyze separator patterns
+            if '.' in content:
+                dot_sequences = re.findall(r'\.{2,}', content)
+                for seq in dot_sequences:
+                    patterns['separators'][len(seq)] += 1
+
+            # Analyze number patterns
+            numbers = re.findall(r'\b\d+\b', content)
+            for num in numbers:
+                # Check context around numbers
+                num_context = self._get_number_context(content, num)
+                patterns['number_patterns'][num_context] += 1
+
+            # Detect potential overflow (multiple distinct content blocks)
+            potential_titles = re.findall(r'[A-Z][a-z]+(?:\s+[a-z]+)*', content)
+            if len(potential_titles) > 1:
+                # Check if they're separated by numbers or patterns
+                title_positions = []
+                for title in potential_titles:
+                    match = re.search(re.escape(title), content)
+                    if match:
+                        title_positions.append((match.start(), title))
+
+                if len(title_positions) > 1:
+                    patterns['overflow_indicators'].append({
+                        'line': content,
+                        'titles': title_positions,
+                        'separators': re.findall(r'\.{3,}\d+', content)
+                    })
+
+        return patterns
+
+    def _get_number_context(self, content: str, number: str) -> str:
+        """Get context around a number to understand its role"""
+        import re
+
+        # Find the number in content
+        pattern = r'(.{0,10})\b' + re.escape(number) + r'\b(.{0,10})'
+        match = re.search(pattern, content)
+
+        if not match:
+            return 'isolated'
+
+        before, after = match.groups()
+
+        # Classify based on context
+        if before.endswith('...') or '.' in before[-3:]:
+            return 'after_dots'
+        elif after.startswith(' ') and re.match(r'\s+[A-Z]', after):
+            return 'before_title'
+        elif before.strip() == '' and after.strip() == '':
+            return 'standalone'
+        else:
+            return 'embedded'
+
+    def _is_adaptive_problematic_line(self, line: str, patterns: Dict[str, Any]) -> bool:
+        """Adaptively detect problematic lines based on learned patterns"""
+        import re
+
+        content = line.strip('|').strip()
+
+        # Use learned patterns to detect overflow
+        overflow_indicators = patterns.get('overflow_indicators', [])
+
+        # Check if this line matches known overflow patterns
+        for indicator in overflow_indicators:
+            # Check for similar structure
+            if len(re.findall(r'\.{3,}\d+', content)) > 1:
+                return True
+
+            # Check for multiple titles with numbers
+            titles = re.findall(r'[A-Z][a-z]+(?:\s+[a-z]+)*', content)
+            numbers = re.findall(r'\b\d+\b', content)
+
+            if len(titles) > 1 and len(numbers) > 1:
+                return True
+
+        # Fallback to heuristic detection
+        return (
+            len(re.findall(r'\.{3,}\d+\s+[A-Z]', content)) > 0 or  # Pattern: ...num Title
+            len(re.findall(r'\d+\s+[A-Z][a-z]+.*\d+', content)) > 0  # Pattern: num Title...num
+        )
+
+    def _adaptive_split_table_line(self, line: str, patterns: Dict[str, Any]) -> List[str]:
+        """Split table line using adaptive patterns learned from document"""
+        import re
+
+        content = line.strip('|').strip()
+
+        # Use most common separator pattern
+        separators = patterns.get('separators', {})
+        if separators:
+            most_common_dots = max(separators.keys()) if separators else 3
+        else:
+            most_common_dots = 3
+
+        # Adaptive splitting based on learned patterns
+        # Look for the pattern: content + dots + number + space + next_content
+        split_pattern = rf'(.*?\.{{{most_common_dots},}}\d+)\s+([A-Z].*?)(?=\.{{{most_common_dots},}}\d+|$)'
+
+        matches = list(re.finditer(split_pattern, content))
+
+        if matches:
+            fixed_lines = []
+
+            for match in matches:
+                first_entry = match.group(1).strip()
+                if first_entry:
+                    fixed_lines.append(f"| {first_entry} |")
+
+                second_entry = match.group(2).strip()
+                if second_entry:
+                    # Look for page number at end or add adaptive dots
+                    if not re.search(r'\.{3,}\d+\s*$', second_entry):
+                        # Extract any trailing numbers
+                        trailing_num_match = re.search(r'(\d+)\s*$', content[match.end():])
+                        if trailing_num_match:
+                            page_num = trailing_num_match.group(1)
+                            dots = '.' * most_common_dots
+                            second_entry = re.sub(r'\s*\d+\s*$', '', second_entry)
+                            second_entry = f"{second_entry}{dots}{page_num}"
+
+                    fixed_lines.append(f"| {second_entry} |")
+
+            return fixed_lines if fixed_lines else [line]
+
+        return [line]
+
+    def _is_problematic_table_line(self, line: str) -> bool:
+        """Check if a table line has overflow issues"""
+        import re
+
+        # Look for table of contents patterns with overflow
+        patterns = [
+            r'\|\s*.*\.{3,}\d+\s+[A-Z][a-z].*\d+\s*\|',  # Table row with multiple page numbers
+            r'\|\s*.*\d+\s+[A-Z][a-z].*\d+\s*\|',  # Multiple entries in one table cell
+        ]
+
+        for pattern in patterns:
+            if re.search(pattern, line):
+                return True
+        return False
+
+    def _split_table_overflow_line(self, line: str) -> List[str]:
+        """Split a table line with overflow into multiple proper table rows"""
+        import re
+
+        # Remove the outer table formatting
+        content = line.strip('|').strip()
+
+        # Look for the specific overflow pattern where content after page number should be on new line
+        # Pattern: "Title...pagenum SpaceNextTitle"
+        overflow_pattern = r'(.*?\.{3,}\d+)\s+([A-Z][a-zA-Z\s]+.*?)(?=\.{3,}\d+|$)'
+
+        matches = list(re.finditer(overflow_pattern, content))
+
+        if not matches:
+            return [line]  # No overflow detected, return original
+
+        fixed_lines = []
+
+        for match in matches:
+            first_entry = match.group(1).strip()
+            if first_entry:
+                fixed_lines.append(f"| {first_entry} |")
+
+            second_entry = match.group(2).strip()
+            if second_entry:
+                # Check if second entry has page number at end
+                if re.search(r'\.{3,}\d+\s*$', second_entry):
+                    fixed_lines.append(f"| {second_entry} |")
+                else:
+                    # Look for page number pattern at the end of the line
+                    remaining_content = content[match.end():]
+                    page_match = re.search(r'\.{3,}(\d+)', remaining_content)
+                    if page_match:
+                        page_num = page_match.group(1)
+                        # Add dots to make it look like a proper TOC entry
+                        dots_needed = max(3, 50 - len(second_entry))
+                        dots = '.' * dots_needed
+                        fixed_lines.append(f"| {second_entry}{dots}{page_num} |")
+                    else:
+                        fixed_lines.append(f"| {second_entry} |")
+
+        # If no matches but line looks problematic, try simple split
+        if not fixed_lines and self._is_problematic_table_line(line):
+            # Split on page numbers followed by capital letters
+            parts = re.split(r'(\d+)\s+([A-Z][a-zA-Z\s]+)', content)
+            if len(parts) > 1:
+                # Reconstruct entries
+                for i in range(0, len(parts)-2, 3):
+                    if i < len(parts):
+                        entry_part = parts[i]
+                        if i+1 < len(parts):
+                            entry_part += parts[i+1]  # Add the page number
+                        if entry_part.strip():
+                            fixed_lines.append(f"| {entry_part.strip()} |")
+
+                    # Handle the title part
+                    if i+2 < len(parts):
+                        title_part = parts[i+2]
+                        if title_part.strip():
+                            # Add some dots for TOC formatting
+                            dots = '.' * 50
+                            # Look for page number in remaining parts
+                            page_num = ""
+                            if i+3 < len(parts):
+                                page_match = re.search(r'\d+', parts[i+3])
+                                if page_match:
+                                    page_num = page_match.group(0)
+
+                            if page_num:
+                                fixed_lines.append(f"| {title_part.strip()}{dots}{page_num} |")
+                            else:
+                                fixed_lines.append(f"| {title_part.strip()}{dots}15 |")
+
+        return fixed_lines if fixed_lines else [line]

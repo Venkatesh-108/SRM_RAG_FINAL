@@ -1,89 +1,57 @@
 [
   {
-    "title": "Document Introduction",
-    "font_size": 0,
-    "is_bold": false,
-    "heading_level": 1,
-    "page": 1,
-    "confidence": 0.3
-  },
-  {
     "title": "Dell SRM 5.1.1.0 Upgrade Guide",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 9,
+    "heading_level": 2,
     "page": 7,
-    "confidence": 0.7
+    "confidence": 0.9
   },
   {
     "title": "Notes, cautions, and warnings",
     "font_size": 11.5,
     "is_bold": false,
-    "heading_level": 8,
+    "heading_level": 9,
     "page": 2,
     "confidence": 0.9
   },
   {
     "title": "Dell SRM 5.1.1.0 Upgrade",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 9,
+    "heading_level": 2,
     "page": 7,
-    "confidence": 0.7
+    "confidence": 0.9
   },
   {
     "title": "For more information, see Upgrade Operating System for vApp to SLES 15 SP4.",
     "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 3,
+    "heading_level": 2,
     "page": 14,
     "confidence": 0.9
   },
   {
     "title": "Pre-Requisites for Dell SRM 5.1.1.0 Upgrade",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 9,
+    "heading_level": 2,
     "page": 7,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Required Tools and Credentials",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 8,
     "confidence": 0.9
   },
   {
-    "title": "- Pre-Upgrade Health Check Utility Script",
-    "font_size": 20.0,
+    "title": "To successfully upgrade to Dell SRM 5.1.1.0, ensure to gather the required pre-requisites that are mentioned in this chapter.",
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 5,
-    "page": 8,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Delete Backup Schedules and Scheduled Reports from DPA Server",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 12,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Boot Space Clean Up",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 13,
+    "heading_level": 2,
+    "page": 17,
     "confidence": 0.9
   },
   {
     "title": "Required Tools and Credentials",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 8,
     "confidence": 0.9
   },
@@ -91,7 +59,7 @@
     "title": "Pre-Upgrade Health Check Utility Script",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 8,
     "confidence": 0.9
   },
@@ -99,7 +67,7 @@
     "title": "Check Custom vApp Configuration",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 7,
     "page": 9,
     "confidence": 0.9
   },
@@ -107,7 +75,7 @@
     "title": "Check /etc/sudoers File on Each vApp VM",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 7,
     "page": 9,
     "confidence": 0.9
   },
@@ -115,7 +83,7 @@
     "title": "Check vApp Options for Dell SRM VMs",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 7,
     "page": 9,
     "confidence": 0.9
   },
@@ -123,7 +91,7 @@
     "title": "Saving the Java certificates file",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 7,
     "page": 11,
     "confidence": 0.9
   },
@@ -131,7 +99,7 @@
     "title": "Delete Backup Schedules and Scheduled Reports from DPA Server",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 12,
     "confidence": 0.9
   },
@@ -139,7 +107,7 @@
     "title": "Boot Space Clean Up",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 13,
     "confidence": 0.9
   },
@@ -147,15 +115,7 @@
     "title": "Upgrade Operating System for vApp to SLES 15 SP4",
     "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 3,
-    "page": 14,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Upgrade Operating System Using an ISO Image",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 2,
     "page": 14,
     "confidence": 0.9
   },
@@ -163,47 +123,15 @@
     "title": "Upgrade Operating System Using an ISO Image",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 14,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Download ISO Image from Dell Online Support Website",
-    "font_size": 16.0,
-    "is_bold": true,
-    "heading_level": 6,
-    "page": 14,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Configure ISO Image for Each SRM VMs",
-    "font_size": 16.0,
-    "is_bold": true,
-    "heading_level": 6,
-    "page": 14,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Upgrade Operating System Using ISO Image on SRM Setup",
-    "font_size": 16.0,
-    "is_bold": true,
-    "heading_level": 6,
-    "page": 15,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Operating System Upgrade on FrontEnd VM Using ISO Image",
-    "font_size": 16.0,
-    "is_bold": true,
-    "heading_level": 6,
-    "page": 16,
     "confidence": 0.9
   },
   {
     "title": "Download ISO Image from Dell Online Support Website",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 7,
     "page": 14,
     "confidence": 0.9
   },
@@ -211,7 +139,7 @@
     "title": "Configure ISO Image for Each SRM VMs",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 7,
     "page": 14,
     "confidence": 0.9
   },
@@ -219,7 +147,7 @@
     "title": "Upgrade Operating System Using ISO Image on SRM Setup",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 7,
     "page": 15,
     "confidence": 0.9
   },
@@ -227,7 +155,7 @@
     "title": "- Download the ISO Image and upload it to a Datastore. For more information, see Download ISO Image from Dell Online Support Website.",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 7,
     "page": 14,
     "confidence": 0.9
   },
@@ -235,63 +163,31 @@
     "title": "Operating System Upgrade on FrontEnd VM Using ISO Image",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 7,
     "page": 16,
     "confidence": 0.9
   },
   {
     "title": "Upgrade to Dell SRM 5.1.1.0",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 9,
-    "page": 21,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Upgrade to SRM 5.1.1.0 using the new update platform",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 2,
     "page": 17,
     "confidence": 0.9
   },
   {
-    "title": "- Upgrade to SRM 5.1.1.0 Using System Upgrade Wizard",
-    "font_size": 20.0,
+    "title": "You can upgrade to Dell SRM 5.1.1.0 by using the new update platform or system upgrade wizard.",
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 5,
-    "page": 18,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Upgrade the embedded ESE version to the latest on Linux",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 20,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Upgrade the embedded ESE version to the latest on Windows",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 20,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Upgrade the embedded ESE version to the latest on vApp",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 20,
+    "heading_level": 2,
+    "page": 17,
     "confidence": 0.9
   },
   {
     "title": "Upgrade to SRM 5.1.1.0 using the new update platform",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 17,
     "confidence": 0.9
   },
@@ -299,7 +195,7 @@
     "title": "Upgrade to SRM 5.1.1.0 Using System Upgrade Wizard",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 18,
     "confidence": 0.9
   },
@@ -307,7 +203,7 @@
     "title": "Upgrade the embedded ESE version to the latest on Linux",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 20,
     "confidence": 0.9
   },
@@ -315,7 +211,7 @@
     "title": "Upgrade the embedded ESE version to the latest on Windows",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 20,
     "confidence": 0.9
   },
@@ -323,23 +219,15 @@
     "title": "Upgrade the embedded ESE version to the latest on vApp",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 20,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Upgrade all SolutionPacks and other components",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 22,
     "confidence": 0.9
   },
   {
     "title": "Upgrade all SolutionPacks and other components",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 22,
     "confidence": 0.9
   },
@@ -347,183 +235,23 @@
     "title": "- LUN performance metrics collection is disabled by default for Dell VMAX/PowerMax SP",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 25,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Check the Status of Remote Host Services",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 26,
     "confidence": 0.9
   },
   {
     "title": "- Verifying and configuring the user process limits for vApp and Linux binary platforms",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 26,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Security Hardening on SRM vApps",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 27,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Reset the password for the Compliance Backend module",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 27,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Create softlink for mysql-client dependent library",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 27,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Find and Fix Broken Links in Reports",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 28,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Deprecated or Deleted Alert Definitions",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 30,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Install Preconfigured Alerts for all SolutionPacks",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 30,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Edit New Actions Scripts",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 31,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Review SolutionPack Block Configuration for Frontend Access",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 31,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Install the Compliance Rules Module",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 32,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Cisco MDS/Nexus Switch Discovery",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 32,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Create an Events Database for the SolutionPack for Data Protection Advisor",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 36,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Update the SNMP Collections",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 37,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Virus Scanning Software in Windows Deployments",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 38,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Review Report Customization",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 38,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Reconfiguring Dell PowerVault Frontend Web Service",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 39,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Reconfiguring Pure Storage Frontend Web Service",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 39,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Deleting the ISO Image from Data Store Location",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 39,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Limitations and Known Issues",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 40,
-    "confidence": 0.9
-  },
-  {
-    "title": "LUN performance metrics collection is disabled by default for Dell VMAX/PowerMax SP",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 25,
     "confidence": 0.9
   },
   {
     "title": "LUN performance metrics collection is disabled by default.",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 25,
     "confidence": 0.9
   },
@@ -531,15 +259,7 @@
     "title": "Check the Status of Remote Host Services",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
-    "page": 26,
-    "confidence": 0.9
-  },
-  {
-    "title": "Verifying and configuring the user process limits for vApp and Linux binary platforms",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 26,
     "confidence": 0.9
   },
@@ -547,7 +267,7 @@
     "title": "Security Hardening on SRM vApps",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 27,
     "confidence": 0.9
   },
@@ -555,7 +275,7 @@
     "title": "Reset the password for the Compliance Backend module",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 27,
     "confidence": 0.9
   },
@@ -563,7 +283,7 @@
     "title": "Create softlink for mysql-client dependent library",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 27,
     "confidence": 0.9
   },
@@ -571,7 +291,7 @@
     "title": "Find and Fix Broken Links in Reports",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 28,
     "confidence": 0.9
   },
@@ -579,7 +299,7 @@
     "title": "Table 1. Broken links description",
     "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 9,
+    "heading_level": 10,
     "page": 28,
     "confidence": 0.7
   },
@@ -587,7 +307,7 @@
     "title": "Table 1. Broken links description (continued)",
     "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 9,
+    "heading_level": 10,
     "page": 28,
     "confidence": 0.7
   },
@@ -595,7 +315,7 @@
     "title": "View Fixed Links in Tomcat Logs",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 7,
     "page": 29,
     "confidence": 0.9
   },
@@ -603,7 +323,7 @@
     "title": "Deprecated or Deleted Alert Definitions",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 30,
     "confidence": 0.9
   },
@@ -611,7 +331,7 @@
     "title": "Install Preconfigured Alerts for all SolutionPacks",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 30,
     "confidence": 0.9
   },
@@ -619,7 +339,7 @@
     "title": "Edit New Actions Scripts",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 31,
     "confidence": 0.9
   },
@@ -627,7 +347,7 @@
     "title": "Table 2. Conf file path in Linux and Windows",
     "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 9,
+    "heading_level": 10,
     "page": 31,
     "confidence": 0.7
   },
@@ -635,7 +355,7 @@
     "title": "Review SolutionPack Block Configuration for Frontend Access",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 31,
     "confidence": 0.9
   },
@@ -643,7 +363,7 @@
     "title": "Install the Compliance Rules Module",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 32,
     "confidence": 0.9
   },
@@ -651,13 +371,13 @@
     "title": "Cisco MDS/Nexus Switch Discovery",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 32,
     "confidence": 0.9
   },
   {
     "title": "Export Cisco MDS/Nexus Switches",
-    "font_size": 16.0,
+    "font_size": 16.00000000000003,
     "is_bold": true,
     "heading_level": 6,
     "page": 32,
@@ -667,7 +387,7 @@
     "title": "Install the SNMP Data Collector",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 7,
     "page": 33,
     "confidence": 0.9
   },
@@ -675,7 +395,7 @@
     "title": "Import Switch Details into Discovery Center",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 7,
     "page": 35,
     "confidence": 0.9
   },
@@ -683,31 +403,23 @@
     "title": "Delete Switches from SNMP Device Discovery",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 7,
     "page": 35,
     "confidence": 0.9
   },
   {
-    "title": "Import Switch Details into Discovery Center",
-    "font_size": 16.0,
+    "title": "The Edit Cisco MDS/Nexus window opens.",
+    "font_size": 9.0,
     "is_bold": true,
-    "heading_level": 6,
-    "page": 35,
-    "confidence": 0.9
-  },
-  {
-    "title": "Delete Switches from SNMP Device Discovery",
-    "font_size": 16.0,
-    "is_bold": true,
-    "heading_level": 6,
-    "page": 35,
-    "confidence": 0.9
+    "heading_level": 10,
+    "page": 34,
+    "confidence": 0.7
   },
   {
     "title": "DPA Scheduled Reports not Available after Upgrade",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 7,
     "page": 36,
     "confidence": 0.9
   },
@@ -715,7 +427,7 @@
     "title": "Create an Events Database for the SolutionPack for Data Protection Advisor",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 36,
     "confidence": 0.9
   },
@@ -723,7 +435,7 @@
     "title": "Update the SNMP Collections",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 37,
     "confidence": 0.9
   },
@@ -731,7 +443,7 @@
     "title": "Virus Scanning Software in Windows Deployments",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 38,
     "confidence": 0.9
   },
@@ -739,7 +451,7 @@
     "title": "Review Report Customization",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 38,
     "confidence": 0.9
   },
@@ -755,7 +467,7 @@
     "title": "Reconfiguring Dell PowerVault Frontend Web Service",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 39,
     "confidence": 0.9
   },
@@ -763,7 +475,7 @@
     "title": "Reconfiguring Pure Storage Frontend Web Service",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 39,
     "confidence": 0.9
   },
@@ -771,7 +483,7 @@
     "title": "Deleting the ISO Image from Data Store Location",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 39,
     "confidence": 0.9
   },
@@ -779,7 +491,7 @@
     "title": "Limitations and Known Issues",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 40,
     "confidence": 0.9
   },
@@ -787,71 +499,23 @@
     "title": "The following are the limitations and known issues.",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 40,
-    "confidence": 0.9
-  },
-  {
-    "title": "- SRM APG UI Loading Issue",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 41,
     "confidence": 0.9
   },
   {
     "title": "SRM APG UI Loading Issue",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 41,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Resume the Upgrade on SRM Setup.",
-    "font_size": 16.0,
-    "is_bold": true,
-    "heading_level": 6,
-    "page": 42,
-    "confidence": 0.9
-  },
-  {
-    "title": "- OS Upgrade Initiation Failed.",
-    "font_size": 16.0,
-    "is_bold": true,
-    "heading_level": 6,
-    "page": 44,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Failed to Establish Connection.",
-    "font_size": 16.0,
-    "is_bold": true,
-    "heading_level": 6,
-    "page": 45,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Failed to start D-Bus System Message",
-    "font_size": 16.0,
-    "is_bold": true,
-    "heading_level": 6,
-    "page": 45,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Wrong Password during OS Upgrade Script",
-    "font_size": 16.0,
-    "is_bold": true,
-    "heading_level": 6,
-    "page": 47,
     "confidence": 0.9
   },
   {
     "title": "Resume the Upgrade on SRM Setup",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 7,
     "page": 42,
     "confidence": 0.9
   },
@@ -859,7 +523,7 @@
     "title": "OS Upgrade Initiation Failed",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 7,
     "page": 44,
     "confidence": 0.9
   },
@@ -867,7 +531,7 @@
     "title": "ISO is not attached",
     "font_size": 14.0,
     "is_bold": true,
-    "heading_level": 7,
+    "heading_level": 8,
     "page": 44,
     "confidence": 0.9
   },
@@ -875,7 +539,7 @@
     "title": "When one or multiple Remote Servers OS Upgrade Initiation Failed, the following error is shown.",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 7,
     "page": 44,
     "confidence": 0.9
   },
@@ -883,23 +547,15 @@
     "title": "3. ISO Image is not attached to the VM, then follow the steps that are mentioned in Configure ISO Image for Each SRM VMs",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 7,
     "page": 14,
-    "confidence": 0.9
-  },
-  {
-    "title": "When one or multiple Remote Servers OS Upgrade Initiation Failed, the following error is shown.",
-    "font_size": 16.0,
-    "is_bold": true,
-    "heading_level": 6,
-    "page": 44,
     "confidence": 0.9
   },
   {
     "title": "2. Edit the SRMVMList.csv file to include only the OS Upgrade Initiation Failed Servers and Save the file.",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 7,
     "page": 44,
     "confidence": 0.9
   },
@@ -907,7 +563,7 @@
     "title": "Failed to Establish Connection",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 7,
     "page": 45,
     "confidence": 0.9
   },
@@ -915,7 +571,7 @@
     "title": "Follow the below procedure to troubleshoot the failed to establish connection.",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 7,
     "page": 45,
     "confidence": 0.9
   },
@@ -923,7 +579,7 @@
     "title": "Failed to start D-Bus System Message",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 7,
     "page": 45,
     "confidence": 0.9
   },
@@ -931,7 +587,7 @@
     "title": "8. Retry the steps in Upgrade Operating System for vApp to SLES 15 SP4.",
     "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 3,
+    "heading_level": 2,
     "page": 14,
     "confidence": 0.9
   },
@@ -939,7 +595,7 @@
     "title": "Wrong Password during OS Upgrade Script",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 7,
     "page": 47,
     "confidence": 0.9
   }

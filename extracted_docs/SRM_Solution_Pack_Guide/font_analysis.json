@@ -1,21 +1,26 @@
 {
   "body_size": 9.0,
-  "body_font": "DellReplica-Light",
+  "body_font": "YXPUZC+DellReplica-Light",
   "heading_sizes": [
     28.0,
     26.0,
     24.0,
     22.0,
+    20.00000000000003,
     20.0,
+    19.999999999999943,
+    16.00000000000003,
     16.0,
+    15.999999999999986,
     14.0,
+    13.999999999999986,
     12.0,
     11.5
   ],
   "heading_map": {
     "Notes, cautions, and warnings": {
       "is_heading": true,
-      "level": 9,
+      "level": 14,
       "size": 11.5,
       "is_bold": false,
       "page": 2,
@@ -23,23 +28,47 @@
     },
     "CAUTION: A CAUTION indicates either potential damage to hardware or loss of data and tells you how to avoid": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 2,
       "confidence": 0.7
     },
+    "b.Browse to Config > SolutionPacks > Browse & Install SolutionPacks.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 17,
+      "confidence": 0.7
+    },
     "Reconfigure an installed SolutionPack": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 17,
       "confidence": 0.9
     },
+    "2.Browse to CONFIG > SolutionPacks > Installed SolutionPacks.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 17,
+      "confidence": 0.7
+    },
+    "2.Browse to Config > Update System > Manage Online Update.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 18,
+      "confidence": 0.7
+    },
     "Where to find the latest SolutionPack software": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 58,
@@ -47,7 +76,7 @@
     },
     "Dell SRM and SolutionPack privileges": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 18,
@@ -55,15 +84,23 @@
     },
     "Table 1. Dell SRM and SolutionPack privilege levels": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 10.0,
       "is_bold": true,
       "page": 18,
       "confidence": 0.7
     },
+    "SolutionPackPrivilege level": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 23,
+      "confidence": 0.7
+    },
     "Table 1. Dell SRM and SolutionPack privilege levels (continued)": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 10.0,
       "is_bold": true,
       "page": 23,
@@ -71,7 +108,7 @@
     },
     "Alert consolidation configurations for Dell SRM": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 23,
@@ -79,7 +116,7 @@
     },
     "Table 2. Dell SRM SolutionPack alert consolidation requirements": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 10.0,
       "is_bold": true,
       "page": 23,
@@ -87,7 +124,7 @@
     },
     "Table 2. Dell SRM SolutionPack alert consolidation requirements (continued)": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 10.0,
       "is_bold": true,
       "page": 24,
@@ -95,7 +132,7 @@
     },
     "Configurations for collecting carbon emission data": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 24,
@@ -103,15 +140,23 @@
     },
     "Link and launch CloudIQ": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 25,
       "confidence": 0.9
     },
+    "1.Go to Explore > Storage > Storage Systems.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 25,
+      "confidence": 0.7
+    },
     "From supported SolutionPacks": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 25,
@@ -119,39 +164,87 @@
     },
     "SolutionPack for Amazon AWS": {
       "is_heading": true,
-      "level": 10,
-      "size": 9.0,
+      "level": 3,
+      "size": 24.0,
       "is_bold": true,
-      "page": 28,
-      "confidence": 0.7
+      "page": 26,
+      "confidence": 0.9
     },
     "Installing the SolutionPack": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 219,
       "confidence": 0.9
     },
+    "Monthly cost allocation report for monthly cost analysis": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 26,
+      "confidence": 0.7
+    },
+    "Detailed billing report with resources and tags for hourly cost estimates": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 26,
+      "confidence": 0.7
+    },
+    "26SolutionPack for Amazon AWS": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 26,
+      "confidence": 0.7
+    },
+    "Add a new data collection.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 222,
+      "confidence": 0.7
+    },
     "Discovering AWS accounts and services": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 27,
       "confidence": 0.9
     },
-    "SolutionPack for Block Chargeback": {
+    "SolutionPack for Amazon AWS27": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
-      "page": 33,
+      "page": 27,
       "confidence": 0.7
+    },
+    "28SolutionPack for Amazon AWS": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 28,
+      "confidence": 0.7
+    },
+    "SolutionPack for Block Chargeback": {
+      "is_heading": true,
+      "level": 3,
+      "size": 24.0,
+      "is_bold": true,
+      "page": 29,
+      "confidence": 0.9
     },
     "Chargeable and nonchargeable metrics": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 29,
@@ -159,31 +252,31 @@
     },
     "Table 3. Shared disk with no storage used": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 10.0,
       "is_bold": true,
       "page": 29,
       "confidence": 0.7
     },
-    "Host A - Disk1": {
+    "Metric nameHost A - Disk1Host B - Disk1": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 30,
       "confidence": 0.7
     },
-    "Host B - Disk1": {
+    "SolutionPack for Block Chargeback29": {
       "is_heading": true,
-      "level": 10,
-      "size": 9.0,
+      "level": 15,
+      "size": 8.999999999999993,
       "is_bold": true,
-      "page": 30,
+      "page": 29,
       "confidence": 0.7
     },
     "Table 3. Shared disk with no storage used  (continued)": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 10.0,
       "is_bold": true,
       "page": 30,
@@ -191,15 +284,55 @@
     },
     "Table 4. Shared disk with some storage used": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 10.0,
       "is_bold": true,
       "page": 30,
       "confidence": 0.7
     },
+    "30SolutionPack for Block Chargeback": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 30,
+      "confidence": 0.7
+    },
+    "select Add a new Frontend Web service.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 222,
+      "confidence": 0.7
+    },
+    "e.In the Maximum Thread Pool capacity/processors to run chargeback preprocessor field, enter the the number of": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 31,
+      "confidence": 0.7
+    },
+    "f.In the Maximum Queue size to execute chargeback in parallel mode field, enter the maximum chargeback process": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 31,
+      "confidence": 0.7
+    },
+    "SolutionPack for Block Chargeback31": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 31,
+      "confidence": 0.7
+    },
     "Running the chargeback preprocessor task manually": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 32,
@@ -207,7 +340,7 @@
     },
     "Enable collecting component level metrics for a": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 32,
@@ -215,39 +348,71 @@
     },
     "limited set of hosts": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 32,
       "confidence": 0.9
     },
+    "2.Use the Search field to find Chargeback Processor::Generic Chargeback.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 33,
+      "confidence": 0.7
+    },
+    "32SolutionPack for Block Chargeback": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 32,
+      "confidence": 0.7
+    },
     "Chargeback optimization to reduce processing time": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 33,
       "confidence": 0.9
     },
-    "SolutionPack for Brocade FC Switch": {
+    "SolutionPack for Block Chargeback33": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
-      "page": 44,
+      "page": 33,
       "confidence": 0.7
+    },
+    "SolutionPack for Brocade FC Switch": {
+      "is_heading": true,
+      "level": 3,
+      "size": 24.0,
+      "is_bold": true,
+      "page": 34,
+      "confidence": 0.9
     },
     "Brocade switch and SMI agent configuration": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 34,
       "confidence": 0.9
     },
+    "34SolutionPack for Brocade FC Switch": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 34,
+      "confidence": 0.7
+    },
     "Configuring Brocade SMI Agents": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 35,
@@ -255,7 +420,7 @@
     },
     "Configuring Brocade switches for alert consolidation": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 35,
@@ -263,15 +428,23 @@
     },
     "Configuring Brocade switches for SNMP discovery": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 35,
       "confidence": 0.9
     },
+    "SolutionPack for Brocade FC Switch35": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 35,
+      "confidence": 0.7
+    },
     "Configuring Brocade switches for REST discovery": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 36,
@@ -279,15 +452,71 @@
     },
     "Configuring Brocade switches for SANNAV discovery": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 36,
       "confidence": 0.9
     },
+    "36SolutionPack for Brocade FC Switch": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 36,
+      "confidence": 0.7
+    },
+    "components, or select Add a new alerting data collection.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 220,
+      "confidence": 0.7
+    },
+    "10.Leave Enable Topology Backend on data collected checked.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 182,
+      "confidence": 0.7
+    },
+    "select Add a new Topology Service.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 222,
+      "confidence": 0.7
+    },
+    "Topology Service hostname or IP address, specify the Primary Backend.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 222,
+      "confidence": 0.7
+    },
+    "16.Select Configuration settings for SNMP Discovery option For SNMP discovery.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 37,
+      "confidence": 0.7
+    },
+    "SolutionPack for Brocade FC Switch37": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 37,
+      "confidence": 0.7
+    },
     "Polling period configuration:": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 38,
@@ -295,71 +524,207 @@
     },
     "Discovery of Brocade Elements through Discovery center": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 38,
       "confidence": 0.9
     },
+    "38SolutionPack for Brocade FC Switch": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 38,
+      "confidence": 0.7
+    },
+    "c.If required, select Enable Secure Connection (SSL).": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 39,
+      "confidence": 0.7
+    },
+    "e.Click Validate and Add.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 39,
+      "confidence": 0.7
+    },
+    "d.Click Validate and Add.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 39,
+      "confidence": 0.7
+    },
+    "SolutionPack for Brocade FC Switch39": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 39,
+      "confidence": 0.7
+    },
     "Table 5. Capabilities Abbreviation": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 10.0,
       "is_bold": true,
       "page": 40,
       "confidence": 0.7
     },
+    "AbbreviationCapabilityData collection": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 51,
+      "confidence": 0.7
+    },
     "Passive host discovery configuration options": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 51,
       "confidence": 0.9
     },
+    "1.Select the Enable Passive Host Discovery checkbox.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 52,
+      "confidence": 0.7
+    },
+    "2.Select the Customize zone naming patterns checkbox.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 40,
+      "confidence": 0.7
+    },
+    "40SolutionPack for Brocade FC Switch": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 40,
+      "confidence": 0.7
+    },
     "Passive host discovery from Brocade Peer Zoning": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 41,
       "confidence": 0.9
     },
+    "UI > Config > SolutionPacks > Installed SolutionPacks > Brocade FC Switch > Brocade Data Collection >": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 41,
+      "confidence": 0.7
+    },
+    "Reconfigure > Alias Name Configuration.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 41,
+      "confidence": 0.7
+    },
+    "SolutionPack for Brocade FC Switch41": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 41,
+      "confidence": 0.7
+    },
     "Configuring Peer Zoning in SolutionPack for Brocade FC": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 42,
       "confidence": 0.9
     },
+    "3.Select the Customize alias naming patterns checkbox.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 42,
+      "confidence": 0.7
+    },
+    "42SolutionPack for Brocade FC Switch": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 42,
+      "confidence": 0.7
+    },
     "Brocade Virtual Fabrics discovery configuration": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 43,
       "confidence": 0.9
     },
-    "SolutionPack for Cisco MDS/Nexus": {
+    "SolutionPack for Brocade FC Switch43": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
-      "page": 53,
+      "page": 43,
       "confidence": 0.7
+    },
+    "44SolutionPack for Brocade FC Switch": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 44,
+      "confidence": 0.7
+    },
+    "SolutionPack for Cisco MDS/Nexus": {
+      "is_heading": true,
+      "level": 3,
+      "size": 24.0,
+      "is_bold": true,
+      "page": 45,
+      "confidence": 0.9
     },
     "Performing pre-configuration tasks": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 45,
       "confidence": 0.9
     },
+    "SolutionPack for Cisco MDS/Nexus45": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 45,
+      "confidence": 0.7
+    },
     "Known issue with user-defined roles": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 46,
@@ -367,15 +732,23 @@
     },
     "Configuring switches for SNMPv1 and SNMPv2c": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 46,
       "confidence": 0.9
     },
+    "46SolutionPack for Cisco MDS/Nexus": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 46,
+      "confidence": 0.7
+    },
     "Configuring switches for SNMPv3": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 47,
@@ -383,167 +756,471 @@
     },
     "Table 6. Sample output of show snmp user command": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 10.0,
+      "is_bold": true,
+      "page": 47,
+      "confidence": 0.7
+    },
+    "UserAuthPriv(enforce)Groups": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
       "is_bold": true,
       "page": 47,
       "confidence": 0.7
     },
     "Configuring Cisco switches for alert consolidation": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 47,
       "confidence": 0.9
     },
-    "udp-port <trap listening port > , and press Enter .": {
+    "snmp-server host <trap recipient IP> traps <SNMP trap version> <Community String>": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 47,
       "confidence": 0.7
     },
+    "udp-port <trap listening port >": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 47,
+      "confidence": 0.7
+    },
+    "SolutionPack for Cisco MDS/Nexus47": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 47,
+      "confidence": 0.7
+    },
+    "48SolutionPack for Cisco MDS/Nexus": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 48,
+      "confidence": 0.7
+    },
     "Adding and configuring devices": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 213,
       "confidence": 0.9
     },
+    "SolutionPack for Cisco MDS/Nexus49": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 49,
+      "confidence": 0.7
+    },
+    "50SolutionPack for Cisco MDS/Nexus": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 50,
+      "confidence": 0.7
+    },
     "Table 7. Capabilities (continued)": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 10.0,
       "is_bold": true,
       "page": 51,
       "confidence": 0.7
     },
+    "SolutionPack for Cisco MDS/Nexus51": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 51,
+      "confidence": 0.7
+    },
+    "2.Select the Customized zone naming patterns checkbox.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 52,
+      "confidence": 0.7
+    },
     "Enabling passive host discovery through Generic-": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 52,
       "confidence": 0.9
     },
-    "SolutionPack for Cisco UCS": {
+    "2.Select the Enable Passive Host Discovery checkbox.": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
-      "page": 57,
+      "page": 52,
       "confidence": 0.7
     },
-    "Configuring the UCS Manager": {
+    "52SolutionPack for Cisco MDS/Nexus": {
       "is_heading": true,
-      "level": 5,
-      "size": 20.0,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 52,
+      "confidence": 0.7
+    },
+    "SolutionPack for Cisco MDS/Nexus53": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 53,
+      "confidence": 0.7
+    },
+    "SolutionPack for Cisco UCS": {
+      "is_heading": true,
+      "level": 3,
+      "size": 24.0,
       "is_bold": true,
       "page": 54,
       "confidence": 0.9
     },
+    "Configuring the UCS Manager": {
+      "is_heading": true,
+      "level": 5,
+      "size": 20.00000000000003,
+      "is_bold": true,
+      "page": 54,
+      "confidence": 0.9
+    },
+    "2.Browse to Admin > Communication Management > Communication Services.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 54,
+      "confidence": 0.7
+    },
+    "54SolutionPack for Cisco UCS": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 54,
+      "confidence": 0.7
+    },
+    "Gateway for Web-Service Gateway dropdown.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 55,
+      "confidence": 0.7
+    },
+    "SolutionPack for Cisco UCS55": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 55,
+      "confidence": 0.7
+    },
     "Discovery through Discovery center": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 56,
       "confidence": 0.9
     },
+    "e.Select Enable secure connection, if desired.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 56,
+      "confidence": 0.7
+    },
     "Importing the new database schema": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 56,
       "confidence": 0.9
     },
-    "SolutionPack for Configuration Compliance": {
+    "56SolutionPack for Cisco UCS": {
       "is_heading": true,
-      "level": 10,
-      "size": 9.0,
+      "level": 15,
+      "size": 8.999999999999993,
       "is_bold": true,
-      "page": 59,
+      "page": 56,
       "confidence": 0.7
     },
-    "Operations > Configuration Compliance . Click Administration > CONFIG > Configuration Compliance to launch Policy": {
+    "SolutionPack for Cisco UCS57": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 57,
+      "confidence": 0.7
+    },
+    "SolutionPack for Configuration Compliance": {
+      "is_heading": true,
+      "level": 3,
+      "size": 24.0,
+      "is_bold": true,
+      "page": 58,
+      "confidence": 0.9
+    },
+    "Operations > Configuration Compliance. Click Administration > CONFIG > Configuration Compliance to launch Policy": {
+      "is_heading": true,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 58,
       "confidence": 0.7
     },
-    "SolutionPack for Dell SC Series": {
+    "58SolutionPack for Configuration Compliance": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 58,
+      "confidence": 0.7
+    },
+    "6.Select an item in Breach Notification Details. If you select Add a new Breach Notification Details, select an instance to": {
+      "is_heading": true,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
-      "page": 62,
+      "page": 59,
+      "confidence": 0.7
+    },
+    "The Tomcat communication protocol should be HTTPS.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 59,
+      "confidence": 0.7
+    },
+    "selecting Add a new Alert Consolidation Details. In the Alert Consolidation hostname field, type the Primary Backend": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 59,
+      "confidence": 0.7
+    },
+    "14.From Administration Web-Service Instance, select Default.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 59,
+      "confidence": 0.7
+    },
+    "SolutionPack for Configuration Compliance59": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 59,
+      "confidence": 0.7
+    },
+    "SolutionPack for Dell SC Series": {
+      "is_heading": true,
+      "level": 3,
+      "size": 24.0,
+      "is_bold": true,
+      "page": 60,
+      "confidence": 0.9
+    },
+    "60SolutionPack for Dell SC Series": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 60,
+      "confidence": 0.7
+    },
+    "11.To configure the Topology Polling Period, Performance Polling Period, and Volume Performance Polling Period": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 61,
+      "confidence": 0.7
+    },
+    "settings, select Use advanced settings.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 61,
       "confidence": 0.7
     },
     "Adding and configuring devices in Discovery Center": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 208,
       "confidence": 0.9
     },
+    "1.Go to Discovery > Discovery Center > Manage Discovery.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 61,
+      "confidence": 0.7
+    },
     "Configuring Storage Center to send SNMP alerts": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 61,
       "confidence": 0.9
     },
-    "SolutionPack for Dell CloudIQ": {
+    "5.In SNMP Version, select SNMP v1/v2c.": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
-      "page": 64,
+      "page": 61,
       "confidence": 0.7
+    },
+    "6.In Read Only Community String, type .": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 61,
+      "confidence": 0.7
+    },
+    "SolutionPack for Dell SC Series61": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 61,
+      "confidence": 0.7
+    },
+    "7.In Read Write Community String, type .": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 62,
+      "confidence": 0.7
+    },
+    "8.Click Create SNMP Trap Destination.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 62,
+      "confidence": 0.7
+    },
+    "12.In Community String, type .": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 62,
+      "confidence": 0.7
+    },
+    "62SolutionPack for Dell SC Series": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 62,
+      "confidence": 0.7
+    },
+    "SolutionPack for Dell CloudIQ": {
+      "is_heading": true,
+      "level": 3,
+      "size": 24.0,
+      "is_bold": true,
+      "page": 63,
+      "confidence": 0.9
     },
     "Adding and configuring devices in Discovery": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 169,
       "confidence": 0.9
     },
+    "SolutionPack for Dell CloudIQ63": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 63,
+      "confidence": 0.7
+    },
+    "64SolutionPack for Dell CloudIQ": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 64,
+      "confidence": 0.7
+    },
     "SolutionPack for Dell Data Domain": {
       "is_heading": true,
-      "level": 10,
-      "size": 9.0,
+      "level": 3,
+      "size": 24.0,
       "is_bold": true,
-      "page": 70,
-      "confidence": 0.7
+      "page": 65,
+      "confidence": 0.9
     },
     "Configuring Data Domain systems for SNMPv1 and": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 65,
       "confidence": 0.9
     },
-    "snmp add ro-community < community-string-list > [hosts < host-list >]": {
+    "SolutionPack for Dell Data Domain65": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 65,
+      "confidence": 0.7
+    },
+    "snmp add ro-community <community-string-list> [hosts <host-list>]": {
+      "is_heading": true,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 66,
       "confidence": 0.7
     },
-    "snmp add rw-community < community-string-list > [hosts < host-list >]": {
+    "snmp add rw-community <community-string-list> [hosts <host-list>]": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 66,
@@ -551,7 +1228,7 @@
     },
     "Table 8. Sample output of snmp show config command": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 10.0,
       "is_bold": true,
       "page": 66,
@@ -559,47 +1236,143 @@
     },
     "Configuring Data Domain systems for SNMPv3": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 66,
       "confidence": 0.9
     },
+    "66SolutionPack for Dell Data Domain": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 66,
+      "confidence": 0.7
+    },
     "Table 9. Sample output of snmp show config command": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 10.0,
+      "is_bold": true,
+      "page": 67,
+      "confidence": 0.7
+    },
+    "UserAccessAuthentication ProtocolPrivacy Protocol": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
       "is_bold": true,
       "page": 67,
       "confidence": 0.7
     },
     "Configuring Data Domain devices for alert": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 67,
       "confidence": 0.9
     },
+    "snmp add trap-host community <Community String> version <SNMP trap version> <trap": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 67,
+      "confidence": 0.7
+    },
+    "recipient IP>:<trap listening port>": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 67,
+      "confidence": 0.7
+    },
     "From the user interface": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 67,
       "confidence": 0.9
     },
+    "2.Go to Administration > Settings.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999972,
+      "is_bold": true,
+      "page": 67,
+      "confidence": 0.7
+    },
+    "SolutionPack for Dell Data Domain67": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 67,
+      "confidence": 0.7
+    },
+    "Add a new Topology Service.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 68,
+      "confidence": 0.7
+    },
+    "13.Select Configuration settings for SNMP Discovery option For SNMP discovery.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 68,
+      "confidence": 0.7
+    },
+    "68SolutionPack for Dell Data Domain": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 68,
+      "confidence": 0.7
+    },
+    "1.Click Discovery > Discovery Center > Manage Discovery.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 69,
+      "confidence": 0.7
+    },
+    "c.Click Validate and Add.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 69,
+      "confidence": 0.7
+    },
+    "SolutionPack for Dell Data Domain69": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 69,
+      "confidence": 0.7
+    },
     "Report Library >> Dell Data Domain >> Inventory >> Chassis Status >> NVRAM Batteries": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 70,
       "confidence": 0.7
     },
-    "Report Library >> Dell Data Domain >> Inventory >> Disks >> device, part >> Temperature": {
+    "○Report Library >> Dell Data Domain >> Inventory >> Disks >> device, part >> Temperature": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 70,
@@ -607,7 +1380,7 @@
     },
     "Report Library >> Dell Data Domain >> Inventory >> Disks >> device, part >> Status >> Error Count": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 70,
@@ -615,8 +1388,32 @@
     },
     "Report Library >> Dell Data Domain >> Inventory >> NVRAM": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
+      "is_bold": true,
+      "page": 70,
+      "confidence": 0.7
+    },
+    "Report Explore > Storage Systems > Dell Data Domain > Storage Connectivity > File Path Details will not be": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 70,
+      "confidence": 0.7
+    },
+    "Consequently, parent report Explore > Storage Systems > Dell Data Domain > Storage Connectivity will be hidden": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 70,
+      "confidence": 0.7
+    },
+    "70SolutionPack for Dell Data Domain": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
       "is_bold": true,
       "page": 70,
       "confidence": 0.7
@@ -629,25 +1426,89 @@
       "page": 71,
       "confidence": 0.9
     },
-    "SolutionPack for Dell Data Protection Advisor": {
+    "SolutionPack for Dell Data Protection Advisor71": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 71,
+      "confidence": 0.7
+    },
+    "72SolutionPack for Dell Data Protection Advisor": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 72,
+      "confidence": 0.7
+    },
+    "select Add a new Alert consolidation.": {
+      "is_heading": true,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
-      "page": 74,
+      "page": 73,
+      "confidence": 0.7
+    },
+    "20.Select Enable Dell DataProtectionAdvisor Alerts.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 73,
+      "confidence": 0.7
+    },
+    "26.Select Dell Data Protection Advisor.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 73,
+      "confidence": 0.7
+    },
+    "SolutionPack for Dell Data Protection Advisor73": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 73,
       "confidence": 0.7
     },
     "Verifying scheduled reports in DPA": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 74,
       "confidence": 0.9
     },
+    "2.Browse to Reports > Report Jobs > Scheduled reports.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 74,
+      "confidence": 0.7
+    },
+    "2.Select Dell Data Protection Advisor and click Install.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 74,
+      "confidence": 0.7
+    },
+    "●When you click a device in the Alerts tab of the Report Library >> Dell Data Protection Advisor >> Operations report,": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 74,
+      "confidence": 0.7
+    },
     "Report Library >> Dell Data Protection Advisor >> Inventory >> Data Domain >> Hosts >> [host] >>": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 74,
@@ -655,7 +1516,15 @@
     },
     "Performance >> Fibre Channel Port Performance": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 74,
+      "confidence": 0.7
+    },
+    "○Report Library >> Dell Data Protection Advisor >> Inventory >> Data Domain >> Hosts >> [host] >>": {
+      "is_heading": true,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 74,
@@ -663,7 +1532,7 @@
     },
     "Performance >> Total Throughput": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 74,
@@ -671,7 +1540,7 @@
     },
     "Report Library >> Dell Data Protection Advisor >> Inventory >> Data Domain >> DD Modes": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 74,
@@ -679,7 +1548,7 @@
     },
     "Report Library >> Dell Data Protection Advisor >> Inventory >> Data Domain >> Hosts >> [host] >> Statistics": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 74,
@@ -687,7 +1556,7 @@
     },
     ">> MTree Daily Compression Statistics": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 74,
@@ -695,55 +1564,175 @@
     },
     "Report Library >> Dell Data Protection Advisor >> Inventory >> Replication >> RPO Compliance >> Compliance": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
+      "is_bold": true,
+      "page": 74,
+      "confidence": 0.7
+    },
+    "74SolutionPack for Dell Data Protection Advisor": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
       "is_bold": true,
       "page": 74,
       "confidence": 0.7
     },
     "SolutionPack for Dell ECS": {
       "is_heading": true,
-      "level": 10,
-      "size": 9.0,
+      "level": 3,
+      "size": 24.0,
       "is_bold": true,
-      "page": 77,
-      "confidence": 0.7
+      "page": 75,
+      "confidence": 0.9
     },
     "Installing the SolutionPack for Dell ECS": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 75,
       "confidence": 0.9
     },
+    "SolutionPack for Dell ECS75": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 75,
+      "confidence": 0.7
+    },
+    "19.In SRM Admin UI page, click DISCOVERY.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 76,
+      "confidence": 0.7
+    },
+    "76SolutionPack for Dell ECS": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 76,
+      "confidence": 0.7
+    },
+    "1.Browse to Discovery > Discovery Center > Manage Discovery.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 77,
+      "confidence": 0.7
+    },
+    "SolutionPack for Dell ECS77": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 77,
+      "confidence": 0.7
+    },
     "SolutionPack for Dell PowerEdge": {
       "is_heading": true,
-      "level": 10,
-      "size": 9.0,
+      "level": 3,
+      "size": 24.0,
+      "is_bold": true,
+      "page": 78,
+      "confidence": 0.9
+    },
+    "78SolutionPack for Dell PowerEdge": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 78,
+      "confidence": 0.7
+    },
+    "SolutionPack for Dell PowerEdge79": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
       "is_bold": true,
       "page": 79,
       "confidence": 0.7
     },
     "SolutionPack for Dell PowerScale": {
       "is_heading": true,
-      "level": 10,
+      "level": 3,
+      "size": 24.0,
+      "is_bold": true,
+      "page": 80,
+      "confidence": 0.9
+    },
+    "80SolutionPack for Dell PowerScale": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 80,
+      "confidence": 0.7
+    },
+    "20.Select Dell PowerScale.": {
+      "is_heading": true,
+      "level": 15,
       "size": 9.0,
+      "is_bold": true,
+      "page": 81,
+      "confidence": 0.7
+    },
+    "SolutionPack for Dell PowerScale81": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 81,
+      "confidence": 0.7
+    },
+    "82SolutionPack for Dell PowerScale": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
       "is_bold": true,
       "page": 82,
       "confidence": 0.7
     },
     "SolutionPack for Dell PowerStore": {
       "is_heading": true,
-      "level": 10,
+      "level": 3,
+      "size": 24.0,
+      "is_bold": true,
+      "page": 83,
+      "confidence": 0.9
+    },
+    "SolutionPack for Dell PowerStore83": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 83,
+      "confidence": 0.7
+    },
+    "If you select Add a new alerting on data collection, Alerting Web-Service Instance dropdown has default value. Do not": {
+      "is_heading": true,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
-      "page": 86,
+      "page": 157,
+      "confidence": 0.7
+    },
+    "84SolutionPack for Dell PowerStore": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 84,
       "confidence": 0.7
     },
     "SNMP Trap configuration in PowerStore SolutionPack": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 85,
@@ -751,7 +1740,7 @@
     },
     "Table 10. SNMPv2c configuration details in PowerStore Manager": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 10.0,
       "is_bold": true,
       "page": 85,
@@ -759,79 +1748,327 @@
     },
     "Table 11. SNMPv3 configuration details in PowerStore Manager": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 10.0,
       "is_bold": true,
       "page": 85,
       "confidence": 0.7
     },
-    "SolutionPack for Dell PowerSwitch": {
+    "SolutionPack for Dell PowerStore85": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
-      "page": 88,
+      "page": 85,
+      "confidence": 0.7
+    },
+    "86SolutionPack for Dell PowerStore": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 86,
+      "confidence": 0.7
+    },
+    "SolutionPack for Dell PowerSwitch": {
+      "is_heading": true,
+      "level": 3,
+      "size": 24.0,
+      "is_bold": true,
+      "page": 87,
+      "confidence": 0.9
+    },
+    "5.Under Components to Install, click Next.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 87,
+      "confidence": 0.7
+    },
+    "6.Under Pre Configured Alerts v4.8, clickNext .": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 87,
+      "confidence": 0.7
+    },
+    "7.Under Data Collection v4.8, click Next.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 87,
+      "confidence": 0.7
+    },
+    "8.Under Reports v4.8, click Install.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 87,
+      "confidence": 0.7
+    },
+    "11.Now, on the left side, click CONFIG > Installed SolutionPacks.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 87,
+      "confidence": 0.7
+    },
+    "SolutionPack for Dell PowerSwitch87": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 87,
       "confidence": 0.7
     },
     "Adding and Configuring Devices": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 88,
       "confidence": 0.9
     },
-    "SolutionPack for Dell PowerVault": {
+    "5.Input the values for PowerSwitch Management IP, Username and Password/Powerswitch Management Cluster": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
-      "page": 90,
+      "page": 88,
       "confidence": 0.7
+    },
+    "88SolutionPack for Dell PowerSwitch": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 88,
+      "confidence": 0.7
+    },
+    "SolutionPack for Dell PowerVault": {
+      "is_heading": true,
+      "level": 3,
+      "size": 24.0,
+      "is_bold": true,
+      "page": 89,
+      "confidence": 0.9
     },
     "Installing the SolutionPack for PowerVault": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 89,
       "confidence": 0.9
     },
-    "SolutionPack for Dell RecoverPoint": {
+    "Alerting Web-Service Instance field.": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
-      "page": 93,
+      "page": 98,
+      "confidence": 0.7
+    },
+    "SolutionPack for Dell PowerVault89": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 89,
+      "confidence": 0.7
+    },
+    "Hostname or IP address: localhost": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 90,
+      "confidence": 0.7
+    },
+    "15.Enable Use advanced settingsUse advanced settings. Enter the default values:": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 90,
+      "confidence": 0.7
+    },
+    "●Collection interval for Dell PowerVault Capacity and Topology: 30 minutes": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 90,
+      "confidence": 0.7
+    },
+    "Collection interval for Performance: 5 minutes": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 90,
+      "confidence": 0.7
+    },
+    "Collection interval for Alerts: 5 minutes": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 90,
+      "confidence": 0.7
+    },
+    "90SolutionPack for Dell PowerVault": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 90,
+      "confidence": 0.7
+    },
+    "SolutionPack for Dell RecoverPoint": {
+      "is_heading": true,
+      "level": 3,
+      "size": 24.0,
+      "is_bold": true,
+      "page": 91,
+      "confidence": 0.9
+    },
+    "SolutionPack for Dell RecoverPoint91": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 91,
+      "confidence": 0.7
+    },
+    "select Add a new Web-Service Gateway.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 191,
+      "confidence": 0.7
+    },
+    "16.Click Discovery > Discovery Center > Manage Discovery.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 92,
+      "confidence": 0.7
+    },
+    "17.Select Dell RecoverPoint.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 92,
       "confidence": 0.7
     },
     "Configuring RecoverPoint appliance for alert": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 92,
       "confidence": 0.9
     },
-    "SolutionPack for Dell PowerFlex": {
+    "definitions -> Test -> Other).": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
-      "page": 96,
+      "page": 92,
       "confidence": 0.7
+    },
+    "RecoverPoint -> Operations -> Alerts.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 92,
+      "confidence": 0.7
+    },
+    "92SolutionPack for Dell RecoverPoint": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 92,
+      "confidence": 0.7
+    },
+    "2.Go to Admin > System Notifications > Manage Event Filters.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 93,
+      "confidence": 0.7
+    },
+    "SolutionPack for Dell RecoverPoint93": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 93,
+      "confidence": 0.7
+    },
+    "SolutionPack for Dell PowerFlex": {
+      "is_heading": true,
+      "level": 3,
+      "size": 24.0,
+      "is_bold": true,
+      "page": 94,
+      "confidence": 0.9
     },
     "Installing the SolutionPack for Dell PowerFlex": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 94,
       "confidence": 0.9
     },
+    "94SolutionPack for Dell PowerFlex": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 94,
+      "confidence": 0.7
+    },
+    "In the Operations >> Inactive Devices and Components >> Devices with Inactive Metrics Global report, the count of": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 95,
+      "confidence": 0.7
+    },
+    "inactive metrics is less than that shown in the Report Library >> Dell PowerFlex >> Operations >> Inactive Metrics": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 95,
+      "confidence": 0.7
+    },
+    "SolutionPack for Dell PowerFlex95": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 95,
+      "confidence": 0.7
+    },
     "Dashboards >> Storage >> Enterprise Capacity Dashboard >> Usable Capacity by Pool": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 96,
@@ -839,7 +2076,7 @@
     },
     "Explore >> Storage Capacity >> Storage Pools": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 96,
@@ -847,7 +2084,7 @@
     },
     "Explore >> Storage >> Storage Systems >> <PowerFlex Device> >> Capacity >> Usable Capacity by Pool": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 96,
@@ -855,47 +2092,151 @@
     },
     "Report Library >> Dell PowerFlex >> Capacity >> Enterprise Capacity Dashboard >> Usable Capacity by Pool": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
+      "is_bold": true,
+      "page": 96,
+      "confidence": 0.7
+    },
+    "96SolutionPack for Dell PowerFlex": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
       "is_bold": true,
       "page": 96,
       "confidence": 0.7
     },
     "SolutionPack for Dell Unity/VNX/VNXe": {
       "is_heading": true,
-      "level": 10,
+      "level": 3,
+      "size": 24.0,
+      "is_bold": true,
+      "page": 97,
+      "confidence": 0.9
+    },
+    "SolutionPack for Dell Unity/VNX/VNXe97": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 97,
+      "confidence": 0.7
+    },
+    "15.Select Configure Alert consolidation.": {
+      "is_heading": true,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
-      "page": 102,
+      "page": 98,
+      "confidence": 0.7
+    },
+    "select Add a new Event database.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 98,
+      "confidence": 0.7
+    },
+    "24.In Administration Web-Service Instance, select the Frontend host.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 98,
+      "confidence": 0.7
+    },
+    "1.Go to Centralized Management > Manage Discovery > Dell Unity/VNX/VNXe.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 98,
+      "confidence": 0.7
+    },
+    "98SolutionPack for Dell Unity/VNX/VNXe": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 98,
+      "confidence": 0.7
+    },
+    "f.In Naviseccli User Scope, select LDAP, Global or Local.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 99,
+      "confidence": 0.7
+    },
+    "k.In VNX File User Scope, select LDAP, Global, or Local.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 99,
       "confidence": 0.7
     },
     "Resolving creating stream errors": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 99,
       "confidence": 0.9
     },
+    "SolutionPack for Dell Unity/VNX/VNXe99": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 99,
+      "confidence": 0.7
+    },
+    "100SolutionPack for Dell Unity/VNX/VNXe": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 100,
+      "confidence": 0.7
+    },
     "Difference in calculation of array-level Used Capacity between Unisphere and SMR": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 101,
       "confidence": 0.7
     },
-    "SolutionPack for Dell EMC VMAX": {
+    "SolutionPack for Dell Unity/VNX/VNXe101": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
-      "page": 115,
+      "page": 101,
       "confidence": 0.7
+    },
+    "102SolutionPack for Dell Unity/VNX/VNXe": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 102,
+      "confidence": 0.7
+    },
+    "SolutionPack for Dell EMC VMAX": {
+      "is_heading": true,
+      "level": 3,
+      "size": 24.0,
+      "is_bold": true,
+      "page": 103,
+      "confidence": 0.9
     },
     "Configuring the access credentials": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 116,
@@ -903,15 +2244,23 @@
     },
     "Preparing Dell EMC VMAX for discovery and data": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 103,
       "confidence": 0.9
     },
+    "SolutionPack for Dell EMC VMAX103": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 103,
+      "confidence": 0.7
+    },
     "VMAX3/VMAX All Flash discovery scenario": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 117,
@@ -919,7 +2268,7 @@
     },
     "Collector Host (Remote Discovery Configuration)": {
       "is_heading": true,
-      "level": 7,
+      "level": 11,
       "size": 14.0,
       "is_bold": false,
       "page": 117,
@@ -927,15 +2276,23 @@
     },
     "Verifying the configuration": {
       "is_heading": true,
-      "level": 7,
-      "size": 14.0,
+      "level": 12,
+      "size": 13.999999999999986,
       "is_bold": false,
       "page": 117,
       "confidence": 0.9
     },
+    "104SolutionPack for Dell EMC VMAX": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 104,
+      "confidence": 0.7
+    },
     "Creating collectors for discovery of Symmetrix arrays (local": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 118,
@@ -943,31 +2300,151 @@
     },
     "Configuring VMAX arrays for consolidation of availability alerts": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 105,
       "confidence": 0.9
     },
+    "<IP>,<port>,<filter>,<state><filter>": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 118,
+      "confidence": 0.7
+    },
+    "0.31.90.148, 2041,10,ACTIVE": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 118,
+      "confidence": 0.7
+    },
+    "SolutionPack for Dell EMC VMAX105": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 105,
+      "confidence": 0.7
+    },
+    "daemon_optionsstordaemon action storevntd -cmd reload": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 119,
+      "confidence": 0.7
+    },
+    "3.Select Dell EMC VMAX.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 106,
+      "confidence": 0.7
+    },
+    "106SolutionPack for Dell EMC VMAX": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 106,
+      "confidence": 0.7
+    },
+    "2.Click Dell EMC VMAX.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 108,
+      "confidence": 0.7
+    },
+    "7.In Type of Symmetrix array to collect, select VMAX3.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 107,
+      "confidence": 0.7
+    },
+    "SolutionPack for Dell EMC VMAX107": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 107,
+      "confidence": 0.7
+    },
+    "d.Check Use advanced settings.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 109,
+      "confidence": 0.7
+    },
+    "MAX values from Unisphere.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 109,
+      "confidence": 0.7
+    },
     "Adding VMAX All Flash Arrays": {
       "is_heading": true,
-      "level": 7,
+      "level": 11,
       "size": 14.0,
       "is_bold": true,
       "page": 108,
       "confidence": 0.9
     },
+    "4.In Type of array to collect, select VMAX ALL Flash.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 108,
+      "confidence": 0.7
+    },
+    "108SolutionPack for Dell EMC VMAX": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 108,
+      "confidence": 0.7
+    },
     "Viewing the Test button test results": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 120,
       "confidence": 0.9
     },
+    "4.Click Click to show/hide the full result.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 121,
+      "confidence": 0.7
+    },
+    "SolutionPack for Dell EMC VMAX109": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 109,
+      "confidence": 0.7
+    },
     "Understanding the test messages": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 121,
@@ -975,7 +2452,7 @@
     },
     "Unisphere connectivity failure": {
       "is_heading": true,
-      "level": 7,
+      "level": 11,
       "size": 14.0,
       "is_bold": false,
       "page": 110,
@@ -983,15 +2460,23 @@
     },
     "SMI-S Provider connectivity failure": {
       "is_heading": true,
-      "level": 7,
+      "level": 11,
       "size": 14.0,
       "is_bold": false,
       "page": 110,
       "confidence": 0.9
     },
+    "110SolutionPack for Dell EMC VMAX": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 110,
+      "confidence": 0.7
+    },
     "Updating SolutionPack alert definitions": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 122,
@@ -999,23 +2484,31 @@
     },
     "Configuring Solutions Enabler client access for VMAX": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 111,
       "confidence": 0.9
     },
-    "chown -R apg <SYMAPI_HOME> /config": {
+    "SolutionPack for Dell EMC VMAX111": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 111,
+      "confidence": 0.7
+    },
+    "chown -R apg <SYMAPI_HOME>/config": {
+      "is_heading": true,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 112,
       "confidence": 0.7
     },
-    "b. chown -R apg <SYMAPI_HOME> /db": {
+    "chown -R apg <SYMAPI_HOME>/db": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 112,
@@ -1023,31 +2516,55 @@
     },
     "Adding client hosts to existing SYMAUTH configuration": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 112,
       "confidence": 0.9
     },
-    "Run the symauth -sid <SID> list command to determine if User Authorization Control is enabled on the local client": {
+    "symauth -sid <SID> list": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 112,
       "confidence": 0.7
     },
-    "assign user H: system_name \\apg to role Admin;": {
+    "find / -name auth.txtauth.txt": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 112,
+      "confidence": 0.7
+    },
+    "assign user H:system_name\\apg to role Admin;": {
+      "is_heading": true,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 113,
       "confidence": 0.7
     },
+    "symauth -sid <SID> -f auth.txt": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 113,
+      "confidence": 0.7
+    },
+    "112SolutionPack for Dell EMC VMAX": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 112,
+      "confidence": 0.7
+    },
     "Enabling client authorization": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 113,
@@ -1055,15 +2572,15 @@
     },
     "assign user * to role Admin;": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 113,
       "confidence": 0.7
     },
-    "3. Use the symauth -sid <SID> -f auth.txt command to commit changes to the User Authorization User-to-Role": {
+    "symauth -sid <SID> enable": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 113,
@@ -1071,15 +2588,23 @@
     },
     "Validating Symmetrix access controls": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 113,
       "confidence": 0.9
     },
+    "SolutionPack for Dell EMC VMAX113": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 113,
+      "confidence": 0.7
+    },
     "Limitation: some alerts not displayed": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 114,
@@ -1087,55 +2612,183 @@
     },
     "Resolving SMI-S Provider port conflicts": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 114,
       "confidence": 0.9
     },
-    "SolutionPack for Dell VMAX/PowerMax": {
+    "114SolutionPack for Dell EMC VMAX": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 114,
+      "confidence": 0.7
+    },
+    "The Subscribed column of the Pools report (Report Library >> Dell EMC VMAX >> Inventory) is incorrect when the": {
+      "is_heading": true,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
-      "page": 122,
+      "page": 115,
+      "confidence": 0.7
+    },
+    "SolutionPack for Dell EMC VMAX115": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 115,
+      "confidence": 0.7
+    },
+    "SolutionPack for Dell VMAX/PowerMax": {
+      "is_heading": true,
+      "level": 3,
+      "size": 24.0,
+      "is_bold": true,
+      "page": 116,
+      "confidence": 0.9
+    },
+    "116SolutionPack for Dell VMAX/PowerMax": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 116,
       "confidence": 0.7
     },
     "Preparing Dell VMAX/PowerMax for discovery and": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 117,
       "confidence": 0.9
     },
+    "SolutionPack for Dell VMAX/PowerMax117": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 117,
+      "confidence": 0.7
+    },
     "Configuring PowerMax arrays for consolidation of availability alerts": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 118,
       "confidence": 0.9
     },
+    "118SolutionPack for Dell VMAX/PowerMax": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 118,
+      "confidence": 0.7
+    },
+    "SolutionPack for Dell VMAX/PowerMax119": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 119,
+      "confidence": 0.7
+    },
+    "2.Click Dell VMAX/PowerMax.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 120,
+      "confidence": 0.7
+    },
+    "7.In Unisphere username and Unisphere password, type the credentials.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 120,
+      "confidence": 0.7
+    },
+    "120SolutionPack for Dell VMAX/PowerMax": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 120,
+      "confidence": 0.7
+    },
+    "SolutionPack for Dell VMAX/PowerMax121": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 121,
+      "confidence": 0.7
+    },
+    "122SolutionPack for Dell VMAX/PowerMax": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 122,
+      "confidence": 0.7
+    },
     "SolutionPack for Dell VPLEX": {
       "is_heading": true,
-      "level": 10,
+      "level": 3,
+      "size": 24.0,
+      "is_bold": true,
+      "page": 123,
+      "confidence": 0.9
+    },
+    "SolutionPack for Dell VPLEX123": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 123,
+      "confidence": 0.7
+    },
+    "1.Go to Centralized Management > Manage Discovery > Dell VPLEX.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 124,
+      "confidence": 0.7
+    },
+    "124SolutionPack for Dell VPLEX": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 124,
+      "confidence": 0.7
+    },
+    "VPlexcli:/>cd notifications/call-home/snmp-traps/": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999943,
+      "is_bold": true,
+      "page": 125,
+      "confidence": 0.7
+    },
+    "Go to Operations > Workload Placement > Virtual Storage > Dell VPLEX Front-End Ports > Bandwidth Utilization": {
+      "is_heading": true,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 125,
       "confidence": 0.7
     },
-    "3. Create a trap using the command: create < trap-name >": {
+    "SolutionPack for Dell VPLEX125": {
       "is_heading": true,
-      "level": 10,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 125,
-      "confidence": 0.7
-    },
-    "< IP address >": {
-      "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 125,
@@ -1143,23 +2796,55 @@
     },
     "SolutionPack for Dell VxRail": {
       "is_heading": true,
-      "level": 10,
+      "level": 3,
+      "size": 24.0,
+      "is_bold": true,
+      "page": 126,
+      "confidence": 0.9
+    },
+    "126SolutionPack for Dell VxRail": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 126,
+      "confidence": 0.7
+    },
+    "d.Polling interval for Vmware vCenter collection: 30 minutes (Default)": {
+      "is_heading": true,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
-      "page": 129,
+      "page": 127,
+      "confidence": 0.7
+    },
+    "e.Polling interval for VM files only: 1 Hour (Default)": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 127,
       "confidence": 0.7
     },
     "SNMP Trap Configuration in VxRail Solution Pack": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 127,
       "confidence": 0.9
     },
+    "SolutionPack for Dell VxRail127": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 127,
+      "confidence": 0.7
+    },
     "Configuring SNMP Trap Receivers": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 225,
@@ -1167,7 +2852,7 @@
     },
     "Table 12. SNMP trap configuration details": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 10.0,
       "is_bold": true,
       "page": 128,
@@ -1175,47 +2860,119 @@
     },
     "Enabling SNMP Alarms/Traps for the Alerts:": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 226,
       "confidence": 0.9
     },
+    "3.Click Alarm Definitions.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 226,
+      "confidence": 0.7
+    },
+    "128SolutionPack for Dell VxRail": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 128,
+      "confidence": 0.7
+    },
     "Recommendations and limitations": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 129,
       "confidence": 0.9
     },
+    "SolutionPack for Dell VxRail129": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 129,
+      "confidence": 0.7
+    },
     "SolutionPack for Dell EMC XtremIO": {
       "is_heading": true,
-      "level": 10,
+      "level": 3,
+      "size": 24.0,
+      "is_bold": true,
+      "page": 130,
+      "confidence": 0.9
+    },
+    "a new data collection.": {
+      "is_heading": true,
+      "level": 15,
       "size": 9.0,
+      "is_bold": true,
+      "page": 130,
+      "confidence": 0.7
+    },
+    "130SolutionPack for Dell EMC XtremIO": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 130,
+      "confidence": 0.7
+    },
+    "2.Click Dell EMC XtremIO.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 131,
+      "confidence": 0.7
+    },
+    "SolutionPack for Dell EMC XtremIO131": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 131,
+      "confidence": 0.7
+    },
+    "132SolutionPack for Dell EMC XtremIO": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
       "is_bold": true,
       "page": 132,
       "confidence": 0.7
     },
     "SolutionPack for Hitachi Device Manager": {
       "is_heading": true,
-      "level": 10,
-      "size": 9.0,
+      "level": 3,
+      "size": 24.0,
       "is_bold": true,
-      "page": 139,
-      "confidence": 0.7
+      "page": 133,
+      "confidence": 0.9
     },
     "Preparing Hitachi Device Manager for discovery and": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 133,
       "confidence": 0.9
     },
+    "SolutionPack for Hitachi Device Manager133": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 133,
+      "confidence": 0.7
+    },
     "Preparing Hitachi Ops Center Configuration Manager": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 134,
@@ -1223,7 +2980,7 @@
     },
     "and Hitachi Ops Center Analyzer for discovery and": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 134,
@@ -1231,31 +2988,87 @@
     },
     "data collection through REST": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 134,
       "confidence": 0.9
     },
+    "11.Leave Enable Topology Backend on data collected checked.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 222,
+      "confidence": 0.7
+    },
+    "134SolutionPack for Hitachi Device Manager": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 134,
+      "confidence": 0.7
+    },
     "Discovery of Hitachi Device Manager through": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 135,
       "confidence": 0.9
     },
+    "2.Click Hitachi Device Manager.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 135,
+      "confidence": 0.7
+    },
+    "i.Click Validate and Add.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 136,
+      "confidence": 0.7
+    },
+    "SolutionPack for Hitachi Device Manager135": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 135,
+      "confidence": 0.7
+    },
+    "f.Click Validate and Add.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 136,
+      "confidence": 0.7
+    },
     "Embedded Performance Collection": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 148,
       "confidence": 0.9
     },
+    "136SolutionPack for Hitachi Device Manager": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 136,
+      "confidence": 0.7
+    },
     "Enabling the SMI-S certificate": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 148,
@@ -1263,31 +3076,87 @@
     },
     "Restarting the SMI-S provider": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 148,
       "confidence": 0.9
     },
+    "4.Click Update Certificate Files for SMI-S.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 148,
+      "confidence": 0.7
+    },
+    "6.Click Return to the default certificate, and click OK.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 148,
+      "confidence": 0.7
+    },
     "Enabling performance monitoring in Storage Navigator": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 149,
       "confidence": 0.9
+    },
+    "SolutionPack for Hitachi Device Manager137": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 137,
+      "confidence": 0.7
     },
     "Configuring embedded performance monitoring": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 149,
       "confidence": 0.9
     },
+    "a.Click Add new device.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 149,
+      "confidence": 0.7
+    },
+    "b.For HDS type, select Device Manager Collection.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 138,
+      "confidence": 0.7
+    },
+    "b.For HDS type, select Embedded Performance Collection.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 138,
+      "confidence": 0.7
+    },
+    "138SolutionPack for Hitachi Device Manager": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 138,
+      "confidence": 0.7
+    },
     "Limitations for XMLAPI and SMIS based Hitachi array discovery": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 139,
@@ -1295,87 +3164,263 @@
     },
     "Limitations for RESTAPI based Hitachi array discovery": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 139,
       "confidence": 0.9
     },
+    "SolutionPack for Hitachi Device Manager139": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 139,
+      "confidence": 0.7
+    },
     "SolutionPack for HP 3PAR StoreServ": {
       "is_heading": true,
-      "level": 10,
-      "size": 9.0,
+      "level": 3,
+      "size": 24.0,
       "is_bold": true,
-      "page": 142,
-      "confidence": 0.7
+      "page": 140,
+      "confidence": 0.9
     },
     "Preparing the system for discovery and data": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 140,
       "confidence": 0.9
     },
+    "140SolutionPack for HP 3PAR StoreServ": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 140,
+      "confidence": 0.7
+    },
     "Configuring HP 3PAR StoreServ systems for alert": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 141,
       "confidence": 0.9
     },
+    "SolutionPack for HP 3PAR StoreServ141": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 141,
+      "confidence": 0.7
+    },
     "Table 13. SNMP configuration details in 3PAR CLI": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 10.0,
+      "is_bold": true,
+      "page": 142,
+      "confidence": 0.7
+    },
+    "142SolutionPack for HP 3PAR StoreServ": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
       "is_bold": true,
       "page": 142,
       "confidence": 0.7
     },
     "SolutionPack for HPE Nimble": {
       "is_heading": true,
-      "level": 10,
-      "size": 9.0,
+      "level": 3,
+      "size": 24.0,
       "is_bold": true,
-      "page": 145,
+      "page": 143,
+      "confidence": 0.9
+    },
+    "SolutionPack for HPE Nimble143": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 143,
       "confidence": 0.7
     },
     "Configuring HPE Nimble devices for alert": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 144,
       "confidence": 0.9
     },
+    "IP of the HPE Nimble Device": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 144,
+      "confidence": 0.7
+    },
+    "Hostname of the HPE Nimble device": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 144,
+      "confidence": 0.7
+    },
+    "144SolutionPack for HPE Nimble": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 144,
+      "confidence": 0.7
+    },
+    "Single vApp installation, this parameter is the Dell SRM IP, and in a": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 145,
+      "confidence": 0.7
+    },
     "distributed environment it is the Primary Backend server IP.": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
+      "is_bold": true,
+      "page": 145,
+      "confidence": 0.7
+    },
+    "Port number of the SNMP trap destination. The default destination port": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 145,
+      "confidence": 0.7
+    },
+    "2.Go to Administration > Alerts and Monitoring > SNMP.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 145,
+      "confidence": 0.7
+    },
+    "SolutionPack for HPE Nimble145": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
       "is_bold": true,
       "page": 145,
       "confidence": 0.7
     },
     "SolutionPack for HP Storageworks XP": {
       "is_heading": true,
-      "level": 10,
+      "level": 3,
+      "size": 24.0,
+      "is_bold": true,
+      "page": 146,
+      "confidence": 0.9
+    },
+    "146SolutionPack for HP Storageworks XP": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 146,
+      "confidence": 0.7
+    },
+    "Hosts & Logical Groups Discovery.": {
+      "is_heading": true,
+      "level": 15,
       "size": 9.0,
+      "is_bold": true,
+      "page": 147,
+      "confidence": 0.7
+    },
+    "SolutionPack for HP Storageworks XP147": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 147,
+      "confidence": 0.7
+    },
+    "148SolutionPack for HP Storageworks XP": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 148,
+      "confidence": 0.7
+    },
+    "1.Browse to Discovery Center > Inventory Management > HP StorageWorks.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 149,
+      "confidence": 0.7
+    },
+    "b.For HP type, select Device Manager Collection.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 149,
+      "confidence": 0.7
+    },
+    "b.For HP type, select Embedded Performance Collection.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 149,
+      "confidence": 0.7
+    },
+    "SolutionPack for HP Storageworks XP149": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 149,
+      "confidence": 0.7
+    },
+    "150SolutionPack for HP Storageworks XP": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
       "is_bold": true,
       "page": 150,
       "confidence": 0.7
     },
     "SolutionPack for Huawei OceanStor": {
       "is_heading": true,
-      "level": 10,
-      "size": 9.0,
+      "level": 3,
+      "size": 24.0,
       "is_bold": true,
-      "page": 153,
+      "page": 151,
+      "confidence": 0.9
+    },
+    "152SolutionPack for Huawei OceanStor": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 152,
       "confidence": 0.7
     },
     "Configuring Huawei OceanStor for alert consolidation": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 153,
@@ -1383,7 +3428,7 @@
     },
     "Table 14. Trap server configurations in Huawei OceanStor array management console": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 10.0,
       "is_bold": true,
       "page": 153,
@@ -1391,39 +3436,87 @@
     },
     "SolutionPack for IBM DS": {
       "is_heading": true,
-      "level": 10,
-      "size": 9.0,
+      "level": 3,
+      "size": 24.0,
       "is_bold": true,
-      "page": 155,
-      "confidence": 0.7
+      "page": 154,
+      "confidence": 0.9
     },
     "Preparing the IBM DS system for discovery and data": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 154,
       "confidence": 0.9
     },
+    "154SolutionPack for IBM DS": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 154,
+      "confidence": 0.7
+    },
+    "SolutionPack for IBM DS155": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 155,
+      "confidence": 0.7
+    },
     "SolutionPack for IBM FlashSystem": {
       "is_heading": true,
-      "level": 10,
-      "size": 9.0,
+      "level": 3,
+      "size": 24.0,
       "is_bold": true,
-      "page": 158,
-      "confidence": 0.7
+      "page": 156,
+      "confidence": 0.9
     },
     "Preparing the IBM FlashSystem for discovery and": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 156,
       "confidence": 0.9
     },
+    "156SolutionPack for IBM FlashSystem": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 156,
+      "confidence": 0.7
+    },
+    "13.Enter Path to the xcli installation directory.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 157,
+      "confidence": 0.7
+    },
+    "2.Click IBM FlashSystem .": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 157,
+      "confidence": 0.7
+    },
     "Management IP address or hostname of the Array": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
+      "size": 9.000000000000014,
+      "is_bold": true,
+      "page": 157,
+      "confidence": 0.7
+    },
+    "●Password/IBM FlashSystem Unique Key": {
+      "is_heading": true,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 157,
@@ -1431,31 +3524,55 @@
     },
     "Password/IBM FlashSystem Unique Key": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 157,
       "confidence": 0.7
     },
-    "IBM Hyper-Scale Manager Hostname or IP address": {
+    "●IBM Hyper-Scale Manager Hostname or IP address": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 157,
+      "confidence": 0.7
+    },
+    "IBM Hyper-Scale Manager REST API Port - Default value is": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 157,
+      "confidence": 0.7
+    },
+    "SolutionPack for IBM FlashSystem157": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 157,
+      "confidence": 0.7
+    },
+    "158SolutionPack for IBM FlashSystem": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 158,
       "confidence": 0.7
     },
     "SolutionPack for IBM LPAR": {
       "is_heading": true,
-      "level": 10,
-      "size": 9.0,
+      "level": 3,
+      "size": 24.0,
       "is_bold": true,
-      "page": 162,
-      "confidence": 0.7
+      "page": 159,
+      "confidence": 0.9
     },
     "Configuring HMC for discovery": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 159,
@@ -1463,15 +3580,31 @@
     },
     "Generating a public and private key pair for HMC": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 159,
       "confidence": 0.9
     },
+    "SolutionPack for IBM LPAR159": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 159,
+      "confidence": 0.7
+    },
     "ssh-keygen -t rsa -f <location_of_the_private_key/name_of_ private_key_file> -N \"\"": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 204,
+      "confidence": 0.7
+    },
+    "ssh-keygen -t rsa -f /root/.ssh/id_rsa -N ””": {
+      "is_heading": true,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 204,
@@ -1479,7 +3612,7 @@
     },
     "chmod 600 /root/.ssh/id_rsa": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 204,
@@ -1487,7 +3620,7 @@
     },
     "chmod 644 /root/.ssh/id_rsa.pub": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 204,
@@ -1495,23 +3628,39 @@
     },
     "Importing a private key into the Collector": {
       "is_heading": true,
-      "level": 7,
+      "level": 11,
       "size": 14.0,
       "is_bold": true,
       "page": 204,
       "confidence": 0.9
     },
+    "chown apg:apg <private_key_file>": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 204,
+      "confidence": 0.7
+    },
     "Configuring LPARs for discovery": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 160,
       "confidence": 0.9
     },
+    "160SolutionPack for IBM LPAR": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 160,
+      "confidence": 0.7
+    },
     "Installing the SolutionPack for IBM LPAR": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 161,
@@ -1519,15 +3668,31 @@
     },
     "Adding and configuring HMC device in Discovery": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 161,
       "confidence": 0.9
     },
+    "8.Select the Authentication Type as:": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 161,
+      "confidence": 0.7
+    },
+    "SolutionPack for IBM LPAR161": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 161,
+      "confidence": 0.7
+    },
     "Adding and configuring VIO Server/Client in": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 162,
@@ -1535,11 +3700,19 @@
     },
     "SolutionPack Reconfiguration": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 162,
       "confidence": 0.9
+    },
+    "162SolutionPack for IBM LPAR": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 162,
+      "confidence": 0.7
     },
     "SolutionPack for IBM SAN Volume": {
       "is_heading": true,
@@ -1551,55 +3724,103 @@
     },
     "Preparing for discovery and data collection": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 163,
       "confidence": 0.9
     },
-    "SolutionPack for IBM SAN Volume Controller/Storwize": {
+    "SolutionPack for IBM SAN Volume Controller/Storwize163": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 163,
+      "confidence": 0.7
+    },
+    "18.Click IBM SAN Volume Controller/Storwize.": {
+      "is_heading": true,
+      "level": 15,
       "size": 9.0,
+      "is_bold": true,
+      "page": 164,
+      "confidence": 0.7
+    },
+    "22.Leave Enable performance synchronization checked.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 164,
+      "confidence": 0.7
+    },
+    "164SolutionPack for IBM SAN Volume Controller/Storwize": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
       "is_bold": true,
       "page": 164,
       "confidence": 0.7
     },
     "SolutionPack for IBM XIV": {
       "is_heading": true,
-      "level": 10,
-      "size": 9.0,
+      "level": 3,
+      "size": 24.0,
       "is_bold": true,
-      "page": 167,
-      "confidence": 0.7
+      "page": 165,
+      "confidence": 0.9
     },
     "Preparing the IBM XIV system for discovery and data": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 165,
       "confidence": 0.9
     },
+    "SolutionPack for IBM XIV165": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 165,
+      "confidence": 0.7
+    },
     "Discovery of LDAP users requires active GUI session": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": false,
       "page": 166,
       "confidence": 0.9
     },
+    "166SolutionPack for IBM XIV": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 166,
+      "confidence": 0.7
+    },
     "Max Storage Volume Response Time metric not collected": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": false,
       "page": 167,
       "confidence": 0.9
     },
+    "> [host] > Device Summary > [host] report.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 167,
+      "confidence": 0.7
+    },
     "No support for Used for File, LUN alias, and Replica 2 and Replica 3 details": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": false,
       "page": 167,
@@ -1607,15 +3828,15 @@
     },
     "Dashboards > Storage > Enterprise Capacity Dashboard > Usable Capacity by Pool": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 167,
       "confidence": 0.7
     },
-    "Operations > Chargeback > Chargeback by Group": {
+    "●Operations > Chargeback > Chargeback by Group": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 167,
@@ -1623,7 +3844,7 @@
     },
     "Explore > Storage Capacity > Storage Pools": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 167,
@@ -1631,7 +3852,7 @@
     },
     "Explore > Storage > LUNs": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 167,
@@ -1639,55 +3860,159 @@
     },
     "Explore > Storage > Replication": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
+      "is_bold": true,
+      "page": 167,
+      "confidence": 0.7
+    },
+    "SolutionPack for IBM XIV167": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
       "is_bold": true,
       "page": 167,
       "confidence": 0.7
     },
     "SolutionPack for Kubernetes": {
       "is_heading": true,
-      "level": 10,
-      "size": 9.0,
+      "level": 3,
+      "size": 24.0,
       "is_bold": true,
-      "page": 170,
-      "confidence": 0.7
+      "page": 168,
+      "confidence": 0.9
     },
     "Creating an SRM service account": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 168,
       "confidence": 0.9
     },
+    "168SolutionPack for Kubernetes": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 168,
+      "confidence": 0.7
+    },
+    "SolutionPack for Kubernetes169": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 169,
+      "confidence": 0.7
+    },
+    "170SolutionPack for Kubernetes": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 170,
+      "confidence": 0.7
+    },
     "SolutionPack for Microsoft Azure": {
       "is_heading": true,
-      "level": 10,
+      "level": 3,
+      "size": 24.0,
+      "is_bold": true,
+      "page": 171,
+      "confidence": 0.9
+    },
+    "SolutionPack for Microsoft Azure171": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 171,
+      "confidence": 0.7
+    },
+    "2.Click Microsoft Azure Account.": {
+      "is_heading": true,
+      "level": 15,
       "size": 9.0,
+      "is_bold": true,
+      "page": 172,
+      "confidence": 0.7
+    },
+    "d.Enter Resource Group Name.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 172,
+      "confidence": 0.7
+    },
+    "172SolutionPack for Microsoft Azure": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
       "is_bold": true,
       "page": 172,
       "confidence": 0.7
     },
     "SolutionPack for Microsoft Hyper-V": {
       "is_heading": true,
-      "level": 10,
-      "size": 9.0,
-      "is_bold": true,
-      "page": 175,
-      "confidence": 0.7
-    },
-    "Configuring credentials for SolutionPack for": {
-      "is_heading": true,
-      "level": 5,
-      "size": 20.0,
+      "level": 3,
+      "size": 24.0,
       "is_bold": true,
       "page": 173,
       "confidence": 0.9
     },
-    "Using a test script to query WMI objects": {
+    "Configuring credentials for SolutionPack for": {
       "is_heading": true,
       "level": 5,
+      "size": 20.00000000000003,
+      "is_bold": true,
+      "page": 173,
+      "confidence": 0.9
+    },
+    "SolutionPack for Microsoft Hyper-V173": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 173,
+      "confidence": 0.7
+    },
+    "PowerShell -C Set-ExecutionPolicy Unrestricted": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 174,
+      "confidence": 0.7
+    },
+    "new alerting on data collection.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 174,
+      "confidence": 0.7
+    },
+    "9.Leave Enable Topology Backend on data collected checked.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 174,
+      "confidence": 0.7
+    },
+    "174SolutionPack for Microsoft Hyper-V": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 174,
+      "confidence": 0.7
+    },
+    "Using a test script to query WMI objects": {
+      "is_heading": true,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 175,
@@ -1695,31 +4020,47 @@
     },
     "Table 15. Array platform Ssupported for iSCSI": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 10.0,
       "is_bold": true,
       "page": 175,
       "confidence": 0.7
     },
-    "Array platform supported for iSCSI": {
+    "SolutionPackArray platform supported for iSCSI": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 225,
       "confidence": 0.7
     },
-    "SolutionPack for Microsoft SQL Server": {
+    "Dell VMAX/PowerMaxDell EMC XtremIO": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
-      "page": 180,
+      "page": 225,
       "confidence": 0.7
+    },
+    "SolutionPack for Microsoft Hyper-V175": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 175,
+      "confidence": 0.7
+    },
+    "SolutionPack for Microsoft SQL Server": {
+      "is_heading": true,
+      "level": 3,
+      "size": 24.0,
+      "is_bold": true,
+      "page": 176,
+      "confidence": 0.9
     },
     "User privilege requirements for SolutionPack for": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 176,
@@ -1727,15 +4068,31 @@
     },
     "Microsoft SQL authentication": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": false,
       "page": 176,
       "confidence": 0.9
     },
+    "176SolutionPack for Microsoft SQL Server": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 176,
+      "confidence": 0.7
+    },
+    "Securable grants for Connect SQL, View any definitions, and View server state": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 177,
+      "confidence": 0.7
+    },
     "Configuring the SolutionPack with an unprivileged": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 187,
@@ -1743,23 +4100,71 @@
     },
     "Granting permission to a non-admin user": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 177,
       "confidence": 0.9
     },
+    "SolutionPack for Microsoft SQL Server177": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 177,
+      "confidence": 0.7
+    },
     "Installing the SolutionPack for Microsoft SQL": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 178,
       "confidence": 0.9
     },
+    "select Add a new alerting on data collection.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 185,
+      "confidence": 0.7
+    },
+    "178SolutionPack for Microsoft SQL Server": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 178,
+      "confidence": 0.7
+    },
+    "18.Click Discovery Center > Inventory Management.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 179,
+      "confidence": 0.7
+    },
+    "19.Click Microsoft SQL Server.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 179,
+      "confidence": 0.7
+    },
+    "20.Click Add new device.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 179,
+      "confidence": 0.7
+    },
     "Enabling SSL enabled MS-SQL instance discovery": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 179,
@@ -1767,7 +4172,7 @@
     },
     "export _JAVA_OPTIONS=-Djsse.enableCBCProtection=false -Linux": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 179,
@@ -1775,7 +4180,7 @@
     },
     "./manage-modules.sh service restart all": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 179,
@@ -1783,7 +4188,7 @@
     },
     "-Djsse.enableCBCProtection=false": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 179,
@@ -1791,7 +4196,7 @@
     },
     "manage-modules.cmd service restart collector-manager microsoft-sqlserver": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 179,
@@ -1799,23 +4204,39 @@
     },
     "manage-modules.cmd service restart script-engine Default": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 179,
       "confidence": 0.7
     },
-    "SolutionPack for NetApp FAS": {
+    "SolutionPack for Microsoft SQL Server179": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
-      "page": 184,
+      "page": 179,
       "confidence": 0.7
+    },
+    "180SolutionPack for Microsoft SQL Server": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 180,
+      "confidence": 0.7
+    },
+    "SolutionPack for NetApp FAS": {
+      "is_heading": true,
+      "level": 3,
+      "size": 24.0,
+      "is_bold": true,
+      "page": 181,
+      "confidence": 0.9
     },
     "Configuring access credentials": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 181,
@@ -1824,30 +4245,62 @@
     "Preparing NetApp FAS for discovery and data": {
       "is_heading": true,
       "level": 5,
-      "size": 20.0,
+      "size": 20.00000000000003,
       "is_bold": true,
       "page": 181,
       "confidence": 0.9
     },
+    "SolutionPack for NetApp FAS181": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 181,
+      "confidence": 0.7
+    },
     "Configuring NetApp arrays for alert consolidation": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 182,
       "confidence": 0.9
     },
+    "182SolutionPack for NetApp FAS": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 182,
+      "confidence": 0.7
+    },
     "Table 16. Supported use cases": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 10.0,
+      "is_bold": true,
+      "page": 183,
+      "confidence": 0.7
+    },
+    "Use caseSupport (C mode)": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 183,
+      "confidence": 0.7
+    },
+    "SolutionPack for NetApp FAS183": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
       "is_bold": true,
       "page": 183,
       "confidence": 0.7
     },
     "Limitations in global reports": {
       "is_heading": true,
-      "level": 7,
+      "level": 11,
       "size": 14.0,
       "is_bold": false,
       "page": 184,
@@ -1855,7 +4308,7 @@
     },
     "Explore > Storage Capacity > Service Level Capacity": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 184,
@@ -1863,15 +4316,39 @@
     },
     "Explore > Storage Capacity > Array by Service Level": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 184,
       "confidence": 0.7
     },
-    "Explore > Storage > RAID/Parity Group": {
+    "In Dashboards > Storage > Enterprise Capacity Dashboard > Usable Capacity by Type > Used for Block, the OnTap": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 184,
+      "confidence": 0.7
+    },
+    "In Explore > Storage > NAS File Systems, Snapshot Total, Snapshot Used, and Snapshot Utilization are not": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 184,
+      "confidence": 0.7
+    },
+    "In Explore > Storage Capacity > Storage Pools, Overhead Capacity is not applicable in the File Systems/Flex Vols": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 184,
+      "confidence": 0.7
+    },
+    "○Explore > Storage > RAID/Parity Group": {
+      "is_heading": true,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 184,
@@ -1879,7 +4356,15 @@
     },
     "Explore > Storage Capacity > NAS Pools": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 184,
+      "confidence": 0.7
+    },
+    "In Dashboards > Storage > Enterprise Capacity Dashboard > Used Capacity by Type and Explore > Storage > More": {
+      "is_heading": true,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 184,
@@ -1887,55 +4372,119 @@
     },
     "Limitations in the inventory reports": {
       "is_heading": true,
-      "level": 7,
+      "level": 11,
       "size": 14.0,
       "is_bold": false,
       "page": 184,
       "confidence": 0.9
     },
+    "184SolutionPack for NetApp FAS": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 184,
+      "confidence": 0.7
+    },
     "SolutionPack for Oracle Database": {
       "is_heading": true,
-      "level": 10,
+      "level": 3,
+      "size": 24.0,
+      "is_bold": true,
+      "page": 185,
+      "confidence": 0.9
+    },
+    "SolutionPack for Oracle Database185": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 185,
+      "confidence": 0.7
+    },
+    "10.Leave Activate the FailOver-Filter checked.": {
+      "is_heading": true,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
-      "page": 189,
+      "page": 186,
+      "confidence": 0.7
+    },
+    "186SolutionPack for Oracle Database": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 186,
       "confidence": 0.7
     },
     "Topology for the SolutionPack for Oracle Database": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 187,
       "confidence": 0.9
     },
+    "SolutionPack for Oracle Database187": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 187,
+      "confidence": 0.7
+    },
     "Discovery Center requirements": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 188,
       "confidence": 0.9
+    },
+    "both Oracle Database and Host Configuration.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 188,
+      "confidence": 0.7
     },
     "Configuring sudo rights for ASM scripts": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 188,
       "confidence": 0.9
     },
+    "188SolutionPack for Oracle Database": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 188,
+      "confidence": 0.7
+    },
+    "SolutionPack for Oracle Database189": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 189,
+      "confidence": 0.7
+    },
     "SolutionPack for Oracle MySQL Database": {
       "is_heading": true,
-      "level": 10,
-      "size": 9.0,
+      "level": 3,
+      "size": 24.0,
       "is_bold": true,
-      "page": 191,
-      "confidence": 0.7
+      "page": 190,
+      "confidence": 0.9
     },
     "Preparing MySQL database for discovery and data": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 190,
@@ -1943,31 +4492,71 @@
     },
     "SELECT PASSWORD('mypass');": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 190,
       "confidence": 0.7
     },
-    "SolutionPack for Physical Hosts": {
+    "190SolutionPack for Oracle MySQL Database": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 190,
+      "confidence": 0.7
+    },
+    "9.Select Administration Web-Service Instance as the default and click Install.": {
+      "is_heading": true,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
-      "page": 211,
+      "page": 191,
+      "confidence": 0.7
+    },
+    "SolutionPack for Oracle MySQL Database191": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 191,
+      "confidence": 0.7
+    },
+    "SolutionPack for Physical Hosts": {
+      "is_heading": true,
+      "level": 3,
+      "size": 24.0,
+      "is_bold": true,
+      "page": 192,
+      "confidence": 0.9
+    },
+    "192SolutionPack for Physical Hosts": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 192,
       "confidence": 0.7
     },
     "Table 17. Authentication methods for Physical Hosts": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 10.0,
+      "is_bold": true,
+      "page": 193,
+      "confidence": 0.7
+    },
+    "OS TypeProtocolPassword basedKey basedCertificate based": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
       "is_bold": true,
       "page": 193,
       "confidence": 0.7
     },
     "Preparing the hosts for discovery and data collection": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 193,
@@ -1975,7 +4564,7 @@
     },
     "Guidelines for SNIA libraries and HBA drivers": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 193,
@@ -1983,15 +4572,23 @@
     },
     "Windows host configuration for discovery and data collection": {
       "is_heading": true,
-      "level": 6,
-      "size": 16.0,
+      "level": 8,
+      "size": 16.00000000000003,
       "is_bold": true,
       "page": 193,
       "confidence": 0.9
     },
+    "SolutionPack for Physical Hosts193": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 193,
+      "confidence": 0.7
+    },
     "Configuring Centrify on Windows host": {
       "is_heading": true,
-      "level": 7,
+      "level": 11,
       "size": 14.0,
       "is_bold": false,
       "page": 194,
@@ -1999,7 +4596,7 @@
     },
     "Types of discovery allowed by different privilege levels": {
       "is_heading": true,
-      "level": 7,
+      "level": 11,
       "size": 14.0,
       "is_bold": true,
       "page": 194,
@@ -2007,15 +4604,31 @@
     },
     "Table 18. Allowed discovery types": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 10.0,
+      "is_bold": true,
+      "page": 194,
+      "confidence": 0.7
+    },
+    "Data in reportsNon-Admin Local Admin user": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 195,
+      "confidence": 0.7
+    },
+    "194SolutionPack for Physical Hosts": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
       "is_bold": true,
       "page": 194,
       "confidence": 0.7
     },
     "Table 18. Allowed discovery types (continued)": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 10.0,
       "is_bold": true,
       "page": 195,
@@ -2023,7 +4636,7 @@
     },
     "Customizing a WinRM URL prefix": {
       "is_heading": true,
-      "level": 7,
+      "level": 11,
       "size": 14.0,
       "is_bold": true,
       "page": 195,
@@ -2031,7 +4644,15 @@
     },
     "winrm set winrm/config/listener?Address=*+Transport=HTTP @": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 195,
+      "confidence": 0.7
+    },
+    "winrm set winrm/config/listener?Address=*+Transport=HTTPS": {
+      "is_heading": true,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 195,
@@ -2039,15 +4660,31 @@
     },
     "Adding a non-admin user to a group": {
       "is_heading": true,
-      "level": 8,
+      "level": 13,
       "size": 12.0,
       "is_bold": true,
       "page": 195,
       "confidence": 0.9
     },
+    "SolutionPack for Physical Hosts195": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 195,
+      "confidence": 0.7
+    },
+    "3.On the Computer management window, click Local Users and Groups.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 196,
+      "confidence": 0.7
+    },
     "Retrieving the SID of a non-admin user": {
       "is_heading": true,
-      "level": 8,
+      "level": 13,
       "size": 12.0,
       "is_bold": true,
       "page": 196,
@@ -2055,23 +4692,23 @@
     },
     "Adding a non-admin SID to root SDDL": {
       "is_heading": true,
-      "level": 8,
+      "level": 13,
       "size": 12.0,
       "is_bold": true,
       "page": 196,
       "confidence": 0.9
     },
-    "winrm set winrm/config/service @{RootSDDL=\"O:NSG:BAD:P(A;;GA;;;BA)(A;;GA;;; <non-admin-": {
+    "winrm set winrm/config/service @{RootSDDL=\"O:NSG:BAD:P(A;;GA;;;BA)(A;;GA;;;<non-admin-": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 196,
       "confidence": 0.7
     },
-    "sid> )S:P(AU;FA;GA;;;WD)(AU;SA;GWGX;;;WD)\"}": {
+    "sid>)S:P(AU;FA;GA;;;WD)(AU;SA;GWGX;;;WD)\"}": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 196,
@@ -2079,15 +4716,23 @@
     },
     "Using the host configuration utility": {
       "is_heading": true,
-      "level": 7,
+      "level": 11,
       "size": 14.0,
       "is_bold": true,
       "page": 196,
       "confidence": 0.9
     },
+    "196SolutionPack for Physical Hosts": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 196,
+      "confidence": 0.7
+    },
     "Table 19. Host Configuration utility command options": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 10.0,
       "is_bold": true,
       "page": 197,
@@ -2095,23 +4740,63 @@
     },
     "Sample usage of hostconfig-srm.ps1 script": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
+      "is_bold": true,
+      "page": 197,
+      "confidence": 0.7
+    },
+    "2.Go to Features > Group Policy Management > Forest Domain name > Domains > Domain Name > Default Domain": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 197,
+      "confidence": 0.7
+    },
+    "4.Select Default Domain Policy > Computer Configuration > Policies > Administrative Templates > Windows": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 197,
+      "confidence": 0.7
+    },
+    "Components > Windows Remote Management.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 197,
+      "confidence": 0.7
+    },
+    "SolutionPack for Physical Hosts197": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
       "is_bold": true,
       "page": 197,
       "confidence": 0.7
     },
     "Configuring firewall port exception using group policy": {
       "is_heading": true,
-      "level": 7,
+      "level": 11,
       "size": 14.0,
       "is_bold": true,
       "page": 198,
       "confidence": 0.9
     },
+    "2.Go to Computer Configurations > Policies > Windows Settings > Windows Firewall with Advanced Security >": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 198,
+      "confidence": 0.7
+    },
     "Administrative Templates > System > Group Policy": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 198,
@@ -2119,47 +4804,135 @@
     },
     "Generating a .pfx certificate": {
       "is_heading": true,
-      "level": 8,
+      "level": 13,
       "size": 12.0,
       "is_bold": true,
       "page": 198,
       "confidence": 0.9
     },
+    "198SolutionPack for Physical Hosts": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 198,
+      "confidence": 0.7
+    },
+    "4.Click File > Add/Remove Snap-in.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 199,
+      "confidence": 0.7
+    },
+    "5.Select Certificates under Available snap-ins and click Add.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 199,
+      "confidence": 0.7
+    },
+    "6.Select Computer account.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 199,
+      "confidence": 0.7
+    },
     "Exporting the .pfx certificate": {
       "is_heading": true,
-      "level": 8,
+      "level": 13,
       "size": 12.0,
       "is_bold": true,
       "page": 199,
       "confidence": 0.9
+    },
+    "5.Under Details, click Copy to File.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 199,
+      "confidence": 0.7
     },
     "Importing the .pfx certificate": {
       "is_heading": true,
-      "level": 8,
+      "level": 13,
       "size": 12.0,
       "is_bold": true,
       "page": 199,
       "confidence": 0.9
     },
+    "SolutionPack for Physical Hosts199": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 199,
+      "confidence": 0.7
+    },
+    "3.In the Console window, click Certificates (Local Computer) > Personal > Certificates": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 200,
+      "confidence": 0.7
+    },
     "Generating a .cer file": {
       "is_heading": true,
-      "level": 8,
+      "level": 13,
       "size": 12.0,
       "is_bold": true,
       "page": 200,
       "confidence": 0.9
+    },
+    "1.Go to Start > Run > mmc > Certificates (Local Computer) > Personal > Certificates": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 200,
+      "confidence": 0.7
+    },
+    "3.Under Details, click Copy to File.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 200,
+      "confidence": 0.7
+    },
+    "4.Select No, do not export the private keys.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 200,
+      "confidence": 0.7
     },
     "Importing a .cer file": {
       "is_heading": true,
-      "level": 8,
+      "level": 13,
       "size": 12.0,
       "is_bold": true,
       "page": 200,
       "confidence": 0.9
     },
+    "200SolutionPack for Physical Hosts": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 200,
+      "confidence": 0.7
+    },
     "UNIX host/LPAR (VIO Server/Client) configuration for discovery": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 201,
@@ -2167,7 +4940,7 @@
     },
     "Software to preinstall on UNIX hosts for discovery": {
       "is_heading": true,
-      "level": 7,
+      "level": 11,
       "size": 14.0,
       "is_bold": false,
       "page": 201,
@@ -2175,23 +4948,39 @@
     },
     "Configuring sudo for host/LPAR (VIO Server/Client) discovery": {
       "is_heading": true,
-      "level": 7,
+      "level": 11,
       "size": 14.0,
       "is_bold": true,
       "page": 201,
       "confidence": 0.9
     },
+    "SolutionPack for Physical Hosts201": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 201,
+      "confidence": 0.7
+    },
     "Figure 1. Sample sudoers file for Linux OS": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
+      "is_bold": true,
+      "page": 202,
+      "confidence": 0.7
+    },
+    "202SolutionPack for Physical Hosts": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
       "is_bold": true,
       "page": 202,
       "confidence": 0.7
     },
     "Configuring PowerBroker for host/LPAR(VIO Server/Client) discovery": {
       "is_heading": true,
-      "level": 7,
+      "level": 11,
       "size": 14.0,
       "is_bold": true,
       "page": 203,
@@ -2199,7 +4988,7 @@
     },
     "Figure 2. Screenshot 1: which pbrun": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 203,
@@ -2207,15 +4996,23 @@
     },
     "Figure 3. Screenshot 2: Policy Files for a configuration": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
+      "is_bold": true,
+      "page": 203,
+      "confidence": 0.7
+    },
+    "SolutionPack for Physical Hosts203": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
       "is_bold": true,
       "page": 203,
       "confidence": 0.7
     },
     "Configuring centrify dzdo for host/LPAR(VIO Server/Client) discovery": {
       "is_heading": true,
-      "level": 7,
+      "level": 11,
       "size": 14.0,
       "is_bold": true,
       "page": 204,
@@ -2223,15 +5020,23 @@
     },
     "Generating a public and private key pair": {
       "is_heading": true,
-      "level": 7,
+      "level": 11,
       "size": 14.0,
       "is_bold": true,
       "page": 204,
       "confidence": 0.9
     },
+    "204SolutionPack for Physical Hosts": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 204,
+      "confidence": 0.7
+    },
     "Configuring SSH authentication": {
       "is_heading": true,
-      "level": 7,
+      "level": 11,
       "size": 14.0,
       "is_bold": true,
       "page": 205,
@@ -2239,39 +5044,79 @@
     },
     "Discovery via Host Agent for UNIX/Linux": {
       "is_heading": true,
-      "level": 8,
+      "level": 13,
       "size": 12.0,
       "is_bold": true,
       "page": 205,
       "confidence": 0.9
     },
+    "SolutionPack for Physical Hosts205": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 205,
+      "confidence": 0.7
+    },
     "Configuring ESX hosts to collect PowerPath metrics": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 206,
       "confidence": 0.9
     },
+    "206SolutionPack for Physical Hosts": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 206,
+      "confidence": 0.7
+    },
     "Configuring hosts to collect PowerPath metrics": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 207,
       "confidence": 0.9
     },
+    "SolutionPack for Physical Hosts207": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 207,
+      "confidence": 0.7
+    },
     "SolutionPack reconfiguration": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 208,
       "confidence": 0.9
     },
+    "Specify the OS type drop-down menu.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 208,
+      "confidence": 0.7
+    },
+    "208SolutionPack for Physical Hosts": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 208,
+      "confidence": 0.7
+    },
     "Table 20. Network Default Port": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 10.0,
       "is_bold": true,
       "page": 209,
@@ -2279,120 +5124,432 @@
     },
     "Adding devices to discovery groups": {
       "is_heading": true,
-      "level": 7,
+      "level": 11,
       "size": 14.0,
       "is_bold": true,
       "page": 209,
       "confidence": 0.9
     },
+    "1.Click System Admin > Settings > Manage Discovery Backends.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 209,
+      "confidence": 0.7
+    },
+    "7.Navigate to Discovery > Discovery Center > Manage Discovery.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 209,
+      "confidence": 0.7
+    },
+    "10.Click Add new Discovery group.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 209,
+      "confidence": 0.7
+    },
+    "13.Under Credentials, click Add new entry.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 209,
+      "confidence": 0.7
+    },
+    "19.Under Hostname or IP address, click Add new entry.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 209,
+      "confidence": 0.7
+    },
+    "SolutionPack for Physical Hosts209": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 209,
+      "confidence": 0.7
+    },
+    "29.Click Import to Collected Devices.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 210,
+      "confidence": 0.7
+    },
     "Configuring Dell SRM to search for additional paths": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 210,
       "confidence": 0.9
     },
+    "2.Click the Administration.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 210,
+      "confidence": 0.7
+    },
+    "3.Navigate to Discovery > SolutionPacks > Installed SolutionPacks.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 210,
+      "confidence": 0.7
+    },
+    "210SolutionPack for Physical Hosts": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 210,
+      "confidence": 0.7
+    },
     "Table 21. iSCSI Support": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 10.0,
       "is_bold": true,
       "page": 211,
       "confidence": 0.7
     },
-    "Array Platform Supported for iSCSI": {
+    "SolutionPackArray Platform Supported for iSCSI": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
+      "is_bold": true,
+      "page": 211,
+      "confidence": 0.7
+    },
+    "●For Dashboards > Hosts:": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 211,
+      "confidence": 0.7
+    },
+    "SolutionPack for Physical Hosts211": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
       "is_bold": true,
       "page": 211,
       "confidence": 0.7
     },
     "SolutionPack for Pure Storage": {
       "is_heading": true,
-      "level": 10,
+      "level": 3,
+      "size": 24.0,
+      "is_bold": true,
+      "page": 212,
+      "confidence": 0.9
+    },
+    "or select Add a new alerting on data collection.": {
+      "is_heading": true,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
-      "page": 215,
+      "page": 212,
+      "confidence": 0.7
+    },
+    "If you select Add a new alerting on data collection, Alerting Web-Service Instance drop-down should be left as": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 212,
+      "confidence": 0.7
+    },
+    "212SolutionPack for Pure Storage": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 212,
+      "confidence": 0.7
+    },
+    "If you select Add a new Topology Service, provide information about the Topology Service hostname or IP address": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 213,
+      "confidence": 0.7
+    },
+    "and the relevant Web-Service Gateway. In Topology Service hostname or IP address field, specify the Primary": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 213,
+      "confidence": 0.7
+    },
+    "Collection interval for Performance fields respectively.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 213,
+      "confidence": 0.7
+    },
+    "Leave Administration Web-Service Instance field as default.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 213,
       "confidence": 0.7
     },
     "Adding Pure1 for power consumption data": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 213,
       "confidence": 0.9
     },
+    "SolutionPack for Pure Storage213": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 213,
+      "confidence": 0.7
+    },
     "Configuring Pure Storage arrays for alert": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 214,
       "confidence": 0.9
     },
+    "2.Go to Settings > System.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 214,
+      "confidence": 0.7
+    },
+    "Notification, and Community.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 214,
+      "confidence": 0.7
+    },
+    "Notification, User, and Auth Protocol.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 214,
+      "confidence": 0.7
+    },
     "Table 22. Unsupported properties and metrics in Pure REST API 2.x": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 10.0,
+      "is_bold": true,
+      "page": 214,
+      "confidence": 0.7
+    },
+    "214SolutionPack for Pure Storage": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
       "is_bold": true,
       "page": 214,
       "confidence": 0.7
     },
     "Table 22. Unsupported properties and metrics in Pure REST API 2.x (continued)": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 10.0,
+      "is_bold": true,
+      "page": 215,
+      "confidence": 0.7
+    },
+    "SolutionPack for Pure Storage215": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
       "is_bold": true,
       "page": 215,
       "confidence": 0.7
     },
     "SolutionPack for ServiceNow": {
       "is_heading": true,
-      "level": 10,
-      "size": 9.0,
+      "level": 3,
+      "size": 24.0,
       "is_bold": true,
-      "page": 218,
-      "confidence": 0.7
+      "page": 216,
+      "confidence": 0.9
     },
     "Integrating SRM with ServiceNow": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 216,
       "confidence": 0.9
     },
+    "3.Select the Enable Alert Notification checkbox.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 216,
+      "confidence": 0.7
+    },
+    "3.Go to System Update Sets > Retrieved Update Sets.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 216,
+      "confidence": 0.7
+    },
+    "4.Click Import Update Set from XML.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999972,
+      "is_bold": true,
+      "page": 216,
+      "confidence": 0.7
+    },
+    "8.Click Preview Update Set.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 216,
+      "confidence": 0.7
+    },
+    "10.Click Commit Update Set.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 216,
+      "confidence": 0.7
+    },
+    "216SolutionPack for ServiceNow": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 216,
+      "confidence": 0.7
+    },
+    "9.In Configuration for Servicenow Backend Web-Service, for four VM installations, From the Web-Service Gateway": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 217,
+      "confidence": 0.7
+    },
+    "2.In Custom certificate, select No.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 217,
+      "confidence": 0.7
+    },
+    "SolutionPack for ServiceNow217": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 217,
+      "confidence": 0.7
+    },
     "Selecting the devices for alerts": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 218,
       "confidence": 0.9
+    },
+    "1.Go to CONFIG > ServiceNow > Device Selection.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 218,
+      "confidence": 0.7
     },
     "Configuring alerts for the selected devices": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 218,
       "confidence": 0.9
     },
+    "1.Go to CONFIG > ServiceNow > Device Alert Configuration.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 218,
+      "confidence": 0.7
+    },
     "Retrieving alert details from ServiceNow": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 218,
       "confidence": 0.9
     },
+    "218SolutionPack for ServiceNow": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 218,
+      "confidence": 0.7
+    },
     "SolutionPack for System Health": {
       "is_heading": true,
-      "level": 10,
-      "size": 9.0,
+      "level": 3,
+      "size": 24.0,
+      "is_bold": true,
+      "page": 219,
+      "confidence": 0.9
+    },
+    "SolutionPack for System Health219": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 219,
+      "confidence": 0.7
+    },
+    "220SolutionPack for System Health": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
       "is_bold": true,
       "page": 220,
       "confidence": 0.7
@@ -2407,47 +5564,103 @@
     },
     "Configuring the SolutionPack to collect PowerPath": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 221,
       "confidence": 0.9
     },
-    "SolutionPack for VMware vSphere vSAN & VxRail": {
+    "SolutionPack for VMware vSphere vSAN & VxRail221": {
       "is_heading": true,
-      "level": 10,
-      "size": 9.0,
+      "level": 15,
+      "size": 8.999999999999993,
       "is_bold": true,
-      "page": 227,
+      "page": 221,
       "confidence": 0.7
     },
     "Installing this SolutionPack": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 222,
       "confidence": 0.9
     },
+    "7.To receive alerts, select Enable the Host PowerPath Alerts.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 222,
+      "confidence": 0.7
+    },
+    "222SolutionPack for VMware vSphere vSAN & VxRail": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 222,
+      "confidence": 0.7
+    },
     "Table 23. Metric collection level, polling intervals, collection thread settings, and the re-synch interval": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 10.0,
       "is_bold": true,
       "page": 223,
       "confidence": 0.7
     },
-    "Level 1 and 2": {
+    "VMware vSphere --Include Collection Include Collection": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 223,
       "confidence": 0.7
     },
+    "metrics for PowerPath Bus.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 223,
+      "confidence": 0.7
+    },
+    "performance metrics for PowerPath LUNs.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 223,
+      "confidence": 0.7
+    },
+    "25.Click VMware vCenter (vmware-vcenter-collect <version>) for data collection and/or VMware vCenter (vmware-": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 223,
+      "confidence": 0.7
+    },
+    "SolutionPack for VMware vSphere vSAN & VxRail223": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 223,
+      "confidence": 0.7
+    },
+    "224SolutionPack for VMware vSphere vSAN & VxRail": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 224,
+      "confidence": 0.7
+    },
     "Table 24. Array platform supported for iSCSI": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 10.0,
       "is_bold": true,
       "page": 225,
@@ -2455,7 +5668,7 @@
     },
     "SNMP Trap Configuration in VMware vSphere vSAN &": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 225,
@@ -2463,23 +5676,47 @@
     },
     "Table 25. SNMP trap configuration details": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 10.0,
+      "is_bold": true,
+      "page": 225,
+      "confidence": 0.7
+    },
+    "SolutionPack for VMware vSphere vSAN & VxRail225": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
       "is_bold": true,
       "page": 225,
       "confidence": 0.7
     },
     "Table 25. SNMP trap configuration details (continued)": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 10.0,
       "is_bold": true,
       "page": 226,
       "confidence": 0.7
     },
+    "226SolutionPack for VMware vSphere vSAN & VxRail": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 226,
+      "confidence": 0.7
+    },
+    "SolutionPack for VMware vSphere vSAN & VxRail227": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 227,
+      "confidence": 0.7
+    },
     "Viewing all known devices and testing connectivity": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 229,
@@ -2487,7 +5724,7 @@
     },
     "Changing device configuration": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 229,
@@ -2495,15 +5732,31 @@
     },
     "Adding a new device manually": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 229,
       "confidence": 0.9
     },
+    "1.Browse to Administration > Discovery > Manage Discovery.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999972,
+      "is_bold": true,
+      "page": 229,
+      "confidence": 0.7
+    },
+    "5.Click Validate and add.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 229,
+      "confidence": 0.7
+    },
     "Adding devices using CSV files": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 230,
@@ -2511,15 +5764,47 @@
     },
     "Importing a CSV file": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 230,
       "confidence": 0.9
     },
+    "1.Browse to Administration > Discovery > Manage Discovery > SolutionPack.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 231,
+      "confidence": 0.7
+    },
+    "2.On the Collected Devices tab, click Import.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 230,
+      "confidence": 0.7
+    },
+    "3.For Merge the devices to the existing ones?": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 230,
+      "confidence": 0.7
+    },
+    "2.On the Collected Devices tab, click Export.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 230,
+      "confidence": 0.7
+    },
     "Exporting a CSV file template": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 231,
@@ -2527,7 +5812,7 @@
     },
     "Add devices using discovery": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 231,
@@ -2535,7 +5820,7 @@
     },
     "Registering a new collector server": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 231,
@@ -2543,15 +5828,47 @@
     },
     "Create a discovery group": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 232,
       "confidence": 0.9
     },
+    "2.On the Collected Devices tab, click Discovery.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 232,
+      "confidence": 0.7
+    },
+    "4.Select a Discovery Mode.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 232,
+      "confidence": 0.7
+    },
+    "5.For Automatically distribute results?:": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.000000000000014,
+      "is_bold": true,
+      "page": 232,
+      "confidence": 0.7
+    },
+    "the Discovery Results tab.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 233,
+      "confidence": 0.7
+    },
     "Distribute (import) discovery results": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 233,
@@ -2559,15 +5876,23 @@
     },
     "Table 26. Physical host discovery methods": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 10.0,
+      "is_bold": true,
+      "page": 233,
+      "confidence": 0.7
+    },
+    "Discovery MechanismOSSolutionPack": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
       "is_bold": true,
       "page": 233,
       "confidence": 0.7
     },
     "Enabling passive host discovery": {
       "is_heading": true,
-      "level": 7,
+      "level": 11,
       "size": 14.0,
       "is_bold": true,
       "page": 234,
@@ -2575,23 +5900,55 @@
     },
     "Discovering hosts via host containers": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 234,
       "confidence": 0.9
     },
+    "2.Click Host configuration": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 234,
+      "confidence": 0.7
+    },
+    "3.Click Add New Device.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 234,
+      "confidence": 0.7
+    },
+    "Device Config Wizard 235": {
+      "is_heading": true,
+      "level": 15,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 235,
+      "confidence": 0.7
+    },
     "Confirming report creation": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 236,
       "confidence": 0.9
     },
+    "1.Go to User Interface > Report Library.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 236,
+      "confidence": 0.7
+    },
     "What to do if data does not appear in any reports": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 236,
@@ -2599,7 +5956,7 @@
     },
     "Running a scheduled task to import data into reports": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 237,
@@ -2607,23 +5964,39 @@
     },
     "What to do if data does not appear in some reports": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 237,
       "confidence": 0.9
     },
+    "Processing_Manager::Instance name.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 237,
+      "confidence": 0.7
+    },
     "Searching for metrics in the database": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 237,
       "confidence": 0.9
     },
+    "2.Under System Admin > System Operations, click Manage Database Metrics.": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 237,
+      "confidence": 0.7
+    },
     "External storage capacity is double counted in": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 237,
@@ -2631,15 +6004,23 @@
     },
     "Authorization fails for passwords having special": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 238,
       "confidence": 0.9
     },
+    "at All > Report Library > System Health. The reports at All > Report Library > System Health > Misc. Reports >": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 238,
+      "confidence": 0.7
+    },
     "Viewing collector errors in the Collector-Manager log": {
       "is_heading": true,
-      "level": 5,
+      "level": 6,
       "size": 20.0,
       "is_bold": true,
       "page": 238,
@@ -2647,7 +6028,7 @@
     },
     "Collector-Manager:<Collector-Manager instance> - <host_ID>": {
       "is_heading": true,
-      "level": 10,
+      "level": 15,
       "size": 9.0,
       "is_bold": true,
       "page": 238,
@@ -2655,7 +6036,7 @@
     },
     "Performing a configuration check": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 239,
@@ -2663,7 +6044,7 @@
     },
     "Using Logs on a Windows host": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 239,
@@ -2671,7 +6052,7 @@
     },
     "Checking SNIA library installation on a Windows host": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 239,
@@ -2679,7 +6060,7 @@
     },
     "Verifying HBA installation": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 240,
@@ -2687,15 +6068,23 @@
     },
     "Installing OneCommand Manager": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 240,
       "confidence": 0.9
     },
+    "1.Select Start > Programs > Administrative tools > Services": {
+      "is_heading": true,
+      "level": 15,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 240,
+      "confidence": 0.7
+    },
     "Installing or modifying QLogic drivers on a Windows host": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 241,
@@ -2703,7 +6092,7 @@
     },
     "Environment check for non-root configurations": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 241,
@@ -2711,7 +6100,7 @@
     },
     "Using logs on a UNIX host": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 241,
@@ -2719,7 +6108,7 @@
     },
     "Check the contents of hba.conf": {
       "is_heading": true,
-      "level": 7,
+      "level": 11,
       "size": 14.0,
       "is_bold": false,
       "page": 241,
@@ -2727,7 +6116,7 @@
     },
     "Gathering information about AIX HBAs": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 242,
@@ -2735,7 +6124,7 @@
     },
     "Gathering information about HP-UX HBAs": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 242,
@@ -2743,7 +6132,7 @@
     },
     "Gathering information about Solaris HBAs": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 242,
@@ -2751,7 +6140,7 @@
     },
     "Gathering information about Linux HBAs": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 242,
@@ -2759,7 +6148,7 @@
     },
     "Installing or modifying Emulex HBA drivers on Linux": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 243,
@@ -2767,7 +6156,7 @@
     },
     "Installing or modifying Emulex HBA drivers on UNIX": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 243,
@@ -2775,7 +6164,7 @@
     },
     "Installing or modifying QLogic HBA drivers on UNIX/LINUX": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 244,
@@ -2783,7 +6172,7 @@
     },
     "Verifying passive hosts from the collection logs": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 245,
@@ -2791,7 +6180,7 @@
     },
     "Verifying passive hosts from the RDF/topology store": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 245,
@@ -2799,7 +6188,7 @@
     },
     "Verifying that LUNs from an array are being mapped to host": {
       "is_heading": true,
-      "level": 6,
+      "level": 9,
       "size": 16.0,
       "is_bold": true,
       "page": 245,
@@ -2807,31 +6196,44 @@
     }
   },
   "font_distribution": {
-    "DellReplica-Light": 7756,
-    "DellReplica-Bold": 2136,
-    "ArialMT": 1056,
-    "CourierNewPSMT": 655,
-    "CourierNewPS-BoldMT": 45,
-    "DellReplica-LightItalic": 18,
-    "MS-PGothic": 8,
-    "CourierNewPS-ItalicMT": 4,
-    "CourierNewPS-BoldItalicM": 2
+    "YXPUZC+DellReplica-Light": 6619,
+    "YXPUZC+DellReplica-Bold": 2022,
+    "YXPUZC+CourierNewPSMT": 881,
+    "YXPUZC+CourierNewPS-BoldMT": 149,
+    "YXPUZC+DellReplica-LightItalic": 16,
+    "YXPUZC+CourierNewPS-ItalicMT": 10,
+    "YXPUZC+CourierNewPS-BoldItalicMT": 8
   },
   "size_distribution": {
-    "9.0": 10505,
-    "10.0": 525,
-    "20.0": 315,
-    "16.0": 121,
+    "9.0": 8171,
+    "10.0": 478,
+    "20.0": 303,
+    "8.999999999999993": 171,
+    "16.0": 118,
+    "8.999999999999972": 89,
+    "9.000000000000014": 83,
     "24.0": 55,
-    "28.0": 51,
     "10.5": 49,
-    "14.0": 39,
+    "28.0": 42,
+    "14.0": 38,
+    "9.000000000000057": 29,
+    "8.999999999999998": 10,
     "12.0": 10,
+    "9.999999999999943": 9,
+    "10.000000000000014": 9,
+    "20.00000000000003": 9,
+    "8.999999999999995": 8,
+    "8.999999999999943": 6,
     "26.0": 4,
+    "19.999999999999943": 3,
     "7.0": 2,
     "8.0": 2,
+    "16.00000000000003": 2,
     "22.0": 1,
-    "11.5": 1
+    "11.5": 1,
+    "15.999999999999986": 1,
+    "13.999999999999986": 1,
+    "9.000000000000046": 1
   },
-  "total_text_elements": 11680
+  "total_text_elements": 9705
 }

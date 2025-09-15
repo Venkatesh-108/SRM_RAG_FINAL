@@ -1,12 +1,13 @@
 {
   "body_size": 9.0,
-  "body_font": "DellReplica-Light",
+  "body_font": "SNGUGI+DellReplica-Light",
   "heading_sizes": [
-    28.0,
     26.0,
     24.0,
     22.0,
     20.0,
+    19.999999999999943,
+    16.00000000000003,
     16.0,
     14.0,
     11.5
@@ -14,7 +15,7 @@
   "heading_map": {
     "Notes, cautions, and warnings": {
       "is_heading": true,
-      "level": 8,
+      "level": 9,
       "size": 11.5,
       "is_bold": false,
       "page": 2,
@@ -22,7 +23,7 @@
     },
     "CAUTION: A CAUTION indicates either potential damage to hardware or loss of data and tells you how to avoid": {
       "is_heading": true,
-      "level": 9,
+      "level": 10,
       "size": 9.0,
       "is_bold": true,
       "page": 2,
@@ -30,23 +31,31 @@
     },
     "Dell SRM 5.1.1.0 Upgrade": {
       "is_heading": true,
-      "level": 9,
-      "size": 9.0,
+      "level": 2,
+      "size": 24.0,
+      "is_bold": true,
+      "page": 7,
+      "confidence": 0.9
+    },
+    "Dell SRM 5.1.1.0 Upgrade7": {
+      "is_heading": true,
+      "level": 10,
+      "size": 8.999999999999993,
       "is_bold": true,
       "page": 7,
       "confidence": 0.7
     },
     "Pre-Requisites for Dell SRM 5.1.1.0 Upgrade": {
       "is_heading": true,
-      "level": 9,
-      "size": 9.0,
+      "level": 2,
+      "size": 24.0,
       "is_bold": true,
-      "page": 13,
-      "confidence": 0.7
+      "page": 8,
+      "confidence": 0.9
     },
     "Required Tools and Credentials": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 8,
@@ -54,15 +63,23 @@
     },
     "Pre-Upgrade Health Check Utility Script": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 8,
       "confidence": 0.9
     },
+    "8Pre-Requisites for Dell SRM 5.1.1.0 Upgrade": {
+      "is_heading": true,
+      "level": 10,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 8,
+      "confidence": 0.7
+    },
     "Check Custom vApp Configuration": {
       "is_heading": true,
-      "level": 6,
+      "level": 7,
       "size": 16.0,
       "is_bold": true,
       "page": 9,
@@ -70,7 +87,7 @@
     },
     "Check /etc/sudoers File on Each vApp VM": {
       "is_heading": true,
-      "level": 6,
+      "level": 7,
       "size": 16.0,
       "is_bold": true,
       "page": 9,
@@ -78,15 +95,23 @@
     },
     "Check vApp Options for Dell SRM VMs": {
       "is_heading": true,
-      "level": 6,
+      "level": 7,
       "size": 16.0,
       "is_bold": true,
       "page": 9,
       "confidence": 0.9
     },
+    "2.Click Settings > Configure Servers.": {
+      "is_heading": true,
+      "level": 10,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 9,
+      "confidence": 0.7
+    },
     "Report Library > System Health > Summary > Logical Summary > Backends > Components > Backends": {
       "is_heading": true,
-      "level": 9,
+      "level": 10,
       "size": 9.0,
       "is_bold": true,
       "page": 10,
@@ -94,31 +119,63 @@
     },
     "Report Library > System Health > Summary > Logical Summary > Backends > Components > Databases": {
       "is_heading": true,
-      "level": 9,
+      "level": 10,
       "size": 9.0,
+      "is_bold": true,
+      "page": 10,
+      "confidence": 0.7
+    },
+    "Health > Daily Dashboard > File Systems.": {
+      "is_heading": true,
+      "level": 10,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 10,
+      "confidence": 0.7
+    },
+    "10Pre-Requisites for Dell SRM 5.1.1.0 Upgrade": {
+      "is_heading": true,
+      "level": 10,
+      "size": 8.999999999999993,
       "is_bold": true,
       "page": 10,
       "confidence": 0.7
     },
     "Saving the Java certificates file": {
       "is_heading": true,
-      "level": 6,
+      "level": 7,
       "size": 16.0,
       "is_bold": true,
       "page": 11,
       "confidence": 0.9
     },
+    "5.Under Local Manager, click Alert Definitions.": {
+      "is_heading": true,
+      "level": 10,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 12,
+      "confidence": 0.7
+    },
     "Delete Backup Schedules and Scheduled Reports from": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 12,
       "confidence": 0.9
     },
+    "12Pre-Requisites for Dell SRM 5.1.1.0 Upgrade": {
+      "is_heading": true,
+      "level": 10,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 12,
+      "confidence": 0.7
+    },
     "Boot Space Clean Up": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 13,
@@ -126,7 +183,7 @@
     },
     "Upgrade Operating System for vApp to SLES": {
       "is_heading": true,
-      "level": 3,
+      "level": 2,
       "size": 24.0,
       "is_bold": true,
       "page": 14,
@@ -134,7 +191,7 @@
     },
     "Upgrade Operating System Using an ISO Image": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 14,
@@ -142,7 +199,7 @@
     },
     "Download ISO Image from Dell Online Support Website": {
       "is_heading": true,
-      "level": 6,
+      "level": 7,
       "size": 16.0,
       "is_bold": true,
       "page": 14,
@@ -150,87 +207,239 @@
     },
     "Configure ISO Image for Each SRM VMs": {
       "is_heading": true,
-      "level": 6,
+      "level": 7,
       "size": 16.0,
       "is_bold": true,
       "page": 14,
       "confidence": 0.9
     },
-    "Upgrade Operating System for vApp to SLES 15 SP4": {
+    "14Upgrade Operating System for vApp to SLES 15 SP4": {
       "is_heading": true,
-      "level": 9,
+      "level": 10,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 14,
+      "confidence": 0.7
+    },
+    "8.Select Connect At Power On option for CD/DVD Drive 2.": {
+      "is_heading": true,
+      "level": 10,
       "size": 9.0,
       "is_bold": true,
-      "page": 16,
+      "page": 15,
       "confidence": 0.7
     },
     "Upgrade Operating System Using ISO Image on SRM Setup": {
       "is_heading": true,
-      "level": 6,
+      "level": 7,
       "size": 16.0,
       "is_bold": true,
       "page": 15,
       "confidence": 0.9
     },
+    "Upgrade Operating System for vApp to SLES 15 SP415": {
+      "is_heading": true,
+      "level": 10,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 15,
+      "confidence": 0.7
+    },
     "Operating System Upgrade on FrontEnd VM Using ISO Image": {
       "is_heading": true,
-      "level": 6,
+      "level": 7,
       "size": 16.0,
       "is_bold": true,
       "page": 16,
       "confidence": 0.9
     },
+    "16Upgrade Operating System for vApp to SLES 15 SP4": {
+      "is_heading": true,
+      "level": 10,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 16,
+      "confidence": 0.7
+    },
     "Upgrade to Dell SRM 5.1.1.0": {
       "is_heading": true,
-      "level": 9,
-      "size": 9.0,
+      "level": 2,
+      "size": 24.0,
       "is_bold": true,
-      "page": 21,
-      "confidence": 0.7
+      "page": 17,
+      "confidence": 0.9
     },
     "Upgrade to SRM 5.1.1.0 using the new update": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 17,
       "confidence": 0.9
     },
+    "cup-online-update-check.task.": {
+      "is_heading": true,
+      "level": 10,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 17,
+      "confidence": 0.7
+    },
+    "●Dell Technologies Connectivity UI is configured.": {
+      "is_heading": true,
+      "level": 10,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 17,
+      "confidence": 0.7
+    },
+    "Upgrade to Dell SRM 5.1.1.017": {
+      "is_heading": true,
+      "level": 10,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 17,
+      "confidence": 0.7
+    },
     "Upgrade to SRM 5.1.1.0 Using System Upgrade": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 18,
       "confidence": 0.9
     },
+    "18Upgrade to Dell SRM 5.1.1.0": {
+      "is_heading": true,
+      "level": 10,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 18,
+      "confidence": 0.7
+    },
     "Upgrade the embedded ESE version to the latest on": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 20,
       "confidence": 0.9
     },
-    "If ESE is not installed on the previous SRM release, do the following to install ESE:": {
+    "1.If ESE is not installed on the previous SRM release, do the following to install ESE:": {
       "is_heading": true,
-      "level": 9,
+      "level": 10,
+      "size": 9.000000000000014,
+      "is_bold": true,
+      "page": 20,
+      "confidence": 0.7
+    },
+    "2.If ESE is installed on the previous SRM release, upgrade ESE:": {
+      "is_heading": true,
+      "level": 10,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 19,
+      "confidence": 0.7
+    },
+    "Upgrade to Dell SRM 5.1.1.019": {
+      "is_heading": true,
+      "level": 10,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 19,
+      "confidence": 0.7
+    },
+    "5.On the SRM Admin UI page, go to CONFIG > Settings > Dell Technologies Connectivity and click Test Server": {
+      "is_heading": true,
+      "level": 10,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 21,
+      "confidence": 0.7
+    },
+    "2.If ESE is already installed on the previous SRM release, upgrade ESE:": {
+      "is_heading": true,
+      "level": 10,
       "size": 9.0,
       "is_bold": true,
       "page": 20,
       "confidence": 0.7
     },
+    "20Upgrade to Dell SRM 5.1.1.0": {
+      "is_heading": true,
+      "level": 10,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 20,
+      "confidence": 0.7
+    },
+    "2.If ESE is installed on previous SRM release, upgrade ESE:": {
+      "is_heading": true,
+      "level": 10,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 21,
+      "confidence": 0.7
+    },
+    "4.After upgrading ESE, on the SRM Admin UI page go to CONFIG > Settings > Dell Technologies Connectivity icon": {
+      "is_heading": true,
+      "level": 10,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 21,
+      "confidence": 0.7
+    },
+    "Upgrade to Dell SRM 5.1.1.021": {
+      "is_heading": true,
+      "level": 10,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 21,
+      "confidence": 0.7
+    },
     "Upgrade all SolutionPacks and other components": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 22,
       "confidence": 0.9
     },
+    "22Upgrade the SolutionPacks": {
+      "is_heading": true,
+      "level": 10,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 22,
+      "confidence": 0.7
+    },
+    "CONFIG > Configuration Compliance > Compliance-Backend under Properties: Instance Name. Typically the": {
+      "is_heading": true,
+      "level": 10,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 23,
+      "confidence": 0.7
+    },
+    "Upgrade the SolutionPacks23": {
+      "is_heading": true,
+      "level": 10,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 23,
+      "confidence": 0.7
+    },
+    "24Upgrade the SolutionPacks": {
+      "is_heading": true,
+      "level": 10,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 24,
+      "confidence": 0.7
+    },
     "LUN performance metrics collection is disabled by": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 25,
@@ -238,7 +447,7 @@
     },
     "default for Dell VMAX/PowerMax SP": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 25,
@@ -246,7 +455,7 @@
     },
     "Check the Status of Remote Host Services": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 26,
@@ -254,7 +463,7 @@
     },
     "Verifying and configuring the user process limits for": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 26,
@@ -262,7 +471,7 @@
     },
     "vApp and Linux binary platforms": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 26,
@@ -270,7 +479,7 @@
     },
     "Security Hardening on SRM vApps": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 27,
@@ -278,15 +487,31 @@
     },
     "Reset the password for the Compliance Backend": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 27,
       "confidence": 0.9
     },
+    "<APG_HOME>/bin/launch-update-backend-passwords.sh -c <path to Host configuaration": {
+      "is_heading": true,
+      "level": 10,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 27,
+      "confidence": 0.7
+    },
+    "<APG_HOME>/bin/launch-update-backend-passwords.cmd -c <pathto Host": {
+      "is_heading": true,
+      "level": 10,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 27,
+      "confidence": 0.7
+    },
     "given in Pre-upgrade level>": {
       "is_heading": true,
-      "level": 9,
+      "level": 10,
       "size": 9.0,
       "is_bold": true,
       "page": 27,
@@ -294,7 +519,7 @@
     },
     "Create softlink for mysql-client dependent library": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 27,
@@ -302,15 +527,39 @@
     },
     "Find and Fix Broken Links in Reports": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 28,
       "confidence": 0.9
     },
+    "1.On APG page, click Profile  > User Settings.": {
+      "is_heading": true,
+      "level": 10,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 28,
+      "confidence": 0.7
+    },
+    "2.Click Custom Reports tab.": {
+      "is_heading": true,
+      "level": 10,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 28,
+      "confidence": 0.7
+    },
+    "3.In the Broken Links Detection section, click Open Tool.": {
+      "is_heading": true,
+      "level": 10,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 28,
+      "confidence": 0.7
+    },
     "Table 1. Broken links description": {
       "is_heading": true,
-      "level": 9,
+      "level": 10,
       "size": 10.0,
       "is_bold": true,
       "page": 28,
@@ -318,7 +567,7 @@
     },
     "Table 1. Broken links description (continued)": {
       "is_heading": true,
-      "level": 9,
+      "level": 10,
       "size": 10.0,
       "is_bold": true,
       "page": 29,
@@ -326,7 +575,7 @@
     },
     "View Fixed Links in Tomcat Logs": {
       "is_heading": true,
-      "level": 6,
+      "level": 7,
       "size": 16.0,
       "is_bold": true,
       "page": 29,
@@ -334,7 +583,7 @@
     },
     "Deprecated or Deleted Alert Definitions": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 30,
@@ -342,15 +591,23 @@
     },
     "Install Preconfigured Alerts for all SolutionPacks": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 30,
       "confidence": 0.9
     },
+    "Alerts > Manage Alert Definitions > Dell VPLEX Alert Definitions. (SNMP-based alerts are enabled by default.)": {
+      "is_heading": true,
+      "level": 10,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 30,
+      "confidence": 0.7
+    },
     "Edit New Actions Scripts": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 31,
@@ -358,7 +615,7 @@
     },
     "Table 2. Conf file path in Linux and Windows": {
       "is_heading": true,
-      "level": 9,
+      "level": 10,
       "size": 10.0,
       "is_bold": true,
       "page": 31,
@@ -366,7 +623,7 @@
     },
     "Review SolutionPack Block Configuration for": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 31,
@@ -374,15 +631,23 @@
     },
     "Install the Compliance Rules Module": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 32,
       "confidence": 0.9
     },
+    "2.Click Configuration Compliance.": {
+      "is_heading": true,
+      "level": 10,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 32,
+      "confidence": 0.7
+    },
     "Cisco MDS/Nexus Switch Discovery": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 32,
@@ -391,14 +656,14 @@
     "Export Cisco MDS/Nexus Switches": {
       "is_heading": true,
       "level": 6,
-      "size": 16.0,
+      "size": 16.00000000000003,
       "is_bold": true,
       "page": 32,
       "confidence": 0.9
     },
     "Install the SNMP Data Collector": {
       "is_heading": true,
-      "level": 6,
+      "level": 7,
       "size": 16.0,
       "is_bold": true,
       "page": 33,
@@ -406,47 +671,159 @@
     },
     "Import Switch Details into Discovery Center": {
       "is_heading": true,
-      "level": 6,
+      "level": 7,
       "size": 16.0,
       "is_bold": true,
       "page": 35,
       "confidence": 0.9
+    },
+    "4.From the SRM Admin UI, go to DISCOVERY> Discovery Center> Manage Discovery and click on Cisco MDS/Nexus": {
+      "is_heading": true,
+      "level": 10,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 33,
+      "confidence": 0.7
+    },
+    "5.Click the Discoverable Groups tab.": {
+      "is_heading": true,
+      "level": 10,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 33,
+      "confidence": 0.7
+    },
+    "13.Click the Collected Cisco MDS/Nexus tab, and click Discover.": {
+      "is_heading": true,
+      "level": 10,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 33,
+      "confidence": 0.7
     },
     "Delete Switches from SNMP Device Discovery": {
       "is_heading": true,
-      "level": 6,
+      "level": 7,
       "size": 16.0,
       "is_bold": true,
       "page": 35,
       "confidence": 0.9
     },
+    "5.Under Device Distribution, click Distribute all....": {
+      "is_heading": true,
+      "level": 10,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 35,
+      "confidence": 0.7
+    },
+    "6.Click Send the generated configurations....": {
+      "is_heading": true,
+      "level": 10,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 36,
+      "confidence": 0.7
+    },
+    "The Edit Cisco MDS/Nexus window opens.": {
+      "is_heading": true,
+      "level": 10,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 34,
+      "confidence": 0.7
+    },
+    "2.Click Test and Rediscover.": {
+      "is_heading": true,
+      "level": 10,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 34,
+      "confidence": 0.7
+    },
+    "5.Click the Discovery Inventory Types tab.": {
+      "is_heading": true,
+      "level": 10,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 35,
+      "confidence": 0.7
+    },
+    "13.Click the Collected Brocade FC Switch tab, and click Discover.": {
+      "is_heading": true,
+      "level": 10,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 35,
+      "confidence": 0.7
+    },
+    "15.Click Import to Collected Brocade FC Switch....": {
+      "is_heading": true,
+      "level": 10,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 35,
+      "confidence": 0.7
+    },
     "DPA Scheduled Reports not Available after Upgrade": {
       "is_heading": true,
-      "level": 6,
+      "level": 7,
       "size": 16.0,
       "is_bold": true,
       "page": 36,
       "confidence": 0.9
     },
+    "c.Go to Admin > System > Manage Time Periods > Create Time Period > Edit Times, and delete the following times:": {
+      "is_heading": true,
+      "level": 10,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 36,
+      "confidence": 0.7
+    },
     "Create an Events Database for the SolutionPack for": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 36,
       "confidence": 0.9
     },
+    "8.From Dell SRM Administration, go to SYSTEM ADMIN > Servers & Modules > Modules > Logical Overview >": {
+      "is_heading": true,
+      "level": 10,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 37,
+      "confidence": 0.7
+    },
+    "9.From Dell SRM Physical Overview, select PBE >Modules > Event- Processing Event-Processing-Manager :: emc-": {
+      "is_heading": true,
+      "level": 10,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 37,
+      "confidence": 0.7
+    },
     "Update the SNMP Collections": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 37,
       "confidence": 0.9
     },
+    "13.Click Send the generated configurations on all available collectors.": {
+      "is_heading": true,
+      "level": 10,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 38,
+      "confidence": 0.7
+    },
     "Virus Scanning Software in Windows Deployments": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 38,
@@ -454,7 +831,7 @@
     },
     "Review Report Customization": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 38,
@@ -462,7 +839,7 @@
     },
     "Reconfiguring Dell PowerVault Frontend Web Service": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 39,
@@ -470,7 +847,7 @@
     },
     "Reconfiguring Pure Storage Frontend Web Service": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 39,
@@ -478,15 +855,23 @@
     },
     "Deleting the ISO Image from Data Store Location": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 39,
       "confidence": 0.9
     },
+    "4.In the Virtual Hardware tab, Delete the CD/DVD Drive 2.": {
+      "is_heading": true,
+      "level": 10,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 40,
+      "confidence": 0.7
+    },
     "Limitations and Known Issues": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 40,
@@ -494,7 +879,7 @@
     },
     "SRM APG UI Loading Issue": {
       "is_heading": true,
-      "level": 5,
+      "level": 4,
       "size": 20.0,
       "is_bold": true,
       "page": 41,
@@ -502,7 +887,7 @@
     },
     "Resume the Upgrade on SRM Setup": {
       "is_heading": true,
-      "level": 6,
+      "level": 7,
       "size": 16.0,
       "is_bold": true,
       "page": 42,
@@ -510,7 +895,7 @@
     },
     "OS Upgrade Initiation Failed": {
       "is_heading": true,
-      "level": 6,
+      "level": 7,
       "size": 16.0,
       "is_bold": true,
       "page": 44,
@@ -518,7 +903,7 @@
     },
     "ISO is not attached": {
       "is_heading": true,
-      "level": 7,
+      "level": 8,
       "size": 14.0,
       "is_bold": true,
       "page": 44,
@@ -526,7 +911,7 @@
     },
     "Failed to Establish Connection": {
       "is_heading": true,
-      "level": 6,
+      "level": 7,
       "size": 16.0,
       "is_bold": true,
       "page": 45,
@@ -534,7 +919,7 @@
     },
     "Failed to start D-Bus System Message": {
       "is_heading": true,
-      "level": 6,
+      "level": 7,
       "size": 16.0,
       "is_bold": true,
       "page": 45,
@@ -542,7 +927,7 @@
     },
     "Wrong Password during OS Upgrade Script": {
       "is_heading": true,
-      "level": 6,
+      "level": 7,
       "size": 16.0,
       "is_bold": true,
       "page": 47,
@@ -550,26 +935,33 @@
     }
   },
   "font_distribution": {
-    "DellReplica-Light": 1228,
-    "DellReplica-Bold": 378,
-    "ArialMT": 200,
-    "CourierNewPSMT": 110,
-    "CourierNewPS-BoldMT": 6
+    "SNGUGI+DellReplica-Light": 1089,
+    "SNGUGI+DellReplica-Bold": 344,
+    "SNGUGI+CourierNewPSMT": 174,
+    "SNGUGI+CourierNewPS-BoldMT": 10,
+    "SNGUGI+DellReplica-LightItalic": 2
   },
   "size_distribution": {
-    "9.0": 1706,
-    "10.0": 93,
-    "20.0": 59,
-    "16.0": 30,
+    "9.0": 1348,
+    "10.0": 90,
+    "20.0": 58,
+    "8.999999999999993": 32,
+    "16.0": 29,
+    "8.999999999999972": 14,
+    "9.000000000000014": 13,
     "24.0": 10,
-    "28.0": 8,
     "10.5": 6,
+    "9.000000000000057": 5,
     "7.0": 2,
     "8.0": 2,
     "26.0": 2,
     "14.0": 2,
     "22.0": 1,
-    "11.5": 1
+    "11.5": 1,
+    "10.000000000000014": 1,
+    "19.999999999999943": 1,
+    "16.00000000000003": 1,
+    "8.999999999999943": 1
   },
-  "total_text_elements": 1922
+  "total_text_elements": 1619
 }

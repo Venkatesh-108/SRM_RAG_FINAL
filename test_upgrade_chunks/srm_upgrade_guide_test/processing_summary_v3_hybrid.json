@@ -1,0 +1,209 @@
+{
+  "document_id": "srm_upgrade_guide_test",
+  "processing_date": "2025-09-15T10:37:45.808526",
+  "extraction_method": "hybrid_font_index",
+  "total_content_length": 122338,
+  "total_chunks": 65,
+  "chunk_analysis": {
+    "total_chunks": 65,
+    "chunk_types": {
+      "document_overview": 1,
+      "chapter_major": 2,
+      "section_standard": 62
+    },
+    "size_distribution": {
+      "small": 49,
+      "medium": 15,
+      "large": 1
+    },
+    "page_distribution": {
+      "single_page": 64,
+      "multi_page": 1
+    },
+    "procedure_chunks": 45,
+    "exact_title_matches": [
+      "document overview",
+      "document introduction",
+      "notes, cautions, and warnings",
+      "dell srm 5.1.1.0 upgrade",
+      "pre-requisites for dell srm 5.1.1.0 upgrade",
+      "required tools and credentials",
+      "pre-upgrade health check utility script",
+      "check custom vapp configuration",
+      "check /etc/sudoers file on each vapp vm",
+      "check vapp options for dell srm vms",
+      "saving the java certificates file",
+      "delete backup schedules and scheduled reports from dpa server",
+      "boot space clean up",
+      "upgrade operating system for vapp to sles 15 sp4",
+      "upgrade operating system using an iso image",
+      "download iso image from dell online support website",
+      "configure iso image for each srm vms",
+      "upgrade operating system using iso image on srm setup",
+      "operating system upgrade on frontend vm using iso image",
+      "upgrade to dell srm 5.1.1.0",
+      "upgrade to srm 5.1.1.0 using the new update platform",
+      "upgrade to srm 5.1.1.0 using system upgrade wizard",
+      "upgrade the embedded ese version to the latest on linux",
+      "upgrade the embedded ese version to the latest on windows",
+      "upgrade the embedded ese version to the latest on vapp",
+      "upgrade all solutionpacks and other components",
+      "lun performance metrics collection is disabled by default.",
+      "check the status of remote host services",
+      "security hardening on srm vapps",
+      "reset the password for the compliance backend module",
+      "create softlink for mysql-client dependent library",
+      "find and fix broken links in reports",
+      "table 1. broken links description",
+      "table 1. broken links description (continued)",
+      "view fixed links in tomcat logs",
+      "deprecated or deleted alert definitions",
+      "install preconfigured alerts for all solutionpacks",
+      "edit new actions scripts",
+      "table 2. conf file path in linux and windows",
+      "review solutionpack block configuration for frontend access",
+      "install the compliance rules module",
+      "cisco mds/nexus switch discovery",
+      "export cisco mds/nexus switches",
+      "install the snmp data collector",
+      "import switch details into discovery center",
+      "delete switches from snmp device discovery",
+      "dpa scheduled reports not available after upgrade",
+      "create an events database for the solutionpack for data protection advisor",
+      "update the snmp collections",
+      "virus scanning software in windows deployments",
+      "review report customization",
+      "includedir /etc/sudoers.d   # added by mnr platform",
+      "reconfiguring dell powervault frontend web service",
+      "reconfiguring pure storage frontend web service",
+      "deleting the iso image from data store location",
+      "the following are the limitations and known issues.",
+      "srm apg ui loading issue",
+      "resume the upgrade on srm setup",
+      "when one or multiple remote servers os upgrade initiation failed, the following error is shown.",
+      "3. iso image is not attached to the vm, then follow the steps that are mentioned in configure iso image for each srm vms",
+      "2. edit the srmvmlist.csv file to include only the os upgrade initiation failed servers and save the file.",
+      "failed to establish connection",
+      "follow the below procedure to troubleshoot the failed to establish connection.",
+      "failed to start d-bus system message",
+      "wrong password during os upgrade script"
+    ]
+  },
+  "font_hierarchy_used": {
+    "document_title": {
+      "size_range": [
+        22,
+        28
+      ],
+      "level": 1
+    },
+    "chapter_major": {
+      "size_range": [
+        20,
+        21.9
+      ],
+      "level": 2
+    },
+    "section_standard": {
+      "size_range": [
+        16,
+        19.9
+      ],
+      "level": 3
+    },
+    "subsection_minor": {
+      "size_range": [
+        11.5,
+        15.9
+      ],
+      "level": 4
+    },
+    "table_figure": {
+      "size_range": [
+        10,
+        11.4
+      ],
+      "level": 5
+    },
+    "body_text": {
+      "size_range": [
+        8,
+        9.9
+      ],
+      "level": 6
+    }
+  },
+  "hybrid_metadata": {
+    "hybrid_chunking_enabled": true,
+    "index_extraction": {
+      "index_entries": [],
+      "hierarchical_structure": {},
+      "extraction_method": "toc_parsing",
+      "total_entries": 0,
+      "max_level": 0,
+      "has_page_numbers": false
+    },
+    "validation_results": {
+      "validation_score": 0,
+      "missing_sections_count": 0,
+      "orphaned_chunks_count": 65,
+      "recovered_chunks_count": 0,
+      "enriched_metadata": {
+        "validation_summary": {
+          "total_matches": 0,
+          "exact_matches": 0,
+          "partial_matches": 0,
+          "missing_sections": 0,
+          "orphaned_chunks": 65,
+          "validation_score": 0
+        },
+        "match_distribution": {
+          "exact": 0,
+          "partial": 0,
+          "inferred": 0
+        },
+        "validation_timestamp": "2025-09-15 10:37:44,072",
+        "validation_method": "hybrid_font_index"
+      }
+    },
+    "final_chunk_count": 65,
+    "original_chunk_count": 65
+  },
+  "processing_version": "v3_hybrid",
+  "hybrid_details": {
+    "hybrid_chunking_enabled": true,
+    "index_extraction": {
+      "index_entries": [],
+      "hierarchical_structure": {},
+      "extraction_method": "toc_parsing",
+      "total_entries": 0,
+      "max_level": 0,
+      "has_page_numbers": false
+    },
+    "validation_results": {
+      "validation_score": 0,
+      "missing_sections_count": 0,
+      "orphaned_chunks_count": 65,
+      "recovered_chunks_count": 0,
+      "enriched_metadata": {
+        "validation_summary": {
+          "total_matches": 0,
+          "exact_matches": 0,
+          "partial_matches": 0,
+          "missing_sections": 0,
+          "orphaned_chunks": 65,
+          "validation_score": 0
+        },
+        "match_distribution": {
+          "exact": 0,
+          "partial": 0,
+          "inferred": 0
+        },
+        "validation_timestamp": "2025-09-15 10:37:44,072",
+        "validation_method": "hybrid_font_index"
+      }
+    },
+    "final_chunk_count": 65,
+    "original_chunk_count": 65
+  }
+}

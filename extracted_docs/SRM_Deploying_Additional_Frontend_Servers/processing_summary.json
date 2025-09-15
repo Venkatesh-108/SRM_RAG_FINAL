@@ -1,21 +1,20 @@
 {
   "document_id": "SRM_Deploying_Additional_Frontend_Servers",
-  "processing_date": "2025-09-15T08:36:17.883208",
+  "processing_date": "2025-09-15T12:28:51.846705",
   "extraction_method": "hybrid_docling_font",
   "total_content_length": 34949,
-  "total_chapters": 1,
-  "total_sections": 30,
-  "total_chunks": 31,
+  "total_chapters": 7,
+  "total_sections": 13,
+  "total_chunks": 20,
   "font_analysis_summary": {
     "body_size": 9.0,
     "heading_sizes": [
-      28.0,
       26.0,
       24.0,
       22.0,
       20.0,
       11.5
     ],
-    "headings_detected": 18
+    "headings_detected": 28
   }
 }

@@ -1,23 +1,24 @@
 {
   "document_id": "SRM_Upgrade_Guide",
-  "processing_date": "2025-09-15T08:44:32.707276",
+  "processing_date": "2025-09-15T12:37:45.479793",
   "extraction_method": "hybrid_docling_font",
   "total_content_length": 122338,
-  "total_chapters": 2,
-  "total_sections": 116,
-  "total_chunks": 118,
+  "total_chapters": 10,
+  "total_sections": 65,
+  "total_chunks": 75,
   "font_analysis_summary": {
     "body_size": 9.0,
     "heading_sizes": [
-      28.0,
       26.0,
       24.0,
       22.0,
       20.0,
+      19.999999999999943,
+      16.00000000000003,
       16.0,
       14.0,
       11.5
     ],
-    "headings_detected": 67
+    "headings_detected": 115
   }
 }

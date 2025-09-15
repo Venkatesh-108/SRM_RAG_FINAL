@@ -11,7 +11,7 @@
     "title": "Guidelines for Deploying Additional Frontend Servers",
     "font_size": 22.0,
     "is_bold": false,
-    "heading_level": 4,
+    "heading_level": 3,
     "page": 1,
     "confidence": 0.9
   },
@@ -19,7 +19,7 @@
     "title": "Notes, cautions, and warnings",
     "font_size": 11.5,
     "is_bold": false,
-    "heading_level": 6,
+    "heading_level": 5,
     "page": 2,
     "confidence": 0.9
   },
@@ -27,31 +27,15 @@
     "title": "Introduction to guidelines for deploying additional frontend servers.",
     "font_size": 22.0,
     "is_bold": false,
-    "heading_level": 4,
+    "heading_level": 3,
     "page": 1,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Additional frontend server deployment",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 5,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Additional frontend server configuration",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 6,
     "confidence": 0.9
   },
   {
     "title": "Additional frontend server deployment",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 5,
     "confidence": 0.9
   },
@@ -59,39 +43,23 @@
     "title": "Additional frontend server configuration",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 6,
     "confidence": 0.9
   },
   {
     "title": "Configuring the SRM management functions",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 7,
-    "page": 9,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Adding MySQL grants to the databases",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 2,
     "page": 7,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Activate the new configuration settings",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 9,
     "confidence": 0.9
   },
   {
     "title": "Adding MySQL grants to the databases",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 7,
     "confidence": 0.9
   },
@@ -99,55 +67,23 @@
     "title": "Activate the new configuration settings",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 9,
     "confidence": 0.9
   },
   {
     "title": "Configuring the shared reports and tasks",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 7,
-    "page": 13,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Consolidate the scheduled reports",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 12,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Configuring an NFS share for the user reports",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 2,
     "page": 10,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Consolidate the scheduled reports",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 12,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Additional frontend server tasks",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 13,
     "confidence": 0.9
   },
   {
     "title": "Consolidate the scheduled reports",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 12,
     "confidence": 0.9
   },
@@ -155,23 +91,15 @@
     "title": "Configuring an NFS share for the user reports",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 10,
-    "confidence": 0.9
-  },
-  {
-    "title": "Consolidate the scheduled reports",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 12,
     "confidence": 0.9
   },
   {
     "title": "Additional frontend server tasks",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 13,
     "confidence": 0.9
   },
@@ -179,63 +107,47 @@
     "title": "This section describes the additional frontend server tasks that must be disabled.",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 13,
     "confidence": 0.9
   },
   {
     "title": "F5 load balancer configuration",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 7,
+    "heading_level": 2,
     "page": 15,
-    "confidence": 0.7
-  },
-  {
-    "title": "Parameters that you need to tweak for an F5 Load balancer configuration are:",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 7,
-    "page": 15,
-    "confidence": 0.7
-  },
-  {
-    "title": "Table 1. F5 Load Balancer Configuration",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 7,
-    "page": 15,
-    "confidence": 0.7
-  },
-  {
-    "title": "HAProxy load balancer configuration",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 7,
-    "page": 17,
-    "confidence": 0.7
-  },
-  {
-    "title": "- SolutionPacks report installation",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 18,
     "confidence": 0.9
   },
   {
-    "title": "- SolutionPacks property-mapping",
-    "font_size": 20.0,
+    "title": "Parameters that you need to tweak for an F5 Load balancer configuration are:",
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 5,
-    "page": 18,
+    "heading_level": 2,
+    "page": 15,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 1. F5 Load Balancer Configuration",
+    "font_size": 24.0,
+    "is_bold": true,
+    "heading_level": 2,
+    "page": 15,
+    "confidence": 0.9
+  },
+  {
+    "title": "HAProxy load balancer configuration",
+    "font_size": 24.0,
+    "is_bold": true,
+    "heading_level": 2,
+    "page": 16,
     "confidence": 0.9
   },
   {
     "title": "SolutionPacks report installation",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 18,
     "confidence": 0.9
   },
@@ -243,7 +155,7 @@
     "title": "SolutionPacks property-mapping",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 4,
     "page": 18,
     "confidence": 0.9
   }

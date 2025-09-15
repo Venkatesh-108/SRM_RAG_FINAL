@@ -11,63 +11,15 @@
     "title": "Notes, cautions, and warnings",
     "font_size": 11.5,
     "is_bold": false,
-    "heading_level": 9,
+    "heading_level": 14,
     "page": 2,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Reconfigure an installed SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 17,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Where to find the latest SolutionPack software",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 58,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Dell SRM and SolutionPack privileges",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 18,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Alert consolidation configurations for Dell SRM SolutionPacks",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 23,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Configurations for collecting carbon emission data",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 24,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Link and launch CloudIQ",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 25,
     "confidence": 0.9
   },
   {
     "title": "Reconfigure an installed SolutionPack",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 17,
     "confidence": 0.9
   },
@@ -75,7 +27,7 @@
     "title": "Where to find the latest SolutionPack software",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 58,
     "confidence": 0.9
   },
@@ -83,7 +35,7 @@
     "title": "Dell SRM and SolutionPack privileges",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 18,
     "confidence": 0.9
   },
@@ -91,7 +43,7 @@
     "title": "Table 1. Dell SRM and SolutionPack privilege levels",
     "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 18,
     "confidence": 0.7
   },
@@ -99,39 +51,7 @@
     "title": "Table 1. Dell SRM and SolutionPack privilege levels (continued)",
     "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 18,
-    "confidence": 0.7
-  },
-  {
-    "title": "Table 1. Dell SRM and SolutionPack privilege levels (continued)",
-    "font_size": 10.0,
-    "is_bold": true,
-    "heading_level": 10,
-    "page": 18,
-    "confidence": 0.7
-  },
-  {
-    "title": "Table 1. Dell SRM and SolutionPack privilege levels (continued)",
-    "font_size": 10.0,
-    "is_bold": true,
-    "heading_level": 10,
-    "page": 18,
-    "confidence": 0.7
-  },
-  {
-    "title": "Table 1. Dell SRM and SolutionPack privilege levels (continued)",
-    "font_size": 10.0,
-    "is_bold": true,
-    "heading_level": 10,
-    "page": 18,
-    "confidence": 0.7
-  },
-  {
-    "title": "Table 1. Dell SRM and SolutionPack privilege levels (continued)",
-    "font_size": 10.0,
-    "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 18,
     "confidence": 0.7
   },
@@ -139,7 +59,7 @@
     "title": "Alert consolidation configurations for Dell SRM SolutionPacks",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 23,
     "confidence": 0.9
   },
@@ -147,7 +67,7 @@
     "title": "Table 2. Dell SRM SolutionPack alert consolidation requirements",
     "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 23,
     "confidence": 0.7
   },
@@ -155,7 +75,7 @@
     "title": "Table 2. Dell SRM SolutionPack alert consolidation requirements (continued)",
     "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 23,
     "confidence": 0.7
   },
@@ -163,63 +83,15 @@
     "title": "Configurations for collecting carbon emission data",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 24,
     "confidence": 0.9
-  },
-  {
-    "title": "- SolutionPack for Brocade FC Switch",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 10,
-    "page": 44,
-    "confidence": 0.7
-  },
-  {
-    "title": "- SolutionPack for Dell PowerEdge",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 10,
-    "page": 79,
-    "confidence": 0.7
-  },
-  {
-    "title": "- SolutionPack for Dell PowerScale",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 10,
-    "page": 82,
-    "confidence": 0.7
-  },
-  {
-    "title": "- SolutionPack for Dell PowerVault",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 10,
-    "page": 90,
-    "confidence": 0.7
-  },
-  {
-    "title": "- SolutionPack for Huawei OceanStor",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 10,
-    "page": 153,
-    "confidence": 0.7
-  },
-  {
-    "title": "- SolutionPack for Pure Storage",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 10,
-    "page": 215,
-    "confidence": 0.7
   },
   {
     "title": "Link and launch CloudIQ",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 25,
     "confidence": 0.9
   },
@@ -227,7 +99,7 @@
     "title": "To link and launch CloudIQ, perform the following steps:",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 25,
     "confidence": 0.9
   },
@@ -235,103 +107,47 @@
     "title": "From supported SolutionPacks",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 25,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Discovering AWS accounts and services",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 27,
     "confidence": 0.9
   },
   {
     "title": "Installing the SolutionPack",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 219,
     "confidence": 0.9
   },
   {
     "title": "SolutionPack for Amazon AWS",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 28,
-    "confidence": 0.7
+    "heading_level": 3,
+    "page": 26,
+    "confidence": 0.9
   },
   {
     "title": "Discovering AWS accounts and services",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 27,
     "confidence": 0.9
   },
   {
     "title": "SolutionPack for Block Chargeback",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 33,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Chargeable and nonchargeable metrics",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 3,
     "page": 29,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Running the chargeback preprocessor task manually",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 32,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Enable collecting component level metrics for a limited set of hosts",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 32,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Chargeback optimization to reduce processing time",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 33,
     "confidence": 0.9
   },
   {
     "title": "Chargeable and nonchargeable metrics",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 29,
     "confidence": 0.9
   },
@@ -339,7 +155,7 @@
     "title": "Table 3. Shared disk with no storage used",
     "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 29,
     "confidence": 0.7
   },
@@ -347,7 +163,7 @@
     "title": "Table 3. Shared disk with no storage used  (continued)",
     "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 29,
     "confidence": 0.7
   },
@@ -355,23 +171,15 @@
     "title": "Table 4. Shared disk with some storage used",
     "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 30,
     "confidence": 0.7
-  },
-  {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
   },
   {
     "title": "Running the chargeback preprocessor task manually",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 32,
     "confidence": 0.9
   },
@@ -379,7 +187,7 @@
     "title": "Enable collecting component level metrics for a limited set of hosts",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 32,
     "confidence": 0.9
   },
@@ -403,143 +211,39 @@
     "title": "Chargeback optimization to reduce processing time",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 33,
     "confidence": 0.9
   },
   {
     "title": "This section list the limitations of SolutionPack for Block Chargeback.",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 33,
-    "confidence": 0.7
+    "heading_level": 3,
+    "page": 29,
+    "confidence": 0.9
   },
   {
     "title": "SolutionPack for Brocade FC Switch",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 44,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Brocade switch and SMI agent configuration",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 3,
     "page": 34,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Configuring Brocade SMI Agents",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 35,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Configuring Brocade switches for alert consolidation",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 35,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Configuring Brocade switches for SNMP discovery",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 35,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Configuring Brocade switches for REST discovery",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 36,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Configuring Brocade switches for SANNAV discovery",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 36,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Passive host discovery configuration options",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 51,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Passive host discovery from Brocade Peer Zoning configurations",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 41,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Brocade Virtual Fabrics discovery configuration options",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 43,
     "confidence": 0.9
   },
   {
     "title": "Brocade switch and SMI agent configuration",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 34,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Configuring Brocade SMI Agents",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 35,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Configuring Brocade switches for alert consolidation",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 35,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Configuring Brocade Switches for SNMP discovery",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 35,
     "confidence": 0.9
   },
   {
     "title": "Configuring Brocade SMI Agents",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 35,
     "confidence": 0.9
   },
@@ -547,7 +251,7 @@
     "title": "Configuring Brocade switches for alert consolidation",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 35,
     "confidence": 0.9
   },
@@ -555,7 +259,7 @@
     "title": "Configuring Brocade switches for SNMP discovery",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 35,
     "confidence": 0.9
   },
@@ -563,7 +267,7 @@
     "title": "Configuring Brocade switches for REST discovery",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 36,
     "confidence": 0.9
   },
@@ -571,23 +275,15 @@
     "title": "Configuring Brocade switches for SANNAV discovery",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 36,
-    "confidence": 0.9
-  },
-  {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
     "confidence": 0.9
   },
   {
     "title": "Polling period configuration:",
     "font_size": 9.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 38,
     "confidence": 0.7
   },
@@ -595,7 +291,7 @@
     "title": "Discovery of Brocade Elements through Discovery center",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 38,
     "confidence": 0.9
   },
@@ -603,7 +299,7 @@
     "title": "Table 5. Capabilities Abbreviation",
     "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 40,
     "confidence": 0.7
   },
@@ -611,15 +307,23 @@
     "title": "Passive host discovery configuration options",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 51,
+    "confidence": 0.9
+  },
+  {
+    "title": "You can passively resolve hosts that are discovered through the SolutionPack for Brocade FC Switch from zoning records.",
+    "font_size": 24.0,
+    "is_bold": true,
+    "heading_level": 3,
+    "page": 34,
     "confidence": 0.9
   },
   {
     "title": "Passive host discovery from Brocade Peer Zoning configurations",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 41,
     "confidence": 0.9
   },
@@ -627,7 +331,7 @@
     "title": "Configuring Peer Zoning in SolutionPack for Brocade FC",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 42,
     "confidence": 0.9
   },
@@ -635,87 +339,23 @@
     "title": "Brocade Virtual Fabrics discovery configuration options",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 43,
     "confidence": 0.9
   },
   {
     "title": "SolutionPack for Cisco MDS/Nexus",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 53,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Performing pre-configuration tasks",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 3,
     "page": 45,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Configuring switches for SNMPv1 and SNMPv2c",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 46,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Configuring switches for SNMPv3",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 47,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Configuring Cisco switches for alert consolidation",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 47,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Adding and configuring devices",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Passive host discovery configuration options",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 51,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Enabling passive host discovery through Generic-SNMP",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 52,
     "confidence": 0.9
   },
   {
     "title": "Performing pre-configuration tasks",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 45,
     "confidence": 0.9
   },
@@ -723,7 +363,7 @@
     "title": "Known issue with user-defined roles",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 46,
     "confidence": 0.9
   },
@@ -731,7 +371,7 @@
     "title": "Configuring switches for SNMPv1 and SNMPv2c",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 46,
     "confidence": 0.9
   },
@@ -739,7 +379,7 @@
     "title": "Configuring switches for SNMPv3",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 47,
     "confidence": 0.9
   },
@@ -747,7 +387,7 @@
     "title": "Table 6. Sample output of show snmp user command",
     "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 47,
     "confidence": 0.7
   },
@@ -755,23 +395,15 @@
     "title": "Configuring Cisco switches for alert consolidation",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 47,
-    "confidence": 0.9
-  },
-  {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
     "confidence": 0.9
   },
   {
     "title": "See Passive host discovery configuration options for additional details.",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 51,
     "confidence": 0.9
   },
@@ -779,7 +411,7 @@
     "title": "If you opted not to install the Cisco SNMP data collection block, see Enabling passive host discovery through GenericSNMP.",
     "font_size": 14.0,
     "is_bold": true,
-    "heading_level": 7,
+    "heading_level": 11,
     "page": 234,
     "confidence": 0.9
   },
@@ -787,7 +419,7 @@
     "title": "Adding and configuring devices",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 213,
     "confidence": 0.9
   },
@@ -795,53 +427,37 @@
     "title": "Table 7. Capabilities (continued)",
     "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 51,
     "confidence": 0.7
   },
   {
-    "title": "Passive host discovery configuration options",
-    "font_size": 20.0,
+    "title": "You can passively resolve hosts that are discovered through the SolutionPack for Cisco MDS/Nexus from zoning records.",
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 5,
-    "page": 51,
+    "heading_level": 3,
+    "page": 45,
     "confidence": 0.9
   },
   {
     "title": "Enabling passive host discovery through GenericSNMP",
     "font_size": 14.0,
     "is_bold": true,
-    "heading_level": 7,
+    "heading_level": 11,
     "page": 234,
     "confidence": 0.9
   },
   {
-    "title": "- Configuring the UCS Manager",
-    "font_size": 20.0,
+    "title": "The SolutionPack for Cisco UCS generates reports that encompass compute, network, and storage access components of the unified fabric.",
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 3,
     "page": 54,
     "confidence": 0.9
   },
   {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Importing the new database schema",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 56,
-    "confidence": 0.9
-  },
-  {
     "title": "Configuring the UCS Manager",
-    "font_size": 20.0,
+    "font_size": 20.00000000000003,
     "is_bold": true,
     "heading_level": 5,
     "page": 54,
@@ -849,25 +465,17 @@
   },
   {
     "title": "SolutionPack for Cisco UCS",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 57,
-    "confidence": 0.7
-  },
-  {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
+    "heading_level": 3,
+    "page": 54,
     "confidence": 0.9
   },
   {
     "title": "Discovery through Discovery center",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 56,
     "confidence": 0.9
   },
@@ -875,95 +483,47 @@
     "title": "Importing the new database schema",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 56,
     "confidence": 0.9
   },
   {
+    "title": "- Events reports in the SolutionPack for Cisco UCS are specific to UCS Manager only.",
+    "font_size": 24.0,
+    "is_bold": true,
+    "heading_level": 3,
+    "page": 54,
+    "confidence": 0.9
+  },
+  {
     "title": "SolutionPack for Configuration Compliance",
+    "font_size": 24.0,
+    "is_bold": true,
+    "heading_level": 3,
+    "page": 58,
+    "confidence": 0.9
+  },
+  {
+    "title": "The Tomcat communication protocol should be HTTPS.",
     "font_size": 9.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 59,
     "confidence": 0.7
   },
   {
-    "title": "- Where to find the latest SolutionPack software",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 58,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "Where to find the latest SolutionPack software",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 58,
-    "confidence": 0.9
-  },
-  {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
     "title": "SolutionPack for Dell SC Series",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 62,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Adding and configuring devices in Discovery Center",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Configuring Storage Center to send SNMP alerts",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 61,
-    "confidence": 0.9
-  },
-  {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
+    "heading_level": 3,
+    "page": 60,
     "confidence": 0.9
   },
   {
     "title": "Adding and configuring devices in Discovery Center",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 213,
     "confidence": 0.9
   },
@@ -971,119 +531,47 @@
     "title": "Configuring Storage Center to send SNMP alerts",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 61,
     "confidence": 0.9
   },
   {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
+    "title": "The SolutionPack for Dell CloudIQ collects and interprets data on health scores from CloudIQ.",
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Adding and configuring devices in Discovery",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
-    "confidence": 0.9
-  },
-  {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
+    "heading_level": 3,
+    "page": 63,
     "confidence": 0.9
   },
   {
     "title": "Adding and configuring devices in Discovery",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 213,
     "confidence": 0.9
   },
   {
     "title": "SolutionPack for Dell CloudIQ",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 64,
-    "confidence": 0.7
-  },
-  {
-    "title": "- SolutionPack for Dell PowerScale",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 10,
-    "page": 82,
-    "confidence": 0.7
-  },
-  {
-    "title": "- SolutionPack for Dell PowerStore",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 10,
-    "page": 86,
-    "confidence": 0.7
+    "heading_level": 3,
+    "page": 63,
+    "confidence": 0.9
   },
   {
     "title": "SolutionPack for Dell Data Domain",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 70,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Configuring Data Domain systems for SNMPv1 and SNMPv2c",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 3,
     "page": 65,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Configuring Data Domain systems for SNMPv3",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 66,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Configuring Data Domain devices for alert consolidation",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 67,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Adding and configuring devices",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
     "confidence": 0.9
   },
   {
     "title": "Configuring Data Domain systems for SNMPv1 and SNMPv2c",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 65,
     "confidence": 0.9
   },
@@ -1091,7 +579,7 @@
     "title": "Table 8. Sample output of snmp show config command",
     "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 66,
     "confidence": 0.7
   },
@@ -1099,7 +587,7 @@
     "title": "Configuring Data Domain systems for SNMPv3",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 66,
     "confidence": 0.9
   },
@@ -1107,7 +595,7 @@
     "title": "Table 9. Sample output of snmp show config command",
     "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 67,
     "confidence": 0.7
   },
@@ -1115,7 +603,7 @@
     "title": "Configuring Data Domain devices for alert consolidation",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 67,
     "confidence": 0.9
   },
@@ -1123,25 +611,17 @@
     "title": "From the user interface",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 67,
     "confidence": 0.9
   },
   {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
+    "title": "Service hostname or IP address, specify the Primary Backend.",
+    "font_size": 9.0,
     "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "Adding and configuring devices",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
-    "confidence": 0.9
+    "heading_level": 15,
+    "page": 222,
+    "confidence": 0.7
   },
   {
     "title": "SolutionPack for Dell Data Protection Advisor",
@@ -1152,34 +632,10 @@
     "confidence": 0.9
   },
   {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Verifying scheduled reports in DPA",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 74,
-    "confidence": 0.9
-  },
-  {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
     "title": "After installing the SolutionPack for Dell Data Protection Advisor, there may be scheduling related errors in the collector logs.",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 219,
     "confidence": 0.9
   },
@@ -1187,159 +643,63 @@
     "title": "Verifying scheduled reports in DPA",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 74,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Installing the SolutionPack for Dell ECS",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
     "confidence": 0.9
   },
   {
     "title": "Installing the SolutionPack for Dell ECS",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 219,
     "confidence": 0.9
   },
   {
     "title": "SolutionPack for Dell ECS",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 77,
-    "confidence": 0.7
+    "heading_level": 3,
+    "page": 75,
+    "confidence": 0.9
   },
   {
     "title": "SolutionPack for Dell PowerEdge",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 79,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Adding and configuring devices in Discovery Center",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
-    "confidence": 0.9
-  },
-  {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "Adding and configuring devices in Discovery Center",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
+    "heading_level": 3,
+    "page": 78,
     "confidence": 0.9
   },
   {
     "title": "SolutionPack for Dell PowerScale",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 82,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
+    "heading_level": 3,
+    "page": 80,
     "confidence": 0.9
   },
   {
     "title": "SolutionPack for Dell PowerStore",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 86,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Adding and configuring devices",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
-    "confidence": 0.9
-  },
-  {
-    "title": "- SNMP Trap configuration in PowerStore SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 85,
+    "heading_level": 3,
+    "page": 83,
     "confidence": 0.9
   },
   {
     "title": "The SolutionPack for Dell PowerStore enables users to view:",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 86,
-    "confidence": 0.7
-  },
-  {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "Adding and configuring devices",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
+    "heading_level": 3,
+    "page": 83,
     "confidence": 0.9
   },
   {
     "title": "SNMP Trap configuration in PowerStore SolutionPack",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 85,
     "confidence": 0.9
   },
@@ -1347,7 +707,7 @@
     "title": "Table 10. SNMPv2c configuration details in PowerStore Manager",
     "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 85,
     "confidence": 0.7
   },
@@ -1355,215 +715,95 @@
     "title": "Table 11. SNMPv3 configuration details in PowerStore Manager",
     "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 85,
     "confidence": 0.7
   },
   {
     "title": "SolutionPack for Dell PowerSwitch",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 88,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Adding and Configuring Devices",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
-    "confidence": 0.9
-  },
-  {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "Adding and Configuring Devices",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
+    "heading_level": 3,
+    "page": 87,
     "confidence": 0.9
   },
   {
     "title": "SolutionPack for Dell PowerVault",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 90,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Installing the SolutionPack for PowerVault",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Adding and configuring devices",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
+    "heading_level": 3,
+    "page": 89,
     "confidence": 0.9
   },
   {
     "title": "The SolutionPack for Dell PowerVault enables users to:",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 90,
-    "confidence": 0.7
+    "heading_level": 3,
+    "page": 89,
+    "confidence": 0.9
   },
   {
     "title": "Installing the SolutionPack for PowerVault",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "Adding and configuring devices",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
     "confidence": 0.9
   },
   {
     "title": "SolutionPack for Dell RecoverPoint",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 93,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Configuring RecoverPoint appliance for alert consolidation",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 92,
-    "confidence": 0.9
-  },
-  {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
+    "heading_level": 3,
+    "page": 91,
     "confidence": 0.9
   },
   {
     "title": "Configuring RecoverPoint appliance for alert consolidation",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 92,
     "confidence": 0.9
   },
   {
     "title": "SolutionPack for Dell PowerFlex",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 96,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Installing the SolutionPack for Dell PowerFlex",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
+    "heading_level": 3,
+    "page": 94,
     "confidence": 0.9
   },
   {
     "title": "Installing the SolutionPack for Dell PowerFlex",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "Adding and configuring devices in Discovery Center",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
     "confidence": 0.9
   },
   {
     "title": "SolutionPack for Dell Unity/VNX/VNXe",
+    "font_size": 24.0,
+    "is_bold": true,
+    "heading_level": 3,
+    "page": 97,
+    "confidence": 0.9
+  },
+  {
+    "title": "Alerting Web-Service Instance field.",
     "font_size": 9.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 102,
+    "heading_level": 15,
+    "page": 98,
     "confidence": 0.7
-  },
-  {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Adding and configuring devices in Discovery",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
-    "confidence": 0.9
-  },
-  {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "Adding and configuring devices in Discovery",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
-    "confidence": 0.9
   },
   {
     "title": "Resolving creating stream errors",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 99,
     "confidence": 0.9
   },
@@ -1571,79 +811,23 @@
     "title": "Difference in calculation of array-level Used Capacity between Unisphere and SMR",
     "font_size": 9.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 101,
     "confidence": 0.7
   },
   {
     "title": "SolutionPack for Dell EMC VMAX",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 115,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Configuring the access credentials",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 116,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Preparing Dell EMC VMAX for discovery and data collection",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 3,
     "page": 103,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Adding and configuring devices in Discovery Center",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Updating SolutionPack alert definitions",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 122,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Configuring Solutions Enabler client access for VMAX",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 111,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Resolving SMI-S Provider port conflicts",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 114,
     "confidence": 0.9
   },
   {
     "title": "Configuring the access credentials",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 116,
     "confidence": 0.9
   },
@@ -1651,7 +835,7 @@
     "title": "Preparing Dell EMC VMAX for discovery and data collection",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 103,
     "confidence": 0.9
   },
@@ -1659,7 +843,7 @@
     "title": "VMAX3/VMAX All Flash discovery scenario",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 117,
     "confidence": 0.9
   },
@@ -1667,15 +851,15 @@
     "title": "Collector Host (Remote Discovery Configuration)",
     "font_size": 14.0,
     "is_bold": false,
-    "heading_level": 7,
+    "heading_level": 11,
     "page": 117,
     "confidence": 0.9
   },
   {
     "title": "Verifying the configuration",
-    "font_size": 14.0,
+    "font_size": 13.999999999999986,
     "is_bold": false,
-    "heading_level": 7,
+    "heading_level": 12,
     "page": 117,
     "confidence": 0.9
   },
@@ -1683,7 +867,7 @@
     "title": "Creating collectors for discovery of Symmetrix arrays (local discovery configuration)",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 118,
     "confidence": 0.9
   },
@@ -1691,31 +875,31 @@
     "title": "Configuring VMAX arrays for consolidation of availability alerts",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 105,
     "confidence": 0.9
   },
   {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
+    "title": "Example: 1 0.31.90.148, 2041,10,ACTIVE",
+    "font_size": 9.0,
     "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
+    "heading_level": 15,
+    "page": 118,
+    "confidence": 0.7
   },
   {
-    "title": "Adding and configuring devices in Discovery Center",
-    "font_size": 20.0,
+    "title": "- NOTE: Use only one SolutionPack, either the SolutionPack for Dell EMC VMAX or the SolutionPack for Dell VMAX/",
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
+    "heading_level": 3,
+    "page": 103,
     "confidence": 0.9
   },
   {
     "title": "Adding VMAX All Flash Arrays",
     "font_size": 14.0,
     "is_bold": true,
-    "heading_level": 7,
+    "heading_level": 11,
     "page": 108,
     "confidence": 0.9
   },
@@ -1723,7 +907,7 @@
     "title": "Viewing the Test button test results",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 120,
     "confidence": 0.9
   },
@@ -1731,7 +915,7 @@
     "title": "Understanding the test messages",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 121,
     "confidence": 0.9
   },
@@ -1739,7 +923,7 @@
     "title": "Unisphere connectivity failure",
     "font_size": 14.0,
     "is_bold": false,
-    "heading_level": 7,
+    "heading_level": 11,
     "page": 110,
     "confidence": 0.9
   },
@@ -1747,7 +931,7 @@
     "title": "SMI-S Provider connectivity failure",
     "font_size": 14.0,
     "is_bold": false,
-    "heading_level": 7,
+    "heading_level": 11,
     "page": 110,
     "confidence": 0.9
   },
@@ -1755,7 +939,7 @@
     "title": "Updating SolutionPack alert definitions",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 122,
     "confidence": 0.9
   },
@@ -1763,39 +947,15 @@
     "title": "Configuring Solutions Enabler client access for VMAX",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 111,
-    "confidence": 0.9
-  },
-  {
-    "title": "- b. Adding client hosts to existing SYMAUTH configuration",
-    "font_size": 16.0,
-    "is_bold": true,
-    "heading_level": 6,
-    "page": 112,
-    "confidence": 0.9
-  },
-  {
-    "title": "- c. Enabling client authorization",
-    "font_size": 16.0,
-    "is_bold": true,
-    "heading_level": 6,
-    "page": 113,
-    "confidence": 0.9
-  },
-  {
-    "title": "- d. Validating Symmetrix access controls",
-    "font_size": 16.0,
-    "is_bold": true,
-    "heading_level": 6,
-    "page": 113,
     "confidence": 0.9
   },
   {
     "title": "Adding client hosts to existing SYMAUTH configuration",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 112,
     "confidence": 0.9
   },
@@ -1803,7 +963,7 @@
     "title": "- If User Authorization Control is disabled ( Disabled ) for the specific VMAX, proceed to Enabling client authorization.",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 113,
     "confidence": 0.9
   },
@@ -1811,7 +971,7 @@
     "title": "Enabling client authorization",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 113,
     "confidence": 0.9
   },
@@ -1819,7 +979,7 @@
     "title": "Validating Symmetrix access controls",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 113,
     "confidence": 0.9
   },
@@ -1827,7 +987,7 @@
     "title": "Limitation: some alerts not displayed",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 114,
     "confidence": 0.9
   },
@@ -1835,63 +995,15 @@
     "title": "Resolving SMI-S Provider port conflicts",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 114,
     "confidence": 0.9
   },
   {
     "title": "SolutionPack for Dell VMAX/PowerMax",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 122,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Configuring the access credentials",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 116,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Preparing Dell VMAX/PowerMax for discovery and data collection",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 117,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Adding and configuring devices in Discovery Center",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Updating SolutionPack alert definitions",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 122,
-    "confidence": 0.9
-  },
-  {
-    "title": "Configuring the access credentials",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 3,
     "page": 116,
     "confidence": 0.9
   },
@@ -1899,199 +1011,47 @@
     "title": "Preparing Dell VMAX/PowerMax for discovery and data collection",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
-    "page": 117,
-    "confidence": 0.9
-  },
-  {
-    "title": "VMAX3/VMAX All Flash discovery scenario",
-    "font_size": 16.0,
-    "is_bold": true,
     "heading_level": 6,
     "page": 117,
-    "confidence": 0.9
-  },
-  {
-    "title": "Collector Host (Remote Discovery Configuration)",
-    "font_size": 14.0,
-    "is_bold": false,
-    "heading_level": 7,
-    "page": 117,
-    "confidence": 0.9
-  },
-  {
-    "title": "Verifying the configuration",
-    "font_size": 14.0,
-    "is_bold": false,
-    "heading_level": 7,
-    "page": 117,
-    "confidence": 0.9
-  },
-  {
-    "title": "Creating collectors for discovery of Symmetrix arrays (local discovery configuration)",
-    "font_size": 16.0,
-    "is_bold": true,
-    "heading_level": 6,
-    "page": 118,
     "confidence": 0.9
   },
   {
     "title": "Configuring PowerMax arrays for consolidation of availability alerts",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 118,
     "confidence": 0.9
   },
   {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "Adding and configuring devices in Discovery Center",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
-    "confidence": 0.9
-  },
-  {
-    "title": "Viewing the Test button test results",
-    "font_size": 16.0,
-    "is_bold": true,
-    "heading_level": 6,
-    "page": 120,
-    "confidence": 0.9
-  },
-  {
-    "title": "Understanding the test messages",
-    "font_size": 16.0,
-    "is_bold": true,
-    "heading_level": 6,
-    "page": 121,
-    "confidence": 0.9
-  },
-  {
-    "title": "Updating SolutionPack alert definitions",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 122,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Adding and configuring devices in Discovery",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
-    "confidence": 0.9
-  },
-  {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
     "title": "SolutionPack for Dell VPLEX",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 125,
-    "confidence": 0.7
-  },
-  {
-    "title": "Adding and configuring devices in Discovery",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Adding and configuring devices",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
-    "confidence": 0.9
-  },
-  {
-    "title": "- SNMP Trap Configuration in VxRail Solution Pack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 127,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Recommendations and limitations",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 129,
+    "heading_level": 3,
+    "page": 123,
     "confidence": 0.9
   },
   {
     "title": "The SolutionPack for Dell VxRail enables users to:",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 129,
-    "confidence": 0.7
-  },
-  {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
+    "heading_level": 3,
+    "page": 126,
     "confidence": 0.9
   },
   {
     "title": "SolutionPack for Dell VxRail",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 129,
-    "confidence": 0.7
-  },
-  {
-    "title": "Adding and configuring devices",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
+    "heading_level": 3,
+    "page": 126,
     "confidence": 0.9
   },
   {
     "title": "SNMP Trap Configuration in VxRail Solution Pack",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 127,
     "confidence": 0.9
   },
@@ -2099,15 +1059,7 @@
     "title": "1. Configuring SNMP Trap Receivers",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
-    "page": 225,
-    "confidence": 0.9
-  },
-  {
-    "title": "Configuring SNMP Trap Receivers",
-    "font_size": 16.0,
-    "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 225,
     "confidence": 0.9
   },
@@ -2115,7 +1067,7 @@
     "title": "Table 12. SNMP trap configuration details",
     "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 128,
     "confidence": 0.7
   },
@@ -2123,7 +1075,7 @@
     "title": "Enabling SNMP Alarms/Traps for the Alerts:",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 226,
     "confidence": 0.9
   },
@@ -2131,63 +1083,23 @@
     "title": "Recommendations and limitations",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 129,
     "confidence": 0.9
   },
   {
     "title": "SolutionPack for Dell EMC XtremIO",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 132,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Adding and configuring devices",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
-    "confidence": 0.9
-  },
-  {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "Adding and configuring devices",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
+    "heading_level": 3,
+    "page": 130,
     "confidence": 0.9
   },
   {
     "title": "SolutionPack for Hitachi Device Manager",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 139,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Preparing Hitachi Device Manager for discovery and data collection",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 3,
     "page": 133,
     "confidence": 0.9
   },
@@ -2195,63 +1107,23 @@
     "title": "- Preparing Hitachi Ops Center Configuration Manager and Hitachi Ops Center Analyzer for discovery and data collection through REST",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 134,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Discovery of Hitachi Device Manager through Discovery center",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 135,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Embedded Performance Collection",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 148,
     "confidence": 0.9
   },
   {
     "title": "Preparing Hitachi Device Manager for discovery and data collection",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 133,
-    "confidence": 0.9
-  },
-  {
-    "title": "Preparing Hitachi Ops Center Configuration Manager and Hitachi Ops Center Analyzer for discovery and data collection through REST",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 134,
-    "confidence": 0.9
-  },
-  {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
     "confidence": 0.9
   },
   {
     "title": "Discovery of Hitachi Device Manager through Discovery center",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 135,
     "confidence": 0.9
   },
@@ -2259,7 +1131,7 @@
     "title": "- To discover through XMLAPI and SMI-S and HDS type as Embedded Performance Collection , select from the drop down and enter:",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 148,
     "confidence": 0.9
   },
@@ -2267,7 +1139,7 @@
     "title": "NOTE: For the Array IP Address or FQDN type the IP address of the array. For additional details, see Embedded Performance Collection.",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 148,
     "confidence": 0.9
   },
@@ -2275,7 +1147,7 @@
     "title": "Embedded Performance Collection",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 148,
     "confidence": 0.9
   },
@@ -2283,7 +1155,7 @@
     "title": "Enabling the SMI-S certificate",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 148,
     "confidence": 0.9
   },
@@ -2291,7 +1163,7 @@
     "title": "The following chapters are related to enabling the SMI-S certificate:",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 148,
     "confidence": 0.9
   },
@@ -2299,7 +1171,7 @@
     "title": "Restarting the SMI-S provider",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 148,
     "confidence": 0.9
   },
@@ -2307,7 +1179,7 @@
     "title": "Enabling performance monitoring in Storage Navigator",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 149,
     "confidence": 0.9
   },
@@ -2315,7 +1187,7 @@
     "title": "Configuring embedded performance monitoring",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 149,
     "confidence": 0.9
   },
@@ -2323,15 +1195,7 @@
     "title": "3. Discover embedded performance collection.",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
-    "page": 148,
-    "confidence": 0.9
-  },
-  {
-    "title": "- b. For HDS type , select Embedded Performance Collection .",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 148,
     "confidence": 0.9
   },
@@ -2339,7 +1203,7 @@
     "title": "Limitations for XMLAPI and SMIS based Hitachi array discovery",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 139,
     "confidence": 0.9
   },
@@ -2347,63 +1211,31 @@
     "title": "Limitations for RESTAPI based Hitachi array discovery",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 139,
     "confidence": 0.9
   },
   {
     "title": "SolutionPack for HP 3PAR StoreServ",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 142,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Preparing the system for discovery and data collection",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 3,
     "page": 140,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Configuring HP 3PAR StoreServ systems for alert consolidation",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 141,
     "confidence": 0.9
   },
   {
     "title": "Preparing the system for discovery and data collection",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 140,
-    "confidence": 0.9
-  },
-  {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
     "confidence": 0.9
   },
   {
     "title": "Configuring HP 3PAR StoreServ systems for alert consolidation",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 141,
     "confidence": 0.9
   },
@@ -2411,231 +1243,63 @@
     "title": "Table 13. SNMP configuration details in 3PAR CLI",
     "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 142,
     "confidence": 0.7
   },
   {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Adding and configuring devices",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Configuring HPE Nimble devices for alert consolidation",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 144,
-    "confidence": 0.9
-  },
-  {
     "title": "The SolutionPack for HPE Nimble enables users to view:",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 145,
-    "confidence": 0.7
-  },
-  {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
+    "heading_level": 3,
+    "page": 143,
     "confidence": 0.9
   },
   {
     "title": "SolutionPack for HPE Nimble",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 145,
-    "confidence": 0.7
-  },
-  {
-    "title": "Adding and configuring devices",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
+    "heading_level": 3,
+    "page": 143,
     "confidence": 0.9
   },
   {
     "title": "Configuring HPE Nimble devices for alert consolidation",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 144,
     "confidence": 0.9
   },
   {
     "title": "SolutionPack for HP Storageworks XP",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 150,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Embedded Performance Collection",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 148,
-    "confidence": 0.9
-  },
-  {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "Embedded Performance Collection",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 148,
-    "confidence": 0.9
-  },
-  {
-    "title": "Enabling the SMI-S certificate",
-    "font_size": 16.0,
-    "is_bold": true,
-    "heading_level": 6,
-    "page": 148,
-    "confidence": 0.9
-  },
-  {
-    "title": "The following chapters are related to enabling the SMI-S certificate:",
-    "font_size": 16.0,
-    "is_bold": true,
-    "heading_level": 6,
-    "page": 148,
-    "confidence": 0.9
-  },
-  {
-    "title": "Restarting the SMI-S provider",
-    "font_size": 16.0,
-    "is_bold": true,
-    "heading_level": 6,
-    "page": 148,
-    "confidence": 0.9
-  },
-  {
-    "title": "Enabling performance monitoring in Storage Navigator",
-    "font_size": 16.0,
-    "is_bold": true,
-    "heading_level": 6,
-    "page": 149,
-    "confidence": 0.9
-  },
-  {
-    "title": "Configuring embedded performance monitoring",
-    "font_size": 16.0,
-    "is_bold": true,
-    "heading_level": 6,
-    "page": 149,
-    "confidence": 0.9
-  },
-  {
-    "title": "3. Discover embedded performance collection.",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 148,
-    "confidence": 0.9
-  },
-  {
-    "title": "- b. For HP type , select Embedded Performance Collection .",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 148,
+    "heading_level": 3,
+    "page": 146,
     "confidence": 0.9
   },
   {
     "title": "SolutionPack for Huawei OceanStor",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 153,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Adding and configuring devices",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Configuring Huawei OceanStor for alert consolidation",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 153,
+    "heading_level": 3,
+    "page": 151,
     "confidence": 0.9
   },
   {
     "title": "The SolutionPack for Huawei OceanStor enables users to:",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 153,
-    "confidence": 0.7
-  },
-  {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "Adding and configuring devices",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
+    "heading_level": 3,
+    "page": 151,
     "confidence": 0.9
   },
   {
     "title": "Configuring Huawei OceanStor for alert consolidation",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 153,
     "confidence": 0.9
   },
@@ -2643,31 +1307,15 @@
     "title": "Table 14. Trap server configurations in Huawei OceanStor array management console",
     "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 153,
     "confidence": 0.7
-  },
-  {
-    "title": "- Preparing the IBM DS system for discovery and data collection",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 154,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
   },
   {
     "title": "Preparing the IBM DS system for discovery and data collection",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 154,
     "confidence": 0.9
   },
@@ -2675,183 +1323,47 @@
     "title": "Identify the information that is required to support resource discovery and data collection before installing the SolutionPack for IBM DS.",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 219,
     "confidence": 0.9
   },
   {
     "title": "SolutionPack for IBM DS",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 155,
-    "confidence": 0.7
+    "heading_level": 3,
+    "page": 154,
+    "confidence": 0.9
   },
   {
     "title": "SolutionPack for IBM FlashSystem",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 158,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Preparing the IBM FlashSystem for discovery and data collection",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 3,
     "page": 156,
     "confidence": 0.9
   },
   {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Adding and configuring devices",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
-    "confidence": 0.9
-  },
-  {
     "title": "The SolutionPack for IBM FlashSystem enables users to:",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 158,
-    "confidence": 0.7
+    "heading_level": 3,
+    "page": 156,
+    "confidence": 0.9
   },
   {
     "title": "Preparing the IBM FlashSystem for discovery and data collection",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 156,
-    "confidence": 0.9
-  },
-  {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "Adding and configuring devices",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Management IP address or hostname of the Array",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 10,
-    "page": 157,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Password/IBM FlashSystem Unique Key",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 10,
-    "page": 157,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Management IP address or hostname of the Array",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 10,
-    "page": 157,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Password/IBM FlashSystem Unique Key",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 10,
-    "page": 157,
-    "confidence": 0.7
-  },
-  {
-    "title": "- IBM Hyper-Scale Manager Hostname or IP address",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 10,
-    "page": 157,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Configuring HMC for discovery",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 159,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Configuring LPARs for discovery",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 160,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Installing the SolutionPack for IBM LPAR",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Adding and configuring HMC device in Discovery Center",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 161,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Adding and configuring VIO Server/Client in Discovery Center",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 162,
-    "confidence": 0.9
-  },
-  {
-    "title": "- SolutionPack Reconfiguration",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 162,
     "confidence": 0.9
   },
   {
     "title": "Configuring HMC for discovery",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 159,
     "confidence": 0.9
   },
@@ -2859,23 +1371,23 @@
     "title": "Generating a public and private key pair for HMC",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 159,
     "confidence": 0.9
   },
   {
     "title": "SolutionPack for IBM LPAR",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 162,
-    "confidence": 0.7
+    "heading_level": 3,
+    "page": 159,
+    "confidence": 0.9
   },
   {
     "title": "Importing a private key into the Collector",
     "font_size": 14.0,
     "is_bold": true,
-    "heading_level": 7,
+    "heading_level": 11,
     "page": 204,
     "confidence": 0.9
   },
@@ -2883,7 +1395,7 @@
     "title": "Configuring LPARs for discovery",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 160,
     "confidence": 0.9
   },
@@ -2891,7 +1403,7 @@
     "title": "Installing the SolutionPack for IBM LPAR",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 219,
     "confidence": 0.9
   },
@@ -2899,7 +1411,7 @@
     "title": "Adding and configuring HMC device in Discovery Center",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 161,
     "confidence": 0.9
   },
@@ -2907,7 +1419,7 @@
     "title": "Adding and configuring VIO Server/Client in Discovery Center",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 162,
     "confidence": 0.9
   },
@@ -2915,7 +1427,7 @@
     "title": "SolutionPack Reconfiguration",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 162,
     "confidence": 0.9
   },
@@ -2928,58 +1440,18 @@
     "confidence": 0.9
   },
   {
-    "title": "- Preparing for discovery and data collection",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 163,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
     "title": "Preparing for discovery and data collection",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 163,
-    "confidence": 0.9
-  },
-  {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Preparing the IBM XIV system for discovery and data collection",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 165,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
     "confidence": 0.9
   },
   {
     "title": "Preparing the IBM XIV system for discovery and data collection",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 165,
     "confidence": 0.9
   },
@@ -2987,31 +1459,23 @@
     "title": "Identify the information that is required to support resource discovery and data collection before installing the SolutionPack for IBM XIV.",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 219,
     "confidence": 0.9
   },
   {
     "title": "SolutionPack for IBM XIV",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 167,
-    "confidence": 0.7
+    "heading_level": 3,
+    "page": 165,
+    "confidence": 0.9
   },
   {
     "title": "Discovery of LDAP users requires active GUI session",
     "font_size": 16.0,
     "is_bold": false,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 166,
     "confidence": 0.9
   },
@@ -3019,7 +1483,7 @@
     "title": "Max Storage Volume Response Time metric not collected",
     "font_size": 16.0,
     "is_bold": false,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 167,
     "confidence": 0.9
   },
@@ -3027,151 +1491,63 @@
     "title": "No support for Used for File, LUN alias, and Replica 2 and Replica 3 details",
     "font_size": 16.0,
     "is_bold": false,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 167,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Creating an SRM service account",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 168,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Adding and configuring devices in Discovery",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
     "confidence": 0.9
   },
   {
     "title": "Creating an SRM service account",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 168,
     "confidence": 0.9
   },
   {
     "title": "SolutionPack for Kubernetes",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 170,
-    "confidence": 0.7
-  },
-  {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "Adding and configuring devices in Discovery",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
+    "heading_level": 3,
+    "page": 168,
     "confidence": 0.9
   },
   {
     "title": "SolutionPack for Microsoft Azure",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 172,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Adding and configuring devices",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
+    "heading_level": 3,
+    "page": 171,
     "confidence": 0.9
   },
   {
     "title": "The SolutionPack for Microsoft Azure enables users to view:",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 172,
-    "confidence": 0.7
-  },
-  {
-    "title": "Adding and configuring devices",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
+    "heading_level": 3,
+    "page": 171,
     "confidence": 0.9
   },
   {
     "title": "SolutionPack for Microsoft Hyper-V",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 175,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Configuring credentials for SolutionPack for Microsoft Hyper-V",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 10,
-    "page": 175,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Using a test script to query WMI objects",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 175,
+    "heading_level": 3,
+    "page": 173,
     "confidence": 0.9
   },
   {
     "title": "Configuring credentials for SolutionPack for Microsoft Hyper-V",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 175,
-    "confidence": 0.7
-  },
-  {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
+    "heading_level": 3,
+    "page": 173,
     "confidence": 0.9
   },
   {
     "title": "Using a test script to query WMI objects",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 175,
     "confidence": 0.9
   },
@@ -3179,55 +1555,23 @@
     "title": "Table 15. Array platform Ssupported for iSCSI",
     "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 175,
     "confidence": 0.7
   },
   {
     "title": "SolutionPack for Microsoft SQL Server",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 180,
-    "confidence": 0.7
-  },
-  {
-    "title": "- User privilege requirements for SolutionPack for Microsoft SQL",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 3,
     "page": 176,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Configuring the SolutionPack with an unprivileged account",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 187,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Installing the SolutionPack for Microsoft SQL",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Enabling SSL enabled MS-SQL instance discovery",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 179,
     "confidence": 0.9
   },
   {
     "title": "User privilege requirements for SolutionPack for Microsoft SQL",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 176,
     "confidence": 0.9
   },
@@ -3235,7 +1579,7 @@
     "title": "Microsoft SQL authentication",
     "font_size": 16.0,
     "is_bold": false,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 176,
     "confidence": 0.9
   },
@@ -3243,7 +1587,7 @@
     "title": "Configuring the SolutionPack with an unprivileged account",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 187,
     "confidence": 0.9
   },
@@ -3251,7 +1595,7 @@
     "title": "Granting permission to a non-admin user",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 177,
     "confidence": 0.9
   },
@@ -3259,7 +1603,7 @@
     "title": "Installing the SolutionPack for Microsoft SQL",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 219,
     "confidence": 0.9
   },
@@ -3267,7 +1611,7 @@
     "title": "Enabling SSL enabled MS-SQL instance discovery",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 179,
     "confidence": 0.9
   },
@@ -3275,7 +1619,7 @@
     "title": "export \\_JAVA\\_OPTIONS=-Djsse.enableCBCProtection=false -Linux",
     "font_size": 9.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 179,
     "confidence": 0.7
   },
@@ -3283,7 +1627,7 @@
     "title": "2. ./manage-modules.sh service restart all",
     "font_size": 9.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 179,
     "confidence": 0.7
   },
@@ -3291,15 +1635,7 @@
     "title": "2. -Djsse.enableCBCProtection=false",
     "font_size": 9.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 179,
-    "confidence": 0.7
-  },
-  {
-    "title": "2. -Djsse.enableCBCProtection=false",
-    "font_size": 9.0,
-    "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 179,
     "confidence": 0.7
   },
@@ -3307,7 +1643,7 @@
     "title": "manage-modules.cmd service restart collector-manager microsoft-sqlserver",
     "font_size": 9.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 179,
     "confidence": 0.7
   },
@@ -3315,53 +1651,21 @@
     "title": "manage-modules.cmd service restart script-engine Default",
     "font_size": 9.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 179,
     "confidence": 0.7
-  },
-  {
-    "title": "- Configuring access credentials",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 181,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Preparing NetApp FAS for discovery and data collection",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 181,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Configuring NetApp arrays for alert consolidation",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 182,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
   },
   {
     "title": "Configuring access credentials",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 181,
     "confidence": 0.9
   },
   {
     "title": "Preparing NetApp FAS for discovery and data collection",
-    "font_size": 20.0,
+    "font_size": 20.00000000000003,
     "is_bold": true,
     "heading_level": 5,
     "page": 181,
@@ -3369,33 +1673,25 @@
   },
   {
     "title": "SolutionPack for NetApp FAS",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 184,
-    "confidence": 0.7
+    "heading_level": 3,
+    "page": 181,
+    "confidence": 0.9
   },
   {
     "title": "Configuring NetApp arrays for alert consolidation",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 182,
-    "confidence": 0.9
-  },
-  {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
     "confidence": 0.9
   },
   {
     "title": "Table 16. Supported use cases",
     "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 183,
     "confidence": 0.7
   },
@@ -3403,7 +1699,7 @@
     "title": "Limitations in global reports",
     "font_size": 14.0,
     "is_bold": false,
-    "heading_level": 7,
+    "heading_level": 11,
     "page": 184,
     "confidence": 0.9
   },
@@ -3411,87 +1707,39 @@
     "title": "Limitations in the inventory reports",
     "font_size": 14.0,
     "is_bold": false,
-    "heading_level": 7,
+    "heading_level": 11,
     "page": 184,
     "confidence": 0.9
   },
   {
     "title": "SolutionPack for Oracle Database",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 189,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
+    "heading_level": 3,
+    "page": 185,
     "confidence": 0.9
   },
   {
-    "title": "- Topology for the SolutionPack for Oracle Database",
-    "font_size": 9.0,
+    "title": "The SolutionPack for Oracle Database monitors the status and performance of an Oracle database.",
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 189,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Configuring the SolutionPack with an unprivileged account",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 187,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Discovery Center requirements",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 188,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Configuring sudo rights for ASM scripts",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 188,
-    "confidence": 0.9
-  },
-  {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
+    "heading_level": 3,
+    "page": 185,
     "confidence": 0.9
   },
   {
     "title": "Topology for the SolutionPack for Oracle Database",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 189,
-    "confidence": 0.7
-  },
-  {
-    "title": "Configuring the SolutionPack with an unprivileged account",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 187,
+    "heading_level": 3,
+    "page": 185,
     "confidence": 0.9
   },
   {
     "title": "Discovery Center requirements",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 188,
     "confidence": 0.9
   },
@@ -3499,39 +1747,23 @@
     "title": "Configuring sudo rights for ASM scripts",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 188,
     "confidence": 0.9
   },
   {
     "title": "SolutionPack for Oracle MySQL Database",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 191,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Preparing MySQL database for discovery and data collection",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 3,
     "page": 190,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
     "confidence": 0.9
   },
   {
     "title": "Preparing MySQL database for discovery and data collection",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 190,
     "confidence": 0.9
   },
@@ -3539,77 +1771,29 @@
     "title": "SELECT PASSWORD('mypass');",
     "font_size": 9.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 190,
     "confidence": 0.7
   },
   {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
     "title": "SolutionPack for Physical Hosts",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 211,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Preparing the hosts for discovery and data collection",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 193,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "- SolutionPack reconfiguration",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 162,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Configuring Dell SRM to search for additional paths for INQ",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 210,
+    "heading_level": 3,
+    "page": 192,
     "confidence": 0.9
   },
   {
     "title": "Table 17. Authentication methods for Physical Hosts",
     "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 193,
     "confidence": 0.7
   },
   {
     "title": "Preparing the hosts for discovery and data collection",
     "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 193,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Windows host configuration for discovery and data collection",
-    "font_size": 16.0,
     "is_bold": true,
     "heading_level": 6,
     "page": 193,
@@ -3619,31 +1803,23 @@
     "title": "- UNIX host/LPAR (VIO Server/Client) configuration for discovery and data collection",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 201,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Configuring ESX hosts to collect PowerPath metrics",
-    "font_size": 16.0,
-    "is_bold": true,
-    "heading_level": 6,
-    "page": 206,
     "confidence": 0.9
   },
   {
     "title": "Guidelines for SNIA libraries and HBA drivers",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 193,
     "confidence": 0.9
   },
   {
     "title": "Windows host configuration for discovery and data collection",
-    "font_size": 16.0,
+    "font_size": 16.00000000000003,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 8,
     "page": 193,
     "confidence": 0.9
   },
@@ -3651,7 +1827,7 @@
     "title": "For additional details, see Types of discovery allowed by different privilege levels.",
     "font_size": 14.0,
     "is_bold": true,
-    "heading_level": 7,
+    "heading_level": 11,
     "page": 194,
     "confidence": 0.9
   },
@@ -3659,7 +1835,7 @@
     "title": "- Certificate that is generated and placed in the personal store. See Generating a .pfx certificate.",
     "font_size": 12.0,
     "is_bold": true,
-    "heading_level": 8,
+    "heading_level": 13,
     "page": 198,
     "confidence": 0.9
   },
@@ -3667,7 +1843,7 @@
     "title": "- Host Configuration utility (run on each host). Using the Host Configuration Utility",
     "font_size": 14.0,
     "is_bold": true,
-    "heading_level": 7,
+    "heading_level": 11,
     "page": 196,
     "confidence": 0.9
   },
@@ -3675,7 +1851,7 @@
     "title": "- Group policy configuration (run on the domain servers). Generating a .pfx certificate",
     "font_size": 12.0,
     "is_bold": true,
-    "heading_level": 8,
+    "heading_level": 13,
     "page": 198,
     "confidence": 0.9
   },
@@ -3683,7 +1859,7 @@
     "title": "Configuring Centrify on Windows host",
     "font_size": 14.0,
     "is_bold": false,
-    "heading_level": 7,
+    "heading_level": 11,
     "page": 194,
     "confidence": 0.9
   },
@@ -3691,7 +1867,7 @@
     "title": "Types of discovery allowed by different privilege levels",
     "font_size": 14.0,
     "is_bold": true,
-    "heading_level": 7,
+    "heading_level": 11,
     "page": 194,
     "confidence": 0.9
   },
@@ -3699,7 +1875,7 @@
     "title": "Table 18. Allowed discovery types",
     "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 194,
     "confidence": 0.7
   },
@@ -3707,7 +1883,7 @@
     "title": "Table 18. Allowed discovery types (continued)",
     "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 194,
     "confidence": 0.7
   },
@@ -3715,39 +1891,15 @@
     "title": "Customizing a WinRM URL prefix",
     "font_size": 14.0,
     "is_bold": true,
-    "heading_level": 7,
+    "heading_level": 11,
     "page": 195,
-    "confidence": 0.9
-  },
-  {
-    "title": "- a. Adding a non-admin user to a group",
-    "font_size": 12.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 195,
-    "confidence": 0.9
-  },
-  {
-    "title": "- b. Retrieving the SID of a non-admin user",
-    "font_size": 12.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 196,
-    "confidence": 0.9
-  },
-  {
-    "title": "- c. Adding a non-admin SID to root SDDL",
-    "font_size": 12.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 196,
     "confidence": 0.9
   },
   {
     "title": "Adding a non-admin user to a group",
     "font_size": 12.0,
     "is_bold": true,
-    "heading_level": 8,
+    "heading_level": 13,
     "page": 195,
     "confidence": 0.9
   },
@@ -3755,7 +1907,7 @@
     "title": "Retrieving the SID of a non-admin user",
     "font_size": 12.0,
     "is_bold": true,
-    "heading_level": 8,
+    "heading_level": 13,
     "page": 196,
     "confidence": 0.9
   },
@@ -3763,7 +1915,7 @@
     "title": "Adding a non-admin SID to root SDDL",
     "font_size": 12.0,
     "is_bold": true,
-    "heading_level": 8,
+    "heading_level": 13,
     "page": 196,
     "confidence": 0.9
   },
@@ -3771,7 +1923,7 @@
     "title": "Using the host configuration utility",
     "font_size": 14.0,
     "is_bold": true,
-    "heading_level": 7,
+    "heading_level": 11,
     "page": 196,
     "confidence": 0.9
   },
@@ -3779,7 +1931,7 @@
     "title": "Table 19. Host Configuration utility command options",
     "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 197,
     "confidence": 0.7
   },
@@ -3787,7 +1939,7 @@
     "title": "Sample usage of hostconfig-srm.ps1 script",
     "font_size": 9.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 197,
     "confidence": 0.7
   },
@@ -3795,7 +1947,7 @@
     "title": "Configuring firewall port exception using group policy",
     "font_size": 14.0,
     "is_bold": true,
-    "heading_level": 7,
+    "heading_level": 11,
     "page": 198,
     "confidence": 0.9
   },
@@ -3803,7 +1955,7 @@
     "title": "2. Exporting the .pfx certificate",
     "font_size": 12.0,
     "is_bold": true,
-    "heading_level": 8,
+    "heading_level": 13,
     "page": 199,
     "confidence": 0.9
   },
@@ -3811,7 +1963,7 @@
     "title": "3. Importing the .pfx certificate",
     "font_size": 12.0,
     "is_bold": true,
-    "heading_level": 8,
+    "heading_level": 13,
     "page": 199,
     "confidence": 0.9
   },
@@ -3819,31 +1971,15 @@
     "title": "Generating a .pfx certificate",
     "font_size": 12.0,
     "is_bold": true,
-    "heading_level": 8,
+    "heading_level": 13,
     "page": 198,
-    "confidence": 0.9
-  },
-  {
-    "title": "Exporting the .pfx certificate",
-    "font_size": 12.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 199,
-    "confidence": 0.9
-  },
-  {
-    "title": "Importing the .pfx certificate",
-    "font_size": 12.0,
-    "is_bold": true,
-    "heading_level": 8,
-    "page": 199,
     "confidence": 0.9
   },
   {
     "title": "Generating a .cer file",
     "font_size": 12.0,
     "is_bold": true,
-    "heading_level": 8,
+    "heading_level": 13,
     "page": 200,
     "confidence": 0.9
   },
@@ -3851,31 +1987,31 @@
     "title": "Importing a .cer file",
     "font_size": 12.0,
     "is_bold": true,
-    "heading_level": 8,
+    "heading_level": 13,
     "page": 200,
-    "confidence": 0.9
-  },
-  {
-    "title": "UNIX host/LPAR (VIO Server/Client) configuration for discovery and data collection",
-    "font_size": 16.0,
-    "is_bold": true,
-    "heading_level": 6,
-    "page": 201,
     "confidence": 0.9
   },
   {
     "title": "Software to preinstall on UNIX hosts for discovery",
     "font_size": 14.0,
     "is_bold": false,
-    "heading_level": 7,
+    "heading_level": 11,
     "page": 201,
+    "confidence": 0.9
+  },
+  {
+    "title": "NOTE: The SolutionPack for Physical Hosts does not package the SAR utility.",
+    "font_size": 24.0,
+    "is_bold": true,
+    "heading_level": 3,
+    "page": 192,
     "confidence": 0.9
   },
   {
     "title": "Configuring sudo for host/LPAR (VIO Server/Client) discovery",
     "font_size": 14.0,
     "is_bold": true,
-    "heading_level": 7,
+    "heading_level": 11,
     "page": 201,
     "confidence": 0.9
   },
@@ -3883,7 +2019,7 @@
     "title": "Figure 1. Sample sudoers file for Linux OS",
     "font_size": 9.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 202,
     "confidence": 0.7
   },
@@ -3891,7 +2027,7 @@
     "title": "Configuring PowerBroker for host/LPAR(VIO Server/Client) discovery",
     "font_size": 14.0,
     "is_bold": true,
-    "heading_level": 7,
+    "heading_level": 11,
     "page": 203,
     "confidence": 0.9
   },
@@ -3899,7 +2035,7 @@
     "title": "Figure 2. Screenshot 1: which pbrun",
     "font_size": 9.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 203,
     "confidence": 0.7
   },
@@ -3907,7 +2043,7 @@
     "title": "Figure 3. Screenshot 2: Policy Files for a configuration",
     "font_size": 9.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 203,
     "confidence": 0.7
   },
@@ -3915,7 +2051,7 @@
     "title": "Configuring centrify dzdo for host/LPAR(VIO Server/Client) discovery",
     "font_size": 14.0,
     "is_bold": true,
-    "heading_level": 7,
+    "heading_level": 11,
     "page": 204,
     "confidence": 0.9
   },
@@ -3923,23 +2059,15 @@
     "title": "Generating a public and private key pair",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 159,
-    "confidence": 0.9
-  },
-  {
-    "title": "Importing a private key into the Collector",
-    "font_size": 14.0,
-    "is_bold": true,
-    "heading_level": 7,
-    "page": 204,
     "confidence": 0.9
   },
   {
     "title": "Configuring SSH authentication",
     "font_size": 14.0,
     "is_bold": true,
-    "heading_level": 7,
+    "heading_level": 11,
     "page": 205,
     "confidence": 0.9
   },
@@ -3955,63 +2083,55 @@
     "title": "Discovery via Host Agent for UNIX/Linux",
     "font_size": 12.0,
     "is_bold": true,
-    "heading_level": 8,
+    "heading_level": 13,
     "page": 205,
+    "confidence": 0.9
+  },
+  {
+    "title": "- The Reports component of the SolutionPack for Physical Hosts must be installed on the Frontend server.",
+    "font_size": 24.0,
+    "is_bold": true,
+    "heading_level": 3,
+    "page": 192,
     "confidence": 0.9
   },
   {
     "title": "Configuring ESX hosts to collect PowerPath metrics",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 206,
     "confidence": 0.9
   },
   {
     "title": "PowerPath reports are available for the SolutionPack for IBM LPAR.",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 162,
-    "confidence": 0.7
+    "heading_level": 3,
+    "page": 159,
+    "confidence": 0.9
   },
   {
     "title": "Configuring hosts to collect PowerPath metrics",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 207,
     "confidence": 0.9
   },
   {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
+    "title": "- Secure Vault is not supported for public key-based device discovery mode scenarios in SolutionPack for Physical Hosts.",
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "SolutionPack reconfiguration",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 162,
-    "confidence": 0.9
-  },
-  {
-    "title": "Adding and configuring devices in Discovery Center",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
+    "heading_level": 3,
+    "page": 192,
     "confidence": 0.9
   },
   {
     "title": "Table 20. Network Default Port",
     "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 209,
     "confidence": 0.7
   },
@@ -4019,7 +2139,7 @@
     "title": "Adding devices to discovery groups",
     "font_size": 14.0,
     "is_bold": true,
-    "heading_level": 7,
+    "heading_level": 11,
     "page": 209,
     "confidence": 0.9
   },
@@ -4027,7 +2147,7 @@
     "title": "Configuring Dell SRM to search for additional paths for INQ",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 210,
     "confidence": 0.9
   },
@@ -4035,17 +2155,17 @@
     "title": "Table 21. iSCSI Support",
     "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 211,
     "confidence": 0.7
   },
   {
     "title": "This section lists the limitations of SolutionPack for Physical Hosts.",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 211,
-    "confidence": 0.7
+    "heading_level": 3,
+    "page": 192,
+    "confidence": 0.9
   },
   {
     "title": "● For Dashboards &gt; Hosts :",
@@ -4056,42 +2176,26 @@
     "confidence": 0.6
   },
   {
-    "title": "- Adding and configuring devices",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 213,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Configuring Pure Storage arrays for alert consolidation",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 214,
-    "confidence": 0.9
-  },
-  {
     "title": "SolutionPack for Pure Storage",
+    "font_size": 24.0,
+    "is_bold": true,
+    "heading_level": 3,
+    "page": 212,
+    "confidence": 0.9
+  },
+  {
+    "title": "Leave Administration Web-Service Instance field as default.",
     "font_size": 9.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 215,
-    "confidence": 0.7
-  },
-  {
-    "title": "Adding and configuring devices",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 15,
     "page": 213,
-    "confidence": 0.9
+    "confidence": 0.7
   },
   {
     "title": "Adding Pure1 for power consumption data",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 213,
     "confidence": 0.9
   },
@@ -4099,7 +2203,7 @@
     "title": "Configuring Pure Storage arrays for alert consolidation",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 214,
     "confidence": 0.9
   },
@@ -4107,7 +2211,7 @@
     "title": "Table 22. Unsupported properties and metrics in Pure REST API 2.x",
     "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 214,
     "confidence": 0.7
   },
@@ -4115,63 +2219,39 @@
     "title": "Table 22. Unsupported properties and metrics in Pure REST API 2.x (continued)",
     "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 214,
     "confidence": 0.7
   },
   {
-    "title": "- Integrating SRM with ServiceNow",
-    "font_size": 20.0,
+    "title": "The SolutionPack for ServiceNow generates reports for the tickets that are raised in ServiceNow.",
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 3,
     "page": 216,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Retrieving alert details from ServiceNow",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 218,
     "confidence": 0.9
   },
   {
     "title": "Integrating SRM with ServiceNow",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 216,
     "confidence": 0.9
   },
   {
     "title": "SolutionPack for ServiceNow",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 218,
-    "confidence": 0.7
-  },
-  {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
+    "heading_level": 3,
+    "page": 216,
     "confidence": 0.9
   },
   {
     "title": "Selecting the devices for alerts",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 218,
     "confidence": 0.9
   },
@@ -4179,7 +2259,7 @@
     "title": "Configuring alerts for the selected devices",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 218,
     "confidence": 0.9
   },
@@ -4187,31 +2267,15 @@
     "title": "Retrieving alert details from ServiceNow",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 218,
     "confidence": 0.9
   },
   {
     "title": "SolutionPack for System Health",
-    "font_size": 9.0,
+    "font_size": 24.0,
     "is_bold": true,
-    "heading_level": 10,
-    "page": 220,
-    "confidence": 0.7
-  },
-  {
-    "title": "- Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 219,
-    "confidence": 0.9
-  },
-  {
-    "title": "Installing the SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 3,
     "page": 219,
     "confidence": 0.9
   },
@@ -4224,34 +2288,10 @@
     "confidence": 0.9
   },
   {
-    "title": "- Configuring the SolutionPack to collect PowerPath data",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 221,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Installing this SolutionPack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 222,
-    "confidence": 0.9
-  },
-  {
-    "title": "- SNMP Trap Configuration in VMware vSphere vSAN &amp; VxRail Solution Pack",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 225,
-    "confidence": 0.9
-  },
-  {
     "title": "Configuring the SolutionPack to collect PowerPath data",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 221,
     "confidence": 0.9
   },
@@ -4259,7 +2299,7 @@
     "title": "Installing this SolutionPack",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 222,
     "confidence": 0.9
   },
@@ -4267,7 +2307,7 @@
     "title": "Table 23. Metric collection level, polling intervals, collection thread settings, and the re-synch interval configuration",
     "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 223,
     "confidence": 0.7
   },
@@ -4281,9 +2321,9 @@
   },
   {
     "title": "Table 24. Array platform supported for iSCSI",
-    "font_size": 9.0,
+    "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 225,
     "confidence": 0.7
   },
@@ -4291,29 +2331,13 @@
     "title": "SNMP Trap Configuration in VMware vSphere vSAN &amp; VxRail Solution Pack",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 225,
     "confidence": 0.9
   },
   {
     "title": "SNMP Trap Configuration in VMware vSphere vSAN &amp; VxRail SolutionPack includes the following procedures:",
     "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 225,
-    "confidence": 0.9
-  },
-  {
-    "title": "1. Configuring SNMP Trap Receivers",
-    "font_size": 16.0,
-    "is_bold": true,
-    "heading_level": 6,
-    "page": 225,
-    "confidence": 0.9
-  },
-  {
-    "title": "Configuring SNMP Trap Receivers",
-    "font_size": 16.0,
     "is_bold": true,
     "heading_level": 6,
     "page": 225,
@@ -4323,7 +2347,7 @@
     "title": "Table 25. SNMP trap configuration details",
     "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 225,
     "confidence": 0.7
   },
@@ -4331,63 +2355,15 @@
     "title": "Table 25. SNMP trap configuration details (continued)",
     "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 225,
     "confidence": 0.7
-  },
-  {
-    "title": "Enabling SNMP Alarms/Traps for the Alerts:",
-    "font_size": 16.0,
-    "is_bold": true,
-    "heading_level": 6,
-    "page": 226,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Adding a new device manually",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 229,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Adding devices using CSV files",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 230,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Add devices using discovery",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 231,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Add devices in bulk by importing a CSV file",
-    "font_size": 16.0,
-    "is_bold": true,
-    "heading_level": 6,
-    "page": 230,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Add devices using discovery",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 231,
-    "confidence": 0.9
   },
   {
     "title": "Viewing all known devices and testing connectivity",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 229,
     "confidence": 0.9
   },
@@ -4395,7 +2371,7 @@
     "title": "Changing device configuration",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 229,
     "confidence": 0.9
   },
@@ -4403,7 +2379,7 @@
     "title": "Adding a new device manually",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 229,
     "confidence": 0.9
   },
@@ -4411,7 +2387,7 @@
     "title": "Adding devices using CSV files",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 230,
     "confidence": 0.9
   },
@@ -4419,7 +2395,7 @@
     "title": "Importing a CSV file",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 230,
     "confidence": 0.9
   },
@@ -4427,7 +2403,7 @@
     "title": "Exporting a CSV file template",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 231,
     "confidence": 0.9
   },
@@ -4435,7 +2411,7 @@
     "title": "Add devices using discovery",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 231,
     "confidence": 0.9
   },
@@ -4443,7 +2419,7 @@
     "title": "Registering a new collector server",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 231,
     "confidence": 0.9
   },
@@ -4451,7 +2427,7 @@
     "title": "Create a discovery group",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 232,
     "confidence": 0.9
   },
@@ -4459,7 +2435,7 @@
     "title": "Use the Discovery Group tab to create a discovery group or research the settings in discovery groups.",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 232,
     "confidence": 0.9
   },
@@ -4467,7 +2443,7 @@
     "title": "Distribute (import) discovery results",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 233,
     "confidence": 0.9
   },
@@ -4475,7 +2451,7 @@
     "title": "Table 26. Physical host discovery methods",
     "font_size": 10.0,
     "is_bold": true,
-    "heading_level": 10,
+    "heading_level": 15,
     "page": 233,
     "confidence": 0.7
   },
@@ -4483,7 +2459,7 @@
     "title": "Enabling passive host discovery",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 52,
     "confidence": 0.9
   },
@@ -4491,71 +2467,39 @@
     "title": "You can enable passive host discovery while installing the SolutionPack, or by reconfiguring the SolutionPack.",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 219,
+    "confidence": 0.9
+  },
+  {
+    "title": "For the SolutionPack for Brocade FC Switch, reconfigure the SMI Data Collection block.",
+    "font_size": 24.0,
+    "is_bold": true,
+    "heading_level": 3,
+    "page": 34,
+    "confidence": 0.9
+  },
+  {
+    "title": "For the SolutionPack for Cisco MDS/Nexus, edit the Generic-SNMP independent SolutionPackBlock instance.",
+    "font_size": 24.0,
+    "is_bold": true,
+    "heading_level": 3,
+    "page": 45,
     "confidence": 0.9
   },
   {
     "title": "Discovering hosts via host containers",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 234,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Confirming report creation",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 236,
-    "confidence": 0.9
-  },
-  {
-    "title": "- What to do if data does not appear in any reports",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 236,
-    "confidence": 0.9
-  },
-  {
-    "title": "- What to do if data does not appear in some reports",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 237,
-    "confidence": 0.9
-  },
-  {
-    "title": "- External storage capacity is double counted in capacity reports",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 237,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Authorization fails for passwords having special characters",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 238,
-    "confidence": 0.9
-  },
-  {
-    "title": "- Viewing collector errors in the Collector-Manager log files",
-    "font_size": 20.0,
-    "is_bold": true,
-    "heading_level": 5,
-    "page": 238,
     "confidence": 0.9
   },
   {
     "title": "Confirming report creation",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 236,
     "confidence": 0.9
   },
@@ -4563,7 +2507,7 @@
     "title": "What to do if data does not appear in any reports",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 236,
     "confidence": 0.9
   },
@@ -4571,7 +2515,7 @@
     "title": "Running a scheduled task to import data into reports",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 237,
     "confidence": 0.9
   },
@@ -4579,7 +2523,7 @@
     "title": "What to do if data does not appear in some reports",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 237,
     "confidence": 0.9
   },
@@ -4587,7 +2531,7 @@
     "title": "Searching for metrics in the database",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 237,
     "confidence": 0.9
   },
@@ -4595,7 +2539,7 @@
     "title": "External storage capacity is double counted in capacity reports",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 237,
     "confidence": 0.9
   },
@@ -4603,7 +2547,7 @@
     "title": "Authorization fails for passwords having special characters",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 238,
     "confidence": 0.9
   },
@@ -4611,7 +2555,7 @@
     "title": "Viewing collector errors in the Collector-Manager log files",
     "font_size": 20.0,
     "is_bold": true,
-    "heading_level": 5,
+    "heading_level": 6,
     "page": 238,
     "confidence": 0.9
   },
@@ -4619,7 +2563,7 @@
     "title": "Performing a configuration check",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 239,
     "confidence": 0.9
   },
@@ -4627,7 +2571,7 @@
     "title": "Using Logs on a Windows host",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 239,
     "confidence": 0.9
   },
@@ -4635,7 +2579,7 @@
     "title": "Checking SNIA library installation on a Windows host",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 239,
     "confidence": 0.9
   },
@@ -4643,7 +2587,7 @@
     "title": "Verifying HBA installation",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 240,
     "confidence": 0.9
   },
@@ -4651,7 +2595,7 @@
     "title": "Installing OneCommand Manager",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 240,
     "confidence": 0.9
   },
@@ -4659,7 +2603,7 @@
     "title": "Installing or modifying QLogic drivers on a Windows host",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 241,
     "confidence": 0.9
   },
@@ -4667,7 +2611,7 @@
     "title": "Environment check for non-root configurations",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 241,
     "confidence": 0.9
   },
@@ -4675,7 +2619,7 @@
     "title": "Using logs on a UNIX host",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 241,
     "confidence": 0.9
   },
@@ -4683,7 +2627,7 @@
     "title": "To verify that the SNIA library is correctly installed, check the contents of hba.conf .",
     "font_size": 14.0,
     "is_bold": false,
-    "heading_level": 7,
+    "heading_level": 11,
     "page": 241,
     "confidence": 0.9
   },
@@ -4691,7 +2635,7 @@
     "title": "Check the contents of hba.conf",
     "font_size": 14.0,
     "is_bold": false,
-    "heading_level": 7,
+    "heading_level": 11,
     "page": 241,
     "confidence": 0.9
   },
@@ -4699,7 +2643,7 @@
     "title": "Gathering information about AIX HBAs",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 242,
     "confidence": 0.9
   },
@@ -4707,7 +2651,7 @@
     "title": "Gathering information about HP-UX HBAs",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 242,
     "confidence": 0.9
   },
@@ -4715,7 +2659,7 @@
     "title": "Gathering information about Solaris HBAs",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 242,
     "confidence": 0.9
   },
@@ -4723,7 +2667,7 @@
     "title": "Gathering information about Linux HBAs",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 242,
     "confidence": 0.9
   },
@@ -4731,7 +2675,7 @@
     "title": "Installing or modifying Emulex HBA drivers on Linux",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 243,
     "confidence": 0.9
   },
@@ -4739,7 +2683,7 @@
     "title": "Installing or modifying Emulex HBA drivers on UNIX",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 243,
     "confidence": 0.9
   },
@@ -4747,7 +2691,7 @@
     "title": "Installing or modifying QLogic HBA drivers on UNIX/LINUX",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 244,
     "confidence": 0.9
   },
@@ -4755,7 +2699,7 @@
     "title": "Verifying passive hosts from the collection logs",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 245,
     "confidence": 0.9
   },
@@ -4763,7 +2707,7 @@
     "title": "Verifying passive hosts from the RDF/topology store",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 245,
     "confidence": 0.9
   },
@@ -4771,7 +2715,7 @@
     "title": "Verifying that LUNs from an array are being mapped to host",
     "font_size": 16.0,
     "is_bold": true,
-    "heading_level": 6,
+    "heading_level": 9,
     "page": 245,
     "confidence": 0.9
   }
