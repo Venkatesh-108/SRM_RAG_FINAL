@@ -269,37 +269,31 @@ class EnhancedSearchEngine:
         exact_matches = []
         seen_chunks = set()  # Track unique chunks to avoid duplicates
         
-        # Search in title indexes
+        # Search in title indexes - prioritize exact matches first
+        direct_exact_match = None
+        best_match = None
+
         for doc_name in self.documents:
             if document_filter and doc_name != document_filter:
                 continue
-                
+
             if doc_name in self.title_index:
-                for variation in query_variations:
-                    if variation in self.title_index[doc_name]:
-                        match_info = self.title_index[doc_name][variation]
-                        
-                        # Create unique identifier for this chunk
-                        chunk_idx = match_info['chunk_index']
-                        chunk_id = f"{doc_name}:{chunk_idx}"
-                        
-                        # Skip if we've already found this chunk
-                        if chunk_id in seen_chunks:
-                            continue
-                        
+                # First, look for direct exact match
+                query_normalized = query.lower().strip()
+                if query_normalized in self.title_index[doc_name]:
+                    match_info = self.title_index[doc_name][query_normalized]
+                    chunk_idx = match_info['chunk_index']
+                    chunk_id = f"{doc_name}:{chunk_idx}"
+
+                    if chunk_id not in seen_chunks:
                         seen_chunks.add(chunk_id)
                         doc_data = self.document_chunks[doc_name]
-                        
+
                         if chunk_idx < len(doc_data['chunks']):
                             chunk_content = doc_data['chunks'][chunk_idx]
-                            logger.info(f"Found exact match: '{match_info['original_title']}' at chunk {chunk_idx}, content length: {len(chunk_content)}")
-                            
-                            # Debug: Check if this chunk contains Document Overview
-                            if 'Document Overview' in chunk_content:
-                                logger.warning(f"WARNING: Chunk {chunk_idx} contains Document Overview! This is wrong.")
-                                logger.warning(f"First 200 chars: {chunk_content[:200]}")
-                            
-                            exact_matches.append({
+                            logger.info(f"Found DIRECT exact match: '{match_info['original_title']}' at chunk {chunk_idx}, content length: {len(chunk_content)}")
+
+                            direct_exact_match = {
                                 'document': doc_name,
                                 'chunk_index': chunk_idx,
                                 'title': match_info['original_title'],
@@ -308,8 +302,63 @@ class EnhancedSearchEngine:
                                 'metadata': doc_data['metadata'][chunk_idx] if chunk_idx < len(doc_data['metadata']) else {},
                                 'match_type': 'exact_title',
                                 'confidence_score': 1.0,
-                                'query_variation': variation
-                            })
+                                'query_variation': query_normalized
+                            }
+                            logger.info(f"Direct exact match found for '{query}' - will return only this result")
+                            break
+
+                # If no direct exact match, look for variations
+                if not direct_exact_match:
+                    for variation in query_variations:
+                        if variation in self.title_index[doc_name]:
+                            match_info = self.title_index[doc_name][variation]
+                            chunk_idx = match_info['chunk_index']
+                            chunk_id = f"{doc_name}:{chunk_idx}"
+
+                            if chunk_id not in seen_chunks:
+                                seen_chunks.add(chunk_id)
+                                doc_data = self.document_chunks[doc_name]
+
+                                if chunk_idx < len(doc_data['chunks']):
+                                    chunk_content = doc_data['chunks'][chunk_idx]
+                                    logger.info(f"Found variation match: '{match_info['original_title']}' at chunk {chunk_idx}, content length: {len(chunk_content)}")
+
+                                    match = {
+                                        'document': doc_name,
+                                        'chunk_index': chunk_idx,
+                                        'title': match_info['original_title'],
+                                        'chunk_type': match_info['chunk_type'],
+                                        'content': chunk_content,
+                                        'metadata': doc_data['metadata'][chunk_idx] if chunk_idx < len(doc_data['metadata']) else {},
+                                        'match_type': 'exact_title',
+                                        'confidence_score': 1.0,
+                                        'query_variation': variation
+                                    }
+
+                                    exact_matches.append(match)
+
+                                    # Store the first variation match as best match
+                                    if not best_match:
+                                        best_match = match
+
+            # If we found a direct exact match, we're done
+            if direct_exact_match:
+                break
+
+        # Determine final result - prioritize direct exact match
+        if direct_exact_match:
+            exact_matches = [direct_exact_match]
+            logger.info(f"Returning single direct exact match: '{direct_exact_match['title']}'")
+        elif exact_matches:
+            # If we have multiple variation matches, take the first one only
+            first_match = exact_matches[0]
+            exact_matches = [first_match]
+            logger.info(f"Multiple variation matches found, using first one: '{first_match['title']}'")
+        elif best_match:
+            exact_matches = [best_match]
+            logger.info(f"Using best variation match: '{best_match['title']}'")
+        else:
+            logger.info(f"No exact title matches found for '{query}'")
         
         # Enhance matches with complete section content
         enhanced_matches = self._enhance_matches_with_complete_content(exact_matches, query)

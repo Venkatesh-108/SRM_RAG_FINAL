@@ -178,16 +178,34 @@ class RAGService:
             logger.info(f"Using enhanced search with exact title matching for query: '{query}'")
             try:
                 search_results = self.enhanced_search_engine.search_with_exact_title_matching(query, top_k=top_k)
-                
-                # Format results for compatibility with existing code
+
+                # Format results for compatibility with existing code and apply deduplication
                 formatted_results = []
+                seen_content = set()
+                seen_titles = set()
+
                 for res in search_results:
+                    content = res.get("text", "").strip()
+                    title = res.get("metadata", {}).get("title", "Unknown Section")
+
+                    # Create unique identifier for this result
+                    content_hash = hash(content[:500])  # Use first 500 chars for deduplication
+                    title_normalized = title.lower().strip()
+
+                    # Skip if we've already seen this content or very similar title
+                    if content_hash in seen_content or title_normalized in seen_titles:
+                        logger.info(f"Skipping duplicate result for title: '{title}'")
+                        continue
+
+                    seen_content.add(content_hash)
+                    seen_titles.add(title_normalized)
+
                     formatted_results.append({
-                        "text": res.get("text", ""),
+                        "text": content,
                         "metadata": {
                             "filename": res.get("document", "Unknown"),
                             "page_number": res.get("metadata", {}).get("page", 1),
-                            "section_title": res.get("metadata", {}).get("title", "Unknown Section"),
+                            "section_title": title,
                             "relevance_score": res.get("score", 0.0),
                             "search_type": res.get("metadata", {}).get("match_type", "enhanced_search"),
                             "match_type": res.get("metadata", {}).get("match_type", "enhanced_search"),
@@ -197,20 +215,20 @@ class RAGService:
                             "query_matched": res.get("metadata", {}).get("query_matched", "")
                         }
                     })
-                
-                logger.info(f"Enhanced search returned {len(formatted_results)} results")
+
+                logger.info(f"Enhanced search returned {len(formatted_results)} results after deduplication (original: {len(search_results)})")
                 return formatted_results
-                
+
             except Exception as e:
                 logger.error(f"Enhanced search failed, falling back to legacy search: {e}")
-        
+
         # Fallback to legacy search
         if not self.pdf_searcher:
             logger.error("No search engines available. Make sure to index documents first.")
             return []
-        
+
         logger.info(f"Using legacy search for query: '{query}'")
-        
+
         # Special handling for exact title matches - get complete content directly
         complete_content = self._get_complete_content_for_exact_match(query)
         if complete_content:
@@ -229,24 +247,24 @@ class RAGService:
                     "is_bold": True
                 }
             }]
-        
+
         # Use configuration-based top_k values for better retrieval
         config_top_k = self.config.get("top_k_faiss", top_k)
         actual_top_k = max(config_top_k, top_k)
-        
+
         search_results = self.pdf_searcher.search(query, top_k=actual_top_k)
-        
+
         # Filter out heading-only chunks and duplicates, prioritize content chunks
         filtered_results = []
         seen_content = set()
-        
+
         # First pass: Get substantial content chunks
         for res in search_results:
             content = res.get("content", "").strip()
             if len(content) > 100 and content not in seen_content:  # Substantial content
                 filtered_results.append(res)
                 seen_content.add(content)
-        
+
         # If we don't have enough substantial content, add shorter chunks
         if len(filtered_results) < 3:
             for res in search_results:
@@ -254,7 +272,7 @@ class RAGService:
                 if content and content not in seen_content and len(filtered_results) < actual_top_k:
                     filtered_results.append(res)
                     seen_content.add(content)
-        
+
         # Format results to be consistent with the rest of the application
         formatted_results = []
         for res in filtered_results:
