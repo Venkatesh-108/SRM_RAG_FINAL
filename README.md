@@ -1,6 +1,6 @@
 # SRM AI Doc Assist 
 
-A comprehensive RAG (Retrieval-Augmented Generation) system for Dell SRM guides with advanced chunking, hybrid retrieval, and Ollama integration. The system provides both a command-line interface and a web API for querying SRM documentation.
+A comprehensive RAG (Retrieval-Augmented Generation) system for HCL SRM guides with advanced chunking, hybrid retrieval, and Ollama integration. The system provides both a command-line interface and a web API for querying SRM documentation.
 
 > **🤖 Built with Llama** - This system is powered by Llama 3.2 and operates under the Llama 3.2 Community License.
 
@@ -44,7 +44,7 @@ User Query → Exact Title Check → Direct Content Return (if exact match)
 
 - Python 3.8+
 - Ollama installed and running locally
-- Dell SRM guide documents (PDF or Markdown format)
+- HCL SRM guide documents (PDF or Markdown format)
 
 ### Installation
 
@@ -72,7 +72,7 @@ User Query → Exact Title Check → Direct Content Return (if exact match)
    pip install -r requirements.txt
    ```
 
-5. **Place your Dell SRM guide documents into the `docs` directory**
+5. **Place your HCL SRM guide documents into the `docs` directory**
 
 6. **Ensure Ollama is running with the required model:**
    ```bash
@@ -300,7 +300,7 @@ When contributing to this project:
 
 ## License
 
-This project is designed for internal use with Dell SRM documentation.
+This project is designed for internal use with HCL SRM documentation.
 
 ### Llama 3.2 Community License Compliance
 

@@ -152,7 +152,7 @@ def create_enhanced_prompt(query: str, context: str, stage: str, previous_answer
 
     if stage == "initial":
         return f"""
-        You are a Dell SRM technical documentation assistant. Answer ONLY using the provided documentation context.
+        You are a HCL SRM technical documentation assistant. Answer ONLY using the provided documentation context.
 
         STRICT PDF-ONLY RESPONSE RULES:
         1. ONLY use information that is explicitly stated in the provided context
@@ -180,7 +180,7 @@ def create_enhanced_prompt(query: str, context: str, stage: str, previous_answer
 
         Question: {query}
 
-        Context from Dell SRM Documentation:
+        Context from HCL SRM Documentation:
         {context}
 
         Answer (PDF content only):
@@ -300,7 +300,7 @@ def detect_hallucination(answer: str, context: str) -> Dict[str, Any]:
         "Edit button", "Save button", "Apply button", "Cancel button", "OK button",
         "Enable Frontend Server Tasks", "Send Frontend Server Data", "Uncheck the boxes",
         "Click Save to apply", "Click Apply", "Click OK", "Click Cancel",
-        "log in to the Dell SRM console", "using a valid username and password",
+        "log in to the HCL SRM console", "using a valid username and password",
 
         # Generic UI terms not in context
         "click on", "select from dropdown", "check the box", "uncheck the box",
@@ -433,4 +433,4 @@ def extract_safe_answer_from_context(query: str, context: str) -> str:
                     return f"The available documentation mentions: {sentence}.\n\nHowever, specific details for your question are not fully covered in the provided documentation sections."
 
     # Fallback for cases where context doesn't sufficiently match the query
-    return "The available documentation does not contain sufficient information to answer this question fully. Please refer to the complete Dell SRM documentation or contact support for detailed guidance on this topic."
+    return "The available documentation does not contain sufficient information to answer this question fully. Please refer to the complete HCL SRM documentation or contact support for detailed guidance on this topic."

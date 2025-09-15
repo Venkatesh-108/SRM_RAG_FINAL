@@ -1,29 +1,4 @@
 {
-  "last_updated": "2025-09-15T16:06:05.217497",
-  "files": {
-    "SRM Deploying Additional Frontend Servers.pdf": {
-      "path": "docs\\SRM Deploying Additional Frontend Servers.pdf",
-      "size": 265531,
-      "modified_time": 1756710631.7511952,
-      "modified_date": "2025-09-01T12:40:31.751195"
-    },
-    "SRM Installation and Configuration Guide.pdf": {
-      "path": "docs\\SRM Installation and Configuration Guide.pdf",
-      "size": 746439,
-      "modified_time": 1756710631.759745,
-      "modified_date": "2025-09-01T12:40:31.759745"
-    },
-    "SRM Solution Pack Guide.pdf": {
-      "path": "docs\\SRM Solution Pack Guide.pdf",
-      "size": 3264842,
-      "modified_time": 1756710631.7878149,
-      "modified_date": "2025-09-01T12:40:31.787815"
-    },
-    "SRM Upgrade Guide.pdf": {
-      "path": "docs\\SRM Upgrade Guide.pdf",
-      "size": 1333111,
-      "modified_time": 1756710631.8069506,
-      "modified_date": "2025-09-01T12:40:31.806951"
-    }
-  }
+  "last_updated": "2025-09-15T20:43:00.000000",
+  "files": {}
 }

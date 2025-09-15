@@ -15,6 +15,30 @@ class ChatService:
     def __init__(self, rag_service: RAGService):
         self.storage = ChatStorage()
         self.rag_service = rag_service
+        
+        # Greeting patterns for casual conversation detection
+        self.greeting_patterns = [
+            r'^(hi|hello|hey|hiya|howdy)\s*!?$',
+            r'^(hi|hello|hey|hiya|howdy)\s+(there|you)\s*!?$',
+            r'^(good\s+(morning|afternoon|evening|day))\s*!?$',
+            r'^(how\s+are\s+you|how\s+are\s+you\s+doing|how\s+do\s+you\s+do)\s*!?$',
+            r'^(what\'s\s+up|whats\s+up|sup)\s*!?$',
+            r'^(nice\s+to\s+meet\s+you|pleased\s+to\s+meet\s+you)\s*!?$',
+            r'^(thanks|thank\s+you)\s*!?$',
+            r'^(bye|goodbye|see\s+you|farewell)\s*!?$',
+        ]
+        
+        # Default responses for greetings
+        self.default_responses = {
+            'greeting': "Hi! I'm AI Doc Assist, your intelligent assistant for HCL SRM. How can I help you today?",
+            'how_are_you': "I'm doing great, thank you for asking! I'm here and ready to help you with any questions about HCL SRM. What would you like to know?",
+            'good_morning': "Good morning! I'm AI Doc Assist, ready to help you with HCL SRM. How can I assist you today?",
+            'good_afternoon': "Good afternoon! I'm AI Doc Assist, your guide to HCL SRM. What can I help you with?",
+            'good_evening': "Good evening! I'm AI Doc Assist, here to help with HCL SRM. How may I assist you?",
+            'whats_up': "Hello! I'm AI Doc Assist, your HCL SRM assistant. I'm here to help you find information and answer questions. What do you need to know?",
+            'thanks': "You're very welcome! I'm here whenever you need help with HCL SRM. Feel free to ask me anything!",
+            'goodbye': "Goodbye! It was great helping you with HCL SRM. Feel free to come back anytime you have questions!"
+        }
     
     def create_session(self, title: Optional[str] = None, initial_message: Optional[str] = None) -> ChatSession:
         """Create a new chat session"""
@@ -37,6 +61,38 @@ class ChatService:
         """Clear all chat sessions"""
         return self.storage.clear_all_sessions()
     
+    def _detect_greeting(self, message: str) -> Optional[str]:
+        """Detect if the message is a casual greeting and return appropriate response type"""
+        message_clean = message.strip().lower()
+        
+        # Check each greeting pattern
+        for i, pattern in enumerate(self.greeting_patterns):
+            if re.match(pattern, message_clean, re.IGNORECASE):
+                # Map pattern index to response type
+                if i == 0 or i == 1:  # Basic greetings
+                    return 'greeting'
+                elif i == 2:  # Time-based greetings
+                    if 'morning' in message_clean:
+                        return 'good_morning'
+                    elif 'afternoon' in message_clean:
+                        return 'good_afternoon'
+                    elif 'evening' in message_clean:
+                        return 'good_evening'
+                    else:
+                        return 'greeting'
+                elif i == 3:  # How are you
+                    return 'how_are_you'
+                elif i == 4:  # What's up
+                    return 'whats_up'
+                elif i == 5:  # Nice to meet you
+                    return 'greeting'
+                elif i == 6:  # Thanks
+                    return 'thanks'
+                elif i == 7:  # Goodbye
+                    return 'goodbye'
+        
+        return None
+    
     async def send_message(self, session_id: str, user_message: str) -> ChatResponse:
         """Send a message and get AI response"""
         start_time = time.time()
@@ -50,6 +106,38 @@ class ChatService:
             content=user_message
         )
         session.add_message(user_msg)
+        
+        # Check if this is a casual greeting first
+        greeting_type = self._detect_greeting(user_message)
+        if greeting_type:
+            logger.info(f"Detected greeting type: {greeting_type} for message: '{user_message}'")
+            
+            # Return default greeting response
+            greeting_response = self.default_responses.get(greeting_type, self.default_responses['greeting'])
+            
+            ai_message = ChatMessage(
+                role=MessageRole.ASSISTANT,
+                content=greeting_response,
+                sources=[],
+                metadata={
+                    "response_type": "greeting",
+                    "greeting_type": greeting_type,
+                    "confidence_score": 1.0
+                }
+            )
+            
+            session.add_message(ai_message)
+            self.storage.save_session(session)
+            
+            processing_time = time.time() - start_time
+            
+            return ChatResponse(
+                message=ai_message,
+                session=session,
+                sources=[],
+                confidence_score=1.0,
+                processing_time=processing_time
+            )
         
         if self.rag_service:
             try:

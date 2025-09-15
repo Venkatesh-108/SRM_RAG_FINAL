@@ -96,6 +96,9 @@ class EnhancedPDFProcessor:
         # Create base font-based chunks
         font_chunks = self._create_enhanced_chunks(extracted_data['enhanced_structure'], extracted_data['font_analysis'])
 
+        # CRITICAL FIX: Validate and fix structural problems before chunking
+        font_chunks = self._validate_and_fix_structure(font_chunks, extracted_data['enhanced_structure'])
+
         # Apply hybrid chunking if enabled
         if self.enable_hybrid_chunking:
             final_chunks, hybrid_metadata = self._apply_hybrid_chunking(
@@ -501,16 +504,21 @@ class EnhancedPDFProcessor:
             for section in chapter['sections']:
                 content += f"- {section['title']}\n"
         
-        # Determine chunk classification
+        # Determine chunk classification and hierarchy level
         font_size = chapter.get('font_size', 20.0)
         chunk_classification = self._classify_by_font_size(font_size)
-        
+
+        # Intelligently determine if this should be treated as a chapter or section
+        is_true_chapter = self._is_chapter_level_content(chapter['title'], font_size, chapter)
+        chunk_type = 'complete_chapter' if is_true_chapter else 'complete_section'
+        hierarchy_level = 'chapter' if is_true_chapter else 'section'
+
         return {
             'content': content,
             'title': chapter['title'],
-            'chunk_type': 'chapter_major',
+            'chunk_type': chunk_type,
             'chunk_classification': chunk_classification,
-            'hierarchy_level': 'chapter',
+            'hierarchy_level': hierarchy_level,
             'font_size': font_size,
             'is_bold': chapter.get('is_bold', False),
             'heading_level': chapter.get('heading_level', 1),
@@ -644,13 +652,145 @@ class EnhancedPDFProcessor:
             'extraction_method': 'enhanced_page_aware'
         }
     
+    def _is_chapter_level_content(self, title: str, font_size: float, chapter_info: Dict) -> bool:
+        """Intelligently determine if content should be treated as chapter or section level"""
+        title_lower = title.lower().strip()
+
+        # Strong indicators for chapter-level content
+        chapter_indicators = [
+            'chapter', 'getting started', 'installation', 'configuration',
+            'troubleshooting', 'overview', 'introduction', 'preface',
+            'appendix', 'solutionpack for', 'deployment', 'upgrade guide',
+            'discovery center', 'device config wizard'
+        ]
+
+        # Strong indicators for section-level content
+        section_indicators = [
+            'add new', 'adding', 'configure', 'configuring', 'install', 'installing',
+            'update', 'updating', 'create', 'creating', 'modify', 'modifying',
+            'enable', 'enabling', 'disable', 'disabling', 'setup', 'setting up',
+            'remove', 'removing', 'delete', 'deleting', 'export', 'importing',
+            'running the', 'view', 'viewing', 'edit', 'editing', 'verify', 'verifying'
+        ]
+
+        # CRITICAL FIX: Check for suspicious chapter characteristics
+        sections = chapter_info.get('sections', [])
+
+        # If this "chapter" has too many sections, it's likely a misclassification
+        if len(sections) > 20:
+            logger.warning(f"Chapter '{title}' has {len(sections)} sections - likely misclassified")
+            return False
+
+        # If sections span too many pages, it's suspicious
+        if sections:
+            section_pages = [s.get('page', 0) for s in sections if s.get('page', 0) > 0]
+            if section_pages and (max(section_pages) - min(section_pages) > 50):
+                logger.warning(f"Chapter '{title}' spans {max(section_pages) - min(section_pages)} pages - likely misclassified")
+                return False
+
+        # Check for chapter-level indicators
+        for indicator in chapter_indicators:
+            if indicator in title_lower:
+                return True
+
+        # Check for section-level indicators
+        for indicator in section_indicators:
+            if indicator in title_lower:
+                return False
+
+        # Font size based decision for ambiguous cases
+        # If font size is 0 (unknown), default to section to avoid over-classification
+        if font_size <= 0:
+            return False
+        elif font_size >= 20:
+            return True
+        else:
+            return False
+
     def _classify_by_font_size(self, font_size: float) -> str:
-        """Classify chunk type based on font size"""
+        """Classify chunk type based on font size with better edge case handling"""
+        # Handle special cases where font size is 0 or unknown
+        if font_size <= 0:
+            # Default to section level for unknown font sizes to avoid chapter misclassification
+            return 'section_standard'
+
+        # Find the best match in font hierarchy
         for chunk_type, properties in self.font_hierarchy.items():
             size_min, size_max = properties['size_range']
             if size_min <= font_size <= size_max:
                 return chunk_type
-        return 'body_text'
+
+        # Fallback logic based on font size ranges
+        if font_size >= 22:
+            return 'document_title'
+        elif font_size >= 20:
+            return 'chapter_major'
+        elif font_size >= 16:
+            return 'section_standard'
+        elif font_size >= 11.5:
+            return 'subsection_minor'
+        elif font_size >= 10:
+            return 'table_figure'
+        else:
+            return 'body_text'
+
+    def _validate_and_fix_structure(self, chunks: List[Dict], structure: Dict) -> List[Dict]:
+        """Validate and fix structural problems in chunks"""
+        logger.info("Validating and fixing structural problems...")
+
+        fixed_chunks = []
+        problematic_chapters = []
+
+        for chunk in chunks:
+            # Check for problematic chapters (like "Add new VMware vCenter")
+            if (chunk.get('chunk_type') == 'complete_chapter' and
+                chunk.get('hierarchy_level') == 'chapter'):
+
+                # Count sections in the original structure
+                chapter_title = chunk.get('title', '')
+                original_chapter = None
+
+                for ch in structure.get('chapters', []):
+                    if ch.get('title', '') == chapter_title:
+                        original_chapter = ch
+                        break
+
+                if original_chapter:
+                    section_count = len(original_chapter.get('sections', []))
+
+                    # Flag suspicious chapters
+                    if section_count > 20:
+                        logger.warning(f"Fixing problematic chapter: '{chapter_title}' with {section_count} sections")
+                        problematic_chapters.append(chapter_title)
+
+                        # Convert to section instead of chapter
+                        chunk['chunk_type'] = 'complete_section'
+                        chunk['hierarchy_level'] = 'section'
+
+                        # Extract only the relevant content (first part)
+                        content = chunk.get('content', '')
+                        if content:
+                            lines = content.split('\n')
+                            # Keep only the first logical section (stop at next major heading)
+                            clean_content = []
+                            for line in lines:
+                                if (line.startswith('## ') and
+                                    'post-install' in line.lower() and
+                                    len(clean_content) > 5):
+                                    break
+                                clean_content.append(line)
+
+                            # Update chunk with cleaned content
+                            chunk['content'] = '\n'.join(clean_content)
+                            chunk['content_length'] = len(chunk['content'])
+                            chunk['word_count'] = len(chunk['content'].split())
+
+            fixed_chunks.append(chunk)
+
+        if problematic_chapters:
+            logger.info(f"Fixed {len(problematic_chapters)} problematic chapters: {problematic_chapters}")
+
+        return fixed_chunks
     
     def _detect_procedures(self, content: str) -> bool:
         """Detect if content contains step-by-step procedures"""

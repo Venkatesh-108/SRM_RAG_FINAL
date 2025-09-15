@@ -115,9 +115,18 @@ class DocumentTypeConfigs:
                 max_section_lines=70,
                 target_chunk_size=4500,
                 strong_boundary_patterns=[
-                    r'^#+\s+(?:Deploying|Installing)',
-                    r'^#+\s+(?:Frontend|Backend)\s+Server',
-                    r'^#+\s+(?:Load\s+[Bb]alancer|NFS\s+[Ss]hare)',
+                    r'^#+\s+(?:Chapter|Section)\s+\d+',
+                    r'^#+\s+(?:Deploying|Installing)\s+.*SolutionPack',
+                    r'^#+\s+(?:SolutionPack\s+for)\s+',
+                    r'^#+\s+(?:Discovery\s+Center|Device\s+Config\s+Wizard)',
+                    r'^#+\s+(?:Getting\s+Started|Troubleshooting)',
+                ],
+                weak_boundary_patterns=[
+                    r'^#+\s+(?:Add\s+new|Adding|Configure|Configuring)',
+                    r'^#+\s+(?:Install|Installing|Setup|Setting\s+up)',
+                    r'^#+\s+(?:Running\s+the|Enable|Enabling)',
+                    r'^#+\s+(?:VMware|Dell|IBM|HP|Cisco)\s+',
+                    r'^#+\s+.*(?:Discovery|Configuration|Installation)$',
                 ],
             ),
 

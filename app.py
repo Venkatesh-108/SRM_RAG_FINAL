@@ -63,7 +63,7 @@ class QueryResponse(BaseModel):
 async def lifespan(app: FastAPI):
     """Check for new PDFs and auto-index on startup"""
     # Display Llama license compliance notice
-    console.print("🤖 Built with Llama - Llama 3.2 Community License", style="bold blue")
+    console.print("Built with Llama - Llama 3.2 Community License", style="bold blue")
     console.print("Checking for new or modified PDFs...", style="bold yellow")
     
     # Always check for new or modified PDFs, even if indexes exist
@@ -93,7 +93,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title="SRM RAG API - Built with Llama", 
-    description="RAG system for Dell SRM guides powered by Llama 3.2 Community License", 
+    description="RAG system for HCL SRM guides powered by Llama 3.2 Community License", 
     lifespan=lifespan
 )
 
@@ -221,6 +221,18 @@ async def root(request: Request):
 async def ask_endpoint(request: QueryRequest):
     """API endpoint for asking questions"""
     try:
+        # Check for casual greetings first
+        greeting_response = chat_service._detect_greeting(request.query)
+        if greeting_response:
+            greeting_text = chat_service.default_responses.get(greeting_response, chat_service.default_responses['greeting'])
+            return QueryResponse(
+                answer=greeting_text,
+                context=[],
+                sources=[],
+                confidence_score=1.0,
+                answer_validation={"response_type": "greeting", "greeting_type": greeting_response}
+            )
+        
         retrieved_chunks = rag_service.search(request.query)
         
         answer, confidence_score, validation_result = generate_answer_with_ollama(request.query, retrieved_chunks)
@@ -293,7 +305,7 @@ cli_app = typer.Typer()
 @cli_app.command()
 def index():
     """Index the source documents."""
-    console.print("🤖 Built with Llama - Llama 3.2 Community License", style="bold blue")
+    console.print("Built with Llama - Llama 3.2 Community License", style="bold blue")
     console.print("Starting the indexing process...", style="bold green")
     results = rag_service.index_documents()
     console.print(f"Successfully indexed. Results: {results}", style="bold green")
@@ -301,7 +313,7 @@ def index():
 @cli_app.command()
 def ask(query: str):
     """Ask a question to the indexed documents."""
-    console.print("🤖 Built with Llama - Llama 3.2 Community License", style="bold blue")
+    console.print("Built with Llama - Llama 3.2 Community License", style="bold blue")
     console.print(f"Query: '{query}'", style="bold blue")
 
     retrieved_chunks = rag_service.search(query)
