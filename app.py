@@ -62,6 +62,8 @@ class QueryResponse(BaseModel):
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Check for new PDFs and auto-index on startup"""
+    # Display Llama license compliance notice
+    console.print("🤖 Built with Llama - Llama 3.2 Community License", style="bold blue")
     console.print("Checking for new or modified PDFs...", style="bold yellow")
     
     # Always check for new or modified PDFs, even if indexes exist
@@ -89,7 +91,11 @@ async def lifespan(app: FastAPI):
     
     yield
 
-app = FastAPI(title="SRM RAG API", description="RAG system for Dell SRM guides", lifespan=lifespan)
+app = FastAPI(
+    title="SRM RAG API - Built with Llama", 
+    description="RAG system for Dell SRM guides powered by Llama 3.2 Community License", 
+    lifespan=lifespan
+)
 
 templates = Jinja2Templates(directory="templates")
 app.mount("/static", StaticFiles(directory="templates/static"), name="static")
@@ -287,6 +293,7 @@ cli_app = typer.Typer()
 @cli_app.command()
 def index():
     """Index the source documents."""
+    console.print("🤖 Built with Llama - Llama 3.2 Community License", style="bold blue")
     console.print("Starting the indexing process...", style="bold green")
     results = rag_service.index_documents()
     console.print(f"Successfully indexed. Results: {results}", style="bold green")
@@ -294,6 +301,7 @@ def index():
 @cli_app.command()
 def ask(query: str):
     """Ask a question to the indexed documents."""
+    console.print("🤖 Built with Llama - Llama 3.2 Community License", style="bold blue")
     console.print(f"Query: '{query}'", style="bold blue")
 
     retrieved_chunks = rag_service.search(query)

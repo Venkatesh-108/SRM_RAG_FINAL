@@ -560,7 +560,7 @@ body {
 
 .content-area {
     flex: 1;
-    padding: 24px 32px;
+    padding: 24px 32px 60px 32px; /* Added bottom padding to account for footer */
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -771,7 +771,7 @@ body {
 
 /* Chat Input Area */
 .chat-input-container {
-    padding: 16px 24px;
+    padding: 16px 24px 60px 24px; /* Added bottom padding to account for footer */
     border-top: 1px solid var(--border-color);
     background: #ffffff;
     position: relative;
@@ -938,7 +938,7 @@ body {
 /* Chat Area and Messages */
 .chat-area {
     flex: 1;
-    padding: 24px;
+    padding: 24px 24px 60px 24px; /* Added bottom padding to account for footer */
     overflow-y: auto;
     display: flex;
     flex-direction: column;

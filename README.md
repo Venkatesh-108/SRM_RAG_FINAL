@@ -1,6 +1,8 @@
-# SRM RAG System
+# SRM AI Doc Assist 
 
 A comprehensive RAG (Retrieval-Augmented Generation) system for Dell SRM guides with advanced chunking, hybrid retrieval, and Ollama integration. The system provides both a command-line interface and a web API for querying SRM documentation.
+
+> **🤖 Built with Llama** - This system is powered by Llama 3.2 and operates under the Llama 3.2 Community License.
 
 ## Features
 
@@ -299,6 +301,16 @@ When contributing to this project:
 ## License
 
 This project is designed for internal use with Dell SRM documentation.
+
+### Llama 3.2 Community License Compliance
+
+This system uses Llama 3.2 models and complies with the Llama 3.2 Community License requirements:
+
+- **Attribution**: This system prominently displays "Built with Llama" on all user interfaces
+- **Model Usage**: Uses Llama 3.2:3b model via Ollama for answer generation
+- **License Compliance**: Full compliance with Meta's Llama 3.2 Community License terms
+
+For complete license terms, see the [Llama 3.2 Community License](https://github.com/meta-llama/llama3.2/blob/main/LICENSE) or refer to the `LLAMA_LICENSE.md` file in this repository.
 
 ## Support
 
