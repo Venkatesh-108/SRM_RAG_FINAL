@@ -240,14 +240,22 @@ class PDFExtractor:
             return False
         if self._looks_like_procedure_step(text):
             return False
-            
+
         # Filter out common sub-headings that should be part of the main content
         # These are typically procedural sub-sections that shouldn't split content
         if self._is_procedural_subheading(text):
             return False
-            
+
+        # Filter out bullet point headings that are likely TOC entries
+        if text.strip().startswith('- ') and len(text.strip()) < 80:
+            return False
+
+        # Filter out very short fragments that are likely artifacts
+        if len(text.strip()) < 3:
+            return False
+
         is_large = size >= body_size * self.heading_size_threshold
-        
+
         # Heading if large enough OR if it's bold and doesn't look like a sentence fragment.
         if is_large:
             return True
@@ -260,8 +268,11 @@ class PDFExtractor:
             # Avoid notes or references
             if any(word in text.lower() for word in ['note:', 'see also', 'refer to']):
                 return False
+            # Only accept bold text as heading if it's reasonably sized
+            if size < body_size * 0.8:  # Too small to be a heading
+                return False
             return True
-            
+
         return False
 
     def _enhance_content_with_font_analysis(self, markdown_content: str, json_content: Dict, 
@@ -285,37 +296,38 @@ class PDFExtractor:
     
     def _parse_markdown_sections(self, markdown: str, heading_map: Dict, font_analysis: Dict) -> List[Dict[str, Any]]:
         """Parse markdown into sections with font-based heading classification"""
-        
+
         lines = markdown.split('\n')
         sections = []
         current_section = None
         content_buffer = []
-        
+        seen_titles = set()  # Track seen titles to avoid duplicates
+
         for line in lines:
             line_strip = line.strip()
             if not line_strip:
                 content_buffer.append("")
                 continue
-            
+
             # Check if this line is a heading based on font analysis
             is_heading = False
             heading_info = None
-            
+
             # Look for exact match in heading map
             clean_line = self._clean_text_for_matching(line_strip)
             for heading_text, info in heading_map.items():
                 clean_heading = self._clean_text_for_matching(heading_text)
                 # Use a more robust matching logic
-                if (clean_line == clean_heading or 
-                    (clean_line in clean_heading and len(clean_line) > 10) or 
+                if (clean_line == clean_heading or
+                    (clean_line in clean_heading and len(clean_line) > 10) or
                     (clean_heading in clean_line and len(clean_heading) > 10)):
                     if self._is_heading_text(line_strip, info['size'], info['is_bold'], font_analysis['body_size']):
                         is_heading = True
                         heading_info = info
                         break
-            
+
             # Also check markdown heading patterns (with stricter guards)
-            if (not is_heading 
+            if (not is_heading
                 and (line_strip.startswith('#'))
                 and not self._looks_like_toc_line(line_strip)
                 and not self._looks_like_procedure_step(line_strip)
@@ -328,17 +340,25 @@ class PDFExtractor:
                     'size': 0, 'is_bold': False, 'page': 1, 'confidence': 0.6
                 })
                 heading_info = md_heading_info
-            
+
             if is_heading and heading_info:
+                cleaned_title = self._clean_heading_text(line_strip)
+                normalized_title = self._normalize_title_for_dedup(cleaned_title)
+
+                # Skip duplicate titles (handle cases like "- Title" vs "Title")
+                if normalized_title in seen_titles:
+                    content_buffer.append(line)  # Treat as regular content
+                    continue
+
                 # Save previous section
                 if current_section:
                     current_section['complete_content'] = '\n'.join(content_buffer)
                     current_section['content_length'] = len(current_section['complete_content'])
                     sections.append(current_section)
-                
+
                 # Start new section
                 current_section = {
-                    'title': self._clean_heading_text(line_strip),
+                    'title': cleaned_title,
                     'heading_level': heading_info['level'],
                     'font_size': heading_info.get('size', 0),
                     'is_bold': heading_info.get('is_bold', False),
@@ -347,12 +367,13 @@ class PDFExtractor:
                     'is_heading': True,
                     'raw_line': line_strip
                 }
+                seen_titles.add(normalized_title)
                 content_buffer = []  # Exclude heading from content
-                
+
             else:
                 # Regular content - add to buffer
                 content_buffer.append(line)
-        
+
         # Save final section
         if current_section:
             current_section['complete_content'] = '\n'.join(content_buffer)
@@ -370,7 +391,10 @@ class PDFExtractor:
                 'complete_content': '\n'.join(content_buffer),
                 'content_length': len('\n'.join(content_buffer))
             })
-        
+
+        # Post-process to remove duplicate sections
+        sections = self._deduplicate_sections(sections)
+
         logger.info(f"Parsed {len(sections)} sections from markdown content")
         return sections
     
@@ -386,6 +410,41 @@ class PDFExtractor:
         cleaned = re.sub(r'^#+\s*', '', text)
         cleaned = re.sub(r'\*+', '', cleaned)
         return cleaned.strip()
+
+    def _normalize_title_for_dedup(self, title: str) -> str:
+        """Normalize title for deduplication (remove bullet points, extra spaces, etc.)"""
+        normalized = title.lower().strip()
+        # Remove leading bullets, dashes, numbers
+        normalized = re.sub(r'^[-•\d\.\s]+', '', normalized)
+        # Normalize whitespace
+        normalized = re.sub(r'\s+', ' ', normalized).strip()
+        return normalized
+
+    def _deduplicate_sections(self, sections: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+        """Remove duplicate sections and merge content where appropriate"""
+        seen_titles = {}
+        deduplicated = []
+
+        for section in sections:
+            title = section['title']
+            normalized_title = self._normalize_title_for_dedup(title)
+
+            if normalized_title in seen_titles:
+                # Found duplicate - merge content with higher confidence section
+                existing_idx = seen_titles[normalized_title]
+                existing_section = deduplicated[existing_idx]
+
+                # Keep the section with higher confidence and better content
+                if (section['confidence'] > existing_section['confidence'] or
+                    len(section.get('complete_content', '')) > len(existing_section.get('complete_content', ''))):
+                    # Replace existing with current
+                    deduplicated[existing_idx] = section
+            else:
+                # New unique section
+                seen_titles[normalized_title] = len(deduplicated)
+                deduplicated.append(section)
+
+        return deduplicated
     
     def _is_likely_heading(self, line: str) -> bool:
         """Check if line is likely a heading based on content patterns"""
@@ -406,18 +465,21 @@ class PDFExtractor:
     
     def _build_hierarchical_structure(self, sections: List[Dict]) -> List[Dict]:
         """Build hierarchical chapter/section structure"""
-        
+
         chapters = []
         current_chapter = None
-        
-        for section in sections:
+
+        # First pass: filter out duplicate sections (keep ones with content)
+        filtered_sections = self._filter_duplicate_sections(sections)
+
+        for section in filtered_sections:
             level = section['heading_level']
-            
+
             # Group by H1/H2 as chapters, everything else as sections
             if level <= 2:  # Chapter level
                 if current_chapter:
                     chapters.append(current_chapter)
-                
+
                 current_chapter = {
                     'id': f"chapter_{len(chapters)+1:02d}",
                     'title': section['title'],
@@ -431,7 +493,7 @@ class PDFExtractor:
                     'sections': [],
                     'content_length': section['content_length']
                 }
-            
+
             else:  # Section level or content
                 if not current_chapter:
                     # Create implicit chapter for content that appears before the first main chapter
@@ -442,7 +504,7 @@ class PDFExtractor:
                         'font_size': 0, 'is_bold': False, 'page': 1, 'heading_level': 1,
                         'confidence': 0.3, 'type': 'chapter', 'sections': [], 'content_length': 0
                     }
-                
+
                 # If it's a heading, create a new section
                 if section['is_heading']:
                     section_data = {
@@ -466,9 +528,49 @@ class PDFExtractor:
                     else:
                         current_chapter['complete_content'] += '\n\n' + section['title'] + '\n' + section['complete_content']
                         current_chapter['content_length'] += len(section['complete_content']) + len(section['title']) + 3
-        
+
         # Add final chapter
         if current_chapter:
             chapters.append(current_chapter)
-        
+
         return chapters
+
+    def _filter_duplicate_sections(self, sections: List[Dict]) -> List[Dict]:
+        """Filter out duplicate sections, keeping the ones with actual content"""
+        title_to_best_section = {}
+
+        for section in sections:
+            title = section['title']
+            normalized_title = self._normalize_title_for_dedup(title)
+
+            if normalized_title not in title_to_best_section:
+                title_to_best_section[normalized_title] = section
+            else:
+                existing = title_to_best_section[normalized_title]
+                # Prefer section with more content, higher confidence, or better font size
+                current_content_len = len(section.get('complete_content', ''))
+                existing_content_len = len(existing.get('complete_content', ''))
+
+                should_replace = (
+                    current_content_len > existing_content_len or
+                    (current_content_len == existing_content_len and
+                     section.get('confidence', 0) > existing.get('confidence', 0)) or
+                    (current_content_len == existing_content_len and
+                     section.get('font_size', 0) > existing.get('font_size', 0))
+                )
+
+                if should_replace:
+                    title_to_best_section[normalized_title] = section
+
+        # Return filtered sections in original order
+        filtered = []
+        seen_normalized = set()
+        for section in sections:
+            normalized_title = self._normalize_title_for_dedup(section['title'])
+            if (normalized_title not in seen_normalized and
+                title_to_best_section[normalized_title] == section):
+                filtered.append(section)
+                seen_normalized.add(normalized_title)
+
+        logger.info(f"Filtered {len(sections)} sections down to {len(filtered)} unique sections")
+        return filtered

@@ -117,11 +117,12 @@ class EnhancedPDFProcessor:
     def _create_enhanced_chunks(self, structure: Dict, font_analysis: Dict) -> List[Dict]:
         """Create enhanced chunks with multi-level hierarchy and page awareness"""
         chunks = []
-        
+        seen_titles = set()  # Track processed titles to avoid duplicates
+
         for chapter in structure['chapters']:
             # Determine chunk strategy based on size and content
             chapter_size = len(chapter.get('complete_content', ''))
-            
+
             if chapter_size > self.max_chunk_size:
                 # Split large chapters into sub-chunks
                 sub_chunks = self._split_large_chapter(chapter, font_analysis)
@@ -130,19 +131,53 @@ class EnhancedPDFProcessor:
                 # Keep as single chapter chunk
                 chapter_chunk = self._create_enhanced_chapter_chunk(chapter)
                 chunks.append(chapter_chunk)
-            
-            # Process individual sections with enhanced metadata
+
+            # Process individual sections with enhanced metadata, avoiding duplicates
             for section in chapter.get('sections', []):
+                section_title = section.get('title', '')
+                normalized_title = self._normalize_section_title(section_title)
+
+                # Skip if we've already processed this section or if it's empty/too short
+                if (normalized_title in seen_titles or
+                    len(section.get('complete_content', '').strip()) < 50 or
+                    self._is_toc_like_section(section_title)):
+                    continue
+
                 section_chunk = self._create_enhanced_section_chunk(section, chapter, font_analysis)
                 chunks.append(section_chunk)
-        
+                seen_titles.add(normalized_title)
+
         # Add document-level chunks for exact title matching
         doc_overview_chunk = self._create_document_overview_chunk(structure, font_analysis)
         chunks.insert(0, doc_overview_chunk)
-        
+
         logger.info(f"Created {len(chunks)} enhanced chunks with page awareness")
         return chunks
-    
+
+    def _normalize_section_title(self, title: str) -> str:
+        """Normalize section title for deduplication"""
+        normalized = title.lower().strip()
+        # Remove leading bullets, dashes, numbers
+        normalized = re.sub(r'^[-•\d\.\s]+', '', normalized)
+        # Normalize whitespace
+        normalized = re.sub(r'\s+', ' ', normalized).strip()
+        return normalized
+
+    def _is_toc_like_section(self, title: str) -> bool:
+        """Check if section appears to be a table of contents entry"""
+        if not title:
+            return True
+        # TOC-like patterns
+        toc_patterns = [
+            r'^\s*[-•]\s*',  # Bullet points
+            r'\.{3,}',       # Dot leaders
+            r'\s+\d+\s*$',   # Ending with page numbers
+        ]
+        for pattern in toc_patterns:
+            if re.search(pattern, title):
+                return True
+        return False
+
     def _split_large_chapter(self, chapter: Dict, font_analysis: Dict) -> List[Dict]:
         """Split large chapters into smaller chunks based on subsections"""
         chunks = []
