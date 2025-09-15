@@ -638,8 +638,14 @@ class EnhancedSearchEngine:
             logger.info(f"Self-contained section '{original_title}' - not combining chunks to preserve precision")
             return original_content
         
+        def _get_page(meta: Dict[str, Any]) -> int:
+            # Prefer page_start if available, then page, then primary_page
+            return int(meta.get('page_start', meta.get('page', meta.get('primary_page', 1))))
+        
         doc_data = self.document_chunks[doc_name]
-        original_page = original_match['metadata'].get('page', 1)
+        original_meta = original_match.get('metadata', {})
+        original_page = _get_page(original_meta)
+        original_chapter = original_meta.get('chapter_title')
         combined_content = original_content
         
         # Look for chunks on the same page that are truly related procedural content
@@ -648,32 +654,38 @@ class EnhancedSearchEngine:
                 continue
             
             metadata = doc_data['metadata'][i] if i < len(doc_data['metadata']) else {}
-            chunk_page = metadata.get('page', 1)
+            chunk_page = _get_page(metadata)
             chunk_title = metadata.get('title', '').lower()
+            chunk_chapter = metadata.get('chapter_title')
             
-            # Only combine chunks from the same page that have procedural content
-            if chunk_page == original_page and len(chunk_content) > 100:
-                chunk_lower = chunk_content.lower()
-                
-                # Skip generic overview/introduction sections
-                if any(generic in chunk_title for generic in [
-                    'document overview', 'document introduction', 'contents'
-                ]):
-                    continue
-                
-                # Check if this chunk is unrelated to the original section
-                if self._are_sections_unrelated(original_match, chunk_title, chunk_content):
-                    logger.info(f"Skipping unrelated section '{chunk_title}' on same page")
-                    continue
-                
-                # Only combine if it's truly related procedural content
-                if any(phrase in chunk_lower for phrase in [
-                    'steps', 'about this task', 'prerequisites', 'must be disabled',
-                    'procedure', 'configuration steps'
-                ]):
-                    # Additional check: make sure it's not just a bullet point list
-                    if len(chunk_content) > 500:  # Substantial procedural content
-                        combined_content += f"\n\n{chunk_content}"
+            # Only consider chunks from the same physical page
+            if chunk_page != original_page:
+                continue
+            
+            # If both have chapter titles, require they match to avoid cross-section mixing
+            if original_chapter and chunk_chapter and original_chapter != chunk_chapter:
+                continue
+            
+            # Skip generic overview/introduction sections
+            if any(generic in chunk_title for generic in [
+                'document overview', 'document introduction', 'contents', 'table of contents'
+            ]):
+                continue
+            
+            # Check if this chunk is unrelated to the original section
+            if self._are_sections_unrelated(original_match, chunk_title, chunk_content):
+                logger.info(f"Skipping unrelated section '{chunk_title}' on same page")
+                continue
+            
+            # Only combine if it's truly related procedural content
+            chunk_lower = chunk_content.lower()
+            if any(phrase in chunk_lower for phrase in [
+                'steps', 'about this task', 'prerequisites', 'must be disabled',
+                'procedure', 'configuration steps'
+            ]):
+                # Additional check: make sure it's not just a bullet point list
+                if len(chunk_content) > 500:  # Substantial procedural content
+                    combined_content += f"\n\n{chunk_content}"
         
         return combined_content
     

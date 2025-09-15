@@ -214,7 +214,10 @@ class PDFExtractor:
             'example', 'examples', 'note', 'notes', 'important',
             'warning', 'caution', 'tip', 'tips', 'result', 'results',
             'outcome', 'expected result', 'verification', 'verify',
-            'troubleshooting', 'if this fails', 'alternative'
+            'troubleshooting', 'if this fails', 'alternative',
+            # Non-content pseudo-headings often extracted as headings
+            'contents', 'table of contents', 'topics', 'sections in this chapter',
+            'list of tables', 'list of figures'
         ]
         
         # Check if the clean text matches any procedural sub-heading

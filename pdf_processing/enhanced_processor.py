@@ -210,11 +210,22 @@ class EnhancedPDFProcessor:
         # Find the end of the section (next heading of same or higher level)
         start_level = len(re.match(r'^#+', lines[section_start]).group(0))
         
+        # Define common boundary keywords that indicate a new, distinct section
+        boundary_keywords = [
+            'overview', 'introduction', 'installing', 'configuring', 
+            'prerequisites', 'requirements', 'troubleshooting', 'appendix'
+        ]
+
         for i in range(section_start + 1, len(lines)):
             line_strip = lines[i].strip()
             if line_strip.startswith('#'):
                 current_level = len(re.match(r'^#+', line_strip).group(0))
-                if current_level <= start_level:
+                
+                # Check for boundary keywords in the new heading
+                heading_text = re.sub(r'^#+\s*', '', line_strip).lower()
+                is_boundary = any(keyword in heading_text for keyword in boundary_keywords)
+
+                if current_level <= start_level or is_boundary:
                     section_end = i
                     break
             

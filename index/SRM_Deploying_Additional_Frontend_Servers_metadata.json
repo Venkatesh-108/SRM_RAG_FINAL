@@ -437,5 +437,7 @@
     "## SolutionPacks report installation\n*Chapter: Document Introduction*\n*Page: 18*\n\n\nThe SolutionPack Reports are installed on the Frontend Server. The Primary Frontend Server should be selected in the interactive installation window for SolutionPacks. The report is transferred from the Frontend Server to the MySQL database and will be visible on all Frontend Servers.\n\n## SolutionPacks upload\n\nSince administration performs the upload, the operation takes place on the Primary Frontend Server. The package file is saved locally and can only be installed from this Primary Frontend Server. If the Primary Frontend Server is in a high availability solution, the folder must be updated as well.\n\n## SolutionPacks formula\n\nA SolutionPack can have a local formula that is built in a java file used in the reports. The formula is installed on the Frontend Server pointed to during installation. The SolutionPack that has a custom formula contains a java file in the blocks\\reports\\templates\\arp\\_formulas folder. Currently, the only SolutionPack affected is the Dell SolutionPack which uses the formula.\n",
     "## SolutionPacks property-mapping\n*Chapter: Document Introduction*\n*Page: 18*\n\n\nIf the SolutionPack uses events, then the report has an XML file for property mapping that is saved on the pointed to Frontend Server only.\n\n<!-- image -->\n\nC\n\n<!-- image -->\n\n## FAQ"
   ],
-  "embedding_model": "all-MiniLM-L6-v2"
+  "embedding_model": "all-MiniLM-L6-v2",
+  "processing_timestamp": "2025-09-15T08:36:17.884207",
+  "chunk_count": 31
 }
