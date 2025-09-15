@@ -131,12 +131,12 @@ class DocumentTypeConfigs:
             ),
 
             "srm_specific": ChunkingConfig(
-                max_section_lines=80,
+                max_section_lines=60,  # Reduced to create more focused chunks
                 min_content_lines=3,
-                target_chunk_size=4500,
-                max_chunk_size=8000,
-                max_headings_per_chunk=4,
-                max_over_inclusion_ratio=0.25,
+                target_chunk_size=3500,  # Smaller target size for better granularity
+                max_chunk_size=6000,  # Reduced max size
+                max_headings_per_chunk=3,  # Reduced to prevent over-inclusion
+                max_over_inclusion_ratio=0.20,  # Stricter ratio
                 strong_boundary_patterns=[
                     # Chapter and major section boundaries
                     r'^#+\s+(?:Chapter|Section)\s+\d+',
@@ -156,6 +156,11 @@ class DocumentTypeConfigs:
                     r'^#+\s+(?:Frontend|Backend)\s+Server',
                     r'^#+\s+(?:Load\s+[Bb]alancer|NFS\s+[Ss]hare)',
                     r'^#+\s+(?:Database|MySQL)\s+Configuration',
+                    
+                    # CRITICAL: Add patterns for common SRM sections that should be separate chunks
+                    r'^#+\s+(?:Verifying|Troubleshooting|Logging|Connecting|Editing|Updating)',
+                    r'^#+\s+(?:Operating system|Command|Option|Description)',
+                    r'^#+\s+(?:About this task|Steps|Prerequisites)',
                 ],
                 weak_boundary_patterns=[
                     # Common SRM operations

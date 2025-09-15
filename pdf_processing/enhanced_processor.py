@@ -300,6 +300,7 @@ class EnhancedPDFProcessor:
 
         content_lines_found = 0
         last_content_line = section_start
+        table_content_found = False
 
         for i in range(section_start + 1, len(lines)):
             line = lines[i]
@@ -309,6 +310,12 @@ class EnhancedPDFProcessor:
             if line_strip and not line_strip.startswith('#'):
                 content_lines_found += 1
                 last_content_line = i
+                
+                # Check if this line contains table content
+                if '|' in line_strip and ('Option' in line_strip or 'Description' in line_strip or 
+                                         'Linux' in line_strip or 'Windows' in line_strip or
+                                         'UNIX' in line_strip or 'Command' in line_strip):
+                    table_content_found = True
 
             if line_strip.startswith('#'):
                 current_level = len(re.match(r'^#+', line_strip).group(0))
@@ -341,6 +348,20 @@ class EnhancedPDFProcessor:
             # Stop at procedure steps if they seem to be a new section
             if re.match(r'^Steps\s*$', line_strip) and content_lines_found >= 5:
                 return i
+
+            # CRITICAL FIX: Stop at new major sections that should be separate chunks
+            # Look for common section patterns that indicate a new topic
+            major_section_patterns = [
+                r'^#+\s+(?:Verifying|Troubleshooting|Logging|Connecting|Editing|Updating)',
+                r'^#+\s+(?:Operating system|Command|Option|Description)',
+                r'^#+\s+(?:Prerequisites|Steps|About this task)'
+            ]
+            
+            for pattern in major_section_patterns:
+                if re.match(pattern, line_strip, re.IGNORECASE):
+                    # Only stop if we have substantial content and this looks like a new major section
+                    if content_lines_found >= 10 or (table_content_found and content_lines_found >= 5):
+                        return i
 
             # Avoid extremely long sections (safety net)
             max_lines = self.chunking_config.max_section_lines if self.chunking_config else 100
@@ -375,6 +396,13 @@ class EnhancedPDFProcessor:
             if '|' in line and self._is_table_overflow_line(line):
                 fixed_lines = self._fix_table_overflow(line)
                 cleaned_lines.extend(fixed_lines)
+                i += 1
+                continue
+
+            # CRITICAL FIX: Preserve table formatting better
+            if '|' in line and self._is_structured_table_line(line):
+                # This is a structured table line - preserve it exactly
+                cleaned_lines.append(line)
                 i += 1
                 continue
 
@@ -438,6 +466,28 @@ class EnhancedPDFProcessor:
         cleaned_content = re.sub(r'^(\d+\.)\s+(NOTE:)', r'\1 **\2**', cleaned_content, flags=re.MULTILINE)
 
         return cleaned_content.strip()
+
+    def _is_structured_table_line(self, line: str) -> bool:
+        """Check if a line is part of a structured table (not TOC overflow)"""
+        import re
+        
+        # Look for structured table patterns
+        structured_patterns = [
+            r'^\|.*\|.*\|',  # Multiple columns with pipes
+            r'^\|.*Option.*\|',  # Option column
+            r'^\|.*Description.*\|',  # Description column
+            r'^\|.*Linux.*\|',  # Linux entries
+            r'^\|.*Windows.*\|',  # Windows entries
+            r'^\|.*UNIX.*\|',  # UNIX entries
+            r'^\|.*Command.*\|',  # Command entries
+            r'^\|.*Operating system.*\|',  # Operating system entries
+        ]
+        
+        for pattern in structured_patterns:
+            if re.search(pattern, line, re.IGNORECASE):
+                return True
+                
+        return False
 
     def _is_table_overflow_line(self, line: str) -> bool:
         """Check if a line contains table overflow where multiple entries are concatenated"""
