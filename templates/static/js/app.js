@@ -69,6 +69,16 @@ class SRMAIApp {
             hamburgerBtn.addEventListener('click', () => this.toggleSidebar());
         }
 
+        // Collapsed icon buttons expand sidebar
+        document.querySelectorAll('.collapsed-icon-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const sidebar = document.querySelector('.sidebar');
+                if (sidebar && sidebar.classList.contains('collapsed')) {
+                    sidebar.classList.remove('collapsed');
+                }
+            });
+        });
+
         const clearChatsBtn = document.querySelector('.clear-chats-btn');
         if (clearChatsBtn) {
             clearChatsBtn.addEventListener('click', () => this.clearAllChats());
