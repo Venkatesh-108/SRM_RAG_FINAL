@@ -64,6 +64,11 @@ class SRMAIApp {
             mobileMenuBtn.addEventListener('click', () => this.toggleSidebar());
         }
 
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        if (hamburgerBtn) {
+            hamburgerBtn.addEventListener('click', () => this.toggleSidebar());
+        }
+
         const clearChatsBtn = document.querySelector('.clear-chats-btn');
         if (clearChatsBtn) {
             clearChatsBtn.addEventListener('click', () => this.clearAllChats());
@@ -770,7 +775,7 @@ class SRMAIApp {
     toggleSidebar() {
         const sidebar = document.querySelector('.sidebar');
         if (sidebar) {
-            sidebar.classList.toggle('open');
+            sidebar.classList.toggle('collapsed');
         }
     }
 
