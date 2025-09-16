@@ -123,7 +123,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh; /* Ensure full height */
-    padding: 24px;
+    padding: 8px 24px 24px 24px;
     border-right: 1px solid #0f0f0f;
     box-shadow: var(--shadow-medium);
     position: relative;
@@ -241,7 +241,7 @@ body {
     align-items: center;
     justify-content: flex-start;
     gap: 12px;
-    margin-bottom: 32px;
+    margin: 0;
     letter-spacing: 0.3px;
     text-align: left;
     position: relative;
@@ -278,6 +278,10 @@ body {
 
 .sidebar-section {
     margin-bottom: 20px;
+}
+
+.sidebar-section:first-child {
+    margin-bottom: 8px;
 }
 
 /* New Chat section - keep original size */
