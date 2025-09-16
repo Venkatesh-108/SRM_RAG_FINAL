@@ -6,18 +6,25 @@
 }
 
 :root {
-    --sidebar-bg: #2c244d;
-    --main-bg: #f7f7f8;
+    /* Dell SRM-inspired palette */
+    --sidebar-bg: #263238;
+    --sidebar-bg-grad-1: #263238;
+    --sidebar-bg-grad-2: #2f3d45;
+    --sidebar-bg-grad-3: #37474f;
+    --main-bg: #f5f7fa;
     --text-primary-dark: #ffffff;
-    --text-secondary-dark: #a9a4c2;
-    --text-primary-light: #2c3e50;
-    --text-secondary-light: #7f8c8d;
-    --accent-primary: #6c5ce7;
-    --accent-secondary: #a29bfe;
-    --border-color: #e8eaf6;
+    --text-secondary-dark: #cfd8dc;
+    --text-primary-light: #22313f;
+    --text-secondary-light: #607d8b;
+    --accent-primary: #0d6efd; /* Dell blue */
+    --accent-secondary: #66a3ff;
+    --accent-emphasis: #0b5ed7;
+    --border-color: #e3e7ef;
     --card-bg: #ffffff;
     --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.05);
     --shadow-medium: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --topbar-h: 56px;
+    --topbar-bg: var(--accent-primary);
 }
 
 body {
@@ -28,6 +35,7 @@ body {
     overflow: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    padding-top: var(--topbar-h);
 }
 
 /* Custom Scrollbar */
@@ -42,26 +50,81 @@ body {
     border-radius: 3px;
 }
 .sidebar ::-webkit-scrollbar-thumb {
-    background: #4a4176;
+    background: #41515a;
 }
 
 /* App Container */
 .app-container {
     display: flex;
-    height: 100vh;
+    height: calc(100vh - var(--topbar-h));
     width: 100vw;
+}
+
+/* Topbar */
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--topbar-h);
+    background: var(--topbar-bg);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    z-index: 1200;
+}
+
+.topbar .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+}
+
+.topbar .brand .brand-name {
+    font-size: 16px;
+    letter-spacing: 0.3px;
+}
+
+.topbar .chip {
+    background: rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.topbar .actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.topbar .icon-btn {
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
 }
 
 /* Sidebar Styles */
 .sidebar {
     width: 280px;
-    background: linear-gradient(135deg, #2c244d 0%, #3d2b5f 50%, #4a4176 100%);
+    background: linear-gradient(135deg, var(--sidebar-bg-grad-1) 0%, var(--sidebar-bg-grad-2) 50%, var(--sidebar-bg-grad-3) 100%);
     color: var(--text-primary-dark);
     display: flex;
     flex-direction: column;
     height: 100vh; /* Ensure full height */
     padding: 24px;
-    border-right: 1px solid #231e43;
+    border-right: 1px solid #1f2a30;
     box-shadow: var(--shadow-medium);
     position: relative;
     overflow: hidden;
@@ -74,7 +137,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(108, 92, 231, 0.1) 0%, rgba(162, 155, 254, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(13, 110, 253, 0.08) 0%, rgba(102, 163, 255, 0.04) 100%);
     pointer-events: none;
 }
 
@@ -144,7 +207,7 @@ body {
 .new-chat-btn {
     width: 100%;
     padding: 12px 16px;
-    background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 50%, #6c5ce7 100%);
+    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 50%, var(--accent-primary) 100%);
     background-size: 200% 200%;
     color: white;
     border: none;
@@ -157,7 +220,7 @@ body {
     justify-content: flex-start;
     gap: 12px;
     margin-bottom: 32px;
-    box-shadow: 0 4px 16px rgba(108, 92, 231, 0.3);
+    box-shadow: 0 4px 16px rgba(13, 110, 253, 0.3);
     letter-spacing: 0.3px;
     text-align: left;
     position: relative;
@@ -194,7 +257,7 @@ body {
 
 .new-chat-btn:hover {
     transform: translateX(6px);
-    box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
+    box-shadow: 0 6px 20px rgba(13, 110, 253, 0.4);
     animation-play-state: paused;
 }
 
@@ -365,7 +428,7 @@ body {
     top: 0;
     bottom: 0;
     width: 3px;
-    background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
     border-radius: 0 2px 2px 0;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -373,14 +436,14 @@ body {
 
 .chat-item.active .chat-content,
 .chat-content:hover {
-    background: linear-gradient(135deg, rgba(108, 92, 231, 0.9) 0%, rgba(162, 155, 254, 0.9) 100%);
+    background: linear-gradient(135deg, rgba(13, 110, 253, 0.9) 0%, rgba(102, 163, 255, 0.9) 100%);
     color: white;
 }
 
 .chat-item.active,
 .chat-item:hover {
     transform: translateX(6px);
-    box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
+    box-shadow: 0 6px 20px rgba(13, 110, 253, 0.35);
 }
 
 .chat-item.active::before,
@@ -392,7 +455,7 @@ body {
     font-size: 11px;
     width: 14px;
     text-align: center;
-    color: #a29bfe;
+    color: var(--accent-secondary);
     flex-shrink: 0;
 }
 
@@ -424,7 +487,7 @@ body {
     top: 0;
     bottom: 0;
     width: 3px;
-    background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
     border-radius: 0 2px 2px 0;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -445,7 +508,7 @@ body {
     font-size: 12px;
     width: 14px;
     text-align: center;
-    color: #a29bfe;
+    color: var(--accent-secondary);
     flex-shrink: 0;
 }
 
@@ -521,18 +584,7 @@ body {
     position: relative;
 }
 
-.main-header {
-    padding: 16px 32px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid var(--border-color);
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(8px);
-    position: sticky;
-    top: 0;
-    z-index: 900;
-}
+.main-header { display: none; }
 .header-left {
     display: flex;
     align-items: center;
@@ -601,7 +653,7 @@ body {
     top: 0; left: 0; right: 0; bottom: 0;
     border-radius: 16px; /* Match parent's border-radius */
     padding: 2px; /* This will be the border width */
-    background: linear-gradient(45deg, #6c5ce7, #a29bfe, #74b9ff, #6c5ce7);
+    background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary), #8bb8ff, var(--accent-primary));
     background-size: 300% 300%;
     animation: borderFlow 4s ease-in-out infinite;
     -webkit-mask: 
@@ -918,7 +970,7 @@ body {
     bottom: 12px;
     width: 0;
     height: 0;
-    border-left: 6px solid #764ba2;
+    border-left: 6px solid var(--accent-emphasis);
     border-top: 6px solid transparent;
     border-bottom: 6px solid transparent;
 }
@@ -979,11 +1031,11 @@ body {
 }
 
 .user-message .message-avatar {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-emphasis) 100%);
 }
 
 .assistant-message .message-avatar {
-    background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
 }
 
 .message-content {
@@ -1012,7 +1064,7 @@ body {
 }
 
 .user-message .message-content p {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-emphasis) 100%);
     color: white;
     border-bottom-right-radius: 6px;
     margin-left: auto;
@@ -1037,19 +1089,19 @@ body {
     border: 1px solid rgba(108, 92, 231, 0.12);
     font-size: 13px;
     color: #4a5568;
-    box-shadow: 0 2px 8px rgba(108, 92, 231, 0.06);
+    box-shadow: 0 2px 8px rgba(13, 110, 253, 0.06);
 }
 
 .source-item {
     display: inline-block;
-    background: rgba(108, 92, 231, 0.1);
-    color: #6c5ce7;
+    background: rgba(13, 110, 253, 0.1);
+    color: var(--accent-primary);
     padding: 6px 12px;
     border-radius: 16px;
     margin: 4px 4px 4px 0;
     font-size: 12px;
     font-weight: 500;
-    border: 1px solid rgba(108, 92, 231, 0.2);
+    border: 1px solid rgba(13, 110, 253, 0.2);
 }
 
 /* Formatted Text Styles */
@@ -1178,7 +1230,7 @@ body {
 }
 
 .message-content th {
-    background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
     color: white;
     padding: 10px 14px; /* Slightly reduced padding */
     text-align: left;
@@ -1282,7 +1334,7 @@ body {
     transform: translateY(-50%);
     width: 20px;
     height: 20px;
-    background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -1301,7 +1353,7 @@ body {
     font-weight: 700;
     margin: 12px 0 0px 0;
     color: #2c3e50;
-    border-bottom: 3px solid #6c5ce7;
+    border-bottom: 3px solid var(--accent-primary);
     padding-bottom: 2px;
     margin-bottom: 4px;
 }
@@ -1311,7 +1363,7 @@ body {
     font-weight: 600;
     margin: 10px 0 0px 0;
     color: #2c3e50;
-    border-bottom: 2px solid #a29bfe;
+    border-bottom: 2px solid var(--accent-secondary);
     padding-bottom: 2px;
     margin-bottom: 2px;
 }
@@ -1517,7 +1569,7 @@ body {
     display: inline-block;
     width: 2px;
     height: 2px;
-    background-color: #6c5ce7;
+    background-color: var(--accent-primary);
     border-radius: 50%;
     margin: 0 1px;
 }
@@ -1596,9 +1648,9 @@ body {
 .stream-stopped-indicator {
     margin-top: 8px;
     padding: 6px 10px;
-    background: rgba(108, 92, 231, 0.08);
+    background: rgba(13, 110, 253, 0.08);
     border-radius: 8px;
-    border-left: 3px solid #6c5ce7;
+    border-left: 3px solid var(--accent-primary);
     font-size: 12px;
 }
 
@@ -1624,7 +1676,7 @@ body {
     left: 0;
     right: 0;
     background: #ffffff;
-    border: 2px solid #6c5ce7;
+    border: 2px solid var(--accent-primary);
     border-radius: 8px;
     max-height: 300px;
     overflow-y: auto;
@@ -1655,7 +1707,7 @@ body {
 
 .autocomplete-item:hover,
 .autocomplete-item.active {
-    background-color: #f8f9ff;
+    background-color: #eaf2ff;
     color: var(--accent-primary);
 }
 
