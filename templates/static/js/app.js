@@ -745,8 +745,9 @@ class SRMAIApp {
                 const docItem = document.createElement('a');
                 docItem.className = 'doc-item';
                 docItem.href = `/documents/${docName}`;
-                docItem.target = '_blank'; // Open in new tab
-                docItem.title = `Open ${docName}`;
+                docItem.target = '_blank'; // Open in new window
+                docItem.rel = 'noopener noreferrer'; // Security best practice
+                docItem.title = `Open ${docName} in new window`;
 
                 let iconClass = 'fas fa-file-alt'; // Default icon
                 if (docName.endsWith('.pdf')) {
