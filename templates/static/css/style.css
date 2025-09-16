@@ -348,11 +348,20 @@ body {
     flex-shrink: 0;
 }
 
-/* Recent Chats and Documents sections - natural height */
-.sidebar-section:nth-child(2),
+/* Recent Chats section - limited height */
+.sidebar-section:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    max-height: 20vh;
+    overflow-y: auto;
+}
+
+/* Documents section - more height */
 .sidebar-section:nth-child(3) {
     display: flex;
     flex-direction: column;
+    max-height: 30vh;
+    overflow-y: auto;
 }
 .section-header {
     display: flex;
@@ -412,6 +421,7 @@ body {
     overflow-y: auto;
     padding-right: 8px;
     min-height: 0; /* Allow to shrink */
+    max-height: calc(30vh - 60px); /* Account for header height */
 }
 
 .doc-list {
@@ -419,6 +429,7 @@ body {
     overflow-y: auto;
     padding-right: 8px;
     min-height: 0; /* Allow to shrink */
+    max-height: calc(30vh - 60px); /* Account for header height */
 }
 
 .chat-list, .doc-list {
@@ -693,7 +704,7 @@ body {
     top: 0; left: 0; right: 0; bottom: 0;
     border-radius: 16px; /* Match parent's border-radius */
     padding: 2px; /* This will be the border width */
-    background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary), #8bb8ff, var(--accent-primary));
+    background: linear-gradient(45deg, #0d6efd, #4a90e2, #8bb8ff, #0d6efd);
     background-size: 300% 300%;
     animation: borderFlow 4s ease-in-out infinite;
     -webkit-mask: 
@@ -718,7 +729,7 @@ body {
 .welcome-icon {
     width: 64px;
     height: 64px;
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    background: linear-gradient(135deg, #0d6efd, #4a90e2);
     border-radius: 50%;
     display: flex;
     align-items: center;
