@@ -415,16 +415,31 @@ class EnhancedPDFProcessor:
                 j = i + 1
                 additional_content = []
 
-                # Look for NOTE that should be part of this step
+                # Look for NOTE that should be part of this step (but not standalone numbered NOTEs)
                 if j < len(lines):
                     next_line = lines[j].strip()
                     next_num_match = re.match(r'^(\d+)\.\s+(NOTE:.*)', next_line)
-                    if next_num_match and int(next_num_match.group(1)) == int(line_strip.split('.')[0]) + 1:
-                        # This is a NOTE that was incorrectly numbered as the next step
+                    if next_num_match:
+                        current_step_num = int(line_strip.split('.')[0])
+                        note_step_num = int(next_num_match.group(1))
                         note_content = next_num_match.group(2)
-                        additional_content.append('')  # Empty line for spacing
-                        additional_content.append(f'   **{note_content}**')  # Indent and format NOTE
-                        j += 1
+
+                        # Only treat as sub-note if it's not a consecutive numbered step
+                        # AND if the note content seems to belong to the current step
+                        is_consecutive_step = (note_step_num == current_step_num + 1)
+                        is_standalone_note = (
+                            is_consecutive_step and
+                            ('multiple' in note_content.lower() or
+                             'can be' in note_content.lower() or
+                             'recommends' in note_content.lower() or
+                             len(note_content) > 50)  # Substantial standalone content
+                        )
+
+                        # Only attach as sub-note if it's clearly not a standalone numbered step
+                        if not is_standalone_note and note_step_num == current_step_num + 1:
+                            additional_content.append('')  # Empty line for spacing
+                            additional_content.append(f'   **{note_content}**')  # Indent and format NOTE
+                            j += 1
 
                 # Look for file paths that should be bullet points
                 file_path_lines = []
@@ -465,7 +480,35 @@ class EnhancedPDFProcessor:
         # Fix NOTE formatting - ensure NOTE: is properly formatted
         cleaned_content = re.sub(r'^(\d+\.)\s+(NOTE:)', r'\1 **\2**', cleaned_content, flags=re.MULTILINE)
 
+        # Fix numbering sequence: renumber steps after NOTEs are processed
+        cleaned_content = self._fix_step_numbering(cleaned_content)
+
         return cleaned_content.strip()
+
+    def _fix_step_numbering(self, content: str) -> str:
+        """Fix numbering sequence by renumbering steps after NOTEs are processed"""
+        import re
+
+        lines = content.split('\n')
+        fixed_lines = []
+        step_counter = 1
+
+        for line in lines:
+            line_strip = line.strip()
+
+            # Check if this is a numbered step (but not a NOTE)
+            step_match = re.match(r'^(\d+)\.\s+(?!NOTE:)(.+)', line_strip)
+            if step_match:
+                # Renumber this step
+                step_content = step_match.group(2)
+                fixed_line = line.replace(line_strip, f"{step_counter}. {step_content}")
+                fixed_lines.append(fixed_line)
+                step_counter += 1
+            else:
+                # Keep line as is (including NOTEs, which should not be numbered)
+                fixed_lines.append(line)
+
+        return '\n'.join(fixed_lines)
 
     def _is_structured_table_line(self, line: str) -> bool:
         """Check if a line is part of a structured table (not TOC overflow)"""

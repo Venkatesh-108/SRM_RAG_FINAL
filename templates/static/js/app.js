@@ -415,8 +415,11 @@ class SRMAIApp {
         // Handle section headers (lines ending with :)
         formattedText = formattedText.replace(/^([^:\n]+):$/gm, '<strong>$1:</strong>');
         
-        // Handle numbered lists (1. 2. 3. etc.)
-        formattedText = formattedText.replace(/^(\d+\.)\s+(.+)$/gm, '<strong>$1</strong> $2');
+        // Handle NOTEs specifically (they are NOT list items) - remove number
+        formattedText = formattedText.replace(/^(\d+\.)\s+(NOTE:.*?)$/gm, '<div class="note-item"><strong class="note-content">$2</strong></div>');
+
+        // Handle numbered lists (1. 2. 3. etc.) - but exclude NOTEs
+        formattedText = formattedText.replace(/^(\d+\.)\s+(?!NOTE:)(.+)$/gm, '<strong>$1</strong> $2');
         
         // Handle bullet points (- or •)
         formattedText = formattedText.replace(/^[-•]\s+(.+)$/gm, '• $1');
