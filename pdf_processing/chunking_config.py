@@ -161,6 +161,9 @@ class DocumentTypeConfigs:
                     r'^#+\s+(?:Verifying|Troubleshooting|Logging|Connecting|Editing|Updating)',
                     r'^#+\s+(?:Operating system|Command|Option|Description)',
                     r'^#+\s+(?:About this task|Steps|Prerequisites)',
+                    
+                    # CRITICAL FIX: Exclude bullet point references that mention other sections
+                    # These should NOT be treated as section boundaries
                 ],
                 weak_boundary_patterns=[
                     # Common SRM operations

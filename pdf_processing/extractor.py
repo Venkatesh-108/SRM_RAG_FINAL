@@ -271,9 +271,15 @@ class PDFExtractor:
         if self._is_procedural_subheading(text):
             return False
 
-        # Filter out bullet point headings that are likely TOC entries
-        if text.strip().startswith('- ') and len(text.strip()) < 80:
-            return False
+        # Filter out bullet point headings that are likely TOC entries or list items
+        if text.strip().startswith('- '):
+            # Check if it's a TOC entry (short with page numbers) or a list item
+            if len(text.strip()) < 80 or re.search(r'\d+\s*$', text.strip()):
+                return False
+            # Also filter out bullet points that are clearly list items (not headings)
+            if (re.search(r'^-\s+(ensure|identify|download|browse|select|click)', text.strip(), re.IGNORECASE) or
+                re.search(r'^-\s+.*(?:as described|refer to|see|note|warning)', text.strip(), re.IGNORECASE)):
+                return False
 
         # Filter out very short fragments that are likely artifacts
         if len(text.strip()) < 3:

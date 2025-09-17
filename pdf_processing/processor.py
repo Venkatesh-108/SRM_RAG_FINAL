@@ -83,6 +83,7 @@ class PDFProcessor:
     def _create_chunks(self, structure: Dict) -> List[Dict]:
         """Create chunks preserving complete content with heading metadata"""
         chunks = []
+        seen_titles = set()  # Track processed titles to avoid duplicates
         
         for chapter in structure['chapters']:
             # Chapter overview chunk
@@ -91,11 +92,64 @@ class PDFProcessor:
             
             # Individual section chunks with complete content
             for section in chapter.get('sections', []):
+                section_title = section.get('title', '')
+                normalized_title = self._normalize_section_title(section_title)
+                
+                # Skip if we've already processed this section or if it's a bullet point reference
+                if (normalized_title in seen_titles or
+                    len(section.get('complete_content', '').strip()) < 50 or
+                    self._is_toc_like_section(section_title)):
+                    continue
+                
                 section_chunk = self._create_section_chunk(section, chapter)
                 chunks.append(section_chunk)
+                seen_titles.add(normalized_title)
         
         logger.info(f"Created {len(chunks)} chunks with complete content")
         return chunks
+    
+    def _normalize_section_title(self, title: str) -> str:
+        """Normalize section title for deduplication"""
+        import re
+        normalized = title.lower().strip()
+        # Remove leading bullets, dashes, numbers
+        normalized = re.sub(r'^[-•\d\.\s]+', '', normalized)
+        # Normalize whitespace
+        normalized = re.sub(r'\s+', ' ', normalized).strip()
+        return normalized
+
+    def _is_toc_like_section(self, title: str) -> bool:
+        """Check if section appears to be a table of contents entry or bullet point reference"""
+        import re
+        if not title:
+            return True
+        
+        # TOC-like patterns
+        toc_patterns = [
+            r'^\s*[-•]\s*',  # Bullet points
+            r'\.{3,}',       # Dot leaders
+            r'\s+\d+\s*$',   # Ending with page numbers
+        ]
+        for pattern in toc_patterns:
+            if re.search(pattern, title):
+                return True
+        
+        # CRITICAL FIX: Detect bullet point references that mention other sections
+        # These should not be treated as standalone sections
+        bullet_reference_patterns = [
+            r'^-\s+.*installing on.*',
+            r'^-\s+.*complete the steps.*',
+            r'^-\s+.*described in.*',
+            r'^-\s+.*as described in.*',
+            r'^-\s+.*refer to.*',
+            r'^-\s+.*see.*',
+        ]
+        
+        for pattern in bullet_reference_patterns:
+            if re.search(pattern, title, re.IGNORECASE):
+                return True
+                
+        return False
     
     def _create_chapter_chunk(self, chapter: Dict) -> Dict:
         """Create chapter chunk with complete content"""
