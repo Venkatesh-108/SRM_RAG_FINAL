@@ -1,0 +1,111 @@
+/* Font Awesome 6.4.0 - Local Version */
+
+/* Font Awesome 6 Brands */
+@font-face {
+  font-family: "Font Awesome 6 Brands";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("../webfonts/fa-brands-400.woff2") format("woff2"),
+       url("../webfonts/fa-brands-400.ttf") format("truetype");
+}
+
+/* Font Awesome 6 Free - Solid */
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url("../webfonts/fa-solid-900.woff2") format("woff2"),
+       url("../webfonts/fa-solid-900.ttf") format("truetype");
+}
+
+/* Font Awesome 6 Free - Regular */
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("../webfonts/fa-regular-400.woff2") format("woff2"),
+       url("../webfonts/fa-regular-400.ttf") format("truetype");
+}
+
+/* Base styles */
+.fa,
+.fas,
+.far,
+.fab {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-rendering: auto;
+}
+
+.fa,
+.fas {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}
+
+.far {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 400;
+}
+
+.fab {
+  font-family: "Font Awesome 6 Brands";
+  font-weight: 400;
+}
+
+/* Icons used in the application */
+.fa-bars:before { content: "\f0c9"; }
+.fa-comment:before { content: "\f075"; }
+.fa-history:before { content: "\f1da"; }
+.fa-file-alt:before { content: "\f15c"; }
+.fa-trash:before { content: "\f1f8"; }
+.fa-upload:before { content: "\f093"; }
+.fa-robot:before { content: "\f544"; }
+.fa-paper-plane:before { content: "\f1d8"; }
+.fa-user:before { content: "\f007"; }
+.fa-copy:before { content: "\f0c5"; }
+.fa-redo:before { content: "\f01e"; }
+.fa-check:before { content: "\f00c"; }
+.fa-spinner:before { content: "\f110"; }
+.fa-stop:before { content: "\f04d"; }
+.fa-file-pdf:before { content: "\f1c1"; }
+.fa-file-markdown:before { content: "\f893"; }
+.fa-comment-dots:before { content: "\f4ad"; }
+.fa-brain:before { content: "\f5dc"; }
+
+/* Spinning animation */
+.fa-spin {
+  animation: fa-spin 2s infinite linear;
+}
+
+@keyframes fa-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Screen reader only */
+.fa-sr-only,
+.fa-sr-only-focusable:not(:focus),
+.sr-only,
+.sr-only-focusable:not(:focus) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

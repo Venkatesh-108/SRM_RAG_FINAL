@@ -3,27 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SRM AI Doc Assist</title>
+    <title>HCL SRM AI Doc Assist</title>
     
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Local Fonts -->
+    <link rel="stylesheet" href="/static/css/fonts.css">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Local Font Awesome -->
+    <link rel="stylesheet" href="/static/css/fontawesome-local.css">
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
+    <div class="topbar">
+        <div class="brand">
+            <i class="fas fa-bars" id="hamburgerBtn"></i>
+            <span class="brand-name">HCL SRM AI Doc Assist</span>
+        </div>
+    </div>
     <div class="app-container">
         <!-- Left Sidebar -->
         <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
                 <div class="logo">
                     <div class="logo-text">
-                        <h2>SRM AI Doc Assist</h2>
+                        <!-- Logo text removed as requested -->
                         <!-- <p>Intelligent AI Document Assistant</p> -->
                     </div>
                 </div>
@@ -33,7 +37,17 @@
                 <div class="sidebar-section">
                     <button class="new-chat-btn">
                         <i class="fas fa-comment"></i>
-                        New Chat
+                        <span>New Chat</span>
+                    </button>
+                </div>
+
+                <!-- Collapsed state icons -->
+                <div class="collapsed-icons" style="display: none;">
+                    <button class="collapsed-icon-btn" title="Recent Chats">
+                        <i class="fas fa-history"></i>
+                    </button>
+                    <button class="collapsed-icon-btn" title="Documents">
+                        <i class="fas fa-file-alt"></i>
                     </button>
                 </div>
 
@@ -59,10 +73,11 @@
                 </div>
             </div>
 
-            <div class="sidebar-footer">
-                <button class="upload-btn" disabled>
+            <div class="sidebar-footer" style="display: none;">
+                <input type="file" id="pdfUploadInput" accept=".pdf" style="display: none;">
+                <button class="upload-btn" id="uploadBtn">
                     <i class="fas fa-upload"></i>
-                    Upload PDF (Disabled)
+                    Upload PDF
                 </button>
             </div>
         </aside>
@@ -87,6 +102,10 @@
                         <div class="welcome-content">
                             <h3 align="center" >👋  Welcome to HCL SRM AI Assist! </h3> 
                             
+                            <div class="llama-attribution" style="text-align: center; margin: 20px 0; padding: 10px; background: linear-gradient(135deg, #0d6efd 0%, #4a90e2 100%); color: white; border-radius: 8px; font-weight: 600;">
+                                
+                                Built with Llama
+                            </div>
                             
                             <div class="quick-start">
                                 <p class="section-title">Quick Start:</p>
@@ -118,7 +137,11 @@
                         id="chatInput" 
                         placeholder="Ask me anything about your documents..."
                         rows="1"
+                        autocomplete="off"
                     ></textarea>
+                    <div class="autocomplete-dropdown" id="autocompleteDropdown">
+                        <!-- Suggestions will be populated here -->
+                    </div>
                     <div class="input-footer">
                         <span class="char-counter" id="charCounter">0/1000</span>
                         <button class="send-btn" id="sendBtn" title="Send" disabled>
@@ -129,6 +152,11 @@
             </div>
         </main>
     </div>
+
+    <!-- Llama License Attribution Footer -->
+    <footer style="position: fixed; bottom: 0; left: 0; right: 0; background: #2c3e50; color: white; text-align: center; padding: 8px; font-size: 12px; z-index: 1000;">
+        <span>Built with Llama • Powered by Llama 3.2 Community License</span>
+    </footer>
 
     <script src="/static/js/app.js"></script>
 </body>

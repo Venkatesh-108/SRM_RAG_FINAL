@@ -1,28 +1,42 @@
-# SRM RAG System
+# SRM AI Doc Assist 
 
-A comprehensive RAG (Retrieval-Augmented Generation) system for Dell SRM guides with advanced chunking, hybrid retrieval, and Ollama integration. The system provides both a command-line interface and a web API for querying SRM documentation.
+A comprehensive RAG (Retrieval-Augmented Generation) system for HCL SRM guides with advanced chunking, hybrid retrieval, and Ollama integration. The system provides both a command-line interface and a web API for querying SRM documentation.
+
+> **🤖 Built with Llama** - This system is powered by Llama 3.2 and operates under the Llama 3.2 Community License.
 
 ## Features
 
-- **Advanced Document Processing**: Intelligent chunking with procedure-aware and table-aware document parsing
-- **Hybrid Retrieval System**: Combines BM25 (sparse) and FAISS (dense) search with cross-encoder reranking
-- **Multi-Query Generation**: Automatic query expansion for better retrieval coverage
-- **Ollama Integration**: Local LLM support using llama3.2:3b model for answer generation
-- **Smart Context Selection**: Diversity-aware chunk selection to avoid redundancy
-- **Auto-Indexing**: Automatic document indexing on startup
-- **Web Interface**: HTML interface for easy testing and interaction
-- **Rich CLI**: Beautiful command-line interface with Typer and Rich
-- **FastAPI Backend**: Modern, fast web API with automatic documentation
+- **🎯 Enhanced Exact Title Matching**: Direct section content retrieval for exact documentation titles
+- **🔍 Advanced Document Processing**: Intelligent chunking with procedure-aware and table-aware document parsing
+- **🔄 Hybrid Retrieval System**: Combines BM25 (sparse) and FAISS (dense) search with cross-encoder reranking
+- **📈 Multi-Query Generation**: Automatic query expansion for better retrieval coverage
+- **🤖 Ollama Integration**: Local LLM support using llama3.2:3b model for answer generation
+- **🎛️ Smart Context Selection**: Diversity-aware chunk selection to avoid redundancy
+- **⚡ Auto-Indexing**: Automatic document indexing on startup
+- **🌐 Web Interface**: HTML interface for easy testing and interaction
+- **💻 Rich CLI**: Beautiful command-line interface with Typer and Rich
+- **🚀 FastAPI Backend**: Modern, fast web API with automatic documentation
+- **📚 Cross-Document Search**: Seamless search across multiple PDF documents
+- **🧹 Clean Response Formatting**: Metadata-free, properly formatted responses
 
 ## Architecture
 
 The system uses a multi-stage approach:
-1. **Document Processing**: PDF and Markdown parsing with unstructured
-2. **Intelligent Chunking**: Context-aware chunking with overlap for continuity
-3. **Hybrid Search**: BM25 + FAISS with query expansion
-4. **Advanced Reranking**: Cross-encoder based reranking with metadata scoring
-5. **Answer Generation**: Multi-stage LLM generation with validation
-6. **Quality Assessment**: Confidence scoring and answer validation
+1. **Enhanced Document Processing**: Advanced PDF parsing with Docling and enhanced chunking
+2. **Exact Title Indexing**: Pre-built index for instant exact title matching
+3. **Intelligent Chunking**: Context-aware chunking with complete section preservation
+4. **Dual Search Strategy**: Exact title matching + hybrid search fallback
+5. **Smart Content Enhancement**: Automatic detection of substantial content chunks
+6. **Advanced Reranking**: Cross-encoder based reranking with metadata scoring
+7. **Adaptive Response**: Direct content return for exact matches, LLM synthesis for others
+8. **Quality Assessment**: Confidence scoring and answer validation
+
+### Search Flow
+```
+User Query → Exact Title Check → Direct Content Return (if exact match)
+            ↓
+         Hybrid Search → LLM Synthesis → Generated Answer (if no exact match)
+```
 
 ## Setup
 
@@ -30,7 +44,7 @@ The system uses a multi-stage approach:
 
 - Python 3.8+
 - Ollama installed and running locally
-- Dell SRM guide documents (PDF or Markdown format)
+- HCL SRM guide documents (PDF or Markdown format)
 
 ### Installation
 
@@ -58,7 +72,7 @@ The system uses a multi-stage approach:
    pip install -r requirements.txt
    ```
 
-5. **Place your Dell SRM guide documents into the `docs` directory**
+5. **Place your HCL SRM guide documents into the `docs` directory**
 
 6. **Ensure Ollama is running with the required model:**
    ```bash
@@ -123,6 +137,48 @@ curl -X POST "http://127.0.0.1:8000/ask" \
 curl -X POST "http://127.0.0.1:8000/reindex"
 ```
 
+## Enhanced Exact Title Matching
+
+The system features an advanced exact title matching capability that provides instant, direct access to complete documentation sections.
+
+### How It Works
+
+1. **Exact Title Detection**: When users type exact section titles, the system bypasses LLM processing
+2. **Direct Content Return**: Returns complete section content with proper formatting
+3. **Instant Response**: No LLM delay - immediate response with confidence score 1.0
+4. **Clean Formatting**: Metadata-free content with proper markdown hierarchy
+
+### Example Usage
+
+**Exact Match (Direct Content):**
+```
+Query: "Additional frontend server tasks"
+→ Returns: Complete section with tasks, steps, and prerequisites
+→ Confidence: 1.0
+→ Processing: Instant (no LLM)
+```
+
+**Non-Exact Match (Standard RAG):**
+```
+Query: "frontend server tasks" 
+→ Returns: LLM-synthesized answer from multiple sources
+→ Confidence: 0.8-0.9
+→ Processing: Hybrid search + LLM synthesis
+```
+
+### Supported Documents
+
+- ✅ SRM Installation and Configuration Guide
+- ✅ SRM Deploying Additional Frontend Servers
+- ✅ SRM Upgrade Guide
+
+### Benefits
+
+- **⚡ Instant Access**: No waiting for LLM processing
+- **📖 Complete Content**: Full section with all details, steps, and context
+- **🎯 Perfect Accuracy**: Raw documentation without AI interpretation
+- **🔄 Smart Fallback**: Automatically switches to standard RAG for non-exact queries
+
 ## Document Processing
 
 ### Supported Formats
@@ -164,21 +220,30 @@ curl -X POST "http://127.0.0.1:8000/reindex"
 ### Project Structure
 ```
 SRM_RAG/
-├── app.py              # Main application (CLI + Web API)
-├── config.yaml         # Configuration file
-├── requirements.txt    # Python dependencies
-├── docs/              # Document directory
-├── index/             # Generated indices
-└── venv/              # Virtual environment
+├── app.py                     # Main application (CLI + Web API)
+├── config.yaml               # Configuration file
+├── requirements.txt          # Python dependencies
+├── docs/                     # Document directory
+├── index/                    # Generated indices and title indexes
+├── extracted_docs/           # Enhanced processed documents
+├── services/
+│   ├── enhanced_search.py    # Enhanced search with exact title matching
+│   ├── chat_service.py       # Chat management and response formatting
+│   ├── rag_service.py        # Main RAG orchestration
+│   └── ollama_service.py     # LLM integration
+├── pdf_processing/
+│   └── enhanced_processor.py # Advanced PDF processing with Docling
+└── venv/                     # Virtual environment
 ```
 
 ### Key Components
-- **Document Loader**: Handles PDF and Markdown parsing
-- **Chunker**: Intelligent document chunking
-- **Index Manager**: Manages BM25 and FAISS indices
-- **Search Engine**: Hybrid search and reranking
-- **Answer Generator**: LLM-based answer generation
-- **Web Server**: FastAPI-based web interface
+- **Enhanced Search Engine**: Exact title matching + hybrid search fallback
+- **Enhanced PDF Processor**: Advanced document parsing with complete section extraction
+- **Chat Service**: Response formatting and metadata cleaning
+- **Title Index Manager**: Pre-built indexes for instant exact matching
+- **RAG Service**: Orchestrates search strategies and response types
+- **Dual-Mode Processing**: Direct content return vs. LLM synthesis
+- **Web Server**: FastAPI-based web interface with enhanced endpoints
 
 ### Adding New Features
 - **New Document Types**: Extend the `load_documents()` function
@@ -197,9 +262,32 @@ SRM_RAG/
 
 ### Performance Optimization
 
+- **Exact Title Matching**: Instant responses for exact section titles
+- **Enhanced Chunking**: Optimized for complete section preservation
+- **Smart Content Detection**: Prioritizes substantial content over headers
 - **Chunk Size**: Adjust chunk sizes in configuration for optimal performance
 - **Model Selection**: Choose appropriate embedding and reranking models
 - **Index Management**: Regular reindexing for updated documents
+
+## System Capabilities
+
+### Search Behaviors
+
+| Query Type | Example | Response Time | Content Type | Confidence |
+|------------|---------|---------------|--------------|-------------|
+| **Exact Title** | "Installing and configuring the Frontend host" | Instant | Raw Documentation | 1.0 |
+| **Partial Match** | "frontend server tasks" | ~3-5 seconds | LLM Synthesis | 0.8-0.9 |
+| **Question** | "How do I configure SSL?" | ~3-5 seconds | LLM Synthesis | 0.8-0.9 |
+| **Broad Topic** | "database configuration" | ~5-8 seconds | LLM Synthesis | 0.7-0.9 |
+
+### Supported Section Types
+
+- ✅ **Installation Procedures**: Complete step-by-step guides
+- ✅ **Configuration Tasks**: Detailed configuration instructions  
+- ✅ **Troubleshooting Steps**: Problem resolution procedures
+- ✅ **Prerequisites**: Requirements and preparation steps
+- ✅ **Verification Tasks**: Testing and validation procedures
+- ✅ **Reference Information**: Tables, parameters, and specifications
 
 ## Contributing
 
@@ -212,7 +300,17 @@ When contributing to this project:
 
 ## License
 
-This project is designed for internal use with Dell SRM documentation.
+This project is designed for internal use with HCL SRM documentation.
+
+### Llama 3.2 Community License Compliance
+
+This system uses Llama 3.2 models and complies with the Llama 3.2 Community License requirements:
+
+- **Attribution**: This system prominently displays "Built with Llama" on all user interfaces
+- **Model Usage**: Uses Llama 3.2:3b model via Ollama for answer generation
+- **License Compliance**: Full compliance with Meta's Llama 3.2 Community License terms
+
+For complete license terms, see the [Llama 3.2 Community License](https://github.com/meta-llama/llama3.2/blob/main/LICENSE) or refer to the `LLAMA_LICENSE.md` file in this repository.
 
 ## Support
 

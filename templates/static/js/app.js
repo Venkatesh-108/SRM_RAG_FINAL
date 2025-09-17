@@ -4,6 +4,10 @@ class SRMAIApp {
     constructor() {
         this.isLoading = false;
         this.currentSessionId = null;
+        this.currentAutocompleteIndex = -1;
+        this.isStreaming = false;
+        this.streamingTimeoutId = null;
+        this.currentAbortController = null;
         this.init();
     }
 
@@ -20,18 +24,34 @@ class SRMAIApp {
             chatInput.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter' && !e.shiftKey) {
                     e.preventDefault();
+                    if (this.handleAutocompleteNavigation(e)) {
+                        return;
+                    }
                     this.sendMessage();
+                } else if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+                    if (this.handleAutocompleteNavigation(e)) {
+                        e.preventDefault();
+                    }
+                } else if (e.key === 'Escape') {
+                    this.hideAutocomplete();
                 }
             });
             chatInput.addEventListener('input', () => {
                 this.updateSendButton();
                 this.updateCharCounter();
+                this.handleAutocomplete();
             });
         }
 
         const sendBtn = document.getElementById('sendBtn');
         if (sendBtn) {
-            sendBtn.addEventListener('click', () => this.sendMessage());
+            sendBtn.addEventListener('click', () => {
+                if (this.isStreaming) {
+                    this.stopStreaming();
+                } else {
+                    this.sendMessage();
+                }
+            });
         }
 
         const newChatBtn = document.querySelector('.new-chat-btn');
@@ -44,9 +64,77 @@ class SRMAIApp {
             mobileMenuBtn.addEventListener('click', () => this.toggleSidebar());
         }
 
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        if (hamburgerBtn) {
+            hamburgerBtn.addEventListener('click', () => this.toggleSidebar());
+        }
+
+        // Collapsed icon buttons expand sidebar
+        document.querySelectorAll('.collapsed-icon-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const sidebar = document.querySelector('.sidebar');
+                if (sidebar && sidebar.classList.contains('collapsed')) {
+                    sidebar.classList.remove('collapsed');
+                }
+            });
+        });
+
         const clearChatsBtn = document.querySelector('.clear-chats-btn');
         if (clearChatsBtn) {
             clearChatsBtn.addEventListener('click', () => this.clearAllChats());
+        }
+
+        const uploadBtn = document.getElementById('uploadBtn');
+        const pdfUploadInput = document.getElementById('pdfUploadInput');
+
+        if (uploadBtn) {
+            uploadBtn.addEventListener('click', () => pdfUploadInput.click());
+        }
+
+        if (pdfUploadInput) {
+            pdfUploadInput.addEventListener('change', (event) => this.uploadFile(event.target.files[0]));
+        }
+
+        // Hide autocomplete when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.input-wrapper')) {
+                this.hideAutocomplete();
+            }
+        });
+    }
+
+    async uploadFile(file) {
+        if (!file) return;
+
+        const formData = new FormData();
+        formData.append('file', file);
+
+        const uploadBtn = document.getElementById('uploadBtn');
+        uploadBtn.disabled = true;
+        uploadBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Uploading...';
+
+        try {
+            const response = await fetch('/upload_pdf/', {
+                method: 'POST',
+                body: formData,
+            });
+
+            if (response.ok) {
+                const result = await response.json();
+                console.log(result.message);
+                this.loadDocuments(); // Refresh the document list
+                alert('File uploaded and indexed successfully!');
+            } else {
+                const error = await response.json();
+                console.error('Upload failed:', error.detail);
+                alert(`Upload failed: ${error.detail}`);
+            }
+        } catch (error) {
+            console.error('An error occurred during upload:', error);
+            alert('An error occurred during upload. Please try again.');
+        } finally {
+            uploadBtn.disabled = false;
+            uploadBtn.innerHTML = '<i class="fas fa-upload"></i> Upload PDF';
         }
     }
 
@@ -101,6 +189,9 @@ class SRMAIApp {
         // Show "Thinking..." message
         this.addMessageToChat('assistant', 'Thinking...', [], true);
 
+        // Create abort controller for this request
+        this.currentAbortController = new AbortController();
+
         try {
             const response = await fetch('/chat/send_message', {
                 method: 'POST',
@@ -110,7 +201,8 @@ class SRMAIApp {
                 body: JSON.stringify({
                     session_id: this.currentSessionId,
                     content: message
-                })
+                }),
+                signal: this.currentAbortController.signal
             });
 
             if (response.ok) {
@@ -124,10 +216,16 @@ class SRMAIApp {
                 this.streamResponse(`Error: ${errorData.detail}`, []);
             }
         } catch (error) {
-            console.error('Error sending message:', error);
-            this.streamResponse('Sorry, I encountered an error. Please try again.', []);
+            if (error.name === 'AbortError') {
+                console.log('Request was aborted');
+                this.handleStreamStop();
+            } else {
+                console.error('Error sending message:', error);
+                this.streamResponse('Sorry, I encountered an error. Please try again.', []);
+            }
         } finally {
             this.setLoadingState(false);
+            this.currentAbortController = null;
             // Update chat history after response is complete
             this.loadChatHistory();
         }
@@ -139,14 +237,14 @@ class SRMAIApp {
 
         const messageDiv = document.createElement('div');
         messageDiv.className = `chat-message ${role}-message`;
-        
+
         const avatar = document.createElement('div');
         avatar.className = 'message-avatar';
         avatar.innerHTML = role === 'user' ? '<i class="fas fa-user"></i>' : '<i class="fas fa-robot"></i>';
-        
+
         const contentDiv = document.createElement('div');
         contentDiv.className = 'message-content';
-        
+
         if (isThinking) {
             contentDiv.innerHTML = `<p>${this.escapeHtml(content)}</p>`;
         } else {
@@ -157,11 +255,11 @@ class SRMAIApp {
                 contentDiv.innerHTML = `<p>${this.escapeHtml(content)}</p>`;
             }
         }
-        
+
         if (sources && sources.length > 0) {
             const sourcesDiv = document.createElement('div');
             sourcesDiv.className = 'message-sources';
-            sourcesDiv.innerHTML = '<strong>Sources:</strong><br>' + 
+            sourcesDiv.innerHTML = '<strong>Sources:</strong><br>' +
                 sources.map(source => {
                     // Handle both old string format and new object format
                     if (typeof source === 'string') {
@@ -178,18 +276,18 @@ class SRMAIApp {
                 }).join('<br>');
             contentDiv.appendChild(sourcesDiv);
         }
-        
+
         messageDiv.appendChild(avatar);
         messageDiv.appendChild(contentDiv);
         chatArea.appendChild(messageDiv);
-        
+
         // Add action buttons for assistant messages (but not thinking messages)
         if (role === 'assistant' && !isThinking) {
             this.addActionButtons(messageDiv, content);
         }
-        
-        // Scroll to bottom
-        chatArea.scrollTop = chatArea.scrollHeight;
+
+        // Enhanced auto-scroll with smooth behavior
+        this.scrollToBottom();
     }
 
     addActionButtons(messageDiv, content) {
@@ -258,32 +356,98 @@ class SRMAIApp {
         return div.innerHTML;
     }
 
+    applySyntaxHighlighting(code, language = '') {
+        // Since we want all text to be black anyway, just escape HTML and return
+        let highlighted = this.escapeHtml(code);
+
+        // Split very long lines at appropriate points before highlighting
+        highlighted = this.handleLongLines(highlighted);
+
+        // No syntax highlighting - just return the properly escaped text
+        return highlighted;
+    }
+
+    handleLongLines(text) {
+        // Split lines that are longer than 80 characters at logical break points
+        return text.split('\n').map(line => {
+            if (line.length <= 80) return line;
+
+            // For command lines, try to break at logical points
+            if (line.includes('./') || line.includes(' -c ') || line.includes(' --')) {
+                // Break at parameter boundaries
+                return line.replace(/(\s+--?\w+)/g, '\n    $1');
+            }
+
+            // For very long paths, allow natural breaking
+            return line;
+        }).join('\n');
+    }
+
     renderFormattedText(text) {
         // Convert common formatting patterns to HTML
         let formattedText = text;
+
+        // Simplified code blocks - just escape HTML properly
+        formattedText = formattedText.replace(/```[\s\S]*?```/g, (match) => {
+            // Extract the code content (remove the ``` markers)
+            const code = match.replace(/^```(\w+)?\n?/, '').replace(/```$/, '');
+
+            // Properly escape HTML entities and tags
+            const escapedCode = this.escapeHtml(code);
+
+            return `<pre><code>${escapedCode}</code></pre>`;
+        });
+
+        // Handle markdown headings (# ## ### #### ##### ######)
+        formattedText = formattedText.replace(/^######\s+(.+)$/gm, '<h6>$1</h6>');
+        formattedText = formattedText.replace(/^#####\s+(.+)$/gm, '<h5>$1</h5>');
+        formattedText = formattedText.replace(/^####\s+(.+)$/gm, '<h4>$1</h4>');
+        formattedText = formattedText.replace(/^###\s+(.+)$/gm, '<h3>$1</h3>');
+        formattedText = formattedText.replace(/^##\s+(.+)$/gm, '<h2>$1</h2>');
+        formattedText = formattedText.replace(/^#\s+(.+)$/gm, '<h1>$1</h1>');
         
-        // Handle numbered lists (1. 2. 3. etc.)
-        formattedText = formattedText.replace(/^(\d+\.)\s+/gm, '<strong>$1</strong> ');
+        // Handle section headers with equals signs (====)
+        formattedText = formattedText.replace(/^(.+)\n=+$/gm, '<h3>$1</h3>');
         
-        // Handle bullet points (- or •)
-        formattedText = formattedText.replace(/^[-•]\s+/gm, '• ');
+        // Handle section headers with dashes (----)
+        formattedText = formattedText.replace(/^(.+)\n-+$/gm, '<h4>$1</h4>');
         
         // Handle section headers (lines ending with :)
-        formattedText = formattedText.replace(/^([^:]+):$/gm, '<strong>$1:</strong>');
+        formattedText = formattedText.replace(/^([^:\n]+):$/gm, '<strong>$1:</strong>');
+        
+        // Handle NOTEs specifically (they are NOT list items) - remove number
+        formattedText = formattedText.replace(/^(\d+\.)\s+(NOTE:.*?)$/gm, '<div class="note-item"><strong class="note-content">$2</strong></div>');
+
+        // Handle numbered lists (1. 2. 3. etc.) - but exclude NOTEs
+        formattedText = formattedText.replace(/^(\d+\.)\s+(?!NOTE:)(.+)$/gm, '<strong>$1</strong> $2');
+        
+        // Handle bullet points (- or •)
+        formattedText = formattedText.replace(/^[-•]\s+(.+)$/gm, '• $1');
         
         // Handle emphasis (text between ** or __)
         formattedText = formattedText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
         formattedText = formattedText.replace(/__(.*?)__/g, '<em>$1</em>');
         
-        // Handle code snippets (text between `)
-        formattedText = formattedText.replace(/`([^`]+)`/g, '<code>$1</code>');
+        // Handle inline code snippets (text between `)
+        formattedText = formattedText.replace(/`([^`\n]+)`/g, '<code>$1</code>');
         
-        // Handle line breaks for better readability - keep content in single paragraph
-        formattedText = formattedText.replace(/\n\n/g, '<br><br>');
+        // Handle line breaks for better readability
+        formattedText = formattedText.replace(/\n\n+/g, '<br><br>');
         formattedText = formattedText.replace(/\n/g, '<br>');
         
-        // Wrap in single paragraph tag to keep everything together
-        formattedText = `<p>${formattedText}</p>`;
+        // Remove extra br tags after headings
+        formattedText = formattedText.replace(/(<\/h[1-6]>)(<br>)+/g, '$1');
+        
+        // Remove extra br tags before and after code blocks
+        formattedText = formattedText.replace(/(<br>)+(<pre><code>)/g, '$2');
+        formattedText = formattedText.replace(/(<\/code><\/pre>)(<br>)+/g, '$1');
+        
+        // Remove extra br tags before and after inline code
+        formattedText = formattedText.replace(/(<br>)+(<code>)/g, '<br>$2');
+        formattedText = formattedText.replace(/(<\/code>)(<br>)+/g, '$1<br>');
+        
+        // Wrap in div instead of paragraph to allow block elements
+        formattedText = `<div>${formattedText}</div>`;
         
         return formattedText;
     }
@@ -315,16 +479,34 @@ class SRMAIApp {
             const chatItem = document.createElement('div');
             chatItem.className = 'chat-item';
             chatItem.dataset.sessionId = session.session_id; // Use data attribute
-            chatItem.onclick = () => this.loadChatSession(session.session_id);
+            
+            // Create chat content wrapper for icon and title
+            const chatContent = document.createElement('div');
+            chatContent.className = 'chat-content';
+            chatContent.onclick = () => this.loadChatSession(session.session_id);
             
             const icon = document.createElement('i');
             icon.className = 'far fa-comment-dots';
             
             const title = document.createElement('span');
+            title.className = 'chat-title';
             title.textContent = session.title || 'Untitled Chat';
             
-            chatItem.appendChild(icon);
-            chatItem.appendChild(title);
+            chatContent.appendChild(icon);
+            chatContent.appendChild(title);
+            
+            // Create delete button
+            const deleteBtn = document.createElement('button');
+            deleteBtn.className = 'chat-delete-btn';
+            deleteBtn.title = 'Delete chat';
+            deleteBtn.innerHTML = '<i class="fas fa-trash"></i>';
+            deleteBtn.onclick = (e) => {
+                e.stopPropagation(); // Prevent chat from being selected
+                this.deleteIndividualChat(session.session_id, session.title || 'Untitled Chat');
+            };
+            
+            chatItem.appendChild(chatContent);
+            chatItem.appendChild(deleteBtn);
             chatList.appendChild(chatItem);
         });
 
@@ -360,13 +542,18 @@ class SRMAIApp {
         this.removeWelcomeMessage();
         this.clearChatArea(); // Clear previous messages first
         this.showChatArea();
-        
+
         const chatArea = document.getElementById('chatArea');
         if (!chatArea) return;
 
         session.messages.forEach(msg => {
             this.addMessageToChat(msg.role, msg.content, msg.sources);
         });
+
+        // Scroll to bottom after loading all messages with a small delay
+        setTimeout(() => {
+            this.scrollToBottom();
+        }, 100);
     }
 
     async clearAllChats() {
@@ -389,6 +576,38 @@ class SRMAIApp {
             }
         } catch (error) {
             console.error('Error clearing all chats:', error);
+        }
+    }
+
+    async deleteIndividualChat(sessionId, chatTitle) {
+        if (!confirm(`Are you sure you want to delete "${chatTitle}"? This action cannot be undone.`)) {
+            return;
+        }
+
+        try {
+            const response = await fetch(`/chat/session/${sessionId}`, {
+                method: 'DELETE'
+            });
+
+            if (response.ok) {
+                // If the deleted chat was the current one, clear the chat area and show welcome
+                if (this.currentSessionId === sessionId) {
+                    this.currentSessionId = null;
+                    this.clearChatArea();
+                    this.showWelcomeMessage();
+                }
+                
+                // Refresh the chat list
+                this.loadChatHistory();
+                console.log(`Chat "${chatTitle}" deleted successfully`);
+            } else {
+                const errorData = await response.json();
+                console.error('Failed to delete chat:', errorData.detail);
+                alert(`Failed to delete chat: ${errorData.detail}`);
+            }
+        } catch (error) {
+            console.error('Error deleting chat:', error);
+            alert('An error occurred while deleting the chat. Please try again.');
         }
     }
 
@@ -455,10 +674,55 @@ class SRMAIApp {
         }
     }
 
+    stopStreaming() {
+        this.isStreaming = false;
+        if (this.streamingTimeoutId) {
+            clearTimeout(this.streamingTimeoutId);
+            this.streamingTimeoutId = null;
+        }
+        if (this.currentAbortController) {
+            this.currentAbortController.abort();
+        }
+        this.updateSendButtonForStreaming();
+    }
+
+    handleStreamStop() {
+        // Find the last assistant message and add a "stopped" indicator
+        const assistantMessages = document.querySelectorAll('.chat-message.assistant-message');
+        const lastMessage = assistantMessages[assistantMessages.length - 1];
+        if (lastMessage) {
+            const contentDiv = lastMessage.querySelector('.message-content');
+            if (contentDiv) {
+                const stoppedIndicator = document.createElement('div');
+                stoppedIndicator.className = 'stream-stopped-indicator';
+                stoppedIndicator.innerHTML = '<em style="color: #6c5ce7; font-size: 12px;">Response stopped by user</em>';
+                contentDiv.appendChild(stoppedIndicator);
+            }
+        }
+    }
+
+    updateSendButtonForStreaming() {
+        const sendBtn = document.getElementById('sendBtn');
+        if (sendBtn) {
+            if (this.isStreaming) {
+                sendBtn.innerHTML = '<i class="fas fa-stop"></i>';
+                sendBtn.title = 'Stop';
+                sendBtn.disabled = false;
+                sendBtn.classList.add('stop-mode');
+            } else {
+                sendBtn.innerHTML = '<i class="fas fa-paper-plane"></i>';
+                sendBtn.title = 'Send';
+                sendBtn.disabled = false;
+                sendBtn.classList.remove('stop-mode');
+                this.updateSendButton(); // Check if input is empty to disable if needed
+            }
+        }
+    }
+
     setLoadingState(loading) {
         this.isLoading = loading;
         const sendBtn = document.getElementById('sendBtn');
-        if (sendBtn) {
+        if (sendBtn && !this.isStreaming) {
             sendBtn.disabled = loading;
             sendBtn.innerHTML = loading ? '<i class="fas fa-spinner fa-spin"></i>' : '<i class="fas fa-paper-plane"></i>';
         }
@@ -499,8 +763,9 @@ class SRMAIApp {
                 const docItem = document.createElement('a');
                 docItem.className = 'doc-item';
                 docItem.href = `/documents/${docName}`;
-                docItem.target = '_blank'; // Open in new tab
-                docItem.title = `Open ${docName}`;
+                docItem.target = '_blank'; // Open in new window
+                docItem.rel = 'noopener noreferrer'; // Security best practice
+                docItem.title = `Open ${docName} in new window`;
 
                 let iconClass = 'fas fa-file-alt'; // Default icon
                 if (docName.endsWith('.pdf')) {
@@ -523,8 +788,32 @@ class SRMAIApp {
     toggleSidebar() {
         const sidebar = document.querySelector('.sidebar');
         if (sidebar) {
-            sidebar.classList.toggle('open');
+            sidebar.classList.toggle('collapsed');
         }
+    }
+
+    scrollToBottom(smooth = true) {
+        const chatArea = document.getElementById('chatArea');
+        if (!chatArea) return;
+
+        if (smooth) {
+            chatArea.scrollTo({
+                top: chatArea.scrollHeight,
+                behavior: 'smooth'
+            });
+        } else {
+            chatArea.scrollTop = chatArea.scrollHeight;
+        }
+    }
+
+    shouldAutoScroll() {
+        const chatArea = document.getElementById('chatArea');
+        if (!chatArea) return true;
+
+        // Auto-scroll if user is near the bottom (within 100px of bottom)
+        const scrollPosition = chatArea.scrollTop + chatArea.clientHeight;
+        const scrollHeight = chatArea.scrollHeight;
+        return scrollHeight - scrollPosition <= 100;
     }
 
     streamResponse(text, sources) {
@@ -537,23 +826,37 @@ class SRMAIApp {
         contentDiv.innerHTML = ''; // Clear the thinking message
         
         let i = 0;
-        const speed = 20; // milliseconds per character
+        const speed = 5; // milliseconds per character (faster typing)
         let currentText = '';
         const self = this; // Store reference to 'this'
+        
+        // Set streaming state
+        this.isStreaming = true;
+        this.updateSendButtonForStreaming();
 
         function typeWriter() {
-            if (i < text.length) {
+            if (i < text.length && self.isStreaming) {
                 currentText += text.charAt(i);
                 // Apply formatting to the current text
                 contentDiv.innerHTML = self.renderFormattedText(currentText);
                 i++;
-                setTimeout(typeWriter, speed);
+
+                // Auto-scroll during streaming if user is near bottom
+                if (self.shouldAutoScroll()) {
+                    self.scrollToBottom(false); // Use instant scroll for smooth typing
+                }
+
+                self.streamingTimeoutId = setTimeout(typeWriter, speed);
             } else {
-                                // After typing is done, add sources
-                if (sources && sources.length > 0) {
+                // Streaming completed or stopped
+                self.isStreaming = false;
+                self.updateSendButtonForStreaming();
+
+                // After typing is done, add sources (only if completed, not stopped)
+                if (i >= text.length && sources && sources.length > 0) {
                     const sourcesDiv = document.createElement('div');
                     sourcesDiv.className = 'message-sources';
-                    sourcesDiv.innerHTML = '<strong>Sources:</strong><br>' + 
+                    sourcesDiv.innerHTML = '<strong>Sources:</strong><br>' +
                         sources.map(source => {
                             // Handle both old string format and new object format
                             if (typeof source === 'string') {
@@ -569,13 +872,143 @@ class SRMAIApp {
                             }
                         }).join('<br>');
                     contentDiv.appendChild(sourcesDiv);
+
+                    // Smooth scroll after adding sources
+                    if (self.shouldAutoScroll()) {
+                        self.scrollToBottom();
+                    }
                 }
 
-                // Add action buttons after typing is done
-                self.addActionButtons(thinkingMessage, text);
+                // Add action buttons after typing is done (only if completed)
+                if (i >= text.length) {
+                    self.addActionButtons(thinkingMessage, text);
+
+                    // Final smooth scroll after everything is complete
+                    if (self.shouldAutoScroll()) {
+                        self.scrollToBottom();
+                    }
+                }
             }
         }
         typeWriter();
+    }
+
+    // Autocomplete functionality
+    async handleAutocomplete() {
+        const chatInput = document.getElementById('chatInput');
+        const query = chatInput.value.trim();
+
+        // Hide autocomplete if query is too short
+        if (query.length < 2) {
+            this.hideAutocomplete();
+            return;
+        }
+
+        try {
+            console.log('Fetching autocomplete for:', query);
+            const response = await fetch(`/autocomplete?query=${encodeURIComponent(query)}`);
+            const data = await response.json();
+            console.log('Autocomplete data:', data);
+            this.showAutocomplete(data.suggestions, query);
+        } catch (error) {
+            console.error('Autocomplete error:', error);
+            this.hideAutocomplete();
+        }
+    }
+
+    showAutocomplete(suggestions, query) {
+        const dropdown = document.getElementById('autocompleteDropdown');
+        console.log('Dropdown element:', dropdown);
+        
+        if (!suggestions || suggestions.length === 0) {
+            console.log('No suggestions to show');
+            this.hideAutocomplete();
+            return;
+        }
+
+        console.log('Showing', suggestions.length, 'suggestions');
+        dropdown.innerHTML = '';
+        this.currentAutocompleteIndex = -1;
+
+        suggestions.forEach((suggestion, index) => {
+            const item = document.createElement('div');
+            item.className = 'autocomplete-item';
+            item.dataset.index = index;
+            
+            // Highlight matching text
+            const highlightedText = this.highlightMatch(suggestion, query);
+            item.innerHTML = highlightedText;
+            
+            item.addEventListener('click', () => {
+                this.selectAutocompleteItem(suggestion);
+            });
+            
+            dropdown.appendChild(item);
+        });
+
+        dropdown.classList.add('show');
+        console.log('Dropdown classes:', dropdown.className);
+        console.log('Dropdown computed style:', window.getComputedStyle(dropdown).display);
+        console.log('Dropdown visible:', dropdown.offsetHeight > 0);
+    }
+
+    hideAutocomplete() {
+        const dropdown = document.getElementById('autocompleteDropdown');
+        dropdown.classList.remove('show');
+        this.currentAutocompleteIndex = -1;
+    }
+
+    highlightMatch(text, query) {
+        const regex = new RegExp(`(${this.escapeRegex(query)})`, 'gi');
+        return text.replace(regex, '<span class="highlight">$1</span>');
+    }
+
+    escapeRegex(string) {
+        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    selectAutocompleteItem(suggestion) {
+        const chatInput = document.getElementById('chatInput');
+        chatInput.value = suggestion;
+        this.hideAutocomplete();
+        chatInput.focus();
+        this.updateSendButton();
+        this.updateCharCounter();
+    }
+
+    handleAutocompleteNavigation(e) {
+        const dropdown = document.getElementById('autocompleteDropdown');
+        if (!dropdown.classList.contains('show')) {
+            return false;
+        }
+
+        const items = dropdown.querySelectorAll('.autocomplete-item');
+        if (items.length === 0) {
+            return false;
+        }
+
+        if (e.key === 'ArrowDown') {
+            this.currentAutocompleteIndex = Math.min(this.currentAutocompleteIndex + 1, items.length - 1);
+            this.updateAutocompleteSelection(items);
+            return true;
+        } else if (e.key === 'ArrowUp') {
+            this.currentAutocompleteIndex = Math.max(this.currentAutocompleteIndex - 1, -1);
+            this.updateAutocompleteSelection(items);
+            return true;
+        } else if (e.key === 'Enter' && this.currentAutocompleteIndex >= 0) {
+            const selectedItem = items[this.currentAutocompleteIndex];
+            const suggestion = selectedItem.textContent;
+            this.selectAutocompleteItem(suggestion);
+            return true;
+        }
+
+        return false;
+    }
+
+    updateAutocompleteSelection(items) {
+        items.forEach((item, index) => {
+            item.classList.toggle('active', index === this.currentAutocompleteIndex);
+        });
     }
 }
 
