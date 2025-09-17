@@ -304,6 +304,7 @@ class EnhancedPDFProcessor:
                 r'^#+\s+(?:Prerequisites|Before you begin|Next steps|What to do next)',
                 r'^#+\s+(?:Results|Outcome|Summary)',
                 r'^#+\s+(?:About this task|Steps|Procedure)',
+                r'^#+\s+(?:Configuring|Installing|Creating|Adding|Removing)',
             ],
             'weak_boundaries': self.chunking_config.weak_boundary_patterns if self.chunking_config else [
                 r'^#+\s+(?:Update|Configure|Install|Setup|Create|Delete|Add|Remove)',

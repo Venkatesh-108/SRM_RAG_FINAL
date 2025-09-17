@@ -274,22 +274,48 @@ class ChatService:
                     # For exact title matches, return the section content directly without LLM processing
                     logger.info(f"Found {len(exact_matches)} exact title match(es) for query: '{query}' - returning section content directly")
                     
-                    if len(exact_matches) == 1:
-                        # Single match - return content directly
-                        content = exact_matches[0].get('text', '')
+                    # CRITICAL FIX: For exact title matches, prioritize the most relevant match
+                    # instead of combining all matches which can include unrelated sections
+                    
+                    # Find the best match by title similarity to the query
+                    best_match = None
+                    best_score = 0
+                    
+                    for match in exact_matches:
+                        title = match.get('metadata', {}).get('title', '').lower()
+                        query_lower = query.lower()
+                        
+                        # Calculate similarity score
+                        if title == query_lower:
+                            score = 1.0  # Perfect match
+                        elif query_lower in title:
+                            score = 0.8  # Query is contained in title
+                        elif title in query_lower:
+                            score = 0.6  # Title is contained in query
+                        else:
+                            # Calculate word overlap
+                            query_words = set(query_lower.split())
+                            title_words = set(title.split())
+                            if query_words and title_words:
+                                overlap = len(query_words & title_words) / len(query_words | title_words)
+                                score = overlap * 0.5
+                            else:
+                                score = 0.0
+                        
+                        if score > best_score:
+                            best_score = score
+                            best_match = match
+                    
+                    if best_match and best_score > 0.3:  # Only use if reasonably relevant
+                        content = best_match.get('text', '')
                         # Clean up content to remove unrelated sections
                         content = self._clean_section_content(content)
+                        logger.info(f"Selected best match: '{best_match.get('metadata', {}).get('title', '')}' with score {best_score:.2f}")
                     else:
-                        # Multiple matches - combine with separators
-                        combined_content = ""
-                        for i, chunk in enumerate(exact_matches):
-                            if i > 0:
-                                combined_content += "\n\n---\n\n"  # Separator between sections
-                            chunk_content = chunk.get('text', '')
-                            # Clean each chunk
-                            chunk_content = self._clean_section_content(chunk_content)
-                            combined_content += chunk_content
-                        content = combined_content
+                        # Fall back to first match if no good match found
+                        content = exact_matches[0].get('text', '')
+                        content = self._clean_section_content(content)
+                        logger.info(f"No good match found, using first match: '{exact_matches[0].get('metadata', {}).get('title', '')}'")
                     
                     return content.strip(), 1.0, exact_matches
             

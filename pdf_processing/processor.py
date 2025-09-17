@@ -151,6 +151,52 @@ class PDFProcessor:
                 
         return False
     
+    def _should_split_section(self, content: str, title: str) -> bool:
+        """Check if a section should be split into multiple chunks"""
+        import re
+        
+        # Check if content contains multiple major sections that should be separate
+        major_section_patterns = [
+            r'## (?:Configuring|Installing|Creating|Adding|Removing|Verifying|Troubleshooting)',
+            r'## (?:Prerequisites|Steps|About this task|Results|Summary)',
+        ]
+        
+        section_count = 0
+        for pattern in major_section_patterns:
+            matches = re.findall(pattern, content, re.IGNORECASE)
+            section_count += len(matches)
+        
+        # If we find multiple major sections, this should be split
+        return section_count > 1
+    
+    def _split_section_content(self, content: str, title: str) -> str:
+        """Split section content to remove unrelated sections"""
+        import re
+        
+        # Split at major section boundaries that should be separate
+        major_section_patterns = [
+            r'## (?:Configuring virus-scanning software)',
+            r'## (?:Configuring binary Dell SRM SRM-Conf-Tools)',
+            r'## (?:Installing and configuring the Primary Backend host)',
+            r'## (?:Installing and configuring the Additional Backend hosts)',
+            r'## (?:Installing and configuring the Collector host)',
+            r'## (?:Installing and configuring the Frontend host)',
+        ]
+        
+        # Find the first occurrence of a major section that should be separate
+        split_point = len(content)
+        for pattern in major_section_patterns:
+            match = re.search(pattern, content, re.IGNORECASE)
+            if match:
+                split_point = min(split_point, match.start())
+        
+        # If we found a split point, truncate the content
+        if split_point < len(content):
+            content = content[:split_point].strip()
+            logger.info(f"Split section '{title}' at position {split_point} to remove unrelated content")
+        
+        return content
+    
     def _create_chapter_chunk(self, chapter: Dict) -> Dict:
         """Create chapter chunk with complete content"""
         
@@ -186,11 +232,23 @@ class PDFProcessor:
     def _create_section_chunk(self, section: Dict, parent_chapter: Dict) -> Dict:
         """Create section chunk with complete content"""
         
-        # Format with hierarchy and complete content
-        content = f"## {section['title']}\n"
-        content += f"*Chapter: {parent_chapter['title']}*\n"
-        content += f"*Page: {section.get('page', 'N/A')}*\n\n"
-        content += section.get('complete_content', '')
+        # Get the complete content
+        complete_content = section.get('complete_content', '')
+        
+        # CRITICAL FIX: Check if this section should be split
+        if self._should_split_section(complete_content, section['title']):
+            # Split the content at major section boundaries
+            split_content = self._split_section_content(complete_content, section['title'])
+            content = f"## {section['title']}\n"
+            content += f"*Chapter: {parent_chapter['title']}*\n"
+            content += f"*Page: {section.get('page', 'N/A')}*\n\n"
+            content += split_content
+        else:
+            # Format with hierarchy and complete content
+            content = f"## {section['title']}\n"
+            content += f"*Chapter: {parent_chapter['title']}*\n"
+            content += f"*Page: {section.get('page', 'N/A')}*\n\n"
+            content += complete_content
         
         return {
             'content': content,
