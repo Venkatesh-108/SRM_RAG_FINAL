@@ -79,6 +79,40 @@ User Query → Exact Title Check → Direct Content Return (if exact match)
    ollama pull llama3.2:3b
    ```
 
+
+- **Automatic Detection**: The system automatically looks for a `models` folder
+- **Local Model Usage**: Uses pre-downloaded Docling and SentenceTransformer models
+- **No Internet Required**: Works completely offline once models are downloaded
+- **Fallback Support**: Falls back to internet download if models not found (will fail in offline environments)
+
+### Model Requirements
+
+The offline deployment requires approximately **450MB** of model files:
+- **Docling Models**: ~358MB (TableFormer models for PDF processing)
+- **SentenceTransformer Models**: ~90MB (all-MiniLM-L6-v2 for embeddings)
+
+### Troubleshooting Offline Deployment
+
+**Models not found?**
+```bash
+# Check that models folder exists
+ls -la models/
+
+# Verify model files are present
+find models/ -name "*.pt" -o -name "*.safetensors"
+```
+
+**Still getting download errors?**
+- Ensure the `models` folder is in the correct location (same level as `app.py`)
+- Check file permissions on the models directory
+- Verify the models folder contains the required subdirectories
+
+**Benefits of Offline Deployment:**
+- ✅ **No Internet Required**: Works in restricted environments
+- ✅ **Fast Startup**: Models are already downloaded
+- ✅ **Reliable**: No dependency on external services
+- ✅ **Portable**: Easy to deploy to multiple customer locations
+
 ## Configuration
 
 The system uses `config.yaml` for configuration. Key settings include:

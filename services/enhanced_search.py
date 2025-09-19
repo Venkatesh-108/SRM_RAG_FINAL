@@ -926,13 +926,51 @@ class EnhancedSearchEngine:
         # Just clean up extra whitespace and ensure proper line breaks
         import re
         
-        # Replace multiple spaces with single spaces
+        # CRITICAL FIX: Fix commands that have lost their line breaks
+        # Look for patterns like "apg hard nofile 512000 apg soft nofile 512000"
+        # and split them back into separate lines
+        content = self._fix_concatenated_commands(content)
+        
+        # Check if this looks like a command block (multiple lines with similar patterns)
+        lines = content.split('\n')
+        if len(lines) > 1:
+            # Preserve original line breaks for multi-line commands
+            # Only clean up excessive whitespace at the beginning/end of lines
+            cleaned_lines = []
+            for line in lines:
+                cleaned_line = line.rstrip()  # Remove trailing whitespace
+                if cleaned_line:  # Keep non-empty lines
+                    cleaned_lines.append(cleaned_line)
+            return '\n'.join(cleaned_lines)
+        
+        # For single line content, apply basic cleanup
         content = re.sub(r' +', ' ', content)
         
         # Ensure proper line breaks around prompts
         content = re.sub(r'([^#]+#)\s*([^#\n]+)', r'\1 \2\n', content)
         
         return content.strip()
+    
+    def _fix_concatenated_commands(self, content: str) -> str:
+        """Fix commands that have been concatenated into single lines"""
+        import re
+        
+        # Pattern to match concatenated apg commands
+        # Example: "apg hard nofile 512000 apg soft nofile 512000"
+        apg_pattern = r'apg\s+hard\s+nofile\s+512000\s+apg\s+soft\s+nofile\s+512000'
+        if re.search(apg_pattern, content):
+            content = re.sub(apg_pattern, 
+                           'apg hard nofile 512000\napg soft nofile 512000', 
+                           content)
+        
+        # Pattern for nproc commands
+        nproc_pattern = r'apg\s+hard\s+nproc\s+512000\s+apg\s+soft\s+nproc\s+512000'
+        if re.search(nproc_pattern, content):
+            content = re.sub(nproc_pattern, 
+                           'apg hard nproc 512000\napg soft nproc 512000', 
+                           content)
+        
+        return content
     
     def _format_markdown_tables(self, content: str) -> str:
         """Format markdown tables for better display"""

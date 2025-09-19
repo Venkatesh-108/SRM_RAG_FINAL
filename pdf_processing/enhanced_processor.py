@@ -186,9 +186,10 @@ class EnhancedPDFProcessor:
         return normalized
 
     def _is_toc_like_section(self, title: str) -> bool:
-        """Check if section appears to be a table of contents entry"""
+        """Check if section appears to be a table of contents entry or bullet point reference"""
         if not title:
             return True
+        
         # TOC-like patterns
         toc_patterns = [
             r'^\s*[-•]\s*',  # Bullet points
@@ -198,6 +199,22 @@ class EnhancedPDFProcessor:
         for pattern in toc_patterns:
             if re.search(pattern, title):
                 return True
+        
+        # CRITICAL FIX: Detect bullet point references that mention other sections
+        # These should not be treated as standalone sections
+        bullet_reference_patterns = [
+            r'^-\s+.*installing on.*',
+            r'^-\s+.*complete the steps.*',
+            r'^-\s+.*described in.*',
+            r'^-\s+.*as described in.*',
+            r'^-\s+.*refer to.*',
+            r'^-\s+.*see.*',
+        ]
+        
+        for pattern in bullet_reference_patterns:
+            if re.search(pattern, title, re.IGNORECASE):
+                return True
+                
         return False
 
     def _split_large_chapter(self, chapter: Dict, font_analysis: Dict) -> List[Dict]:
@@ -287,6 +304,7 @@ class EnhancedPDFProcessor:
                 r'^#+\s+(?:Prerequisites|Before you begin|Next steps|What to do next)',
                 r'^#+\s+(?:Results|Outcome|Summary)',
                 r'^#+\s+(?:About this task|Steps|Procedure)',
+                r'^#+\s+(?:Configuring|Installing|Creating|Adding|Removing)',
             ],
             'weak_boundaries': self.chunking_config.weak_boundary_patterns if self.chunking_config else [
                 r'^#+\s+(?:Update|Configure|Install|Setup|Create|Delete|Add|Remove)',
@@ -345,8 +363,13 @@ class EnhancedPDFProcessor:
                     if content_lines_found >= 5:
                         return i
 
-            # Stop at procedure steps if they seem to be a new section
-            if re.match(r'^Steps\s*$', line_strip) and content_lines_found >= 5:
+            # CRITICAL FIX: Don't stop at "Steps" headings - they are subheadings within the same section
+            # Steps headings should be included as part of the current section content
+            # Only stop if Steps appears as a major section (same level as the starting section)
+            if (line_strip.startswith('#') and 
+                re.match(r'^#+\s+Steps\s*$', line_strip) and 
+                current_level <= start_level and 
+                content_lines_found >= 10):  # Only stop if we have substantial content
                 return i
 
             # CRITICAL FIX: Stop at new major sections that should be separate chunks
@@ -362,6 +385,15 @@ class EnhancedPDFProcessor:
                     # Only stop if we have substantial content and this looks like a new major section
                     if content_lines_found >= 10 or (table_content_found and content_lines_found >= 5):
                         return i
+
+            # CRITICAL FIX: Detect and ignore bullet points that contain section references
+            # These should not be treated as new sections
+            if (line_strip.startswith('- ') and 
+                ('installing on' in line_strip.lower() or 
+                 'complete the steps' in line_strip.lower() or
+                 'described in' in line_strip.lower())):
+                # This is a bullet point reference, not a new section - continue
+                continue
 
             # Avoid extremely long sections (safety net)
             max_lines = self.chunking_config.max_section_lines if self.chunking_config else 100

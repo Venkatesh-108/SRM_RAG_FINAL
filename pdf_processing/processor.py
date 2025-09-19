@@ -83,6 +83,7 @@ class PDFProcessor:
     def _create_chunks(self, structure: Dict) -> List[Dict]:
         """Create chunks preserving complete content with heading metadata"""
         chunks = []
+        seen_titles = set()  # Track processed titles to avoid duplicates
         
         for chapter in structure['chapters']:
             # Chapter overview chunk
@@ -91,11 +92,110 @@ class PDFProcessor:
             
             # Individual section chunks with complete content
             for section in chapter.get('sections', []):
+                section_title = section.get('title', '')
+                normalized_title = self._normalize_section_title(section_title)
+                
+                # Skip if we've already processed this section or if it's a bullet point reference
+                if (normalized_title in seen_titles or
+                    len(section.get('complete_content', '').strip()) < 50 or
+                    self._is_toc_like_section(section_title)):
+                    continue
+                
                 section_chunk = self._create_section_chunk(section, chapter)
                 chunks.append(section_chunk)
+                seen_titles.add(normalized_title)
         
         logger.info(f"Created {len(chunks)} chunks with complete content")
         return chunks
+    
+    def _normalize_section_title(self, title: str) -> str:
+        """Normalize section title for deduplication"""
+        import re
+        normalized = title.lower().strip()
+        # Remove leading bullets, dashes, numbers
+        normalized = re.sub(r'^[-•\d\.\s]+', '', normalized)
+        # Normalize whitespace
+        normalized = re.sub(r'\s+', ' ', normalized).strip()
+        return normalized
+
+    def _is_toc_like_section(self, title: str) -> bool:
+        """Check if section appears to be a table of contents entry or bullet point reference"""
+        import re
+        if not title:
+            return True
+        
+        # TOC-like patterns
+        toc_patterns = [
+            r'^\s*[-•]\s*',  # Bullet points
+            r'\.{3,}',       # Dot leaders
+            r'\s+\d+\s*$',   # Ending with page numbers
+        ]
+        for pattern in toc_patterns:
+            if re.search(pattern, title):
+                return True
+        
+        # CRITICAL FIX: Detect bullet point references that mention other sections
+        # These should not be treated as standalone sections
+        bullet_reference_patterns = [
+            r'^-\s+.*installing on.*',
+            r'^-\s+.*complete the steps.*',
+            r'^-\s+.*described in.*',
+            r'^-\s+.*as described in.*',
+            r'^-\s+.*refer to.*',
+            r'^-\s+.*see.*',
+        ]
+        
+        for pattern in bullet_reference_patterns:
+            if re.search(pattern, title, re.IGNORECASE):
+                return True
+                
+        return False
+    
+    def _should_split_section(self, content: str, title: str) -> bool:
+        """Check if a section should be split into multiple chunks"""
+        import re
+        
+        # Check if content contains multiple major sections that should be separate
+        major_section_patterns = [
+            r'## (?:Configuring|Installing|Creating|Adding|Removing|Verifying|Troubleshooting)',
+            r'## (?:Prerequisites|Steps|About this task|Results|Summary)',
+        ]
+        
+        section_count = 0
+        for pattern in major_section_patterns:
+            matches = re.findall(pattern, content, re.IGNORECASE)
+            section_count += len(matches)
+        
+        # If we find multiple major sections, this should be split
+        return section_count > 1
+    
+    def _split_section_content(self, content: str, title: str) -> str:
+        """Split section content to remove unrelated sections"""
+        import re
+        
+        # Split at major section boundaries that should be separate
+        major_section_patterns = [
+            r'## (?:Configuring virus-scanning software)',
+            r'## (?:Configuring binary Dell SRM SRM-Conf-Tools)',
+            r'## (?:Installing and configuring the Primary Backend host)',
+            r'## (?:Installing and configuring the Additional Backend hosts)',
+            r'## (?:Installing and configuring the Collector host)',
+            r'## (?:Installing and configuring the Frontend host)',
+        ]
+        
+        # Find the first occurrence of a major section that should be separate
+        split_point = len(content)
+        for pattern in major_section_patterns:
+            match = re.search(pattern, content, re.IGNORECASE)
+            if match:
+                split_point = min(split_point, match.start())
+        
+        # If we found a split point, truncate the content
+        if split_point < len(content):
+            content = content[:split_point].strip()
+            logger.info(f"Split section '{title}' at position {split_point} to remove unrelated content")
+        
+        return content
     
     def _create_chapter_chunk(self, chapter: Dict) -> Dict:
         """Create chapter chunk with complete content"""
@@ -132,11 +232,23 @@ class PDFProcessor:
     def _create_section_chunk(self, section: Dict, parent_chapter: Dict) -> Dict:
         """Create section chunk with complete content"""
         
-        # Format with hierarchy and complete content
-        content = f"## {section['title']}\n"
-        content += f"*Chapter: {parent_chapter['title']}*\n"
-        content += f"*Page: {section.get('page', 'N/A')}*\n\n"
-        content += section.get('complete_content', '')
+        # Get the complete content
+        complete_content = section.get('complete_content', '')
+        
+        # CRITICAL FIX: Check if this section should be split
+        if self._should_split_section(complete_content, section['title']):
+            # Split the content at major section boundaries
+            split_content = self._split_section_content(complete_content, section['title'])
+            content = f"## {section['title']}\n"
+            content += f"*Chapter: {parent_chapter['title']}*\n"
+            content += f"*Page: {section.get('page', 'N/A')}*\n\n"
+            content += split_content
+        else:
+            # Format with hierarchy and complete content
+            content = f"## {section['title']}\n"
+            content += f"*Chapter: {parent_chapter['title']}*\n"
+            content += f"*Page: {section.get('page', 'N/A')}*\n\n"
+            content += complete_content
         
         return {
             'content': content,
