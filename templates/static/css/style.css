@@ -671,7 +671,7 @@ body {
 }
 .welcome-container {
     text-align: center;
-    max-width: 600px;
+    max-width: 90%;
     margin: auto;
     animation: fadeInWelcome 0.6s ease-out forwards;
 }
@@ -752,7 +752,7 @@ body {
 .welcome-message p {
     font-size: 16px;
     color: var(--text-secondary-light);
-    max-width: 400px;
+    max-width: 70%;
     margin: 0 auto;
     position: relative;
     z-index: 1;
@@ -760,7 +760,7 @@ body {
 
 .welcome-content {
     text-align: left;
-    max-width: 500px;
+    max-width: 80%;
     margin: 0 auto;
 }
 
@@ -901,7 +901,7 @@ body {
     flex-direction: column;
     transition: all 0.3s ease;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-    max-width: 800px;
+    max-width: 90%;
     margin: 0 auto;
 }
 
@@ -1046,7 +1046,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 24px;
-    max-width: 900px;
+    max-width: 90%;
     margin: 0 auto;
     width: 100%;
     background: #fafafa;
