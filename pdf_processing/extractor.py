@@ -29,8 +29,44 @@ class PDFExtractor:
     """Extract PDF content with font-based heading detection"""
     
     def __init__(self, heading_size_threshold: float = 1.2):
-        self.converter = DocumentConverter()
         self.heading_size_threshold = heading_size_threshold
+        
+        # Set up models folder path
+        self._setup_models_path()
+        
+        # Initialize converter
+        self.converter = DocumentConverter()
+    
+    def _setup_models_path(self):
+        """Set up the models folder path for offline use"""
+        import os
+        from pathlib import Path
+        
+        # Look for models folder in current directory or parent directories
+        models_dir = Path("./models")
+        if not models_dir.exists():
+            # Try alternative locations
+            alternative_paths = [
+                Path("../models"),
+                Path("../../models"),
+                Path("/opt/models"),
+                Path("/opt/SRM_AI_DOC/models")
+            ]
+            
+            for alt_path in alternative_paths:
+                if alt_path.exists():
+                    models_dir = alt_path
+                    break
+        
+        if models_dir.exists():
+            # Set environment variables to use local models
+            os.environ['HF_HOME'] = str(models_dir.absolute())
+            os.environ['HUGGINGFACE_HUB_CACHE'] = str(models_dir.absolute())
+            os.environ['HF_DATASETS_OFFLINE'] = '1'
+            os.environ['TRANSFORMERS_OFFLINE'] = '1'
+            logger.info(f"Using models from: {models_dir.absolute()}")
+        else:
+            logger.warning("Models folder not found. Will try to download models from internet.")
     
     def extract_document(self, pdf_path: str) -> Dict[str, Any]:
         """Extract document with hybrid method (Docling + PyMuPDF)"""

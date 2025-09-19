@@ -79,6 +79,110 @@ User Query → Exact Title Check → Direct Content Return (if exact match)
    ollama pull llama3.2:3b
    ```
 
+## Offline Deployment
+
+For environments without internet access (like customer locations with VPN restrictions), the system supports offline deployment by pre-downloading required models.
+
+### Quick Offline Setup
+
+1. **Download models (run once with internet access):**
+   ```bash
+   python simple_download.py
+   ```
+
+2. **Copy the `models` folder to your customer location:**
+   - Copy the entire `models` folder to your project directory
+   - Place it at the same level as `app.py`
+
+3. **Run your application:**
+   ```bash
+   python app.py
+   ```
+
+The system will automatically detect and use the local models, working completely offline.
+
+### About `simple_download.py`
+
+The `simple_download.py` script is a utility that downloads all required models for offline deployment:
+
+**What it does:**
+- Downloads Docling models (TableFormer for PDF processing)
+- Downloads SentenceTransformer models (all-MiniLM-L6-v2 for embeddings)
+- Creates a local `models` folder with all required files
+- Caches models for offline use
+
+**Usage:**
+```bash
+# Run once in an environment with internet access
+python simple_download.py
+```
+
+**Output:**
+```
+Downloading models to: C:\path\to\your\project\models
+✅ Models downloaded successfully!
+📁 Models location: C:\path\to\your\project\models
+📋 Copy this 'models' folder to your customer location
+```
+
+**Requirements:**
+- Internet connection (only needed once)
+- `huggingface_hub` package (installed with requirements.txt)
+- Approximately 450MB of disk space
+
+**What gets downloaded:**
+- **Docling Models**: TableFormer models for advanced PDF parsing
+- **SentenceTransformer Models**: Embedding models for semantic search
+- **Configuration Files**: Model configuration and metadata
+
+### Project Structure for Offline Deployment
+
+```
+your_project/
+├── models/              # Downloaded models folder (copy this!)
+│   └── models--ds4sd--docling-models/
+├── app.py
+├── config.yaml
+├── docs/
+├── pdf_processing/
+└── services/
+```
+
+### How Offline Mode Works
+
+- **Automatic Detection**: The system automatically looks for a `models` folder
+- **Local Model Usage**: Uses pre-downloaded Docling and SentenceTransformer models
+- **No Internet Required**: Works completely offline once models are downloaded
+- **Fallback Support**: Falls back to internet download if models not found (will fail in offline environments)
+
+### Model Requirements
+
+The offline deployment requires approximately **450MB** of model files:
+- **Docling Models**: ~358MB (TableFormer models for PDF processing)
+- **SentenceTransformer Models**: ~90MB (all-MiniLM-L6-v2 for embeddings)
+
+### Troubleshooting Offline Deployment
+
+**Models not found?**
+```bash
+# Check that models folder exists
+ls -la models/
+
+# Verify model files are present
+find models/ -name "*.pt" -o -name "*.safetensors"
+```
+
+**Still getting download errors?**
+- Ensure the `models` folder is in the correct location (same level as `app.py`)
+- Check file permissions on the models directory
+- Verify the models folder contains the required subdirectories
+
+**Benefits of Offline Deployment:**
+- ✅ **No Internet Required**: Works in restricted environments
+- ✅ **Fast Startup**: Models are already downloaded
+- ✅ **Reliable**: No dependency on external services
+- ✅ **Portable**: Easy to deploy to multiple customer locations
+
 ## Configuration
 
 The system uses `config.yaml` for configuration. Key settings include:
