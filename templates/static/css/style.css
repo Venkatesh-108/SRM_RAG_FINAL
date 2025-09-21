@@ -380,6 +380,81 @@ body {
     white-space: nowrap;
     flex-shrink: 0;
 }
+
+/* Expandable header styles */
+.expandable-header {
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    margin-bottom: 10px;
+}
+
+.expandable-header:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+}
+
+.expand-icon {
+    font-size: 10px;
+    color: var(--text-secondary-dark);
+    transition: transform 0.2s ease;
+    margin-left: auto;
+    width: 16px;
+    text-align: center;
+}
+
+.expand-icon.expanded {
+    transform: rotate(180deg);
+}
+
+/* Expandable content styles */
+.expandable-content {
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.2s ease;
+    max-height: calc(30vh - 60px);
+    opacity: 1;
+}
+
+.expandable-content.collapsed {
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* Auto-collapse behavior for many documents */
+.doc-list.auto-collapsible .doc-item:nth-child(n+6) {
+    display: none;
+}
+
+.doc-list.auto-collapsible.expanded .doc-item {
+    display: flex;
+}
+
+/* Show more indicator */
+.show-more-indicator {
+    padding: 8px 12px;
+    font-size: 11px;
+    color: var(--text-secondary-dark);
+    font-style: italic;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    text-align: left;
+    user-select: none;
+}
+
+.show-more-indicator:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+}
 .clear-chats-btn {
     background: none;
     border: none;

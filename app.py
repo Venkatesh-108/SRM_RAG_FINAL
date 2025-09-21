@@ -238,23 +238,52 @@ async def ask_endpoint(request: QueryRequest):
         answer, confidence_score, validation_result = generate_answer_with_ollama(request.query, retrieved_chunks)
         
         sources = []
+        seen_sources = set()  # Track (filename, page_number) combinations
+        duplicate_count = 0  # Track how many duplicates were removed
+
         for chunk in retrieved_chunks:
             source_info = chunk['metadata']
             # Convert document ID to actual PDF filename
             document_id = source_info.get('filename', 'Unknown')
             actual_pdf_filename = rag_service.get_pdf_filename_from_document_id(document_id)
-            
-            source_text = f"{actual_pdf_filename} (Page {source_info.get('page_number', 'N/A')})"
-            if source_info.get('section_title'):
-                source_text += f" → Section: {source_info.get('section_title')}"
-            
-            sources.append({
-                'text': source_text,
-                'filename': actual_pdf_filename,
-                'page_number': source_info.get('page_number'),
-                'section_title': source_info.get('section_title'),
-                'relevance_score': source_info.get('relevance_score')
-            })
+
+            page_number = source_info.get('page_number')
+            section_title = source_info.get('section_title')
+            relevance_score = source_info.get('relevance_score', 0.0)
+
+            # Create unique identifier for this source
+            source_key = (actual_pdf_filename, page_number)
+
+            # Skip if we've already seen this source
+            if source_key not in seen_sources:
+                seen_sources.add(source_key)
+
+                source_text = f"{actual_pdf_filename} (Page {page_number or 'N/A'})"
+                if section_title:
+                    source_text += f" → Section: {section_title}"
+
+                sources.append({
+                    'text': source_text,
+                    'filename': actual_pdf_filename,
+                    'page_number': page_number,
+                    'section_title': section_title,
+                    'relevance_score': relevance_score
+                })
+            else:
+                duplicate_count += 1
+                # If duplicate, update the relevance score to the highest one
+                for existing_source in sources:
+                    if (existing_source['filename'] == actual_pdf_filename and
+                        existing_source['page_number'] == page_number):
+                        existing_source['relevance_score'] = max(
+                            existing_source['relevance_score'] or 0.0,
+                            relevance_score or 0.0
+                        )
+                        break
+
+        # Log deduplication info
+        if duplicate_count > 0:
+            logger.info(f"Deduplicated {duplicate_count} duplicate sources from {len(retrieved_chunks)} total chunks")
         
         return QueryResponse(
             answer=answer,

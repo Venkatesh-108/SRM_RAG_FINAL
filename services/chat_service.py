@@ -367,29 +367,49 @@ class ChatService:
         return '\n'.join(cleaned_lines).strip()
     
     def _extract_sources_from_chunks(self, chunks: List[Dict[str, Any]]) -> List[Source]:
-        """Extract source information from RAG context chunks"""
+        """Extract source information from RAG context chunks with deduplication"""
         sources = []
-        
+        seen_sources = set()  # Track (filename, page_number) combinations
+        duplicate_count = 0  # Track how many duplicates were removed
+
         for chunk in chunks:
             metadata = chunk.get('metadata', {})
             doc_id = metadata.get('filename', 'Unknown')
-            
+
             # Convert internal document ID to actual filename using RAGService
             filename = self.rag_service.get_pdf_filename_from_document_id(doc_id)
-            
+
             page_number = metadata.get('page_number')
             section_title = metadata.get('section_title', 'Unknown Section')
             relevance_score = metadata.get('relevance_score', 0.0)
-            
-            source = Source(
-                filename=filename,
-                page_number=page_number,
-                chunk_id=str(metadata.get('chunk_id', section_title)),
-                relevance_score=float(relevance_score),
-                content_preview=chunk.get('text', '')[:150] + "..." if len(chunk.get('text', '')) > 150 else chunk.get('text', '')
-            )
-            sources.append(source)
-        
+
+            # Create unique identifier for this source
+            source_key = (filename, page_number)
+
+            # Skip if we've already seen this source
+            if source_key not in seen_sources:
+                seen_sources.add(source_key)
+
+                source = Source(
+                    filename=filename,
+                    page_number=page_number,
+                    chunk_id=str(metadata.get('chunk_id', section_title)),
+                    relevance_score=float(relevance_score),
+                    content_preview=chunk.get('text', '')[:150] + "..." if len(chunk.get('text', '')) > 150 else chunk.get('text', '')
+                )
+                sources.append(source)
+            else:
+                duplicate_count += 1
+                # If duplicate, update the relevance score to the highest one
+                for existing_source in sources:
+                    if existing_source.filename == filename and existing_source.page_number == page_number:
+                        existing_source.relevance_score = max(existing_source.relevance_score, float(relevance_score))
+                        break
+
+        # Log deduplication info
+        if duplicate_count > 0:
+            logger.info(f"Chat service deduplicated {duplicate_count} duplicate sources from {len(chunks)} total chunks")
+
         return sources
     
     def _format_direct_results(self, query: str, chunks: List[Dict[str, Any]]) -> str:

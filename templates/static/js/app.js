@@ -15,6 +15,7 @@ class SRMAIApp {
         this.bindEvents();
         this.loadChatHistory();
         this.loadDocuments();
+        this.initializeDocumentsSection();
         this.updateCharCounter();
     }
 
@@ -82,6 +83,12 @@ class SRMAIApp {
         const clearChatsBtn = document.querySelector('.clear-chats-btn');
         if (clearChatsBtn) {
             clearChatsBtn.addEventListener('click', () => this.clearAllChats());
+        }
+
+        // Documents expand/collapse functionality
+        const documentsHeader = document.getElementById('documentsHeader');
+        if (documentsHeader) {
+            documentsHeader.addEventListener('click', () => this.toggleDocumentsSection());
         }
 
         const uploadBtn = document.getElementById('uploadBtn');
@@ -777,11 +784,62 @@ class SRMAIApp {
                 docItem.innerHTML = `<i class="${iconClass}"></i><span>${docName}</span>`;
                 docList.appendChild(docItem);
             });
+
+            // Auto-collapsible behavior for many documents
+            if (docs.length > 5) {
+                docList.classList.add('auto-collapsible');
+                const hiddenCount = docs.length - 5;
+
+                // Create "show more" indicator
+                const showMoreDiv = document.createElement('div');
+                showMoreDiv.className = 'show-more-indicator';
+                showMoreDiv.textContent = `+${hiddenCount} more...`;
+                showMoreDiv.addEventListener('click', () => {
+                    docList.classList.toggle('expanded');
+                    if (docList.classList.contains('expanded')) {
+                        showMoreDiv.style.display = 'none';
+                    } else {
+                        showMoreDiv.style.display = 'block';
+                    }
+                });
+                docList.appendChild(showMoreDiv);
+            } else {
+                docList.classList.remove('auto-collapsible', 'expanded');
+            }
+
             docCount.textContent = docs.length;
         } catch (error) {
             console.error('Error loading documents:', error);
             docList.innerHTML = '<div class="error-message">Could not load documents.</div>';
             docCount.textContent = '0';
+        }
+    }
+
+    toggleDocumentsSection() {
+        const docList = document.getElementById('docList');
+        const expandIcon = document.getElementById('documentsExpandIcon');
+
+        if (!docList || !expandIcon) return;
+
+        docList.classList.toggle('collapsed');
+        expandIcon.classList.toggle('expanded');
+
+        // Store the state in localStorage
+        const isCollapsed = docList.classList.contains('collapsed');
+        localStorage.setItem('documentsCollapsed', isCollapsed.toString());
+    }
+
+    // Initialize documents section state from localStorage
+    initializeDocumentsSection() {
+        const docList = document.getElementById('docList');
+        const expandIcon = document.getElementById('documentsExpandIcon');
+
+        if (!docList || !expandIcon) return;
+
+        const isCollapsed = localStorage.getItem('documentsCollapsed') === 'true';
+        if (isCollapsed) {
+            docList.classList.add('collapsed');
+            expandIcon.classList.add('expanded');
         }
     }
 
