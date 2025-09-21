@@ -1,6 +1,6 @@
-# SRM AI Doc Assist 
+# AI Doc Assist 
 
-A comprehensive RAG (Retrieval-Augmented Generation) system for HCL SRM guides with advanced chunking, hybrid retrieval, and Ollama integration. The system provides both a command-line interface and a web API for querying SRM documentation.
+A comprehensive RAG (Retrieval-Augmented Generation) system for document guides with advanced chunking, hybrid retrieval, and Ollama integration. The system provides both a command-line interface and a web API for querying documentation.
 
 > **🤖 Built with Llama** - This system is powered by Llama 3.2 and operates under the Llama 3.2 Community License.
 
@@ -44,7 +44,7 @@ User Query → Exact Title Check → Direct Content Return (if exact match)
 
 - Python 3.8+
 - Ollama installed and running locally
-- HCL SRM guide documents (PDF or Markdown format)
+- Document guides (PDF or Markdown format)
 
 ### Installation
 
@@ -72,7 +72,7 @@ User Query → Exact Title Check → Direct Content Return (if exact match)
    pip install -r requirements.txt
    ```
 
-5. **Place your HCL SRM guide documents into the `docs` directory**
+5. **Place your document guides into the `docs` directory**
 
 6. **Ensure Ollama is running with the required model:**
    ```bash
@@ -148,7 +148,7 @@ This will:
 
 2. **Ask a question:**
    ```bash
-   python app.py ask "Your question about the SRM guides"
+   python app.py ask "Your question about the guides"
    ```
 
 ### API Endpoints
@@ -165,7 +165,7 @@ The system provides several REST API endpoints:
 # Ask a question via API
 curl -X POST "http://127.0.0.1:8000/ask" \
      -H "Content-Type: application/json" \
-     -d '{"query": "How do I upgrade SRM?"}'
+     -d '{"query": "How do I upgrade the system?"}'
 
 # Force reindexing
 curl -X POST "http://127.0.0.1:8000/reindex"
@@ -202,9 +202,9 @@ Query: "frontend server tasks"
 
 ### Supported Documents
 
-- ✅ SRM Installation and Configuration Guide
-- ✅ SRM Deploying Additional Frontend Servers
-- ✅ SRM Upgrade Guide
+- ✅ Installation and Configuration Guide
+- ✅ Deploying Additional Frontend Servers
+- ✅ Upgrade Guide
 
 ### Benefits
 

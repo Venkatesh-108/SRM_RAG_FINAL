@@ -92,8 +92,8 @@ async def lifespan(app: FastAPI):
     yield
 
 app = FastAPI(
-    title="SRM RAG API - Built with Llama", 
-    description="RAG system for HCL SRM guides powered by Llama 3.2 Community License", 
+    title="AI Doc Assist API - Built with Llama", 
+    description="RAG system for document guides powered by Llama 3.2 Community License", 
     lifespan=lifespan
 )
 
@@ -214,7 +214,7 @@ async def clear_all_sessions():
 
 @app.get("/", response_class=HTMLResponse)
 async def root(request: Request):
-    """Modern HTML interface for SRM AI Doc Assist"""
+    """Modern HTML interface for AI Doc Assist"""
     return templates.TemplateResponse("index.html", {"request": request})
 
 @app.post("/ask", response_model=QueryResponse)
@@ -339,14 +339,14 @@ if __name__ == "__main__":
     
     if len(sys.argv) > 1 and sys.argv[1] in ["--host", "--port", "--help"]:
         import argparse
-        parser = argparse.ArgumentParser(description="SRM RAG Web Server")
+        parser = argparse.ArgumentParser(description="AI Doc Assist Web Server")
         parser.add_argument("--host", default="127.0.0.1", help="Host to bind to")
         parser.add_argument("--port", type=int, default=8000, help="Port to bind to")
         parser.add_argument("--reload", action="store_true", help="Enable auto-reload")
         
         args = parser.parse_args()
         
-        console.print(f"Starting SRM RAG web server on {args.host}:{args.port}", style="bold green")
+        console.print(f"Starting AI Doc Assist web server on {args.host}:{args.port}", style="bold green")
         
         uvicorn.run(
             "app:app",

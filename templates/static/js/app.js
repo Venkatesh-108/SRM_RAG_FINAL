@@ -1,4 +1,4 @@
-// SRM AI Doc Assist - Main Application JavaScript
+// AI Doc Assist - Main Application JavaScript
 
 class SRMAIApp {
     constructor() {
