@@ -404,19 +404,22 @@ class RAGService:
         
         return None
     
-    def get_title_suggestions(self, query: str, limit: int = 10) -> List[str]:
+    def get_title_suggestions(self, query: str, limit: int = 10) -> List[Dict[str, Any]]:
         """Get autocomplete suggestions for section titles based on query"""
         if not self.pdf_searcher:
             return []
         
         # Get all available titles from all documents with case-insensitive deduplication
-        title_map = {}  # normalized_title -> original_title
+        title_map = {}  # normalized_title -> {"title": original_title, "document": doc_name, "doc_id": doc_id}
         
         try:
             for doc_id in self.pdf_searcher.list_documents():
                 if doc_id in self.pdf_searcher.enhanced_data:
                     enhanced_data = self.pdf_searcher.enhanced_data[doc_id]
                     headings = enhanced_data.get('headings', [])
+                    
+                    # Get readable document name
+                    doc_name = self.get_readable_document_name(doc_id)
                     
                     # Extract actual heading titles (not individual words from heading_index)
                     for heading in headings:
@@ -438,10 +441,15 @@ class RAGService:
                             
                             # Keep the first occurrence (or the one with better formatting)
                             if normalized not in title_map:
-                                title_map[normalized] = title
+                                title_map[normalized] = {
+                                    "title": title,
+                                    "document": doc_name,
+                                    "doc_id": doc_id
+                                }
                             else:
                                 # Prefer the version without leading punctuation/dashes
-                                existing = title_map[normalized]
+                                existing_data = title_map[normalized]
+                                existing = existing_data["title"]
                                 
                                 # Always prefer the version without leading dash/bullet
                                 title_has_leading_punct = title.lstrip().startswith(('-', '•', '●'))
@@ -449,56 +457,127 @@ class RAGService:
                                 
                                 if existing_has_leading_punct and not title_has_leading_punct:
                                     # Replace with cleaner version
-                                    title_map[normalized] = title
+                                    title_map[normalized] = {
+                                        "title": title,
+                                        "document": doc_name,
+                                        "doc_id": doc_id
+                                    }
                                 elif not existing_has_leading_punct and title_has_leading_punct:
                                     # Keep existing cleaner version
                                     pass
                                 else:
                                     # Both have same type of formatting, keep shorter one
                                     if len(title) < len(existing):
-                                        title_map[normalized] = title
+                                        title_map[normalized] = {
+                                            "title": title,
+                                            "document": doc_name,
+                                            "doc_id": doc_id
+                                        }
         except Exception as e:
             logger.error(f"Error getting title suggestions: {e}")
             return []
         
-        # Get unique titles
-        all_titles = list(title_map.values())
+        # Get unique titles with their document information
+        all_titles_data = list(title_map.values())
         
         # Debug logging to help identify duplicates
         if query.strip() and ("password" in query.lower() or "dell" in query.lower()):
-            logger.info(f"Found {len(all_titles)} unique titles for query '{query}'")
-            matching_debug = [t for t in all_titles if query.lower() in t.lower()]
+            logger.info(f"Found {len(all_titles_data)} unique titles for query '{query}'")
+            matching_debug = [t["title"] for t in all_titles_data if query.lower() in t["title"].lower()]
             logger.info(f"Matching titles: {matching_debug[:10]}")  # Show first 10
         
         # If no query, return most common/important titles
         if not query.strip():
             # Sort by length (shorter titles first) and return top ones
-            sorted_titles = sorted(all_titles, key=len)[:limit]
-            return sorted_titles
+            sorted_titles_data = sorted(all_titles_data, key=lambda x: len(x["title"]))[:limit]
+            suggestions = []
+            for title_data in sorted_titles_data:
+                suggestion_data = {
+                    "title": title_data["title"],
+                    "document": title_data["document"],
+                    "doc_id": title_data["doc_id"],
+                    "score": 50,
+                    "is_exact_match": False,
+                    "match_type": "popular"
+                }
+                suggestions.append(suggestion_data)
+            return suggestions
         
         # Filter titles that contain the query (case insensitive)
         query_lower = query.lower().strip()
         matching_titles = []
+        exact_match_found = False
         
-        for title in all_titles:
+        for title_data in all_titles_data:
+            title = title_data["title"]
             title_lower = title.lower()
             if query_lower in title_lower:
                 # Calculate relevance score (exact match > starts with > contains)
                 if title_lower == query_lower:
                     score = 100
+                    exact_match_found = True
                 elif title_lower.startswith(query_lower):
                     score = 80
                 else:
                     score = 50
                 
-                matching_titles.append((title, score))
+                matching_titles.append((title_data, score))
+        
+        # If we have an exact match, also add related suggestions
+        if exact_match_found and len(matching_titles) < limit:
+            # Add related suggestions based on word similarity
+            query_words = set(query_lower.split())
+            
+            for title_data in all_titles_data:
+                title = title_data["title"]
+                title_lower = title.lower()
+                title_words = set(title_lower.split())
+                
+                # Skip if already included
+                if any(title == existing_data["title"] for existing_data, _ in matching_titles):
+                    continue
+                
+                # Calculate word overlap score
+                common_words = query_words.intersection(title_words)
+                if common_words:
+                    word_overlap_score = len(common_words) / max(len(query_words), len(title_words))
+                    if word_overlap_score > 0.3:  # At least 30% word overlap
+                        matching_titles.append((title_data, 30 + word_overlap_score * 20))
         
         # Sort by relevance score and title length
-        matching_titles.sort(key=lambda x: (-x[1], len(x[0])))
+        matching_titles.sort(key=lambda x: (-x[1], len(x[0]["title"])))
         
-        # Return top suggestions
-        suggestions = [title for title, score in matching_titles[:limit]]
+        # Return top suggestions with metadata
+        suggestions = []
+        for title_data, score in matching_titles[:limit]:
+            suggestion_data = {
+                "title": title_data["title"],
+                "document": title_data["document"],
+                "doc_id": title_data["doc_id"],
+                "score": score,
+                "is_exact_match": score == 100,
+                "match_type": "exact" if score == 100 else ("prefix" if score == 80 else ("related" if score < 50 else "partial"))
+            }
+            suggestions.append(suggestion_data)
+        
         return suggestions
+
+    def get_readable_document_name(self, doc_id: str) -> str:
+        """Convert document ID to a readable document name, preserving original case"""
+        try:
+            # Get the actual PDF filename from document ID
+            pdf_filename = self.get_pdf_filename_from_document_id(doc_id)
+            if pdf_filename and pdf_filename != doc_id:
+                # Remove file extension and convert underscores to spaces, preserve original case
+                readable_name = pdf_filename.replace('.pdf', '').replace('_', ' ')
+                return readable_name
+            else:
+                # Fallback: use doc_id and make it more readable, preserve original case
+                readable_name = doc_id.replace('_', ' ')
+                return readable_name
+        except Exception as e:
+            logger.warning(f"Could not get readable name for {doc_id}: {e}")
+            return doc_id.replace('_', ' ')
 
     def get_available_documents(self):
         if not self.pdf_searcher:

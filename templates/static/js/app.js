@@ -672,7 +672,7 @@ class SRMAIApp {
                             <p class="section-title"></p>
                             <ul class="start-steps">
                                 <li>Quick Start: 💬 Ask questions about your SRM Guides</li>
-                                <li>Try asking: Ex: Uninstalling a SolutionPack</li>
+                                <li>Try asking like: Ex: Uninstalling a SolutionPack</li>
                             </ul>
                         </div>
                     </div>
@@ -797,27 +797,8 @@ class SRMAIApp {
                 docList.appendChild(docItem);
             });
 
-            // Auto-collapsible behavior for many documents
-            if (docs.length > 5) {
-                docList.classList.add('auto-collapsible');
-                const hiddenCount = docs.length - 5;
-
-                // Create "show more" indicator
-                const showMoreDiv = document.createElement('div');
-                showMoreDiv.className = 'show-more-indicator';
-                showMoreDiv.textContent = `+${hiddenCount} more...`;
-                showMoreDiv.addEventListener('click', () => {
-                    docList.classList.toggle('expanded');
-                    if (docList.classList.contains('expanded')) {
-                        showMoreDiv.style.display = 'none';
-                    } else {
-                        showMoreDiv.style.display = 'block';
-                    }
-                });
-                docList.appendChild(showMoreDiv);
-            } else {
-                docList.classList.remove('auto-collapsible', 'expanded');
-            }
+            // Show all documents without truncation
+            docList.classList.remove('auto-collapsible', 'expanded');
 
             docCount.textContent = docs.length;
         } catch (error) {
@@ -1000,14 +981,52 @@ class SRMAIApp {
         dropdown.innerHTML = '';
         this.currentAutocompleteIndex = -1;
 
-        suggestions.forEach((suggestion, index) => {
+        suggestions.forEach((suggestionData, index) => {
             const item = document.createElement('div');
             item.className = 'autocomplete-item';
             item.dataset.index = index;
             
+            // Handle both old string format and new object format
+            const suggestion = typeof suggestionData === 'string' ? suggestionData : suggestionData.title;
+            const matchType = typeof suggestionData === 'object' ? suggestionData.match_type : 'partial';
+            const isExactMatch = typeof suggestionData === 'object' ? suggestionData.is_exact_match : false;
+            const documentName = typeof suggestionData === 'object' ? suggestionData.document : null;
+            
+            // Add match type indicator
+            if (isExactMatch) {
+                item.classList.add('exact-match');
+            } else if (matchType === 'related') {
+                item.classList.add('related-match');
+            }
+            
             // Highlight matching text
             const highlightedText = this.highlightMatch(suggestion, query);
-            item.innerHTML = highlightedText;
+            
+            // Create document source indicator
+            let documentIndicator = '';
+            if (documentName) {
+                // Show full document name without truncation
+                documentIndicator = `<span class="document-indicator" title="${this.escapeHtml(documentName)}">${this.escapeHtml(documentName)}</span>`;
+            }
+            
+            // Add match type indicator (small icon only)
+            let matchIcon = '';
+            if (isExactMatch) {
+                matchIcon = '<span class="match-icon exact" title="Exact match">✓</span>';
+            } else if (matchType === 'related') {
+                matchIcon = '<span class="match-icon related" title="Related suggestion">~</span>';
+            }
+            
+            // Single line layout
+            item.innerHTML = `
+                <div class="suggestion-content">
+                    <span class="suggestion-title">${highlightedText}</span>
+                    <div class="suggestion-right">
+                        ${documentIndicator}
+                        ${matchIcon}
+                    </div>
+                </div>
+            `;
             
             item.addEventListener('click', () => {
                 this.selectAutocompleteItem(suggestion);
