@@ -990,12 +990,11 @@ class SRMAIApp {
             const suggestion = typeof suggestionData === 'string' ? suggestionData : suggestionData.title;
             const matchType = typeof suggestionData === 'object' ? suggestionData.match_type : 'partial';
             const isExactMatch = typeof suggestionData === 'object' ? suggestionData.is_exact_match : false;
+            const documentName = typeof suggestionData === 'object' ? suggestionData.document : null;
             
             // Add match type indicator
             if (isExactMatch) {
                 item.classList.add('exact-match');
-            } else if (matchType === 'prefix') {
-                item.classList.add('prefix-match');
             } else if (matchType === 'related') {
                 item.classList.add('related-match');
             }
@@ -1003,15 +1002,31 @@ class SRMAIApp {
             // Highlight matching text
             const highlightedText = this.highlightMatch(suggestion, query);
             
-            // Add match type indicator
-            let matchIndicator = '';
-            if (isExactMatch) {
-                matchIndicator = '<span class="match-indicator exact">✓ Exact match</span>';
-            } else if (matchType === 'related') {
-                matchIndicator = '<span class="match-indicator related">~ Related</span>';
+            // Create document source indicator
+            let documentIndicator = '';
+            if (documentName) {
+                // Show full document name without truncation
+                documentIndicator = `<span class="document-indicator" title="${this.escapeHtml(documentName)}">${this.escapeHtml(documentName)}</span>`;
             }
             
-            item.innerHTML = `${highlightedText}${matchIndicator}`;
+            // Add match type indicator (small icon only)
+            let matchIcon = '';
+            if (isExactMatch) {
+                matchIcon = '<span class="match-icon exact" title="Exact match">✓</span>';
+            } else if (matchType === 'related') {
+                matchIcon = '<span class="match-icon related" title="Related suggestion">~</span>';
+            }
+            
+            // Single line layout
+            item.innerHTML = `
+                <div class="suggestion-content">
+                    <span class="suggestion-title">${highlightedText}</span>
+                    <div class="suggestion-right">
+                        ${documentIndicator}
+                        ${matchIcon}
+                    </div>
+                </div>
+            `;
             
             item.addEventListener('click', () => {
                 this.selectAutocompleteItem(suggestion);

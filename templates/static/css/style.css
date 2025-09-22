@@ -437,10 +437,6 @@ body {
     border-left: 3px solid #28a745;
 }
 
-.autocomplete-item.prefix-match {
-    background: linear-gradient(135deg, #e8f4fd 0%, #f0f8ff 100%);
-    border-left: 3px solid #007bff;
-}
 
 .autocomplete-item.related-match {
     background: linear-gradient(135deg, #fff8e1 0%, #fffbf0 100%);
@@ -468,6 +464,83 @@ body {
 
 .autocomplete-item:hover .match-indicator {
     opacity: 0.9;
+}
+
+/* Single-line autocomplete layout */
+.suggestion-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 12px;
+}
+
+.suggestion-title {
+    font-weight: 500;
+    color: #000000;
+    line-height: 1.4;
+    flex: 1;
+    min-width: 0; /* Allow text to shrink */
+}
+
+.suggestion-right {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.document-indicator {
+    font-size: 11px;
+    color: #6c757d;
+    background: #f8f9fa;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-weight: 500;
+    border: 1px solid #e9ecef;
+    white-space: nowrap;
+}
+
+.autocomplete-item:hover .document-indicator {
+    background: #e9ecef;
+    border-color: #dee2e6;
+    color: #495057;
+}
+
+.match-icon {
+    font-size: 12px;
+    font-weight: bold;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.match-icon.exact {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+
+.match-icon.related {
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+}
+
+.autocomplete-item:hover .match-icon.exact {
+    background: #c3e6cb;
+    border-color: #b8dacc;
+}
+
+
+.autocomplete-item:hover .match-icon.related {
+    background: #ffeaa7;
+    border-color: #f8d568;
 }
 .clear-chats-btn {
     background: none;
@@ -1837,6 +1910,7 @@ body {
     bottom: calc(100% + 8px);
     left: 0;
     right: 0;
+    min-width: 500px; /* Ensure minimum width for full filenames */
     background: #ffffff;
     border: 2px solid var(--accent-primary);
     border-radius: 8px;
