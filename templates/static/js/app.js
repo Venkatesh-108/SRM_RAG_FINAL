@@ -1,4 +1,4 @@
-// SRM AI Doc Assist - Main Application JavaScript
+// AI Doc Assist - Main Application JavaScript
 
 class SRMAIApp {
     constructor() {
@@ -15,7 +15,9 @@ class SRMAIApp {
         this.bindEvents();
         this.loadChatHistory();
         this.loadDocuments();
+        this.initializeDocumentsSection();
         this.updateCharCounter();
+        this.showWelcomeMessage(); // Show welcome message on app start
     }
 
     bindEvents() {
@@ -82,6 +84,12 @@ class SRMAIApp {
         const clearChatsBtn = document.querySelector('.clear-chats-btn');
         if (clearChatsBtn) {
             clearChatsBtn.addEventListener('click', () => this.clearAllChats());
+        }
+
+        // Documents expand/collapse functionality
+        const documentsHeader = document.getElementById('documentsHeader');
+        if (documentsHeader) {
+            documentsHeader.addEventListener('click', () => this.toggleDocumentsSection());
         }
 
         const uploadBtn = document.getElementById('uploadBtn');
@@ -154,7 +162,6 @@ class SRMAIApp {
             if (response.ok) {
                 const data = await response.json();
                 this.currentSessionId = data.session.session_id;
-                this.removeWelcomeMessage();
                 this.clearChatArea(); // Clear previous messages
                 this.showChatArea();
                 this.loadChatHistory();
@@ -539,7 +546,6 @@ class SRMAIApp {
     }
 
     loadChatSessionToUI(session) {
-        this.removeWelcomeMessage();
         this.clearChatArea(); // Clear previous messages first
         this.showChatArea();
 
@@ -653,10 +659,23 @@ class SRMAIApp {
             welcomeContainer.innerHTML = `
                 <div class="welcome-message">
                     <div class="welcome-icon">
-                        <i class="fas fa-brain"></i>
+                        <i class="fas fa-robot"></i>
                     </div>
-                    <h2>Welcome to AI Doc Assist!</h2>
-                    <p>Your intelligent companion for document analysis, insights extraction, and knowledge discovery.</p>
+                    <div class="welcome-content">
+                        <h3 align="center">👋 Welcome to AI Doc Assist!</h3>
+                        
+                        <div class="llama-attribution" style="text-align: center; margin: 20px 0; padding: 10px; background: linear-gradient(135deg, #0d6efd 0%, #4a90e2 100%); color: white; border-radius: 8px; font-weight: 600;">
+                            Built with Llama
+                        </div>
+                        
+                        <div class="quick-start">
+                            <p class="section-title"></p>
+                            <ul class="start-steps">
+                                <li>Quick Start: 💬 Ask questions about your SRM Guides</li>
+                                <li>Try asking: Ex: Uninstalling a SolutionPack</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             `;
             contentArea.appendChild(welcomeContainer);
@@ -777,11 +796,62 @@ class SRMAIApp {
                 docItem.innerHTML = `<i class="${iconClass}"></i><span>${docName}</span>`;
                 docList.appendChild(docItem);
             });
+
+            // Auto-collapsible behavior for many documents
+            if (docs.length > 5) {
+                docList.classList.add('auto-collapsible');
+                const hiddenCount = docs.length - 5;
+
+                // Create "show more" indicator
+                const showMoreDiv = document.createElement('div');
+                showMoreDiv.className = 'show-more-indicator';
+                showMoreDiv.textContent = `+${hiddenCount} more...`;
+                showMoreDiv.addEventListener('click', () => {
+                    docList.classList.toggle('expanded');
+                    if (docList.classList.contains('expanded')) {
+                        showMoreDiv.style.display = 'none';
+                    } else {
+                        showMoreDiv.style.display = 'block';
+                    }
+                });
+                docList.appendChild(showMoreDiv);
+            } else {
+                docList.classList.remove('auto-collapsible', 'expanded');
+            }
+
             docCount.textContent = docs.length;
         } catch (error) {
             console.error('Error loading documents:', error);
             docList.innerHTML = '<div class="error-message">Could not load documents.</div>';
             docCount.textContent = '0';
+        }
+    }
+
+    toggleDocumentsSection() {
+        const docList = document.getElementById('docList');
+        const expandIcon = document.getElementById('documentsExpandIcon');
+
+        if (!docList || !expandIcon) return;
+
+        docList.classList.toggle('collapsed');
+        expandIcon.classList.toggle('expanded');
+
+        // Store the state in localStorage
+        const isCollapsed = docList.classList.contains('collapsed');
+        localStorage.setItem('documentsCollapsed', isCollapsed.toString());
+    }
+
+    // Initialize documents section state from localStorage
+    initializeDocumentsSection() {
+        const docList = document.getElementById('docList');
+        const expandIcon = document.getElementById('documentsExpandIcon');
+
+        if (!docList || !expandIcon) return;
+
+        const isCollapsed = localStorage.getItem('documentsCollapsed') === 'true';
+        if (isCollapsed) {
+            docList.classList.add('collapsed');
+            expandIcon.classList.add('expanded');
         }
     }
 

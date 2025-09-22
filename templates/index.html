@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HCL SRM AI Doc Assist</title>
+    <title>AI Doc Assist</title>
     
     <!-- Local Fonts -->
     <link rel="stylesheet" href="/static/css/fonts.css">
@@ -18,7 +18,7 @@
     <div class="topbar">
         <div class="brand">
             <i class="fas fa-bars" id="hamburgerBtn"></i>
-            <span class="brand-name">HCL SRM AI Doc Assist</span>
+            <span class="brand-name">AI Doc Assist</span>
         </div>
     </div>
     <div class="app-container">
@@ -63,11 +63,14 @@
                 </div>
 
                 <div class="sidebar-section">
-                    <div class="section-header">
-                        <h3>Documents</h3>
-                        <span class="doc-count" id="docCount">2</span>
+                    <div class="section-header expandable-header" id="documentsHeader">
+                        <div class="header-content">
+                            <h3>Documents</h3>
+                            <span class="doc-count" id="docCount">2</span>
+                        </div>
+                        <i class="fas fa-chevron-down expand-icon" id="documentsExpandIcon"></i>
                     </div>
-                    <div class="doc-list" id="docList">
+                    <div class="doc-list expandable-content" id="docList">
                         <!-- Document items will be populated here -->
                     </div>
                 </div>
@@ -94,35 +97,6 @@
             </header>
 
             <div class="content-area" id="contentArea">
-                <div class="welcome-container" id="welcomeContainer">
-                    <div class="welcome-message">
-                        <div class="welcome-icon">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <div class="welcome-content">
-                            <h3 align="center" >👋  Welcome to HCL SRM AI Assist! </h3> 
-                            
-                            <div class="llama-attribution" style="text-align: center; margin: 20px 0; padding: 10px; background: linear-gradient(135deg, #0d6efd 0%, #4a90e2 100%); color: white; border-radius: 8px; font-weight: 600;">
-                                
-                                Built with Llama
-                            </div>
-                            
-                            <div class="quick-start">
-                                <p class="section-title">Quick Start:</p>
-                                <ul class="start-steps">
-                                    <li>💭 Ask questions about your HCL SRM Guides and Manuals</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="try-asking">
-                                <p class="section-title">Try asking:</p>
-                                <p class="example-prompts">"Summarize key points" • "Find info about [topic]"</p>
-                            </div>
-                            
-                            <p class="welcome-footer">I'll provide detailed answers with source citations. Let's begin! </p>
-                        </div>
-                    </div>
-                </div>
                 
                 <!-- Chat Messages Area -->
                 <div class="chat-area" id="chatArea" style="display: none;">

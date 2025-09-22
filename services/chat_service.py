@@ -364,32 +364,203 @@ class ChatService:
             else:
                 cleaned_lines.append(line)
         
-        return '\n'.join(cleaned_lines).strip()
-    
+        return self._clean_frontend_formatting('\n'.join(cleaned_lines).strip())
+
+    def _clean_frontend_formatting(self, content: str) -> str:
+        """Generic text cleaning for frontend display - merges content that belongs to same numbered step"""
+        if not content:
+            return content
+
+        import re
+        lines = content.split('\n')
+        grouped_lines = []
+        i = 0
+
+        while i < len(lines):
+            line = lines[i].rstrip()
+
+            # Skip completely empty lines
+            if not line.strip():
+                i += 1
+                continue
+
+            # Remove standalone punctuation on separate lines (., :, etc.)
+            if re.match(r'^\s*[.,:;]+\s*$', line):
+                i += 1
+                continue
+
+            # Check if this is a numbered step
+            numbered_match = re.match(r'^(\s*)(\d+)[\.\)]\s*(.+)', line)
+            if numbered_match:
+                indent, number, initial_content = numbered_match.groups()
+
+                # Start collecting all content for this step
+                step_content = [initial_content.strip()]
+                j = i + 1
+
+                # Look ahead to collect all content that belongs to this step
+                while j < len(lines):
+                    next_line = lines[j].strip()
+
+                    # Stop if we hit another numbered step
+                    if re.match(r'^\d+[\.\)]\s', next_line):
+                        break
+
+                    # Stop if we hit a heading
+                    if re.match(r'^#{1,6}\s', next_line):
+                        break
+
+                    # Stop if we hit a lettered sub-item (but these should be included)
+                    # Actually, include lettered items as part of the step
+                    if re.match(r'^[a-z][\.\)]\s', next_line):
+                        step_content.append(next_line)
+                        j += 1
+                        continue
+
+                    # Skip empty lines but don't stop
+                    if not next_line:
+                        j += 1
+                        continue
+
+                    # Special handling for NOTEs - keep them separate but as part of the step
+                    if re.match(r'^(NOTE|IMPORTANT|WARNING|CAUTION):', next_line, re.IGNORECASE):
+                        step_content.append('\n' + next_line)  # Add line break before NOTE
+                        j += 1
+                        continue
+
+                    # Add this line as continuation of the step
+                    step_content.append(next_line)
+                    j += 1
+
+                # Clean and format the collected content
+                cleaned_content = []
+                for content in step_content:
+                    if content.startswith('\n'):  # This is a NOTE
+                        cleaned_content.append(content)  # Keep the line break
+                    else:
+                        # Clean HTML entities and extra punctuation
+                        content = content.replace('&lt;', '<').replace('&gt;', '>').replace('&amp;', '&')
+                        content = re.sub(r'\s*[\.,]+\s*$', '', content)
+                        content = re.sub(r'\s+', ' ', content)
+                        if content:  # Only add non-empty content
+                            cleaned_content.append(content)
+
+                # Join the content appropriately
+                final_content = []
+                for content in cleaned_content:
+                    if content.startswith('\n'):  # This is a NOTE
+                        final_content.append(content)
+                    else:
+                        if final_content and not final_content[-1].startswith('\n'):
+                            # Join with previous content with a space
+                            final_content[-1] = final_content[-1] + ' ' + content
+                        else:
+                            final_content.append(content)
+
+                # Create the final step line
+                main_content = final_content[0] if final_content else ''
+                step_line = f"{indent}{number}. {main_content}"
+                grouped_lines.append(step_line)
+
+                # Add any NOTEs as separate lines
+                for content in final_content[1:]:
+                    if content.startswith('\n'):
+                        grouped_lines.append(content[1:])  # Remove the \n prefix
+
+                i = j  # Skip all the lines we processed
+
+            else:
+                # This is not a numbered step - handle other content types
+
+                # Clean lettered sub-items
+                letter_match = re.match(r'^(\s*)([a-z])[\.\)]\s*(.+)', line)
+                if letter_match:
+                    indent, letter, content = letter_match.groups()
+                    content = content.strip()
+                    content = content.replace('&lt;', '<').replace('&gt;', '>').replace('&amp;', '&')
+                    content = re.sub(r'\s*[\.,]+\s*$', '', content)
+                    content = re.sub(r'\s+', ' ', content)
+                    line = f"{indent}- {letter}. {content}"
+
+                # Clean bullet points
+                elif re.match(r'^(\s*)[-*+•]\s*(.+)', line):
+                    bullet_match = re.match(r'^(\s*)[-*+•]\s*(.+)', line)
+                    indent, content = bullet_match.groups()
+                    content = content.strip()
+                    content = content.replace('&lt;', '<').replace('&gt;', '>').replace('&amp;', '&')
+                    content = re.sub(r'\s+', ' ', content)
+                    line = f"{indent}- {content}"
+
+                # Clean headings
+                elif re.match(r'^(\s*)(#{1,6})\s*(.+)', line):
+                    heading_match = re.match(r'^(\s*)(#{1,6})\s*(.+)', line)
+                    indent, hashes, title = heading_match.groups()
+                    title = title.strip()
+                    title = re.sub(r'[\.,;:]+$', '', title)
+                    title = re.sub(r'\s+', ' ', title)
+                    line = f"{indent}{hashes} {title}"
+
+                # Regular content - clean up spacing
+                else:
+                    line = re.sub(r'\s+', ' ', line)
+                    if ':' in line and not line.strip().endswith(':'):
+                        line = re.sub(r'\s*:\s*', ': ', line)
+
+                grouped_lines.append(line)
+                i += 1
+
+        # Final cleanup - no empty lines between steps
+        result_lines = []
+        for line in grouped_lines:
+            if line.strip():  # Only add non-empty lines
+                result_lines.append(line)
+
+        return '\n'.join(result_lines)
+
     def _extract_sources_from_chunks(self, chunks: List[Dict[str, Any]]) -> List[Source]:
-        """Extract source information from RAG context chunks"""
+        """Extract source information from RAG context chunks with deduplication"""
         sources = []
-        
+        seen_sources = set()  # Track (filename, page_number) combinations
+        duplicate_count = 0  # Track how many duplicates were removed
+
         for chunk in chunks:
             metadata = chunk.get('metadata', {})
             doc_id = metadata.get('filename', 'Unknown')
-            
+
             # Convert internal document ID to actual filename using RAGService
             filename = self.rag_service.get_pdf_filename_from_document_id(doc_id)
-            
+
             page_number = metadata.get('page_number')
             section_title = metadata.get('section_title', 'Unknown Section')
             relevance_score = metadata.get('relevance_score', 0.0)
-            
-            source = Source(
-                filename=filename,
-                page_number=page_number,
-                chunk_id=str(metadata.get('chunk_id', section_title)),
-                relevance_score=float(relevance_score),
-                content_preview=chunk.get('text', '')[:150] + "..." if len(chunk.get('text', '')) > 150 else chunk.get('text', '')
-            )
-            sources.append(source)
-        
+
+            # Create unique identifier for this source
+            source_key = (filename, page_number)
+
+            # Skip if we've already seen this source
+            if source_key not in seen_sources:
+                seen_sources.add(source_key)
+
+                source = Source(
+                    filename=filename,
+                    page_number=page_number,
+                    chunk_id=str(metadata.get('chunk_id', section_title)),
+                    relevance_score=float(relevance_score),
+                    content_preview=chunk.get('text', '')[:150] + "..." if len(chunk.get('text', '')) > 150 else chunk.get('text', '')
+                )
+                sources.append(source)
+            else:
+                duplicate_count += 1
+                # If duplicate, update the relevance score to the highest one
+                for existing_source in sources:
+                    if existing_source.filename == filename and existing_source.page_number == page_number:
+                        existing_source.relevance_score = max(existing_source.relevance_score, float(relevance_score))
+                        break
+
+        # Log deduplication info
+        if duplicate_count > 0:
+            logger.info(f"Chat service deduplicated {duplicate_count} duplicate sources from {len(chunks)} total chunks")
+
         return sources
     
     def _format_direct_results(self, query: str, chunks: List[Dict[str, Any]]) -> str:

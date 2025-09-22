@@ -44,6 +44,157 @@ config = load_config()
 rag_service = RAGService(config)
 chat_service = ChatService(rag_service=rag_service)
 
+def clean_frontend_formatting(content: str) -> str:
+    """Generic text cleaning for frontend display - merges content that belongs to same numbered step"""
+    if not content:
+        return content
+
+    import re
+    lines = content.split('\n')
+    grouped_lines = []
+    i = 0
+
+    while i < len(lines):
+        line = lines[i].rstrip()
+
+        # Skip completely empty lines
+        if not line.strip():
+            i += 1
+            continue
+
+        # Remove standalone punctuation on separate lines (., :, etc.)
+        if re.match(r'^\s*[.,:;]+\s*$', line):
+            i += 1
+            continue
+
+        # Check if this is a numbered step
+        numbered_match = re.match(r'^(\s*)(\d+)[\.\)]\s*(.+)', line)
+        if numbered_match:
+            indent, number, initial_content = numbered_match.groups()
+
+            # Start collecting all content for this step
+            step_content = [initial_content.strip()]
+            j = i + 1
+
+            # Look ahead to collect all content that belongs to this step
+            while j < len(lines):
+                next_line = lines[j].strip()
+
+                # Stop if we hit another numbered step
+                if re.match(r'^\d+[\.\)]\s', next_line):
+                    break
+
+                # Stop if we hit a heading
+                if re.match(r'^#{1,6}\s', next_line):
+                    break
+
+                # Stop if we hit a lettered sub-item (but these should be included)
+                # Actually, include lettered items as part of the step
+                if re.match(r'^[a-z][\.\)]\s', next_line):
+                    step_content.append(next_line)
+                    j += 1
+                    continue
+
+                # Skip empty lines but don't stop
+                if not next_line:
+                    j += 1
+                    continue
+
+                # Special handling for NOTEs - keep them separate but as part of the step
+                if re.match(r'^(NOTE|IMPORTANT|WARNING|CAUTION):', next_line, re.IGNORECASE):
+                    step_content.append('\n' + next_line)  # Add line break before NOTE
+                    j += 1
+                    continue
+
+                # Add this line as continuation of the step
+                step_content.append(next_line)
+                j += 1
+
+            # Clean and format the collected content
+            cleaned_content = []
+            for content in step_content:
+                if content.startswith('\n'):  # This is a NOTE
+                    cleaned_content.append(content)  # Keep the line break
+                else:
+                    # Clean HTML entities and extra punctuation
+                    content = content.replace('&lt;', '<').replace('&gt;', '>').replace('&amp;', '&')
+                    content = re.sub(r'\s*[\.,]+\s*$', '', content)
+                    content = re.sub(r'\s+', ' ', content)
+                    if content:  # Only add non-empty content
+                        cleaned_content.append(content)
+
+            # Join the content appropriately
+            final_content = []
+            for content in cleaned_content:
+                if content.startswith('\n'):  # This is a NOTE
+                    final_content.append(content)
+                else:
+                    if final_content and not final_content[-1].startswith('\n'):
+                        # Join with previous content with a space
+                        final_content[-1] = final_content[-1] + ' ' + content
+                    else:
+                        final_content.append(content)
+
+            # Create the final step line
+            main_content = final_content[0] if final_content else ''
+            step_line = f"{indent}{number}. {main_content}"
+            grouped_lines.append(step_line)
+
+            # Add any NOTEs as separate lines
+            for content in final_content[1:]:
+                if content.startswith('\n'):
+                    grouped_lines.append(content[1:])  # Remove the \n prefix
+
+            i = j  # Skip all the lines we processed
+
+        else:
+            # This is not a numbered step - handle other content types
+
+            # Clean lettered sub-items
+            letter_match = re.match(r'^(\s*)([a-z])[\.\)]\s*(.+)', line)
+            if letter_match:
+                indent, letter, content = letter_match.groups()
+                content = content.strip()
+                content = content.replace('&lt;', '<').replace('&gt;', '>').replace('&amp;', '&')
+                content = re.sub(r'\s*[\.,]+\s*$', '', content)
+                content = re.sub(r'\s+', ' ', content)
+                line = f"{indent}- {letter}. {content}"
+
+            # Clean bullet points
+            elif re.match(r'^(\s*)[-*+•]\s*(.+)', line):
+                bullet_match = re.match(r'^(\s*)[-*+•]\s*(.+)', line)
+                indent, content = bullet_match.groups()
+                content = content.strip()
+                content = content.replace('&lt;', '<').replace('&gt;', '>').replace('&amp;', '&')
+                content = re.sub(r'\s+', ' ', content)
+                line = f"{indent}- {content}"
+
+            # Clean headings
+            elif re.match(r'^(\s*)(#{1,6})\s*(.+)', line):
+                heading_match = re.match(r'^(\s*)(#{1,6})\s*(.+)', line)
+                indent, hashes, title = heading_match.groups()
+                title = title.strip()
+                title = re.sub(r'[\.,;:]+$', '', title)
+                title = re.sub(r'\s+', ' ', title)
+                line = f"{indent}{hashes} {title}"
+
+            # Regular content - clean up spacing
+            else:
+                line = re.sub(r'\s+', ' ', line)
+                if ':' in line and not line.strip().endswith(':'):
+                    line = re.sub(r'\s*:\s*', ': ', line)
+
+            grouped_lines.append(line)
+            i += 1
+
+    # Final cleanup - no empty lines between steps
+    result_lines = []
+    for line in grouped_lines:
+        if line.strip():  # Only add non-empty lines
+            result_lines.append(line)
+
+    return '\n'.join(result_lines)
+
 console = Console()
 
 # Pydantic models
@@ -92,8 +243,8 @@ async def lifespan(app: FastAPI):
     yield
 
 app = FastAPI(
-    title="SRM RAG API - Built with Llama", 
-    description="RAG system for HCL SRM guides powered by Llama 3.2 Community License", 
+    title="AI Doc Assist API - Built with Llama", 
+    description="RAG system for document guides powered by Llama 3.2 Community License", 
     lifespan=lifespan
 )
 
@@ -214,7 +365,7 @@ async def clear_all_sessions():
 
 @app.get("/", response_class=HTMLResponse)
 async def root(request: Request):
-    """Modern HTML interface for SRM AI Doc Assist"""
+    """Modern HTML interface for AI Doc Assist"""
     return templates.TemplateResponse("index.html", {"request": request})
 
 @app.post("/ask", response_model=QueryResponse)
@@ -236,25 +387,57 @@ async def ask_endpoint(request: QueryRequest):
         retrieved_chunks = rag_service.search(request.query)
         
         answer, confidence_score, validation_result = generate_answer_with_ollama(request.query, retrieved_chunks)
+
+        # Clean the answer for frontend display
+        answer = clean_frontend_formatting(answer)
         
         sources = []
+        seen_sources = set()  # Track (filename, page_number) combinations
+        duplicate_count = 0  # Track how many duplicates were removed
+
         for chunk in retrieved_chunks:
             source_info = chunk['metadata']
             # Convert document ID to actual PDF filename
             document_id = source_info.get('filename', 'Unknown')
             actual_pdf_filename = rag_service.get_pdf_filename_from_document_id(document_id)
-            
-            source_text = f"{actual_pdf_filename} (Page {source_info.get('page_number', 'N/A')})"
-            if source_info.get('section_title'):
-                source_text += f" → Section: {source_info.get('section_title')}"
-            
-            sources.append({
-                'text': source_text,
-                'filename': actual_pdf_filename,
-                'page_number': source_info.get('page_number'),
-                'section_title': source_info.get('section_title'),
-                'relevance_score': source_info.get('relevance_score')
-            })
+
+            page_number = source_info.get('page_number')
+            section_title = source_info.get('section_title')
+            relevance_score = source_info.get('relevance_score', 0.0)
+
+            # Create unique identifier for this source
+            source_key = (actual_pdf_filename, page_number)
+
+            # Skip if we've already seen this source
+            if source_key not in seen_sources:
+                seen_sources.add(source_key)
+
+                source_text = f"{actual_pdf_filename} (Page {page_number or 'N/A'})"
+                if section_title:
+                    source_text += f" → Section: {section_title}"
+
+                sources.append({
+                    'text': source_text,
+                    'filename': actual_pdf_filename,
+                    'page_number': page_number,
+                    'section_title': section_title,
+                    'relevance_score': relevance_score
+                })
+            else:
+                duplicate_count += 1
+                # If duplicate, update the relevance score to the highest one
+                for existing_source in sources:
+                    if (existing_source['filename'] == actual_pdf_filename and
+                        existing_source['page_number'] == page_number):
+                        existing_source['relevance_score'] = max(
+                            existing_source['relevance_score'] or 0.0,
+                            relevance_score or 0.0
+                        )
+                        break
+
+        # Log deduplication info
+        if duplicate_count > 0:
+            logger.info(f"Deduplicated {duplicate_count} duplicate sources from {len(retrieved_chunks)} total chunks")
         
         return QueryResponse(
             answer=answer,
@@ -339,14 +522,14 @@ if __name__ == "__main__":
     
     if len(sys.argv) > 1 and sys.argv[1] in ["--host", "--port", "--help"]:
         import argparse
-        parser = argparse.ArgumentParser(description="SRM RAG Web Server")
+        parser = argparse.ArgumentParser(description="AI Doc Assist Web Server")
         parser.add_argument("--host", default="127.0.0.1", help="Host to bind to")
         parser.add_argument("--port", type=int, default=8000, help="Port to bind to")
         parser.add_argument("--reload", action="store_true", help="Enable auto-reload")
         
         args = parser.parse_args()
         
-        console.print(f"Starting SRM RAG web server on {args.host}:{args.port}", style="bold green")
+        console.print(f"Starting AI Doc Assist web server on {args.host}:{args.port}", style="bold green")
         
         uvicorn.run(
             "app:app",

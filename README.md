@@ -1,6 +1,6 @@
-# SRM AI Doc Assist 
+# AI Doc Assist 
 
-A comprehensive RAG (Retrieval-Augmented Generation) system for HCL SRM guides with advanced chunking, hybrid retrieval, and Ollama integration. The system provides both a command-line interface and a web API for querying SRM documentation.
+A comprehensive RAG (Retrieval-Augmented Generation) system for document guides with advanced chunking, hybrid retrieval, and Ollama integration. The system provides both a command-line interface and a web API for querying documentation.
 
 > **🤖 Built with Llama** - This system is powered by Llama 3.2 and operates under the Llama 3.2 Community License.
 
@@ -44,7 +44,7 @@ User Query → Exact Title Check → Direct Content Return (if exact match)
 
 - Python 3.8+
 - Ollama installed and running locally
-- HCL SRM guide documents (PDF or Markdown format)
+- Document guides (PDF or Markdown format)
 
 ### Installation
 
@@ -72,7 +72,7 @@ User Query → Exact Title Check → Direct Content Return (if exact match)
    pip install -r requirements.txt
    ```
 
-5. **Place your HCL SRM guide documents into the `docs` directory**
+5. **Place your document guides into the `docs` directory**
 
 6. **Ensure Ollama is running with the required model:**
    ```bash
@@ -148,7 +148,7 @@ This will:
 
 2. **Ask a question:**
    ```bash
-   python app.py ask "Your question about the SRM guides"
+   python app.py ask "Your question about the guides"
    ```
 
 ### API Endpoints
@@ -165,7 +165,7 @@ The system provides several REST API endpoints:
 # Ask a question via API
 curl -X POST "http://127.0.0.1:8000/ask" \
      -H "Content-Type: application/json" \
-     -d '{"query": "How do I upgrade SRM?"}'
+     -d '{"query": "How do I upgrade the system?"}'
 
 # Force reindexing
 curl -X POST "http://127.0.0.1:8000/reindex"
@@ -202,9 +202,9 @@ Query: "frontend server tasks"
 
 ### Supported Documents
 
-- ✅ SRM Installation and Configuration Guide
-- ✅ SRM Deploying Additional Frontend Servers
-- ✅ SRM Upgrade Guide
+- ✅ Installation and Configuration Guide
+- ✅ Deploying Additional Frontend Servers
+- ✅ Upgrade Guide
 
 ### Benefits
 
@@ -279,13 +279,7 @@ SRM_RAG/
 - **Dual-Mode Processing**: Direct content return vs. LLM synthesis
 - **Web Server**: FastAPI-based web interface with enhanced endpoints
 
-### Adding New Features
-- **New Document Types**: Extend the `load_documents()` function
-- **Custom Chunking**: Modify the `chunk_elements()` function
-- **Additional Models**: Update configuration and model loading
-- **New API Endpoints**: Add to the FastAPI app
 
-## Troubleshooting
 
 ### Common Issues
 
@@ -294,16 +288,7 @@ SRM_RAG/
 3. **Index Not Found**: Run the indexing command or use the web server mode for auto-indexing
 4. **Memory Issues**: Large documents may require more RAM; consider reducing chunk sizes
 
-### Performance Optimization
 
-- **Exact Title Matching**: Instant responses for exact section titles
-- **Enhanced Chunking**: Optimized for complete section preservation
-- **Smart Content Detection**: Prioritizes substantial content over headers
-- **Chunk Size**: Adjust chunk sizes in configuration for optimal performance
-- **Model Selection**: Choose appropriate embedding and reranking models
-- **Index Management**: Regular reindexing for updated documents
-
-## System Capabilities
 
 ### Search Behaviors
 
@@ -314,42 +299,3 @@ SRM_RAG/
 | **Question** | "How do I configure SSL?" | ~3-5 seconds | LLM Synthesis | 0.8-0.9 |
 | **Broad Topic** | "database configuration" | ~5-8 seconds | LLM Synthesis | 0.7-0.9 |
 
-### Supported Section Types
-
-- ✅ **Installation Procedures**: Complete step-by-step guides
-- ✅ **Configuration Tasks**: Detailed configuration instructions  
-- ✅ **Troubleshooting Steps**: Problem resolution procedures
-- ✅ **Prerequisites**: Requirements and preparation steps
-- ✅ **Verification Tasks**: Testing and validation procedures
-- ✅ **Reference Information**: Tables, parameters, and specifications
-
-## Contributing
-
-When contributing to this project:
-
-1. Follow the existing code structure and patterns
-2. Add appropriate error handling and logging
-3. Update documentation for new features
-4. Test with various document types and sizes
-
-## License
-
-This project is designed for internal use with HCL SRM documentation.
-
-### Llama 3.2 Community License Compliance
-
-This system uses Llama 3.2 models and complies with the Llama 3.2 Community License requirements:
-
-- **Attribution**: This system prominently displays "Built with Llama" on all user interfaces
-- **Model Usage**: Uses Llama 3.2:3b model via Ollama for answer generation
-- **License Compliance**: Full compliance with Meta's Llama 3.2 Community License terms
-
-For complete license terms, see the [Llama 3.2 Community License](https://github.com/meta-llama/llama3.2/blob/main/LICENSE) or refer to the `LLAMA_LICENSE.md` file in this repository.
-
-## Support
-
-For issues or questions:
-1. Check the troubleshooting section
-2. Review the configuration settings
-3. Ensure all dependencies are properly installed
-4. Verify Ollama is running with the correct model
