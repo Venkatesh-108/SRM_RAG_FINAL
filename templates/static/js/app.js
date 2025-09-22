@@ -672,7 +672,7 @@ class SRMAIApp {
                             <p class="section-title"></p>
                             <ul class="start-steps">
                                 <li>Quick Start: 💬 Ask questions about your SRM Guides</li>
-                                <li>Try asking: Ex: Uninstalling a SolutionPack</li>
+                                <li>Try asking like: Ex: Uninstalling a SolutionPack</li>
                             </ul>
                         </div>
                     </div>
@@ -797,27 +797,8 @@ class SRMAIApp {
                 docList.appendChild(docItem);
             });
 
-            // Auto-collapsible behavior for many documents
-            if (docs.length > 5) {
-                docList.classList.add('auto-collapsible');
-                const hiddenCount = docs.length - 5;
-
-                // Create "show more" indicator
-                const showMoreDiv = document.createElement('div');
-                showMoreDiv.className = 'show-more-indicator';
-                showMoreDiv.textContent = `+${hiddenCount} more...`;
-                showMoreDiv.addEventListener('click', () => {
-                    docList.classList.toggle('expanded');
-                    if (docList.classList.contains('expanded')) {
-                        showMoreDiv.style.display = 'none';
-                    } else {
-                        showMoreDiv.style.display = 'block';
-                    }
-                });
-                docList.appendChild(showMoreDiv);
-            } else {
-                docList.classList.remove('auto-collapsible', 'expanded');
-            }
+            // Show all documents without truncation
+            docList.classList.remove('auto-collapsible', 'expanded');
 
             docCount.textContent = docs.length;
         } catch (error) {

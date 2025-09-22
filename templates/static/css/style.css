@@ -429,32 +429,7 @@ body {
     padding-top: 0;
 }
 
-/* Auto-collapse behavior for many documents */
-.doc-list.auto-collapsible .doc-item:nth-child(n+6) {
-    display: none;
-}
-
-.doc-list.auto-collapsible.expanded .doc-item {
-    display: flex;
-}
-
-/* Show more indicator */
-.show-more-indicator {
-    padding: 8px 12px;
-    font-size: 11px;
-    color: var(--text-secondary-dark);
-    font-style: italic;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: all 0.2s ease;
-    text-align: left;
-    user-select: none;
-}
-
-.show-more-indicator:hover {
-    background: rgba(255, 255, 255, 0.05);
-    color: #ffffff;
-}
+/* Auto-collapse behavior removed - all documents now show by default */
 .clear-chats-btn {
     background: none;
     border: none;

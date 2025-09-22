@@ -1,17 +1,47 @@
 {
-  "last_updated": "2025-09-17T11:00:02.184798",
+  "last_updated": "2025-09-22T09:02:11.429824",
   "files": {
+    "Open-Source License and Copyright Information.pdf": {
+      "path": "docs\\Open-Source License and Copyright Information.pdf",
+      "size": 330844,
+      "modified_time": 1756710631.740142,
+      "modified_date": "2025-09-01T12:40:31.740142"
+    },
+    "SRM Deploying Additional Frontend Servers.pdf": {
+      "path": "docs\\SRM Deploying Additional Frontend Servers.pdf",
+      "size": 265531,
+      "modified_time": 1756710631.7511952,
+      "modified_date": "2025-09-01T12:40:31.751195"
+    },
     "SRM Installation and Configuration Guide.pdf": {
       "path": "docs\\SRM Installation and Configuration Guide.pdf",
       "size": 746439,
       "modified_time": 1756710631.759745,
       "modified_date": "2025-09-01T12:40:31.759745"
     },
+    "SRM Support Matrix.pdf": {
+      "path": "docs\\SRM Support Matrix.pdf",
+      "size": 367424,
+      "modified_time": 1756710631.7928908,
+      "modified_date": "2025-09-01T12:40:31.792891"
+    },
     "SRM Upgrade Guide.pdf": {
       "path": "docs\\SRM Upgrade Guide.pdf",
       "size": 1333111,
       "modified_time": 1756710631.8069506,
       "modified_date": "2025-09-01T12:40:31.806951"
+    },
+    "SRM Windows Host Agent Installation Guide.pdf": {
+      "path": "docs\\SRM Windows Host Agent Installation Guide.pdf",
+      "size": 1650219,
+      "modified_time": 1756710631.826507,
+      "modified_date": "2025-09-01T12:40:31.826507"
+    },
+    "Third Party ReadMe.pdf": {
+      "path": "docs\\Third Party ReadMe.pdf",
+      "size": 1569675,
+      "modified_time": 1756710631.8420165,
+      "modified_date": "2025-09-01T12:40:31.842016"
     }
   }
 }
