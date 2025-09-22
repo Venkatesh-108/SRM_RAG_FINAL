@@ -404,7 +404,7 @@ class RAGService:
         
         return None
     
-    def get_title_suggestions(self, query: str, limit: int = 10) -> List[str]:
+    def get_title_suggestions(self, query: str, limit: int = 10) -> List[Dict[str, Any]]:
         """Get autocomplete suggestions for section titles based on query"""
         if not self.pdf_searcher:
             return []
@@ -474,11 +474,21 @@ class RAGService:
         if not query.strip():
             # Sort by length (shorter titles first) and return top ones
             sorted_titles = sorted(all_titles, key=len)[:limit]
-            return sorted_titles
+            suggestions = []
+            for title in sorted_titles:
+                suggestion_data = {
+                    "title": title,
+                    "score": 50,
+                    "is_exact_match": False,
+                    "match_type": "popular"
+                }
+                suggestions.append(suggestion_data)
+            return suggestions
         
         # Filter titles that contain the query (case insensitive)
         query_lower = query.lower().strip()
         matching_titles = []
+        exact_match_found = False
         
         for title in all_titles:
             title_lower = title.lower()
@@ -486,6 +496,7 @@ class RAGService:
                 # Calculate relevance score (exact match > starts with > contains)
                 if title_lower == query_lower:
                     score = 100
+                    exact_match_found = True
                 elif title_lower.startswith(query_lower):
                     score = 80
                 else:
@@ -493,11 +504,40 @@ class RAGService:
                 
                 matching_titles.append((title, score))
         
+        # If we have an exact match, also add related suggestions
+        if exact_match_found and len(matching_titles) < limit:
+            # Add related suggestions based on word similarity
+            query_words = set(query_lower.split())
+            
+            for title in all_titles:
+                title_lower = title.lower()
+                title_words = set(title_lower.split())
+                
+                # Skip if already included
+                if any(title == existing_title for existing_title, _ in matching_titles):
+                    continue
+                
+                # Calculate word overlap score
+                common_words = query_words.intersection(title_words)
+                if common_words:
+                    word_overlap_score = len(common_words) / max(len(query_words), len(title_words))
+                    if word_overlap_score > 0.3:  # At least 30% word overlap
+                        matching_titles.append((title, 30 + word_overlap_score * 20))
+        
         # Sort by relevance score and title length
         matching_titles.sort(key=lambda x: (-x[1], len(x[0])))
         
-        # Return top suggestions
-        suggestions = [title for title, score in matching_titles[:limit]]
+        # Return top suggestions with metadata
+        suggestions = []
+        for title, score in matching_titles[:limit]:
+            suggestion_data = {
+                "title": title,
+                "score": score,
+                "is_exact_match": score == 100,
+                "match_type": "exact" if score == 100 else ("prefix" if score == 80 else ("related" if score < 50 else "partial"))
+            }
+            suggestions.append(suggestion_data)
+        
         return suggestions
 
     def get_available_documents(self):

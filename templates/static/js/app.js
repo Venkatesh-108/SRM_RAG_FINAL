@@ -981,14 +981,37 @@ class SRMAIApp {
         dropdown.innerHTML = '';
         this.currentAutocompleteIndex = -1;
 
-        suggestions.forEach((suggestion, index) => {
+        suggestions.forEach((suggestionData, index) => {
             const item = document.createElement('div');
             item.className = 'autocomplete-item';
             item.dataset.index = index;
             
+            // Handle both old string format and new object format
+            const suggestion = typeof suggestionData === 'string' ? suggestionData : suggestionData.title;
+            const matchType = typeof suggestionData === 'object' ? suggestionData.match_type : 'partial';
+            const isExactMatch = typeof suggestionData === 'object' ? suggestionData.is_exact_match : false;
+            
+            // Add match type indicator
+            if (isExactMatch) {
+                item.classList.add('exact-match');
+            } else if (matchType === 'prefix') {
+                item.classList.add('prefix-match');
+            } else if (matchType === 'related') {
+                item.classList.add('related-match');
+            }
+            
             // Highlight matching text
             const highlightedText = this.highlightMatch(suggestion, query);
-            item.innerHTML = highlightedText;
+            
+            // Add match type indicator
+            let matchIndicator = '';
+            if (isExactMatch) {
+                matchIndicator = '<span class="match-indicator exact">✓ Exact match</span>';
+            } else if (matchType === 'related') {
+                matchIndicator = '<span class="match-indicator related">~ Related</span>';
+            }
+            
+            item.innerHTML = `${highlightedText}${matchIndicator}`;
             
             item.addEventListener('click', () => {
                 this.selectAutocompleteItem(suggestion);
