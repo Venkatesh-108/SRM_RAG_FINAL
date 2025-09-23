@@ -286,10 +286,32 @@ class PDFExtractor:
             if clean_text == subheading or clean_text.startswith(subheading + ' '):
                 return True
         
-        # Also check for very short headings that are likely sub-sections
+        # Check for very short headings that are likely procedural sub-sections
+        # But preserve legitimate content subsections
         if len(clean_text.split()) <= 3 and len(clean_text) <= 25:
+            # Don't filter out legitimate content-oriented subsection headings
+            content_subsection_keywords = [
+                'adjusting', 'adding', 'datastores', 'configuring', 'installing',
+                'deploying', 'scaling', 'modifying', 'creating', 'setting',
+                'updating', 'managing', 'monitoring', 'troubleshooting',
+                'backup', 'restore', 'migration', 'upgrade', 'downgrade',
+                'security', 'performance', 'optimization', 'maintenance',
+                'network', 'storage', 'database', 'server', 'client',
+                'authentication', 'authorization', 'encryption', 'certificates',
+                'logging', 'reporting', 'dashboard', 'interface', 'api',
+                'integration', 'customization', 'templates', 'policies',
+                'virtual', 'physical', 'cloud', 'hybrid', 'cluster',
+                'containers', 'vms', 'hosts', 'endpoints', 'devices'
+            ]
+
+            # If it contains content-related keywords, keep it as a heading
+            for keyword in content_subsection_keywords:
+                if keyword in clean_text:
+                    return False  # Don't filter out - keep as heading
+
+            # Otherwise, filter out generic short headings
             return True
-            
+
         return False
 
     def _is_heading_text(self, text: str, size: float, is_bold: bool, body_size: float) -> bool:

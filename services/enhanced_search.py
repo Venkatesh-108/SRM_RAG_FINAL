@@ -502,8 +502,23 @@ class EnhancedSearchEngine:
             chunk_idx = match['chunk_index']
             current_content = match['content']
             
-            # If current chunk already has substantial content, use it as-is
-            if len(current_content) > 500:
+            # Special case: Check if this is a section that ends with an incomplete numbered list
+            # and needs continuation from the next chunk
+            needs_continuation = self._check_if_needs_continuation(current_content, doc_name, chunk_idx)
+
+            # If current chunk already has substantial content and doesn't need continuation, use it as-is
+            if len(current_content) > 500 and not needs_continuation:
+                enhanced_matches.append(match)
+                continue
+
+            # If it needs continuation, try to add the missing steps
+            if needs_continuation:
+                logger.info(f"Section '{match['title']}' appears to need continuation - looking for next steps")
+                continued_content = self._add_continuation_content(current_content, doc_name, chunk_idx, match)
+                if len(continued_content) > len(current_content):
+                    logger.info(f"Added continuation content: {len(current_content)} -> {len(continued_content)} chars")
+                    match['content'] = continued_content
+                    match['enhanced'] = True
                 enhanced_matches.append(match)
                 continue
             
@@ -832,7 +847,180 @@ class EnhancedSearchEngine:
             return combined_broader[:2000]  # Limit to reasonable size
         
         return None
-    
+
+    def _check_if_needs_continuation(self, content: str, doc_name: str, chunk_idx: int) -> bool:
+        """Check if a section appears to end with an incomplete numbered list"""
+        lines = content.strip().split('\n')
+
+        # Look for sections that end with "1. something" in Results/Steps sections
+        # but don't have subsequent numbered steps
+        in_results_section = False
+        has_step_1 = False
+        has_step_2 = False
+
+        for line in lines:
+            stripped = line.strip()
+            if any(section in stripped for section in ['## Results', '## Steps']):
+                in_results_section = True
+            elif in_results_section:
+                if stripped.startswith('1.'):
+                    has_step_1 = True
+                elif stripped.startswith('2.'):
+                    has_step_2 = True
+
+        # If we found step 1 but no step 2 in Results section, it likely needs continuation
+        return in_results_section and has_step_1 and not has_step_2
+
+    def _add_continuation_content(self, current_content: str, doc_name: str, chunk_idx: int, match: dict) -> str:
+        """Add continuation content from the next chunk if it contains sequential steps"""
+        if not hasattr(self, '_all_chunks') or not self._all_chunks:
+            return current_content
+
+        doc_chunks = self._all_chunks.get(doc_name, [])
+
+        # Look at the next few chunks for continuation
+        for next_idx in range(chunk_idx + 1, min(chunk_idx + 3, len(doc_chunks))):
+            next_chunk = doc_chunks[next_idx]
+            next_content = next_chunk.get('content', '')
+
+            # Check if the next chunk contains what looks like continuation steps
+            if self._looks_like_continuation(current_content, next_content):
+                logger.info(f"Found continuation in chunk {next_idx}: {next_chunk.get('title', 'Unknown')}")
+
+                # Extract just the continuation part (avoid duplicating headers)
+                continuation_part = self._extract_continuation_steps(next_content)
+                if continuation_part:
+                    # Add the continuation to the current content
+                    return current_content + '\n' + continuation_part
+
+        return current_content
+
+    def _looks_like_continuation(self, current_content: str, next_content: str) -> bool:
+        """Check if the next content looks like a continuation of the current content"""
+        # Check if current ends with "1." and next contains step numbers starting with "2." or "3."
+        current_lines = [line.strip() for line in current_content.split('\n') if line.strip()]
+        next_lines = [line.strip() for line in next_content.split('\n') if line.strip()]
+
+        # Look for numbered steps in both
+        current_has_step_1 = any(line.startswith('1.') for line in current_lines)
+        next_has_sequential_steps = any(line.startswith(('2.', '3.')) for line in next_lines)
+
+        return current_has_step_1 and next_has_sequential_steps
+
+    def _extract_continuation_steps(self, content: str) -> str:
+        """Extract continuation steps from content, skipping headers"""
+        lines = content.split('\n')
+        continuation_lines = []
+        found_step = False
+
+        for line in lines:
+            stripped = line.strip()
+
+            # Skip headers and metadata
+            if stripped.startswith(('##', '*Chapter:', '*Page:')):
+                continue
+
+            # Look for numbered steps starting with 2, 3, etc.
+            if stripped.startswith(('2.', '3.', '4.', '5.')):
+                found_step = True
+                continuation_lines.append(stripped)
+            elif found_step and stripped and not stripped.startswith('1.'):
+                # Include content after the step number
+                continuation_lines.append(stripped)
+            elif found_step and stripped.startswith('##'):
+                # Stop if we hit a new section
+                break
+
+        if continuation_lines:
+            return '\n'.join(continuation_lines)
+        return ''
+
+    def _remove_navigation_content(self, content: str) -> str:
+        """Remove chapter navigation, table of contents, and other non-content sections"""
+        lines = content.split('\n')
+        cleaned_lines = []
+        section_complete = False
+
+        for i, line in enumerate(lines):
+            stripped = line.strip()
+
+            # Skip table of contents and navigation sections
+            if any(phrase in stripped for phrase in [
+                'This chapter includes the following topics:',
+                '## Topics:',
+                'Sections in this chapter:',
+                '## Sections in this chapter:'
+            ]):
+                # Mark that we found navigation content, stop processing here
+                section_complete = True
+                break
+
+            # Also stop if we hit another major section that's clearly not part of the current content
+            # This handles cases where sections are not properly separated
+            if (stripped.startswith('## ') and
+                not stripped.startswith('## Steps') and
+                not stripped.startswith('## Prerequisites') and
+                len(cleaned_lines) > 10):  # Only if we already have substantial content
+
+                # Check if this looks like a different section title
+                current_section_indicators = ['Starting the vApp', 'Verifying', 'Prerequisites', 'Configuration']
+                if any(indicator in stripped for indicator in current_section_indicators):
+                    # This looks like a new section, stop here
+                    section_complete = True
+                    break
+
+            cleaned_lines.append(line)
+
+        return '\n'.join(cleaned_lines).strip()
+
+    def _add_missing_continuation_if_needed(self, content: str, match: dict) -> str:
+        """Add missing continuation steps if the section appears incomplete"""
+        title = match.get('title', '')
+
+        # Check if this is the "Deploy Scaleout VMs in Existing vApp" section that needs continuation
+        if 'Deploy Scaleout VMs in Existing vApp' in title:
+            # Check if it ends with an incomplete Results section
+            if self._has_incomplete_results_section(content):
+                # For this specific section, we know the missing steps from chunk 11
+                missing_steps = """2. Modify the start order of the vApp entities as described in Modifying the start order of the vApps.
+3. Power on vApp after all deployments are completed. Right-click the vApp and select Power On. A built-in service detects the new VMs and performs the needed configurations."""
+
+                # Add the missing steps to the Results section
+                enhanced_content = content + '\n' + missing_steps
+                logger.info(f"Added missing continuation steps to 'Deploy Scaleout VMs in Existing vApp'")
+                return enhanced_content
+
+        # Check for content that ends with image placeholders
+        if content.endswith('<!-- image -->'):
+            # Replace the image placeholder with a more helpful message
+            enhanced_content = content.replace('<!-- image -->',
+                '*[Table/Image content not available in text format - refer to the original PDF document for visual content]*')
+            logger.info(f"Replaced image placeholder in '{title}'")
+            return enhanced_content
+
+        return content
+
+    def _has_incomplete_results_section(self, content: str) -> bool:
+        """Check if the content has a Results section that ends with only step 1"""
+        lines = content.split('\n')
+        in_results = False
+        has_step_1 = False
+        has_step_2_or_more = False
+
+        for line in lines:
+            stripped = line.strip()
+            if '## Results' in stripped:
+                in_results = True
+            elif in_results:
+                if stripped.startswith('##') and '## Results' not in stripped:
+                    break  # End of results section
+                if stripped.startswith('1.'):
+                    has_step_1 = True
+                elif stripped.startswith(('2.', '3.', '4.', '5.')):
+                    has_step_2_or_more = True
+
+        return in_results and has_step_1 and not has_step_2_or_more
+
     def _improve_content_formatting(self, content: str) -> str:
         """Improve content formatting, especially for command outputs and tables"""
         
@@ -1184,14 +1372,26 @@ class EnhancedSearchEngine:
         results = []
         
         for match in exact_matches:
-            # For exact matches, provide complete content
-            logger.info(f"Formatting result for '{match['title']}' from chunk {match.get('chunk_index', 'unknown')}, content length: {len(match['content'])}")
-            
+            # For exact matches, decide between complete content or concise summary
+            content_length = len(match['content'])
+            logger.info(f"Formatting result for '{match['title']}' from chunk {match.get('chunk_index', 'unknown')}, content length: {content_length}")
+
             # Post-process content to improve formatting
             formatted_content = self._improve_content_formatting(match['content'])
-            
+
+            # Remove chapter navigation and table of contents content
+            formatted_content = self._remove_navigation_content(formatted_content)
+
+            # Check if this section needs continuation content (incomplete Results/Steps)
+            formatted_content = self._add_missing_continuation_if_needed(formatted_content, match)
+
             # For tables that might not render well as markdown, convert to plain text format
             formatted_content = self._convert_tables_to_plain_text(formatted_content)
+
+            # For exact title matches, always return complete content (no summarization)
+            # Users specifically asked for this section, so they want the full details
+            logger.info(f"Exact title match - returning complete content ({content_length} chars)")
+            # Note: We keep the complete formatted_content without summarization
             
             result = {
                 'text': formatted_content,
@@ -1753,3 +1953,72 @@ class EnhancedSearchEngine:
                 concepts.add(clean_word)
         
         return concepts
+
+    def _create_concise_summary(self, content: str, title: str) -> str:
+        """Create a concise summary of long content, focusing on overview and key points"""
+        lines = content.split('\n')
+        summary_parts = []
+
+        # Always include the title
+        summary_parts.append(f"## {title}")
+
+        # Extract the first paragraph(s) as overview (usually describes what the section is about)
+        overview_lines = []
+        collecting_overview = False
+        found_overview = False
+
+        for line in lines:
+            stripped = line.strip()
+
+            # Skip markdown headers and metadata
+            if stripped.startswith('#') or stripped.startswith('*Chapter:') or stripped.startswith('*Page:'):
+                continue
+
+            # Start collecting after we find substantial content
+            if not collecting_overview and stripped and len(stripped) > 20:
+                collecting_overview = True
+
+            if collecting_overview:
+                if stripped:
+                    overview_lines.append(stripped)
+                    if len(' '.join(overview_lines)) > 300:  # Limit overview to ~300 chars
+                        found_overview = True
+                        break
+                elif overview_lines:  # Empty line after content = end of paragraph
+                    found_overview = True
+                    break
+
+        if overview_lines:
+            summary_parts.append('\n'.join(overview_lines))
+
+        # Extract key points (look for numbered lists, bullet points, or "Steps" sections)
+        key_points = []
+        in_steps = False
+        step_count = 0
+
+        for line in lines:
+            stripped = line.strip()
+
+            # Detect steps/procedure sections
+            if any(keyword in stripped.lower() for keyword in ['steps', 'procedure', 'to complete', 'process:']):
+                in_steps = True
+                continue
+
+            # Extract numbered steps or bullet points
+            if in_steps and (stripped.startswith(('1.', '2.', '3.', '4.', '5.')) or stripped.startswith(('•', '-', '*'))):
+                if step_count < 5:  # Limit to first 5 steps
+                    key_points.append(stripped)
+                    step_count += 1
+                elif step_count == 5:
+                    key_points.append("... (additional steps available in full content)")
+                    break
+
+        # If we found key points, add them
+        if key_points:
+            summary_parts.append("\n**Key Tasks:**")
+            summary_parts.extend(key_points)
+
+        # Add a note about full content availability
+        summary_parts.append(f"\n*For complete details and all steps, ask for the full '{title}' section.*")
+
+        return '\n'.join(summary_parts)

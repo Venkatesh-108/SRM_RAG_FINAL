@@ -988,6 +988,7 @@ class SRMAIApp {
             
             // Handle both old string format and new object format
             const suggestion = typeof suggestionData === 'string' ? suggestionData : suggestionData.title;
+            const subtitle = typeof suggestionData === 'object' ? suggestionData.subtitle : '';
             const matchType = typeof suggestionData === 'object' ? suggestionData.match_type : 'partial';
             const isExactMatch = typeof suggestionData === 'object' ? suggestionData.is_exact_match : false;
             const documentName = typeof suggestionData === 'object' ? suggestionData.document : null;
@@ -1017,10 +1018,19 @@ class SRMAIApp {
                 matchIcon = '<span class="match-icon related" title="Related suggestion">~</span>';
             }
             
-            // Single line layout
+            // Create subtitle display if available
+            let subtitleHtml = '';
+            if (subtitle && subtitle.trim()) {
+                subtitleHtml = `<div class="suggestion-subtitle">${this.escapeHtml(subtitle)}</div>`;
+            }
+
+            // Multi-line layout with subtitle support
             item.innerHTML = `
                 <div class="suggestion-content">
-                    <span class="suggestion-title">${highlightedText}</span>
+                    <div class="suggestion-main">
+                        <div class="suggestion-title">${highlightedText}</div>
+                        ${subtitleHtml}
+                    </div>
                     <div class="suggestion-right">
                         ${documentIndicator}
                         ${matchIcon}

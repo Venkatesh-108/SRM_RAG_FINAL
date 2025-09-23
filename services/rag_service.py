@@ -109,25 +109,30 @@ class RAGService:
         if force_reindex:
             logger.info(f"Force reindexing all PDFs in {self.docs_path}")
             results = self.pdf_processor.process_batch(str(self.docs_path))
+            # Update registry after force reindex (assuming batch processing handles registry updates internally)
+            self._update_processed_files_registry()
         else:
             # Check for new or modified PDFs
             new_or_modified = self.detect_new_or_modified_pdfs()
-            
+
             if not new_or_modified:
                 logger.info("No new or modified PDFs detected. Skipping indexing.")
                 return {"status": "up_to_date", "processed_files": 0, "results": []}
-            
+
             logger.info(f"Processing {len(new_or_modified)} new/modified PDFs: {new_or_modified}")
-            
+
             # Process only new/modified files
             results = []
+            successfully_processed_files = []
+
             for filename in new_or_modified:
                 pdf_path = self.docs_path / filename
                 document_id = pdf_path.stem.replace(' ', '_').replace('-', '_')
-                
+
                 try:
                     result = self.pdf_processor.process_document(str(pdf_path), document_id)
                     results.append(result)
+                    successfully_processed_files.append(filename)
                     logger.info(f"Successfully processed: {filename}")
                 except Exception as e:
                     logger.error(f"Failed to process {filename}: {e}")
@@ -137,15 +142,16 @@ class RAGService:
                         "status": "error",
                         "error": str(e)
                     })
-        
-        # Update the processed files registry
-        self._update_processed_files_registry()
-        
+
+            # Update the processed files registry only with successfully processed files
+            if successfully_processed_files:
+                self._update_processed_files_registry_selective(successfully_processed_files)
+
         logger.info(f"Indexing completed. Results: {results}")
-        
+
         # After indexing, reload the searcher to include the new indexes
         self._load_searcher()
-        
+
         return {"status": "completed", "processed_files": len(results), "results": results}
 
     def _update_processed_files_registry(self):
@@ -154,6 +160,28 @@ class RAGService:
         registry = {
             "last_updated": datetime.now().isoformat(),
             "files": current_files
+        }
+        self._save_processed_files_registry(registry)
+
+    def _update_processed_files_registry_selective(self, successfully_processed_files: List[str]):
+        """Update the registry only with successfully processed files"""
+        # Load current registry
+        processed_registry = self._load_processed_files_registry()
+        existing_files = processed_registry.get('files', {})
+
+        # Get current file info for successfully processed files only
+        current_files = self._get_pdf_files_info()
+
+        # Update existing registry with only the successfully processed files
+        for filename in successfully_processed_files:
+            if filename in current_files:
+                existing_files[filename] = current_files[filename]
+                logger.info(f"Updated registry for successfully processed file: {filename}")
+
+        # Save updated registry
+        registry = {
+            "last_updated": datetime.now().isoformat(),
+            "files": existing_files
         }
         self._save_processed_files_registry(registry)
 
@@ -425,6 +453,13 @@ class RAGService:
                     for heading in headings:
                         title = heading.get('title', '').strip()
                         if title and len(title) > 3:  # Filter out very short titles
+
+                            # Filter out chapter-level titles to only show section/subsection titles
+                            if self._is_chapter_level_heading(heading):
+                                continue
+
+                            # Create subtitle from available metadata
+                            subtitle = self._create_subtitle_from_metadata(heading, doc_name)
                             # Enhanced normalization for better deduplication
                             # Remove leading/trailing punctuation and normalize spaces
                             normalized = title.lower().strip()
@@ -443,6 +478,7 @@ class RAGService:
                             if normalized not in title_map:
                                 title_map[normalized] = {
                                     "title": title,
+                                    "subtitle": subtitle,
                                     "document": doc_name,
                                     "doc_id": doc_id
                                 }
@@ -459,6 +495,7 @@ class RAGService:
                                     # Replace with cleaner version
                                     title_map[normalized] = {
                                         "title": title,
+                                        "subtitle": subtitle,
                                         "document": doc_name,
                                         "doc_id": doc_id
                                     }
@@ -470,6 +507,7 @@ class RAGService:
                                     if len(title) < len(existing):
                                         title_map[normalized] = {
                                             "title": title,
+                                            "subtitle": subtitle,
                                             "document": doc_name,
                                             "doc_id": doc_id
                                         }
@@ -494,6 +532,7 @@ class RAGService:
             for title_data in sorted_titles_data:
                 suggestion_data = {
                     "title": title_data["title"],
+                    "subtitle": title_data.get("subtitle", ""),
                     "document": title_data["document"],
                     "doc_id": title_data["doc_id"],
                     "score": 50,
@@ -552,6 +591,7 @@ class RAGService:
         for title_data, score in matching_titles[:limit]:
             suggestion_data = {
                 "title": title_data["title"],
+                "subtitle": title_data.get("subtitle", ""),
                 "document": title_data["document"],
                 "doc_id": title_data["doc_id"],
                 "score": score,
@@ -583,3 +623,202 @@ class RAGService:
         if not self.pdf_searcher:
             return []
         return self.pdf_searcher.list_documents()
+
+    def _is_chapter_level_heading(self, heading: Dict) -> bool:
+        """Determine if a heading is a chapter-level title that should be excluded from suggestions"""
+        title = heading.get('title', '').strip()
+        font_size = heading.get('font_size', 0)
+        heading_level = heading.get('heading_level', 5)
+        is_bold = heading.get('is_bold', False)
+
+        # Filter out very high-level headings (chapters)
+        # Criteria for chapter-level headings:
+
+        # 1. Very large font sizes (typically 20+ for chapters)
+        if font_size >= 24.0:
+            return True
+
+        # 2. Very low heading levels (1-2 are typically chapters)
+        if heading_level <= 2:
+            return True
+
+        # 3. Combination of large font + low level + bold
+        if font_size >= 20.0 and heading_level <= 3 and is_bold:
+            return True
+
+        # 4. Document title patterns (only filter very generic document-level titles)
+        title_lower = title.lower()
+        # Only filter complete document titles, not section titles that contain these words
+        document_level_patterns = [
+            'installation and configuration guide',
+            'user guide', 'user manual',
+            'administrator guide', 'admin guide',
+            'deployment guide', 'setup guide',
+            'document introduction',
+            'table of contents', 'contents',
+            'notes, cautions, and warnings',
+            'preface', 'foreword',
+            'appendix', 'glossary', 'index',
+            'copyright', 'legal information',
+            'open source', 'license information'
+        ]
+
+        # Only filter if the entire title matches these patterns (not just contains them)
+        for pattern in document_level_patterns:
+            if title_lower == pattern or title_lower.endswith(pattern):
+                return True
+
+        # 5. Very generic chapter names that are too broad
+        generic_chapters = [
+            'installing', 'installation', 'setup', 'configuration',
+            'deployment', 'getting started', 'overview', 'introduction'
+        ]
+
+        # Only filter these if they're standalone (whole title matches)
+        title_words = title_lower.split()
+        if len(title_words) <= 2 and any(word in title_words for word in generic_chapters):
+            return True
+
+        # 6. Table and Figure titles (filter only very generic ones, keep useful tables)
+        if title_lower.startswith(('figure ', 'fig. ')):
+            return True
+
+        # For tables, only filter if they're very generic (keep useful ones like checklists)
+        if title_lower.startswith('table '):
+            # Keep useful table titles like checklists, matrices, etc.
+            useful_table_keywords = ['checklist', 'matrix', 'comparison', 'requirements', 'options', 'settings']
+            if any(keyword in title_lower for keyword in useful_table_keywords):
+                return False  # Don't filter useful tables
+            return True  # Filter other generic tables
+
+        return False
+
+    def _extract_subtitle(self, content: str, title: str) -> str:
+        """Extract a short subtitle/description from section content"""
+        if not content or len(content.strip()) < 20:
+            return ""
+
+        lines = content.split('\n')
+        subtitle_candidates = []
+
+        # Look for the first substantial paragraph after the title
+        for line in lines:
+            stripped = line.strip()
+
+            # Skip empty lines, markdown headers, and metadata
+            if not stripped or stripped.startswith('#') or stripped.startswith('*'):
+                continue
+
+            # Skip very short lines (likely not descriptions)
+            if len(stripped) < 30:
+                continue
+
+            # Skip lines that look like code, commands, or file paths
+            if any(pattern in stripped.lower() for pattern in ['<!-- ', '</', 'http', 'www.', '.exe', '.conf']):
+                continue
+
+            # Skip lines that are clearly procedural steps (numbered or bulleted)
+            if stripped.startswith(('1.', '2.', '3.', '•', '-', '*')) and any(word in stripped.lower() for word in ['click', 'select', 'type', 'enter', 'run']):
+                continue
+
+            # This looks like a good description line
+            subtitle_candidates.append(stripped)
+
+            # Stop after we find the first good candidate
+            if len(stripped) > 50:
+                break
+
+        if subtitle_candidates:
+            subtitle = subtitle_candidates[0]
+
+            # Clean up the subtitle
+            # Remove ending periods and truncate if too long
+            if subtitle.endswith('.'):
+                subtitle = subtitle[:-1]
+
+            # Truncate if too long (aim for ~80-120 characters)
+            if len(subtitle) > 120:
+                # Try to cut at a word boundary
+                truncated = subtitle[:120]
+                last_space = truncated.rfind(' ')
+                if last_space > 80:  # Don't cut too short
+                    subtitle = truncated[:last_space] + "..."
+                else:
+                    subtitle = truncated + "..."
+
+            return subtitle
+
+        return ""
+
+    def _get_heading_content(self, doc_id: str, title: str) -> str:
+        """Get the content for a specific heading to extract subtitle"""
+        try:
+            # Try to get content from enhanced structure
+            if hasattr(self, 'pdf_searcher') and self.pdf_searcher and hasattr(self.pdf_searcher, 'enhanced_data'):
+                if doc_id in self.pdf_searcher.enhanced_data:
+                    enhanced_data = self.pdf_searcher.enhanced_data[doc_id]
+
+                    # Look through chapters and sections for matching title
+                    for chapter in enhanced_data.get('chapters', []):
+                        if chapter.get('title', '').strip().lower() == title.lower():
+                            return chapter.get('complete_content', '')
+
+                        for section in chapter.get('sections', []):
+                            if section.get('title', '').strip().lower() == title.lower():
+                                return section.get('complete_content', '')
+
+            # Fallback: try to get from chunks
+            if hasattr(self, 'pdf_searcher') and self.pdf_searcher and hasattr(self.pdf_searcher, 'document_chunks'):
+                if doc_id in self.pdf_searcher.document_chunks:
+                    doc_data = self.pdf_searcher.document_chunks[doc_id]
+                    chunks = doc_data.get('chunks', [])
+                    metadata_list = doc_data.get('metadata', [])
+
+                    for i, metadata in enumerate(metadata_list):
+                        if metadata.get('title', '').strip().lower() == title.lower():
+                            if i < len(chunks):
+                                return chunks[i]
+
+            return ""
+        except Exception as e:
+            logger.debug(f"Error getting content for heading '{title}': {e}")
+            return ""
+
+    def _create_subtitle_from_metadata(self, heading: Dict, doc_name: str) -> str:
+        """Create a subtitle from available heading metadata"""
+        subtitle_parts = []
+
+        # Add context about the section type
+        heading_level = heading.get('heading_level', 5)
+        if heading_level <= 3:
+            subtitle_parts.append("Major section")
+        elif heading_level <= 5:
+            subtitle_parts.append("Section")
+        else:
+            subtitle_parts.append("Subsection")
+
+        # Add page information if available
+        page = heading.get('page', 0)
+        if page > 0:
+            subtitle_parts.append(f"Page {page}")
+
+        # Add document context (shortened)
+        if doc_name:
+            # Shorten long document names
+            short_doc = doc_name
+            if len(short_doc) > 30:
+                # Take key words from document name
+                words = short_doc.split()
+                key_words = []
+                for word in words:
+                    if word.lower() not in ['and', 'the', 'guide', 'configuration']:
+                        key_words.append(word)
+                    if len(' '.join(key_words)) > 25:
+                        break
+                short_doc = ' '.join(key_words)
+                if len(short_doc) > 30:
+                    short_doc = short_doc[:27] + "..."
+
+            subtitle_parts.append(f"from {short_doc}")
+
+        return " | ".join(subtitle_parts)

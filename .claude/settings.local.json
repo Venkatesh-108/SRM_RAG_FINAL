@@ -5,7 +5,8 @@
       "Bash(find:*)",
       "Bash(dir)",
       "WebFetch(domain:localhost)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(dir:*)"
     ],
     "deny": [],
     "ask": []

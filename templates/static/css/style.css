@@ -466,21 +466,36 @@ body {
     opacity: 0.9;
 }
 
-/* Single-line autocomplete layout */
+/* Multi-line autocomplete layout with subtitle support */
 .suggestion-content {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
     gap: 12px;
+}
+
+.suggestion-main {
+    flex: 1;
+    min-width: 0; /* Allow text truncation */
 }
 
 .suggestion-title {
     font-weight: 500;
     color: #000000;
-    line-height: 1.4;
-    flex: 1;
-    min-width: 0; /* Allow text to shrink */
+    line-height: 1.2;
+}
+
+.suggestion-subtitle {
+    font-size: 0.85em;
+    color: #666;
+    margin-top: 3px;
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 .suggestion-right {
@@ -1928,13 +1943,15 @@ body {
 }
 
 .autocomplete-item {
-    padding: 14px 18px;
+    padding: 16px 18px;
     cursor: pointer;
     border-bottom: 1px solid #e8eaf6;
     transition: all 0.2s ease;
     font-size: 14px;
     color: #2c3e50;
-    line-height: 1.4;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
 }
 
 .autocomplete-item:last-child {
