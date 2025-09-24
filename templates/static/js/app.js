@@ -71,6 +71,14 @@ class SRMAIApp {
             hamburgerBtn.addEventListener('click', () => this.toggleSidebar());
         }
 
+        // Mobile backdrop click to close sidebar
+        const mobileBackdrop = document.getElementById('mobileBackdrop');
+        if (mobileBackdrop) {
+            mobileBackdrop.addEventListener('click', () => {
+                this.toggleSidebar(); // Close sidebar when backdrop is clicked
+            });
+        }
+
         // Collapsed icon buttons expand sidebar
         document.querySelectorAll('.collapsed-icon-btn').forEach(btn => {
             btn.addEventListener('click', () => {
@@ -79,6 +87,29 @@ class SRMAIApp {
                     sidebar.classList.remove('collapsed');
                 }
             });
+        });
+
+        // Window resize handler for desktop/mobile transitions
+        window.addEventListener('resize', () => {
+            const sidebar = document.querySelector('.sidebar');
+            const backdrop = document.getElementById('mobileBackdrop');
+            const body = document.body;
+
+            if (window.innerWidth >= 1024) {
+                // Desktop mode: clean up mobile classes
+                if (sidebar) {
+                    sidebar.classList.remove('active');
+                }
+                if (backdrop) {
+                    backdrop.classList.remove('active');
+                }
+                body.classList.remove('sidebar-open');
+            } else {
+                // Mobile mode: clean up desktop classes
+                if (sidebar) {
+                    sidebar.classList.remove('collapsed');
+                }
+            }
         });
 
         const clearChatsBtn = document.querySelector('.clear-chats-btn');
@@ -109,6 +140,40 @@ class SRMAIApp {
                 this.hideAutocomplete();
             }
         });
+
+        // Modal events
+        const modal = document.getElementById('confirmationModal');
+        if (modal) {
+            document.getElementById('modalCancelBtn').addEventListener('click', () => this.hideModal());
+            modal.addEventListener('click', (e) => {
+                if (e.target.id === 'confirmationModal') {
+                    this.hideModal();
+                }
+            });
+        }
+    }
+
+    showModal(title, message, onConfirm) {
+        document.getElementById('modalTitle').textContent = title;
+        document.getElementById('modalMessage').textContent = message;
+        
+        const confirmBtn = document.getElementById('modalConfirmBtn');
+        const newConfirmBtn = confirmBtn.cloneNode(true);
+        confirmBtn.parentNode.replaceChild(newConfirmBtn, confirmBtn);
+        
+        newConfirmBtn.addEventListener('click', () => {
+            onConfirm();
+            this.hideModal();
+        });
+        
+        document.getElementById('confirmationModal').style.display = 'flex';
+        setTimeout(() => document.getElementById('confirmationModal').classList.add('show'), 10);
+    }
+
+    hideModal() {
+        const modal = document.getElementById('confirmationModal');
+        modal.classList.remove('show');
+        setTimeout(() => modal.style.display = 'none', 300);
     }
 
     async uploadFile(file) {
@@ -163,7 +228,7 @@ class SRMAIApp {
                 const data = await response.json();
                 this.currentSessionId = data.session.session_id;
                 this.clearChatArea(); // Clear previous messages
-                this.showChatArea();
+                this.showWelcomeMessage(); // Show welcome message instead of empty chat
                 this.loadChatHistory();
                 console.log('New chat session created:', this.currentSessionId);
             } else {
@@ -241,6 +306,9 @@ class SRMAIApp {
     addMessageToChat(role, content, sources = [], isThinking = false) {
         const chatArea = document.getElementById('chatArea');
         if (!chatArea) return;
+
+        // Show chat area and hide welcome message when first message is added
+        this.showChatArea();
 
         const messageDiv = document.createElement('div');
         messageDiv.className = `chat-message ${role}-message`;
@@ -563,58 +631,60 @@ class SRMAIApp {
     }
 
     async clearAllChats() {
-        if (!confirm('Are you sure you want to clear all chat sessions? This action cannot be undone.')) {
-            return;
-        }
-
-        try {
-            const response = await fetch('/chat/sessions/clear', {
-                method: 'DELETE'
-            });
-
-            if (response.ok) {
-                this.currentSessionId = null;
-                this.clearChatArea();
-                this.loadChatHistory();
-                this.showWelcomeMessage();
-            } else {
-                console.error('Failed to clear all chats');
+        this.showModal(
+            'Clear All Chats',
+            'Are you sure you want to clear all chat sessions? This action cannot be undone.',
+            async () => {
+                try {
+                    const response = await fetch('/chat/sessions/clear', {
+                        method: 'DELETE'
+                    });
+        
+                    if (response.ok) {
+                        this.currentSessionId = null;
+                        this.clearChatArea();
+                        this.loadChatHistory();
+                        this.showWelcomeMessage();
+                    } else {
+                        console.error('Failed to clear all chats');
+                    }
+                } catch (error) {
+                    console.error('Error clearing all chats:', error);
+                }
             }
-        } catch (error) {
-            console.error('Error clearing all chats:', error);
-        }
+        );
     }
 
     async deleteIndividualChat(sessionId, chatTitle) {
-        if (!confirm(`Are you sure you want to delete "${chatTitle}"? This action cannot be undone.`)) {
-            return;
-        }
-
-        try {
-            const response = await fetch(`/chat/session/${sessionId}`, {
-                method: 'DELETE'
-            });
-
-            if (response.ok) {
-                // If the deleted chat was the current one, clear the chat area and show welcome
-                if (this.currentSessionId === sessionId) {
-                    this.currentSessionId = null;
-                    this.clearChatArea();
-                    this.showWelcomeMessage();
+        this.showModal(
+            `Delete "${chatTitle}"`,
+            'Are you sure you want to delete this chat? This action cannot be undone.',
+            async () => {
+                try {
+                    const response = await fetch(`/chat/session/${sessionId}`, {
+                        method: 'DELETE'
+                    });
+        
+                    if (response.ok) {
+                        if (this.currentSessionId === sessionId) {
+                            this.currentSessionId = null;
+                            this.clearChatArea();
+                            this.showWelcomeMessage();
+                        }
+                        
+                        this.loadChatHistory();
+                        console.log(`Chat "${chatTitle}" deleted successfully`);
+                    } else {
+                        const errorData = await response.json();
+                        console.error('Failed to delete chat:', errorData.detail);
+                        alert(`Failed to delete chat: ${errorData.detail}`);
+                    }
+                } catch (error) {
+                    console.error('Error deleting chat:', error);
+                    alert('An error occurred while deleting the chat. Please try again.');
                 }
-                
-                // Refresh the chat list
-                this.loadChatHistory();
-                console.log(`Chat "${chatTitle}" deleted successfully`);
-            } else {
-                const errorData = await response.json();
-                console.error('Failed to delete chat:', errorData.detail);
-                alert(`Failed to delete chat: ${errorData.detail}`);
             }
-        } catch (error) {
-            console.error('Error deleting chat:', error);
-            alert('An error occurred while deleting the chat. Please try again.');
-        }
+        );
     }
 
     clearChatArea() {
@@ -662,17 +732,18 @@ class SRMAIApp {
                         <i class="fas fa-robot"></i>
                     </div>
                     <div class="welcome-content">
-                        <h3 align="center">👋 Welcome to AI Doc Assist!</h3>
-                        
+                        <h3 align="center">Welcome to AI Doc Assist</h3>
+
                         <div class="llama-attribution" style="text-align: center; margin: 20px 0; padding: 10px; background: linear-gradient(135deg, #0d6efd 0%, #4a90e2 100%); color: white; border-radius: 8px; font-weight: 600;">
                             Built with Llama
                         </div>
-                        
+
                         <div class="quick-start">
-                            <p class="section-title"></p>
+                            <p class="section-title">How to get started:</p>
                             <ul class="start-steps">
-                                <li>Quick Start: 💬 Ask questions about your SRM Guides</li>
-                                <li>Try asking like: Ex: Uninstalling a SolutionPack</li>
+                                    <li>💬 Ask questions about your SRM documentation</li>
+                                <li>Example: "How to uninstall a SolutionPack?"</li>
+                               
                             </ul>
                         </div>
                     </div>
@@ -838,8 +909,32 @@ class SRMAIApp {
 
     toggleSidebar() {
         const sidebar = document.querySelector('.sidebar');
+        const backdrop = document.getElementById('mobileBackdrop');
+        const body = document.body;
+
         if (sidebar) {
-            sidebar.classList.toggle('collapsed');
+            // Check if we're in mobile view (window width < 1024px)
+            const isMobile = window.innerWidth < 1024;
+
+            if (isMobile) {
+                // Mobile behavior: toggle active class and backdrop
+                const isActive = sidebar.classList.contains('active');
+
+                if (isActive) {
+                    // Close sidebar
+                    sidebar.classList.remove('active');
+                    if (backdrop) backdrop.classList.remove('active');
+                    body.classList.remove('sidebar-open');
+                } else {
+                    // Open sidebar
+                    sidebar.classList.add('active');
+                    if (backdrop) backdrop.classList.add('active');
+                    body.classList.add('sidebar-open');
+                }
+            } else {
+                // Desktop behavior: toggle collapsed class
+                sidebar.classList.toggle('collapsed');
+            }
         }
     }
 
@@ -988,6 +1083,7 @@ class SRMAIApp {
             
             // Handle both old string format and new object format
             const suggestion = typeof suggestionData === 'string' ? suggestionData : suggestionData.title;
+            const subtitle = typeof suggestionData === 'object' ? suggestionData.subtitle : '';
             const matchType = typeof suggestionData === 'object' ? suggestionData.match_type : 'partial';
             const isExactMatch = typeof suggestionData === 'object' ? suggestionData.is_exact_match : false;
             const documentName = typeof suggestionData === 'object' ? suggestionData.document : null;
@@ -1017,10 +1113,19 @@ class SRMAIApp {
                 matchIcon = '<span class="match-icon related" title="Related suggestion">~</span>';
             }
             
-            // Single line layout
+            // Create subtitle display if available
+            let subtitleHtml = '';
+            if (subtitle && subtitle.trim()) {
+                subtitleHtml = `<div class="suggestion-subtitle">${this.escapeHtml(subtitle)}</div>`;
+            }
+
+            // Multi-line layout with subtitle support
             item.innerHTML = `
                 <div class="suggestion-content">
-                    <span class="suggestion-title">${highlightedText}</span>
+                    <div class="suggestion-main">
+                        <div class="suggestion-title">${highlightedText}</div>
+                        ${subtitleHtml}
+                    </div>
                     <div class="suggestion-right">
                         ${documentIndicator}
                         ${matchIcon}

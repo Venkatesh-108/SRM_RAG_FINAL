@@ -21,6 +21,10 @@
             <span class="brand-name">AI Doc Assist</span>
         </div>
     </div>
+
+    <!-- Mobile backdrop for sidebar -->
+    <div class="mobile-backdrop" id="mobileBackdrop"></div>
+
     <div class="app-container">
         <!-- Left Sidebar -->
         <aside class="sidebar" id="sidebar">
@@ -128,9 +132,21 @@
     </div>
 
     <!-- Llama License Attribution Footer -->
-    <footer style="position: fixed; bottom: 0; left: 0; right: 0; background: #2c3e50; color: white; text-align: center; padding: 8px; font-size: 12px; z-index: 1000;">
+    <footer style="position: fixed; bottom: 0; left: 0; right: 0; background: #2c3e50; color: white; text-align: center; padding: 6px; font-size: 10px; z-index: 999; height: 24px;">
         <span>Built with Llama • Powered by Llama 3.2 Community License</span>
     </footer>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmationModal" class="modal-backdrop" style="display: none;">
+        <div class="modal-content">
+            <h3 id="modalTitle">Confirm Deletion</h3>
+            <p id="modalMessage">Are you sure you want to proceed?</p>
+            <div class="modal-actions">
+                <button id="modalCancelBtn" class="modal-btn cancel-btn">Cancel</button>
+                <button id="modalConfirmBtn" class="modal-btn confirm-btn">Confirm</button>
+            </div>
+        </div>
+    </div>
 
     <script src="/static/js/app.js"></script>
 </body>
