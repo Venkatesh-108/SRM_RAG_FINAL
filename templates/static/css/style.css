@@ -94,7 +94,7 @@ p, span, div, li, td, th {
 }
 
 .topbar .brand .brand-name {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 400;
     letter-spacing: -0.02em;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -385,6 +385,14 @@ p, span, div, li, td, th {
     margin-bottom: 4px;
 }
 
+/* Make the last section (documents) expand to fill remaining space */
+.sidebar-section:last-child {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
 /* New Chat section - keep original size */
 .sidebar-section:first-child {
     flex-shrink: 0;
@@ -398,12 +406,13 @@ p, span, div, li, td, th {
     overflow-y: auto;
 }
 
-/* Documents section - more height */
+/* Documents section - take remaining height */
 .sidebar-section:nth-child(3) {
     display: flex;
     flex-direction: column;
-    max-height: 30vh;
-    overflow-y: auto;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
 }
 .section-header {
     display: flex;
@@ -640,7 +649,12 @@ p, span, div, li, td, th {
     overflow-y: auto;
     padding-right: 8px;
     min-height: 0; /* Allow to shrink */
-    max-height: calc(30vh - 60px); /* Account for header height */
+}
+
+.chat-list, .doc-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
 }
 
 .doc-list {
@@ -648,13 +662,7 @@ p, span, div, li, td, th {
     overflow-y: auto;
     padding-right: 8px;
     min-height: 0; /* Allow to shrink */
-    max-height: calc(30vh - 60px); /* Account for header height */
-}
-
-.chat-list, .doc-list {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+    max-height: 100%; /* Ensure it doesn't exceed parent */
 }
 .chat-item {
     display: flex;
@@ -1957,7 +1965,7 @@ p, span, div, li, td, th {
     }
 
     .topbar .brand .brand-name {
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 800;
         letter-spacing: -0.02em;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
