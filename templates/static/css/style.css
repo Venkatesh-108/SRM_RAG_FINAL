@@ -11,15 +11,15 @@
     --sidebar-bg-grad-1: #263238;
     --sidebar-bg-grad-2: #2f3d45;
     --sidebar-bg-grad-3: #37474f;
-    --main-bg: #f5f7fa;
+    --main-bg: #f7f9fc; /* Lighter, cooler background */
     --text-primary-dark: #ffffff;
     --text-secondary-dark: #cfd8dc;
-    --text-primary-light: #22313f;
-    --text-secondary-light: #607d8b;
+    --text-primary-light: #2d3748; /* Darker text for better contrast */
+    --text-secondary-light: #718096; /* Softer secondary text */
     --accent-primary: #0d6efd; /* Dell blue */
     --accent-secondary: #66a3ff;
     --accent-emphasis: #0b5ed7;
-    --border-color: #e3e7ef;
+    --border-color: #e2e8f0; /* Softer border color */
     --card-bg: #ffffff;
     --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.05);
     --shadow-medium: 0 8px 24px rgba(0, 0, 0, 0.08);
@@ -140,7 +140,7 @@ body {
     height: 100%; /* Fill container, not viewport */
     padding: 0 12px 12px 12px;
     border-right: 1px solid #0f0f0f;
-    box-shadow: var(--shadow-medium);
+    box-shadow: 5px 0 25px -5px rgba(0, 0, 0, 0.1); /* Subtle right shadow */
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease, width 0.3s ease;
@@ -356,6 +356,7 @@ body {
 .new-chat-btn:hover {
     background: #3a3a3a;
     border-color: #505050;
+    transform: translateY(-2px); /* Add a subtle lift */
 }
 
 
@@ -714,6 +715,7 @@ body {
 .chat-content:hover {
     background: #3a3a3a;
     color: white;
+    transform: translateY(-2px); /* Add a subtle lift */
 }
 
 .chat-item.active,
@@ -758,6 +760,7 @@ body {
 .doc-item:hover {
     background: #3a3a3a;
     color: #ffffff;
+    transform: translateY(-2px); /* Add a subtle lift */
 }
 
 
@@ -1149,7 +1152,7 @@ body {
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07); /* Slightly stronger shadow */
     max-width: 95%;
     margin: 0 auto 0 auto;
 }
@@ -1167,7 +1170,7 @@ body {
 
 .input-wrapper:focus-within {
     border-color: var(--accent-primary);
-    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.1), 0 8px 24px rgba(108, 92, 231, 0.1);
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1), 0 8px 24px rgba(13, 110, 253, 0.15); /* Softer blue glow */
 }
 
 #chatInput {
@@ -1354,6 +1357,11 @@ body {
 
 .assistant-message .message-content {
     text-align: left;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 25px rgba(45, 55, 72, 0.08); /* Subtle shadow */
+    border: 1px solid var(--border-color);
 }
 
 .message-content p {
@@ -1375,28 +1383,30 @@ body {
     max-width: fit-content;
     font-size: 14px;
     padding: 10px 16px;
+    box-shadow: 0 4px 15px rgba(0, 118, 255, 0.1); /* Subtle blue shadow */
 }
 
 .assistant-message .message-content p {
-    background: white;
-    color: #2d3748;
-    border: 1px solid #e2e8f0;
-    border-top-left-radius: 6px;
-    margin-right: auto;
-    max-width: fit-content;
+    background: transparent;
+    color: inherit;
+    border: none;
+    border-radius: 0;
+    margin-right: 0;
+    max-width: 100%;
     font-size: 16px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    box-shadow: none;
+    padding: 0;
+    line-height: inherit;
 }
 
 .message-sources {
-    margin-top: 12px;
-    padding: 12px;
-    background: rgba(108, 92, 231, 0.04);
-    border-radius: 12px;
-    border: 1px solid rgba(108, 92, 231, 0.12);
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color);
     font-size: 13px;
     color: #4a5568;
-    box-shadow: 0 2px 8px rgba(13, 110, 253, 0.06);
+    box-shadow: none; /* Remove previous shadow */
+    background: transparent; /* Remove previous background */
 }
 
 .source-item {
@@ -1443,14 +1453,14 @@ body {
 
 /* Inline code styling */
 .message-content code {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    background: #f1f3f5;
     padding: 3px 8px;
     border-radius: 6px;
     font-family: 'JetBrains Mono', 'Courier New', monospace;
-    font-size: 0.85em;
+    font-size: 0.9em;
     color: #495057;
     border: 1px solid #dee2e6;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: none;
     font-weight: 500;
 }
 
@@ -1675,57 +1685,52 @@ body {
 }
 
 .message-content h1 {
-    font-size: 1.2em;
+    font-size: 1.25em;
     font-weight: 700;
-    margin: 10px 0 0px 0;
-    color: #2c3e50;
+    margin: 0 0 12px 0; /* Adjusted spacing */
+    color: var(--text-primary-light);
     border-bottom: 2px solid var(--accent-primary);
-    padding-bottom: 2px;
-    margin-bottom: 4px;
+    padding-bottom: 8px;
 }
 
 .message-content h2 {
-    font-size: 1.1em;
+    font-size: 1.15em;
     font-weight: 600;
-    margin: 8px 0 0px 0;
-    color: #2c3e50;
-    border-bottom: 2px solid var(--accent-secondary);
-    padding-bottom: 2px;
-    margin-bottom: 2px;
+    margin: 16px 0 8px 0;
+    color: var(--text-primary-light);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 6px;
 }
 
 .message-content h3 {
-    font-size: 1.05em;
+    font-size: 1.1em;
     font-weight: 600;
-    margin: 6px 0 0px 0;
-    color: #2c3e50;
-    border-bottom: 1px solid #ecf0f1;
-    padding-bottom: 2px;
-    margin-bottom: 2px;
+    margin: 16px 0 8px 0;
+    color: var(--text-primary-light);
+    border-bottom: none; /* Removed underline */
+    padding-bottom: 0;
 }
 
 .message-content h4 {
-    font-size: 1.0em;
+    font-size: 1em;
     font-weight: 600;
-    margin: 6px 0 0px 0;
-    color: #34495e;
-    margin-bottom: 2px;
+    margin: 16px 0 4px 0;
+    color: var(--text-primary-light);
 }
 
 .message-content h5 {
     font-size: 0.95em;
     font-weight: 600;
-    margin: 5px 0 0px 0;
-    color: #34495e;
-    margin-bottom: 1px;
+    margin: 12px 0 4px 0;
+    color: var(--text-secondary-light);
 }
 
 .message-content h6 {
     font-size: 0.9em;
     font-weight: 600;
-    margin: 5px 0 0px 0;
-    color: #34495e;
-    margin-bottom: 1px;
+    margin: 12px 0 4px 0;
+    color: var(--text-secondary-light);
+    text-transform: uppercase; /* Uppercase for emphasis */
 }
 
 .message-content p {
