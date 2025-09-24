@@ -439,6 +439,10 @@ p, span, div, li, td, th {
     border-radius: 4px;
     transition: all 0.2s ease;
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
 }
 
 .expandable-header:hover {
@@ -448,7 +452,7 @@ p, span, div, li, td, th {
 .header-content {
     display: flex;
     align-items: center;
-    gap: 8px;
+    justify-content: space-between;
     flex: 1;
 }
 
@@ -456,13 +460,16 @@ p, span, div, li, td, th {
     font-size: 10px;
     color: var(--text-secondary-dark);
     transition: transform 0.2s ease;
-    margin-left: auto;
     width: 16px;
     text-align: center;
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .expand-icon.expanded {
-    transform: rotate(180deg);
+    transform: translateY(-50%) rotate(180deg);
 }
 
 /* Expandable content styles */
