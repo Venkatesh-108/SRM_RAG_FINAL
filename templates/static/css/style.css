@@ -1290,14 +1290,12 @@ body {
 /* Chat Area and Messages */
 .chat-area {
     flex: 1;
-    padding: 8px 12px 8px 12px; /* Minimal padding for proper spacing */
+    padding: 8px 16px 8px 16px; /* Full padding for proper spacing */
     overflow-y: auto;
     display: flex;
     flex-direction: column;
     gap: 16px;
-    max-width: 95%;
-    margin: 0 auto;
-    width: 100%;
+    width: 100%; /* Take full available width */
     background: #fafafa;
     scroll-behavior: smooth;
 }
