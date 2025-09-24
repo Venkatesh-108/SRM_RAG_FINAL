@@ -136,8 +136,9 @@ body {
     transform: translateX(0);
     padding: 0;
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 .sidebar.collapsed .sidebar-content {
@@ -145,12 +146,15 @@ body {
     pointer-events: auto;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
-    padding: 16px 0 0 8px;
+    padding: 12px 0;
     width: 100%;
     height: 100%;
-    gap: 16px;
+    gap: 8px;
+    position: absolute;
+    left: 0;
+    right: 0;
 }
 
 .sidebar.collapsed .logo-text {
@@ -161,9 +165,11 @@ body {
     width: 40px;
     height: 40px;
     padding: 0;
-    border-radius: 50%;
+    border-radius: 6px;
     justify-content: center;
-    margin: 0;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
 }
 
 .sidebar.collapsed .new-chat-btn span {
@@ -190,8 +196,11 @@ body {
     display: flex !important;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    justify-content: flex-start;
+    gap: 8px;
     margin: 0;
+    width: 100%;
+    padding: 0;
 }
 
 .collapsed-icon-btn {
@@ -200,12 +209,13 @@ body {
     background: #2a2a2a;
     color: #ffffff;
     border: 1px solid #404040;
-    border-radius: 50%;
+    border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: all 0.2s ease;
+    margin: 0 auto;
 }
 
 .collapsed-icon-btn:hover {
@@ -214,6 +224,10 @@ body {
 }
 
 .collapsed-icon-btn i {
+    font-size: 16px;
+}
+
+.sidebar.collapsed .new-chat-btn i {
     font-size: 16px;
 }
 
