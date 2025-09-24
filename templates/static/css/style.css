@@ -422,15 +422,21 @@ p, span, div, li, td, th {
     flex-shrink: 0;
 }
 
-/* Recent Chats section - limited height */
+/* Recent Chats section - take only what it needs */
 .sidebar-section:nth-child(2) {
     display: flex;
     flex-direction: column;
-    max-height: 20vh;
+    flex: 0 0 auto;
+    max-height: none;
+    overflow-y: visible;
+}
+
+.sidebar-section:nth-child(2) .chat-list {
+    max-height: 30vh;
     overflow-y: auto;
 }
 
-/* Documents section - take remaining height */
+/* Documents section - take ALL remaining height */
 .sidebar-section:nth-child(3) {
     display: flex;
     flex-direction: column;
