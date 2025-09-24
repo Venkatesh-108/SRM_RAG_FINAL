@@ -693,17 +693,18 @@ class SRMAIApp {
                         <i class="fas fa-robot"></i>
                     </div>
                     <div class="welcome-content">
-                        <h3 align="center">👋 Welcome to AI Doc Assist!</h3>
-                        
+                        <h3 align="center">Welcome to AI Doc Assist</h3>
+
                         <div class="llama-attribution" style="text-align: center; margin: 20px 0; padding: 10px; background: linear-gradient(135deg, #0d6efd 0%, #4a90e2 100%); color: white; border-radius: 8px; font-weight: 600;">
                             Built with Llama
                         </div>
-                        
+
                         <div class="quick-start">
-                            <p class="section-title"></p>
+                            <p class="section-title">How to get started:</p>
                             <ul class="start-steps">
-                                <li>Quick Start: 💬 Ask questions about your SRM Guides</li>
-                                <li>Try asking like: Ex: Uninstalling a SolutionPack</li>
+                                    <li>💬 Ask questions about your SRM documentation</li>
+                                <li>Example: "How to uninstall a SolutionPack?"</li>
+                               
                             </ul>
                         </div>
                     </div>

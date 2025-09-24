@@ -844,11 +844,13 @@ body {
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Changed from center to start */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
 }
 .welcome-container {
-    text-align: left;
-    max-width: 50%;
+    text-align: center;
+    max-width: 600px; /* Fixed width instead of percentage */
+    width: 90%; /* Responsive width */
     margin: 0 auto;
     animation: fadeInWelcome 0.6s ease-out forwards;
 }
@@ -857,7 +859,19 @@ body {
 @media (max-width: 768px) {
     .welcome-container {
         max-width: 95%;
+        width: 95%;
         padding: 0 10px;
+        text-align: center;
+    }
+}
+
+/* Better welcome message sizing */
+@media (max-width: 600px) {
+    .welcome-container {
+        max-width: 100%;
+        width: 98%;
+        margin: 0 auto;
+        padding: 0 5px;
     }
 }
 
@@ -969,12 +983,14 @@ body {
     font-weight: 600;
     color: var(--text-primary-light);
     margin-bottom: 4px;
+    text-align: center; /* Center align section title */
 }
 
 .start-steps {
     list-style: none;
     padding: 0;
     margin: 0;
+    text-align: center; /* Center align the entire list */
 }
 
 .start-steps li {
@@ -982,6 +998,21 @@ body {
     color: var(--text-secondary-light);
     margin-bottom: 4px;
     padding-left: 0;
+    text-align: center; /* Center align each list item */
+}
+
+/* Ensure all welcome message content is centered */
+.welcome-content {
+    text-align: center;
+}
+
+.welcome-content h3 {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.quick-start {
+    text-align: center;
 }
 
 .example-prompts {
@@ -1240,6 +1271,12 @@ body {
     width: 100%;
     background: #fafafa;
     scroll-behavior: smooth;
+}
+
+/* When chat area is visible, adjust content-area alignment */
+.content-area:has(.chat-area[style*="display: block"]) {
+    justify-content: flex-start;
+    align-items: stretch;
 }
 
 .chat-message {
