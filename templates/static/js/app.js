@@ -194,7 +194,7 @@ class SRMAIApp {
                 const data = await response.json();
                 this.currentSessionId = data.session.session_id;
                 this.clearChatArea(); // Clear previous messages
-                this.showChatArea();
+                this.showWelcomeMessage(); // Show welcome message instead of empty chat
                 this.loadChatHistory();
                 console.log('New chat session created:', this.currentSessionId);
             } else {
@@ -272,6 +272,9 @@ class SRMAIApp {
     addMessageToChat(role, content, sources = [], isThinking = false) {
         const chatArea = document.getElementById('chatArea');
         if (!chatArea) return;
+
+        // Show chat area and hide welcome message when first message is added
+        this.showChatArea();
 
         const messageDiv = document.createElement('div');
         messageDiv.className = `chat-message ${role}-message`;
