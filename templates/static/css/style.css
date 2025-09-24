@@ -840,17 +840,25 @@ body {
 
 .content-area {
     flex: 1;
-    padding: 12px 16px 0px 16px; /* Reduced padding */
+    padding: 8px 16px 0px 16px; /* Further reduced padding */
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start; /* Changed from center to start */
 }
 .welcome-container {
     text-align: left;
     max-width: 50%;
     margin: 0 auto;
     animation: fadeInWelcome 0.6s ease-out forwards;
+}
+
+/* Mobile responsive welcome container */
+@media (max-width: 768px) {
+    .welcome-container {
+        max-width: 95%;
+        padding: 0 10px;
+    }
 }
 
 @keyframes fadeInWelcome {
@@ -1054,11 +1062,12 @@ body {
 
 /* Chat Input Area */
 .chat-input-container {
-    padding: 8px 12px 30px 12px; /* Reduced padding */
+    padding: 8px 12px 12px 12px; /* Further reduced bottom padding */
     border-top: 1px solid var(--border-color);
     background: #ffffff;
     position: relative;
     z-index: 800;
+    margin-bottom: 8px; /* Reduced margin for fixed footer */
 }
 
 .chat-input-container::before {
@@ -1221,7 +1230,7 @@ body {
 /* Chat Area and Messages */
 .chat-area {
     flex: 1;
-    /* padding: 12px 12px 30px 12px; Reduced padding */
+    padding: 8px 12px 8px 12px; /* Minimal padding for proper spacing */
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -1799,11 +1808,31 @@ body {
     }
 }
 
+/* Mobile backdrop for sidebar */
+.mobile-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1250;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-backdrop.active {
+    display: block;
+    opacity: 1;
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
     .sidebar {
         position: fixed;
         transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1300;
     }
     .sidebar.active {
         transform: translateX(0);
@@ -1812,11 +1841,74 @@ body {
     .main-header .mobile-menu-btn {
         display: block;
     }
+
+    /* Prevent body scroll when sidebar is open */
+    body.sidebar-open {
+        overflow: hidden;
+    }
 }
 @media (max-width: 768px) {
     .main-header, .content-area, .chat-input-container {
-        padding-left: 16px;
-        padding-right: 16px;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    /* Mobile topbar adjustments */
+    .topbar {
+        padding: 0 12px;
+        height: 48px;
+    }
+
+    body {
+        padding-top: 48px;
+    }
+
+    :root {
+        --topbar-h: 48px;
+    }
+
+    .topbar .brand .brand-name {
+        font-size: 14px;
+    }
+
+    /* Mobile sidebar improvements */
+    .sidebar {
+        width: 280px;
+        z-index: 1300; /* Higher than topbar */
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+        box-shadow: 0 0 40px rgba(0,0,0,0.3);
+    }
+
+    /* Chat input mobile optimization */
+    .chat-input-container {
+        padding: 6px 8px 8px 8px;
+        margin-bottom: 12px;
+    }
+
+    .input-wrapper {
+        max-width: 100%;
+        padding: 4px 8px;
+    }
+
+    #chatInput {
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+
+    /* Autocomplete mobile adjustments */
+    .autocomplete-dropdown {
+        min-width: unset;
+        left: 8px;
+        right: 8px;
+        max-height: 200px;
+    }
+
+    .autocomplete-item {
+        padding: 12px 14px;
+        min-height: 50px;
+        font-size: 13px;
     }
 }
 

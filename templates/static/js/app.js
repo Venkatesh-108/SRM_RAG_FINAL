@@ -71,6 +71,14 @@ class SRMAIApp {
             hamburgerBtn.addEventListener('click', () => this.toggleSidebar());
         }
 
+        // Mobile backdrop click to close sidebar
+        const mobileBackdrop = document.getElementById('mobileBackdrop');
+        if (mobileBackdrop) {
+            mobileBackdrop.addEventListener('click', () => {
+                this.toggleSidebar(); // Close sidebar when backdrop is clicked
+            });
+        }
+
         // Collapsed icon buttons expand sidebar
         document.querySelectorAll('.collapsed-icon-btn').forEach(btn => {
             btn.addEventListener('click', () => {
@@ -79,6 +87,29 @@ class SRMAIApp {
                     sidebar.classList.remove('collapsed');
                 }
             });
+        });
+
+        // Window resize handler for desktop/mobile transitions
+        window.addEventListener('resize', () => {
+            const sidebar = document.querySelector('.sidebar');
+            const backdrop = document.getElementById('mobileBackdrop');
+            const body = document.body;
+
+            if (window.innerWidth >= 1024) {
+                // Desktop mode: clean up mobile classes
+                if (sidebar) {
+                    sidebar.classList.remove('active');
+                }
+                if (backdrop) {
+                    backdrop.classList.remove('active');
+                }
+                body.classList.remove('sidebar-open');
+            } else {
+                // Mobile mode: clean up desktop classes
+                if (sidebar) {
+                    sidebar.classList.remove('collapsed');
+                }
+            }
         });
 
         const clearChatsBtn = document.querySelector('.clear-chats-btn');
@@ -838,8 +869,32 @@ class SRMAIApp {
 
     toggleSidebar() {
         const sidebar = document.querySelector('.sidebar');
+        const backdrop = document.getElementById('mobileBackdrop');
+        const body = document.body;
+
         if (sidebar) {
-            sidebar.classList.toggle('collapsed');
+            // Check if we're in mobile view (window width < 1024px)
+            const isMobile = window.innerWidth < 1024;
+
+            if (isMobile) {
+                // Mobile behavior: toggle active class and backdrop
+                const isActive = sidebar.classList.contains('active');
+
+                if (isActive) {
+                    // Close sidebar
+                    sidebar.classList.remove('active');
+                    if (backdrop) backdrop.classList.remove('active');
+                    body.classList.remove('sidebar-open');
+                } else {
+                    // Open sidebar
+                    sidebar.classList.add('active');
+                    if (backdrop) backdrop.classList.add('active');
+                    body.classList.add('sidebar-open');
+                }
+            } else {
+                // Desktop behavior: toggle collapsed class
+                sidebar.classList.toggle('collapsed');
+            }
         }
     }
 
