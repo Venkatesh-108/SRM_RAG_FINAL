@@ -136,6 +136,18 @@
         <span>Built with Llama • Powered by Llama 3.2 Community License</span>
     </footer>
 
+    <!-- Confirmation Modal -->
+    <div id="confirmationModal" class="modal-backdrop" style="display: none;">
+        <div class="modal-content">
+            <h3 id="modalTitle">Confirm Deletion</h3>
+            <p id="modalMessage">Are you sure you want to proceed?</p>
+            <div class="modal-actions">
+                <button id="modalCancelBtn" class="modal-btn cancel-btn">Cancel</button>
+                <button id="modalConfirmBtn" class="modal-btn confirm-btn">Confirm</button>
+            </div>
+        </div>
+    </div>
+
     <script src="/static/js/app.js"></script>
 </body>
 </html>

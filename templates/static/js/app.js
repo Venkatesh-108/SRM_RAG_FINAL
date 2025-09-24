@@ -140,6 +140,40 @@ class SRMAIApp {
                 this.hideAutocomplete();
             }
         });
+
+        // Modal events
+        const modal = document.getElementById('confirmationModal');
+        if (modal) {
+            document.getElementById('modalCancelBtn').addEventListener('click', () => this.hideModal());
+            modal.addEventListener('click', (e) => {
+                if (e.target.id === 'confirmationModal') {
+                    this.hideModal();
+                }
+            });
+        }
+    }
+
+    showModal(title, message, onConfirm) {
+        document.getElementById('modalTitle').textContent = title;
+        document.getElementById('modalMessage').textContent = message;
+        
+        const confirmBtn = document.getElementById('modalConfirmBtn');
+        const newConfirmBtn = confirmBtn.cloneNode(true);
+        confirmBtn.parentNode.replaceChild(newConfirmBtn, confirmBtn);
+        
+        newConfirmBtn.addEventListener('click', () => {
+            onConfirm();
+            this.hideModal();
+        });
+        
+        document.getElementById('confirmationModal').style.display = 'flex';
+        setTimeout(() => document.getElementById('confirmationModal').classList.add('show'), 10);
+    }
+
+    hideModal() {
+        const modal = document.getElementById('confirmationModal');
+        modal.classList.remove('show');
+        setTimeout(() => modal.style.display = 'none', 300);
     }
 
     async uploadFile(file) {
@@ -597,58 +631,60 @@ class SRMAIApp {
     }
 
     async clearAllChats() {
-        if (!confirm('Are you sure you want to clear all chat sessions? This action cannot be undone.')) {
-            return;
-        }
-
-        try {
-            const response = await fetch('/chat/sessions/clear', {
-                method: 'DELETE'
-            });
-
-            if (response.ok) {
-                this.currentSessionId = null;
-                this.clearChatArea();
-                this.loadChatHistory();
-                this.showWelcomeMessage();
-            } else {
-                console.error('Failed to clear all chats');
+        this.showModal(
+            'Clear All Chats',
+            'Are you sure you want to clear all chat sessions? This action cannot be undone.',
+            async () => {
+                try {
+                    const response = await fetch('/chat/sessions/clear', {
+                        method: 'DELETE'
+                    });
+        
+                    if (response.ok) {
+                        this.currentSessionId = null;
+                        this.clearChatArea();
+                        this.loadChatHistory();
+                        this.showWelcomeMessage();
+                    } else {
+                        console.error('Failed to clear all chats');
+                    }
+                } catch (error) {
+                    console.error('Error clearing all chats:', error);
+                }
             }
-        } catch (error) {
-            console.error('Error clearing all chats:', error);
-        }
+        );
     }
 
     async deleteIndividualChat(sessionId, chatTitle) {
-        if (!confirm(`Are you sure you want to delete "${chatTitle}"? This action cannot be undone.`)) {
-            return;
-        }
-
-        try {
-            const response = await fetch(`/chat/session/${sessionId}`, {
-                method: 'DELETE'
-            });
-
-            if (response.ok) {
-                // If the deleted chat was the current one, clear the chat area and show welcome
-                if (this.currentSessionId === sessionId) {
-                    this.currentSessionId = null;
-                    this.clearChatArea();
-                    this.showWelcomeMessage();
+        this.showModal(
+            `Delete "${chatTitle}"`,
+            'Are you sure you want to delete this chat? This action cannot be undone.',
+            async () => {
+                try {
+                    const response = await fetch(`/chat/session/${sessionId}`, {
+                        method: 'DELETE'
+                    });
+        
+                    if (response.ok) {
+                        if (this.currentSessionId === sessionId) {
+                            this.currentSessionId = null;
+                            this.clearChatArea();
+                            this.showWelcomeMessage();
+                        }
+                        
+                        this.loadChatHistory();
+                        console.log(`Chat "${chatTitle}" deleted successfully`);
+                    } else {
+                        const errorData = await response.json();
+                        console.error('Failed to delete chat:', errorData.detail);
+                        alert(`Failed to delete chat: ${errorData.detail}`);
+                    }
+                } catch (error) {
+                    console.error('Error deleting chat:', error);
+                    alert('An error occurred while deleting the chat. Please try again.');
                 }
-                
-                // Refresh the chat list
-                this.loadChatHistory();
-                console.log(`Chat "${chatTitle}" deleted successfully`);
-            } else {
-                const errorData = await response.json();
-                console.error('Failed to delete chat:', errorData.detail);
-                alert(`Failed to delete chat: ${errorData.detail}`);
             }
-        } catch (error) {
-            console.error('Error deleting chat:', error);
-            alert('An error occurred while deleting the chat. Please try again.');
-        }
+        );
     }
 
     clearChatArea() {
