@@ -7,7 +7,12 @@ current_mode: "low"
 # --- General Settings ---
 docs_path: "docs"
 index_path: "index"
-ollama_model: "llama3.2:3b" # Or "phi3:latest", "llama3.2:3b"
+
+# --- Model Configuration ---
+# Change models from this single location - they will be used throughout the application
+ollama_model: "phi3:3.8b"  # LLM model for answer generation (e.g., "phi3:3.8b", "phi3:14b", "mistral:latest")
+                              # Note: Embedding and reranker models are configured per mode below
+
 use_direct_results: false  # Set to true to return raw search results without LLM processing
 strict_mode: true  # Set to true to enable hallucination detection and validation
 
@@ -16,8 +21,10 @@ modes:
   # Low mode: Optimized for low-spec CPU systems without GPU
   # Minimal resource usage while maintaining basic RAG functionality
   low:
+    # Embedding model for semantic search (change here to use throughout processing/search)
     embedding_model: "all-MiniLM-L6-v2"  # Best balance of speed/quality for CPU
-                                      # For very low-spec systems, consider: "all-distilroberta-v1"
+                                          # For very low-spec systems, consider: "all-distilroberta-v1"
+    # Reranker model for result ranking
     reranker_model: "cross-encoder/ms-marco-MiniLM-L-2-v2"  # Lightweight reranker
 
     # Retrieval settings - optimized for low-spec systems
@@ -43,7 +50,9 @@ modes:
   # Medium mode: Balanced speed and quality.
   # Enables reranking and other key features for better accuracy.
   medium:
+    # Embedding model for semantic search
     embedding_model: "all-MiniLM-L6-v2"
+    # Reranker model for result ranking (slightly better than low mode)
     reranker_model: "cross-encoder/ms-marco-MiniLM-L-6-v2"
     
     # Retrieval settings
@@ -64,7 +73,9 @@ modes:
   # High mode: Best quality, slowest response.
   # Uses more candidates for retrieval and reranking for maximum thoroughness.
   high:
-    embedding_model: "all-MiniLM-L6-v2" # Consider a more powerful model for high mode
+    # Embedding model for semantic search (consider upgrading to a more powerful model)
+    embedding_model: "all-MiniLM-L6-v2"  # Options: "all-mpnet-base-v2", "multi-qa-mpnet-base-dot-v1"
+    # Reranker model for result ranking
     reranker_model: "cross-encoder/ms-marco-MiniLM-L-6-v2"
     
     # Retrieval settings

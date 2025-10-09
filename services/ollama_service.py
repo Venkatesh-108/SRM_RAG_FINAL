@@ -6,6 +6,9 @@ def generate_answer_with_ollama(query: str, context_chunks: List[Dict[str, Any]]
     """
     Enhanced answer generation with multi-stage approach and validation.
     """
+    # Get the model name from config
+    ollama_model = config.get("ollama_model", "llama3.2:3b") if config else "llama3.2:3b"
+    
     # Dynamic context length based on query complexity and mode
     query_complexity = analyze_query_complexity(query)
     
@@ -58,7 +61,7 @@ def generate_answer_with_ollama(query: str, context_chunks: List[Dict[str, Any]]
     
     # Stage 1: Generate initial answer
     initial_prompt = create_enhanced_prompt(query, context_text, "initial")
-    initial_answer = generate_ollama_response(initial_prompt)
+    initial_answer = generate_ollama_response(initial_prompt, model=ollama_model)
 
     # Stage 2: Refine and validate answer (Conditional)
     # For now, skip multi-stage generation to simplify
@@ -79,7 +82,7 @@ def generate_answer_with_ollama(query: str, context_chunks: List[Dict[str, Any]]
             
             Provide a complete answer without truncation:
             """
-            refined_answer = generate_ollama_response(complete_prompt)
+            refined_answer = generate_ollama_response(complete_prompt, model=ollama_model)
     
     # Stage 3: Validate answer consistency and check for hallucination
     validation_result = validate_answer_consistency(query, refined_answer, context_chunks)
@@ -99,7 +102,7 @@ def generate_answer_with_ollama(query: str, context_chunks: List[Dict[str, Any]]
                 # For low severity issues, try to generate a cleaner response
                 logger.info("Strict mode: Regenerating response with stricter instructions")
                 strict_prompt = create_strict_pdf_only_prompt(query, context_text)
-                refined_answer = generate_ollama_response(strict_prompt)
+                refined_answer = generate_ollama_response(strict_prompt, model=ollama_model)
     
     # Calculate confidence score
     confidence_score = calculate_confidence_score(refined_answer, validation_result, context_chunks)
@@ -213,11 +216,16 @@ def create_enhanced_prompt(query: str, context: str, stage: str, previous_answer
         Answer:
         """
 
-def generate_ollama_response(prompt: str) -> str:
-    """Generate response using Ollama."""
+def generate_ollama_response(prompt: str, model: str = 'llama3.2:3b') -> str:
+    """Generate response using Ollama.
+    
+    Args:
+        prompt: The prompt to send to the model
+        model: The model name to use (from config.yaml)
+    """
     try:
         response = ollama.chat(
-            model='llama3.2:3b',
+            model=model,
             messages=[
                 {
                     'role': 'user',

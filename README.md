@@ -10,7 +10,7 @@ A comprehensive RAG (Retrieval-Augmented Generation) system for document guides 
 - **🔍 Advanced Document Processing**: Intelligent chunking with procedure-aware and table-aware document parsing
 - **🔄 Hybrid Retrieval System**: Combines BM25 (sparse) and FAISS (dense) search with cross-encoder reranking
 - **📈 Multi-Query Generation**: Automatic query expansion for better retrieval coverage
-- **🤖 Ollama Integration**: Local LLM support using llama3.2:3b model for answer generation
+- **🤖 Ollama Integration**: Local LLM support using phi3:3.8b model for answer generation
 - **🎛️ Smart Context Selection**: Diversity-aware chunk selection to avoid redundancy
 - **⚡ Auto-Indexing**: Automatic document indexing on startup
 - **🌐 Web Interface**: HTML interface for easy testing and interaction
@@ -76,7 +76,7 @@ User Query → Exact Title Check → Direct Content Return (if exact match)
 
 6. **Ensure Ollama is running with the required model:**
    ```bash
-   ollama pull llama3.2:3b
+   ollama pull phi3:3.8b
    ```
 
 
