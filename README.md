@@ -2,7 +2,7 @@
 
 A comprehensive RAG (Retrieval-Augmented Generation) system for document guides with advanced chunking, hybrid retrieval, and Ollama integration. The system provides both a command-line interface and a web API for querying documentation.
 
-> **🤖 Built with Llama** - This system is powered by Llama 3.2 and operates under the Llama 3.2 Community License.
+> **🤖 Built with Microsoft Phi-3** - This system is powered by Phi-3 (3.8B) and operates under the MIT License.
 
 ## Features
 

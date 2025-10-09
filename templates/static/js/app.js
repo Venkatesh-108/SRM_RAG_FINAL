@@ -734,8 +734,8 @@ class SRMAIApp {
                     <div class="welcome-content">
                         <h3 align="center">Welcome to AI Doc Assist</h3>
 
-                        <div class="llama-attribution" style="text-align: center; margin: 20px 0; padding: 10px; background: linear-gradient(135deg, #0d6efd 0%, #4a90e2 100%); color: white; border-radius: 8px; font-weight: 600;">
-                            Built with Llama
+                        <div class="phi3-attribution" style="text-align: center; margin: 20px 0; padding: 10px; background: linear-gradient(135deg, #0d6efd 0%, #4a90e2 100%); color: white; border-radius: 8px; font-weight: 600;">
+                            Built with Microsoft Phi-3
                         </div>
 
                         <div class="quick-start">
