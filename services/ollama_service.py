@@ -36,28 +36,6 @@ def generate_answer_with_ollama(query: str, context_chunks: List[Dict[str, Any]]
                 context_text = chunk_text[:max_context_length] + "..."
             break
     
-    # Check if this is an exact title match with complete content - if so, return it directly
-    query_lower = query.lower().strip()
-    exact_title_matches = [
-        "additional frontend server tasks",
-        "consolidate the scheduled reports", 
-        "configuring an nfs share",
-        "import-properties task",
-        "architecture overview",
-        "additional frontend server deployment", 
-        "additional frontend server configuration",
-        "configuring the srm management functions",
-        "adding mysql grants to the databases",
-        "configuring compliance",
-        "ldap authentication",
-        "activate the new configuration settings"
-    ]
-    
-    is_exact_match = any(title in query_lower for title in exact_title_matches)
-    if is_exact_match and len(context_text) > 500:
-        # Return the exact content without AI processing to ensure 100% accuracy
-        logger.info(f"Returning exact content for title match: {query}")
-        return context_text.strip(), 1.0, {"exact_match": True, "source": "direct_context"}
     
     # Stage 1: Generate initial answer
     initial_prompt = create_enhanced_prompt(query, context_text, "initial")

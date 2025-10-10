@@ -46,6 +46,9 @@ modes:
 
     # Context management - reduced for performance
     max_context_length: 4000              # Reduced context window
+    max_context_length_simple: 6000       # Increased from 4000 for better simple queries
+    max_context_length_medium: 8000       # Balanced for most custom queries
+    max_context_length_complex: 10000     # For complex custom queries
 
   # Medium mode: Balanced speed and quality.
   # Enables reranking and other key features for better accuracy.
