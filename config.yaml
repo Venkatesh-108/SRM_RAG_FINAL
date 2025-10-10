@@ -27,28 +27,29 @@ modes:
     # Reranker model for result ranking
     reranker_model: "cross-encoder/ms-marco-MiniLM-L-2-v2"  # Lightweight reranker
 
-    # Retrieval settings - optimized for low-spec systems
-    top_k_bm25: 6        # Reduced from 8 for faster BM25 processing
-    top_k_faiss: 6       # Reduced from 8 for faster vector search
-    top_k_reranked: 4    # Reduced from 6 to minimize reranking overhead
+    # Retrieval settings - ultra-fast for low mode
+    top_k_bm25: 3        # Minimal for maximum speed
+    top_k_faiss: 3       # Minimal for maximum speed
+    top_k_reranked: 2    # Minimal processing
 
     # Advanced features - minimal for performance
     enable_multi_query_generation: false  # Disabled - saves CPU cycles
     enable_reranking: false               # Disabled - heavy CPU operation
     enable_multi_stage_generation: false  # Disabled - not needed for low mode
-    enable_diversity_selection: true      # Keep for basic quality
-    enable_document_diversity: true       # Keep for multi-document results
+    enable_diversity_selection: false     # Disabled for performance
+    enable_document_diversity: false      # Disabled for performance
+    enable_strict_mode: false             # Disabled for performance in low mode
 
-    # Performance optimizations for low-spec systems
-    batch_size: 16                        # Smaller batches for low memory
+    # Performance optimizations for maximum speed
+    batch_size: 8                         # Even smaller batches for speed
     max_concurrent_searches: 1            # Sequential processing
-    embedding_cache_size: 100             # Limit memory usage
+    embedding_cache_size: 50              # Minimal memory usage
 
-    # Context management - reduced for performance
-    max_context_length: 4000              # Reduced context window
-    max_context_length_simple: 6000       # Increased from 4000 for better simple queries
-    max_context_length_medium: 8000       # Balanced for most custom queries
-    max_context_length_complex: 10000     # For complex custom queries
+    # Context management - maximum speed optimization
+    max_context_length: 1200              # Ultra-fast context window
+    max_context_length_simple: 1500       # Minimal for simple queries
+    max_context_length_medium: 2000       # Very fast for medium queries
+    max_context_length_complex: 2500      # Still fast for complex queries
 
   # Medium mode: Balanced speed and quality.
   # Enables reranking and other key features for better accuracy.
@@ -68,10 +69,10 @@ modes:
     enable_reranking: true
     enable_multi_stage_generation: true
     
-    # Context management
-    max_context_length_simple: 8000
-    max_context_length_medium: 10000
-    max_context_length_complex: 14000
+    # Context management - optimized for performance
+    max_context_length_simple: 4000
+    max_context_length_medium: 6000
+    max_context_length_complex: 8000
 
   # High mode: Best quality, slowest response.
   # Uses more candidates for retrieval and reranking for maximum thoroughness.
@@ -91,7 +92,7 @@ modes:
     enable_reranking: true
     enable_multi_stage_generation: true
     
-    # Context management
-    max_context_length_simple: 8000
-    max_context_length_medium: 10000
-    max_context_length_complex: 16000
+    # Context management - optimized for performance
+    max_context_length_simple: 5000
+    max_context_length_medium: 7000
+    max_context_length_complex: 10000
