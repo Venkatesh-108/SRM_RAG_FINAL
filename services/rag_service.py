@@ -16,9 +16,13 @@ class RAGService:
         self.docs_path = Path(config.get("docs_path", "docs"))
         self.processed_files_registry = self.index_dir / "processed_files.json"
 
+        # Get embedding model from config
+        embedding_model = config.get("embedding_model", "all-MiniLM-L6-v2")
+        
         self.pdf_processor = PDFProcessor(
             output_dir=str(self.output_dir),
-            index_dir=str(self.index_dir)
+            index_dir=str(self.index_dir),
+            model_name=embedding_model
         )
         self.pdf_searcher = None
         self.enhanced_search_engine = None
@@ -27,12 +31,16 @@ class RAGService:
     def _load_searcher(self):
         if self.index_dir.exists() and any(self.index_dir.iterdir()):
             try:
+                # Get embedding model from config
+                embedding_model = self.config.get("embedding_model", "all-MiniLM-L6-v2")
+                
                 # Load legacy searcher for fallback
                 self.pdf_searcher = PDFSearcher(
                     index_dir=str(self.index_dir),
-                    extracted_docs_dir=str(self.output_dir)
+                    extracted_docs_dir=str(self.output_dir),
+                    model_name=embedding_model
                 )
-                logger.info("PDFSearcher loaded successfully.")
+                logger.info(f"PDFSearcher loaded successfully with model: {embedding_model}")
                 
                 # Load enhanced search engine
                 self.enhanced_search_engine = EnhancedSearchEngine(

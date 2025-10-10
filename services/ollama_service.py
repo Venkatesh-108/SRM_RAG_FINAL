@@ -6,6 +6,9 @@ def generate_answer_with_ollama(query: str, context_chunks: List[Dict[str, Any]]
     """
     Enhanced answer generation with multi-stage approach and validation.
     """
+    # Get the model name from config
+    ollama_model = config.get("ollama_model", "phi3:3.8b") if config else "phi3:3.8b"
+    
     # Dynamic context length based on query complexity and mode
     query_complexity = analyze_query_complexity(query)
     
@@ -58,7 +61,7 @@ def generate_answer_with_ollama(query: str, context_chunks: List[Dict[str, Any]]
     
     # Stage 1: Generate initial answer
     initial_prompt = create_enhanced_prompt(query, context_text, "initial")
-    initial_answer = generate_ollama_response(initial_prompt)
+    initial_answer = generate_ollama_response(initial_prompt, model=ollama_model)
 
     # Stage 2: Refine and validate answer (Conditional)
     # For now, skip multi-stage generation to simplify
@@ -79,7 +82,7 @@ def generate_answer_with_ollama(query: str, context_chunks: List[Dict[str, Any]]
             
             Provide a complete answer without truncation:
             """
-            refined_answer = generate_ollama_response(complete_prompt)
+            refined_answer = generate_ollama_response(complete_prompt, model=ollama_model)
     
     # Stage 3: Validate answer consistency and check for hallucination
     validation_result = validate_answer_consistency(query, refined_answer, context_chunks)
@@ -99,7 +102,7 @@ def generate_answer_with_ollama(query: str, context_chunks: List[Dict[str, Any]]
                 # For low severity issues, try to generate a cleaner response
                 logger.info("Strict mode: Regenerating response with stricter instructions")
                 strict_prompt = create_strict_pdf_only_prompt(query, context_text)
-                refined_answer = generate_ollama_response(strict_prompt)
+                refined_answer = generate_ollama_response(strict_prompt, model=ollama_model)
     
     # Calculate confidence score
     confidence_score = calculate_confidence_score(refined_answer, validation_result, context_chunks)
@@ -125,26 +128,24 @@ def analyze_query_complexity(query: str) -> str:
     return "medium"
 
 def create_strict_pdf_only_prompt(query: str, context: str) -> str:
-    """Create ultra-strict prompt for PDF-only responses when hallucination is detected."""
+    """Create stricter prompt for PDF-focused responses when hallucination is detected."""
     return f"""
-    EMERGENCY STRICT MODE - PDF CONTENT ONLY
+    You are a HCL SRM technical documentation assistant. Your previous response included some details not found in the documentation.
+    Please provide a more accurate answer using the provided documentation.
 
-    You previously included information not found in the provided documentation.
-    You must now answer using ONLY the exact content from the PDF documentation provided below.
-
-    ABSOLUTE REQUIREMENTS:
-    1. Use ONLY sentences and phrases that appear in the context below
-    2. If you cannot answer using only the provided context, say: "The available documentation does not contain sufficient information to answer this question fully."
-    3. NO external knowledge, NO assumptions, NO interpretations
-    4. Quote directly from the documentation when possible
-    5. If you're unsure, err on the side of saying information is not available
+    STRICT REQUIREMENTS:
+    1. Base your answer ONLY on information in the context below
+    2. Do NOT add specific UI element names, button labels, or navigation paths not in the context
+    3. Do NOT fabricate procedural steps
+    4. If the context doesn't fully answer the question, acknowledge what IS available and what is NOT
+    5. Present information clearly and helpfully, but stay grounded in the documentation
 
     Question: {query}
 
     PDF Documentation Context:
     {context}
 
-    Response (using only the PDF content above):
+    Accurate Answer (based on documentation):
     """
 
 def create_enhanced_prompt(query: str, context: str, stage: str, previous_answer: str = "") -> str:
@@ -152,38 +153,35 @@ def create_enhanced_prompt(query: str, context: str, stage: str, previous_answer
 
     if stage == "initial":
         return f"""
-        You are a HCL SRM technical documentation assistant. Answer ONLY using the provided documentation context.
+        You are a HCL SRM technical documentation assistant. Answer questions based on the provided documentation.
 
-        STRICT PDF-ONLY RESPONSE RULES:
-        1. ONLY use information that is explicitly stated in the provided context
-        2. NEVER add information from your training data or general knowledge
-        3. NEVER generate UI navigation steps unless they are explicitly stated in the context
-        4. NEVER assume or infer anything beyond what is written in the context
-        5. If specific details are missing from the context, say "This specific information is not provided in the available documentation"
-        6. NEVER create menu paths, button names, or interface elements not mentioned in the context
-        7. For procedural content: only include steps that are explicitly listed in the context
-        8. Quote directly from the context when possible
-        9. If the context doesn't contain enough information to fully answer the question, acknowledge the limitation
-        10. NEVER use phrases like "typically", "usually", "generally" as these imply external knowledge
+        RESPONSE GUIDELINES:
+        1. Prioritize information explicitly stated in the provided context
+        2. Present information in a clear, helpful manner
+        3. If the context contains procedural steps, present them clearly
+        4. Use natural, instructional language when explaining procedures
+        5. If specific details are missing from the context, acknowledge this limitation
+        6. Quote directly from the context when it adds clarity
+        7. Organize information logically (steps, lists, paragraphs as appropriate)
 
-        FORBIDDEN RESPONSES:
-        - Any UI navigation not explicitly stated in context (e.g., "Navigate to System Resources > Frontend Servers")
-        - Any button names not mentioned in context (e.g., "Click the Save button")
-        - Any assumptions about system behavior
-        - Any troubleshooting steps not in the context
-        - Any best practices not explicitly mentioned in the documentation
+        IMPORTANT RESTRICTIONS:
+        - Do NOT fabricate specific UI element names that aren't in the context (e.g., specific button names, menu paths)
+        - Do NOT create detailed multi-level navigation paths unless they're in the context
+        - Do NOT add troubleshooting steps not mentioned in the documentation
+        - If the context doesn't fully answer the question, clearly state what information IS available
 
-        REQUIRED FORMAT:
-        - Start your response with information directly from the documentation
-        - Use exact quotes when appropriate with "According to the documentation..."
-        - If partial information only: clearly state what IS available and what is NOT
+        HELPFUL PRACTICES:
+        - Use clear, procedural language for step-by-step instructions
+        - Organize information with proper formatting (numbered lists, sections, etc.)
+        - Provide context and explanations where helpful
+        - Be direct and concise while remaining thorough
 
         Question: {query}
 
         Context from HCL SRM Documentation:
         {context}
 
-        Answer (PDF content only):
+        Answer:
         """
     
     elif stage == "refinement":
@@ -213,11 +211,16 @@ def create_enhanced_prompt(query: str, context: str, stage: str, previous_answer
         Answer:
         """
 
-def generate_ollama_response(prompt: str) -> str:
-    """Generate response using Ollama."""
+def generate_ollama_response(prompt: str, model: str = 'phi3:3.8b') -> str:
+    """Generate response using Ollama.
+    
+    Args:
+        prompt: The prompt to send to the model
+        model: The model name to use (from config.yaml)
+    """
     try:
         response = ollama.chat(
-            model='llama3.2:3b',
+            model=model,
             messages=[
                 {
                     'role': 'user',
@@ -290,47 +293,30 @@ def calculate_confidence_score(answer: str, validation_result: Dict[str, Any], c
 
 def detect_hallucination(answer: str, context: str) -> Dict[str, Any]:
     """
-    Enhanced hallucination detection for strict PDF-only responses.
-    Checks if answer contains information not present in the provided context.
+    Balanced hallucination detection for PDF-based responses.
+    Focuses on catching truly fabricated content while allowing reasonable instructional language.
     """
-    # Common hallucination indicators - UI elements, navigation paths, external knowledge
-    hallucination_indicators = [
-        # UI Navigation patterns
-        "Navigate to System Resources", "System Resources > Frontend Servers", "Advanced Settings section",
+    # CRITICAL hallucination indicators - specific UI elements and paths that must be in context
+    critical_hallucination_indicators = [
+        # Very specific UI navigation that must be exact
+        "System Resources > Frontend Servers",
+        "Advanced Settings section",
+        "Enable Frontend Server Tasks checkbox",
+        "Send Frontend Server Data option",
+        "log in to the HCL SRM console using a valid username and password",
+    ]
+
+    # Specific button/field names that must be in context
+    specific_ui_elements = [
         "Edit button", "Save button", "Apply button", "Cancel button", "OK button",
-        "Enable Frontend Server Tasks", "Send Frontend Server Data", "Uncheck the boxes",
-        "Click Save to apply", "Click Apply", "Click OK", "Click Cancel",
-        "log in to the HCL SRM console", "using a valid username and password",
-
-        # Generic UI terms not in context
-        "click on", "select from dropdown", "check the box", "uncheck the box",
-        "browse to", "navigate to", "go to the", "access the", "open the",
-        "in the left panel", "in the right panel", "main menu", "submenu",
-        "settings page", "configuration page", "dashboard", "toolbar",
-
-        # External knowledge indicators
-        "typically", "usually", "generally", "commonly", "often",
-        "best practice", "recommended", "it is advisable", "you should",
-        "make sure to", "ensure that", "be careful", "note that",
-
-        # Assumptions about system behavior
-        "the system will", "this will cause", "automatically", "by default",
-        "restart required", "reboot needed", "service restart"
+        "Uncheck the boxes", "Click Save to apply", "Click Apply", "Click OK"
     ]
 
-    # Pattern-based hallucination detection
-    navigation_patterns = [
-        r"navigate to.*>.*", r"go to.*>.*>.*", r"select.*>.*settings",
-        r"click.*button.*next to", r"in the.*page.*scroll down to",
-        r"from the.*menu.*select", r"in the.*section.*click",
-        r"right-click.*and select", r"double-click.*to open"
-    ]
-
-    # Knowledge assumption patterns
-    assumption_patterns = [
-        r"typically.*you.*", r"usually.*the.*", r"generally.*it.*",
-        r"this.*will.*automatically", r"the system.*should.*",
-        r"make sure.*to.*", r"ensure.*that.*", r"it.*is.*recommended"
+    # Pattern-based hallucination detection (only very specific patterns)
+    critical_navigation_patterns = [
+        r"navigate to.*>.*>.*>.*",  # Very specific multi-level navigation
+        r"right-click.*and select",
+        r"double-click.*to open"
     ]
 
     issues = []
@@ -339,55 +325,48 @@ def detect_hallucination(answer: str, context: str) -> Dict[str, Any]:
     answer_lower = answer.lower()
     context_lower = context.lower()
 
-    # Check for specific hallucination indicators
-    for indicator in hallucination_indicators:
+    # Check for CRITICAL hallucination indicators (specific paths/elements)
+    for indicator in critical_hallucination_indicators:
         if indicator.lower() in answer_lower and indicator.lower() not in context_lower:
-            issues.append(f"Contains external knowledge not in context: {indicator}")
+            issues.append(f"Contains specific UI path not in context: {indicator}")
             has_hallucination = True
 
-    # Check for navigation patterns not in context
+    # Check for specific UI elements only if they're very explicit
+    for element in specific_ui_elements:
+        if element.lower() in answer_lower and element.lower() not in context_lower:
+            # Only flag if it's a very specific instruction, not general language
+            if "click" in element.lower() or "button" in element.lower():
+                issues.append(f"Contains specific UI element not in context: {element}")
+                has_hallucination = True
+
+    # Check for critical navigation patterns
     import re
-    for pattern in navigation_patterns:
+    for pattern in critical_navigation_patterns:
         if re.search(pattern, answer_lower) and not re.search(pattern, context_lower):
-            issues.append(f"Contains UI navigation not in context: {pattern}")
+            issues.append(f"Contains specific navigation not in context: {pattern}")
             has_hallucination = True
 
-    # Check for assumption patterns
-    for pattern in assumption_patterns:
-        if re.search(pattern, answer_lower):
-            # Allow if this exact phrase is in context
-            matches = re.findall(pattern, answer_lower)
-            for match in matches:
-                if match not in context_lower:
-                    issues.append(f"Contains assumption/external knowledge: {match}")
-                    has_hallucination = True
-
-    # Check for procedural steps that seem too specific for the context
-    if "step" in answer_lower and answer_lower.count("step") > context_lower.count("step"):
-        if len(issues) == 0:  # Only flag if no other issues found
-            issues.append("Answer contains more procedural steps than available in context")
-            has_hallucination = True
-
-    # Check for specific technical terms not in context (be lenient for legitimate matches)
+    # Check for fabricated technical details (very specific terms)
     answer_words = set(answer_lower.split())
     context_words = set(context_lower.split())
 
-    # Technical terms that if present in answer but not context, indicate hallucination
-    technical_hallucination_terms = {
-        "gui", "interface", "dashboard", "console", "portal", "webapp",
+    # Only flag truly technical UI terms that are fabricated
+    critical_technical_terms = {
         "checkbox", "dropdown", "textbox", "textarea", "radiobutton"
     }
 
-    for term in technical_hallucination_terms:
+    for term in critical_technical_terms:
         if term in answer_words and term not in context_words:
-            issues.append(f"Contains technical UI term not in context: {term}")
+            issues.append(f"Contains specific UI control not in context: {term}")
             has_hallucination = True
 
+    # Only flag severity as "high" if there are multiple critical issues
+    # For basic helpful language (like "navigate to" or "recommended"), don't flag as hallucination
     return {
         "has_hallucination": has_hallucination,
         "issues": issues,
-        "severity": "high" if len(issues) > 3 else "medium" if len(issues) > 1 else "low",
-        "confidence": 0.1 if len(issues) > 3 else 0.3 if has_hallucination else 0.9
+        "severity": "high" if len(issues) >= 3 else "medium" if len(issues) == 2 else "low",
+        "confidence": 0.2 if len(issues) >= 3 else 0.5 if has_hallucination else 0.9
     }
 
 def extract_safe_answer_from_context(query: str, context: str) -> str:
