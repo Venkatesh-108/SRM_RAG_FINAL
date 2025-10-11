@@ -1,0 +1,280 @@
+{
+  "body_size": 9.0,
+  "body_font": "GWVTKK+DellReplica-Light",
+  "heading_sizes": [
+    26.0,
+    24.0,
+    22.0,
+    20.0,
+    19.999999999999943,
+    16.0,
+    11.5
+  ],
+  "heading_map": {
+    "Windows Host Agent Installation Guide": {
+      "is_heading": true,
+      "level": 3,
+      "size": 22.0,
+      "is_bold": false,
+      "page": 1,
+      "confidence": 0.9
+    },
+    "Notes, cautions, and warnings": {
+      "is_heading": true,
+      "level": 7,
+      "size": 11.5,
+      "is_bold": false,
+      "page": 2,
+      "confidence": 0.9
+    },
+    "CAUTION: A CAUTION indicates either potential damage to hardware or loss of data and tells you how to avoid": {
+      "is_heading": true,
+      "level": 8,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 2,
+      "confidence": 0.7
+    },
+    "Pre-Requisites for Windows Host Installation": {
+      "is_heading": true,
+      "level": 2,
+      "size": 24.0,
+      "is_bold": true,
+      "page": 7,
+      "confidence": 0.9
+    },
+    "Installing Windows Host Agent": {
+      "is_heading": true,
+      "level": 4,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 7,
+      "confidence": 0.9
+    },
+    "Install Using Command Prompt with UI Options": {
+      "is_heading": true,
+      "level": 6,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 7,
+      "confidence": 0.9
+    },
+    "Table 1. Command descriptions": {
+      "is_heading": true,
+      "level": 8,
+      "size": 10.000000000000014,
+      "is_bold": true,
+      "page": 7,
+      "confidence": 0.7
+    },
+    "Command componentDescription": {
+      "is_heading": true,
+      "level": 8,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 14,
+      "confidence": 0.7
+    },
+    "Pre-Requisites for Windows Host Installation7": {
+      "is_heading": true,
+      "level": 8,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 7,
+      "confidence": 0.7
+    },
+    "Table 1. Command descriptions (continued)": {
+      "is_heading": true,
+      "level": 8,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 8,
+      "confidence": 0.7
+    },
+    "Install Using Command Prompt without UI (quiet mode)": {
+      "is_heading": true,
+      "level": 6,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 8,
+      "confidence": 0.9
+    },
+    "8Pre-Requisites for Windows Host Installation": {
+      "is_heading": true,
+      "level": 8,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 8,
+      "confidence": 0.7
+    },
+    "Table 2. Command descriptions": {
+      "is_heading": true,
+      "level": 8,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 9,
+      "confidence": 0.7
+    },
+    "Pre-Requisites for Windows Host Installation9": {
+      "is_heading": true,
+      "level": 8,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 9,
+      "confidence": 0.7
+    },
+    "2.Go to Discovery > Discovery Center > Manage Discovery.": {
+      "is_heading": true,
+      "level": 8,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 10,
+      "confidence": 0.7
+    },
+    "10Pre-Requisites for Windows Host Installation": {
+      "is_heading": true,
+      "level": 8,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 10,
+      "confidence": 0.7
+    },
+    "Pre-Requisites for Windows Host Installation11": {
+      "is_heading": true,
+      "level": 8,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 11,
+      "confidence": 0.7
+    },
+    "Uninstall Windows Host Agent": {
+      "is_heading": true,
+      "level": 2,
+      "size": 24.0,
+      "is_bold": true,
+      "page": 12,
+      "confidence": 0.9
+    },
+    "Uninstall Using Programs and Features Window in": {
+      "is_heading": true,
+      "level": 4,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 12,
+      "confidence": 0.9
+    },
+    "Uninstall Using Command Prompt with UI Options": {
+      "is_heading": true,
+      "level": 4,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 12,
+      "confidence": 0.9
+    },
+    "12Uninstall Windows Host Agent": {
+      "is_heading": true,
+      "level": 8,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 12,
+      "confidence": 0.7
+    },
+    "Table 3. Command descriptions": {
+      "is_heading": true,
+      "level": 8,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 13,
+      "confidence": 0.7
+    },
+    "7.To proceed with uninstallation, select Automatically close applications and attempt to restart them after setup is": {
+      "is_heading": true,
+      "level": 8,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 13,
+      "confidence": 0.7
+    },
+    "Uninstall Using Command Prompt without UI (Quiet": {
+      "is_heading": true,
+      "level": 4,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 13,
+      "confidence": 0.9
+    },
+    "Uninstall Windows Host Agent13": {
+      "is_heading": true,
+      "level": 8,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 13,
+      "confidence": 0.7
+    },
+    "Table 4. Command description": {
+      "is_heading": true,
+      "level": 8,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 14,
+      "confidence": 0.7
+    },
+    "14Uninstall Windows Host Agent": {
+      "is_heading": true,
+      "level": 8,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 14,
+      "confidence": 0.7
+    },
+    "Changing username/password": {
+      "is_heading": true,
+      "level": 5,
+      "size": 19.999999999999943,
+      "is_bold": true,
+      "page": 15,
+      "confidence": 0.9
+    },
+    "Migrating Hosts that are discovered using old EHI": {
+      "is_heading": true,
+      "level": 4,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 15,
+      "confidence": 0.9
+    },
+    "Agent to SRM Windows Host Agent": {
+      "is_heading": true,
+      "level": 4,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 15,
+      "confidence": 0.9
+    }
+  },
+  "font_distribution": {
+    "GWVTKK+DellReplica-Light": 177,
+    "GWVTKK+DellReplica-Bold": 77,
+    "GWVTKK+CourierNewPSMT": 18
+  },
+  "size_distribution": {
+    "9.0": 188,
+    "10.0": 28,
+    "20.0": 13,
+    "8.999999999999993": 12,
+    "24.0": 7,
+    "10.5": 4,
+    "8.999999999999972": 4,
+    "7.0": 2,
+    "8.0": 2,
+    "26.0": 2,
+    "9.000000000000057": 2,
+    "16.0": 2,
+    "9.000000000000014": 2,
+    "22.0": 1,
+    "11.5": 1,
+    "10.000000000000014": 1,
+    "19.999999999999943": 1
+  },
+  "total_text_elements": 272
+}

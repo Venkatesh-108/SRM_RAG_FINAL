@@ -1,0 +1,194 @@
+[
+  {
+    "title": "Document Introduction",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 1,
+    "page": 1,
+    "confidence": 0.3
+  },
+  {
+    "title": "Third party software (GPLv3/LGPLv3)",
+    "font_size": 18.0,
+    "is_bold": true,
+    "heading_level": 3,
+    "page": 2,
+    "confidence": 0.9
+  },
+  {
+    "title": "Open Source Components (GPLv3/LGPLv3)",
+    "font_size": 14.039999999999964,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 3,
+    "confidence": 0.9
+  },
+  {
+    "title": "Open Source Licenses (GPLv3/LGPLv3)",
+    "font_size": 14.04000000000002,
+    "is_bold": true,
+    "heading_level": 4,
+    "page": 5,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Protecting Users' Legal Rights From Anti-Circumvention Law.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "4. Conveying Verbatim Copies.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "5. Conveying Modified Source Versions.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "6. Conveying Non-Source Forms.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "9. Acceptance Not Required for Having Copies.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "10.  Automatic Licensing of Downstream Recipients.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "12.  No Surrender of Others' Freedom.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "13.  Use with the GNU Affero General Public License.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "14.  Revised Versions of this License.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "15.  Disclaimer of Warranty.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "16.  Limitation of Liability.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "OPERATE WITH ANY OTHER PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "17.  Interpretation of Sections 15 and 16.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "END OF TERMS AND CONDITIONS",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "How to Apply These Terms to Your New Programs",
+    "font_size": 11.04000000000002,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 16,
+    "confidence": 0.7
+  },
+  {
+    "title": "0. Additional Definitions.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "1. Exception to Section 3 of the GNU GPL.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "2. Conveying Modified Versions.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "3. Object Code Incorporating Material from Library Header Files.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "6. Revised Versions of the GNU Lesser General Public License.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  }
+]

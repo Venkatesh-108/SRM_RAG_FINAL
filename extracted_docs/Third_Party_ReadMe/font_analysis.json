@@ -1,0 +1,205 @@
+{
+  "body_size": 11.04000000000002,
+  "body_font": "NQRMKO+Calibri",
+  "heading_sizes": [
+    24.0,
+    15.960000000000036,
+    15.960000000000008,
+    15.959999999999994,
+    15.95999999999998,
+    15.959999999999923,
+    14.040000000000077,
+    14.04000000000002,
+    14.039999999999964
+  ],
+  "heading_map": {
+    "Dell Storage Resource Manager (SRM)": {
+      "is_heading": true,
+      "level": 1,
+      "size": 24.0,
+      "is_bold": false,
+      "page": 1,
+      "confidence": 0.9
+    },
+    "5.1.1.0 and Dell Storage Monitoring &": {
+      "is_heading": true,
+      "level": 1,
+      "size": 24.0,
+      "is_bold": false,
+      "page": 1,
+      "confidence": 0.9
+    },
+    "Reporting (SMR) 5.1.1.0 Third Party": {
+      "is_heading": true,
+      "level": 1,
+      "size": 24.0,
+      "is_bold": false,
+      "page": 1,
+      "confidence": 0.9
+    },
+    "OSS Name OSS License": {
+      "is_heading": true,
+      "level": 10,
+      "size": 11.040000000000077,
+      "is_bold": true,
+      "page": 4,
+      "confidence": 0.7
+    },
+    "2. GRANT OF RIGHTS": {
+      "is_heading": true,
+      "level": 10,
+      "size": 11.04000000000002,
+      "is_bold": true,
+      "page": 58,
+      "confidence": 0.7
+    },
+    "4. COMMERCIAL DISTRIBUTION": {
+      "is_heading": true,
+      "level": 10,
+      "size": 11.04000000000002,
+      "is_bold": true,
+      "page": 59,
+      "confidence": 0.7
+    },
+    "6. DISCLAIMER OF LIABILITY": {
+      "is_heading": true,
+      "level": 10,
+      "size": 11.04000000000002,
+      "is_bold": true,
+      "page": 60,
+      "confidence": 0.7
+    },
+    "OpenLDAP Public License 2.7": {
+      "is_heading": true,
+      "level": 6,
+      "size": 15.959999999999923,
+      "is_bold": false,
+      "page": 119,
+      "confidence": 0.9
+    },
+    "Open LDAP Public License 2.8": {
+      "is_heading": true,
+      "level": 6,
+      "size": 15.959999999999923,
+      "is_bold": false,
+      "page": 120,
+      "confidence": 0.9
+    },
+    "Oracle Binary Code for Java": {
+      "is_heading": true,
+      "level": 5,
+      "size": 15.95999999999998,
+      "is_bold": false,
+      "page": 122,
+      "confidence": 0.9
+    },
+    "Oracle Binary Code License Agreement for the Java SE Platform Products and JavaFX": {
+      "is_heading": true,
+      "level": 10,
+      "size": 11.040000000000077,
+      "is_bold": true,
+      "page": 122,
+      "confidence": 0.7
+    },
+    "TMate Open Source License": {
+      "is_heading": true,
+      "level": 2,
+      "size": 15.960000000000036,
+      "is_bold": false,
+      "page": 135,
+      "confidence": 0.9
+    },
+    "Open Source Components Copyrights": {
+      "is_heading": true,
+      "level": 7,
+      "size": 14.040000000000077,
+      "is_bold": true,
+      "page": 139,
+      "confidence": 0.9
+    },
+    "font-awesome - font-awesome": {
+      "is_heading": true,
+      "level": 10,
+      "size": 11.04000000000002,
+      "is_bold": true,
+      "page": 139,
+      "confidence": 0.7
+    },
+    "Kohsuke Kawaguchi - args4j": {
+      "is_heading": true,
+      "level": 10,
+      "size": 11.040000000000077,
+      "is_bold": true,
+      "page": 142,
+      "confidence": 0.7
+    },
+    "ng-file-upload - ng-file-upload": {
+      "is_heading": true,
+      "level": 10,
+      "size": 11.04000000000002,
+      "is_bold": true,
+      "page": 143,
+      "confidence": 0.7
+    },
+    "Libopenssl0_9_8-hmac, libopenssl1_0_0, openssl1": {
+      "is_heading": true,
+      "level": 10,
+      "size": 11.040000000000077,
+      "is_bold": true,
+      "page": 157,
+      "confidence": 0.7
+    },
+    "ANTLR - StringTemplate 4": {
+      "is_heading": true,
+      "level": 10,
+      "size": 11.040000000000077,
+      "is_bold": true,
+      "page": 171,
+      "confidence": 0.7
+    },
+    "Apache - Commons FileUpload": {
+      "is_heading": true,
+      "level": 10,
+      "size": 11.039999999999992,
+      "is_bold": true,
+      "page": 171,
+      "confidence": 0.7
+    }
+  },
+  "font_distribution": {
+    "NQRMKO+Calibri": 7679,
+    "SDCQCE+ArialMT": 86,
+    "CFATMK+Cambria": 40,
+    "HCPCEA+Calibri-Bold": 34,
+    "MCDBWQ+Consolas": 5,
+    "CFATMK+Arial-BoldMT": 5,
+    "YEGAIS+LucidaSans": 4,
+    "HCPCEA+Cambria-Bold": 3,
+    "YEGAIS+Calibri": 1
+  },
+  "size_distribution": {
+    "11.04000000000002": 2914,
+    "11.039999999999964": 2381,
+    "11.039999999999992": 2029,
+    "12.0": 177,
+    "11.04": 174,
+    "9.960000000000036": 39,
+    "9.959999999999923": 32,
+    "11.040000000000006": 23,
+    "10.560000000000002": 20,
+    "15.960000000000036": 16,
+    "11.040000000000077": 13,
+    "15.959999999999923": 9,
+    "15.95999999999998": 7,
+    "9.960000000000008": 5,
+    "15.960000000000008": 5,
+    "24.0": 4,
+    "15.959999999999994": 3,
+    "8.040000000000006": 2,
+    "14.039999999999964": 1,
+    "14.04000000000002": 1,
+    "14.040000000000077": 1,
+    "9.95999999999998": 1
+  },
+  "total_text_elements": 7857
+}

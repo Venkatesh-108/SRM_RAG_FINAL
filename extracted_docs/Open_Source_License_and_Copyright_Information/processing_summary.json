@@ -1,0 +1,20 @@
+{
+  "document_id": "Open_Source_License_and_Copyright_Information",
+  "processing_date": "2025-10-11T00:04:37.250889",
+  "extraction_method": "hybrid_docling_font",
+  "total_content_length": 54041,
+  "total_chapters": 20,
+  "total_sections": 4,
+  "total_chunks": 24,
+  "font_analysis_summary": {
+    "body_size": 11.04000000000002,
+    "heading_sizes": [
+      24.000000000000057,
+      24.0,
+      18.0,
+      14.04000000000002,
+      14.039999999999964
+    ],
+    "headings_detected": 9
+  }
+}

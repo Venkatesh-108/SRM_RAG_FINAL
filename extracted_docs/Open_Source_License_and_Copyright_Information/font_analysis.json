@@ -1,0 +1,114 @@
+{
+  "body_size": 11.04000000000002,
+  "body_font": "SMINCO+Calibri",
+  "heading_sizes": [
+    24.000000000000057,
+    24.0,
+    18.0,
+    14.04000000000002,
+    14.039999999999964
+  ],
+  "heading_map": {
+    "Dell Storage Resource Manager (SRM)": {
+      "is_heading": true,
+      "level": 2,
+      "size": 24.0,
+      "is_bold": false,
+      "page": 1,
+      "confidence": 0.9
+    },
+    "5.1.1.0 and Dell Storage Monitoring &": {
+      "is_heading": true,
+      "level": 2,
+      "size": 24.0,
+      "is_bold": false,
+      "page": 1,
+      "confidence": 0.9
+    },
+    "Reporting (SMR) 5.1.1.0": {
+      "is_heading": true,
+      "level": 2,
+      "size": 24.0,
+      "is_bold": false,
+      "page": 1,
+      "confidence": 0.9
+    },
+    "Open Source License and Copyright": {
+      "is_heading": true,
+      "level": 2,
+      "size": 24.0,
+      "is_bold": false,
+      "page": 1,
+      "confidence": 0.9
+    },
+    "Information for GPLv3/LGPLv3": {
+      "is_heading": true,
+      "level": 1,
+      "size": 24.000000000000057,
+      "is_bold": false,
+      "page": 1,
+      "confidence": 0.9
+    },
+    "Third party software (GPLv3/LGPLv3)": {
+      "is_heading": true,
+      "level": 3,
+      "size": 18.0,
+      "is_bold": true,
+      "page": 2,
+      "confidence": 0.9
+    },
+    "Open Source Components (GPLv3/LGPLv3)": {
+      "is_heading": true,
+      "level": 5,
+      "size": 14.039999999999964,
+      "is_bold": true,
+      "page": 3,
+      "confidence": 0.9
+    },
+    "Open Source Licenses (GPLv3/LGPLv3)": {
+      "is_heading": true,
+      "level": 4,
+      "size": 14.04000000000002,
+      "is_bold": true,
+      "page": 5,
+      "confidence": 0.9
+    },
+    "How to Apply These Terms to Your New Programs": {
+      "is_heading": true,
+      "level": 6,
+      "size": 11.04000000000002,
+      "is_bold": true,
+      "page": 16,
+      "confidence": 0.7
+    }
+  },
+  "font_distribution": {
+    "SMINCO+Calibri": 674,
+    "BKRPYW+LucidaSans": 7,
+    "XMRMUE+ArialMT": 5,
+    "NKTEKY+Calibri-Bold": 4,
+    "LHPSIC+Cambria-Bold": 4
+  },
+  "size_distribution": {
+    "11.04000000000002": 264,
+    "11.039999999999964": 206,
+    "11.039999999999992": 162,
+    "12.0": 19,
+    "11.04": 19,
+    "24.0": 4,
+    "11.040000000000006": 3,
+    "9.0": 2,
+    "8.040000000000006": 2,
+    "9.960000000000036": 2,
+    "12.960000000000036": 2,
+    "11.040000000000077": 2,
+    "24.000000000000057": 1,
+    "18.0": 1,
+    "14.039999999999964": 1,
+    "9.960000000000008": 1,
+    "9.959999999999994": 1,
+    "9.959999999999923": 1,
+    "14.04000000000002": 1
+  },
+  "total_text_elements": 694
+}

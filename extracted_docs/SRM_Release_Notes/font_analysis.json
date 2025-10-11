@@ -1,0 +1,73 @@
+{
+  "body_size": 9.0,
+  "body_font": "OKRNSE+DellReplica-Light",
+  "heading_sizes": [
+    24.0,
+    20.0,
+    11.5
+  ],
+  "heading_map": {
+    "Dell SRM 5.1.1.0 Release Notes": {
+      "is_heading": true,
+      "level": 1,
+      "size": 24.0,
+      "is_bold": false,
+      "page": 1,
+      "confidence": 0.9
+    },
+    "Environment and system requirements": {
+      "is_heading": true,
+      "level": 2,
+      "size": 20.0,
+      "is_bold": false,
+      "page": 25,
+      "confidence": 0.9
+    },
+    "Installation and upgrade considerations": {
+      "is_heading": true,
+      "level": 2,
+      "size": 20.0,
+      "is_bold": false,
+      "page": 26,
+      "confidence": 0.9
+    },
+    "Where to get help": {
+      "is_heading": true,
+      "level": 2,
+      "size": 20.0,
+      "is_bold": false,
+      "page": 26,
+      "confidence": 0.9
+    },
+    "Notes, cautions, and warnings": {
+      "is_heading": true,
+      "level": 3,
+      "size": 11.5,
+      "is_bold": false,
+      "page": 27,
+      "confidence": 0.9
+    }
+  },
+  "font_distribution": {
+    "OKRNSE+DellReplica-Light": 1174,
+    "OKRNSE+CourierNewPSMT": 200,
+    "OKRNSE+DellReplica-Regular": 140,
+    "OKRNSE+CourierNewPS-BoldMT": 4,
+    "OKRNSE+DellReplica-LightItalic": 2
+  },
+  "size_distribution": {
+    "9.0": 1429,
+    "10.0": 30,
+    "8.999999999999993": 16,
+    "9.000000000000014": 14,
+    "8.999999999999972": 10,
+    "20.0": 9,
+    "9.000000000000057": 5,
+    "8.999999999999943": 2,
+    "8.0": 2,
+    "24.0": 1,
+    "10.5": 1,
+    "11.5": 1
+  },
+  "total_text_elements": 1520
+}

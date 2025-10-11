@@ -1,0 +1,22 @@
+{
+  "document_id": "SRM_Windows_Host_Agent_Installation_Guide",
+  "processing_date": "2025-10-10T23:54:54.570886",
+  "extraction_method": "hybrid_docling_font",
+  "total_content_length": 21716,
+  "total_chapters": 3,
+  "total_sections": 16,
+  "total_chunks": 17,
+  "font_analysis_summary": {
+    "body_size": 9.0,
+    "heading_sizes": [
+      26.0,
+      24.0,
+      22.0,
+      20.0,
+      19.999999999999943,
+      16.0,
+      11.5
+    ],
+    "headings_detected": 30
+  }
+}

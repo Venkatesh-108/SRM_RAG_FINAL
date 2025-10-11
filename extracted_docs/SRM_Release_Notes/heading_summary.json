@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Dell SRM 5.1.1.0 Release Notes",
+    "font_size": 24.0,
+    "is_bold": false,
+    "heading_level": 1,
+    "page": 1,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 1. Document revision history",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "Issue ID Functional area Description",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "Table 4. Known issues in Dell SRM 5.1.x.x  (continued)",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "Environment and system requirements",
+    "font_size": 20.0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 6. System requirements (continued)",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "Installation and upgrade considerations",
+    "font_size": 20.0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 26,
+    "confidence": 0.9
+  },
+  {
+    "title": "Where to get help",
+    "font_size": 20.0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 26,
+    "confidence": 0.9
+  },
+  {
+    "title": "Notes, cautions, and warnings",
+    "font_size": 11.5,
+    "is_bold": false,
+    "heading_level": 3,
+    "page": 27,
+    "confidence": 0.9
+  }
+]

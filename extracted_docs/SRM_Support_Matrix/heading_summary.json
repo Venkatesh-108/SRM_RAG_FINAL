@@ -1,0 +1,978 @@
+[
+  {
+    "title": "Dell SRM 5.1.1.0 Support Matrix",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "Notes, cautions, and warnings",
+    "font_size": 11.5,
+    "is_bold": false,
+    "heading_level": 8,
+    "page": 2,
+    "confidence": 0.9
+  },
+  {
+    "title": "SRM vApp installation requirements",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 5,
+    "confidence": 0.9
+  },
+  {
+    "title": "SRM binary installation requirements",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 5,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 1. Supported Operating Systems",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 5,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 2. Supported browsers",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 6,
+    "confidence": 0.7
+  },
+  {
+    "title": "Secure Remote Services Requirements",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 6,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 3. Supported ESE versions",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 6,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 4. Supported third-party tools",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 6,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for Amazon AWS",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 9,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 5. Support for Amazon AWS",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 9,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for Block Chargeback",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 9,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 6. Support for Block Chargeback",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 9,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for Brocade FC Switch",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 9,
+    "confidence": 0.9
+  },
+  {
+    "title": "SolutionPack for Brocade FC Switch discovers switch topology, performance, and zoning details through SMI-S.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 9,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 7. Support for Brocade fabric",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 9,
+    "confidence": 0.7
+  },
+  {
+    "title": "SNMP + SMI-S (Zoning discovery only through SMI-S)",
+    "font_size": 16.0,
+    "is_bold": false,
+    "heading_level": 7,
+    "page": 10,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 8. Support for Brocade fabric",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 10,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for Brocade FC Switch discovers switch topology, performance, and zoning details through Fabric OS (FOS) REST API .",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 9,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 9. Support for Brocade fabric",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 10,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for Brocade FC Switch discovers switch and zoning details through SANnav management portal.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 9,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 10. Support for Brocade fabric",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 11,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for Cisco MDS/Nexus",
+    "font_size": 19.999999999999943,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 11,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 11. Support for Cisco MDS and Nexus",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 11,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for Cisco UCS",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 12,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 12. Support for Cisco UCS",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 12,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for Configuration Compliance",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 12,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 13. Support for Configuration Compliance",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 12,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for Dell Data Domain",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 12,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 14. Support for Dell Data Domain",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 12,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 15. Support for Dell Data Domain",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 13,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for Dell Data Protection Advisor",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 13,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 16. Support for Dell Data Protection Advisor",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 13,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for Dell ECS",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 13,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 17. Support for Dell ECS",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 13,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for Hitachi Device Manager",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 13,
+    "confidence": 0.9
+  },
+  {
+    "title": "XMLAPI and SMI-S",
+    "font_size": 16.0,
+    "is_bold": false,
+    "heading_level": 7,
+    "page": 13,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 18. Support for Hitachi Device Manager",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 13,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 19. Support for Hitachi Device Manager",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 14,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for HP 3PAR StoreServ",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 20. Support for HP 3PAR StorServ",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 14,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for HPE Nimble",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 14,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 21. Support for HPE Nimble",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 14,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for Huawei Oceanstor",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 15,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 22. Support for Huawei Oceanstor",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 15,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for HP StorageWorks",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 15,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 23. Support for HP StorageWorks",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 15,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for IBM DS",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 15,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 24. Support for IBM DS",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 15,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for IBM LPAR",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 15,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 25. Support for IBM P Series",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 15,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 26. Support for LPAR (VIOS/VIOC)",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 16,
+    "confidence": 0.7
+  },
+  {
+    "title": "- To discover VIO Server and LPAR information, use SolutionPack for Physical Hosts.",
+    "font_size": 20.00000000000003,
+    "is_bold": true,
+    "heading_level": 4,
+    "page": 19,
+    "confidence": 0.9
+  },
+  {
+    "title": "SolutionPack for IBM SAN Volume Controller/ Storwize",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 16,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 27. Support for IBM SAN Volume Controller/Storwize",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 16,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for IBM XIV",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 16,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 28. Support for IBM XIV",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 16,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for IBM FlashSystem",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 29. Support for IBM FlashSystem",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 17,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for Kubernetes",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 30. Support for Kubernetes",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 17,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for Microsoft Azure",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 31. SolutionPack for Microsoft Azure",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "SolutionPack for Microsoft Hyper-V",
+    "font_size": 20.00000000000003,
+    "is_bold": true,
+    "heading_level": 4,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 32. Support for Microsoft Hyper-V",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 17,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for Microsoft SQL Server",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 18,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 33. Support for Microsoft SQL Server",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 18,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 34. End-to-end capacity use cases",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 18,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for NetApp FAS",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 18,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 35. Support for NetApp FAS",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 18,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for Oracle Database",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 18,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 36. Support for Oracle Database",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 19,
+    "confidence": 0.7
+  },
+  {
+    "title": "- The SolutionPack for Oracle Database was tested with ojdbc5.jar and ojdbc7.jar on Oracle 10, 11, and 12g versions respectively.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 18,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 37. End-to-end topology and capacity for Oracle Database",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 19,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for Oracle MySQL Database",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 19,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 38. Support for Oracle MySQL Database",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 19,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for Physical Hosts",
+    "font_size": 20.00000000000003,
+    "is_bold": true,
+    "heading_level": 4,
+    "page": 19,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 39. Support for HP-UX hosts",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 19,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 40. Support for IBM AIX hosts",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 20,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 41. Support for Linux hosts",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 20,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 42. Support for Windows hosts",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 20,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 43. Support for Dell SRM Windows Host Agent",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 20,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 44. Support for Solaris hosts",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 20,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for Dell PowerEdge",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 45. Support for Dell PowerEdge",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 21,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for Dell PowerFlex",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 46. Support for Dell PowerFlex",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 21,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for Dell PowerScale",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 47. Support for Dell PowerScale",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 21,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for Dell PowerStore",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 21,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 48. Support for Dell PowerStore",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 21,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for Dell PowerSwitch",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 49. Support for Dell PowerSwitch",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 22,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for Dell PowerVault",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 50. Support for PowerVault",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 22,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for Pure Storage",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 51. Support for pure storage",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 22,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for Dell RecoverPoint",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 52. Support for Dell RecoverPoint",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 23,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for Dell SC Series",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 53. Support for Dell SC Series",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 23,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for Dell Unity",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 54. Support for Dell Unity",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 23,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for Dell EMC VMAX",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 55. Support for Dell EMC VMAX",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 23,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 55. Support for Dell EMC VMAX (continued)",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 23,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 56. Guidelines for Gatekeepers",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 24,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for Dell VMAX/PowerMax",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 24,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 57. Support for Dell VMAX/PowerMax",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 24,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 58. Collecting performance statistics, capacity, and topology information using Unisphere",
+    "font_size": 10.000000000000014,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 24,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 58. Collecting performance statistics, capacity, and topology information using Unisphere (continued)",
+    "font_size": 10.000000000000014,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 24,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for VMware vSphere vSAN and VxRail",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 59. Support for VMware vSphere vSAN and VxRail",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 25,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for Dell VPLEX",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 60. Support for Dell VPLEX",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 25,
+    "confidence": 0.7
+  },
+  {
+    "title": "Dell SolutionPack for VxRail",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 26,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 61. Support for VxRail",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 26,
+    "confidence": 0.7
+  },
+  {
+    "title": "SolutionPack for Dell EMC XtremIO",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 5,
+    "page": 26,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 62. Support for Dell EMC XtremIO",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 26,
+    "confidence": 0.7
+  },
+  {
+    "title": "Supported password Management Software",
+    "font_size": 24.0,
+    "is_bold": true,
+    "heading_level": 2,
+    "page": 27,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 63. Cyber Ark support",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 27,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 64. Credential Provider versions",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 27,
+    "confidence": 0.7
+  }
+]
