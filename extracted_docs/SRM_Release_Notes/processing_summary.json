@@ -1,0 +1,18 @@
+{
+  "document_id": "SRM_Release_Notes",
+  "processing_date": "2025-10-10T23:27:25.858248",
+  "extraction_method": "hybrid_docling_font",
+  "total_content_length": 194413,
+  "total_chapters": 8,
+  "total_sections": 1,
+  "total_chunks": 9,
+  "font_analysis_summary": {
+    "body_size": 9.0,
+    "heading_sizes": [
+      24.0,
+      20.0,
+      11.5
+    ],
+    "headings_detected": 5
+  }
+}

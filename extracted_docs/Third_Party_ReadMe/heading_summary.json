@@ -1,0 +1,602 @@
+[
+  {
+    "title": "Dell Storage Resource Manager (SRM) 5.1.1.0 and Dell Storage Monitoring &amp; Reporting (SMR) 5.1.1.0 Third Party Software ReadMe",
+    "font_size": 24.0,
+    "is_bold": false,
+    "heading_level": 1,
+    "page": 1,
+    "confidence": 0.9
+  },
+  {
+    "title": "TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "END OF TERMS AND CONDITIONS",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "2.1. The Initial Developer Grant.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "3. Distribution Obligations.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "3.1. Availability of Source Code.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "3.4. Application of Additional Terms.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "3.5. Distribution of Executable Versions.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "4. Versions of the License.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "4.2. Effect of New Versions.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "8. U.S. GOVERNMENT END USERS.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL)",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "5. DISCLAIMER OF WARRANTY.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "7. LIMITATION OF LIABILITY.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "5. Representations, Warranties and Disclaimer",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "2. GRANT OF RIGHTS",
+    "font_size": 11.04000000000002,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 58,
+    "confidence": 0.7
+  },
+  {
+    "title": "4. COMMERCIAL DISTRIBUTION",
+    "font_size": 11.04000000000002,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 59,
+    "confidence": 0.7
+  },
+  {
+    "title": "6. DISCLAIMER OF LIABILITY",
+    "font_size": 11.04000000000002,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 60,
+    "confidence": 0.7
+  },
+  {
+    "title": "1. APPLICABILITY AND DEFINITIONS",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "3. COPYING IN QUANTITY",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "6. COLLECTIONS OF DOCUMENTS",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "7. AGGREGATION WITH INDEPENDENT WORKS",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "10. FUTURE REVISIONS OF THIS LICENSE",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "3. Protecting Users' Legal Rights From Anti-Circumvention Law.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "4. Conveying Verbatim Copies.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "5. Conveying Modified Source Versions.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "6. Conveying Non-Source Forms.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "10. Automatic Licensing of Downstream Recipients.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "12. No Surrender of Others' Freedom.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "13. Use with the GNU Affero General Public License.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "14. Revised Versions of this License.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "COPYRIGHT AND PERMISSION NOTICE",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "Copyright (c) 4-digit year, Company or Person's Name &lt;E-mail address&gt;",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "0. Additional Definitions.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "1. Exception to Section 3 of the GNU GPL.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "OTHER DEALINGS IN THE SOFTWARE.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "2. Source Code License.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "3.1. Application of License.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "3.3. Description of Modifications.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "3.4. Intellectual Property Matters",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "(a) Third Party Claims.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "(b) Contributor APIs.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "4. Inability to Comply Due to Statute or Regulation.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "5. Application of this License.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "12. RESPONSIBILITY FOR CLAIMS.",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "1.2. 'Contributor Version'",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "1.5. 'Incompatible With Secondary Licenses'",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "1.13. 'Source Code Form'",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "1.14. 'You' (or 'Your')",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "2. License Grants and Conditions",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "2.3. Limitations on Grant Scope",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "3.1. Distribution of Source Form",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "3.2. Distribution of Executable Form",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "3.3. Distribution of a Larger Work",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "3.5. Application of Additional Terms",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "4. Inability to Comply Due to Statute or Regulation",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "6. Disclaimer of Warranty",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "7. Limitation of Liability",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "10. Versions of the License",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "10.2. Effect of New Versions",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "10.4. Distributing Source Code Form that is Incompatible With Secondary Licenses",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "OpenLDAP Public License 2.7",
+    "font_size": 15.959999999999923,
+    "is_bold": false,
+    "heading_level": 6,
+    "page": 119,
+    "confidence": 0.9
+  },
+  {
+    "title": "Open LDAP Public License 2.8",
+    "font_size": 15.959999999999923,
+    "is_bold": false,
+    "heading_level": 6,
+    "page": 120,
+    "confidence": 0.9
+  },
+  {
+    "title": "Oracle Binary Code for Java",
+    "font_size": 15.95999999999998,
+    "is_bold": false,
+    "heading_level": 5,
+    "page": 122,
+    "confidence": 0.9
+  },
+  {
+    "title": "Oracle Binary Code License Agreement for the Java SE Platform Products and JavaFX",
+    "font_size": 11.040000000000077,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 122,
+    "confidence": 0.7
+  },
+  {
+    "title": "CWI LICENSE AGREEMENT FOR PYTHON 0.9.0 THROUGH 1.2",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "TMate Open Source License",
+    "font_size": 15.960000000000036,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 135,
+    "confidence": 0.9
+  },
+  {
+    "title": "Open Source Components Copyrights",
+    "font_size": 14.040000000000077,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 139,
+    "confidence": 0.9
+  },
+  {
+    "title": "font-awesome - font-awesome",
+    "font_size": 11.04000000000002,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 139,
+    "confidence": 0.7
+  },
+  {
+    "title": "Kohsuke Kawaguchi - args4j",
+    "font_size": 11.040000000000077,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 142,
+    "confidence": 0.7
+  },
+  {
+    "title": "ng-file-upload - ng-file-upload",
+    "font_size": 11.04000000000002,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 143,
+    "confidence": 0.7
+  },
+  {
+    "title": "SUPPLEMENTAL LICENSE TERMS",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "Libopenssl0\\_9\\_8-hmac, libopenssl1\\_0\\_0, openssl1",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "Apache - Commons FileUpload",
+    "font_size": 11.039999999999992,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 171,
+    "confidence": 0.7
+  }
+]

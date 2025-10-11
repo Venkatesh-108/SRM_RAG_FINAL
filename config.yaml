@@ -27,17 +27,17 @@ modes:
     # Reranker model for result ranking
     reranker_model: "cross-encoder/ms-marco-MiniLM-L-2-v2"  # Lightweight reranker
 
-    # Retrieval settings - ultra-fast for low mode
-    top_k_bm25: 3        # Minimal for maximum speed
-    top_k_faiss: 3       # Minimal for maximum speed
-    top_k_reranked: 2    # Minimal processing
+    # Retrieval settings - increased for better coverage
+    top_k_bm25: 6        # Increased to search more documents
+    top_k_faiss: 6       # Increased to search more documents
+    top_k_reranked: 3    # Increased to return more results
 
-    # Advanced features - minimal for performance
+    # Advanced features - enable diversity for better multi-document search
     enable_multi_query_generation: false  # Disabled - saves CPU cycles
     enable_reranking: false               # Disabled - heavy CPU operation
     enable_multi_stage_generation: false  # Disabled - not needed for low mode
-    enable_diversity_selection: false     # Disabled for performance
-    enable_document_diversity: false      # Disabled for performance
+    enable_diversity_selection: true      # ENABLED - ensures diverse results
+    enable_document_diversity: true       # ENABLED - searches across multiple documents
     enable_strict_mode: false             # Disabled for performance in low mode
 
     # Performance optimizations for maximum speed

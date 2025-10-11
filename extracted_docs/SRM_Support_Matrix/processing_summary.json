@@ -1,0 +1,23 @@
+{
+  "document_id": "SRM_Support_Matrix",
+  "processing_date": "2025-10-10T23:39:05.761239",
+  "extraction_method": "hybrid_docling_font",
+  "total_content_length": 78778,
+  "total_chapters": 2,
+  "total_sections": 120,
+  "total_chunks": 101,
+  "font_analysis_summary": {
+    "body_size": 9.0,
+    "heading_sizes": [
+      26.0,
+      24.0,
+      22.0,
+      20.00000000000003,
+      20.0,
+      19.999999999999943,
+      16.0,
+      11.5
+    ],
+    "headings_detected": 137
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "document_id": "Third_Party_ReadMe",
+  "processing_date": "2025-10-11T00:01:36.127957",
+  "extraction_method": "hybrid_docling_font",
+  "total_content_length": 552885,
+  "total_chapters": 63,
+  "total_sections": 12,
+  "total_chunks": 73,
+  "font_analysis_summary": {
+    "body_size": 11.04000000000002,
+    "heading_sizes": [
+      24.0,
+      15.960000000000036,
+      15.960000000000008,
+      15.959999999999994,
+      15.95999999999998,
+      15.959999999999923,
+      14.040000000000077,
+      14.04000000000002,
+      14.039999999999964
+    ],
+    "headings_detected": 19
+  }
+}

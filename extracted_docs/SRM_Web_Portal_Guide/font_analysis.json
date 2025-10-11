@@ -1,0 +1,4977 @@
+{
+  "body_size": 9.0,
+  "body_font": "FVDVDD+DellReplica-Light",
+  "heading_sizes": [
+    26.0,
+    24.0,
+    22.0,
+    20.0,
+    19.999999999999943,
+    16.00000000000003,
+    16.0,
+    15.999999999999943,
+    14.000000000000028,
+    14.0,
+    13.999999999999943,
+    12.000000000000014,
+    12.0,
+    11.999999999999943,
+    11.5
+  ],
+  "heading_map": {
+    "Notes, cautions, and warnings": {
+      "is_heading": true,
+      "level": 15,
+      "size": 11.5,
+      "is_bold": false,
+      "page": 2,
+      "confidence": 0.9
+    },
+    "CAUTION: A CAUTION indicates either potential damage to hardware or loss of data and tells you how to avoid": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 2,
+      "confidence": 0.7
+    },
+    "Information you can find here": {
+      "is_heading": true,
+      "level": 4,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 9,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 9": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 9,
+      "confidence": 0.7
+    },
+    "What's New in SRM": {
+      "is_heading": true,
+      "level": 4,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 11,
+      "confidence": 0.9
+    },
+    "& Roles > Manage Roles > [Role] > Modules & Restrictions Access > Watch4net Frontend > New Features dialog": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 11,
+      "confidence": 0.7
+    },
+    "Users & Roles > Manage Users > User Status .": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 11,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 11": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 11,
+      "confidence": 0.7
+    },
+    "Navigation Style field at Profile > User Settings > Preferences.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 12,
+      "confidence": 0.7
+    },
+    "Set default navigation style": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 12,
+      "confidence": 0.9
+    },
+    "1.Click Profile > User Settings > Preferences.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 12,
+      "confidence": 0.7
+    },
+    "Make icon navigation column static": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 12,
+      "confidence": 0.9
+    },
+    "Displaying and canceling reports": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 13,
+      "confidence": 0.9
+    },
+    "User Interface menu options": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 13,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 13": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 13,
+      "confidence": 0.7
+    },
+    "Administration > Users & Security > Manage Users and click Password and Security": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 14,
+      "confidence": 0.7
+    },
+    "●New Dashboard": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 14,
+      "confidence": 0.7
+    },
+    "Edit Dashboard": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 14,
+      "confidence": 0.7
+    },
+    "Publish Dashboard": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 14,
+      "confidence": 0.7
+    },
+    "Delete Dashboard": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 14,
+      "confidence": 0.7
+    },
+    "Save Dashboard As": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 14,
+      "confidence": 0.7
+    },
+    "●Revert to Default Report": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 14,
+      "confidence": 0.7
+    },
+    "E-mail me this Report": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 14,
+      "confidence": 0.7
+    },
+    "View in Full Page": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 14,
+      "confidence": 0.7
+    },
+    "Table 1. Properties searched within each database": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 16,
+      "confidence": 0.7
+    },
+    "Device Summaries (APG)AlertsCompliance BreachesVMware Events": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 16,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 15": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 15,
+      "confidence": 0.7
+    },
+    "1.Click Modifications > Advanced Search.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 16,
+      "confidence": 0.7
+    },
+    "Changing Time Selection Options": {
+      "is_heading": true,
+      "level": 8,
+      "size": 15.999999999999943,
+      "is_bold": true,
+      "page": 17,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 17": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 17,
+      "confidence": 0.7
+    },
+    "Table 2. Time span examples": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 19,
+      "confidence": 0.7
+    },
+    "Time Span ValueExplanation": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 19,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 19": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 19,
+      "confidence": 0.7
+    },
+    "Feedback on product features": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 20,
+      "confidence": 0.9
+    },
+    "Saving display settings": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 20,
+      "confidence": 0.9
+    },
+    "Locking Time Selection settings for your session": {
+      "is_heading": true,
+      "level": 6,
+      "size": 16.00000000000003,
+      "is_bold": true,
+      "page": 20,
+      "confidence": 0.9
+    },
+    "mixed using defaults reports.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 20,
+      "confidence": 0.7
+    },
+    "3.Check the use for all reports globally .": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 21,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 21": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 21,
+      "confidence": 0.7
+    },
+    "Changing Report Type options": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 22,
+      "confidence": 0.9
+    },
+    "Getting the complete URL for the current report": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 104,
+      "confidence": 0.9
+    },
+    "1.Click Tools > Show Report URL.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 104,
+      "confidence": 0.7
+    },
+    "1.Click Tools > Print-friendly page .": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 22,
+      "confidence": 0.7
+    },
+    "Storing a snapshot of a report": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 22,
+      "confidence": 0.9
+    },
+    "Click Tools > Store this report.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 22,
+      "confidence": 0.7
+    },
+    "choose Revert to real-time data.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 22,
+      "confidence": 0.7
+    },
+    "Saving a favorite report": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 23,
+      "confidence": 0.9
+    },
+    "1.Click Tools > Favorite this Report.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 23,
+      "confidence": 0.7
+    },
+    "Displaying a favorite report at login": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 23,
+      "confidence": 0.9
+    },
+    "3.Click Use as login report, and then Save.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 23,
+      "confidence": 0.7
+    },
+    "Creating a scheduled report": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 23,
+      "confidence": 0.9
+    },
+    "1.Click Tools > Schedule this Report.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 23,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 23": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 23,
+      "confidence": 0.7
+    },
+    "Store a scheduled report in Stored Reports": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": true,
+      "page": 24,
+      "confidence": 0.9
+    },
+    "3.Select Store this report.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 24,
+      "confidence": 0.7
+    },
+    "Emailing a scheduled report": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": true,
+      "page": 24,
+      "confidence": 0.9
+    },
+    "Send a scheduled report to a remote location": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": true,
+      "page": 24,
+      "confidence": 0.9
+    },
+    "3.Click New Remote Location.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 24,
+      "confidence": 0.7
+    },
+    "Remote Transfer through FTP": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": true,
+      "page": 25,
+      "confidence": 0.9
+    },
+    "Remote Transfer through SMB": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": true,
+      "page": 25,
+      "confidence": 0.9
+    },
+    "Remote Transfer through Local": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": true,
+      "page": 25,
+      "confidence": 0.9
+    },
+    "Send a scheduled report to the alerting module": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": true,
+      "page": 25,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 25": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 25,
+      "confidence": 0.7
+    },
+    "Using advanced settings": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": true,
+      "page": 26,
+      "confidence": 0.9
+    },
+    "1.Click My Reports > Scheduled Reports > scheduled_report_name.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 26,
+      "confidence": 0.7
+    },
+    "Edit scheduled report settings": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 26,
+      "confidence": 0.9
+    },
+    "Launching a scheduled report now": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 26,
+      "confidence": 0.9
+    },
+    "TreeGo to My Reports > Scheduled Reports.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 26,
+      "confidence": 0.7
+    },
+    "Emailing a report to yourself": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 27,
+      "confidence": 0.9
+    },
+    "Displaying a report in a new browser window": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 27,
+      "confidence": 0.9
+    },
+    "2.Click View in Full Page.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 27,
+      "confidence": 0.7
+    },
+    "Table 3. Report headers": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 27,
+      "confidence": 0.7
+    },
+    "Table 4. Tools and information": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.999999999999991,
+      "is_bold": true,
+      "page": 27,
+      "confidence": 0.7
+    },
+    "description in Modifications > Edit Reports.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 27,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 27": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 27,
+      "confidence": 0.7
+    },
+    "Filtering a report using group filters": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 28,
+      "confidence": 0.9
+    },
+    "Working with personal views": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 29,
+      "confidence": 0.9
+    },
+    "Creating a personal view of selected reports": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 29,
+      "confidence": 0.9
+    },
+    "Comparing reports in a Personal View": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 29,
+      "confidence": 0.9
+    },
+    "Editing a report context in a Personal View": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 29,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 29": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 29,
+      "confidence": 0.7
+    },
+    "Working with dashboards": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 30,
+      "confidence": 0.9
+    },
+    "Dragging a report to a new position": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 30,
+      "confidence": 0.9
+    },
+    "Arranging reports in the report pane": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 30,
+      "confidence": 0.9
+    },
+    "Creating a Dashboard": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 30,
+      "confidence": 0.9
+    },
+    "Working with table reports": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 31,
+      "confidence": 0.9
+    },
+    "Applying filters to table columns": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 31,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 31": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 31,
+      "confidence": 0.7
+    },
+    "Sorting on a table column": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 32,
+      "confidence": 0.9
+    },
+    "Show, hide, rearrange, and sort table columns": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 32,
+      "confidence": 0.9
+    },
+    "Revert to saved customizationReturn to values saved with Save and Apply": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 33,
+      "confidence": 0.7
+    },
+    "Using the Actions Menu for performing actions on a report": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 33,
+      "confidence": 0.9
+    },
+    "Working with graphical reports": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 33,
+      "confidence": 0.9
+    },
+    "Toggling values in graphs": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 33,
+      "confidence": 0.9
+    },
+    "Setting upper and lower bounds to graphs": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 33,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 33": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 33,
+      "confidence": 0.7
+    },
+    "Reverting to the original bounds of a graph": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 34,
+      "confidence": 0.9
+    },
+    "Changing the appearance of graphs": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 34,
+      "confidence": 0.9
+    },
+    "2.Click the Settings > Customization Graph icon.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 34,
+      "confidence": 0.7
+    },
+    "Displaying detailed graph data in a popup": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 34,
+      "confidence": 0.9
+    },
+    "Zooming in on graph data": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 34,
+      "confidence": 0.9
+    },
+    "Zooming in on data while displaying the complete time range": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 34,
+      "confidence": 0.9
+    },
+    "Working with topology reports": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 35,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 35": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 35,
+      "confidence": 0.7
+    },
+    "Finding and filtering nodes on topology reports": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 36,
+      "confidence": 0.9
+    },
+    "2.Browse to System Admin > System Operations > Data Model.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 36,
+      "confidence": 0.7
+    },
+    "About the Edit mode interface": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 37,
+      "confidence": 0.9
+    },
+    "Table 5. Report tree tools": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 37,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 37": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 37,
+      "confidence": 0.7
+    },
+    "Table 5. Report tree tools (continued)": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 38,
+      "confidence": 0.7
+    },
+    "Table 6. Edit mode tabs": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 38,
+      "confidence": 0.7
+    },
+    "Using My Reports as a workspace": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 38,
+      "confidence": 0.9
+    },
+    "Simultaneous edits by multiple users": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 39,
+      "confidence": 0.9
+    },
+    "Workflow for creating reports": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 39,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 39": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 39,
+      "confidence": 0.7
+    },
+    "Workflow for creating a mixed report": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 40,
+      "confidence": 0.9
+    },
+    "Select mixed, mixed using defaults, overlay, or tab.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 40,
+      "confidence": 0.7
+    },
+    "Filtering and expansion tab": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 40,
+      "confidence": 0.9
+    },
+    "the Filtering and Expansion tab.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999972,
+      "is_bold": true,
+      "page": 40,
+      "confidence": 0.7
+    },
+    "Defining the report metrics using a filter": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 41,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 41": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 41,
+      "confidence": 0.7
+    },
+    "Syntax for filter expressions": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 42,
+      "confidence": 0.9
+    },
+    "Specifying the expansion properties for sub nodes": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 43,
+      "confidence": 0.9
+    },
+    "3.Click Add a Property.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 43,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 43": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 43,
+      "confidence": 0.7
+    },
+    "Combined Regex/Apg Pattern Match (type=sql)": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": false,
+      "page": 44,
+      "confidence": 0.9
+    },
+    "Regex Pattern Match (type=regex)": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": false,
+      "page": 44,
+      "confidence": 0.9
+    },
+    "Dual Regex Pattern Match (type=dual-regex)": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": false,
+      "page": 44,
+      "confidence": 0.9
+    },
+    "Split Property Expansion (type=split)": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": false,
+      "page": 45,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 45": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 45,
+      "confidence": 0.7
+    },
+    "Hide expansion (type=hide)": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": false,
+      "page": 46,
+      "confidence": 0.9
+    },
+    "In-list expansion (type=in-list)": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": false,
+      "page": 46,
+      "confidence": 0.9
+    },
+    "Configuring the advanced parameters for a report node": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 46,
+      "confidence": 0.9
+    },
+    "2.Expand Advanced Parameters.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 46,
+      "confidence": 0.7
+    },
+    "Setting the child node ordering": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 47,
+      "confidence": 0.9
+    },
+    "2.Expand Child Node Ordering.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 47,
+      "confidence": 0.7
+    },
+    "Add or remove group filters": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 47,
+      "confidence": 0.9
+    },
+    "Filtering and expansion parameters.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999972,
+      "is_bold": true,
+      "page": 47,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 47": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 47,
+      "confidence": 0.7
+    },
+    "a.Click Switch to input field.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 48,
+      "confidence": 0.7
+    },
+    "Filtering and expansion parameters": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 48,
+      "confidence": 0.9
+    },
+    "Use the filter of this node for": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": false,
+      "page": 48,
+      "confidence": 0.9
+    },
+    "Hide if no variable is selected or if the This is a combination of the Hide if no variable is selected and Hide if the": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 49,
+      "confidence": 0.7
+    },
+    "node is a leaf node is a leaf policies.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 49,
+      "confidence": 0.7
+    },
+    "Groups & Tags > Manage Groups. To add a simple filter:": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 49,
+      "confidence": 0.7
+    },
+    "1.Click Add Property > Simple.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 49,
+      "confidence": 0.7
+    },
+    "type managed in Administration > CONFIG > Groups & Tags > Manage Groups. For example, in Groups": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 49,
+      "confidence": 0.7
+    },
+    "1.Click Add Property > Complex.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 49,
+      "confidence": 0.7
+    },
+    "2.Choose Expand on groupping ui formatted data enrichment properties.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 49,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 49": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 49,
+      "confidence": 0.7
+    },
+    "Table 7. Syntax for multiple filters": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 50,
+      "confidence": 0.7
+    },
+    "Table 7. Syntax for multiple filters (continued)": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 51,
+      "confidence": 0.7
+    },
+    "Use filter on unmatched variables": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": false,
+      "page": 51,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 51": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 51,
+      "confidence": 0.7
+    },
+    "Top N for events": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": false,
+      "page": 52,
+      "confidence": 0.9
+    },
+    "Report configuration parameters": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 53,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 53": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 53,
+      "confidence": 0.7
+    },
+    "Propagate time selection on drill-down": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": false,
+      "page": 54,
+      "confidence": 0.9
+    },
+    "Align data on UTC using tz property with the following reference": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": false,
+      "page": 54,
+      "confidence": 0.9
+    },
+    "Dynamic Maintenance Periods": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": false,
+      "page": 55,
+      "confidence": 0.9
+    },
+    "Enable Audit Logging": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": false,
+      "page": 55,
+      "confidence": 0.9
+    },
+    "Descriptions of report types": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 55,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 55": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 55,
+      "confidence": 0.7
+    },
+    "Table 8. Table report types": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 56,
+      "confidence": 0.7
+    },
+    "Table 9. Graph report types": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 56,
+      "confidence": 0.7
+    },
+    "Table 10. Aggregated report types": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 56,
+      "confidence": 0.7
+    },
+    "Table 10. Aggregated report types (continued)": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 57,
+      "confidence": 0.7
+    },
+    "Table 11. TopN report types": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 57,
+      "confidence": 0.7
+    },
+    "Table 12. Misc report types": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 57,
+      "confidence": 0.7
+    },
+    "Table 13. Mixed report types": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 57,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 57": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 57,
+      "confidence": 0.7
+    },
+    "Report Details: TopN Graph": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 58,
+      "confidence": 0.7
+    },
+    "Report Details: Heat Map": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 58,
+      "confidence": 0.7
+    },
+    "2.Expand the Display Options.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 58,
+      "confidence": 0.7
+    },
+    "Setting threshold definitions in tables": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": true,
+      "page": 59,
+      "confidence": 0.9
+    },
+    "1.Click the Report Details: Table tab.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 63,
+      "confidence": 0.7
+    },
+    "3.Expand Value Settings.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 59,
+      "confidence": 0.7
+    },
+    "Setting the number of rows to display per page": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": true,
+      "page": 59,
+      "confidence": 0.9
+    },
+    "1.Click the Report Configuration tab.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 59,
+      "confidence": 0.7
+    },
+    "Change a column header tooltip": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": true,
+      "page": 59,
+      "confidence": 0.9
+    },
+    "Adding a column": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": true,
+      "page": 59,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 59": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 59,
+      "confidence": 0.7
+    },
+    "c.Click Save and Apply.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 60,
+      "confidence": 0.7
+    },
+    "the Advanced Properties > Display Customization field.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 60,
+      "confidence": 0.7
+    },
+    "Formatting metrics in a value column": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": true,
+      "page": 60,
+      "confidence": 0.9
+    },
+    "Table 14. Formatters for value columns": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 60,
+      "confidence": 0.7
+    },
+    "Table 14. Formatters for value columns (continued)": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 61,
+      "confidence": 0.7
+    },
+    "Additional Formatters located in the Decorations section": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 61,
+      "confidence": 0.7
+    },
+    "b.Click Value Settings.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 61,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 61": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 61,
+      "confidence": 0.7
+    },
+    "Formatting text and backgrounds in columns": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": true,
+      "page": 62,
+      "confidence": 0.9
+    },
+    "2.Expand Value Settings.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 62,
+      "confidence": 0.7
+    },
+    "5.Click the Report Details: Table tab.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 62,
+      "confidence": 0.7
+    },
+    "Adding a total row at the bottom of a column": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": true,
+      "page": 63,
+      "confidence": 0.9
+    },
+    "3.Expand Summary settings.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 63,
+      "confidence": 0.7
+    },
+    "Table 15. Attribute column": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 63,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 63": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 63,
+      "confidence": 0.7
+    },
+    "Table 15. Attribute column (continued)": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 64,
+      "confidence": 0.7
+    },
+    "Hide if empty, or Always hide.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 64,
+      "confidence": 0.7
+    },
+    "Customization field.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 64,
+      "confidence": 0.7
+    },
+    "Table 16. Property column": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 64,
+      "confidence": 0.7
+    },
+    "Table 16. Property column (continued)": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 65,
+      "confidence": 0.7
+    },
+    "Customization": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 65,
+      "confidence": 0.7
+    },
+    "Table 17. Value column": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 65,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 65": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 65,
+      "confidence": 0.7
+    },
+    "Table 17. Value column (continued)": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 68,
+      "confidence": 0.7
+    },
+    "Temporal Aggregation or Related to the": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 66,
+      "confidence": 0.7
+    },
+    "Value Settings": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 86,
+      "confidence": 0.7
+    },
+    "Scaling Mode●": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 66,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 67": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 67,
+      "confidence": 0.7
+    },
+    "Summary Settings": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 70,
+      "confidence": 0.7
+    },
+    "Table 18. Aggregate column": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 68,
+      "confidence": 0.7
+    },
+    "Table 18. Aggregate column (continued)": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 70,
+      "confidence": 0.7
+    },
+    "Value Settings:": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 69,
+      "confidence": 0.7
+    },
+    "Scaling Mode": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 86,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 69": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 69,
+      "confidence": 0.7
+    },
+    "Table 19. Combined column": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 70,
+      "confidence": 0.7
+    },
+    "Table 19. Combined column (continued)": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 71,
+      "confidence": 0.7
+    },
+    "1.Click +Formatter and select Copy Column Content.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 71,
+      "confidence": 0.7
+    },
+    "Table 20. Display options section": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 71,
+      "confidence": 0.7
+    },
+    "Item reports (hero dashboards)": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 71,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 71": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 71,
+      "confidence": 0.7
+    },
+    "Changing a table report to an item report": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": true,
+      "page": 72,
+      "confidence": 0.9
+    },
+    "3.Click Modifications > Edit Reports.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 72,
+      "confidence": 0.7
+    },
+    "4.Click the Report Configuration tab.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 72,
+      "confidence": 0.7
+    },
+    "6.Click the Report Details: Item tab.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 72,
+      "confidence": 0.7
+    },
+    "7.Expand Columns Positioning.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 72,
+      "confidence": 0.7
+    },
+    "8.For Container Display Mode, select Cards.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 72,
+      "confidence": 0.7
+    },
+    "9.For Item Alignment, select left.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 72,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 73": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 73,
+      "confidence": 0.7
+    },
+    "Setting threshold definitions in graphs": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": true,
+      "page": 74,
+      "confidence": 0.9
+    },
+    "1.Click the Report Details: Graph tab.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 77,
+      "confidence": 0.7
+    },
+    "Setting y-axis range of values": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": true,
+      "page": 74,
+      "confidence": 0.9
+    },
+    "Scaling the y-axis": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": true,
+      "page": 74,
+      "confidence": 0.9
+    },
+    "Setting the appearance of the graph metrics": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": true,
+      "page": 75,
+      "confidence": 0.9
+    },
+    "2.Under Metric Customization, click Add Customization.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 75,
+      "confidence": 0.7
+    },
+    "Adding additional statistics to a graph": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": true,
+      "page": 75,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 75": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 75,
+      "confidence": 0.7
+    },
+    "Configuring the TopN sections": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": true,
+      "page": 77,
+      "confidence": 0.9
+    },
+    "1.Click the Report Details: TopN Graph tab.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 78,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 77": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 77,
+      "confidence": 0.7
+    },
+    "Selecting tooltip information": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": true,
+      "page": 78,
+      "confidence": 0.9
+    },
+    "2.Under Tooltip Information, click Add Property.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 78,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 79": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 79,
+      "confidence": 0.7
+    },
+    "1.Click the Report Details: Map tab.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 80,
+      "confidence": 0.7
+    },
+    "3.Click Advanced Properties.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 80,
+      "confidence": 0.7
+    },
+    "Setting the icon size for child nodes": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": true,
+      "page": 80,
+      "confidence": 0.9
+    },
+    "Table Report: Details tab and conversely.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 81,
+      "confidence": 0.7
+    },
+    "Map Item Configuration tabs": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 81,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 81": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 81,
+      "confidence": 0.7
+    },
+    "Heat Map report parameters": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": true,
+      "page": 82,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 83": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 83,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 85": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 85,
+      "confidence": 0.7
+    },
+    "Table 21. Value (continued)": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 86,
+      "confidence": 0.7
+    },
+    "1.Click the Report Details: External tab.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 87,
+      "confidence": 0.7
+    },
+    "Table 22. URL parameters": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 87,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 87": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 87,
+      "confidence": 0.7
+    },
+    "http://www.bing.com/search?q=${parttype}": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 88,
+      "confidence": 0.7
+    },
+    "http://jira.yourcompany.com:8443/issues/?jql=project%3DEMP AND text~\"${device}\"": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 88,
+      "confidence": 0.7
+    },
+    "https://${device}/vsphere-client/?csp": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 88,
+      "confidence": 0.7
+    },
+    "Table 23. Attribute parameters": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 88,
+      "confidence": 0.7
+    },
+    "Topology report parameters": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": true,
+      "page": 89,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 89": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 89,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 91": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 91,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 93": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 93,
+      "confidence": 0.7
+    },
+    "Using threshold definitions": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 94,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 95": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 95,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 97": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 97,
+      "confidence": 0.7
+    },
+    "Setting": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": false,
+      "page": 98,
+      "confidence": 0.9
+    },
+    "2.Click the Report Details: Formula tab.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 99,
+      "confidence": 0.7
+    },
+    "6.Click the Report Details: Formula tab.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 99,
+      "confidence": 0.7
+    },
+    "UI interactivity and table interactivity tabs": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 99,
+      "confidence": 0.9
+    },
+    "Enable multi-row selection and action menu": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 99,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 99": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 99,
+      "confidence": 0.7
+    },
+    "2.In Edit Mode, click Table Interactivity.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 100,
+      "confidence": 0.7
+    },
+    "Allow Multiple Row Selection": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 100,
+      "confidence": 0.7
+    },
+    "https://[APGserverIP:port#]/APG/?param=value&param=value": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 104,
+      "confidence": 0.7
+    },
+    "https://[APGserverIP:port#]/APG/report.jsp?": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 104,
+      "confidence": 0.7
+    },
+    "https://[APGserverIP:port#]/APG/": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 104,
+      "confidence": 0.7
+    },
+    "report.format?param=value&param=value": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 104,
+      "confidence": 0.7
+    },
+    "report.csv?param=value&param=value": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 104,
+      "confidence": 0.7
+    },
+    "Report settings": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": false,
+      "page": 105,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 101": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 101,
+      "confidence": 0.7
+    },
+    "Query and variable selection": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": false,
+      "page": 106,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 103": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 103,
+      "confidence": 0.7
+    },
+    "Accessing reports from outside of the Console": {
+      "is_heading": true,
+      "level": 4,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 104,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 105": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 105,
+      "confidence": 0.7
+    },
+    "Customizing user settings and custom reports": {
+      "is_heading": true,
+      "level": 4,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 107,
+      "confidence": 0.9
+    },
+    "Modifying your user data and password": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 107,
+      "confidence": 0.9
+    },
+    "1.Click Profile  > User Settings.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 107,
+      "confidence": 0.7
+    },
+    "Setting the reporting preferences": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 107,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 107": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 107,
+      "confidence": 0.7
+    },
+    "Setting the first report to appear after login": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 108,
+      "confidence": 0.9
+    },
+    "2.Click Tools > Favorite this report.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 108,
+      "confidence": 0.7
+    },
+    "Saving the report tree": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 108,
+      "confidence": 0.9
+    },
+    "1.Click Profile > User Settings.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 108,
+      "confidence": 0.7
+    },
+    "Import a report definition": {
+      "is_heading": true,
+      "level": 6,
+      "size": 16.00000000000003,
+      "is_bold": true,
+      "page": 108,
+      "confidence": 0.9
+    },
+    "2.Click Exports > XML format.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 108,
+      "confidence": 0.7
+    },
+    "1.Click Modifications > Edit Reports.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 108,
+      "confidence": 0.7
+    },
+    "3.Click Profile > User Settings > Custom Reports.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 109,
+      "confidence": 0.7
+    },
+    "Find and Fix Broken Links in Reports": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 109,
+      "confidence": 0.9
+    },
+    "1.On APG page, click Profile  > User Settings.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 109,
+      "confidence": 0.7
+    },
+    "2.Click Custom Reports tab.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 109,
+      "confidence": 0.7
+    },
+    "3.In the Broken Links Detection section, click Open Tool.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 109,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 109": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 109,
+      "confidence": 0.7
+    },
+    "Table 24. Broken links description": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 110,
+      "confidence": 0.7
+    },
+    "View Fixed Links in Tomcat Logs": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 110,
+      "confidence": 0.9
+    },
+    "Modifying the default profile settings": {
+      "is_heading": true,
+      "level": 8,
+      "size": 15.999999999999943,
+      "is_bold": true,
+      "page": 111,
+      "confidence": 0.9
+    },
+    "a.Click Upload New Logo.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 111,
+      "confidence": 0.7
+    },
+    "Set first report after login": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 111,
+      "confidence": 0.9
+    },
+    "report after login button.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 111,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 111": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 111,
+      "confidence": 0.7
+    },
+    "Using the Report Library": {
+      "is_heading": true,
+      "level": 4,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 112,
+      "confidence": 0.9
+    },
+    "Accessing SolutionPack reports": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 112,
+      "confidence": 0.9
+    },
+    "Viewing the summary of installed SolutionPack": {
+      "is_heading": true,
+      "level": 8,
+      "size": 15.999999999999943,
+      "is_bold": true,
+      "page": 112,
+      "confidence": 0.9
+    },
+    "1.Click Administration > CONFIG > SolutionPacks.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 112,
+      "confidence": 0.7
+    },
+    "2.Click Installed SolutionPack.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 112,
+      "confidence": 0.7
+    },
+    "Table 25. Global portal properties": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 112,
+      "confidence": 0.7
+    },
+    "TabSettings": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 112,
+      "confidence": 0.7
+    },
+    "Setting login properties and welcome message": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 113,
+      "confidence": 0.9
+    },
+    "1.Click Administration > CONFIG > Settings.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.000000000000014,
+      "is_bold": true,
+      "page": 132,
+      "confidence": 0.7
+    },
+    "Set the navigation style": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 113,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 113": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 113,
+      "confidence": 0.7
+    },
+    "Customizing the look of the interface": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 114,
+      "confidence": 0.9
+    },
+    "Use the File Customization tab to:": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 114,
+      "confidence": 0.7
+    },
+    "2.Click the File Customization tab.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 114,
+      "confidence": 0.7
+    },
+    "Enabling keyboard shortcuts": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 114,
+      "confidence": 0.9
+    },
+    "Editing the aliases given to time periods": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 114,
+      "confidence": 0.9
+    },
+    "1.Click Administration > System Admin > Tools > Duration Aliases.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 114,
+      "confidence": 0.7
+    },
+    "Assigning system roles to external users": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 115,
+      "confidence": 0.9
+    },
+    "CN=test,OU=my_ldap,DC=lss,DC=emc,DC=com": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 115,
+      "confidence": 0.7
+    },
+    "Click Administration > System Admin > System Operations > Scheduled Report. The following sub-reports appear on the": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 115,
+      "confidence": 0.7
+    },
+    "Managing scheduled reports": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 115,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 115": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 115,
+      "confidence": 0.7
+    },
+    "Editing the properties of scheduled reports": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 116,
+      "confidence": 0.9
+    },
+    "1.Click Administration > System Admin > System Operations..": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 116,
+      "confidence": 0.7
+    },
+    "2.Click Scheduled Report tab.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 116,
+      "confidence": 0.7
+    },
+    "1.Click Administration > System Admin > System Operations.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 117,
+      "confidence": 0.7
+    },
+    "2.Click Stored Reporta tab.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 116,
+      "confidence": 0.7
+    },
+    "Canceling a user session": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 117,
+      "confidence": 0.9
+    },
+    "Listing reports that are generating": {
+      "is_heading": true,
+      "level": 4,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 117,
+      "confidence": 0.9
+    },
+    "2.Select Running Reports tab.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 117,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 117": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 117,
+      "confidence": 0.7
+    },
+    "Configuring an SMTP server": {
+      "is_heading": true,
+      "level": 4,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 118,
+      "confidence": 0.9
+    },
+    "1.Click Administration > CONFIG > Settings > SMTP Settings.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 118,
+      "confidence": 0.7
+    },
+    "Managing users and user rights": {
+      "is_heading": true,
+      "level": 4,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 118,
+      "confidence": 0.9
+    },
+    "Adding a user": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 119,
+      "confidence": 0.9
+    },
+    "1.Click Administration > USERS & SECURITY > Manage Users.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 121,
+      "confidence": 0.7
+    },
+    "7.Type the Email Address.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 119,
+      "confidence": 0.7
+    },
+    "Setting the access rights of a user": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 119,
+      "confidence": 0.9
+    },
+    "User Modification: <user_name> page appears.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 119,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 119": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 119,
+      "confidence": 0.7
+    },
+    "Setting the viewing rights of a user": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 120,
+      "confidence": 0.9
+    },
+    "1.Click Administration > User & Security > User & Roles.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 120,
+      "confidence": 0.7
+    },
+    "Test user settings": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 120,
+      "confidence": 0.9
+    },
+    "Creating a role": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 121,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 121": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 121,
+      "confidence": 0.7
+    },
+    "Adding members to a role": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 122,
+      "confidence": 0.9
+    },
+    "1.Click Administration > Users & Security > Users & Roles.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.000000000000057,
+      "is_bold": true,
+      "page": 125,
+      "confidence": 0.7
+    },
+    "Adding external members to a role": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 122,
+      "confidence": 0.9
+    },
+    "6.Click Add to this role.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 122,
+      "confidence": 0.7
+    },
+    "Establishing inheritance between roles": {
+      "is_heading": true,
+      "level": 9,
+      "size": 14.000000000000028,
+      "is_bold": true,
+      "page": 122,
+      "confidence": 0.9
+    },
+    "2.On the Role Management page, click Advanced Mode.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 122,
+      "confidence": 0.7
+    },
+    "Setting role access to report templates": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 123,
+      "confidence": 0.9
+    },
+    "Setting component access and restrictions": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 123,
+      "confidence": 0.9
+    },
+    "Roles Management page appears.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 123,
+      "confidence": 0.7
+    },
+    "Role Modification:<role_name> page appears.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 123,
+      "confidence": 0.7
+    },
+    "3.Click the Modules & Restrictions Access tab.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 123,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 123": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 123,
+      "confidence": 0.7
+    },
+    "Assigning administration tasks to a role": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 124,
+      "confidence": 0.9
+    },
+    "5.Click the Role and User Management tab.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 124,
+      "confidence": 0.7
+    },
+    "Removing a user from a role": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 124,
+      "confidence": 0.9
+    },
+    "Resetting default role settings": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 125,
+      "confidence": 0.9
+    },
+    "Creating a profile": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 125,
+      "confidence": 0.9
+    },
+    "1.Click Administration > Users & Security > Users & Role.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 127,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 125": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 125,
+      "confidence": 0.7
+    },
+    "4.Click the Customizable Settings tab.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 126,
+      "confidence": 0.7
+    },
+    "?report&select=0&mode=ico&display=2": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 126,
+      "confidence": 0.7
+    },
+    "Adding members to a profile": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 126,
+      "confidence": 0.9
+    },
+    "Adding external members to a profile": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 126,
+      "confidence": 0.9
+    },
+    "6.Click Add to this profile.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 126,
+      "confidence": 0.7
+    },
+    "Removing a member from a profile": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 127,
+      "confidence": 0.9
+    },
+    "6.Click Remove from Profile.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 127,
+      "confidence": 0.7
+    },
+    "Authentication Management": {
+      "is_heading": true,
+      "level": 4,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 127,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 127": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 127,
+      "confidence": 0.7
+    },
+    "Testing authentication": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 128,
+      "confidence": 0.9
+    },
+    "3.Click Test Authentication.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 128,
+      "confidence": 0.7
+    },
+    "Adding realms": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 128,
+      "confidence": 0.9
+    },
+    "2.Click Add a Realm.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 128,
+      "confidence": 0.7
+    },
+    "Table 26. Realm types": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 128,
+      "confidence": 0.7
+    },
+    "3.Select an Authentication Type.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 128,
+      "confidence": 0.7
+    },
+    "Prioritizing authentication realms": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 129,
+      "confidence": 0.9
+    },
+    "Figure 1. Order of the realm configured": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 129,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 129": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 129,
+      "confidence": 0.7
+    },
+    "Managing ReportPacks": {
+      "is_heading": true,
+      "level": 4,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 130,
+      "confidence": 0.9
+    },
+    "Creating a ReportPack": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 130,
+      "confidence": 0.9
+    },
+    "1.Click Administration > CONFIG > Settings > ReportPacks.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 130,
+      "confidence": 0.7
+    },
+    "Uploading a <ReportPack>.arp file": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 130,
+      "confidence": 0.9
+    },
+    "Adding a new report template to a ReportPack": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 131,
+      "confidence": 0.9
+    },
+    "Copying a report template": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 131,
+      "confidence": 0.9
+    },
+    "Deleting a report template from a ReportPack": {
+      "is_heading": true,
+      "level": 6,
+      "size": 16.00000000000003,
+      "is_bold": true,
+      "page": 131,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 131": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 131,
+      "confidence": 0.7
+    },
+    "Exporting a report as a template in XML format": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 132,
+      "confidence": 0.9
+    },
+    "Server Management": {
+      "is_heading": true,
+      "level": 4,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 132,
+      "confidence": 0.9
+    },
+    "Physical Overview": {
+      "is_heading": true,
+      "level": 8,
+      "size": 15.999999999999943,
+      "is_bold": false,
+      "page": 132,
+      "confidence": 0.9
+    },
+    "Registering additional servers": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 132,
+      "confidence": 0.9
+    },
+    "2.Click Configure Servers.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 132,
+      "confidence": 0.7
+    },
+    "3.Click Register a Server.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 132,
+      "confidence": 0.7
+    },
+    "Removing additional servers": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 133,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 133": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 133,
+      "confidence": 0.7
+    },
+    "Distribute startup of UNIX services": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 134,
+      "confidence": 0.9
+    },
+    "Starting and stopping services": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 134,
+      "confidence": 0.9
+    },
+    "Installing modules": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 135,
+      "confidence": 0.9
+    },
+    "Updating modules": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 135,
+      "confidence": 0.9
+    },
+    "4.Click Update to Latest Version.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 135,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 135": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 135,
+      "confidence": 0.7
+    },
+    "Accessing and editing configuration files": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 136,
+      "confidence": 0.9
+    },
+    "1.Click Administration > Sytem Admin > Log & Diagnostics.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 136,
+      "confidence": 0.7
+    },
+    "Obtaining a permanent license": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 137,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 137": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 137,
+      "confidence": 0.7
+    },
+    "4.Browse to Service Center > Product Registration & Licenses.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 138,
+      "confidence": 0.7
+    },
+    "Obtaining a temporary license": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 138,
+      "confidence": 0.9
+    },
+    "2.Browse to Service Center > Product Registration & Licenses.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 138,
+      "confidence": 0.7
+    },
+    "Adding licenses": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 138,
+      "confidence": 0.9
+    },
+    "1.Click Administration > System Admin > Licenses.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 138,
+      "confidence": 0.7
+    },
+    "Dell Technologies Connectivity": {
+      "is_heading": true,
+      "level": 4,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 139,
+      "confidence": 0.9
+    },
+    "Alerts raised in SRM for Dell Technologies Connectivity configuration": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": false,
+      "page": 139,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 139": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 139,
+      "confidence": 0.7
+    },
+    "Generating and downloading diagnostic files": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 140,
+      "confidence": 0.9
+    },
+    "2.Click Generate diagnostic files.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 140,
+      "confidence": 0.7
+    },
+    "Adding a new device manually": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 140,
+      "confidence": 0.9
+    },
+    "1.Browse to Administration > Discovery > Manage Discovery.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 145,
+      "confidence": 0.7
+    },
+    "5.Click Validate and add.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 141,
+      "confidence": 0.7
+    },
+    "Adding devices using CSV files": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 141,
+      "confidence": 0.9
+    },
+    "Importing a CSV file": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 141,
+      "confidence": 0.9
+    },
+    "1.Browse to Administration > Discovery > Manage Discovery > SolutionPack.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 142,
+      "confidence": 0.7
+    },
+    "2.On the Collected Devices tab, click Import.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 141,
+      "confidence": 0.7
+    },
+    "3.For Merge the devices to the existing ones?": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 141,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 141": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 141,
+      "confidence": 0.7
+    },
+    "Exporting devices": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 142,
+      "confidence": 0.9
+    },
+    "2.On the Collected Devices tab, click Export.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 142,
+      "confidence": 0.7
+    },
+    "Exporting a CSV file template": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 142,
+      "confidence": 0.9
+    },
+    "Add devices using discovery": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 142,
+      "confidence": 0.9
+    },
+    "Registering a new collector server": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 142,
+      "confidence": 0.9
+    },
+    "Create a discovery group": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 143,
+      "confidence": 0.9
+    },
+    "Discover devices": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 143,
+      "confidence": 0.9
+    },
+    "2.On the Collected Devices tab, click Discovery.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 143,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 143": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 143,
+      "confidence": 0.7
+    },
+    "4.Select a Discovery Mode.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 144,
+      "confidence": 0.7
+    },
+    "5.For Automatically distribute results?:": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 144,
+      "confidence": 0.7
+    },
+    "the Discovery Results tab.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 144,
+      "confidence": 0.7
+    },
+    "Distribute (import) discovery results": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 144,
+      "confidence": 0.9
+    },
+    "Collected Devices.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 144,
+      "confidence": 0.7
+    },
+    "Back up device details": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 145,
+      "confidence": 0.9
+    },
+    "2.Click Backup Devices.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 145,
+      "confidence": 0.7
+    },
+    "Flat and hierarchical groups": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 145,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 145": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 145,
+      "confidence": 0.7
+    },
+    "Table 27. Summary of predefined group types": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 146,
+      "confidence": 0.7
+    },
+    "Report Library > Amazon AWS > Operations.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 146,
+      "confidence": 0.7
+    },
+    "Setting cost basis for chargeback reports": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 146,
+      "confidence": 0.9
+    },
+    "Overview of the Groups Management UI": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 147,
+      "confidence": 0.9
+    },
+    "Figure 2. Groups Management UI": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 147,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 147": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 147,
+      "confidence": 0.7
+    },
+    "Figure 3. Groups Management UI—Rules": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 148,
+      "confidence": 0.7
+    },
+    "Use the preview table": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 148,
+      "confidence": 0.9
+    },
+    "Dynamic Members and Static Members. Click Dynamic Members.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 149,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 149": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 149,
+      "confidence": 0.7
+    },
+    "View and reorder rules": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 151,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 151": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 151,
+      "confidence": 0.7
+    },
+    "Create a group by copying an existing group": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 153,
+      "confidence": 0.9
+    },
+    "Get group membership rules as regex expression": {
+      "is_heading": true,
+      "level": 11,
+      "size": 13.999999999999943,
+      "is_bold": true,
+      "page": 153,
+      "confidence": 0.9
+    },
+    "Manage groups by exporting and importing files": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 153,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 153": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 153,
+      "confidence": 0.7
+    },
+    "Configuring server settings for online updates": {
+      "is_heading": true,
+      "level": 4,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 154,
+      "confidence": 0.9
+    },
+    "2.Go to CONFIG > Update System > Manage Online Update.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 154,
+      "confidence": 0.7
+    },
+    "Enabling the online update task": {
+      "is_heading": true,
+      "level": 4,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 154,
+      "confidence": 0.9
+    },
+    "1.Click Administration > Home.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 155,
+      "confidence": 0.7
+    },
+    "Disabling the online update task": {
+      "is_heading": true,
+      "level": 4,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 155,
+      "confidence": 0.9
+    },
+    "Running the online update task manually": {
+      "is_heading": true,
+      "level": 4,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 155,
+      "confidence": 0.9
+    },
+    "Temporarily suppress metric collection and alerts for": {
+      "is_heading": true,
+      "level": 4,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 155,
+      "confidence": 0.9
+    },
+    "a device in maintenance mode": {
+      "is_heading": true,
+      "level": 4,
+      "size": 20.0,
+      "is_bold": true,
+      "page": 155,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 155": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 155,
+      "confidence": 0.7
+    },
+    "Installing a SolutionPack": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 156,
+      "confidence": 0.9
+    },
+    "Administration > System Admin > Licenses > Manage License .": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 156,
+      "confidence": 0.7
+    },
+    "Frontends, Miscellaneous (except Blocks).": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 156,
+      "confidence": 0.7
+    },
+    "1.Browse to Administration > CONFIG > SolutionPacks.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 156,
+      "confidence": 0.7
+    },
+    "2.Select Browse & Install SolutionPacks.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 156,
+      "confidence": 0.7
+    },
+    "Reconfiguring a SolutionPack": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 156,
+      "confidence": 0.9
+    },
+    "1.Browse to Administration > CONFIG > SolutionPacks > Installed SolutionPacks.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 170,
+      "confidence": 0.7
+    },
+    "Installing a SolutionPackBlock": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 157,
+      "confidence": 0.9
+    },
+    "Reconfiguring a SolutionPackBlock": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 157,
+      "confidence": 0.9
+    },
+    "What to do if data does not appear in any reports": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 157,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 157": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 157,
+      "confidence": 0.7
+    },
+    "What to do if data does not appear in some reports": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 158,
+      "confidence": 0.9
+    },
+    "Processing_Manager::Instance name.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 158,
+      "confidence": 0.7
+    },
+    "Viewing collector errors in the Collector-Manager log files": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 158,
+      "confidence": 0.9
+    },
+    "Collector-Manager:<Collector-Manager instance> - <host_ID>": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.000000000000057,
+      "is_bold": true,
+      "page": 158,
+      "confidence": 0.7
+    },
+    "Using the Data Enrichment UI": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 158,
+      "confidence": 0.9
+    },
+    "Register a Collector Manager": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 159,
+      "confidence": 0.9
+    },
+    "2.Click the Manage Data Enrichment tab.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 166,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 159": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 159,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 161": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 161,
+      "confidence": 0.7
+    },
+    "Create new tagging structure": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 163,
+      "confidence": 0.9
+    },
+    "Table 28. Type Description": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 163,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 163": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 163,
+      "confidence": 0.7
+    },
+    "Table 28. Type Description (continued)": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 164,
+      "confidence": 0.7
+    },
+    "WARNING: Use this option with extreme caution. Deleting the fields can break the data model. Usually": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 164,
+      "confidence": 0.7
+    },
+    "Type attribute for PTF keys": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": true,
+      "page": 165,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 165": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 165,
+      "confidence": 0.7
+    },
+    "Populate the tag set rows": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 166,
+      "confidence": 0.9
+    },
+    "a.Click Import CSV or Import XSL.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 167,
+      "confidence": 0.7
+    },
+    "View and edit the PTF input file": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": true,
+      "page": 167,
+      "confidence": 0.9
+    },
+    "a.Go to Administration > Home > Physical Overview > registered-server-name > Modules > Collecting >": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 167,
+      "confidence": 0.7
+    },
+    "Property-Tagging-Filter :: registered-module-name.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 167,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 167": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 167,
+      "confidence": 0.7
+    },
+    "(Optional) Run the import property task and restart Collectors": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 168,
+      "confidence": 0.9
+    },
+    "a.Click Administration > Home > Physical Overview > server_name - Front End > Tasks > Database > import-": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 168,
+      "confidence": 0.7
+    },
+    "a.Click Administration > Home > Physical Overview > collector_server_name .": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 169,
+      "confidence": 0.7
+    },
+    "Add the new property to a report": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 169,
+      "confidence": 0.9
+    },
+    "2.Click the Report Details: Table tab.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 171,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 169": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 169,
+      "confidence": 0.7
+    },
+    "The Reconfiguring Window appears.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 170,
+      "confidence": 0.7
+    },
+    "Change the refresh rate on alerting reports": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 170,
+      "confidence": 0.9
+    },
+    "4.Set the Table refresh behavior option as set interval.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 171,
+      "confidence": 0.7
+    },
+    "Alerting (Events) database": {
+      "is_heading": true,
+      "level": 9,
+      "size": 14.000000000000028,
+      "is_bold": false,
+      "page": 171,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 171": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 171,
+      "confidence": 0.7
+    },
+    "Access the alerting portal page": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 172,
+      "confidence": 0.9
+    },
+    "1.Click Administration > CONFIG > Alerts > Manage Alert Definitions": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 173,
+      "confidence": 0.7
+    },
+    "About configuring alert definitions": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 173,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 173": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 173,
+      "confidence": 0.7
+    },
+    "Components in an alert definition": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 174,
+      "confidence": 0.9
+    },
+    "Figure 4. Filter in an alert definition": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 174,
+      "confidence": 0.7
+    },
+    "Table 29. Field names for filtering on event sources": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 174,
+      "confidence": 0.7
+    },
+    "Event typeEvent source filterExample": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 174,
+      "confidence": 0.7
+    },
+    "Figure 5. Operator in an alert definition": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 175,
+      "confidence": 0.7
+    },
+    "Figure 6. Comparator with two outcome paths": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 175,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 175": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 175,
+      "confidence": 0.7
+    },
+    "Figure 7. Actions in an alert definition": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 176,
+      "confidence": 0.7
+    },
+    "Example: Putting it all together": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": false,
+      "page": 176,
+      "confidence": 0.9
+    },
+    "Figure 8. Example alert definition": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 177,
+      "confidence": 0.7
+    },
+    "Contextualized and non-contextualized alert definitions": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 177,
+      "confidence": 0.9
+    },
+    "Contextualizing an alert definition": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 177,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 177": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 177,
+      "confidence": 0.7
+    },
+    "Configuring an alert definition": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 178,
+      "confidence": 0.9
+    },
+    "1.Click Administration > CONFIG > Alerts > Manage Alert Definitions.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 179,
+      "confidence": 0.7
+    },
+    "Editing an alert definition": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 179,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 179": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 179,
+      "confidence": 0.7
+    },
+    "Figure 9. Graphical representation of an alert definition": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 180,
+      "confidence": 0.7
+    },
+    "Enable/disable alert definitions": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 181,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 181": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 181,
+      "confidence": 0.7
+    },
+    "1.Go to Administration > CONFIG > Manage Alert Definitions.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 182,
+      "confidence": 0.7
+    },
+    "Table 30. Alert Definition Status": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 182,
+      "confidence": 0.7
+    },
+    "Creating alert definitions": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 182,
+      "confidence": 0.9
+    },
+    "11.Click Save and enable or Save and disable.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 183,
+      "confidence": 0.7
+    },
+    "About the Dell Technologies Connectivity alert definitions": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 183,
+      "confidence": 0.9
+    },
+    "Unhide the Dell Technologies Connectivity alert definitions": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": true,
+      "page": 183,
+      "confidence": 0.9
+    },
+    "2.Enable the Display hidden definitions button.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 183,
+      "confidence": 0.7
+    },
+    "Alert definition component reference": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 183,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 183": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 183,
+      "confidence": 0.7
+    },
+    "Previous Polling Operation": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": false,
+      "page": 185,
+      "confidence": 0.9
+    },
+    "Properties To Values Creator": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": false,
+      "page": 185,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 185": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 185,
+      "confidence": 0.7
+    },
+    "Timestamp To Value Creator": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": false,
+      "page": 186,
+      "confidence": 0.9
+    },
+    "Constant Comparator Operation": {
+      "is_heading": true,
+      "level": 14,
+      "size": 11.999999999999943,
+      "is_bold": false,
+      "page": 186,
+      "confidence": 0.9
+    },
+    "Property Comparator Operation": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": false,
+      "page": 186,
+      "confidence": 0.9
+    },
+    "String Comparator Operation": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": false,
+      "page": 187,
+      "confidence": 0.9
+    },
+    "Grouped Data Counter Operation": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": false,
+      "page": 187,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 187": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 187,
+      "confidence": 0.7
+    },
+    "Table 31. Log action": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 188,
+      "confidence": 0.7
+    },
+    "Table 32. Mail action": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 189,
+      "confidence": 0.7
+    },
+    "Table 33. SNMP Trap action": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 189,
+      "confidence": 0.7
+    },
+    "Table 34. Parameters section": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 189,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 189": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999993,
+      "is_bold": true,
+      "page": 189,
+      "confidence": 0.7
+    },
+    "Table 34. Parameters section (continued)": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 190,
+      "confidence": 0.7
+    },
+    "Table 35. External process action": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 190,
+      "confidence": 0.7
+    },
+    "Send to SAM action": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": false,
+      "page": 190,
+      "confidence": 0.9
+    },
+    "Table 36. Sent to SAM action": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 190,
+      "confidence": 0.7
+    },
+    "Table 36. Sent to SAM action (continued)": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 191,
+      "confidence": 0.7
+    },
+    "Dell Technologies Connectivity event action": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": false,
+      "page": 191,
+      "confidence": 0.9
+    },
+    "Table 37. Webhook action": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 191,
+      "confidence": 0.7
+    },
+    "Creating adapters": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 191,
+      "confidence": 0.9
+    },
+    "Creating a Values Socket Listener Adapter": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 191,
+      "confidence": 0.9
+    },
+    "3.From the Type list, select Values Socket Listener Adapter.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.000000000000014,
+      "is_bold": true,
+      "page": 191,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 191": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 191,
+      "confidence": 0.7
+    },
+    "Creating an Events Adapter": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 192,
+      "confidence": 0.9
+    },
+    "Creating a report data adapter": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 192,
+      "confidence": 0.9
+    },
+    "Creating a File Data Adapter": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 192,
+      "confidence": 0.9
+    },
+    "Creating alert templates": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 193,
+      "confidence": 0.9
+    },
+    "Using preconfigured alert templates and examples": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 193,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 193": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 193,
+      "confidence": 0.7
+    },
+    "PROP.'id',PROP.'Name',null,PROP.'count',PROP.'eventstate',PROP.'Source',PROP.'parttype": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 194,
+      "confidence": 0.7
+    },
+    "',PROP.'part',PROP.'eventname',PROP.'parttypedisplayname',PROP.'partdisplayname',PROP.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 194,
+      "confidence": 0.7
+    },
+    "'eventdisplayname',PROP.'fullmsg',PROP.'devtype',PROP.'device',PROP.'sourceip',PROP.'s": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 194,
+      "confidence": 0.7
+    },
+    "ourcedomainname',PROP.'sourceeventtype',PROP.'value',PROP.'active',PROP.'timestamp',nu": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 194,
+      "confidence": 0.7
+    },
+    "ll,null,null,null,null,PROP.'acknowledged',PROP.'eventtype',PROP.'category',PROP.'even": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 194,
+      "confidence": 0.7
+    },
+    "ttext',PROP.'severity',PROP.'impact',PROP.'certainty',PROP.'inmaintenance',PROP.'troub": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 194,
+      "confidence": 0.7
+    },
+    "leticketid',PROP.'owner',PROP.'systemdefined1',null,null,null,null,PROP.'userdefined1'": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 194,
+      "confidence": 0.7
+    },
+    ",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 194,
+      "confidence": 0.7
+    },
+    "Setting up a log template": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 194,
+      "confidence": 0.9
+    },
+    "Setting up a trap notify and trap clear template": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 194,
+      "confidence": 0.9
+    },
+    "2.Click Trap Notify Template.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 194,
+      "confidence": 0.7
+    },
+    "Creating a Grouped Box": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 195,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 195": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 195,
+      "confidence": 0.7
+    },
+    "Probing an alert definition": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 196,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 197": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 197,
+      "confidence": 0.7
+    },
+    "b.Click Utilization Over Month Alert > Probe.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 198,
+      "confidence": 0.7
+    },
+    "Create alerts from scheduled reports": {
+      "is_heading": true,
+      "level": 7,
+      "size": 16.0,
+      "is_bold": true,
+      "page": 198,
+      "confidence": 0.9
+    },
+    "Configure the alerting engine": {
+      "is_heading": true,
+      "level": 12,
+      "size": 12.000000000000014,
+      "is_bold": true,
+      "page": 198,
+      "confidence": 0.9
+    },
+    "Table 38. Configuring alerting engine": {
+      "is_heading": true,
+      "level": 16,
+      "size": 10.0,
+      "is_bold": true,
+      "page": 199,
+      "confidence": 0.7
+    },
+    "Configure alerting communication": {
+      "is_heading": true,
+      "level": 13,
+      "size": 12.0,
+      "is_bold": true,
+      "page": 199,
+      "confidence": 0.9
+    },
+    "Web Portal Guide 199": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 199,
+      "confidence": 0.7
+    },
+    "Create a scheduled report alert": {
+      "is_heading": true,
+      "level": 10,
+      "size": 14.0,
+      "is_bold": true,
+      "page": 200,
+      "confidence": 0.9
+    },
+    "a.Go to Administration > CONFIG > Alerts > Adapters.": {
+      "is_heading": true,
+      "level": 16,
+      "size": 9.0,
+      "is_bold": true,
+      "page": 200,
+      "confidence": 0.7
+    },
+    "Web Portal Guide 201": {
+      "is_heading": true,
+      "level": 16,
+      "size": 8.999999999999998,
+      "is_bold": true,
+      "page": 201,
+      "confidence": 0.7
+    }
+  },
+  "font_distribution": {
+    "FVDVDD+DellReplica-Light": 5971,
+    "FVDVDD+DellReplica-Bold": 1507,
+    "FVDVDD+CourierNewPSMT": 237,
+    "FVDVDD+CourierNewPS-BoldMT": 54,
+    "FVDVDD+CourierNewPS-ItalicMT": 43,
+    "FVDVDD+CourierNewPS-BoldItalicMT": 5
+  },
+  "size_distribution": {
+    "9.0": 6721,
+    "10.0": 250,
+    "14.0": 167,
+    "12.0": 132,
+    "16.0": 129,
+    "8.999999999999993": 97,
+    "9.000000000000014": 80,
+    "8.999999999999972": 58,
+    "20.0": 38,
+    "8.999999999999998": 38,
+    "8.999999999999995": 36,
+    "9.000000000000057": 27,
+    "8.999999999999943": 5,
+    "10.000000000000014": 4,
+    "15.999999999999943": 4,
+    "16.00000000000003": 4,
+    "14.000000000000028": 4,
+    "26.0": 3,
+    "12.000000000000014": 3,
+    "24.0": 2,
+    "7.0": 2,
+    "8.0": 2,
+    "9.999999999999943": 2,
+    "11.999999999999943": 2,
+    "22.0": 1,
+    "11.5": 1,
+    "10.5": 1,
+    "9.999999999999991": 1,
+    "8.999999999999973": 1,
+    "19.999999999999943": 1,
+    "13.999999999999943": 1
+  },
+  "total_text_elements": 7817
+}

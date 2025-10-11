@@ -1,0 +1,2946 @@
+[
+  {
+    "title": "Dell SRM 5.1.1.0 Web Portal Guide",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "Notes, cautions, and warnings",
+    "font_size": 11.5,
+    "is_bold": false,
+    "heading_level": 15,
+    "page": 2,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Temporarily suppress metric collection and alerts for a device in maintenance mode",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 4,
+    "page": 155,
+    "confidence": 0.9
+  },
+  {
+    "title": "Information you can find here",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 4,
+    "page": 9,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Managing ReportPacks - for users and administrators who want to create, import, and export ReportPacks.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 4,
+    "page": 130,
+    "confidence": 0.9
+  },
+  {
+    "title": "What's New in SRM",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 4,
+    "page": 11,
+    "confidence": 0.9
+  },
+  {
+    "title": "Set default navigation style",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 12,
+    "confidence": 0.9
+  },
+  {
+    "title": "Make icon navigation column static",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 12,
+    "confidence": 0.9
+  },
+  {
+    "title": "Displaying and canceling reports",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 13,
+    "confidence": 0.9
+  },
+  {
+    "title": "User Interface menu options",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 13,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 1. Properties searched within each database",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 16,
+    "confidence": 0.7
+  },
+  {
+    "title": "Changing Time Selection Options",
+    "font_size": 15.999999999999943,
+    "is_bold": true,
+    "heading_level": 8,
+    "page": 17,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 2. Time span examples",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 19,
+    "confidence": 0.7
+  },
+  {
+    "title": "Feedback on product features",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "Saving display settings",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "Locking Time Selection settings for your session",
+    "font_size": 16.00000000000003,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 20,
+    "confidence": 0.9
+  },
+  {
+    "title": "Changing Report Type options",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "Getting the complete URL for the current report",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 104,
+    "confidence": 0.9
+  },
+  {
+    "title": "Storing a snapshot of a report",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 22,
+    "confidence": 0.9
+  },
+  {
+    "title": "Click Tools &gt; Store this report .",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "Saving a favorite report",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "Displaying a favorite report at login",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "Creating a scheduled report",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 23,
+    "confidence": 0.9
+  },
+  {
+    "title": "Store a scheduled report in Stored Reports",
+    "font_size": 12.0,
+    "is_bold": true,
+    "heading_level": 13,
+    "page": 24,
+    "confidence": 0.9
+  },
+  {
+    "title": "Emailing a scheduled report",
+    "font_size": 12.0,
+    "is_bold": true,
+    "heading_level": 13,
+    "page": 24,
+    "confidence": 0.9
+  },
+  {
+    "title": "Send a scheduled report to a remote location",
+    "font_size": 12.0,
+    "is_bold": true,
+    "heading_level": 13,
+    "page": 24,
+    "confidence": 0.9
+  },
+  {
+    "title": "Remote Transfer through FTP",
+    "font_size": 12.0,
+    "is_bold": true,
+    "heading_level": 13,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "Remote Transfer through SMB",
+    "font_size": 12.0,
+    "is_bold": true,
+    "heading_level": 13,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "Remote Transfer through Local",
+    "font_size": 12.0,
+    "is_bold": true,
+    "heading_level": 13,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "Send a scheduled report to the alerting module",
+    "font_size": 12.0,
+    "is_bold": true,
+    "heading_level": 13,
+    "page": 25,
+    "confidence": 0.9
+  },
+  {
+    "title": "Using advanced settings",
+    "font_size": 12.0,
+    "is_bold": true,
+    "heading_level": 13,
+    "page": 26,
+    "confidence": 0.9
+  },
+  {
+    "title": "Edit scheduled report settings",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 26,
+    "confidence": 0.9
+  },
+  {
+    "title": "Launching a scheduled report now",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 26,
+    "confidence": 0.9
+  },
+  {
+    "title": "Emailing a report to yourself",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 27,
+    "confidence": 0.9
+  },
+  {
+    "title": "Displaying a report in a new browser window",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 27,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 3. Report headers",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 27,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 4. Tools and information",
+    "font_size": 9.999999999999991,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 27,
+    "confidence": 0.7
+  },
+  {
+    "title": "Filtering a report using group filters",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 28,
+    "confidence": 0.9
+  },
+  {
+    "title": "Working with personal views",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 29,
+    "confidence": 0.9
+  },
+  {
+    "title": "Creating a personal view of selected reports",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 29,
+    "confidence": 0.9
+  },
+  {
+    "title": "Comparing reports in a Personal View",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 29,
+    "confidence": 0.9
+  },
+  {
+    "title": "Editing a report context in a Personal View",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 29,
+    "confidence": 0.9
+  },
+  {
+    "title": "Working with dashboards",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 30,
+    "confidence": 0.9
+  },
+  {
+    "title": "Dragging a report to a new position",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 30,
+    "confidence": 0.9
+  },
+  {
+    "title": "Arranging reports in the report pane",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 30,
+    "confidence": 0.9
+  },
+  {
+    "title": "Creating a Dashboard",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 30,
+    "confidence": 0.9
+  },
+  {
+    "title": "Working with table reports",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 31,
+    "confidence": 0.9
+  },
+  {
+    "title": "Applying filters to table columns",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 31,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Press Enter .",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "Sorting on a table column",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 32,
+    "confidence": 0.9
+  },
+  {
+    "title": "Show, hide, rearrange, and sort table columns",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 32,
+    "confidence": 0.9
+  },
+  {
+    "title": "The Table Customization dialog box appears.",
+    "font_size": 9.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 65,
+    "confidence": 0.7
+  },
+  {
+    "title": "Using the Actions Menu for performing actions on a report",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 33,
+    "confidence": 0.9
+  },
+  {
+    "title": "Working with graphical reports",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 33,
+    "confidence": 0.9
+  },
+  {
+    "title": "Toggling values in graphs",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 33,
+    "confidence": 0.9
+  },
+  {
+    "title": "Setting upper and lower bounds to graphs",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 33,
+    "confidence": 0.9
+  },
+  {
+    "title": "Reverting to the original bounds of a graph",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 34,
+    "confidence": 0.9
+  },
+  {
+    "title": "Changing the appearance of graphs",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 34,
+    "confidence": 0.9
+  },
+  {
+    "title": "Displaying detailed graph data in a popup",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 34,
+    "confidence": 0.9
+  },
+  {
+    "title": "Zooming in on graph data",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 34,
+    "confidence": 0.9
+  },
+  {
+    "title": "Zooming in on data while displaying the complete time range",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 34,
+    "confidence": 0.9
+  },
+  {
+    "title": "Working with topology reports",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 35,
+    "confidence": 0.9
+  },
+  {
+    "title": "Finding and filtering nodes on topology reports",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 36,
+    "confidence": 0.9
+  },
+  {
+    "title": "About the Edit mode interface",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 37,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 5. Report tree tools",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 37,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 5. Report tree tools (continued)",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 37,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 6. Edit mode tabs",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 38,
+    "confidence": 0.7
+  },
+  {
+    "title": "Using My Reports as a workspace",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 38,
+    "confidence": 0.9
+  },
+  {
+    "title": "Simultaneous edits by multiple users",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "Workflow for creating reports",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "The workflow for creating reports is as follows:",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "Filtering and expansion tab Report Configuration tab Report Details tabs Formula tab",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 40,
+    "confidence": 0.9
+  },
+  {
+    "title": "Workflow for creating a mixed report",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 40,
+    "confidence": 0.9
+  },
+  {
+    "title": "Filtering and expansion tab",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 40,
+    "confidence": 0.9
+  },
+  {
+    "title": "Workflow for creating reports Report Configuration tab Report Details tabs Formula tab",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "Syntax for filter expressions",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 42,
+    "confidence": 0.9
+  },
+  {
+    "title": "Defining the report metrics using a filter",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 41,
+    "confidence": 0.9
+  },
+  {
+    "title": "Specifying the expansion properties for sub nodes Configuring the advanced parameters for a report node Setting the child node ordering",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 43,
+    "confidence": 0.9
+  },
+  {
+    "title": "5. In Use the filter of this node for , specify how to use the filter.",
+    "font_size": 12.0,
+    "is_bold": false,
+    "heading_level": 13,
+    "page": 48,
+    "confidence": 0.9
+  },
+  {
+    "title": "Filtering and expansion tab Complex node expansions Filtering and expansion parameters",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 40,
+    "confidence": 0.9
+  },
+  {
+    "title": "Syntax for filter expressions to display a list of known devices based on the data that are stored",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 42,
+    "confidence": 0.9
+  },
+  {
+    "title": "Specifying the expansion properties for sub nodes Configuring the advanced parameters for a report node",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 43,
+    "confidence": 0.9
+  },
+  {
+    "title": "Specifying the expansion properties for sub nodes",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 43,
+    "confidence": 0.9
+  },
+  {
+    "title": "Combined Regex/Apg Pattern Match (type=sql)",
+    "font_size": 12.0,
+    "is_bold": false,
+    "heading_level": 13,
+    "page": 44,
+    "confidence": 0.9
+  },
+  {
+    "title": "Regex Pattern Match (type=regex)",
+    "font_size": 12.0,
+    "is_bold": false,
+    "heading_level": 13,
+    "page": 44,
+    "confidence": 0.9
+  },
+  {
+    "title": "Dual Regex Pattern Match (type=dual-regex)",
+    "font_size": 12.0,
+    "is_bold": false,
+    "heading_level": 13,
+    "page": 44,
+    "confidence": 0.9
+  },
+  {
+    "title": "Split Property Expansion (type=split)",
+    "font_size": 12.0,
+    "is_bold": false,
+    "heading_level": 13,
+    "page": 45,
+    "confidence": 0.9
+  },
+  {
+    "title": "Hide expansion (type=hide)",
+    "font_size": 12.0,
+    "is_bold": false,
+    "heading_level": 13,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "In-list expansion (type=in-list)",
+    "font_size": 12.0,
+    "is_bold": false,
+    "heading_level": 13,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "Configuring the advanced parameters for a report node",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 46,
+    "confidence": 0.9
+  },
+  {
+    "title": "7. Click Save .",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "Setting the child node ordering",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 47,
+    "confidence": 0.9
+  },
+  {
+    "title": "Add or remove group filters",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 47,
+    "confidence": 0.9
+  },
+  {
+    "title": "Filtering and expansion parameters",
+    "font_size": 8.999999999999972,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 47,
+    "confidence": 0.7
+  },
+  {
+    "title": "Use the filter of this node for",
+    "font_size": 12.0,
+    "is_bold": false,
+    "heading_level": 13,
+    "page": 48,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 7. Syntax for multiple filters",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 50,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 7. Syntax for multiple filters (continued)",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 50,
+    "confidence": 0.7
+  },
+  {
+    "title": "Use filter on unmatched variables",
+    "font_size": 12.0,
+    "is_bold": false,
+    "heading_level": 13,
+    "page": 51,
+    "confidence": 0.9
+  },
+  {
+    "title": "Top N for events",
+    "font_size": 12.0,
+    "is_bold": false,
+    "heading_level": 13,
+    "page": 52,
+    "confidence": 0.9
+  },
+  {
+    "title": "Workflow for creating reports Filtering and expansion tab Report Details tabs Formula tab Report configuration parameters",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "Report Configuration tab Report configuration parameters",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 53,
+    "confidence": 0.9
+  },
+  {
+    "title": "Report configuration parameters",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 53,
+    "confidence": 0.9
+  },
+  {
+    "title": "Propagate time selection on drill-down",
+    "font_size": 12.0,
+    "is_bold": false,
+    "heading_level": 13,
+    "page": 54,
+    "confidence": 0.9
+  },
+  {
+    "title": "Align data on UTC using tz property with the following reference",
+    "font_size": 12.0,
+    "is_bold": false,
+    "heading_level": 13,
+    "page": 54,
+    "confidence": 0.9
+  },
+  {
+    "title": "Dynamic Maintenance Periods",
+    "font_size": 12.0,
+    "is_bold": false,
+    "heading_level": 13,
+    "page": 55,
+    "confidence": 0.9
+  },
+  {
+    "title": "Enable Audit Logging",
+    "font_size": 12.0,
+    "is_bold": false,
+    "heading_level": 13,
+    "page": 55,
+    "confidence": 0.9
+  },
+  {
+    "title": "Descriptions of report types",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 55,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 8. Table report types",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 56,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 9. Graph report types",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 56,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 10. Aggregated report types",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 56,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 10. Aggregated report types (continued)",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 56,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 11. TopN report types",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 57,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 12. Misc report types",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 57,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 13. Mixed report types",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 57,
+    "confidence": 0.7
+  },
+  {
+    "title": "Using threshold definitions",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 94,
+    "confidence": 0.9
+  },
+  {
+    "title": "Setting threshold definitions in tables",
+    "font_size": 12.0,
+    "is_bold": true,
+    "heading_level": 13,
+    "page": 59,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Expand Value Settings .",
+    "font_size": 9.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 86,
+    "confidence": 0.7
+  },
+  {
+    "title": "Setting the number of rows to display per page",
+    "font_size": 12.0,
+    "is_bold": true,
+    "heading_level": 13,
+    "page": 59,
+    "confidence": 0.9
+  },
+  {
+    "title": "Change a column header tooltip",
+    "font_size": 12.0,
+    "is_bold": true,
+    "heading_level": 13,
+    "page": 59,
+    "confidence": 0.9
+  },
+  {
+    "title": "Adding a column",
+    "font_size": 12.0,
+    "is_bold": true,
+    "heading_level": 13,
+    "page": 59,
+    "confidence": 0.9
+  },
+  {
+    "title": "Formatting metrics in a value column",
+    "font_size": 12.0,
+    "is_bold": true,
+    "heading_level": 13,
+    "page": 60,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 14. Formatters for value columns",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 60,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 14. Formatters for value columns (continued)",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 60,
+    "confidence": 0.7
+  },
+  {
+    "title": "Formatting text and backgrounds in columns",
+    "font_size": 12.0,
+    "is_bold": true,
+    "heading_level": 13,
+    "page": 62,
+    "confidence": 0.9
+  },
+  {
+    "title": "Adding a total row at the bottom of a column",
+    "font_size": 12.0,
+    "is_bold": true,
+    "heading_level": 13,
+    "page": 63,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Expand Summary settings .",
+    "font_size": 9.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 70,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 15. Attribute column",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 63,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 15. Attribute column (continued)",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 63,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 16. Property column",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 64,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 16. Property column (continued)",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 64,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 17. Value column",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 65,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 17. Value column (continued)",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 65,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 18. Aggregate column",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 68,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 18. Aggregate column (continued)",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 68,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 19. Combined column",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 70,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 19. Combined column (continued)",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 70,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 20. Display options section",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 71,
+    "confidence": 0.7
+  },
+  {
+    "title": "Item reports (hero dashboards)",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 71,
+    "confidence": 0.9
+  },
+  {
+    "title": "Changing a table report to an item report",
+    "font_size": 12.0,
+    "is_bold": true,
+    "heading_level": 13,
+    "page": 72,
+    "confidence": 0.9
+  },
+  {
+    "title": "Setting threshold definitions in graphs",
+    "font_size": 12.0,
+    "is_bold": true,
+    "heading_level": 13,
+    "page": 74,
+    "confidence": 0.9
+  },
+  {
+    "title": "Setting y-axis range of values",
+    "font_size": 12.0,
+    "is_bold": true,
+    "heading_level": 13,
+    "page": 74,
+    "confidence": 0.9
+  },
+  {
+    "title": "Scaling the y-axis",
+    "font_size": 12.0,
+    "is_bold": true,
+    "heading_level": 13,
+    "page": 74,
+    "confidence": 0.9
+  },
+  {
+    "title": "Setting the appearance of the graph metrics",
+    "font_size": 12.0,
+    "is_bold": true,
+    "heading_level": 13,
+    "page": 75,
+    "confidence": 0.9
+  },
+  {
+    "title": "Adding additional statistics to a graph",
+    "font_size": 12.0,
+    "is_bold": true,
+    "heading_level": 13,
+    "page": 75,
+    "confidence": 0.9
+  },
+  {
+    "title": "Main Y-Axis Scaling Mode",
+    "font_size": 9.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 86,
+    "confidence": 0.7
+  },
+  {
+    "title": "Match metrics using a",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "Configuring the TopN sections",
+    "font_size": 12.0,
+    "is_bold": true,
+    "heading_level": 13,
+    "page": 77,
+    "confidence": 0.9
+  },
+  {
+    "title": "Selecting tooltip information",
+    "font_size": 12.0,
+    "is_bold": true,
+    "heading_level": 13,
+    "page": 78,
+    "confidence": 0.9
+  },
+  {
+    "title": "Scaling Mode",
+    "font_size": 9.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 66,
+    "confidence": 0.7
+  },
+  {
+    "title": "Setting the icon size for child nodes",
+    "font_size": 12.0,
+    "is_bold": true,
+    "heading_level": 13,
+    "page": 80,
+    "confidence": 0.9
+  },
+  {
+    "title": "The settings on the Report Details: Map tab combine table report settings and map-specific settings to create a map report.",
+    "font_size": 14.0,
+    "is_bold": false,
+    "heading_level": 10,
+    "page": 105,
+    "confidence": 0.9
+  },
+  {
+    "title": "Map Item Configuration tabs",
+    "font_size": 9.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 81,
+    "confidence": 0.7
+  },
+  {
+    "title": "Heat Map report parameters",
+    "font_size": 12.0,
+    "is_bold": true,
+    "heading_level": 13,
+    "page": 82,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 21. Value (continued)",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 86,
+    "confidence": 0.7
+  },
+  {
+    "title": "Lower Bound and Upper Bound",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "Table 22. URL parameters",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 87,
+    "confidence": 0.7
+  },
+  {
+    "title": "http://www.bing.com/search?q=${parttype}",
+    "font_size": 9.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 88,
+    "confidence": 0.7
+  },
+  {
+    "title": "http://jira.yourcompany.com:8443/issues/?jql=project%3DEMP AND text~\"${device}\"",
+    "font_size": 9.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 88,
+    "confidence": 0.7
+  },
+  {
+    "title": "https://${device}/vsphere-client/?csp",
+    "font_size": 9.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 88,
+    "confidence": 0.7
+  },
+  {
+    "title": "@{ attribute } values",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "Table 23. Attribute parameters",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 88,
+    "confidence": 0.7
+  },
+  {
+    "title": "Topology report parameters",
+    "font_size": 12.0,
+    "is_bold": true,
+    "heading_level": 13,
+    "page": 89,
+    "confidence": 0.9
+  },
+  {
+    "title": "Templates",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "Setting threshold definitions in tables Setting threshold definitions in graphs Scrollable table",
+    "font_size": 12.0,
+    "is_bold": true,
+    "heading_level": 13,
+    "page": 59,
+    "confidence": 0.9
+  },
+  {
+    "title": "Workflow for creating reports Filtering and expansion tab Report Configuration tab Report Details tabs",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 39,
+    "confidence": 0.9
+  },
+  {
+    "title": "Setting",
+    "font_size": 12.0,
+    "is_bold": false,
+    "heading_level": 13,
+    "page": 98,
+    "confidence": 0.9
+  },
+  {
+    "title": "UI interactivity and table interactivity tabs",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 99,
+    "confidence": 0.9
+  },
+  {
+    "title": "Enable multi-row selection and action menu",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 99,
+    "confidence": 0.9
+  },
+  {
+    "title": "Report settings",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 26,
+    "confidence": 0.9
+  },
+  {
+    "title": "Query and variable selection",
+    "font_size": 14.0,
+    "is_bold": false,
+    "heading_level": 10,
+    "page": 106,
+    "confidence": 0.9
+  },
+  {
+    "title": "Accessing reports from outside of the Console",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 4,
+    "page": 104,
+    "confidence": 0.9
+  },
+  {
+    "title": "The base URL is: https://[APGserverIP:port#]/APG/?param=value&amp;param=value",
+    "font_size": 9.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 104,
+    "confidence": 0.7
+  },
+  {
+    "title": "The URL to display reports on a full page is: https://[APGserverIP:port#]/APG/report.jsp? param=value&amp;param=value",
+    "font_size": 9.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 104,
+    "confidence": 0.7
+  },
+  {
+    "title": "Customizing user settings and custom reports",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 4,
+    "page": 107,
+    "confidence": 0.9
+  },
+  {
+    "title": "Modifying your user data and password",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 107,
+    "confidence": 0.9
+  },
+  {
+    "title": "Setting the reporting preferences",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 107,
+    "confidence": 0.9
+  },
+  {
+    "title": "Setting the first report to appear after login",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 108,
+    "confidence": 0.9
+  },
+  {
+    "title": "Saving the report tree",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 108,
+    "confidence": 0.9
+  },
+  {
+    "title": "Import a report definition",
+    "font_size": 16.00000000000003,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 108,
+    "confidence": 0.9
+  },
+  {
+    "title": "Find and Fix Broken Links in Reports",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 109,
+    "confidence": 0.9
+  },
+  {
+    "title": "Reasons for broken links",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "User Settings",
+    "font_size": 9.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 12,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 24. Broken links description",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 110,
+    "confidence": 0.7
+  },
+  {
+    "title": "View Fixed Links in Tomcat Logs",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 110,
+    "confidence": 0.9
+  },
+  {
+    "title": "Modifying the default profile settings",
+    "font_size": 15.999999999999943,
+    "is_bold": true,
+    "heading_level": 8,
+    "page": 111,
+    "confidence": 0.9
+  },
+  {
+    "title": "Set first report after login",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 111,
+    "confidence": 0.9
+  },
+  {
+    "title": "Using the Report Library",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 4,
+    "page": 112,
+    "confidence": 0.9
+  },
+  {
+    "title": "Accessing SolutionPack reports",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 112,
+    "confidence": 0.9
+  },
+  {
+    "title": "Viewing the summary of installed SolutionPack",
+    "font_size": 15.999999999999943,
+    "is_bold": true,
+    "heading_level": 8,
+    "page": 112,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 25. Global portal properties",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 112,
+    "confidence": 0.7
+  },
+  {
+    "title": "Setting login properties and welcome message",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 113,
+    "confidence": 0.9
+  },
+  {
+    "title": "Set the navigation style",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 113,
+    "confidence": 0.9
+  },
+  {
+    "title": "Customizing the look of the interface",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 114,
+    "confidence": 0.9
+  },
+  {
+    "title": "Use the File Customization tab to:",
+    "font_size": 9.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 65,
+    "confidence": 0.7
+  },
+  {
+    "title": "Enabling keyboard shortcuts",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 114,
+    "confidence": 0.9
+  },
+  {
+    "title": "Editing the aliases given to time periods",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 114,
+    "confidence": 0.9
+  },
+  {
+    "title": "Assigning system roles to external users",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 115,
+    "confidence": 0.9
+  },
+  {
+    "title": "Managing scheduled reports",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 115,
+    "confidence": 0.9
+  },
+  {
+    "title": "Editing the properties of scheduled reports",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 116,
+    "confidence": 0.9
+  },
+  {
+    "title": "Canceling a user session",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 117,
+    "confidence": 0.9
+  },
+  {
+    "title": "Listing reports that are generating",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 4,
+    "page": 117,
+    "confidence": 0.9
+  },
+  {
+    "title": "Configuring an SMTP server",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 4,
+    "page": 118,
+    "confidence": 0.9
+  },
+  {
+    "title": "Managing users and user rights",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 4,
+    "page": 118,
+    "confidence": 0.9
+  },
+  {
+    "title": "Adding a user",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 119,
+    "confidence": 0.9
+  },
+  {
+    "title": "Setting the access rights of a user",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 119,
+    "confidence": 0.9
+  },
+  {
+    "title": "Setting the viewing rights of a user",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 120,
+    "confidence": 0.9
+  },
+  {
+    "title": "Test user settings",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 120,
+    "confidence": 0.9
+  },
+  {
+    "title": "You can test user settings to check how the settings are applied. Test mode applies settings as if you were logging in as this user.",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 120,
+    "confidence": 0.9
+  },
+  {
+    "title": "Creating a role",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 121,
+    "confidence": 0.9
+  },
+  {
+    "title": "Adding members to a role",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 122,
+    "confidence": 0.9
+  },
+  {
+    "title": "Adding external members to a role",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 122,
+    "confidence": 0.9
+  },
+  {
+    "title": "Establishing inheritance between roles",
+    "font_size": 14.000000000000028,
+    "is_bold": true,
+    "heading_level": 9,
+    "page": 122,
+    "confidence": 0.9
+  },
+  {
+    "title": "Setting role access to report templates",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 123,
+    "confidence": 0.9
+  },
+  {
+    "title": "Setting component access and restrictions",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 123,
+    "confidence": 0.9
+  },
+  {
+    "title": "Assigning administration tasks to a role",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 124,
+    "confidence": 0.9
+  },
+  {
+    "title": "Removing a user from a role",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 124,
+    "confidence": 0.9
+  },
+  {
+    "title": "Resetting default role settings",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 125,
+    "confidence": 0.9
+  },
+  {
+    "title": "Creating a profile",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 125,
+    "confidence": 0.9
+  },
+  {
+    "title": "Adding members to a profile",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 126,
+    "confidence": 0.9
+  },
+  {
+    "title": "Adding external members to a profile",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 126,
+    "confidence": 0.9
+  },
+  {
+    "title": "Removing a member from a profile",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 127,
+    "confidence": 0.9
+  },
+  {
+    "title": "Authentication Management",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 4,
+    "page": 127,
+    "confidence": 0.9
+  },
+  {
+    "title": "Testing authentication",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 128,
+    "confidence": 0.9
+  },
+  {
+    "title": "Adding realms",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 128,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 26. Realm types",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 128,
+    "confidence": 0.7
+  },
+  {
+    "title": "Prioritizing authentication realms",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 129,
+    "confidence": 0.9
+  },
+  {
+    "title": "Figure 1. Order of the realm configured",
+    "font_size": 9.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 129,
+    "confidence": 0.7
+  },
+  {
+    "title": "Managing ReportPacks",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 4,
+    "page": 130,
+    "confidence": 0.9
+  },
+  {
+    "title": "Creating a ReportPack",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 130,
+    "confidence": 0.9
+  },
+  {
+    "title": "Uploading a &lt;ReportPack&gt;.arp file",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "Adding a new report template to a ReportPack",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 131,
+    "confidence": 0.9
+  },
+  {
+    "title": "Copying a report template",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 131,
+    "confidence": 0.9
+  },
+  {
+    "title": "Deleting a report template from a ReportPack",
+    "font_size": 16.00000000000003,
+    "is_bold": true,
+    "heading_level": 6,
+    "page": 131,
+    "confidence": 0.9
+  },
+  {
+    "title": "Exporting a report as a template in XML format",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 132,
+    "confidence": 0.9
+  },
+  {
+    "title": "Server Management",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 4,
+    "page": 132,
+    "confidence": 0.9
+  },
+  {
+    "title": "Physical Overview",
+    "font_size": 15.999999999999943,
+    "is_bold": false,
+    "heading_level": 8,
+    "page": 132,
+    "confidence": 0.9
+  },
+  {
+    "title": "Registering additional servers",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 132,
+    "confidence": 0.9
+  },
+  {
+    "title": "Removing additional servers",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 133,
+    "confidence": 0.9
+  },
+  {
+    "title": "Distribute startup of UNIX services",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 134,
+    "confidence": 0.9
+  },
+  {
+    "title": "Starting and stopping services",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 134,
+    "confidence": 0.9
+  },
+  {
+    "title": "Installing modules",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 135,
+    "confidence": 0.9
+  },
+  {
+    "title": "Updating modules",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 135,
+    "confidence": 0.9
+  },
+  {
+    "title": "Accessing and editing configuration files",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 136,
+    "confidence": 0.9
+  },
+  {
+    "title": "Using Manage Packages, you can manage how packages are used when installing or updating modules.",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 135,
+    "confidence": 0.9
+  },
+  {
+    "title": "Obtaining a permanent license",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 137,
+    "confidence": 0.9
+  },
+  {
+    "title": "Obtaining a temporary license",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 138,
+    "confidence": 0.9
+  },
+  {
+    "title": "Adding licenses",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 138,
+    "confidence": 0.9
+  },
+  {
+    "title": "Dell Technologies Connectivity",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 4,
+    "page": 139,
+    "confidence": 0.9
+  },
+  {
+    "title": "Alerts raised in SRM for Dell Technologies Connectivity configuration issues",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 4,
+    "page": 139,
+    "confidence": 0.9
+  },
+  {
+    "title": "The following are the two Alerts that are raised in SRM for Dell Technologies Connectivity Configuration issue:",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 4,
+    "page": 139,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Message: Sending of configuration details to Dell Technologies Connectivity server failed. Then ensure that:",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 4,
+    "page": 139,
+    "confidence": 0.9
+  },
+  {
+    "title": "For more information about configuring Dell Technologies Connectivity, see SRM Admin Guide.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 4,
+    "page": 139,
+    "confidence": 0.9
+  },
+  {
+    "title": "Generating and downloading diagnostic files",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 140,
+    "confidence": 0.9
+  },
+  {
+    "title": "Adding a new device manually",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 140,
+    "confidence": 0.9
+  },
+  {
+    "title": "Adding devices using CSV files",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 141,
+    "confidence": 0.9
+  },
+  {
+    "title": "Importing a CSV file",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 141,
+    "confidence": 0.9
+  },
+  {
+    "title": "Exporting devices",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 142,
+    "confidence": 0.9
+  },
+  {
+    "title": "Exporting a CSV file template",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 142,
+    "confidence": 0.9
+  },
+  {
+    "title": "Add devices using discovery",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 142,
+    "confidence": 0.9
+  },
+  {
+    "title": "Registering a new collector server",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 142,
+    "confidence": 0.9
+  },
+  {
+    "title": "Create a discovery group",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 143,
+    "confidence": 0.9
+  },
+  {
+    "title": "Discover devices",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 143,
+    "confidence": 0.9
+  },
+  {
+    "title": "Use the Discovery Group tab to create a discovery group or research the settings in discovery groups.",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 143,
+    "confidence": 0.9
+  },
+  {
+    "title": "Distribute (import) discovery results",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 144,
+    "confidence": 0.9
+  },
+  {
+    "title": "Back up device details",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 145,
+    "confidence": 0.9
+  },
+  {
+    "title": "Flat and hierarchical groups",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 145,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 27. Summary of predefined group types",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 146,
+    "confidence": 0.7
+  },
+  {
+    "title": "Setting cost basis for chargeback reports",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 146,
+    "confidence": 0.9
+  },
+  {
+    "title": "Overview of the Groups Management UI",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 147,
+    "confidence": 0.9
+  },
+  {
+    "title": "Figure 2. Groups Management UI",
+    "font_size": 9.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 147,
+    "confidence": 0.7
+  },
+  {
+    "title": "Use the preview table",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 148,
+    "confidence": 0.9
+  },
+  {
+    "title": "View and reorder rules",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 151,
+    "confidence": 0.9
+  },
+  {
+    "title": "Create a group by copying an existing group",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 153,
+    "confidence": 0.9
+  },
+  {
+    "title": "Get group membership rules as regex expression",
+    "font_size": 13.999999999999943,
+    "is_bold": true,
+    "heading_level": 11,
+    "page": 153,
+    "confidence": 0.9
+  },
+  {
+    "title": "Manage groups by exporting and importing files",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 153,
+    "confidence": 0.9
+  },
+  {
+    "title": "CSV data input file",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "Configuring server settings for online updates",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 4,
+    "page": 154,
+    "confidence": 0.9
+  },
+  {
+    "title": "Enabling the online update task",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 4,
+    "page": 154,
+    "confidence": 0.9
+  },
+  {
+    "title": "Disabling the online update task",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 4,
+    "page": 155,
+    "confidence": 0.9
+  },
+  {
+    "title": "Running the online update task manually",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 4,
+    "page": 155,
+    "confidence": 0.9
+  },
+  {
+    "title": "Installing a SolutionPack",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 156,
+    "confidence": 0.9
+  },
+  {
+    "title": "Reconfiguring a SolutionPack",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 156,
+    "confidence": 0.9
+  },
+  {
+    "title": "Installing a SolutionPackBlock",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 156,
+    "confidence": 0.9
+  },
+  {
+    "title": "Reconfiguring a SolutionPackBlock",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 156,
+    "confidence": 0.9
+  },
+  {
+    "title": "What to do if data does not appear in any reports",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 157,
+    "confidence": 0.9
+  },
+  {
+    "title": "What to do if data does not appear in some reports",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 158,
+    "confidence": 0.9
+  },
+  {
+    "title": "Viewing collector errors in the Collector-Manager log files",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 158,
+    "confidence": 0.9
+  },
+  {
+    "title": "Using the Data Enrichment UI",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 158,
+    "confidence": 0.9
+  },
+  {
+    "title": "1. Register a Collector Manager",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 159,
+    "confidence": 0.9
+  },
+  {
+    "title": "2. Create new tagging structure",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 163,
+    "confidence": 0.9
+  },
+  {
+    "title": "3. Populate the tag set rows",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 166,
+    "confidence": 0.9
+  },
+  {
+    "title": "4. (Optional) Run the import property task and restart Collectors",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 168,
+    "confidence": 0.9
+  },
+  {
+    "title": "6. Add the new property to a report",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 169,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 28. Type Description",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 163,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 28. Type Description (continued)",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 163,
+    "confidence": 0.7
+  },
+  {
+    "title": "13. Click Update .",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "Type attribute for PTF keys",
+    "font_size": 12.0,
+    "is_bold": true,
+    "heading_level": 13,
+    "page": 165,
+    "confidence": 0.9
+  },
+  {
+    "title": "View the defined Type for a key",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "View and edit the PTF input file",
+    "font_size": 12.0,
+    "is_bold": true,
+    "heading_level": 13,
+    "page": 167,
+    "confidence": 0.9
+  },
+  {
+    "title": "- a. Click Administration &gt; Home &gt; Physical Overview &gt; collector\\_server\\_name .",
+    "font_size": 15.999999999999943,
+    "is_bold": false,
+    "heading_level": 8,
+    "page": 132,
+    "confidence": 0.9
+  },
+  {
+    "title": "The Reconfiguring Window appears.",
+    "font_size": 9.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 170,
+    "confidence": 0.7
+  },
+  {
+    "title": "Change the refresh rate on alerting reports",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 170,
+    "confidence": 0.9
+  },
+  {
+    "title": "Alerting (Events) database",
+    "font_size": 14.000000000000028,
+    "is_bold": false,
+    "heading_level": 9,
+    "page": 171,
+    "confidence": 0.9
+  },
+  {
+    "title": "Access the alerting portal page",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 172,
+    "confidence": 0.9
+  },
+  {
+    "title": "About configuring alert definitions",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 173,
+    "confidence": 0.9
+  },
+  {
+    "title": "Components in an alert definition",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 174,
+    "confidence": 0.9
+  },
+  {
+    "title": "Figure 4. Filter in an alert definition",
+    "font_size": 9.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 174,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 29. Field names for filtering on event sources",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 174,
+    "confidence": 0.7
+  },
+  {
+    "title": "Figure 5. Operator in an alert definition",
+    "font_size": 9.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 175,
+    "confidence": 0.7
+  },
+  {
+    "title": "Figure 6. Comparator with two outcome paths",
+    "font_size": 9.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 175,
+    "confidence": 0.7
+  },
+  {
+    "title": "- The Send to SAM action is for use by customers who have Dell Service Assurance Suite installed.",
+    "font_size": 12.0,
+    "is_bold": false,
+    "heading_level": 13,
+    "page": 190,
+    "confidence": 0.9
+  },
+  {
+    "title": "Figure 7. Actions in an alert definition",
+    "font_size": 9.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 176,
+    "confidence": 0.7
+  },
+  {
+    "title": "Example: Putting it all together",
+    "font_size": 12.0,
+    "is_bold": false,
+    "heading_level": 13,
+    "page": 176,
+    "confidence": 0.9
+  },
+  {
+    "title": "Figure 8. Example alert definition",
+    "font_size": 9.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 177,
+    "confidence": 0.7
+  },
+  {
+    "title": "Contextualized and non-contextualized alert definitions",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 177,
+    "confidence": 0.9
+  },
+  {
+    "title": "Contextualizing an alert definition",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 177,
+    "confidence": 0.9
+  },
+  {
+    "title": "You can add contextualization to components in an alert definition and set the values for the default context.",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 174,
+    "confidence": 0.9
+  },
+  {
+    "title": "Configuring an alert definition",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 178,
+    "confidence": 0.9
+  },
+  {
+    "title": "Editing an alert definition",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 179,
+    "confidence": 0.9
+  },
+  {
+    "title": "By editing an alert definition, you can change the filter or add or delete the actions or operations in the alert definition.",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 179,
+    "confidence": 0.9
+  },
+  {
+    "title": "Figure 9. Graphical representation of an alert definition",
+    "font_size": 9.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 180,
+    "confidence": 0.7
+  },
+  {
+    "title": "Enable/disable alert definitions",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 181,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 30. Alert Definition Status",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 182,
+    "confidence": 0.7
+  },
+  {
+    "title": "Creating alert definitions",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 182,
+    "confidence": 0.9
+  },
+  {
+    "title": "11. Click Save and enable or Save and disable .",
+    "font_size": 0,
+    "is_bold": false,
+    "heading_level": 2,
+    "page": 1,
+    "confidence": 0.6
+  },
+  {
+    "title": "About the Dell Technologies Connectivity alert definitions",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 4,
+    "page": 139,
+    "confidence": 0.9
+  },
+  {
+    "title": "Do not change or reconfigure the Dell Secure Remote Support (Dell Technologies Connectivity) alert definitions.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 4,
+    "page": 139,
+    "confidence": 0.9
+  },
+  {
+    "title": "A set of Dell Technologies Connectivity alert definitions is associated with this feature. Note the following:",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 4,
+    "page": 139,
+    "confidence": 0.9
+  },
+  {
+    "title": "- Do not change or reconfigure the Dell Technologies Connectivity alert definitions.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 4,
+    "page": 139,
+    "confidence": 0.9
+  },
+  {
+    "title": "Unhide the Dell Technologies Connectivity alert definitions",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 4,
+    "page": 139,
+    "confidence": 0.9
+  },
+  {
+    "title": "You can optionally unhide the Dell Technologies Connectivity alert definitions to view them.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 4,
+    "page": 139,
+    "confidence": 0.9
+  },
+  {
+    "title": "The Dell Technologies Connectivity alert definitions appear in the Alert definitions list.",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 4,
+    "page": 139,
+    "confidence": 0.9
+  },
+  {
+    "title": "Alert definition component reference",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 183,
+    "confidence": 0.9
+  },
+  {
+    "title": "Previous Polling Operation",
+    "font_size": 12.0,
+    "is_bold": false,
+    "heading_level": 13,
+    "page": 185,
+    "confidence": 0.9
+  },
+  {
+    "title": "Properties To Values Creator",
+    "font_size": 12.0,
+    "is_bold": false,
+    "heading_level": 13,
+    "page": 185,
+    "confidence": 0.9
+  },
+  {
+    "title": "Timestamp To Value Creator",
+    "font_size": 12.0,
+    "is_bold": false,
+    "heading_level": 13,
+    "page": 186,
+    "confidence": 0.9
+  },
+  {
+    "title": "Constant Comparator Operation",
+    "font_size": 11.999999999999943,
+    "is_bold": false,
+    "heading_level": 14,
+    "page": 186,
+    "confidence": 0.9
+  },
+  {
+    "title": "Property Comparator Operation",
+    "font_size": 12.0,
+    "is_bold": false,
+    "heading_level": 13,
+    "page": 186,
+    "confidence": 0.9
+  },
+  {
+    "title": "String Comparator Operation",
+    "font_size": 12.0,
+    "is_bold": false,
+    "heading_level": 13,
+    "page": 187,
+    "confidence": 0.9
+  },
+  {
+    "title": "Grouped Data Counter Operation",
+    "font_size": 12.0,
+    "is_bold": false,
+    "heading_level": 13,
+    "page": 187,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 31. Log action",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 188,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 32. Mail action",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 189,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 33. SNMP Trap action",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 189,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 34. Parameters section",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 189,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 34. Parameters section (continued)",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 189,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 35. External process action",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 190,
+    "confidence": 0.7
+  },
+  {
+    "title": "Send to SAM action",
+    "font_size": 12.0,
+    "is_bold": false,
+    "heading_level": 13,
+    "page": 190,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 36. Sent to SAM action",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 190,
+    "confidence": 0.7
+  },
+  {
+    "title": "Table 36. Sent to SAM action (continued)",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 190,
+    "confidence": 0.7
+  },
+  {
+    "title": "Dell Technologies Connectivity event action",
+    "font_size": 20.0,
+    "is_bold": true,
+    "heading_level": 4,
+    "page": 139,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 37. Webhook action",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 191,
+    "confidence": 0.7
+  },
+  {
+    "title": "Creating adapters",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 191,
+    "confidence": 0.9
+  },
+  {
+    "title": "Creating a Values Socket Listener Adapter",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 191,
+    "confidence": 0.9
+  },
+  {
+    "title": "Creating an Events Adapter",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 192,
+    "confidence": 0.9
+  },
+  {
+    "title": "Creating a report data adapter",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 192,
+    "confidence": 0.9
+  },
+  {
+    "title": "Creating a File Data Adapter",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 192,
+    "confidence": 0.9
+  },
+  {
+    "title": "Creating alert templates",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 193,
+    "confidence": 0.9
+  },
+  {
+    "title": "Using preconfigured alert templates and examples",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 193,
+    "confidence": 0.9
+  },
+  {
+    "title": "Setting up a log template",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 194,
+    "confidence": 0.9
+  },
+  {
+    "title": "Setting up a trap notify and trap clear template",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 194,
+    "confidence": 0.9
+  },
+  {
+    "title": "Creating a Grouped Box",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 195,
+    "confidence": 0.9
+  },
+  {
+    "title": "Probing an alert definition",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 196,
+    "confidence": 0.9
+  },
+  {
+    "title": "Create alerts from scheduled reports",
+    "font_size": 16.0,
+    "is_bold": true,
+    "heading_level": 7,
+    "page": 198,
+    "confidence": 0.9
+  },
+  {
+    "title": "Configure the alerting engine",
+    "font_size": 12.000000000000014,
+    "is_bold": true,
+    "heading_level": 12,
+    "page": 198,
+    "confidence": 0.9
+  },
+  {
+    "title": "It is an Administrator task. Configure the Alerting Engine with the following set of JVM arguments.",
+    "font_size": 12.000000000000014,
+    "is_bold": true,
+    "heading_level": 12,
+    "page": 198,
+    "confidence": 0.9
+  },
+  {
+    "title": "Table 38. Configuring alerting engine",
+    "font_size": 10.0,
+    "is_bold": true,
+    "heading_level": 16,
+    "page": 199,
+    "confidence": 0.7
+  },
+  {
+    "title": "Configure alerting communication",
+    "font_size": 12.0,
+    "is_bold": true,
+    "heading_level": 13,
+    "page": 199,
+    "confidence": 0.9
+  },
+  {
+    "title": "Create a scheduled report alert",
+    "font_size": 14.0,
+    "is_bold": true,
+    "heading_level": 10,
+    "page": 200,
+    "confidence": 0.9
+  }
+]
